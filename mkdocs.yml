@@ -1,0 +1,64 @@
+site_name: Docs @ MiLaboratories
+site_url: https://example.com/
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.integrate
+
+repo_url: https://github.com/milaboratory/internal-documentation
+repo_name: milaboratory/internal-documentation
+edit_uri: edit/main/docs/
+
+plugins:
+  - git-authors
+  - git-revision-date-localized:
+      type: timeago
+      enable_creation_date: true
+  - search:
+      lang: en
+  - minify:
+      minify_html: true
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - plantuml_markdown
+  - markdown_katex:
+      no_inline_svg: True
+      insert_fonts_css: True
+#      macro-file: macros.tex
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+#  - pymdownx.arithmatex:
+#      generic: true
+#  - pymdownx.superfences:
+#      custom_fences:
+#        - name: mermaid
+#          class: mermaid
+#          format: !!python/name:pymdownx.superfences.fence_code_format
+
+#  - mdx_math
+
+extra_css:
+  - css/extra.css
+
+#extra_javascript:
+#  - javascripts/mathjax.js
+#  - https://polyfill.io/v3/polyfill.min.js?features=es6
+#  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - 'Home': index.md
+  - 'MiXCR':
+    - 'What is it?': mixcr/overview.md

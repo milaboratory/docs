@@ -1,0 +1,9 @@
+mkdocs
+markdown-katex
+mkdocs-material
+mkdocs-git-revision-date-plugin
+mkdocs-minify-plugin
+mkdocs-git-revision-date-localized-plugin
+mkdocs-git-authors-plugin
+pymdown-extensions
+plantuml-markdown
