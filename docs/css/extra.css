@@ -1,1 +1,10 @@
-footer { display: none }
+footer {
+    display: none
+}
+
+div.arguments-table th:first-of-type {
+        width: 55%;
+    }
+div.arguments-table th:nth-of-type(2) {
+    width: 45%;
+}

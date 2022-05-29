@@ -32,6 +32,8 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
   - plantuml_markdown
+  - attr_list
+  - def_list
   - markdown_katex:
       no_inline_svg: True
       insert_fonts_css: True
@@ -39,6 +41,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+  - pymdownx.tasklist:
+      custom_checkbox: true
 
 #  - pymdownx.arithmatex:
 #      generic: true
@@ -62,3 +66,11 @@ nav:
   - 'Home': index.md
   - 'MiXCR':
     - 'What is it?': mixcr/overview.md
+    - 'Cases':
+      - 'Targeted TCR library  5’RACE' : mixcr/cases/targetTCRRACE.md
+    - 'Tips':
+      - 'Handy bash commands': tips/usefullBashScripts.md
+    - 'Reference':
+      - 'mixcr analyze': mixcr/reference/mixcr-analyze.md
+      - 'gene features and reference points': mixcr/reference/geneFeatures.md
+
