@@ -63,14 +63,14 @@ extra_css:
 #  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - 'Home': docs/index.md
+  - 'Home': index.md
   - 'MiXCR':
-    - 'What is it?': docs/mixcr/overview.md
+    - 'What is it?': mixcr/overview.md
     - 'Cases':
-      - 'Targeted TCR library  5’RACE' : docs/mixcr/cases/targetTCRRACE.md
+      - 'Targeted TCR library  5’RACE' : mixcr/cases/targetTCRRACE.md
     - 'Tips':
-      - 'Handy bash commands': docs/tips/usefullBashScripts.md
+      - 'Handy bash commands': tips/usefullBashScripts.md
     - 'Reference':
-      - 'mixcr analyze': docs/mixcr/reference/mixcr-analyze.md
-      - 'gene features and reference points': docs/mixcr/reference/geneFeatures.md
+      - 'mixcr analyze': mixcr/reference/mixcr-analyze.md
+      - 'gene features and reference points': mixcr/reference/geneFeatures.md
 
