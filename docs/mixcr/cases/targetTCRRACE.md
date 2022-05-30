@@ -8,9 +8,10 @@ sample11_LN_R2.fastq    sample11_SPL_R2.fastq  sample12_LN_R2.fastq    sample12_
 sample11_PBMC_R1.fastq  sample11_THY_R1.fastq  sample12_PBMC_R1.fastq  sample12_THY_R1.fastq  sample14_PBMC_R1.fastq  sample14_THY_R1.fastq  sample15_PBMC_R1.fastq  sample15_THY_R1.fastq
 sample11_PBMC_R2.fastq  sample11_THY_R2.fastq  sample12_PBMC_R2.fastq  sample12_THY_R2.fastq  sample14_PBMC_R2.fastq  sample14_THY_R2.fastq  sample15_PBMC_R2.fastq  sample15_THY_R2.fastq
 ```
-These files contain sequences TCR-betta chain enriched cDNA libraries of mice. Libraries were obtained from RNA, isolated from various tissues, using 5'RACE method. Sequence specific primer for C-region was used in library preparation protocol.
 
-Our goal is to generate clonotype tables for every sample and plot Chao1 index box-plot comparing TCR diversity between different tissues.
+These files contain sequences of TCR-betta chain enriched cDNA libraries of mice. Libraries were obtained from RNA, isolated from various tissues, using 5'RACE method. Sequence specific primer for C-region was used in library preparation protocol.
+
+Our goal is to generate clonotype tables for every sample and plot Diversity indices box-plots comparing TCR diversity between different tissues.
 
 The most straightforward way to get clonotype tables is to use [```mixcr analyze```](../reference/mixcr-analyze.md).
 
@@ -28,7 +29,7 @@ mixcr analyze amplicon \
 
 - ```-s``` is set to mmu for Mus Musculus
 - ```--starting material``` rna
-- ```--receptor-type``` is ```trb``` because we know that only this chain should present in the data.
+- ```--receptor-type``` is ```trb``` because we know that only this chain should be present in the data.
 - ```--5-end no-v-primers``` is set to ```no-v-primers``` since 5'RACE protocol was used in library preparation. For V multiplex that argument should be changed to ```v-primers```. 
 - ```--3-end-primers``` is ```c-primers``` since the primer used for library preparation is complimentary to C-region of TCR genes.
 - ```--adapers adapters present``` because primer sequence is present in the data and has not been cut prior to.
@@ -44,7 +45,7 @@ sample11_LN.clns  sample11_LN.clonotypes.TRB.txt  sample11_LN.report  sample11_L
 - ```sample11_LN.vdjca``` is a binary file with alignments 
 - ```sample11_LN.clns``` is a binary file with assembled clonotypes
 - ```sample11_LN.clonotypes.TRB.txt``` is a human-readable tab-delimited file with clonotype table for this sample. Check reports section of this documentation to find out more about the data stored in it.
-- ```sample11_LN.report``` is a report file which contains both reports for alignment and assemble
+- ```sample11_LN.report``` is a report file which contains both reports for alignment and assemble. Please see Reports section of this documentation to learn how to read ```mixcr``` reports.
 
 Next step is to perform that analysis on multiple file pairs. We work on Linux, and let's say we have [GNU parallel installed](https://www.gnu.org/software/parallel/).
 Then we can easily run the command above for all files in the folder:
@@ -57,17 +58,17 @@ ls fastq/*R1.fastq |\
     --receptor-type trb \
     --5-end no-v-primers --3-end c-primers \
     --adapters adapters-present \
-    {} {=s:R1:R2:=} result/{=s:.*\/::; s:_R.*::=}"
+    {} {=s:R1:R2:=} {=s:.*\/:result/:; s:_R.*::=}"
 ```
 
 This method is described in [Handy bash commands](../tips/usefullBashScripts.md) section of this documentation.
 
-Briefly, we list all R1 filenames and pass that list to parallel. Inside ```mixcr analyze amplicon``` we use ```sed``` to pass input and output files. For R2 filename we have to replace R1 with R2, and for the output we remove the path to the file, write a new one (```results/```) instead and remove filename ending starting with ```_R```.
+Briefly, we list all R1 filenames and pass that list to parallel. Inside ```mixcr analyze amplicon``` we use ```sed``` to pass input and output files. For R2 filename we have to replace R1 with R2 (```{=s:R1:R2:=}``` ), and for the output we remove the path to the R1 file, replace it with a new one instead and remove filename ending starting with ```_R``` (```{=s:.*\/:result/:; s:_R.*::=}```).
 
-After execution is complete ```results/``` folder has files wor all the samples similar to those mentioned above.
+After execution is complete ```result/``` folder has files wor all the samples similar to those mentioned above.
 
 ```
-ls results
+ls result
 
 sample11_LN.clns                  sample11_THY.clonotypes.TRB.txt   sample12_SPL.report               sample14_PBMC.vdjca              sample15_PBMC.clns
 sample11_LN.clonotypes.TRB.txt    sample11_THY.report               sample12_SPL.vdjca                sample14_SPL.clns                sample15_PBMC.clonotypes.TRB.txt
@@ -86,7 +87,7 @@ sample11_THY.clns                 sample12_SPL.clonotypes.TRB.txt   sample14_PBM
 
 Now when we have clonsets for all files we can move on to postanalysis.
 
-First we should create a ```metadata.tsv``` file. This is a tab-delimited file, which contains paths to ```.clns``` files and metadata with sample_id, origin tissue data and animal number.
+First we should create a ```metadata.tsv``` file. This is a tab-delimited file, which contains ```sample``` column with sample names, origin tissue data and animal number.
 
 
 | sample                    | sample_id      | animal | tissue |
@@ -107,6 +108,39 @@ First we should create a ```metadata.tsv``` file. This is a tab-delimited file, 
 | result/sample15_PBMC.clns | sample15_PBMC  | 15     | PBMC   |
 | result/sample15_SPL.clns  | sample15_SPL   | 15     | SPL    |
 | result/sample15_THY.clns  | sample15_THY   | 15     | THY    |
+
+Now we can proceed to postanalysis.
+
+Diversity indices are a part of [```mixcr postanalysis individual```](../reference/mixcr-postanalysis.md).
+
+```
+postanalysis individual \
+    --only-productive \
+    --default-downsampling umi-count-auto \
+    --metadata result/metadata.tsv \
+    --group tissue \
+    --tables postanalysis/postanalysis-output.tsv \
+    --preproc-tables postanalysis/preproc.tsv \
+    --chains TRB \
+    result/*.clns \
+    postanalysis/individual-postanalysis-output.json
+```
+
+The command above will execute individual postanalysis block. All non-functional clone sequences will be dropped (```--only-productive```). Because it is better to compare diversity indices on normalized data, we are using ```--default-downsampling umi-count-auto```. This type of downsample automatically determines the threshold. ```--group tissue``` means that samples will be joined in groups by tissue of origin (according to the metadata provided).
+
+Finally, we want to create box-plots with diversity.
+
+```
+mixcr exportPlots diversity \
+    --metadata result/metadata.tsv \
+    --chains TRB \
+    --plot-type boxplot \
+    --p-adjust-method none \
+    --primary-group tissue \
+    postanalysis/individual-postanalysis-output.json plots/diversity.pdf
+```
+
+
 
 
 
