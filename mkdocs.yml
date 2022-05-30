@@ -1,5 +1,5 @@
 site_name: Docs @ MiLaboratories
-site_url: https://example.com/
+site_url: https://docs.milaboratories.com/
 
 theme:
   name: material
@@ -13,8 +13,8 @@ theme:
     - search.suggest
     - toc.integrate
 
-repo_url: https://github.com/milaboratory/internal-documentation
-repo_name: milaboratory/internal-documentation
+repo_url: https://github.com/milaboratory/docs
+repo_name: milaboratory/docs
 edit_uri: edit/main/docs/
 
 plugins:
@@ -63,14 +63,14 @@ extra_css:
 #  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - 'Home': index.md
+  - 'Home': docs/index.md
   - 'MiXCR':
-    - 'What is it?': mixcr/overview.md
+    - 'What is it?': docs/mixcr/overview.md
     - 'Cases':
-      - 'Targeted TCR library  5’RACE' : mixcr/cases/targetTCRRACE.md
+      - 'Targeted TCR library  5’RACE' : docs/mixcr/cases/targetTCRRACE.md
     - 'Tips':
-      - 'Handy bash commands': tips/usefullBashScripts.md
+      - 'Handy bash commands': docs/tips/usefullBashScripts.md
     - 'Reference':
-      - 'mixcr analyze': mixcr/reference/mixcr-analyze.md
-      - 'gene features and reference points': mixcr/reference/geneFeatures.md
+      - 'mixcr analyze': docs/mixcr/reference/mixcr-analyze.md
+      - 'gene features and reference points': docs/mixcr/reference/geneFeatures.md
 
