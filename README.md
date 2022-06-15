@@ -1,2 +1,0 @@
-# docs
-MiLaboratories public documentation

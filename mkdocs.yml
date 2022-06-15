@@ -1,5 +1,5 @@
 site_name: Docs @ MiLaboratories
-site_url: https://example.com/
+site_url: https://docs.milaboratories.com/
 
 theme:
   name: material
@@ -13,8 +13,8 @@ theme:
     - search.suggest
     - toc.integrate
 
-repo_url: https://github.com/milaboratory/internal-documentation
-repo_name: milaboratory/internal-documentation
+repo_url: https://github.com/milaboratory/docs
+repo_name: milaboratory/docs
 edit_uri: edit/main/docs/
 
 plugins:
