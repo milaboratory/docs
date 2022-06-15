@@ -68,6 +68,9 @@ nav:
     - 'What is it?': mixcr/overview.md
     - 'Cases':
       - 'Targeted TCR library  5’RACE' : mixcr/cases/targetTCRRACE.md
+    - 'Reports':
+        - 'MiXCR align report': mixcr/reports/mixcr-align-report.md
+        - 'MiXCR assemble report': mixcr/reports/mixcr-assemble-report.md
     - 'Tips':
       - 'Handy bash commands': tips/usefullBashScripts.md
     - 'Reference':
