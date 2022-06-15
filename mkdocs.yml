@@ -75,8 +75,8 @@ nav:
       - 'Handy bash commands': tips/usefullBashScripts.md
     - 'Reference':
       - 'mixcr analyze': mixcr/reference/mixcr-analyze.md
-      - 'mixcr analyze': mixcr/reference/mixcr-align.md
-      - 'mixcr analyze': mixcr/reference/tag-pattern.md
+      - 'mixcr align': mixcr/reference/mixcr-align.md
+      - 'Tag Pattern': mixcr/reference/tag-pattern.md
       - 'gene features and reference points': mixcr/reference/geneFeatures.md
-      - 'gene features and reference points': mixcr/reference/mixcr-postanalysis.md
+      - 'Postanalysis': mixcr/reference/mixcr-postanalysis.md
 
