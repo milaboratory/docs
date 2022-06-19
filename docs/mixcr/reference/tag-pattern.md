@@ -185,7 +185,7 @@ Constrains:
 
 Examples:
 ```
-^ATTAGACA(UMI:NNNN)(R1:*) | ^TGCTTGCA(UMI:NNNN)(R1:*) \ ^(R2:*)
+"^ATTAGACA(UMI:NNNN)(R1:*) | ^TGCTTGCA(UMI:NNNN)(R1:*) \ ^(R2:*)"
 
 matches:
 
@@ -195,5 +195,25 @@ and
 R1: TGCTTGCATTGCCCTGGGATCCG...
 R2: TGCCGTGATTATGCCGTGATTGT...
 
+"^ATTAGACA(UMI:NNNN) | ^AGGACACA(UMI:NNNN) \ ^GATACGA || ^GATAGAC \ ^TAGCA(UMI:NNNNNNN)"
 
+matches:
+
+R1: ATTAGACAtgctaagc....
+R2: GATACgtacgttgtta....
+
+R1: AGGACACAgctaagct....
+R2: GATACgtacgttgtta....
+
+R1: GATAGACtgctaagc....
+R2: TAGCAgtacgttgtt....
+```
+
+The following patterns will result in an **error**:
+
+```
+^ATTAGACA(UMI:NNNN) | ^ATTACACA \ ^GATACGA || ^GATAGAC \ ^TAGCA(UMI:NNNNNNN)
+^ATTAGACA(UMI:NNNN) | ^ATTACACA(UMI:NNNNNNN) \ ^GATACGA || ^GATAGAC(UMI1:NNNNNNN) \ ^TAGCA(UMI:NNNNNNN)
+^ATTAGACA(UMI:NNNN) | ^ATTACACA(UMI:NNNNNNN) \ ^GATACGA || ^GATAGAC \ ^TAGCA
+^ATTAGACA | ^ATTACACA \ ^GATACGA || ^GATAGAC
 ```
