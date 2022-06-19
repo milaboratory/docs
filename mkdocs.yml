@@ -77,6 +77,6 @@ nav:
       - 'mixcr analyze': mixcr/reference/mixcr-analyze.md
       - 'mixcr align': mixcr/reference/mixcr-align.md
       - 'Tag Pattern': mixcr/reference/tag-pattern.md
-      - 'gene features and reference points': mixcr/reference/geneFeatures.md
+      - 'Gene features and reference points': mixcr/reference/geneFeatures.md
       - 'Postanalysis': mixcr/reference/mixcr-postanalysis.md
 
