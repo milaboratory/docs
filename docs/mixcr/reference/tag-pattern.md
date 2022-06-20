@@ -176,7 +176,7 @@ extracting molecular and/or cell barcode.
 
 There are two levels at which logical "OR" can be applied:
 
-`|` - single read level "or"
+`|` - single read level "or" \
 `||` - whole pattern level "or"
 
 Constrains:
@@ -202,6 +202,8 @@ matches:
 R1: ATTAGACAtgctaagc....
 R2: GATACgtacgttgtta....
 
+or (s
+
 R1: AGGACACAgctaagct....
 R2: GATACgtacgttgtta....
 
@@ -209,7 +211,7 @@ R1: GATAGACtgctaagc....
 R2: TAGCAgtacgttgtt....
 ```
 
-The following patterns will result in an **error**:
+The following patterns will result in an **error** due to violation of the constraints mentioned above:
 
 ```
 ^ATTAGACA(UMI:NNNN) | ^ATTACACA \ ^GATACGA || ^GATAGAC \ ^TAGCA(UMI:NNNNNNN)
