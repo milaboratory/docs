@@ -12,6 +12,7 @@ theme:
     - search.share
     - search.suggest
     - toc.integrate
+    - content.tabs.link
 
 repo_url: https://github.com/milaboratory/docs
 repo_name: milaboratory/docs
@@ -28,12 +29,16 @@ plugins:
       minify_html: true
 
 markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - plantuml_markdown
   - attr_list
   - def_list
+  - md_in_html
   - markdown_katex:
       no_inline_svg: True
       insert_fonts_css: True
@@ -68,6 +73,7 @@ nav:
     - 'What is it?': mixcr/overview.md
     - 'Cases':
       - 'Targeted TCR library  5’RACE' : mixcr/cases/targetTCRRACE.md
+      - '10x Single cell VDJ': mixcr/cases/10xBCR.md
     - 'Reports':
         - 'MiXCR align report': mixcr/reports/mixcr-align-report.md
         - 'MiXCR assemble report': mixcr/reports/mixcr-assemble-report.md
