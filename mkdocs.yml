@@ -42,7 +42,7 @@ markdown_extensions:
   - markdown_katex:
       no_inline_svg: True
       insert_fonts_css: True
-#      macro-file: macros.tex
+  #      macro-file: macros.tex
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
@@ -70,19 +70,20 @@ extra_css:
 nav:
   - 'Home': index.md
   - 'MiXCR':
-    - 'What is it?': mixcr/overview.md
-    - 'Cases':
-      - 'Targeted TCR library  5’RACE' : mixcr/cases/targetTCRRACE.md
-      - '10x Single cell VDJ': mixcr/cases/10xBCR.md
-    - 'Reports':
-        - 'MiXCR align report': mixcr/reports/mixcr-align-report.md
-        - 'MiXCR assemble report': mixcr/reports/mixcr-assemble-report.md
-    - 'Tips':
-      - 'Handy bash commands': tips/usefullBashScripts.md
-    - 'Reference':
-      - 'mixcr analyze': mixcr/reference/mixcr-analyze.md
-      - 'mixcr align': mixcr/reference/mixcr-align.md
-      - 'Tag Pattern': mixcr/reference/tag-pattern.md
-      - 'Gene features and reference points': mixcr/reference/geneFeatures.md
-      - 'Postanalysis': mixcr/reference/mixcr-postanalysis.md
+      - 'What is it?': mixcr/overview.md
+      - 'Cases':
+          - 'Targeted TCR library  5’RACE': mixcr/cases/target_tcr_race_no_umi.md
+          - 'Targeted TCR UMI library (QIAGEN)': mixcr/cases/target_tcr_race_umi.md
+          - '10x Single cell VDJ': mixcr/cases/10xBCR.md
+      - 'Reports':
+          - 'MiXCR align report': mixcr/reports/mixcr-align-report.md
+          - 'MiXCR assemble report': mixcr/reports/mixcr-assemble-report.md
+      - 'Tips':
+          - 'Handy bash commands': tips/usefullBashScripts.md
+      - 'Reference':
+          - 'mixcr analyze': mixcr/reference/mixcr-analyze.md
+          - 'mixcr align': mixcr/reference/mixcr-align.md
+          - 'Tag Pattern': mixcr/reference/tag-pattern.md
+          - 'Gene features and reference points': mixcr/reference/geneFeatures.md
+          - 'Postanalysis': mixcr/reference/mixcr-postanalysis.md
 
