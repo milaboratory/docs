@@ -67,7 +67,7 @@ nav:
   - 'MiXCR':
     - 'What is it?': mixcr/overview.md
     - 'Cases':
-      - 'Targeted TCR library  5’RACE' : mixcr/cases/targetTCRRACE.md
+      - 'Targeted TCR library  5’RACE' : mixcr/cases/target_tcr_race_no_umi.md
     - 'Reports':
         - 'MiXCR align report': mixcr/reports/mixcr-align-report.md
         - 'MiXCR assemble report': mixcr/reports/mixcr-assemble-report.md
