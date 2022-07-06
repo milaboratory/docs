@@ -198,8 +198,6 @@ a JSON formatted report file can be generated using `-j`/ `--json-report` option
         Realigned with forced non-floating bound: 0 (0%)
         Realigned with forced non-floating right bound in left read: 0 (0%)
         Realigned with forced non-floating left bound in right read: 0 (0%)
-        Total reads: 14492930
-        Matched reads: 14492930 (100%)
         ```
     === "JSON"
         ```
@@ -230,9 +228,7 @@ a JSON formatted report file can be generated using `-j`/ `--json-report` option
         "NoCDR3Parts": 0,
         "NoHits": 1903444,
         "NoVHits": 0,
-        "BarcodeNotInWhitelist": 0,
         "NoJHits": 0,
-        "NoBarcode": 0
         },
         "overlapped": 0,
         "alignmentAidedOverlaps": 0,
@@ -276,19 +272,19 @@ of V or J alignments, that passed all alignment thresholds and cover at least on
 `Alignment failed because of low total score` / `LowTotalScore`
 : Number of alignments that failed due to a low alignment score
 
-`Overlapped`
+`Overlapped` / `overlapped`
 : Total number of overlapped paired-end reads
 
-`Overlapped and aligned`
+`Overlapped and aligned` / `overlappedAligned`
 : Total number of reads that were overlapped and aligned (in any order) 
 
-`Alignment-aided overlaps`
+`Alignment-aided overlaps` / `alignmentAidedOverlaps`
 : Number of reads that were overlapped only after alignment. High value, may indicate problems with the sequencing data 
 being analysed (any data pre-processing step may be the source of this problem or this may be a sign of invitro 
 chimerization). Small number of such events is ok, especially for RNA-Seq and similar data, that contains unspliced 
 or wrongly spliced sequences.
 
-`Overlapped and not aligned`
+`Overlapped and not aligned` / `overlappedNotAligned`
 : Number of overlapped paired-end reads that did not result in alignment
 
 `No CDR3 parts alignments, percent of successfully aligned` / `noCDR3PartsAlignments`

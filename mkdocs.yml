@@ -74,6 +74,7 @@ nav:
       - 'Tutorials':
           - 'Targeted TCR library  5’RACE': mixcr/cases/target_tcr_race_no_umi.md
           - 'Targeted TCR UMI library (QIAGEN)': mixcr/cases/target_tcr_race_umi.md
+          - 'Targeted Full Length BCR UMI library': mixcr/cases/target_Ig_full_length_race_umi.md
           - '10x Single cell VDJ': mixcr/cases/10xSingleCellIG.md
       - 'Reference':
           - 'mixcr analyze': mixcr/reference/mixcr-analyze.md

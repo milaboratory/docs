@@ -183,7 +183,58 @@ increase. MiXCR allows to correct erroneous barcodes.
 
 ### Assemble
 
-Since 
-    
+Assemble PArtial 
+
+=== "Single file"
+    ```
+    mixcr assemblePartial \
+    -f \
+    --report lc-p20_E2_assemblePartialReport.txt \
+    lc-p20_E2_corrected.vdjca lc-p20_E2_partialAssemble.vdjca
+    ```
+=== "Multiple files"
+    ```
+    ls clones/*_corrected.vdjca | parallel -j2 \
+    'mixcr assemblePartial \
+    -f \
+    --report {=s:_corrected.vdjca:_assemblePartialReport.txt:=} \
+    {} {=s:_corrected.vdjca:_partialAssemble.vdjca:=}'
+    ```
 
 
+Assemble
+
+=== "Single file"
+    ```
+    mixcr assemble \
+    -f \
+    --report lc-p20_E2_assembleReport.txt \
+    lc-p20_E2_partialAssemble.vdjca lc-p20_E2.clna
+    ```
+=== "Multiple files"
+    ```
+    ls clones/*_partialAssemble.vdjca | parallel -j2 \
+    'mixcr assemble \
+    -r {=s:_partialAssemble.vdjca:_assembleReport.txt:=} \
+    -f \
+    -a \
+    {} {=s:_partialAssemble.vdjca:.clna:=}'
+    ```
+
+Assemble Contigs
+
+=== "Single file"
+    ```
+    mixcr assembleContigs \
+    -f \
+    --report lc-p20_E2_assembleContigsReport.txt \
+    lc-p20_E2.clna lc-p20_E2.clns
+    ```
+=== "Multiple files"
+    ```
+    ls clones/*.clna | parallel -j2 \
+    'mixcr assembleContigs \
+    -r {=s:\.clna:_assembleContigsReport.txt:=} \
+    -f \
+    {} {=s:\.clna:.clns:=}'
+    ```
