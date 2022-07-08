@@ -114,7 +114,9 @@ In order to run the analysis for all samples in the project on Linux we can for 
     result/{=s:.*TCR-seq_:PRJNA592172/:; s:_Homo.*::=}'
 ```
 
-You can check more details in [_Handy bash commands_](../tips/usefullBashScripts.md) section of documentation. Briefly, we list all R1 files in the fastq directory, replace lane specifications with MiXCR `{{n}}` wildcard, pipe the list to parallel, then run `mixcr analyze` for each pair, again using sed to obtain R2 filename from R1 and the name of output.  
+You can check more details in [_Handy bash commands_](../tips/usefullBashScripts.md) section of documentation. Briefly, 
+we list all R1 files in the fastq directory, replace lane specifications with MiXCR `{{n}}` wildcard, pipe the list to 
+parallel, then run `mixcr analyze` for each pair, again using sed to obtain R2 filename from R1 and the name of output.  
 
 ## Details and fine-tuning
 
