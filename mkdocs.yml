@@ -12,6 +12,7 @@ theme:
     - search.share
     - search.suggest
     - toc.integrate
+    - content.tabs.link
 
 repo_url: https://github.com/milaboratory/docs
 repo_name: milaboratory/docs
@@ -28,12 +29,16 @@ plugins:
       minify_html: true
 
 markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
   - admonition
   - pymdownx.details
   - pymdownx.superfences
   - plantuml_markdown
   - attr_list
   - def_list
+  - md_in_html
   - markdown_katex:
       no_inline_svg: True
       insert_fonts_css: True
@@ -66,18 +71,17 @@ nav:
   - 'Home': index.md
   - 'MiXCR':
       - 'What is it?': mixcr/overview.md
-      - 'Cases':
+      - 'Tutorials':
           - 'Targeted TCR library  5’RACE': mixcr/cases/target_tcr_race_no_umi.md
           - 'Targeted TCR UMI library (QIAGEN)': mixcr/cases/target_tcr_race_umi.md
-      - 'Reports':
-          - 'MiXCR align report': mixcr/reports/mixcr-align-report.md
-          - 'MiXCR assemble report': mixcr/reports/mixcr-assemble-report.md
-      - 'Tips':
-          - 'Handy bash commands': tips/usefullBashScripts.md
+          - 'Targeted Full Length BCR UMI library': mixcr/cases/target_Ig_full_length_race_umi.md
+          - '10x Single cell VDJ': mixcr/cases/10xSingleCellIG.md
       - 'Reference':
           - 'mixcr analyze': mixcr/reference/mixcr-analyze.md
           - 'mixcr align': mixcr/reference/mixcr-align.md
           - 'Tag Pattern': mixcr/reference/tag-pattern.md
           - 'Gene features and reference points': mixcr/reference/geneFeatures.md
           - 'Postanalysis': mixcr/reference/mixcr-postanalysis.md
+      - 'Tips':
+          - 'Handy bash commands': tips/usefullBashScripts.md
 

@@ -94,12 +94,12 @@ matches:
 AAATGGGCAT
 AAAATGGGCAT
 AAAAATGGGCAT
-...
+
 ```
 Note: `*` matches the same pattern as `N{:}`
 
-`<{<X>}` and `>{<X>}` is used at the beginning or at the end of a sequence respectively to define 
-that **at max** X number of nucleotides from an edge of a pattern can be absent. 
+`<{<X>}` and `>{<X>}` allows to trim 0 to X number of nucleotides from left 
+or right side of the pattern respectively. 
 
 Example:
 

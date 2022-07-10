@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="88e7a4c3-c57c-48d1-b9c4-a85bf0271761" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/docs/mixcr/cases/img.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/mixcr/cases/img_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/mixcr/cases/img_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/mixcr/cases/img_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/mixcr/cases/target_tcr_race_umi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/mixcr/cases/targetTCRRACE.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/mixcr/cases/target_tcr_race_no_umi.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mkdocs.yml" beforeDir="false" afterPath="$PROJECT_DIR$/mkdocs.yml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="29eroEU9scwWmi0DItt8bh5TyQY" />
+  <component name="ProjectViewState">
+    <option name="flattenModules" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showModules" value="false" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mizraelson/mixcrDocs&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/docs/mixcr/cases" />
+      <recent name="$PROJECT_DIR$/docs/mixcr" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="10xBCR.md" type="LOGSTASH_RUN_CONFIGURATION" factoryName="Logstash configuration factory" temporary="true">
+      <option name="FILE_PATH" value="$PROJECT_DIR$/docs/mixcr/cases/10xBCR.md" />
+      <option name="STARTER_PATH" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="PARAMETERS" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Logstash.10xBCR.md" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88e7a4c3-c57c-48d1-b9c4-a85bf0271761" name="Changes" comment="" />
+      <created>1653484564252</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653484564252</updated>
+      <workItem from="1653484566966" duration="23791000" />
+      <workItem from="1655235891252" duration="21886000" />
+      <workItem from="1655940696870" duration="194000" />
+      <workItem from="1655981380417" duration="1659000" />
+      <workItem from="1655988051905" duration="9923000" />
+      <workItem from="1656677113877" duration="26008000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
