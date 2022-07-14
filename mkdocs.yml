@@ -75,7 +75,8 @@ extra_css:
 
 nav:
   - 'MiXCR':
-      - 'What is it?': mixcr/overview.md
+      - 'Welcome!': index.md
+#      - 'What is it?': mixcr/overview.md
   - 'Tutorials':
       - 'Targeted TCR library  5’RACE': mixcr/cases/target_tcr_race_no_umi.md
       - 'Targeted TCR UMI library (QIAGEN)': mixcr/cases/target_tcr_race_umi.md

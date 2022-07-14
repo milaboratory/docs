@@ -1,6 +1,6 @@
 mkdocs
 markdown-katex
-mkdocs-material
+mkdocs-material == 8.3.9
 mkdocs-git-revision-date-plugin
 mkdocs-minify-plugin
 mkdocs-git-revision-date-localized-plugin
