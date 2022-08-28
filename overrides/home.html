@@ -1,0 +1,82 @@
+{% extends "main.html" %}
+
+<!-- Render hero under tabs -->
+{% block tabs %}
+{{ super() }}
+
+<!-- Additional styles for landing page -->
+<style>
+
+  /* Application header should be static for the landing page */
+  .md-header {
+    position: initial;
+  }
+
+  /* Remove spacing, as we cannot hide it completely */
+  .md-main__inner {
+    margin: 0;
+  }
+
+  body {
+    background: linear-gradient(90deg, #478063 0%, #2E4652 50.13%, #24223D 100%);
+  }
+
+  body[data-md-color-scheme="slate"] {
+    background: linear-gradient(90deg, #2E5246 0%, #2A373D 50.13%, #201F29 100%);
+  }
+
+  /* Hide table of contents */
+  @media screen and (min-width: 60em) {
+    .md-sidebar--secondary {
+      display: none;
+    }
+  }
+
+  /* Hide navigation */
+  @media screen and (min-width: 76.25em) {
+    .md-sidebar--primary {
+      display: none;
+    }
+  }
+
+  .md-main {
+    flex: 1;
+    /*aspect-ratio: 0.4;*/
+    padding-top: 250%;
+    background: url("assets/bg-mobile.svg") center center no-repeat;
+    background-size: 100% auto;
+  }
+
+  @media screen and (min-width: 750px) {
+    .md-main {
+      /*aspect-ratio: 0.95;*/
+      padding-top: 105%;
+      background: url("assets/bg-tablet.svg") center center no-repeat;
+      background-size: 100% auto;
+    }
+  }
+
+  @media screen and (min-width: 1275px) {
+    .md-main {
+      min-height: 620px; 
+      padding-top: 0;
+      background: url("assets/bg.svg") center center no-repeat;
+      background-size: auto auto;
+    }
+    .md-header__inner {
+      padding-left: 2px;
+    }
+    .md-tabs__list {
+      margin-left: 2px !important;
+    }
+  }
+</style>
+
+
+{% endblock %}
+
+<!-- Content -->
+{% block content %}{% endblock %}
+
+<!-- Application footer -->
+{% block footer %}{% endblock %}

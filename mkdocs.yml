@@ -1,0 +1,172 @@
+site_name: Docs @ MiLaboratories
+site_url: https://docs.milaboratories.com/
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/logo.svg
+  favicon: assets/favicon.png
+  palette:
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: custom/24_moon
+        name: Switch to dark mode
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: custom/24_sun
+        name: Switch to light mode
+# (not all necessary typefaces)
+  font:
+    text: IBM Plex Sans
+    code: IBM Plex Mono
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.top
+    - navigation.sections
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+#    - toc.integrate
+    - content.tabs.link
+
+
+repo_url: https://github.com/milaboratory/docs
+repo_name: milaboratory/docs
+edit_uri: edit/main/docs/
+
+plugins:
+  - git-authors
+  - git-revision-date-localized:
+      type: timeago
+      enable_creation_date: true
+  - search:
+      lang: en
+  - minify:
+      minify_html: true
+  - glightbox
+
+markdown_extensions:
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - admonition
+  - pymdownx.details
+#  - plantuml_markdown
+  - attr_list
+  - def_list
+  - md_in_html
+  - markdown_katex:
+      no_inline_svg: True
+      insert_fonts_css: True
+  #      macro-file: macros.tex
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      options:
+        custom_icons:
+          - overrides/.icons
+  - pymdownx.tasklist:
+      custom_checkbox: true
+#  - toc:
+#      toc_depth: 3
+  - pymdownx.arithmatex:
+      generic: true
+
+extra_css:
+  - css/extra.css
+
+extra_javascript:
+  - javascripts/svg.js
+  - javascripts/onload.js
+#  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - 'Home': index.md
+  - 'Getting Started':
+      - 'Installation': mixcr/getting-started/installation.md
+      - 'Using with Docker': mixcr/getting-started/docker.md
+      - 'Obtaining and using license key': mixcr/getting-started/milm.md
+      - 'MiXCR Overview': mixcr/getting-started/overview.md
+      - 'License': mixcr/getting-started/license.md
+  - 'Guides':
+      - 'Kits & Protocols':
+#        - 'MiLaboratories RNA 5''RACE repertoire kit':  docs/mixcr/guides/milaboratories-human-tcr-rna-race/milaboratories-human-tcr-rna-race.md
+        - 'MiLaboratories Human TCR RNA Multiplex kit':  mixcr/guides/milaboratories-human-tcr-rna-multi.md
+#        - 'MiLaboratories RNA Multiplex BCR repertoire kit': docs/mixcr/guides/milaboratories-human-bcr-rna-multi/milaboratories-human-bcr-rna-multi.md
+        - 'BioMed2':  mixcr/guides/biomed2-bcr.md
+        - 'AbHelix BCR': mixcr/guides/abhelix-bcr.md
+        - 'SMARTer Mouse TCR a/b Profiling Kit': mixcr/guides/takara-mmu-tcr.md
+        - 'SMARTer Human BCR IgG IgM H/K/L Profiling Kit': mixcr/guides/takara-hsa-bcr.md
+        - 'NEBNext Immune Sequencing': mixcr/guides/nebnext-bcr.md
+        - 'QIAseq Immune Repertoire TCR' : mixcr/guides/qiaseq-tcr.md
+        - 'RNA-Seq data' : mixcr/guides/rnaseq.md
+      - 'Analysis cases':
+        - 'Targeted TCR UMI libraries': mixcr/guides/generic-umi-tcr.md
+        - 'Targeted BCR Multiplex libraries': mixcr/guides/generic-multiplex-bcr.md
+      - 'Special guides':
+        - 'Assembling custom reference library': mixcr/guides/create-custom-library.md
+        - 'Using external libraries': mixcr/guides/external-libraries.md
+
+  - 'Reference':
+      - 'MiXCR':
+        - 'analyze': mixcr/reference/mixcr-analyze.md
+        - 'align': mixcr/reference/mixcr-align.md
+        - 'correctAndSortTags': mixcr/reference/mixcr-correctAndSortTags.md
+        - 'assemblePartial': mixcr/reference/mixcr-assemblePartial.md
+        - 'extend': mixcr/reference/mixcr-extend.md
+        - 'assemble': mixcr/reference/mixcr-assemble.md
+        - 'assembleContigs': mixcr/reference/mixcr-assembleContigs.md
+        - 'export': mixcr/reference/mixcr-export.md
+        - 'exportPretty': mixcr/reference/mixcr-exportPretty.md
+        - 'exportAirr': mixcr/reference/mixcr-exportAirr.md
+        - 'exportReadsForClones': mixcr/reference/mixcr-exportReadsForClones.md
+        - 'exportReports': mixcr/reference/mixcr-exportReports.md
+        - 'exportQc': mixcr/reference/mixcr-exportQc.md
+        - 'postanalysis': mixcr/reference/mixcr-postanalysis.md
+        - 'exportPlots': mixcr/reference/mixcr-exportPlots.md
+        - 'exportTables': mixcr/reference/mixcr-exportTables.md
+        - 'exportPreprocTables': mixcr/reference/mixcr-exportPreprocTables.md
+        - 'exportClonesOverlap': mixcr/reference/mixcr-exportClonesOverlap.md
+        - 'overlapScatterPlot': mixcr/reference/mixcr-overlapScatterPlot.md
+      - 'Reports':
+        - 'mixcr align': mixcr/reference/report-align.md
+        - 'mixcr correctAndSortTags': mixcr/reference/report-correctAndSortTags.md
+        - 'mixcr assemblePartial': mixcr/reference/report-assemblePartial.md
+        - 'mixcr extend': mixcr/reference/report-extend.md
+        - 'mixcr assemble': mixcr/reference/report-assemble.md
+        - 'mixcr assembleContigs': mixcr/reference/report-assembleContigs.md
+      - 'RepSeq.io':
+        - 'fasta': mixcr/reference/repseqio-fasta.md
+        - 'compile': mixcr/reference/repseqio-compile.md
+        - 'debug': mixcr/reference/repseqio-debug.md
+        - 'filter': mixcr/reference/repseqio-filter.md
+        - 'format': mixcr/reference/repseqio-format.md
+        - 'fromFasta': mixcr/reference/repseqio-fromFasta.md
+        - 'fromPaddedFasta': mixcr/reference/repseqio-fromPaddedFasta.md
+        - 'inferPoints': mixcr/reference/repseqio-inferPoints.md
+        - 'merge': mixcr/reference/repseqio-merge.md
+        - 'stat': mixcr/reference/repseqio-stat.md
+        - 'tsv': mixcr/reference/repseqio-tsv.md
+      - 'MiTool':
+        - 'parse': mixcr/reference/mitool-parse.md
+        - 'filter': mixcr/reference/mitool-filter.md
+        - 'tag-stat': mixcr/reference/mitool-tag-stat.md
+        - 'export-fastq': mixcr/reference/mitool-export-fastq.md
+        - 'correct': mixcr/reference/mitool-correct.md
+        - 'consensus': mixcr/reference/mitool-consensus.md
+        - 'process-fastq': mixcr/reference/mitool-process-fastq.md
+        - 'format-fastq': mixcr/reference/mitool-format-fastq.md
+        - 'compress-sequence-set': mixcr/reference/mitool-compress-sequence-set.md
+      - 'Specs':
+        - 'Tag Pattern': mixcr/reference/tag-pattern.md
+        - 'Gene features and reference points': mixcr/reference/geneFeatures.md
+        - 'RepSeq.io JSON format': mixcr/reference/repseqio-json-format.md
