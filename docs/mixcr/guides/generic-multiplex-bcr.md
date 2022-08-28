@@ -501,7 +501,7 @@ Since our samples were prepared in replicas, it is often usefully to check if cl
     M1_4T1_Blood.overlap.pdf
 ```
 <figure markdown>
-![M1_4T1_Blood.overlap.png](M1_4T1_Blood.overlap.png)
+![M1_4T1_Blood.overlap.png](generic-multiplex-bcr/M1_4T1_Blood.overlap.png)
 </figure>
 
 #### All-vs-All overlap

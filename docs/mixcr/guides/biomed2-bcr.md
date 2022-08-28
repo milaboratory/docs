@@ -493,7 +493,7 @@ Another quality report we should investigate is chain abundance plot.
 ```
 
 <figure markdown>
-![chainUsageAlign.svg](chainUsageAlign.svg)
+![chainUsageAlign.svg](biomed2-bcr/chainUsageAlign.svg)
 </figure>
 
 From that plot we can see another issue. According to the publication, the data was generated using a V and J primers  multiplex protocol in such a way that every sample should have sequences for both heavy and light IG chains. But we see, that most samples have only one of the chains present in the sample, and those samples that have both still have a strange distribution, which has to be about 50\50, as every cell has both chains.

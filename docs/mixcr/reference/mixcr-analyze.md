@@ -44,7 +44,7 @@ The command takes raw sequencing data as input and supports the following format
 : Specify number of processing threads
 
 `-s, --species <species>`
-: Species (organism). Possible values: `hsa` (or HomoSapiens), `mmu` (or MusMusculus), `rat`, `spalax`, `alpaca`, `lamaGlama`, `mulatta` (_Macaca Mulatta_), `fascicularis` (_Macaca Fascicularis_) or any species from [IMGT ® library](docs/mixcr/guides/external-libraries.md).
+: Species (organism). Possible values: `hsa` (or HomoSapiens), `mmu` (or MusMusculus), `rat`, `spalax`, `alpaca`, `lamaGlama`, `mulatta` (_Macaca Mulatta_), `fascicularis` (_Macaca Fascicularis_) or any species from [IMGT ® library](../guides/external-libraries.md).
 
 `--starting-material <startingMaterial>`
 : Starting material. Possible values: `rna`, `dna`
@@ -289,7 +289,7 @@ The command takes raw sequencing data as input and supports the following format
 : Specify number of processing threads
 
 `-s, --species <species>`
-: Species (organism). Possible values: `hsa` (or HomoSapiens), `mmu` (or MusMusculus), `rat`, `spalax`, `alpaca`, `lamaGlama`, `mulatta` (_Macaca Mulatta_), `fascicularis` (_Macaca Fascicularis_) or any species from [IMGT ® library](docs/mixcr/guides/external-libraries.md).
+: Species (organism). Possible values: `hsa` (or HomoSapiens), `mmu` (or MusMusculus), `rat`, `spalax`, `alpaca`, `lamaGlama`, `mulatta` (_Macaca Mulatta_), `fascicularis` (_Macaca Fascicularis_) or any species from [IMGT ® library](../guides/external-libraries.md).
 
 `--starting-material <startingMaterial>`
 : Starting material. Possible values: `rna`, `dna`
