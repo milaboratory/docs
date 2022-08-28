@@ -106,11 +106,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.milaboratories.com/mixcr/reference/geneFeatures/</loc>
-         <lastmod>2022-08-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.milaboratories.com/mixcr/reference/mitool-compress-sequence-set/</loc>
          <lastmod>2022-08-28</lastmod>
          <changefreq>daily</changefreq>
@@ -251,6 +246,26 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.milaboratories.com/mixcr/reference/ref-gene-features/</loc>
+         <lastmod>2022-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.milaboratories.com/mixcr/reference/ref-mutations-encoding/</loc>
+         <lastmod>2022-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.milaboratories.com/mixcr/reference/ref-tag-pattern/</loc>
+         <lastmod>2022-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.milaboratories.com/mixcr/reference/ref-translation-rules/</loc>
+         <lastmod>2022-08-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.milaboratories.com/mixcr/reference/report-align/</loc>
          <lastmod>2022-08-28</lastmod>
          <changefreq>daily</changefreq>
@@ -337,11 +352,6 @@
     </url>
     <url>
          <loc>https://docs.milaboratories.com/mixcr/reference/repseqio-tsv/</loc>
-         <lastmod>2022-08-28</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.milaboratories.com/mixcr/reference/tag-pattern/</loc>
          <lastmod>2022-08-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
