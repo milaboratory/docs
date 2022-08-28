@@ -86,7 +86,7 @@ The meaning of these options is the following.
 :   is set to `mmu` for _Mus Musculus_
 
 `--starting-material`
-:   is set to `rna` and corresponds to `VTranscriptWithout5UTRWithP` alignment feature for V-gene (see [Gene features and anchor points](../reference/geneFeatures.md) for details)
+:   is set to `rna` and corresponds to `VTranscriptWithout5UTRWithP` alignment feature for V-gene (see [Gene features and anchor points](../reference/ref-gene-features.md) for details)
 
 `--receptor-type`
 :  `bcr`. It affects the choice of alignment algorithms. MiXCR uses a specific set of algorithms for BCR data.
@@ -154,7 +154,7 @@ Under the hood, `mixcr analyze amplicon` command that we use above actually exec
     results/M1_4T1_Blood_S2.vdjca
 ```
 
-Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithout5UTRWithP` for the alignment of V segments (see [Gene features and anchor points](../reference/geneFeatures.md).
+Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithout5UTRWithP` for the alignment of V segments (see [Gene features and anchor points](../reference/ref-gene-features.md).
 
  `-OvParameters.parameters.floatingLeftBound=false -OjParameters.parameters floatingRightBound=false -OcParameters.parameters.floatingRightBound=true`
 : These option determine global vs local alignment algorithm on the bounds of gene segments. As have been mentioned above we will use global alignment on the left bound of V gene and right bound of J gene. The alignment on the right bound of C gene will be local due to the presence of primer sequence.

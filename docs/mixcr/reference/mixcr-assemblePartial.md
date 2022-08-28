@@ -83,7 +83,7 @@ The following options are available for `assemblePartial`:
 : Length of k-mer taken from VJ junction region and used for searching potentially overlapping sequences.
 
 `-OkOffset=-7`
-: Offset taken from [`VEndTrimmed`/`JBeginTrimmed`](geneFeatures.md)
+: Offset taken from [`VEndTrimmed`/`JBeginTrimmed`](ref-gene-features.md)
 
 `-OminimalAssembleOverlap=12`
 : Minimal length of the overlapped VJ region: two sequences can be potentially merged only if they have at least `minimalAssembleOverlap`-wide overlap in the VJJunction region. No mismatches are allowed in the overlapped region.

@@ -1,6 +1,6 @@
 # `mixcr assemble`
 
-Assembles clonotypes. MiXCR allows to assemble clonotypes by arbitrary [gene features](./geneFeatures.md). It also applies several layers of error-correction:
+Assembles clonotypes. MiXCR allows to assemble clonotypes by arbitrary [gene features](./ref-gene-features.md). It also applies several layers of error-correction:
 
  - quality guided error correction to fix sequencing errors and rescue low-quality reads
  - clustering to correct for PCR errors both in case of non-barcoded and UMI-barcoded data
@@ -250,7 +250,7 @@ Default values for these parameters are different depending whether `--cell-leve
 Basic core [assembler parameters](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/parameters/assembler_parameters.json) are:
 
 `-OassemblingFeatures=CDR3`
-: Specify [gene feature](./geneFeatures.md) used to assemble clonotypes. One may specify any custom gene region (e.g. `FR3+CDR3`); target clonal sequence can even be disjoint. Note that `assemblingFeatures` must cover CDR3. Example:
+: Specify [gene feature](./ref-gene-features.md) used to assemble clonotypes. One may specify any custom gene region (e.g. `FR3+CDR3`); target clonal sequence can even be disjoint. Note that `assemblingFeatures` must cover CDR3. Example:
     
     ```shell
       > mixcr assemble -OassemblingFeatures="[V5UTR+L1+L2+FR1,FR3+CDR3]" alignments.vdjca output.clns

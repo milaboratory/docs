@@ -39,13 +39,13 @@ The meaning of these options is the following.
 
 `--starting-material`
 :   is set to `rna` and corresponds to `VTranscriptWithout5UTRWithP` alignment feature for V-gene (
-see [Gene features and anchor points](../../reference/geneFeatures.md) for details)
+see [Gene features and anchor points](../../reference/ref-gene-features.md) for details)
 
 `--receptor-type`
 :  `tcr`. It affects the choice of alignment algorithms.
 
 `--umi-pattern-name`
-:  `MiLaboratoriesRACETCR` specifies a build in UMI pattern for MiLaboratories RNA 5'RACE TCR repertoire kit. This name stands for the following pattern: `"^(R1:*) \ ^tggtatcaacgcagagt(UMI:NNNNTNNNNTNNNN)(R2:*)"`. It specifies the position of UMI barcode. MiXCR provides a powerful regex-like [language](../../reference/tag-pattern.md) allowing to specify almost arbitrary barcode structure.
+:  `MiLaboratoriesRACETCR` specifies a build in UMI pattern for MiLaboratories RNA 5'RACE TCR repertoire kit. This name stands for the following pattern: `"^(R1:*) \ ^tggtatcaacgcagagt(UMI:NNNNTNNNNTNNNN)(R2:*)"`. It specifies the position of UMI barcode. MiXCR provides a powerful regex-like [language](../../reference/ref-tag-pattern.md) allowing to specify almost arbitrary barcode structure.
 
 `--5-end`
 :   is set to `no-v-primers` because the data was generated using 5'RACE protocol. This choice leads to a global alignment algorithm to align the left bound of V.
@@ -128,7 +128,7 @@ Under the hood, `mixcr analyze amplicon` executes the following pipeline of MiXC
     results/RACE_TRA_10ng_3.vdjca
 ```
 
-Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithout5UTRWithP` for the alignment of V segments (see [Gene features and anchor points](../../reference/geneFeatures.md). 
+Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithout5UTRWithP` for the alignment of V segments (see [Gene features and anchor points](../../reference/ref-gene-features.md). 
 Because no primers were used for V segment, we use global alignment on the left bound of V and since we have primers on C segment, we use global alignment for J and local on the right bound of C. This behavior is defined by the following options: `-OvParameters.parameters.floatingLeftBound=false`, `-OjParameters.parameters.floatingRightBound=false`, `-OcParameters.parameters.floatingRightBound=true`.
 
 This step utilizes all available CPUs and scales perfectly. When there are a lot of CPUs, the only limiting factor is the speed of disk I/O. To limit the number of used CPUs one can pass `--threads N` option.

@@ -384,7 +384,7 @@ Option `--report` is specified here explicitly.
 : `kAligner2` specifies the specific BCR aligner.
 
 `-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP"`
-: Sets a V gene feature to align. Check [gene features](../reference/geneFeatures.md) for more info.
+: Sets a V gene feature to align. Check [gene features](../reference/ref-gene-features.md) for more info.
 
 `-OvParameters.parameters.floatingLeftBound=false`
 : Results in a global alignment algorithm for V gene left bound. 

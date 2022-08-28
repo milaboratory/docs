@@ -35,13 +35,13 @@ The meaning of these options is the following.
 :   is set to `hsa` for _Homo Sapiens_
 
 `--starting-material`
-:   is set to `rna` and corresponds to `VTranscriptWithout5UTRWithP` alignment feature for V-gene (see [Gene features and anchor points](../../reference/geneFeatures.md) for details)
+:   is set to `rna` and corresponds to `VTranscriptWithout5UTRWithP` alignment feature for V-gene (see [Gene features and anchor points](../../reference/ref-gene-features.md) for details)
 
 `--receptor-type`
 :  `bcr`. It affects the choice of alignment algorithms. MiXCR uses a specific set of algorithms for BCR data.
 
 `--umi-pattern-name`
-: `MiLaboratoriesMultiplexBCR`. This is a build in MiXCR [umi-pattern](../../reference/tag-pattern.md) that stands for `"^N{0:2}tggtatcaacgcagagt(UMI:NNNNTNNNNTNNNN)N{20}(R1:*) \ ^N{22}(R2:*)"`. This pattern sets the UMI location in the read and is also written in a way that primers locations will be excluded from the sequences during the analysis.
+: `MiLaboratoriesMultiplexBCR`. This is a build in MiXCR [umi-pattern](../../reference/ref-tag-pattern.md) that stands for `"^N{0:2}tggtatcaacgcagagt(UMI:NNNNTNNNNTNNNN)N{20}(R1:*) \ ^N{22}(R2:*)"`. This pattern sets the UMI location in the read and is also written in a way that primers locations will be excluded from the sequences during the analysis.
 
 `--5-end`
 :   is set to `no-v-primers` because we specified umi-pattern in such a way that primers locations will be excluded from the sequences during the analysis. This leads to a global alignment algorithms to align the left bound of V gene.
@@ -103,7 +103,7 @@ Under the hood, `mixcr analyze amplicon` command that we use above actually exec
     results/M1_4T1_Blood_S2.vdjca
 ```
 
-Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithout5UTRWithP` for the alignment of V segments (see [Gene features and anchor points](../../reference/geneFeatures.md).
+Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithout5UTRWithP` for the alignment of V segments (see [Gene features and anchor points](../../reference/ref-gene-features.md).
 
 `-OvParameters.parameters.floatingLeftBound=false -OjParameters.parameters floatingRightBound=false -OcParameters.parameters.floatingRightBound=false`
 : These options determine global vs local alignment algorithm on the bounds of gene segments. As have been mentioned above we bypass primer sequences by means of the umi-pattern. Thus all segment bouns should be aligned globally.

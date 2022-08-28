@@ -23,7 +23,7 @@ mixcr exportQc coverage \
     alignments.vdjca \
     coverage.(pdf|eps|svg|png|jpg)  
 ```
-Exports [anchor points](geneFeatures.md) coverage by the library. It separately plots coverage for R1, R2 and overlapping reads.
+Exports [anchor points](ref-gene-features.md) coverage by the library. It separately plots coverage for R1, R2 and overlapping reads.
 
 Example:
 

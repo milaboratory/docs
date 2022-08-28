@@ -59,10 +59,10 @@ The command takes raw sequencing data as input and supports the following format
 : Presence of PCR primers and/or adapter sequences. If sequences of primers used for PCR or adapters are present in sequencing data, it may influence the accuracy of V, J and C gene segments identification and CDR3 mapping. Possible values: `adapters-present`, `no-adapters`
 
 `--umi-pattern <pattern>`
-: [Pattern](./tag-pattern.md) for UMI-barcoded data
+: [Pattern](./ref-tag-pattern.md) for UMI-barcoded data
 
 `--umi-pattern-name`
-: One of [predefined](./tag-pattern.md) barcode patterns for UMI-barcoded data
+: One of [predefined](./ref-tag-pattern.md) barcode patterns for UMI-barcoded data
 
 `--region-of-interest <regionOfInterest>`
 : MiXCR will use only reads covering the whole target region; reads which partially cover selected region will be dropped during [clonotype assembly](./mixcr-assemble.md). All non-CDR3 options require long high-quality paired-end data. Default value `CDR3`.
@@ -164,7 +164,7 @@ mixcr align \
 
 Values of parameters are computed from the values of required analyze amplicon options.
 
-Option `--starting-material` affects the choice of V gene region which will be used as a target for Variable segment: `rna` corresponds to the `VTranscriptWithout5UTRWithP` and `dna` to `VGeneWithP` (see [Gene features and anchor points](geneFeatures.md) for details).
+Option `--starting-material` affects the choice of V gene region which will be used as a target for Variable segment: `rna` corresponds to the `VTranscriptWithout5UTRWithP` and `dna` to `VGeneWithP` (see [Gene features and anchor points](ref-gene-features.md) for details).
 
 Option `--receptor-type` affects aligner parameters preset if `--align-preset` is not specified. For BCR data MiXCR will use [`kAligner2`](mixcr-align.md#v-j-and-c-aligners-parameters), which is better suited for highly mutated data with big indels, while in other case it will use [`kAligner`](mixcr-align.md#v-j-and-c-aligners-parameters).
 
@@ -404,7 +404,7 @@ mixcr align \
 
 MiXCR uses [`rna-seq` preset](mixcr-align.md#aligner-parameters) which is specifically optimized for non-targeted fragmented shotgun data.
 
-Option `--starting-material` affects the choice of V gene region which will be used as a target for Variable segment: `rna` corresponds to the `VTranscriptWithout5UTRWithP` and `dna` to `VGeneWithP` (see [Gene features and anchor points](geneFeatures.md) for details).
+Option `--starting-material` affects the choice of V gene region which will be used as a target for Variable segment: `rna` corresponds to the `VTranscriptWithout5UTRWithP` and `dna` to `VGeneWithP` (see [Gene features and anchor points](ref-gene-features.md) for details).
 
 #### `assemblePartial`
 

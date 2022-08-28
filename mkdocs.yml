@@ -172,6 +172,8 @@ nav:
         - 'format-fastq': mixcr/reference/mitool-format-fastq.md
         - 'compress-sequence-set': mixcr/reference/mitool-compress-sequence-set.md
       - 'Specs':
-        - 'Tag Pattern': mixcr/reference/tag-pattern.md
-        - 'Gene features and reference points': mixcr/reference/geneFeatures.md
+        - 'Tag Pattern': mixcr/reference/ref-tag-pattern.md
+        - 'Gene features and reference points': mixcr/reference/ref-gene-features.md
+        - 'Translation rules': mixcr/reference/ref-translation-rules.md
+        - 'Mutations encoding': mixcr/reference/ref-mutations-encoding.md
         - 'RepSeq.io JSON format': mixcr/reference/repseqio-json-format.md

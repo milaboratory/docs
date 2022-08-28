@@ -41,10 +41,10 @@ The command takes alignments (`.vdjca`) or clones (`.clnx`) file as input and pr
 : JSON formatted [report](./report-extend.md) file
 
 `--v-anchor`
-: V extension [anchor point](./geneFeatures.md)  (default: `CDR3Begin`).
+: V extension [anchor point](./ref-gene-features.md)  (default: `CDR3Begin`).
 
 `--j-anchor`
-: J extension [anchor point](./geneFeatures.md) (default: `CDR3End`).
+: J extension [anchor point](./ref-gene-features.md) (default: `CDR3End`).
 
 `-q, --quality`
 : Quality score of extended sequence (default: `30`).
