@@ -79,6 +79,11 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 
+extra:
+  analytics:
+    provider: google
+    property: G-1KLG43HZP1
+
 extra_css:
   - css/extra.css
 
