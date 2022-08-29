@@ -240,7 +240,7 @@ The easiest way to obtain results from this type of data is to use `mixcr analyz
 > mixcr analyze amplicon \ 
   --species mmu \
   --starting-material rna \
-  --receptor-type bcr \
+  --receptor-type tcr \
   --5-end no-v-primers \
   --3-end c-primers \
   --adapters adapters-present \
@@ -277,7 +277,7 @@ mixcr align -s mmu \
     -OjParameters.parameters.floatingRightBound=false \
     -OcParameters.parameters.floatingRightBound=true \
     fastq/S_s_R1.fastq.gz fastq/S_s_R2.fastq.gz \
-     result/S_s_R1.vdjca
+    result/S_s_R1.vdjca
   
 # assemble clonotypes
 mixcr assemble result/S_s_R1.vdjca result/S_s_R1.clns
