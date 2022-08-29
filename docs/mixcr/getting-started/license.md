@@ -10,7 +10,7 @@ ACADEMIC LICENSE terms are available at:
 
 [https://github.com/milaboratory/mixcr/blob/develop/LICENSE](https://github.com/milaboratory/mixcr/blob/develop/LICENSE) 
 
-For ACADEMIC LICENSE go to [https://licensing.milaboratories.com/](https://licensing.milaboratories.com/), for BUSINESS LICENSE email us on [licensing@milaboratories.com](licensing@milaboratories.com).
+For ACADEMIC LICENSE go to [https://licensing.milaboratories.com/](https://licensing.milaboratories.com/), for BUSINESS LICENSE email us on [licensing@milaboratories.com](mailto:licensing@milaboratories.com).
 
 
 ## Cite 

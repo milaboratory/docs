@@ -1,6 +1,6 @@
 # `mixcr align`
 
-Aligns raw sequencing data against V-, D-, J- and C- gene segment references library database for specified species. If the input sequences have barcodes (UMIs, cell barcodes etc.), MiXCR allows to parse barcodes using powerful [pattern matching syntax](./tag-pattern.md) and assign them to every alignment. Additionally, read trimming may be applied if corresponding options are specified. MiXCR supports paired-end and single-end [`.fastq`](https://en.wikipedia.org/wiki/FASTQ_format), [`.fasta`](https://en.wikipedia.org/wiki/FASTA_format), [`.bam` and `.sam`](https://en.wikipedia.org/wiki/Binary_Alignment_Map) formats.
+Aligns raw sequencing data against V-, D-, J- and C- gene segment references library database for specified species. If the input sequences have barcodes (UMIs, cell barcodes etc.), MiXCR allows to parse barcodes using powerful [pattern matching syntax](./ref-tag-pattern.md) and assign them to every alignment. Additionally, read trimming may be applied if corresponding options are specified. MiXCR supports paired-end and single-end [`.fastq`](https://en.wikipedia.org/wiki/FASTQ_format), [`.fasta`](https://en.wikipedia.org/wiki/FASTA_format), [`.bam` and `.sam`](https://en.wikipedia.org/wiki/Binary_Alignment_Map) formats.
 
 <figure markdown>
 ![align](./pics/align.svg)
@@ -52,7 +52,7 @@ Basic command line options are:
 : Force overwrite of output file(s).
 
 `--species, -s` 
-: Species (organism). Possible values: `hsa` (or HomoSapiens), `mmu` (or MusMusculus), `rat`, `spalax`, `alpaca`, `lamaGlama`, `mulatta` (_Macaca Mulatta_), `fascicularis` (_Macaca Fascicularis_) or any species from [IMGT ® library](docs/mixcr/guides/external-libraries.md). 
+: Species (organism). Possible values: `hsa` (or HomoSapiens), `mmu` (or MusMusculus), `rat`, `spalax`, `alpaca`, `lamaGlama`, `mulatta` (_Macaca Mulatta_), `fascicularis` (_Macaca Fascicularis_) or any species from [IMGT ® library](../guides/external-libraries.md). 
 
 `--library, -b <library>`
 : V/D/J/C gene library. By default, the `default` MiXCR reference library is used. One can also use [external libraries](../guides/external-libraries.md)
@@ -64,7 +64,7 @@ Basic command line options are:
 : JSON formatted [report](./report-align.md) file 
 
 `--tag-pattern <tagPattern>` 
-: [Tag pattern](./tag-pattern.md) to extract from the read. 
+: [Tag pattern](./ref-tag-pattern.md) to extract from the read. 
 
 `--tag-pattern-name <tagPatternName>` 
 : Tag pattern name from the built-in list. Available patterns: [TODO] 
@@ -188,7 +188,7 @@ To override these parameters one can e.g. do:
 
 ### Gene features to align
 
-MiXCR allows to specify particular [`gene features`](geneFeatures.md) that will be extracted from reference and used as a targets for alignments. Thus, each sequencing read will be aligned to these extracted reference regions. Parameters responsible for target gene regions are:
+MiXCR allows to specify particular [`gene features`](ref-gene-features.md) that will be extracted from reference and used as a targets for alignments. Thus, each sequencing read will be aligned to these extracted reference regions. Parameters responsible for target gene regions are:
 
 `-OvParameters.geneFeatureToAlign=VRegionWithP`
 : region in V gene which will be used as target

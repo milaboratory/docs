@@ -255,7 +255,7 @@ Option `--report` is specified here explicitly.
 : `kAligner2` specifies the specific BCR aligner.
 
 `-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP"`
-: Sets a V gene feature to align. Check [gene features](../reference/geneFeatures.md) for more info.
+: Sets a V gene feature to align. Check [gene features](../reference/ref-gene-features.md) for more info.
 
 `-OvParameters.parameters.floatingLeftBound=true`
 : Results in a local alignment algorithm for V gene left bound.
@@ -493,7 +493,7 @@ Another quality report we should investigate is chain abundance plot.
 ```
 
 <figure markdown>
-![chainUsageAlign.svg](chainUsageAlign.svg)
+![chainUsageAlign.svg](biomed2-bcr/chainUsageAlign.svg)
 </figure>
 
 From that plot we can see another issue. According to the publication, the data was generated using a V and J primers  multiplex protocol in such a way that every sample should have sequences for both heavy and light IG chains. But we see, that most samples have only one of the chains present in the sample, and those samples that have both still have a strange distribution, which has to be about 50\50, as every cell has both chains.
@@ -581,10 +581,10 @@ Arguments explained:
 : activate [BCR dedicated aligner algorithms](../reference/mixcr-align.md#aligner-parameters)
 
 `-OvParameters.geneFeatureToAlign={CDR1Begin:VEnd}+{VEnd:VEnd(-20)}`
-: determines V gene features that will be used for alignment. Here, it is V transcript staring from `CDR1` till `VEnd`, and P segment (see [gene features](../reference/geneFeatures.md))
+: determines V gene features that will be used for alignment. Here, it is V transcript staring from `CDR1` till `VEnd`, and P segment (see [gene features](../reference/ref-gene-features.md))
 
 `-OjParameters.geneFeatureToAlign={JBegin(20):JBegin}+{JBegin:FR4Begin(9)}`
-: determines J gene features that will be used for alignment. Here, it is a J gene-derived P segment and a J transcript staring from `JBegin` till 9 bp past `FR4Begin`. (see [gene features](../reference/geneFeatures.md))
+: determines J gene features that will be used for alignment. Here, it is a J gene-derived P segment and a J transcript staring from `JBegin` till 9 bp past `FR4Begin`. (see [gene features](../reference/ref-gene-features.md))
 
 `-OvParameters.parameters.floatingLeftBound=false`
 : global alignment will be applied on the left bound of V gene. Meaning the left bound of target will be aligned. This is possible because we have excluded V gene primers location from the alignment feature. Overall it allows to increase V gene identification accuracy and overall specificity of alignments.

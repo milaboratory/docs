@@ -21,7 +21,7 @@ To use these sequences in MiXCR or any other `repseqio`-based software, we have 
 
 There are two main options of creating library file:
 - create repseqio-JSON formatted library using two automated steps and then, if required, fill in information that was not automatically detected
-- from scratch, manually provide JSON file with meta information and positions of `CDR`s (complementarity determining regions) and `FR`s (framework regions) along with positions of other important gene features required for downstream software (see list of available anchor points [here](http://mixcr.readthedocs.io/en/latest/geneFeatures.html#germline-features)).
+- from scratch, manually provide JSON file with meta information and positions of `CDR`s (complementarity determining regions) and `FR`s (framework regions) along with positions of other important gene features required for downstream software (see list of available anchor points [here](../reference/ref-gene-features.md)).
 
 Here we will cover automatic import procedure. Please see [library format description](../reference/repseqio-json-format.md) for more details.
 
@@ -104,7 +104,7 @@ AA:  Not Available
 =========
 ```
 
-basically this shows us how `repseqio` see the library content. After [`fromFasta`](../reference/repseqio-fromFasta.md) action library contains information only on begin and end positions of genes (strictly speaking begin and end positions of gene feature we specified using `--gene-feature` option), so the only regions it can extract are `VRegion` for `V` gene and `JRegion` for `J` (see illustration [here](../reference/geneFeatures.md)). For normal repertoire extraction we, at least, must specify positions of `CDR3Begin` (in V gene) and `CDR3End` (in J gene), and probably also need `FR`s, if we plan to extract corresponding regions from repertoire data. Here we again have two options:
+basically this shows us how `repseqio` see the library content. After [`fromFasta`](../reference/repseqio-fromFasta.md) action library contains information only on begin and end positions of genes (strictly speaking begin and end positions of gene feature we specified using `--gene-feature` option), so the only regions it can extract are `VRegion` for `V` gene and `JRegion` for `J` (see illustration [here](../reference/ref-gene-features.md)). For normal repertoire extraction we, at least, must specify positions of `CDR3Begin` (in V gene) and `CDR3End` (in J gene), and probably also need `FR`s, if we plan to extract corresponding regions from repertoire data. Here we again have two options:
 
 * manually specify corresponding positions by adding new items to the `anchorPoints` field (see [library format description](../reference/repseqio-json-format.md))
 * let repseqio find sequence with known anchor points homologous to our sequences from other library (built-in library in this case) and infer missing anchor point from them.
@@ -195,7 +195,7 @@ tgaattctgggggttaccagaaagttacctttggaactggaacaaagctccaagtcatcc
 caa
 ```
 
-To use [`fromPaddedFasta`](../reference/repseqio-fromPaddedFasta.md) action, you should specify positions of anchor points (see [here](../reference/geneFeatures.md)) in padded file. Here is the most common options for `V` genes in `IMGT`:
+To use [`fromPaddedFasta`](../reference/repseqio-fromPaddedFasta.md) action, you should specify positions of anchor points (see [here](../reference/ref-gene-features.md)) in padded file. Here is the most common options for `V` genes in `IMGT`:
 ```
 -PFR1Begin=0 -PCDR1Begin=78 -PFR2Begin=114 -PCDR2Begin=165 -PFR3Begin=195 -PCDR3Begin=309 -PVEnd=-1
 ```

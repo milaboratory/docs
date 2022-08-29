@@ -218,7 +218,7 @@ The meaning of these options is the following.
 :   is set to `hsa` for _Homo Sapience_
 
 `--starting-material`
-:   RNA or DNA. It affects the choice of V gene region which will be used as target in [`align`](../reference/mixcr-align.md) step (`vParameters.geneFeatureToAlign`, see [`align` documentation](../../reference/mixcr-align.md)): `rna` corresponds to the `VTranscriptWithout5UTRWithP` and `dna` to `VGeneWithP` (see [Gene features and anchor points](../reference/geneFeatures.md) for details)
+:   RNA or DNA. It affects the choice of V gene region which will be used as target in [`align`](../reference/mixcr-align.md) step (`vParameters.geneFeatureToAlign`, see [`align` documentation](../reference/mixcr-align.md)): `rna` corresponds to the `VTranscriptWithout5UTRWithP` and `dna` to `VGeneWithP` (see [Gene features and anchor points](../reference/ref-gene-features.md) for details)
 
 `--receptor-type`
 :   TCR or BCR. It affects the choice of underlying alignment algorithms: MiXCR uses fundamentally different algorithms for TCRs and BCRs because BCRs have somatic hypermutations and long indels.
@@ -233,7 +233,7 @@ The meaning of these options is the following.
 :  is set to `adapters-present` because primer sequence is present in the data and has not been cut prior to. Presence or absence of adapter sequences results in the choice between local and global alignment algorithms on the edges of the target sequence.
 
 `--umi-pattern`
-:   is used to specify UMI pattern for the library. MiXCR provides a powerful regex-like [language](../reference/tag-pattern.md) allowing to specify almost arbitrary barcode structure. Here we
+:   is used to specify UMI pattern for the library. MiXCR provides a powerful regex-like [language](../reference/ref-tag-pattern.md) allowing to specify almost arbitrary barcode structure. Here we
 use `^(R1:*)\^(UMI:N{17})(R2:N{*})` pattern to specify that R1 should be used as is, UMI spans the first 17 letters of R2 and the rest of R2 is used as a paired read.
 
 Running the command above will generate the following files:

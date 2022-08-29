@@ -103,13 +103,13 @@ The meaning of these options is the following.
 :   is set to `hsa` for _Homo Sapience_
 
 `--starting-material`
-:   RNA or DNA. It affects the choice of V gene region which will be used as target in [`align`](../reference/mixcr-align.md) step (`vParameters.geneFeatureToAlign`, see [`align` documentation](../../reference/mixcr-align.md)): `rna` corresponds to the `VTranscriptWithout5UTRWithP` and `dna` to `VGeneWithP` (see [Gene features and anchor points](../reference/geneFeatures.md) for details)
+:   RNA or DNA. It affects the choice of V gene region which will be used as target in [`align`](../reference/mixcr-align.md) step (`vParameters.geneFeatureToAlign`, see [`align` documentation](../reference/mixcr-align.md)): `rna` corresponds to the `VTranscriptWithout5UTRWithP` and `dna` to `VGeneWithP` (see [Gene features and anchor points](../reference/ref-gene-features.md) for details)
 
 `--receptor-type`
 :   `bcr`. It affects the choice of underlying alignment algorithms: MiXCR uses fundamentally different algorithms for TCRs and BCRs because BCRs have somatic hypermutations and long indels.
 
 `--umi-pattern`
-:   is used to specify UMI pattern for the library. MiXCR provides a powerful regex-like [language](../reference/tag-pattern.md) allowing to specify almost arbitrary barcode structure. Here we use `^N{7}(R1:*) \ ^(UMI:N{12})N{4}(R2:*)` pattern to specify the location of UMI.
+:   is used to specify UMI pattern for the library. MiXCR provides a powerful regex-like [language](../reference/ref-tag-pattern.md) allowing to specify almost arbitrary barcode structure. Here we use `^N{7}(R1:*) \ ^(UMI:N{12})N{4}(R2:*)` pattern to specify the location of UMI.
 
 `--5-end`
 : is set to `no-v-primers`, because the library was obtained using 5'RACE. This leads to a global alignment algorithm on the left bound of V gene.

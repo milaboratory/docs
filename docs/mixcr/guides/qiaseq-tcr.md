@@ -66,7 +66,7 @@ The meaning of these options is the following.
 :   is set to `mmu` for _Mus Musculus_
 
 `--starting-material`
-:   is set to `rna` and corresponds to `VTranscriptWithout5UTRWithP` alignment feature for V-gene (see [Gene features and anchor points](../reference/geneFeatures.md) for details)
+:   is set to `rna` and corresponds to `VTranscriptWithout5UTRWithP` alignment feature for V-gene (see [Gene features and anchor points](../reference/ref-gene-features.md) for details)
 
 `--receptor-type`
 :  tcr. It affects the choice of alignment algorithms.
@@ -81,7 +81,7 @@ The meaning of these options is the following.
 :   `adapters-present` because primer sequence is present in the data and has not been cut prior to. 
 
 `--umi-pattern`
-:   is used to specify UMI pattern for the library. MiXCR provides a powerful regex-like [language](../reference/tag-pattern.md) allowing to specify almost arbitrary barcode structure. Here we use `^(R1:*)\^(UMI:N{12})` pattern to specify that R1 should be used as is, UMI spans the first 12 letters of R2 and the rest of R2 is ignored, because it only covers a few 5'UTR base pairs.
+:   is used to specify UMI pattern for the library. MiXCR provides a powerful regex-like [language](../reference/ref-tag-pattern.md) allowing to specify almost arbitrary barcode structure. Here we use `^(R1:*)\^(UMI:N{12})` pattern to specify that R1 should be used as is, UMI spans the first 12 letters of R2 and the rest of R2 is ignored, because it only covers a few 5'UTR base pairs.
 
 
 Running the command above will generate the following files:
@@ -150,7 +150,7 @@ Under the hood, `mixcr analyze amplicon` executes the following pipeline of MiXC
     results/Melanoma_tumor_from_humanized_mice_1.vdjca
 ```
 
-Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithout5UTRWithP` for the alignment of V segments (see [Gene features and anchor points](../reference/geneFeatures.md). Because we don't have primers on V segment, we use global alignment on the left bound of V and since we have primers on C segment, we use global alignment for J and local on the right bound of C.
+Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithout5UTRWithP` for the alignment of V segments (see [Gene features and anchor points](../reference/ref-gene-features.md). Because we don't have primers on V segment, we use global alignment on the left bound of V and since we have primers on C segment, we use global alignment for J and local on the right bound of C.
 
 This step utilizes all available CPUs and scales perfectly. When there are a lot of CPUs, the only limiting factor is the speed of disk I/O. To limit the number of used CPUs one can pass `--threads N` option.
 
