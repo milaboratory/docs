@@ -118,7 +118,7 @@ Use primary grouping and facets:
 
 ```shell
 > mixcr exportPlots diversity -f \
-    --plot-type libeplot-bindot \
+    --plot-type lineplot-bindot \
     --primary-group Time \
     --primary-group-values T0,M1,M2 \
     --facet-by Marker \
