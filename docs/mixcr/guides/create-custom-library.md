@@ -2,7 +2,7 @@
 
 Suppose we have a bunch of de-novo discovered V/D/J/C sequences in fasta files with the following content:
 
-`my_genes.v.fasta`*` (contain VRegion, i.e. from the FR1 begin to the last nucleotide right before RSS, normally somewhere after conserved cysteine)
+`my_genes.v.fasta` (contain VRegion, i.e. from the FR1 begin to the last nucleotide right before RSS, normally somewhere after conserved cysteine)
 ```fasta
 >TRBV12-348*00|F
 GATGCTGGAGTTATCCAGTCACCCCGCCATGAGGTGACAGAGATGGGACAAGAAGTGACTCTGAGATGTAAACCA
