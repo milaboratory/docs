@@ -14,6 +14,11 @@ Library construction was performed using the SMARTer Human BCR IgG IgM H/K/L Pro
 
 On the scheme bellow you can see structure of cDNA library. UMI is located in the first 12 bp of R2.
 
+<figure markdown>
+![SMARTerHumanBCRIgG-IgM-H-K-L.svg](takara-hsa-bcr/SMARTerHumanBCRIgG-IgM-H-K-L.svg)
+</figure>
+
+
 
 All data may be downloaded directly from SRA using e.g. [SRA Explorer](https://sra-explorer.info):
 ??? tip "Use this script to download the full data set with the proper filenames for the tutorial:"
