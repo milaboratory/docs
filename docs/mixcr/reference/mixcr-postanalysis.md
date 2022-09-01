@@ -215,7 +215,7 @@ The following options may be overridden:
 
 The following `<metric>` values are supported:
 
-- [CDR3 metrics](./mixcr-postanalysis.md#cdr3-metrics): `cdr3metrics.cdr3lenNT`, `cdr3metrics.cdr3lenAA`, `cdr3metrics.ndnLenNT`, `cdr3metrics.addedNNT`, `cdr3metrics.strength`, `cdr3metrics.hydrophobicity`, `cdr3metrics.surface`, `cdr3metrics.volume`, `cdr3metrics.charge`,
+- [CDR3 metrics](./mixcr-postanalysis.md#cdr3-metrics): `cdr3metrics.cdr3lenNT`, `cdr3metrics.cdr3lenAA`, `cdr3metrics.ndnLenNT`, `cdr3metrics.addedNNT`, `cdr3metrics.strength`, `cdr3metrics.hydrophobicity`, `cdr3metrics.disorder`, `cdr3metrics.volume`, `cdr3metrics.charge`,
 - [Diversity measures](./mixcr-postanalysis.md#diversity-measures): `diversity.observed`, `diversity.shannonWiener`, `diversity.chao1`, `diversity.normalizedShannonWienerIndex`, `diversity.inverseSimpsonIndex`, `diversity.giniIndex`, `diversity.d50`, `diversity.efronThisted`,
 - [Segment usage](./mixcr-postanalysis.md#segment-usage-metrics): `vUsage`, `jUsage`, `isotypeUsage`, `vjUsage`
 
@@ -223,23 +223,38 @@ The following `<metric>` values are supported:
 
 CDR3 metrics may be separated into two groups. First includes "length" metrics:
 
-- Length of CDR3, aa — length of amino acid CDR3 sequence
-- Length of CDR3, nt — length of nucleotide CDR3 sequence
-- Length of `VJJunction`, nt — nucleotide length of N-D-N region
-- Added nucleotides — number of added `N` nucleotides
+`Length of CDR3, aa`
+: length of amino acid CDR3 sequence; shorter length may limit CDR3 loop steric flexibility and thereby enhance the specificity of antigen-driven selection ([Sofya A Kasatskaya et al., Elife. 2020](https://pubmed.ncbi.nlm.nih.gov/33289628/)).
 
-The second group includes averaged physicochemical characteristics computed for the five amino acids in the middle of the CDR3:
+`Length of CDR3, nt`
+: length of nucleotide CDR3 sequence
 
-- Strength of CDR3 — estimated strength of the interaction between CDR3 and cognate peptide computed as a derivative of the interaction energy,
-- Hydrophobicity of CDR3 — estimated hydrophobicity (Kidera factor 4)
-- Surface of CDR3 — estimated surface of CDR3
-- Volume of CDR3 — estimated volume of CDR3
-- Charge of CDR3 — estimated charge of CDR3
+`Length of `VJJunction`, nt`
+: nucleotide length of N-D-N region
 
-For details see the following publications and references therein:
+`Added nucleotides`
+: number of added `N` nucleotides
 
-- [_De Simone G et al, J Immunol. 2019 Dec 15_](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6900484/)
-- [_Logunova et al, Proc Natl Acad Sci USA. 2020 Jun 16_](https://pubmed.ncbi.nlm.nih.gov/32482872/)
+The second group includes averaged physicochemical characteristics computed for the five amino acids in the middle of CDR3, to better reflect functional differences in immune repertoires with respect to potential recognition of antigenic epitopes:
+
+`Strength` ( *Value is in range between 1.78 (ex. five Lys) to 5 (ex. five Leu)* )
+: Reflects average propensity to form strong interactions, based on Miyazawa-Jernigan potential ([Miyazawa S, Jernigan RL., J Mol Biol. 1996](https://pubmed.ncbi.nlm.nih.gov/8604144/); [Andrej Kosmrlj et al.,Proc Natl Acad Sci U S A. 2008](https://pubmed.ncbi.nlm.nih.gov/18946038/); [Andrej Kosmrlj et al.,Nature. 2010](https://pubmed.ncbi.nlm.nih.gov/20445539/)).  Depends mainly on the prevalence of aromatic (Tyr, Trp, Phe) and hydrophobic (Val, Tyr, Met, Ile, Leu, Trp, Phe) amino acid residues.
+Relevant for both for TCR ([Sofya A Kasatskaya et al., Elife. 2020](https://pubmed.ncbi.nlm.nih.gov/33289628/); [Nadezhda N Logunova et al., Proc Natl Acad Sci U S A. 2020](https://pubmed.ncbi.nlm.nih.gov/32482872/)) and BCR/Ig ([Ola Grimsholm et al., Cell Rep. 2020](https://pubmed.ncbi.nlm.nih.gov/32130900/)) repertoires.
+
+`Hydrophobicity` ( *Value is in range between -5,95 (ex. five Arg) to 5 (ex. five Trp)* )
+: Reflects hydrophobicity calculated via inverted [Kidera factor 4](https://link.springer.com/article/10.1007/BF01025492). Relevant for both TCR ([Sofya A Kasatskaya et al., Elife. 2020](https://pubmed.ncbi.nlm.nih.gov/33289628/); [Nadezhda N Logunova et al., Proc Natl Acad Sci U S A. 2020](https://pubmed.ncbi.nlm.nih.gov/32482872/)) and BCR/Ig ([Ola Grimsholm et al., Cell Rep. 2020](https://pubmed.ncbi.nlm.nih.gov/32130900/)) repertoires.
+
+!!! note
+    High hydrophobicity and the propensity to form strong interactions are common but not necessarily determinative features of cross-reactive immune receptors ( [Andrej Kosmrlj et al.,Proc Natl Acad Sci U S A. 2008](https://pubmed.ncbi.nlm.nih.gov/18946038/); [Brian D Stadinski et al., Nat Immunol. 2016](https://pubmed.ncbi.nlm.nih.gov/27348411/)). Non-hydrophobic contacts may underpin higher antigen specificity ([Sofya A Kasatskaya et al., Elife. 2020](https://pubmed.ncbi.nlm.nih.gov/33289628/)).
+
+`Volume` ( *Value is in range between 1.47 (ex. five Gly) to 5 (ex. five Trp)* )
+: Reflects relative [amino acid volume](http://www.imgt.org/IMGTeducation/Aide-memoire/_UK/aminoacids/IMGTclasses.html). Relevant for both TCR ([Sofya A Kasatskaya et al., Elife. 2020](https://pubmed.ncbi.nlm.nih.gov/33289628/); [Nadezhda N Logunova et al., Proc Natl Acad Sci U S A. 2020](https://pubmed.ncbi.nlm.nih.gov/32482872/)) and BCR/Ig ([Ola Grimsholm et al., Cell Rep. 2020](https://pubmed.ncbi.nlm.nih.gov/32130900/)) repertoires.
+
+`Charge` ( *Value is in range between -5 (ex. five Asp and/or Glu) to 5 (ex. five Arg and/or His and/or Lys)* )
+: Reflects relative abundance of positively charged  (Arg, His, Lys), negatively charged (Asp, Glu) and neutral amino acids.
+
+`Disorder`  (*Value is in range between -5 (maximal order) to 5 (maximal disorder)* )
+: Reflects relative abundance of structural disorder-promoting, order-promoting and neutral amino acids.
 
 ### Diversity measures
 

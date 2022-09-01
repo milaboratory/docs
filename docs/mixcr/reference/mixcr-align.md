@@ -105,6 +105,22 @@ Basic command line options are:
 `-O  <String=String>` 
 : Overrides default aligner parameter values (see below).
 
+!!! note "What if sample is sequenced across several lanes"
+    Sometimes it is required to concatenate several fastq files and analyse it as a single sample. This is a common practise when files are separated across sequencing lanes. MiXCR uses `{{n}}` syntax, that is similar to Linux wildcard behaviour.
+    
+    Bellow you can see an example of how to pass 8 fastq files (four per each paired read) to `mixcr align`:
+
+    ```shell
+    > ls fastq/
+        sample1_L001_S25_R1.fastq.gz    sample1_L001_S25_R2.fastq.gz 
+        sample1_L002_S25_R1.fastq.gz    sample1_L002_S25_R2.fastq.gz
+        sample1_L003_S25_R1.fastq.gz    sample1_L003_S25_R2.fastq.gz
+        sample1_L004_S25_R1.fastq.gz    sample1_L004_S25_R2.fastq.gz
+
+    > mixcr align -s hsa \
+        fastq/sample1_L{{n}}_S25_R1.fastq.gz \
+        fastq/sample1_L{{n}}_S25_R2.fastq.gz
+    ```
 
 ## Aligner parameters
 
