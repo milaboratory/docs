@@ -136,7 +136,7 @@ sample1.clns
 # TCRα clonotypes exported in tab-delimited txt
 sample1.clonotypes.TRAD.tsv  
 ```
-## Concatenating across multiple lanes
+### Concatenating across multiple lanes
 
 Sometimes it is required to concatenate several fastq files and analyse it as a single sample. This is a common practise when files are separated across sequencing lanes. MiXCR uses `{{n}}` syntax, that is similar to Linux wildcard behaviour.
 
