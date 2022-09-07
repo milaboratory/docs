@@ -113,6 +113,7 @@ nav:
         - 'SMARTer Human BCR IgG IgM H/K/L Profiling Kit': mixcr/guides/takara-hsa-bcr.md
         - 'NEBNext Immune Sequencing': mixcr/guides/nebnext-bcr.md
         - 'QIAseq Immune Repertoire TCR' : mixcr/guides/qiaseq-tcr.md
+        - 'iRepertoire / Illumina Ampliseq TCR LR' : mixcr/guides/irepertoire-tcr-lr.md
         - 'RNA-Seq data' : mixcr/guides/rnaseq.md
       - 'Analysis cases':
         - 'Targeted TCR UMI libraries': mixcr/guides/generic-umi-tcr.md

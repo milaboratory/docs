@@ -1,11 +1,11 @@
 # Barcode pattern syntax
 
-Barcode patterns are used to extract various barcodes (sample barcodes, UMIs, cell barcodes) from raw sequences, trim sequencing reads or filter some sequences out. MiXCR/MiTool provides a powerful pattern-matching regex-like language to specify almost arbitrary barcodes structure. In MiXCR one cane specify pattern directly at [`align` step](mixcr-align.md) or [`analyze`](mixcr-analyze.md#generic-targeted-amplicon-libraries) using `--tag-pattern` option. In MiTool patten must be provided for [`parse`](mitool-parse.md) step. 
+Barcode patterns are used to extract various barcodes (sample barcodes, UMIs, cell barcodes) from raw sequences, trim sequencing reads or filter some sequences out. MiXCR/MiTool provides a powerful pattern-matching regex-like language to specify almost arbitrary barcodes structure. In MiXCR one can specify pattern directly at [`align` step](mixcr-align.md) or [`analyze`](mixcr-analyze.md#generic-targeted-amplicon-libraries) using `--tag-pattern` option. In MiTool patten must be provided for [`parse`](mitool-parse.md) step. 
 
 Example:
 ```shell
 > mixcr align -s mmu \
-    --tag-pattern "^(UMI:N{3:5})attgcccgAAA\*" \
+    --tag-pattern "^(UMI:N{12})attgcccgAAA(R1:*)\(R2:*)" \
     input_R1.fastq input_R2.fastq output.vdjca
 ```
 
