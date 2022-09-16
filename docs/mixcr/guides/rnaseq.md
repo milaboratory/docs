@@ -1,6 +1,6 @@
-# RNASeq
+# RNA-Seq
 
-Here we will discuss how to extract TCR repertoire from RNASeq data.
+Here we will discuss how to extract TCR repertoire from RNA-Seq data. In this particular case we extract only TCR data because only T-cells were used in cDNA library preparation, but this protocol with slight adjustments, that will be mentioned further, is applicable to BCR data also.
 
 ## Data libraries
 
@@ -49,7 +49,7 @@ The easiest way to obtain results from this type of data is to use `mixcr analyz
 > mixcr analyze shotgun \ 
   --species hsa \
   --starting-material rna \
-  --receptor-type bcr \
+  --receptor-type tcr \
   fastq/CD8T_REH_4h_rep1.fastq.gz \
   result/CD8T_REH_4h_rep1
 ```
@@ -63,7 +63,7 @@ Arguments explained:
 : `rna` It affects the choice of V gene region which will be used as target in [`align`](../reference/mixcr-align.md) step (`vParameters.geneFeatureToAlign`, see [`align` documentation](../reference/mixcr-align.md)). By specifying `rna` as starting material, `VTranscriptWithout5UTRWithP` will be used as `geneFeatureToAlign` for V segment.
 
 `--receptor-type`
-: is set to `tcr` since as the samples consist of isolated Treg and CD8+ T-cells.
+: is set to `tcr` since as the samples consist of isolated Treg and CD8+ T-cells. For BCR data you would want to use `bcr` as it affects omitting `mixcr extend`.
 
 To process all samples together in one command a common practice is to use [GNU Parallel](https://www.gnu.org/software/parallel/):
 
@@ -99,7 +99,7 @@ mixcr align -s hsa \
 Option `--report` is specified here explicitly. `-p rnaseq` defines a set of aligner parameters specifically for RNASeq data. `-OallowPartialAlignments=true` preserves partial alignments to be assembled with `assemblePartial` on the next step.
 
 #### `assemblePartial`
-Assembles alignments that only partially cover `CDR3` region. This is a mandatory step for RNASeq data, as reads randomly cover all TCR / BCR segments. This function works with pairs of alignments (assembles two alignments at a time), thus it is usually recommended to perform two rounds of `assemblePartial` for better yield. For more information check [`mixcr assemblePartial`](../reference/mixcr-assemblePartial.md)
+Assembles alignments that only partially cover `CDR3` region. This is a mandatory step for RNA-Seq data, as reads randomly cover all TCR / BCR segments. This function works with pairs of alignments (assembles two alignments at a time), thus it is usually recommended to perform two rounds of `assemblePartial` for better yield. For more information check [`mixcr assemblePartial`](../reference/mixcr-assemblePartial.md)
 
 ```shell
 # assemble overlapping fragmented sequencing reads
@@ -119,7 +119,7 @@ Note that we specify the same report file on every step, thus reports will be ap
 
 #### `extend`
 
-If V- and/or J- segments  are uniquely determined, but `CDR3` edges lack nucleotides, `mixcr extend` will impute those from germline. This step is only applicable to T-cells due to the absence of hypermutations.
+If V- and/or J- segments  are uniquely determined, but `CDR3` edges lack nucleotides, `mixcr extend` will impute those from germline. This step is only applicable to T-cells due to the absence of hypermutations! In case of BCR data this step is omitted.
 
 ```shell
 mixcr extend \
@@ -171,9 +171,9 @@ Now, when the analysis is complete, lets visualize quality report data. Looking 
 This plot reveals a mild contamination by B-cells, since IGH and IGKL chains present in the samples despite Treg and CD8+ cells have been isolated for library preparation.
 
 
-## Full length BCR assembly
+## Full length receptor assembly
 
-Because RNAseq reads randomly cover the whole receptor gene region it is possible to assemble full-length sequences. To do that we should specify `--contig-assembly` option for `mixcr analyze shotgun` command.
+Because RNA-Seq reads randomly cover the whole receptor gene region it is possible to assemble full-length sequences. This is usually more relevant to BCR data, because, due to hypermutations, two different clones can share same `CDR3` sequence. To do that we should specify `--contig-assembly` option for `mixcr analyze shotgun` command.
 
 ```shell
 > mixcr analyze shotgun \ 
@@ -187,7 +187,7 @@ Because RNAseq reads randomly cover the whole receptor gene region it is possibl
 
 With this option MiXCR will try to assemble the longest possible sequences from input data.
 
-Under the hood this adjusts pipeline in the following manner:
+Under the hood this adjusts the pipeline in the following manner:
 
 
 1. Modify `mixcr assemble command` by adding `--write-alignments` option. With this option MiXCR will output `.clna` file that preserves original alignments.

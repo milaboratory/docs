@@ -46,7 +46,7 @@ see [Gene features and anchor points](../reference/ref-gene-features.md) for det
 :  `tcr`. It affects the choice of alignment algorithms.
 
 `--umi-pattern-name`
-: `MiLaboratoriesMultiplexTCR` specifies a build in UMI pattern for MiLaboratories RNA Multiplex TCR repertoire kit. This name stands for the following pattern: `"^N{0:2}tggtatcaacgcagagt(UMI:NNNNTNNNNTNNNN)N{21}(R1:*) \ ^N{42}(R2:*)"`. It specifies the position of UMI barcode and also defines the rules for primer trimming, thus we can treat the data as if no primer sequences present in  it. MiXCR provides a powerful regex-like [language](../reference/ref-tag-pattern.md) allowing to specify almost arbitrary barcode structure.
+: `MiLaboratoriesMultiplexTCR` specifies a build in UMI pattern for MiLaboratories RNA Multiplex TCR repertoire kit. This name stands for the following pattern: `"^N{0:2}tggtatcaacgcagagt(UMI:NNNNTNNNNTNNNN)N{21}(R1:*) \ ^N{20}(R2:*)"`. It specifies the position of UMI barcode and also defines the rules for primer trimming, thus we can treat the data as if no primer sequences present in  it. MiXCR provides a powerful regex-like [language](../reference/ref-tag-pattern.md) allowing to specify almost arbitrary barcode structure.
 
 `--5-end`
 : is set to `no-v-primers` because we used a `umi-pattern` that ignores part of the sequence where primers are located. This choice leads to a global alignment algorithm to align the left bound of V.

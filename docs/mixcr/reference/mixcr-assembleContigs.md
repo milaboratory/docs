@@ -10,13 +10,13 @@ This step may be used in the following cases:
 - for single-cell fragmented libraries (like 10x Genomics) to assemble full V-D-J consensus sequences in each cell
 - for poor quality targeted amplicon data with no UMI barcodes and with a high rates of sequencing and PCR errors in order to build full-length (or as long as possible) V-D-J contigs using consensus algorithms
 
-In the first two cases when the data is fragmented, reads do not have fixed position on the reference, so it's not possible to specify a fixed [`assemblingFeature`](./mixcr-assemble.md#core-assembler-parameters). MiXCR uses alignment-guided assembly algorithms to build the full-length consensus V-D-J sequence.
+In the first two cases the data is fragmented, reads do not have a fixed position on the reference, so it's not possible to specify a fixed [`assemblingFeature`](./mixcr-assemble.md#core-assembler-parameters). MiXCR uses alignment-guided assembly algorithms to build the full-length consensus V-D-J sequence.
 
-In the last case of poor quality targeted libraries, though the exact assembling feature may be known in advance, high mutation rate may lead to the situation when there are no any true (error-free) full-length V-D-J sequences in the data. Error correction algorithms used in [clonotype assembly](./mixcr-assemble.md) will not have any "anchor" sequence to determine true clone. In such case it might be beneficial to assemble clonotypes by CDR3 region and uses consenus algorithm to determine true clones and distinguish errors from hypermutations.
+In the last case of poor quality targeted libraries, though the exact assembling feature may be known in advance, high mutation rate may lead to the situation when there aren't any true (error-free) full-length V-D-J sequences in the data. Error correction algorithms used in [clonotype assembly](./mixcr-assemble.md) will not have any "anchor" sequence to determine the original clone. In this case we might benefit from assembling clonotypes by CDR3 region at first and then use a consensus algorithm to determine true clones and distinguish errors from hypermutations.
 
-The algorithm iterates through alignments that were used to build particular clonotype and aggregates information per each position in V-D-J reference. It takes into account cell barcodes (if present) to assembly full-length contigs inside cells. It also takes care about hypermutations and splits clonotypes into hypermutated variants (see `-OsubCloningRegion` [option](#full-sequence-assembler-parameters)).
+The algorithm iterates through alignments that were used to build a particular clonotype, and aggregates information per each position in V-D-J reference. It takes into account cell barcodes (if present) to assembly full-length contigs inside cells. It also takes care of hypermutations and splits clonotypes into hypermutated variants (see `-OsubCloningRegion` [option](#full-sequence-assembler-parameters)).
 
-Note that since `assembleContigs` uses alignments constituting clonotypes, it takes `.clna` (clones & alignments) file as input, produced by [`assemble`](./mixcr-assemble.md) command with option `--write-alignments`.
+Note that since `assembleContigs` uses original alignments, it takes `.clna` (clones & alignments) file as input, produced by [`assemble`](./mixcr-assemble.md) command with option `--write-alignments`.
 
 ## Command line options
 
@@ -30,7 +30,7 @@ mixcr assembleContigs [-f] [-t <threads>]
     clonotypes.clns
 ```
 
-The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` file that holds exhaustive information about consensus clonotype contigs. Clonotype table may be further extracted in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes) or in tabular form usign [`exportClones`](./mixcr-export.md#clonotype-tables) or with the possibility to [impute](./mixcr-export.md#export-contigs-with-imputation) uncovered V-D-J contig parts from germline (marking such nucleotides lowercase). Additionally, MiXCR produces a comprehensive [report](./report-assembleContigs.md).
+The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` file that holds exhaustive information on consensus clonotype contigs. Clonotype table may be further extracted in a human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes) or in a tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables). It is also possible to [impute](./mixcr-export.md#export-contigs-with-imputation) uncovered V-D-J contig parts from germline (marking such nucleotides lowercase). Additionally, MiXCR produces a comprehensive [report](./report-assembleContigs.md).
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
@@ -42,7 +42,7 @@ The command returns a highly-compressed, memory- and CPU-efficient binary `.clns
 : Ignore tags (UMIs, cell-barcodes)
 
 `-r, --report <reportFile>`
-: [Report](./report-assembleContigs.md) file (human-readable version, see `-j / --json-report` for machine readable report)
+: [Report](./report-assembleContigs.md) file (human-readable version, see `-j / --json-report` for a machine-readable report)
 
 `-j, --json-report <jsonReport>`
 : JSON formatted [report](./report-assembleContigs.md) file
