@@ -249,10 +249,20 @@ The presence or absence of primer and adapter sequences also affects behavior of
 [Exports](mixcr-export.md#clonotype-tables) clonotype tables separately for each immunological chain:
 
 ```
+> mixcr exportClones --chains TRG \
+    [export options] \
+    output_prefix.contigs.clns \
+    output_prefix.clonotypes.TRG.txt
+    
 > mixcr exportClones --chains TRAD \
     [export options] \
     output_prefix.contigs.clns \
     output_prefix.clonotypes.TRAD.txt
+
+> mixcr exportClones --chains TRA \
+    [export options] \
+    output_prefix.contigs.clns \
+    output_prefix.clonotypes.TRA.txt
 
 > mixcr exportClones --chains TRB \
     [export options] \
