@@ -51,6 +51,12 @@ plugins:
   - minify:
       minify_html: true
   - glightbox
+  - mike:
+      alias_type: symlink
+      redirect_template: null
+      deploy_prefix: ''
+      canonical_version: latest
+      javascript_dir: js
 
 markdown_extensions:
   - pymdownx.superfences
