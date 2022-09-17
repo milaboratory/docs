@@ -10,6 +10,7 @@
     --md-code-bg-color: #F7F8FA;
 
     --md-default-fg-color--light: rgba(10, 10, 51, 0.5);
+    --md-footer-fg-color--light: var(--md-typeset-color);
 
     --md-details-icon: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTkuNSA2TDE1LjUgMTJMOS41IDE4IiBzdHJva2U9IiMxMTA1MjkiIHN0cm9rZS13aWR0aD0iMS41Ii8+Cjwvc3ZnPg==");
     --md-clipboard-icon: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0yMC41IDMuNUg3LjVWNVYxNi41SDE5SDIwLjVWMy41Wk0yMC41IDJINy41QzYuNjcxNTcgMiA2IDIuNjcxNTcgNiAzLjVWNVYxNi41QzYgMTcuMzI4NCA2LjY3MTU3IDE4IDcuNSAxOEgxOUgyMC41QzIxLjMyODQgMTggMjIgMTcuMzI4NCAyMiAxNi41VjMuNUMyMiAyLjY3MTU3IDIxLjMyODQgMiAyMC41IDJaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTMuNDEzNzIgNkMyLjYyNjM2IDYuMDQ1NjcgMi4wMDE5NSA2LjY5ODY0IDIuMDAxOTUgNy40OTc0NVYyMC40OTc0QzIuMDAxOTUgMjEuMzI1OSAyLjY3MzUzIDIxLjk5NzQgMy41MDE5NSAyMS45OTc0SDE2LjUwMkMxNy4zMDA4IDIxLjk5NzQgMTcuOTUzNyAyMS4zNzMgMTcuOTk5NCAyMC41ODU3SDMuOTEzNzJDMy44MDgzNiAyMC41ODU3IDMuNzEwNjEgMjAuNTUzMSAzLjYzIDIwLjQ5NzRIMy41MDE5NVYyMC4zNjk0QzMuNDQ2MzEgMjAuMjg4OCAzLjQxMzcyIDIwLjE5MSAzLjQxMzcyIDIwLjA4NTdWNloiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPg==");
@@ -59,6 +60,7 @@
     --md-default-bg-color: #1d1d29;
 
     --md-default-fg-color--light: rgba(255, 255, 255, 0.5);
+    --md-footer-fg-color--light: var(--md-typeset-color);
 
     --c-a-hover-color: #49cc49;
 
