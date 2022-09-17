@@ -6,11 +6,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://docs.milaboratories.com/mixcr/overview/</loc>
-         <lastmod>2022-09-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://docs.milaboratories.com/mixcr/getting-started/docker/</loc>
          <lastmod>2022-09-17</lastmod>
          <changefreq>daily</changefreq>
@@ -362,16 +357,6 @@
     </url>
     <url>
          <loc>https://docs.milaboratories.com/mixcr/reference/repseqio-tsv/</loc>
-         <lastmod>2022-09-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.milaboratories.com/tips/test/</loc>
-         <lastmod>2022-09-17</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.milaboratories.com/tips/usefullBashScripts/</loc>
          <lastmod>2022-09-17</lastmod>
          <changefreq>daily</changefreq>
     </url>
