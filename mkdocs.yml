@@ -1,5 +1,8 @@
 site_name: Docs @ MiLaboratories
 site_url: https://docs.milaboratories.com/
+site_description: "MiXCR documentation portal"
+site_author: MiLaboratories Inc
+copyright: Copyright &copy; MiLaboratories Inc
 
 theme:
   name: material
@@ -42,15 +45,17 @@ repo_name: milaboratory/docs
 edit_uri: edit/main/docs/
 
 plugins:
-  - git-authors
-  - git-revision-date-localized:
-      type: timeago
-      enable_creation_date: true
   - search:
       lang: en
   - minify:
       minify_html: true
   - glightbox
+  - mike:
+      alias_type: symlink
+      redirect_template: null
+      deploy_prefix: ''
+      canonical_version: latest
+      javascript_dir: js
 
 markdown_extensions:
   - pymdownx.superfences
@@ -80,6 +85,10 @@ markdown_extensions:
       generic: true
 
 extra:
+  version:
+    provider: mike
+    default: latest
+  generator: false
   analytics:
     provider: google
     property: G-1KLG43HZP1
