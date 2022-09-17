@@ -87,7 +87,12 @@
     --c-clipboard-hover-color: rgba(255, 255, 255, 0.66);
 }
 
-footer {
+
+.md-footer .md-footer-meta {
+    background: var(--md-default-bg-color)
+}
+
+.md-footer__inner:not([hidden]) {
     display: none
 }
 
