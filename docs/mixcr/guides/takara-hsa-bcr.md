@@ -1,6 +1,6 @@
 # SMARTer Human BCR IgG IgM H/K/L Profiling Sequencing Kit (Takara Bio Inc.)
 
-Here we will discuss how to process BCR cDNA libraries obtained with SMARTer Human BCR IgG IgM H/K/L Profiling Sequencing Kit (Takara Bio Inc.).
+Here we will discuss how to process BCR cDNA libraries obtained with [SMARTer Human BCR IgG IgM H/K/L Profiling Sequencing Kit](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/human-bcr-profiling-kit-for-illumina-sequencing) (Takara Bio Inc.).
 
 ## Data libraries
 
@@ -14,71 +14,13 @@ Library construction was performed using the SMARTer Human BCR IgG IgM H/K/L Pro
 
 On the scheme bellow you can see structure of cDNA library. UMI is located in the first 12 bp of R2.
 
-<figure markdown>
-![SMARTerHumanBCRIgG-IgM-H-K-L.svg](takara-hsa-bcr/SMARTerHumanBCRIgG-IgM-H-K-L.svg)
-</figure>
+![SMARTerHumanBCRIgG-IgM-H-K-L.svg](takara-hsa-bcr/figs/10-SMARTerHumanBCRIgG-IgM-H-K-L.svg)
 
 
-
-All data may be downloaded directly from SRA using e.g. [SRA Explorer](https://sra-explorer.info):
+All data may be downloaded directly from SRA using e.g. [SRA Explorer](https://sra-explorer.info).
 ??? tip "Use this script to download the full data set with the proper filenames for the tutorial:"
-    ```shell
-    #!/usr/bin/env bash
-    #!/usr/bin/env bash
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/003/ERR5952573/ERR5952573_1.fastq.gz	-o FebControl1_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/003/ERR5952573/ERR5952573_2.fastq.gz	-o FebControl1_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/004/ERR5952574/ERR5952574_1.fastq.gz	-o FebControl2_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/004/ERR5952574/ERR5952574_2.fastq.gz	-o FebControl2_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/005/ERR5952575/ERR5952575_1.fastq.gz	-o FebControl3_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/005/ERR5952575/ERR5952575_2.fastq.gz	-o FebControl3_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/006/ERR5952576/ERR5952576_1.fastq.gz	-o FebControl4_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/006/ERR5952576/ERR5952576_2.fastq.gz	-o FebControl4_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/007/ERR5952577/ERR5952577_1.fastq.gz	-o FebControl5_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/007/ERR5952577/ERR5952577_2.fastq.gz	-o FebControl5_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/008/ERR5952578/ERR5952578_1.fastq.gz	-o FebControl6_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/008/ERR5952578/ERR5952578_2.fastq.gz	-o FebControl6_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952579/ERR5952579_1.fastq.gz	-o FebControl7_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952579/ERR5952579_2.fastq.gz	-o FebControl7_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/000/ERR5952580/ERR5952580_1.fastq.gz	-o FebControl8_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/000/ERR5952580/ERR5952580_2.fastq.gz	-o FebControl8_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/001/ERR5952581/ERR5952581_1.fastq.gz	-o FebControl9_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/001/ERR5952581/ERR5952581_2.fastq.gz	-o FebControl9_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/002/ERR5952582/ERR5952582_1.fastq.gz	-o FebControl10_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/002/ERR5952582/ERR5952582_2.fastq.gz	-o FebControl10_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/003/ERR5952583/ERR5952583_1.fastq.gz	-o FebControl11_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/003/ERR5952583/ERR5952583_2.fastq.gz	-o FebControl11_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/004/ERR5952584/ERR5952584_1.fastq.gz	-o FebControl12_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/004/ERR5952584/ERR5952584_2.fastq.gz	-o FebControl12_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/005/ERR5952585/ERR5952585_1.fastq.gz	-o FebControl13_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/005/ERR5952585/ERR5952585_2.fastq.gz	-o FebControl13_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/006/ERR5952586/ERR5952586_1.fastq.gz	-o FebControl14_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/006/ERR5952586/ERR5952586_2.fastq.gz	-o FebControl14_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/007/ERR5952587/ERR5952587_1.fastq.gz	-o FebControl15_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/007/ERR5952587/ERR5952587_2.fastq.gz	-o FebControl15_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/008/ERR5952588/ERR5952588_1.fastq.gz	-o MISC1_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/008/ERR5952588/ERR5952588_2.fastq.gz	-o MISC1_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952589/ERR5952589_1.fastq.gz	-o MISC2_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952589/ERR5952589_2.fastq.gz	-o MISC2_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/000/ERR5952590/ERR5952590_1.fastq.gz	-o MISC3_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/000/ERR5952590/ERR5952590_2.fastq.gz	-o MISC3_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/001/ERR5952591/ERR5952591_1.fastq.gz	-o MISC4_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/001/ERR5952591/ERR5952591_2.fastq.gz	-o MISC4_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/002/ERR5952592/ERR5952592_1.fastq.gz	-o MISC5_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/002/ERR5952592/ERR5952592_2.fastq.gz	-o MISC5_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/003/ERR5952593/ERR5952593_1.fastq.gz	-o MISC6_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/003/ERR5952593/ERR5952593_2.fastq.gz	-o MISC6_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/004/ERR5952594/ERR5952594_1.fastq.gz	-o MISC7_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/004/ERR5952594/ERR5952594_2.fastq.gz	-o MISC7_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/005/ERR5952595/ERR5952595_1.fastq.gz	-o MISC8_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/005/ERR5952595/ERR5952595_2.fastq.gz	-o MISC8_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/006/ERR5952596/ERR5952596_1.fastq.gz	-o MISC9_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/006/ERR5952596/ERR5952596_2.fastq.gz	-o MISC9_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/007/ERR5952597/ERR5952597_1.fastq.gz	-o MISC10_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/007/ERR5952597/ERR5952597_2.fastq.gz	-o MISC10_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/008/ERR5952598/ERR5952598_1.fastq.gz	-o MISC11_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/008/ERR5952598/ERR5952598_2.fastq.gz	-o MISC11_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952599/ERR5952599_1.fastq.gz	-o MISC12_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952599/ERR5952599_2.fastq.gz	-o MISC12_R2.fastq.gz
+    ```shell title="download.sh"
+    --8<-- "takara-hsa-bcr/scripts/10-download.sh"
     ```
 
 ## Upstream analysis
@@ -97,8 +39,8 @@ According to the library preparation protocol, the library does not have any V p
     --adapters no-adapters \
     --assemble "-OassemblingFeatures={FR1Begin:FR4End}" \
     --umi-pattern "^N{7}(R1:*) \ ^(UMI:N{12})N{4}(R2:*)" \
-    fastq/FebControl1_R1.fastq.gz \
-    fastq/FebControl1_R2.fastq.gz \
+    raw/FebControl1_R1.fastq.gz \
+    raw/FebControl1_R2.fastq.gz \
     results/FebControl1
 ```
 
@@ -153,21 +95,7 @@ Obtained `*.tsv` files can be used for manual examination. `*.clns` files can be
 In order to run the analysis for all samples in the project on Linux we can use [GNU Parallel](https://www.gnu.org/software/parallel/) in the following way:
 
 ```shell
-> ls /fastq/*_R1* | \
-  parallel -j2 \
-  'mixcr analyze amplicon \
-    --species hsa \
-    --starting-material rna \
-    --receptor-type bcr \
-    --5-end no-v-primers \
-    --3-end c-primers \
-    --adapters no-adapters \
-    --assemble "-OassemblingFeatures={FR1Begin:FR4End}" \
-    --umi-pattern "^N{"7"}(R1:*) \ ^(UMI:N{"12"})N{"4"}(R2:*)" \
-    --report {=s:.*/:results/:;s:_R1.*:\.report:=} \
-    {} \
-    {=s:R1:R2:=} \
-    {=s:.*/:results/:;s:_R1.*::=}'
+--8<-- "takara-hsa-bcr/scripts/20-upstream.sh"
 ```
 
 ### Under the hood pipeline:
@@ -193,9 +121,10 @@ Alignment of raw sequencing reads against reference database of V-, D-, J- and C
     fastq/FebControl1_R2.fastq.gz \
     FebControl1.vdjca
 ```
-Option `--report` is specified here explicitly.
-- `-p kAligner2` specifies an BCR aligner.
-- `-OvParameters.parameters.floatingLeftBound=false -OjParameters.parameters.floatingRightBound=false -OcParameters.parameters.floatingRightBound=false` are all set to `false` which results in a global aligning algorithm on all segment bounds.
+
+- `--report` option is specified here explicitly,
+- `-p kAligner2` specifies an BCR aligner,
+- `-OvParameters.parameters.floatingLeftBound=false`, `-OjParameters.parameters.floatingRightBound=false`, `-OcParameters.parameters.floatingRightBound=false` are all set to `false` which results in a global aligning algorithm on all segment bounds.
 
 #### `correctAndSortTags`
 
@@ -247,25 +176,21 @@ function.
 ```shell
 # obtain alignment quality control
 > mixcr exportQc align \
-    result/*.vdjca \
+    results/*.vdjca \
     alignQc.pdf
 ```
 
-<figure markdown>
-![alignTakara.svg](takara-hsa-bcr/alignTakara.svg)
-</figure>
+![align QC](takara-hsa-bcr/figs/20-alignQc.svg)
 
 The plot above demonstrates a high quality alignment rate. Now Lets look at the chain distribution in every sample.
 
 ```shell
 # obtain chain usage plot
 > mixcr exportQc chainUsage \
-    result/*.vdjca \
+    results/*.vdjca \
     usageQc.pdf
 ```
 
-<figure markdown>
-![chainUsageTakara.svg](takara-hsa-bcr/chainUsageTakara.svg)
-</figure>
+![chain usage QC](takara-hsa-bcr/figs/30-chainUsageQc.svg)
 
 We see that in most sample number of light chains significantly dominate over IGH. Since libraries for all chains were generated in a separate PCR reactions according to the protocol, we might suggest that this bias arise from unequal mixing of cDNA libraries prior sequencing.

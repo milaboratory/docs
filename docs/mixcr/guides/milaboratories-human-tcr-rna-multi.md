@@ -4,9 +4,7 @@ This kit allows to obtain TCR alpha and beta repertoires for different types of 
 
 Bellow you can see the structure of cDNA library.
 
-<figure markdown>
 ![MiLabMultiTCR.svg](milaboratories-human-tcr-rna-multi/MiLabMultiTCR.svg)
-</figure>
 
 The data for this tutorial consists of two samples that represent two replicas of the same biological sample. Total RNA was isolated from PBMC and 25ng were used for each cDNA synthesis. Two cDNA libraries were prepared for each sample (one for TCR alpha and one for TCR betta) according to MiLaboratories Human TCR Repertoire RNA Multiplex Kit protocol. TCR sequencing was performed on an Illumina Miseq sequencer using the 300-cycle Miseq reagent kit(Illumina) with pair-end, 2x150 base pair reads.
 
@@ -192,9 +190,7 @@ Now when the upstream analysis is finished we can move on to quality control. Fi
     alignQc.pdf
 ```
 
-<figure markdown>
 ![alignQcFS115.svg](milaboratories-human-tcr-rna-multi/alignQcFS115.svg)
-</figure>
 
 From this plot we can tell that all samples have high alignment rate, more than 90% of reads have been successfully aligned to the reference sequences and CDR3 has been established.
 
@@ -207,8 +203,6 @@ Now we can check chain distribution plot:
     alignQc.pdf
 ```
 
-<figure markdown>
 ![chainUsageFS115.svg](milaboratories-human-tcr-rna-multi/chainUsageFS115.svg)
-</figure>
 
 Here we can see that no cross-contamination has occurred. TCR alpha samples consist only of TRA clones, and TCR betta only of TRB.

@@ -50,20 +50,20 @@ plugins:
   - minify:
       minify_html: true
   - glightbox
-  - mike:
-      alias_type: symlink
-      redirect_template: null
-      deploy_prefix: ''
-      canonical_version: latest
-      javascript_dir: js
+  - table-reader
 
 markdown_extensions:
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
-  - admonition
+  - pymdownx.inlinehilite
   - pymdownx.details
-#  - plantuml_markdown
+  - pymdownx.snippets:
+      # Fails the build if any imports are missing
+      # check_paths: true
+      auto_append: [ ]
+      base_path: [ "docs/mixcr/guides/" ]
+  - admonition
   - attr_list
   - def_list
   - md_in_html
@@ -79,10 +79,10 @@ markdown_extensions:
           - overrides/.icons
   - pymdownx.tasklist:
       custom_checkbox: true
-#  - toc:
-#      toc_depth: 3
   - pymdownx.arithmatex:
       generic: true
+#  - toc:
+#      toc_depth: 3
 
 extra:
   version:
@@ -113,21 +113,19 @@ nav:
       - 'License': mixcr/getting-started/license.md
   - 'Guides':
       - 'Kits & Protocols':
-#        - 'MiLaboratories RNA 5''RACE repertoire kit':  docs/mixcr/guides/milaboratories-human-tcr-rna-race/milaboratories-human-tcr-rna-race.md
         - 'MiLaboratories Human TCR RNA Multiplex kit':  mixcr/guides/milaboratories-human-tcr-rna-multi.md
-#        - 'MiLaboratories RNA Multiplex BCR repertoire kit': docs/mixcr/guides/milaboratories-human-bcr-rna-multi/milaboratories-human-bcr-rna-multi.md
-        - 'BioMed2':  mixcr/guides/biomed2-bcr.md
-        - 'AbHelix BCR': mixcr/guides/abhelix-bcr.md
-        - 'SMARTer Mouse TCR a/b Profiling Kit': mixcr/guides/takara-mmu-tcr.md
         - 'SMARTer Human BCR IgG IgM H/K/L Profiling Kit': mixcr/guides/takara-hsa-bcr.md
+        - 'SMARTer Mouse TCR a/b Profiling Kit': mixcr/guides/takara-mmu-tcr.md
+        - 'Illumina Ampliseq TCR LR / iRepertoire' : mixcr/guides/ampliseq-tcr-lr.md
         - 'NEBNext Immune Sequencing': mixcr/guides/nebnext-bcr.md
         - 'QIAseq Immune Repertoire TCR' : mixcr/guides/qiaseq-tcr.md
-        - 'Illumina Ampliseq TCR LR / iRepertoire' : mixcr/guides/ampliseq-tcr-lr.md
+        - 'AbHelix BCR': mixcr/guides/abhelix-bcr.md
+        - 'BioMed2':  mixcr/guides/biomed2-bcr.md
       - 'Analysis cases':
-        - 'RNA-Seq data' : mixcr/guides/rnaseq.md
         - 'Targeted TCR UMI libraries': mixcr/guides/generic-umi-tcr.md
-#        - 'Targeted BCR UMI libraries': mixcr/guides/generic-umi-bcr.md
         - 'Targeted BCR Multiplex libraries': mixcr/guides/generic-multiplex-bcr.md
+#        - 'Targeted BCR UMI libraries': mixcr/guides/generic-umi-bcr.md
+        - 'RNA-Seq data' : mixcr/guides/rnaseq.md
       - 'Special guides':
         - 'Assembling custom reference library': mixcr/guides/create-custom-library.md
         - 'Using external libraries': mixcr/guides/external-libraries.md

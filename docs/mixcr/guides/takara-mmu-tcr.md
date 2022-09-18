@@ -228,9 +228,7 @@ The project contains 100 FASTQ file pairs. For the purpose of this tutorial we a
 
 The structure of sequences is shown on the image bellow.
 
-<figure markdown>
 ![Takara_SMARTer_Mouse_TCR.svg](takara-mmu-tcr/Takara_SMARTer_Mouse_TCR.svg)
-</figure>
 
 ## Upstream analysis
 
@@ -322,9 +320,7 @@ Now when we have processed all samples, we can proceed to quality control. First
 mixcr exportQc align result/*.vdjca alignQc.pdf
 ```
 
-<figure markdown>
 ![alignQC.svg](takara-mmu-tcr/alignQC.svg)
-</figure>
 
 From the plot above we see, that only about 50% of reads from every sample have been successfully aligned. The major reason why the alignment failed is that a lot of reads lack TCR sequences. In that case, if we want to dig a bit deeper into the issue we can realign one of the samples and save not-aligned reads into separate files for manual inspection. Let's pick one of the samples, ex. S_7, and realign it.
 
@@ -352,9 +348,7 @@ mixcr exportQc chainUsage test_run/*.vdjca chainUsage.pdf
 
 On the plot bellow we see, despite some TRB dominance, both (TCR alpha and TCR beta) chains equally present in each sample.
 
-<figure markdown>
 ![chainUsage.svg](takara-mmu-tcr/chainUsage.svg)
-</figure>
 
 
 
