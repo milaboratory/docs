@@ -1,0 +1,2177 @@
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/023/SRR10545823/SRR10545823_1.fastq.gz 
+  out=raw/SRR10545823_GSM4195485_TCR-seq_P18-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/023/SRR10545823/SRR10545823_2.fastq.gz 
+  out=raw/SRR10545823_GSM4195485_TCR-seq_P18-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/098/SRR10545498/SRR10545498_1.fastq.gz 
+  out=raw/SRR10545498_GSM4195404_TCR-seq_P5-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/098/SRR10545498/SRR10545498_2.fastq.gz 
+  out=raw/SRR10545498_GSM4195404_TCR-seq_P5-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/097/SRR10545497/SRR10545497_1.fastq.gz 
+  out=raw/SRR10545497_GSM4195404_TCR-seq_P5-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/097/SRR10545497/SRR10545497_2.fastq.gz 
+  out=raw/SRR10545497_GSM4195404_TCR-seq_P5-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/004/SRR10545504/SRR10545504_1.fastq.gz 
+  out=raw/SRR10545504_GSM4195405_TCR-seq_P5-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/004/SRR10545504/SRR10545504_2.fastq.gz 
+  out=raw/SRR10545504_GSM4195405_TCR-seq_P5-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/003/SRR10545503/SRR10545503_1.fastq.gz 
+  out=raw/SRR10545503_GSM4195405_TCR-seq_P5-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/003/SRR10545503/SRR10545503_2.fastq.gz 
+  out=raw/SRR10545503_GSM4195405_TCR-seq_P5-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/099/SRR10545499/SRR10545499_1.fastq.gz 
+  out=raw/SRR10545499_GSM4195404_TCR-seq_P5-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/099/SRR10545499/SRR10545499_2.fastq.gz 
+  out=raw/SRR10545499_GSM4195404_TCR-seq_P5-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/024/SRR10545824/SRR10545824_1.fastq.gz 
+  out=raw/SRR10545824_GSM4195485_TCR-seq_P18-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/024/SRR10545824/SRR10545824_2.fastq.gz 
+  out=raw/SRR10545824_GSM4195485_TCR-seq_P18-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/025/SRR10545825/SRR10545825_1.fastq.gz 
+  out=raw/SRR10545825_GSM4195486_TCR-seq_P18-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/025/SRR10545825/SRR10545825_2.fastq.gz 
+  out=raw/SRR10545825_GSM4195486_TCR-seq_P18-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/005/SRR10545505/SRR10545505_1.fastq.gz 
+  out=raw/SRR10545505_GSM4195406_TCR-seq_P5-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/005/SRR10545505/SRR10545505_2.fastq.gz 
+  out=raw/SRR10545505_GSM4195406_TCR-seq_P5-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/088/SRR10545688/SRR10545688_1.fastq.gz 
+  out=raw/SRR10545688_GSM4195451_TCR-seq_P14-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/088/SRR10545688/SRR10545688_2.fastq.gz 
+  out=raw/SRR10545688_GSM4195451_TCR-seq_P14-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/087/SRR10545687/SRR10545687_1.fastq.gz 
+  out=raw/SRR10545687_GSM4195451_TCR-seq_P14-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/087/SRR10545687/SRR10545687_2.fastq.gz 
+  out=raw/SRR10545687_GSM4195451_TCR-seq_P14-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/086/SRR10545686/SRR10545686_1.fastq.gz 
+  out=raw/SRR10545686_GSM4195451_TCR-seq_P14-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/086/SRR10545686/SRR10545686_2.fastq.gz 
+  out=raw/SRR10545686_GSM4195451_TCR-seq_P14-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/002/SRR10545502/SRR10545502_1.fastq.gz 
+  out=raw/SRR10545502_GSM4195405_TCR-seq_P5-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/002/SRR10545502/SRR10545502_2.fastq.gz 
+  out=raw/SRR10545502_GSM4195405_TCR-seq_P5-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/000/SRR10545500/SRR10545500_1.fastq.gz 
+  out=raw/SRR10545500_GSM4195404_TCR-seq_P5-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/000/SRR10545500/SRR10545500_2.fastq.gz 
+  out=raw/SRR10545500_GSM4195404_TCR-seq_P5-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/001/SRR10545501/SRR10545501_1.fastq.gz 
+  out=raw/SRR10545501_GSM4195405_TCR-seq_P5-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/001/SRR10545501/SRR10545501_2.fastq.gz 
+  out=raw/SRR10545501_GSM4195405_TCR-seq_P5-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/085/SRR10545685/SRR10545685_1.fastq.gz 
+  out=raw/SRR10545685_GSM4195451_TCR-seq_P14-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/085/SRR10545685/SRR10545685_2.fastq.gz 
+  out=raw/SRR10545685_GSM4195451_TCR-seq_P14-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/084/SRR10545684/SRR10545684_1.fastq.gz 
+  out=raw/SRR10545684_GSM4195450_TCR-seq_P14-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/084/SRR10545684/SRR10545684_2.fastq.gz 
+  out=raw/SRR10545684_GSM4195450_TCR-seq_P14-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/006/SRR10545506/SRR10545506_1.fastq.gz 
+  out=raw/SRR10545506_GSM4195406_TCR-seq_P5-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/006/SRR10545506/SRR10545506_2.fastq.gz 
+  out=raw/SRR10545506_GSM4195406_TCR-seq_P5-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/007/SRR10545507/SRR10545507_1.fastq.gz 
+  out=raw/SRR10545507_GSM4195406_TCR-seq_P5-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/007/SRR10545507/SRR10545507_2.fastq.gz 
+  out=raw/SRR10545507_GSM4195406_TCR-seq_P5-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/083/SRR10545683/SRR10545683_1.fastq.gz 
+  out=raw/SRR10545683_GSM4195450_TCR-seq_P14-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/083/SRR10545683/SRR10545683_2.fastq.gz 
+  out=raw/SRR10545683_GSM4195450_TCR-seq_P14-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/008/SRR10545508/SRR10545508_1.fastq.gz 
+  out=raw/SRR10545508_GSM4195406_TCR-seq_P5-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/008/SRR10545508/SRR10545508_2.fastq.gz 
+  out=raw/SRR10545508_GSM4195406_TCR-seq_P5-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/009/SRR10545509/SRR10545509_1.fastq.gz 
+  out=raw/SRR10545509_GSM4195407_TCR-seq_P5-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/009/SRR10545509/SRR10545509_2.fastq.gz 
+  out=raw/SRR10545509_GSM4195407_TCR-seq_P5-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/082/SRR10545682/SRR10545682_1.fastq.gz 
+  out=raw/SRR10545682_GSM4195450_TCR-seq_P14-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/082/SRR10545682/SRR10545682_2.fastq.gz 
+  out=raw/SRR10545682_GSM4195450_TCR-seq_P14-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/081/SRR10545681/SRR10545681_1.fastq.gz 
+  out=raw/SRR10545681_GSM4195450_TCR-seq_P14-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/081/SRR10545681/SRR10545681_2.fastq.gz 
+  out=raw/SRR10545681_GSM4195450_TCR-seq_P14-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/080/SRR10545680/SRR10545680_1.fastq.gz 
+  out=raw/SRR10545680_GSM4195449_TCR-seq_P14-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/080/SRR10545680/SRR10545680_2.fastq.gz 
+  out=raw/SRR10545680_GSM4195449_TCR-seq_P14-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/010/SRR10545510/SRR10545510_1.fastq.gz 
+  out=raw/SRR10545510_GSM4195407_TCR-seq_P5-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/010/SRR10545510/SRR10545510_2.fastq.gz 
+  out=raw/SRR10545510_GSM4195407_TCR-seq_P5-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/011/SRR10545511/SRR10545511_1.fastq.gz 
+  out=raw/SRR10545511_GSM4195407_TCR-seq_P5-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/011/SRR10545511/SRR10545511_2.fastq.gz 
+  out=raw/SRR10545511_GSM4195407_TCR-seq_P5-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/012/SRR10545512/SRR10545512_1.fastq.gz 
+  out=raw/SRR10545512_GSM4195407_TCR-seq_P5-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/012/SRR10545512/SRR10545512_2.fastq.gz 
+  out=raw/SRR10545512_GSM4195407_TCR-seq_P5-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/079/SRR10545679/SRR10545679_1.fastq.gz 
+  out=raw/SRR10545679_GSM4195449_TCR-seq_P14-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/079/SRR10545679/SRR10545679_2.fastq.gz 
+  out=raw/SRR10545679_GSM4195449_TCR-seq_P14-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/013/SRR10545513/SRR10545513_1.fastq.gz 
+  out=raw/SRR10545513_GSM4195408_TCR-seq_P5-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/013/SRR10545513/SRR10545513_2.fastq.gz 
+  out=raw/SRR10545513_GSM4195408_TCR-seq_P5-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/078/SRR10545678/SRR10545678_1.fastq.gz 
+  out=raw/SRR10545678_GSM4195449_TCR-seq_P14-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/078/SRR10545678/SRR10545678_2.fastq.gz 
+  out=raw/SRR10545678_GSM4195449_TCR-seq_P14-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/014/SRR10545514/SRR10545514_1.fastq.gz 
+  out=raw/SRR10545514_GSM4195408_TCR-seq_P5-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/014/SRR10545514/SRR10545514_2.fastq.gz 
+  out=raw/SRR10545514_GSM4195408_TCR-seq_P5-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/015/SRR10545515/SRR10545515_1.fastq.gz 
+  out=raw/SRR10545515_GSM4195408_TCR-seq_P5-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/015/SRR10545515/SRR10545515_2.fastq.gz 
+  out=raw/SRR10545515_GSM4195408_TCR-seq_P5-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/076/SRR10545676/SRR10545676_1.fastq.gz 
+  out=raw/SRR10545676_GSM4195448_TCR-seq_P14-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/076/SRR10545676/SRR10545676_2.fastq.gz 
+  out=raw/SRR10545676_GSM4195448_TCR-seq_P14-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/077/SRR10545677/SRR10545677_1.fastq.gz 
+  out=raw/SRR10545677_GSM4195449_TCR-seq_P14-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/077/SRR10545677/SRR10545677_2.fastq.gz 
+  out=raw/SRR10545677_GSM4195449_TCR-seq_P14-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/075/SRR10545675/SRR10545675_1.fastq.gz 
+  out=raw/SRR10545675_GSM4195448_TCR-seq_P14-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/075/SRR10545675/SRR10545675_2.fastq.gz 
+  out=raw/SRR10545675_GSM4195448_TCR-seq_P14-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/074/SRR10545674/SRR10545674_1.fastq.gz 
+  out=raw/SRR10545674_GSM4195448_TCR-seq_P14-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/074/SRR10545674/SRR10545674_2.fastq.gz 
+  out=raw/SRR10545674_GSM4195448_TCR-seq_P14-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/016/SRR10545516/SRR10545516_1.fastq.gz 
+  out=raw/SRR10545516_GSM4195408_TCR-seq_P5-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/016/SRR10545516/SRR10545516_2.fastq.gz 
+  out=raw/SRR10545516_GSM4195408_TCR-seq_P5-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/017/SRR10545517/SRR10545517_1.fastq.gz 
+  out=raw/SRR10545517_GSM4195409_TCR-seq_P5-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/017/SRR10545517/SRR10545517_2.fastq.gz 
+  out=raw/SRR10545517_GSM4195409_TCR-seq_P5-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/072/SRR10545672/SRR10545672_1.fastq.gz 
+  out=raw/SRR10545672_GSM4195447_TCR-seq_P8-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/072/SRR10545672/SRR10545672_2.fastq.gz 
+  out=raw/SRR10545672_GSM4195447_TCR-seq_P8-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/073/SRR10545673/SRR10545673_1.fastq.gz 
+  out=raw/SRR10545673_GSM4195448_TCR-seq_P14-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/073/SRR10545673/SRR10545673_2.fastq.gz 
+  out=raw/SRR10545673_GSM4195448_TCR-seq_P14-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/018/SRR10545518/SRR10545518_1.fastq.gz 
+  out=raw/SRR10545518_GSM4195409_TCR-seq_P5-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/018/SRR10545518/SRR10545518_2.fastq.gz 
+  out=raw/SRR10545518_GSM4195409_TCR-seq_P5-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/071/SRR10545671/SRR10545671_1.fastq.gz 
+  out=raw/SRR10545671_GSM4195447_TCR-seq_P8-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/071/SRR10545671/SRR10545671_2.fastq.gz 
+  out=raw/SRR10545671_GSM4195447_TCR-seq_P8-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/019/SRR10545519/SRR10545519_1.fastq.gz 
+  out=raw/SRR10545519_GSM4195409_TCR-seq_P5-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/019/SRR10545519/SRR10545519_2.fastq.gz 
+  out=raw/SRR10545519_GSM4195409_TCR-seq_P5-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/020/SRR10545520/SRR10545520_1.fastq.gz 
+  out=raw/SRR10545520_GSM4195409_TCR-seq_P5-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/020/SRR10545520/SRR10545520_2.fastq.gz 
+  out=raw/SRR10545520_GSM4195409_TCR-seq_P5-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/070/SRR10545670/SRR10545670_1.fastq.gz 
+  out=raw/SRR10545670_GSM4195447_TCR-seq_P8-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/070/SRR10545670/SRR10545670_2.fastq.gz 
+  out=raw/SRR10545670_GSM4195447_TCR-seq_P8-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/021/SRR10545521/SRR10545521_1.fastq.gz 
+  out=raw/SRR10545521_GSM4195410_TCR-seq_P5-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/021/SRR10545521/SRR10545521_2.fastq.gz 
+  out=raw/SRR10545521_GSM4195410_TCR-seq_P5-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/022/SRR10545522/SRR10545522_1.fastq.gz 
+  out=raw/SRR10545522_GSM4195410_TCR-seq_P5-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/022/SRR10545522/SRR10545522_2.fastq.gz 
+  out=raw/SRR10545522_GSM4195410_TCR-seq_P5-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/069/SRR10545669/SRR10545669_1.fastq.gz 
+  out=raw/SRR10545669_GSM4195447_TCR-seq_P8-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/069/SRR10545669/SRR10545669_2.fastq.gz 
+  out=raw/SRR10545669_GSM4195447_TCR-seq_P8-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/068/SRR10545668/SRR10545668_1.fastq.gz 
+  out=raw/SRR10545668_GSM4195446_TCR-seq_P8-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/068/SRR10545668/SRR10545668_2.fastq.gz 
+  out=raw/SRR10545668_GSM4195446_TCR-seq_P8-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/067/SRR10545667/SRR10545667_1.fastq.gz 
+  out=raw/SRR10545667_GSM4195446_TCR-seq_P8-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/067/SRR10545667/SRR10545667_2.fastq.gz 
+  out=raw/SRR10545667_GSM4195446_TCR-seq_P8-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/066/SRR10545666/SRR10545666_1.fastq.gz 
+  out=raw/SRR10545666_GSM4195446_TCR-seq_P8-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/066/SRR10545666/SRR10545666_2.fastq.gz 
+  out=raw/SRR10545666_GSM4195446_TCR-seq_P8-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/024/SRR10545524/SRR10545524_1.fastq.gz 
+  out=raw/SRR10545524_GSM4195410_TCR-seq_P5-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/024/SRR10545524/SRR10545524_2.fastq.gz 
+  out=raw/SRR10545524_GSM4195410_TCR-seq_P5-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/023/SRR10545523/SRR10545523_1.fastq.gz 
+  out=raw/SRR10545523_GSM4195410_TCR-seq_P5-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/023/SRR10545523/SRR10545523_2.fastq.gz 
+  out=raw/SRR10545523_GSM4195410_TCR-seq_P5-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/025/SRR10545525/SRR10545525_1.fastq.gz 
+  out=raw/SRR10545525_GSM4195411_TCR-seq_P5-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/025/SRR10545525/SRR10545525_2.fastq.gz 
+  out=raw/SRR10545525_GSM4195411_TCR-seq_P5-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/065/SRR10545665/SRR10545665_1.fastq.gz 
+  out=raw/SRR10545665_GSM4195446_TCR-seq_P8-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/065/SRR10545665/SRR10545665_2.fastq.gz 
+  out=raw/SRR10545665_GSM4195446_TCR-seq_P8-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/026/SRR10545526/SRR10545526_1.fastq.gz 
+  out=raw/SRR10545526_GSM4195411_TCR-seq_P5-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/026/SRR10545526/SRR10545526_2.fastq.gz 
+  out=raw/SRR10545526_GSM4195411_TCR-seq_P5-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/064/SRR10545664/SRR10545664_1.fastq.gz 
+  out=raw/SRR10545664_GSM4195445_TCR-seq_P8-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/064/SRR10545664/SRR10545664_2.fastq.gz 
+  out=raw/SRR10545664_GSM4195445_TCR-seq_P8-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/027/SRR10545527/SRR10545527_1.fastq.gz 
+  out=raw/SRR10545527_GSM4195411_TCR-seq_P5-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/027/SRR10545527/SRR10545527_2.fastq.gz 
+  out=raw/SRR10545527_GSM4195411_TCR-seq_P5-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/063/SRR10545663/SRR10545663_1.fastq.gz 
+  out=raw/SRR10545663_GSM4195445_TCR-seq_P8-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/063/SRR10545663/SRR10545663_2.fastq.gz 
+  out=raw/SRR10545663_GSM4195445_TCR-seq_P8-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/062/SRR10545662/SRR10545662_1.fastq.gz 
+  out=raw/SRR10545662_GSM4195445_TCR-seq_P8-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/062/SRR10545662/SRR10545662_2.fastq.gz 
+  out=raw/SRR10545662_GSM4195445_TCR-seq_P8-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/028/SRR10545528/SRR10545528_1.fastq.gz 
+  out=raw/SRR10545528_GSM4195411_TCR-seq_P5-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/028/SRR10545528/SRR10545528_2.fastq.gz 
+  out=raw/SRR10545528_GSM4195411_TCR-seq_P5-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/029/SRR10545529/SRR10545529_1.fastq.gz 
+  out=raw/SRR10545529_GSM4195412_TCR-seq_P5-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/029/SRR10545529/SRR10545529_2.fastq.gz 
+  out=raw/SRR10545529_GSM4195412_TCR-seq_P5-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/061/SRR10545661/SRR10545661_1.fastq.gz 
+  out=raw/SRR10545661_GSM4195445_TCR-seq_P8-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/061/SRR10545661/SRR10545661_2.fastq.gz 
+  out=raw/SRR10545661_GSM4195445_TCR-seq_P8-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/030/SRR10545530/SRR10545530_1.fastq.gz 
+  out=raw/SRR10545530_GSM4195412_TCR-seq_P5-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/030/SRR10545530/SRR10545530_2.fastq.gz 
+  out=raw/SRR10545530_GSM4195412_TCR-seq_P5-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/060/SRR10545660/SRR10545660_1.fastq.gz 
+  out=raw/SRR10545660_GSM4195444_TCR-seq_P8-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/060/SRR10545660/SRR10545660_2.fastq.gz 
+  out=raw/SRR10545660_GSM4195444_TCR-seq_P8-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/031/SRR10545531/SRR10545531_1.fastq.gz 
+  out=raw/SRR10545531_GSM4195412_TCR-seq_P5-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/031/SRR10545531/SRR10545531_2.fastq.gz 
+  out=raw/SRR10545531_GSM4195412_TCR-seq_P5-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/059/SRR10545659/SRR10545659_1.fastq.gz 
+  out=raw/SRR10545659_GSM4195444_TCR-seq_P8-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/059/SRR10545659/SRR10545659_2.fastq.gz 
+  out=raw/SRR10545659_GSM4195444_TCR-seq_P8-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/032/SRR10545532/SRR10545532_1.fastq.gz 
+  out=raw/SRR10545532_GSM4195412_TCR-seq_P5-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/032/SRR10545532/SRR10545532_2.fastq.gz 
+  out=raw/SRR10545532_GSM4195412_TCR-seq_P5-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/058/SRR10545658/SRR10545658_1.fastq.gz 
+  out=raw/SRR10545658_GSM4195444_TCR-seq_P8-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/058/SRR10545658/SRR10545658_2.fastq.gz 
+  out=raw/SRR10545658_GSM4195444_TCR-seq_P8-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/033/SRR10545533/SRR10545533_1.fastq.gz 
+  out=raw/SRR10545533_GSM4195413_TCR-seq_P5-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/033/SRR10545533/SRR10545533_2.fastq.gz 
+  out=raw/SRR10545533_GSM4195413_TCR-seq_P5-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/057/SRR10545657/SRR10545657_1.fastq.gz 
+  out=raw/SRR10545657_GSM4195444_TCR-seq_P8-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/057/SRR10545657/SRR10545657_2.fastq.gz 
+  out=raw/SRR10545657_GSM4195444_TCR-seq_P8-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/056/SRR10545656/SRR10545656_1.fastq.gz 
+  out=raw/SRR10545656_GSM4195443_TCR-seq_P8-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/056/SRR10545656/SRR10545656_2.fastq.gz 
+  out=raw/SRR10545656_GSM4195443_TCR-seq_P8-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/034/SRR10545534/SRR10545534_1.fastq.gz 
+  out=raw/SRR10545534_GSM4195413_TCR-seq_P5-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/034/SRR10545534/SRR10545534_2.fastq.gz 
+  out=raw/SRR10545534_GSM4195413_TCR-seq_P5-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/035/SRR10545535/SRR10545535_1.fastq.gz 
+  out=raw/SRR10545535_GSM4195413_TCR-seq_P5-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/035/SRR10545535/SRR10545535_2.fastq.gz 
+  out=raw/SRR10545535_GSM4195413_TCR-seq_P5-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/055/SRR10545655/SRR10545655_1.fastq.gz 
+  out=raw/SRR10545655_GSM4195443_TCR-seq_P8-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/055/SRR10545655/SRR10545655_2.fastq.gz 
+  out=raw/SRR10545655_GSM4195443_TCR-seq_P8-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/053/SRR10545653/SRR10545653_1.fastq.gz 
+  out=raw/SRR10545653_GSM4195443_TCR-seq_P8-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/053/SRR10545653/SRR10545653_2.fastq.gz 
+  out=raw/SRR10545653_GSM4195443_TCR-seq_P8-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/036/SRR10545536/SRR10545536_1.fastq.gz 
+  out=raw/SRR10545536_GSM4195413_TCR-seq_P5-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/036/SRR10545536/SRR10545536_2.fastq.gz 
+  out=raw/SRR10545536_GSM4195413_TCR-seq_P5-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/037/SRR10545537/SRR10545537_1.fastq.gz 
+  out=raw/SRR10545537_GSM4195414_TCR-seq_P5-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/037/SRR10545537/SRR10545537_2.fastq.gz 
+  out=raw/SRR10545537_GSM4195414_TCR-seq_P5-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/054/SRR10545654/SRR10545654_1.fastq.gz 
+  out=raw/SRR10545654_GSM4195443_TCR-seq_P8-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/054/SRR10545654/SRR10545654_2.fastq.gz 
+  out=raw/SRR10545654_GSM4195443_TCR-seq_P8-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/038/SRR10545538/SRR10545538_1.fastq.gz 
+  out=raw/SRR10545538_GSM4195414_TCR-seq_P5-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/038/SRR10545538/SRR10545538_2.fastq.gz 
+  out=raw/SRR10545538_GSM4195414_TCR-seq_P5-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/052/SRR10545652/SRR10545652_1.fastq.gz 
+  out=raw/SRR10545652_GSM4195442_TCR-seq_P8-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/052/SRR10545652/SRR10545652_2.fastq.gz 
+  out=raw/SRR10545652_GSM4195442_TCR-seq_P8-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/039/SRR10545539/SRR10545539_1.fastq.gz 
+  out=raw/SRR10545539_GSM4195414_TCR-seq_P5-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/039/SRR10545539/SRR10545539_2.fastq.gz 
+  out=raw/SRR10545539_GSM4195414_TCR-seq_P5-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/040/SRR10545540/SRR10545540_1.fastq.gz 
+  out=raw/SRR10545540_GSM4195414_TCR-seq_P5-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/040/SRR10545540/SRR10545540_2.fastq.gz 
+  out=raw/SRR10545540_GSM4195414_TCR-seq_P5-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/051/SRR10545651/SRR10545651_1.fastq.gz 
+  out=raw/SRR10545651_GSM4195442_TCR-seq_P8-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/051/SRR10545651/SRR10545651_2.fastq.gz 
+  out=raw/SRR10545651_GSM4195442_TCR-seq_P8-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/050/SRR10545650/SRR10545650_1.fastq.gz 
+  out=raw/SRR10545650_GSM4195442_TCR-seq_P8-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/050/SRR10545650/SRR10545650_2.fastq.gz 
+  out=raw/SRR10545650_GSM4195442_TCR-seq_P8-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/041/SRR10545541/SRR10545541_1.fastq.gz 
+  out=raw/SRR10545541_GSM4195415_TCR-seq_P5-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/041/SRR10545541/SRR10545541_2.fastq.gz 
+  out=raw/SRR10545541_GSM4195415_TCR-seq_P5-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/049/SRR10545649/SRR10545649_1.fastq.gz 
+  out=raw/SRR10545649_GSM4195442_TCR-seq_P8-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/049/SRR10545649/SRR10545649_2.fastq.gz 
+  out=raw/SRR10545649_GSM4195442_TCR-seq_P8-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/042/SRR10545542/SRR10545542_1.fastq.gz 
+  out=raw/SRR10545542_GSM4195415_TCR-seq_P5-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/042/SRR10545542/SRR10545542_2.fastq.gz 
+  out=raw/SRR10545542_GSM4195415_TCR-seq_P5-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/048/SRR10545648/SRR10545648_1.fastq.gz 
+  out=raw/SRR10545648_GSM4195441_TCR-seq_P8-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/048/SRR10545648/SRR10545648_2.fastq.gz 
+  out=raw/SRR10545648_GSM4195441_TCR-seq_P8-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/043/SRR10545543/SRR10545543_1.fastq.gz 
+  out=raw/SRR10545543_GSM4195415_TCR-seq_P5-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/043/SRR10545543/SRR10545543_2.fastq.gz 
+  out=raw/SRR10545543_GSM4195415_TCR-seq_P5-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/047/SRR10545647/SRR10545647_1.fastq.gz 
+  out=raw/SRR10545647_GSM4195441_TCR-seq_P8-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/047/SRR10545647/SRR10545647_2.fastq.gz 
+  out=raw/SRR10545647_GSM4195441_TCR-seq_P8-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/046/SRR10545646/SRR10545646_1.fastq.gz 
+  out=raw/SRR10545646_GSM4195441_TCR-seq_P8-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/046/SRR10545646/SRR10545646_2.fastq.gz 
+  out=raw/SRR10545646_GSM4195441_TCR-seq_P8-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/044/SRR10545544/SRR10545544_1.fastq.gz 
+  out=raw/SRR10545544_GSM4195415_TCR-seq_P5-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/044/SRR10545544/SRR10545544_2.fastq.gz 
+  out=raw/SRR10545544_GSM4195415_TCR-seq_P5-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/045/SRR10545545/SRR10545545_1.fastq.gz 
+  out=raw/SRR10545545_GSM4195416_TCR-seq_P6-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/045/SRR10545545/SRR10545545_2.fastq.gz 
+  out=raw/SRR10545545_GSM4195416_TCR-seq_P6-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/045/SRR10545645/SRR10545645_1.fastq.gz 
+  out=raw/SRR10545645_GSM4195441_TCR-seq_P8-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/045/SRR10545645/SRR10545645_2.fastq.gz 
+  out=raw/SRR10545645_GSM4195441_TCR-seq_P8-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/046/SRR10545546/SRR10545546_1.fastq.gz 
+  out=raw/SRR10545546_GSM4195416_TCR-seq_P6-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/046/SRR10545546/SRR10545546_2.fastq.gz 
+  out=raw/SRR10545546_GSM4195416_TCR-seq_P6-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/044/SRR10545644/SRR10545644_1.fastq.gz 
+  out=raw/SRR10545644_GSM4195440_TCR-seq_P8-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/044/SRR10545644/SRR10545644_2.fastq.gz 
+  out=raw/SRR10545644_GSM4195440_TCR-seq_P8-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/047/SRR10545547/SRR10545547_1.fastq.gz 
+  out=raw/SRR10545547_GSM4195416_TCR-seq_P6-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/047/SRR10545547/SRR10545547_2.fastq.gz 
+  out=raw/SRR10545547_GSM4195416_TCR-seq_P6-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/043/SRR10545643/SRR10545643_1.fastq.gz 
+  out=raw/SRR10545643_GSM4195440_TCR-seq_P8-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/043/SRR10545643/SRR10545643_2.fastq.gz 
+  out=raw/SRR10545643_GSM4195440_TCR-seq_P8-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/048/SRR10545548/SRR10545548_1.fastq.gz 
+  out=raw/SRR10545548_GSM4195416_TCR-seq_P6-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/048/SRR10545548/SRR10545548_2.fastq.gz 
+  out=raw/SRR10545548_GSM4195416_TCR-seq_P6-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/042/SRR10545642/SRR10545642_1.fastq.gz 
+  out=raw/SRR10545642_GSM4195440_TCR-seq_P8-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/042/SRR10545642/SRR10545642_2.fastq.gz 
+  out=raw/SRR10545642_GSM4195440_TCR-seq_P8-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/049/SRR10545549/SRR10545549_1.fastq.gz 
+  out=raw/SRR10545549_GSM4195417_TCR-seq_P6-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/049/SRR10545549/SRR10545549_2.fastq.gz 
+  out=raw/SRR10545549_GSM4195417_TCR-seq_P6-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/050/SRR10545550/SRR10545550_1.fastq.gz 
+  out=raw/SRR10545550_GSM4195417_TCR-seq_P6-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/050/SRR10545550/SRR10545550_2.fastq.gz 
+  out=raw/SRR10545550_GSM4195417_TCR-seq_P6-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/041/SRR10545641/SRR10545641_1.fastq.gz 
+  out=raw/SRR10545641_GSM4195440_TCR-seq_P8-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/041/SRR10545641/SRR10545641_2.fastq.gz 
+  out=raw/SRR10545641_GSM4195440_TCR-seq_P8-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/040/SRR10545640/SRR10545640_1.fastq.gz 
+  out=raw/SRR10545640_GSM4195439_TCR-seq_P8-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/040/SRR10545640/SRR10545640_2.fastq.gz 
+  out=raw/SRR10545640_GSM4195439_TCR-seq_P8-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/039/SRR10545639/SRR10545639_1.fastq.gz 
+  out=raw/SRR10545639_GSM4195439_TCR-seq_P8-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/039/SRR10545639/SRR10545639_2.fastq.gz 
+  out=raw/SRR10545639_GSM4195439_TCR-seq_P8-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/051/SRR10545551/SRR10545551_1.fastq.gz 
+  out=raw/SRR10545551_GSM4195417_TCR-seq_P6-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/051/SRR10545551/SRR10545551_2.fastq.gz 
+  out=raw/SRR10545551_GSM4195417_TCR-seq_P6-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/052/SRR10545552/SRR10545552_1.fastq.gz 
+  out=raw/SRR10545552_GSM4195417_TCR-seq_P6-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/052/SRR10545552/SRR10545552_2.fastq.gz 
+  out=raw/SRR10545552_GSM4195417_TCR-seq_P6-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/038/SRR10545638/SRR10545638_1.fastq.gz 
+  out=raw/SRR10545638_GSM4195439_TCR-seq_P8-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/038/SRR10545638/SRR10545638_2.fastq.gz 
+  out=raw/SRR10545638_GSM4195439_TCR-seq_P8-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/053/SRR10545553/SRR10545553_1.fastq.gz 
+  out=raw/SRR10545553_GSM4195418_TCR-seq_P6-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/053/SRR10545553/SRR10545553_2.fastq.gz 
+  out=raw/SRR10545553_GSM4195418_TCR-seq_P6-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/037/SRR10545637/SRR10545637_1.fastq.gz 
+  out=raw/SRR10545637_GSM4195439_TCR-seq_P8-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/037/SRR10545637/SRR10545637_2.fastq.gz 
+  out=raw/SRR10545637_GSM4195439_TCR-seq_P8-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/054/SRR10545554/SRR10545554_1.fastq.gz 
+  out=raw/SRR10545554_GSM4195418_TCR-seq_P6-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/054/SRR10545554/SRR10545554_2.fastq.gz 
+  out=raw/SRR10545554_GSM4195418_TCR-seq_P6-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/055/SRR10545555/SRR10545555_1.fastq.gz 
+  out=raw/SRR10545555_GSM4195418_TCR-seq_P6-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/055/SRR10545555/SRR10545555_2.fastq.gz 
+  out=raw/SRR10545555_GSM4195418_TCR-seq_P6-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/036/SRR10545636/SRR10545636_1.fastq.gz 
+  out=raw/SRR10545636_GSM4195438_TCR-seq_P8-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/036/SRR10545636/SRR10545636_2.fastq.gz 
+  out=raw/SRR10545636_GSM4195438_TCR-seq_P8-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/035/SRR10545635/SRR10545635_1.fastq.gz 
+  out=raw/SRR10545635_GSM4195438_TCR-seq_P8-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/035/SRR10545635/SRR10545635_2.fastq.gz 
+  out=raw/SRR10545635_GSM4195438_TCR-seq_P8-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/056/SRR10545556/SRR10545556_1.fastq.gz 
+  out=raw/SRR10545556_GSM4195418_TCR-seq_P6-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/056/SRR10545556/SRR10545556_2.fastq.gz 
+  out=raw/SRR10545556_GSM4195418_TCR-seq_P6-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/057/SRR10545557/SRR10545557_1.fastq.gz 
+  out=raw/SRR10545557_GSM4195419_TCR-seq_P6-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/057/SRR10545557/SRR10545557_2.fastq.gz 
+  out=raw/SRR10545557_GSM4195419_TCR-seq_P6-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/034/SRR10545634/SRR10545634_1.fastq.gz 
+  out=raw/SRR10545634_GSM4195438_TCR-seq_P8-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/034/SRR10545634/SRR10545634_2.fastq.gz 
+  out=raw/SRR10545634_GSM4195438_TCR-seq_P8-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/033/SRR10545633/SRR10545633_1.fastq.gz 
+  out=raw/SRR10545633_GSM4195438_TCR-seq_P8-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/033/SRR10545633/SRR10545633_2.fastq.gz 
+  out=raw/SRR10545633_GSM4195438_TCR-seq_P8-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/058/SRR10545558/SRR10545558_1.fastq.gz 
+  out=raw/SRR10545558_GSM4195419_TCR-seq_P6-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/058/SRR10545558/SRR10545558_2.fastq.gz 
+  out=raw/SRR10545558_GSM4195419_TCR-seq_P6-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/032/SRR10545632/SRR10545632_1.fastq.gz 
+  out=raw/SRR10545632_GSM4195437_TCR-seq_P8-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/032/SRR10545632/SRR10545632_2.fastq.gz 
+  out=raw/SRR10545632_GSM4195437_TCR-seq_P8-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/031/SRR10545631/SRR10545631_1.fastq.gz 
+  out=raw/SRR10545631_GSM4195437_TCR-seq_P8-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/031/SRR10545631/SRR10545631_2.fastq.gz 
+  out=raw/SRR10545631_GSM4195437_TCR-seq_P8-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/060/SRR10545560/SRR10545560_1.fastq.gz 
+  out=raw/SRR10545560_GSM4195419_TCR-seq_P6-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/060/SRR10545560/SRR10545560_2.fastq.gz 
+  out=raw/SRR10545560_GSM4195419_TCR-seq_P6-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/059/SRR10545559/SRR10545559_1.fastq.gz 
+  out=raw/SRR10545559_GSM4195419_TCR-seq_P6-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/059/SRR10545559/SRR10545559_2.fastq.gz 
+  out=raw/SRR10545559_GSM4195419_TCR-seq_P6-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/030/SRR10545630/SRR10545630_1.fastq.gz 
+  out=raw/SRR10545630_GSM4195437_TCR-seq_P8-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/030/SRR10545630/SRR10545630_2.fastq.gz 
+  out=raw/SRR10545630_GSM4195437_TCR-seq_P8-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/089/SRR10545689/SRR10545689_1.fastq.gz 
+  out=raw/SRR10545689_GSM4195452_TCR-seq_P14-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/089/SRR10545689/SRR10545689_2.fastq.gz 
+  out=raw/SRR10545689_GSM4195452_TCR-seq_P14-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/029/SRR10545629/SRR10545629_1.fastq.gz 
+  out=raw/SRR10545629_GSM4195437_TCR-seq_P8-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/029/SRR10545629/SRR10545629_2.fastq.gz 
+  out=raw/SRR10545629_GSM4195437_TCR-seq_P8-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/028/SRR10545628/SRR10545628_1.fastq.gz 
+  out=raw/SRR10545628_GSM4195436_TCR-seq_P8-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/028/SRR10545628/SRR10545628_2.fastq.gz 
+  out=raw/SRR10545628_GSM4195436_TCR-seq_P8-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/090/SRR10545690/SRR10545690_1.fastq.gz 
+  out=raw/SRR10545690_GSM4195452_TCR-seq_P14-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/090/SRR10545690/SRR10545690_2.fastq.gz 
+  out=raw/SRR10545690_GSM4195452_TCR-seq_P14-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/091/SRR10545691/SRR10545691_1.fastq.gz 
+  out=raw/SRR10545691_GSM4195452_TCR-seq_P14-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/091/SRR10545691/SRR10545691_2.fastq.gz 
+  out=raw/SRR10545691_GSM4195452_TCR-seq_P14-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/027/SRR10545627/SRR10545627_1.fastq.gz 
+  out=raw/SRR10545627_GSM4195436_TCR-seq_P8-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/027/SRR10545627/SRR10545627_2.fastq.gz 
+  out=raw/SRR10545627_GSM4195436_TCR-seq_P8-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/026/SRR10545626/SRR10545626_1.fastq.gz 
+  out=raw/SRR10545626_GSM4195436_TCR-seq_P8-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/026/SRR10545626/SRR10545626_2.fastq.gz 
+  out=raw/SRR10545626_GSM4195436_TCR-seq_P8-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/092/SRR10545692/SRR10545692_1.fastq.gz 
+  out=raw/SRR10545692_GSM4195452_TCR-seq_P14-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/092/SRR10545692/SRR10545692_2.fastq.gz 
+  out=raw/SRR10545692_GSM4195452_TCR-seq_P14-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/093/SRR10545693/SRR10545693_1.fastq.gz 
+  out=raw/SRR10545693_GSM4195453_TCR-seq_P14-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/093/SRR10545693/SRR10545693_2.fastq.gz 
+  out=raw/SRR10545693_GSM4195453_TCR-seq_P14-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/025/SRR10545625/SRR10545625_1.fastq.gz 
+  out=raw/SRR10545625_GSM4195436_TCR-seq_P8-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/025/SRR10545625/SRR10545625_2.fastq.gz 
+  out=raw/SRR10545625_GSM4195436_TCR-seq_P8-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/094/SRR10545694/SRR10545694_1.fastq.gz 
+  out=raw/SRR10545694_GSM4195453_TCR-seq_P14-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/094/SRR10545694/SRR10545694_2.fastq.gz 
+  out=raw/SRR10545694_GSM4195453_TCR-seq_P14-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/024/SRR10545624/SRR10545624_1.fastq.gz 
+  out=raw/SRR10545624_GSM4195435_TCR-seq_P7-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/024/SRR10545624/SRR10545624_2.fastq.gz 
+  out=raw/SRR10545624_GSM4195435_TCR-seq_P7-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/095/SRR10545695/SRR10545695_1.fastq.gz 
+  out=raw/SRR10545695_GSM4195453_TCR-seq_P14-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/095/SRR10545695/SRR10545695_2.fastq.gz 
+  out=raw/SRR10545695_GSM4195453_TCR-seq_P14-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/023/SRR10545623/SRR10545623_1.fastq.gz 
+  out=raw/SRR10545623_GSM4195435_TCR-seq_P7-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/023/SRR10545623/SRR10545623_2.fastq.gz 
+  out=raw/SRR10545623_GSM4195435_TCR-seq_P7-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/096/SRR10545696/SRR10545696_1.fastq.gz 
+  out=raw/SRR10545696_GSM4195453_TCR-seq_P14-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/096/SRR10545696/SRR10545696_2.fastq.gz 
+  out=raw/SRR10545696_GSM4195453_TCR-seq_P14-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/022/SRR10545622/SRR10545622_1.fastq.gz 
+  out=raw/SRR10545622_GSM4195435_TCR-seq_P7-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/022/SRR10545622/SRR10545622_2.fastq.gz 
+  out=raw/SRR10545622_GSM4195435_TCR-seq_P7-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/097/SRR10545697/SRR10545697_1.fastq.gz 
+  out=raw/SRR10545697_GSM4195454_TCR-seq_P14-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/097/SRR10545697/SRR10545697_2.fastq.gz 
+  out=raw/SRR10545697_GSM4195454_TCR-seq_P14-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/021/SRR10545621/SRR10545621_1.fastq.gz 
+  out=raw/SRR10545621_GSM4195435_TCR-seq_P7-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/021/SRR10545621/SRR10545621_2.fastq.gz 
+  out=raw/SRR10545621_GSM4195435_TCR-seq_P7-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/098/SRR10545698/SRR10545698_1.fastq.gz 
+  out=raw/SRR10545698_GSM4195454_TCR-seq_P14-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/098/SRR10545698/SRR10545698_2.fastq.gz 
+  out=raw/SRR10545698_GSM4195454_TCR-seq_P14-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/020/SRR10545620/SRR10545620_1.fastq.gz 
+  out=raw/SRR10545620_GSM4195434_TCR-seq_P7-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/020/SRR10545620/SRR10545620_2.fastq.gz 
+  out=raw/SRR10545620_GSM4195434_TCR-seq_P7-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/099/SRR10545699/SRR10545699_1.fastq.gz 
+  out=raw/SRR10545699_GSM4195454_TCR-seq_P14-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/099/SRR10545699/SRR10545699_2.fastq.gz 
+  out=raw/SRR10545699_GSM4195454_TCR-seq_P14-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/000/SRR10545700/SRR10545700_1.fastq.gz 
+  out=raw/SRR10545700_GSM4195454_TCR-seq_P14-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/000/SRR10545700/SRR10545700_2.fastq.gz 
+  out=raw/SRR10545700_GSM4195454_TCR-seq_P14-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/019/SRR10545619/SRR10545619_1.fastq.gz 
+  out=raw/SRR10545619_GSM4195434_TCR-seq_P7-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/019/SRR10545619/SRR10545619_2.fastq.gz 
+  out=raw/SRR10545619_GSM4195434_TCR-seq_P7-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/001/SRR10545701/SRR10545701_1.fastq.gz 
+  out=raw/SRR10545701_GSM4195455_TCR-seq_P14-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/001/SRR10545701/SRR10545701_2.fastq.gz 
+  out=raw/SRR10545701_GSM4195455_TCR-seq_P14-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/018/SRR10545618/SRR10545618_1.fastq.gz 
+  out=raw/SRR10545618_GSM4195434_TCR-seq_P7-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/018/SRR10545618/SRR10545618_2.fastq.gz 
+  out=raw/SRR10545618_GSM4195434_TCR-seq_P7-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/017/SRR10545617/SRR10545617_1.fastq.gz 
+  out=raw/SRR10545617_GSM4195434_TCR-seq_P7-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/017/SRR10545617/SRR10545617_2.fastq.gz 
+  out=raw/SRR10545617_GSM4195434_TCR-seq_P7-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/002/SRR10545702/SRR10545702_1.fastq.gz 
+  out=raw/SRR10545702_GSM4195455_TCR-seq_P14-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/002/SRR10545702/SRR10545702_2.fastq.gz 
+  out=raw/SRR10545702_GSM4195455_TCR-seq_P14-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/016/SRR10545616/SRR10545616_1.fastq.gz 
+  out=raw/SRR10545616_GSM4195433_TCR-seq_P7-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/016/SRR10545616/SRR10545616_2.fastq.gz 
+  out=raw/SRR10545616_GSM4195433_TCR-seq_P7-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/003/SRR10545703/SRR10545703_1.fastq.gz 
+  out=raw/SRR10545703_GSM4195455_TCR-seq_P14-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/003/SRR10545703/SRR10545703_2.fastq.gz 
+  out=raw/SRR10545703_GSM4195455_TCR-seq_P14-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/015/SRR10545615/SRR10545615_1.fastq.gz 
+  out=raw/SRR10545615_GSM4195433_TCR-seq_P7-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/015/SRR10545615/SRR10545615_2.fastq.gz 
+  out=raw/SRR10545615_GSM4195433_TCR-seq_P7-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/004/SRR10545704/SRR10545704_1.fastq.gz 
+  out=raw/SRR10545704_GSM4195455_TCR-seq_P14-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/004/SRR10545704/SRR10545704_2.fastq.gz 
+  out=raw/SRR10545704_GSM4195455_TCR-seq_P14-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/014/SRR10545614/SRR10545614_1.fastq.gz 
+  out=raw/SRR10545614_GSM4195433_TCR-seq_P7-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/014/SRR10545614/SRR10545614_2.fastq.gz 
+  out=raw/SRR10545614_GSM4195433_TCR-seq_P7-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/005/SRR10545705/SRR10545705_1.fastq.gz 
+  out=raw/SRR10545705_GSM4195456_TCR-seq_P14-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/005/SRR10545705/SRR10545705_2.fastq.gz 
+  out=raw/SRR10545705_GSM4195456_TCR-seq_P14-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/013/SRR10545613/SRR10545613_1.fastq.gz 
+  out=raw/SRR10545613_GSM4195433_TCR-seq_P7-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/013/SRR10545613/SRR10545613_2.fastq.gz 
+  out=raw/SRR10545613_GSM4195433_TCR-seq_P7-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/006/SRR10545706/SRR10545706_1.fastq.gz 
+  out=raw/SRR10545706_GSM4195456_TCR-seq_P14-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/006/SRR10545706/SRR10545706_2.fastq.gz 
+  out=raw/SRR10545706_GSM4195456_TCR-seq_P14-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/012/SRR10545612/SRR10545612_1.fastq.gz 
+  out=raw/SRR10545612_GSM4195432_TCR-seq_P7-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/012/SRR10545612/SRR10545612_2.fastq.gz 
+  out=raw/SRR10545612_GSM4195432_TCR-seq_P7-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/007/SRR10545707/SRR10545707_1.fastq.gz 
+  out=raw/SRR10545707_GSM4195456_TCR-seq_P14-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/007/SRR10545707/SRR10545707_2.fastq.gz 
+  out=raw/SRR10545707_GSM4195456_TCR-seq_P14-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/011/SRR10545611/SRR10545611_1.fastq.gz 
+  out=raw/SRR10545611_GSM4195432_TCR-seq_P7-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/011/SRR10545611/SRR10545611_2.fastq.gz 
+  out=raw/SRR10545611_GSM4195432_TCR-seq_P7-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/008/SRR10545708/SRR10545708_1.fastq.gz 
+  out=raw/SRR10545708_GSM4195456_TCR-seq_P14-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/008/SRR10545708/SRR10545708_2.fastq.gz 
+  out=raw/SRR10545708_GSM4195456_TCR-seq_P14-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/010/SRR10545610/SRR10545610_1.fastq.gz 
+  out=raw/SRR10545610_GSM4195432_TCR-seq_P7-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/010/SRR10545610/SRR10545610_2.fastq.gz 
+  out=raw/SRR10545610_GSM4195432_TCR-seq_P7-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/009/SRR10545709/SRR10545709_1.fastq.gz 
+  out=raw/SRR10545709_GSM4195457_TCR-seq_P14-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/009/SRR10545709/SRR10545709_2.fastq.gz 
+  out=raw/SRR10545709_GSM4195457_TCR-seq_P14-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/009/SRR10545609/SRR10545609_1.fastq.gz 
+  out=raw/SRR10545609_GSM4195432_TCR-seq_P7-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/009/SRR10545609/SRR10545609_2.fastq.gz 
+  out=raw/SRR10545609_GSM4195432_TCR-seq_P7-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/008/SRR10545608/SRR10545608_1.fastq.gz 
+  out=raw/SRR10545608_GSM4195431_TCR-seq_P7-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/008/SRR10545608/SRR10545608_2.fastq.gz 
+  out=raw/SRR10545608_GSM4195431_TCR-seq_P7-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/010/SRR10545710/SRR10545710_1.fastq.gz 
+  out=raw/SRR10545710_GSM4195457_TCR-seq_P14-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/010/SRR10545710/SRR10545710_2.fastq.gz 
+  out=raw/SRR10545710_GSM4195457_TCR-seq_P14-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/011/SRR10545711/SRR10545711_1.fastq.gz 
+  out=raw/SRR10545711_GSM4195457_TCR-seq_P14-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/011/SRR10545711/SRR10545711_2.fastq.gz 
+  out=raw/SRR10545711_GSM4195457_TCR-seq_P14-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/007/SRR10545607/SRR10545607_1.fastq.gz 
+  out=raw/SRR10545607_GSM4195431_TCR-seq_P7-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/007/SRR10545607/SRR10545607_2.fastq.gz 
+  out=raw/SRR10545607_GSM4195431_TCR-seq_P7-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/012/SRR10545712/SRR10545712_1.fastq.gz 
+  out=raw/SRR10545712_GSM4195457_TCR-seq_P14-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/012/SRR10545712/SRR10545712_2.fastq.gz 
+  out=raw/SRR10545712_GSM4195457_TCR-seq_P14-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/006/SRR10545606/SRR10545606_1.fastq.gz 
+  out=raw/SRR10545606_GSM4195431_TCR-seq_P7-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/006/SRR10545606/SRR10545606_2.fastq.gz 
+  out=raw/SRR10545606_GSM4195431_TCR-seq_P7-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/005/SRR10545605/SRR10545605_1.fastq.gz 
+  out=raw/SRR10545605_GSM4195431_TCR-seq_P7-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/005/SRR10545605/SRR10545605_2.fastq.gz 
+  out=raw/SRR10545605_GSM4195431_TCR-seq_P7-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/013/SRR10545713/SRR10545713_1.fastq.gz 
+  out=raw/SRR10545713_GSM4195458_TCR-seq_P14-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/013/SRR10545713/SRR10545713_2.fastq.gz 
+  out=raw/SRR10545713_GSM4195458_TCR-seq_P14-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/014/SRR10545714/SRR10545714_1.fastq.gz 
+  out=raw/SRR10545714_GSM4195458_TCR-seq_P14-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/014/SRR10545714/SRR10545714_2.fastq.gz 
+  out=raw/SRR10545714_GSM4195458_TCR-seq_P14-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/015/SRR10545715/SRR10545715_1.fastq.gz 
+  out=raw/SRR10545715_GSM4195458_TCR-seq_P14-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/015/SRR10545715/SRR10545715_2.fastq.gz 
+  out=raw/SRR10545715_GSM4195458_TCR-seq_P14-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/003/SRR10545603/SRR10545603_1.fastq.gz 
+  out=raw/SRR10545603_GSM4195430_TCR-seq_P7-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/003/SRR10545603/SRR10545603_2.fastq.gz 
+  out=raw/SRR10545603_GSM4195430_TCR-seq_P7-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/004/SRR10545604/SRR10545604_1.fastq.gz 
+  out=raw/SRR10545604_GSM4195430_TCR-seq_P7-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/004/SRR10545604/SRR10545604_2.fastq.gz 
+  out=raw/SRR10545604_GSM4195430_TCR-seq_P7-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/016/SRR10545716/SRR10545716_1.fastq.gz 
+  out=raw/SRR10545716_GSM4195458_TCR-seq_P14-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/016/SRR10545716/SRR10545716_2.fastq.gz 
+  out=raw/SRR10545716_GSM4195458_TCR-seq_P14-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/002/SRR10545602/SRR10545602_1.fastq.gz 
+  out=raw/SRR10545602_GSM4195430_TCR-seq_P7-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/002/SRR10545602/SRR10545602_2.fastq.gz 
+  out=raw/SRR10545602_GSM4195430_TCR-seq_P7-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/017/SRR10545717/SRR10545717_1.fastq.gz 
+  out=raw/SRR10545717_GSM4195459_TCR-seq_P14-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/017/SRR10545717/SRR10545717_2.fastq.gz 
+  out=raw/SRR10545717_GSM4195459_TCR-seq_P14-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/001/SRR10545601/SRR10545601_1.fastq.gz 
+  out=raw/SRR10545601_GSM4195430_TCR-seq_P7-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/001/SRR10545601/SRR10545601_2.fastq.gz 
+  out=raw/SRR10545601_GSM4195430_TCR-seq_P7-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/018/SRR10545718/SRR10545718_1.fastq.gz 
+  out=raw/SRR10545718_GSM4195459_TCR-seq_P14-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/018/SRR10545718/SRR10545718_2.fastq.gz 
+  out=raw/SRR10545718_GSM4195459_TCR-seq_P14-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/000/SRR10545600/SRR10545600_1.fastq.gz 
+  out=raw/SRR10545600_GSM4195429_TCR-seq_P7-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/000/SRR10545600/SRR10545600_2.fastq.gz 
+  out=raw/SRR10545600_GSM4195429_TCR-seq_P7-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/019/SRR10545719/SRR10545719_1.fastq.gz 
+  out=raw/SRR10545719_GSM4195459_TCR-seq_P14-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/019/SRR10545719/SRR10545719_2.fastq.gz 
+  out=raw/SRR10545719_GSM4195459_TCR-seq_P14-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/099/SRR10545599/SRR10545599_1.fastq.gz 
+  out=raw/SRR10545599_GSM4195429_TCR-seq_P7-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/099/SRR10545599/SRR10545599_2.fastq.gz 
+  out=raw/SRR10545599_GSM4195429_TCR-seq_P7-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/020/SRR10545720/SRR10545720_1.fastq.gz 
+  out=raw/SRR10545720_GSM4195459_TCR-seq_P14-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/020/SRR10545720/SRR10545720_2.fastq.gz 
+  out=raw/SRR10545720_GSM4195459_TCR-seq_P14-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/098/SRR10545598/SRR10545598_1.fastq.gz 
+  out=raw/SRR10545598_GSM4195429_TCR-seq_P7-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/098/SRR10545598/SRR10545598_2.fastq.gz 
+  out=raw/SRR10545598_GSM4195429_TCR-seq_P7-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/021/SRR10545721/SRR10545721_1.fastq.gz 
+  out=raw/SRR10545721_GSM4195460_TCR-seq_P15-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/021/SRR10545721/SRR10545721_2.fastq.gz 
+  out=raw/SRR10545721_GSM4195460_TCR-seq_P15-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/097/SRR10545597/SRR10545597_1.fastq.gz 
+  out=raw/SRR10545597_GSM4195429_TCR-seq_P7-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/097/SRR10545597/SRR10545597_2.fastq.gz 
+  out=raw/SRR10545597_GSM4195429_TCR-seq_P7-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/022/SRR10545722/SRR10545722_1.fastq.gz 
+  out=raw/SRR10545722_GSM4195460_TCR-seq_P15-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/022/SRR10545722/SRR10545722_2.fastq.gz 
+  out=raw/SRR10545722_GSM4195460_TCR-seq_P15-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/096/SRR10545596/SRR10545596_1.fastq.gz 
+  out=raw/SRR10545596_GSM4195428_TCR-seq_P7-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/096/SRR10545596/SRR10545596_2.fastq.gz 
+  out=raw/SRR10545596_GSM4195428_TCR-seq_P7-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/023/SRR10545723/SRR10545723_1.fastq.gz 
+  out=raw/SRR10545723_GSM4195460_TCR-seq_P15-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/023/SRR10545723/SRR10545723_2.fastq.gz 
+  out=raw/SRR10545723_GSM4195460_TCR-seq_P15-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/095/SRR10545595/SRR10545595_1.fastq.gz 
+  out=raw/SRR10545595_GSM4195428_TCR-seq_P7-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/095/SRR10545595/SRR10545595_2.fastq.gz 
+  out=raw/SRR10545595_GSM4195428_TCR-seq_P7-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/094/SRR10545594/SRR10545594_1.fastq.gz 
+  out=raw/SRR10545594_GSM4195428_TCR-seq_P7-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/094/SRR10545594/SRR10545594_2.fastq.gz 
+  out=raw/SRR10545594_GSM4195428_TCR-seq_P7-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/024/SRR10545724/SRR10545724_1.fastq.gz 
+  out=raw/SRR10545724_GSM4195460_TCR-seq_P15-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/024/SRR10545724/SRR10545724_2.fastq.gz 
+  out=raw/SRR10545724_GSM4195460_TCR-seq_P15-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/025/SRR10545725/SRR10545725_1.fastq.gz 
+  out=raw/SRR10545725_GSM4195461_TCR-seq_P15-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/025/SRR10545725/SRR10545725_2.fastq.gz 
+  out=raw/SRR10545725_GSM4195461_TCR-seq_P15-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/093/SRR10545593/SRR10545593_1.fastq.gz 
+  out=raw/SRR10545593_GSM4195428_TCR-seq_P7-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/093/SRR10545593/SRR10545593_2.fastq.gz 
+  out=raw/SRR10545593_GSM4195428_TCR-seq_P7-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/026/SRR10545726/SRR10545726_1.fastq.gz 
+  out=raw/SRR10545726_GSM4195461_TCR-seq_P15-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/026/SRR10545726/SRR10545726_2.fastq.gz 
+  out=raw/SRR10545726_GSM4195461_TCR-seq_P15-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/027/SRR10545727/SRR10545727_1.fastq.gz 
+  out=raw/SRR10545727_GSM4195461_TCR-seq_P15-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/027/SRR10545727/SRR10545727_2.fastq.gz 
+  out=raw/SRR10545727_GSM4195461_TCR-seq_P15-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/092/SRR10545592/SRR10545592_1.fastq.gz 
+  out=raw/SRR10545592_GSM4195427_TCR-seq_P7-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/092/SRR10545592/SRR10545592_2.fastq.gz 
+  out=raw/SRR10545592_GSM4195427_TCR-seq_P7-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/091/SRR10545591/SRR10545591_1.fastq.gz 
+  out=raw/SRR10545591_GSM4195427_TCR-seq_P7-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/091/SRR10545591/SRR10545591_2.fastq.gz 
+  out=raw/SRR10545591_GSM4195427_TCR-seq_P7-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/090/SRR10545590/SRR10545590_1.fastq.gz 
+  out=raw/SRR10545590_GSM4195427_TCR-seq_P7-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/090/SRR10545590/SRR10545590_2.fastq.gz 
+  out=raw/SRR10545590_GSM4195427_TCR-seq_P7-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/028/SRR10545728/SRR10545728_1.fastq.gz 
+  out=raw/SRR10545728_GSM4195461_TCR-seq_P15-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/028/SRR10545728/SRR10545728_2.fastq.gz 
+  out=raw/SRR10545728_GSM4195461_TCR-seq_P15-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/029/SRR10545729/SRR10545729_1.fastq.gz 
+  out=raw/SRR10545729_GSM4195462_TCR-seq_P15-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/029/SRR10545729/SRR10545729_2.fastq.gz 
+  out=raw/SRR10545729_GSM4195462_TCR-seq_P15-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/089/SRR10545589/SRR10545589_1.fastq.gz 
+  out=raw/SRR10545589_GSM4195427_TCR-seq_P7-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/089/SRR10545589/SRR10545589_2.fastq.gz 
+  out=raw/SRR10545589_GSM4195427_TCR-seq_P7-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/030/SRR10545730/SRR10545730_1.fastq.gz 
+  out=raw/SRR10545730_GSM4195462_TCR-seq_P15-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/030/SRR10545730/SRR10545730_2.fastq.gz 
+  out=raw/SRR10545730_GSM4195462_TCR-seq_P15-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/088/SRR10545588/SRR10545588_1.fastq.gz 
+  out=raw/SRR10545588_GSM4195426_TCR-seq_P7-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/088/SRR10545588/SRR10545588_2.fastq.gz 
+  out=raw/SRR10545588_GSM4195426_TCR-seq_P7-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/032/SRR10545732/SRR10545732_1.fastq.gz 
+  out=raw/SRR10545732_GSM4195462_TCR-seq_P15-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/032/SRR10545732/SRR10545732_2.fastq.gz 
+  out=raw/SRR10545732_GSM4195462_TCR-seq_P15-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/031/SRR10545731/SRR10545731_1.fastq.gz 
+  out=raw/SRR10545731_GSM4195462_TCR-seq_P15-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/031/SRR10545731/SRR10545731_2.fastq.gz 
+  out=raw/SRR10545731_GSM4195462_TCR-seq_P15-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/087/SRR10545587/SRR10545587_1.fastq.gz 
+  out=raw/SRR10545587_GSM4195426_TCR-seq_P7-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/087/SRR10545587/SRR10545587_2.fastq.gz 
+  out=raw/SRR10545587_GSM4195426_TCR-seq_P7-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/033/SRR10545733/SRR10545733_1.fastq.gz 
+  out=raw/SRR10545733_GSM4195463_TCR-seq_P15-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/033/SRR10545733/SRR10545733_2.fastq.gz 
+  out=raw/SRR10545733_GSM4195463_TCR-seq_P15-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/086/SRR10545586/SRR10545586_1.fastq.gz 
+  out=raw/SRR10545586_GSM4195426_TCR-seq_P7-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/086/SRR10545586/SRR10545586_2.fastq.gz 
+  out=raw/SRR10545586_GSM4195426_TCR-seq_P7-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/085/SRR10545585/SRR10545585_1.fastq.gz 
+  out=raw/SRR10545585_GSM4195426_TCR-seq_P7-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/085/SRR10545585/SRR10545585_2.fastq.gz 
+  out=raw/SRR10545585_GSM4195426_TCR-seq_P7-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/034/SRR10545734/SRR10545734_1.fastq.gz 
+  out=raw/SRR10545734_GSM4195463_TCR-seq_P15-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/034/SRR10545734/SRR10545734_2.fastq.gz 
+  out=raw/SRR10545734_GSM4195463_TCR-seq_P15-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/084/SRR10545584/SRR10545584_1.fastq.gz 
+  out=raw/SRR10545584_GSM4195425_TCR-seq_P7-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/084/SRR10545584/SRR10545584_2.fastq.gz 
+  out=raw/SRR10545584_GSM4195425_TCR-seq_P7-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/035/SRR10545735/SRR10545735_1.fastq.gz 
+  out=raw/SRR10545735_GSM4195463_TCR-seq_P15-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/035/SRR10545735/SRR10545735_2.fastq.gz 
+  out=raw/SRR10545735_GSM4195463_TCR-seq_P15-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/083/SRR10545583/SRR10545583_1.fastq.gz 
+  out=raw/SRR10545583_GSM4195425_TCR-seq_P7-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/083/SRR10545583/SRR10545583_2.fastq.gz 
+  out=raw/SRR10545583_GSM4195425_TCR-seq_P7-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/082/SRR10545582/SRR10545582_1.fastq.gz 
+  out=raw/SRR10545582_GSM4195425_TCR-seq_P7-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/082/SRR10545582/SRR10545582_2.fastq.gz 
+  out=raw/SRR10545582_GSM4195425_TCR-seq_P7-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/081/SRR10545581/SRR10545581_1.fastq.gz 
+  out=raw/SRR10545581_GSM4195425_TCR-seq_P7-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/081/SRR10545581/SRR10545581_2.fastq.gz 
+  out=raw/SRR10545581_GSM4195425_TCR-seq_P7-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/037/SRR10545737/SRR10545737_1.fastq.gz 
+  out=raw/SRR10545737_GSM4195464_TCR-seq_P15-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/037/SRR10545737/SRR10545737_2.fastq.gz 
+  out=raw/SRR10545737_GSM4195464_TCR-seq_P15-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/036/SRR10545736/SRR10545736_1.fastq.gz 
+  out=raw/SRR10545736_GSM4195463_TCR-seq_P15-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/036/SRR10545736/SRR10545736_2.fastq.gz 
+  out=raw/SRR10545736_GSM4195463_TCR-seq_P15-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/038/SRR10545738/SRR10545738_1.fastq.gz 
+  out=raw/SRR10545738_GSM4195464_TCR-seq_P15-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/038/SRR10545738/SRR10545738_2.fastq.gz 
+  out=raw/SRR10545738_GSM4195464_TCR-seq_P15-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/080/SRR10545580/SRR10545580_1.fastq.gz 
+  out=raw/SRR10545580_GSM4195424_TCR-seq_P7-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/080/SRR10545580/SRR10545580_2.fastq.gz 
+  out=raw/SRR10545580_GSM4195424_TCR-seq_P7-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/039/SRR10545739/SRR10545739_1.fastq.gz 
+  out=raw/SRR10545739_GSM4195464_TCR-seq_P15-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/039/SRR10545739/SRR10545739_2.fastq.gz 
+  out=raw/SRR10545739_GSM4195464_TCR-seq_P15-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/079/SRR10545579/SRR10545579_1.fastq.gz 
+  out=raw/SRR10545579_GSM4195424_TCR-seq_P7-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/079/SRR10545579/SRR10545579_2.fastq.gz 
+  out=raw/SRR10545579_GSM4195424_TCR-seq_P7-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/040/SRR10545740/SRR10545740_1.fastq.gz 
+  out=raw/SRR10545740_GSM4195464_TCR-seq_P15-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/040/SRR10545740/SRR10545740_2.fastq.gz 
+  out=raw/SRR10545740_GSM4195464_TCR-seq_P15-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/078/SRR10545578/SRR10545578_1.fastq.gz 
+  out=raw/SRR10545578_GSM4195424_TCR-seq_P7-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/078/SRR10545578/SRR10545578_2.fastq.gz 
+  out=raw/SRR10545578_GSM4195424_TCR-seq_P7-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/077/SRR10545577/SRR10545577_1.fastq.gz 
+  out=raw/SRR10545577_GSM4195424_TCR-seq_P7-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/077/SRR10545577/SRR10545577_2.fastq.gz 
+  out=raw/SRR10545577_GSM4195424_TCR-seq_P7-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/041/SRR10545741/SRR10545741_1.fastq.gz 
+  out=raw/SRR10545741_GSM4195465_TCR-seq_P15-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/041/SRR10545741/SRR10545741_2.fastq.gz 
+  out=raw/SRR10545741_GSM4195465_TCR-seq_P15-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/042/SRR10545742/SRR10545742_1.fastq.gz 
+  out=raw/SRR10545742_GSM4195465_TCR-seq_P15-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/042/SRR10545742/SRR10545742_2.fastq.gz 
+  out=raw/SRR10545742_GSM4195465_TCR-seq_P15-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/076/SRR10545576/SRR10545576_1.fastq.gz 
+  out=raw/SRR10545576_GSM4195423_TCR-seq_P6-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/076/SRR10545576/SRR10545576_2.fastq.gz 
+  out=raw/SRR10545576_GSM4195423_TCR-seq_P6-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/043/SRR10545743/SRR10545743_1.fastq.gz 
+  out=raw/SRR10545743_GSM4195465_TCR-seq_P15-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/043/SRR10545743/SRR10545743_2.fastq.gz 
+  out=raw/SRR10545743_GSM4195465_TCR-seq_P15-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/075/SRR10545575/SRR10545575_1.fastq.gz 
+  out=raw/SRR10545575_GSM4195423_TCR-seq_P6-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/075/SRR10545575/SRR10545575_2.fastq.gz 
+  out=raw/SRR10545575_GSM4195423_TCR-seq_P6-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/044/SRR10545744/SRR10545744_1.fastq.gz 
+  out=raw/SRR10545744_GSM4195465_TCR-seq_P15-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/044/SRR10545744/SRR10545744_2.fastq.gz 
+  out=raw/SRR10545744_GSM4195465_TCR-seq_P15-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/073/SRR10545573/SRR10545573_1.fastq.gz 
+  out=raw/SRR10545573_GSM4195423_TCR-seq_P6-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/073/SRR10545573/SRR10545573_2.fastq.gz 
+  out=raw/SRR10545573_GSM4195423_TCR-seq_P6-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/045/SRR10545745/SRR10545745_1.fastq.gz 
+  out=raw/SRR10545745_GSM4195466_TCR-seq_P15-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/045/SRR10545745/SRR10545745_2.fastq.gz 
+  out=raw/SRR10545745_GSM4195466_TCR-seq_P15-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/074/SRR10545574/SRR10545574_1.fastq.gz 
+  out=raw/SRR10545574_GSM4195423_TCR-seq_P6-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/074/SRR10545574/SRR10545574_2.fastq.gz 
+  out=raw/SRR10545574_GSM4195423_TCR-seq_P6-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/072/SRR10545572/SRR10545572_1.fastq.gz 
+  out=raw/SRR10545572_GSM4195422_TCR-seq_P6-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/072/SRR10545572/SRR10545572_2.fastq.gz 
+  out=raw/SRR10545572_GSM4195422_TCR-seq_P6-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/046/SRR10545746/SRR10545746_1.fastq.gz 
+  out=raw/SRR10545746_GSM4195466_TCR-seq_P15-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/046/SRR10545746/SRR10545746_2.fastq.gz 
+  out=raw/SRR10545746_GSM4195466_TCR-seq_P15-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/047/SRR10545747/SRR10545747_1.fastq.gz 
+  out=raw/SRR10545747_GSM4195466_TCR-seq_P15-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/047/SRR10545747/SRR10545747_2.fastq.gz 
+  out=raw/SRR10545747_GSM4195466_TCR-seq_P15-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/071/SRR10545571/SRR10545571_1.fastq.gz 
+  out=raw/SRR10545571_GSM4195422_TCR-seq_P6-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/071/SRR10545571/SRR10545571_2.fastq.gz 
+  out=raw/SRR10545571_GSM4195422_TCR-seq_P6-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/048/SRR10545748/SRR10545748_1.fastq.gz 
+  out=raw/SRR10545748_GSM4195466_TCR-seq_P15-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/048/SRR10545748/SRR10545748_2.fastq.gz 
+  out=raw/SRR10545748_GSM4195466_TCR-seq_P15-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/070/SRR10545570/SRR10545570_1.fastq.gz 
+  out=raw/SRR10545570_GSM4195422_TCR-seq_P6-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/070/SRR10545570/SRR10545570_2.fastq.gz 
+  out=raw/SRR10545570_GSM4195422_TCR-seq_P6-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/049/SRR10545749/SRR10545749_1.fastq.gz 
+  out=raw/SRR10545749_GSM4195467_TCR-seq_P15-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/049/SRR10545749/SRR10545749_2.fastq.gz 
+  out=raw/SRR10545749_GSM4195467_TCR-seq_P15-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/069/SRR10545569/SRR10545569_1.fastq.gz 
+  out=raw/SRR10545569_GSM4195422_TCR-seq_P6-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/069/SRR10545569/SRR10545569_2.fastq.gz 
+  out=raw/SRR10545569_GSM4195422_TCR-seq_P6-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/051/SRR10545751/SRR10545751_1.fastq.gz 
+  out=raw/SRR10545751_GSM4195467_TCR-seq_P15-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/051/SRR10545751/SRR10545751_2.fastq.gz 
+  out=raw/SRR10545751_GSM4195467_TCR-seq_P15-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/068/SRR10545568/SRR10545568_1.fastq.gz 
+  out=raw/SRR10545568_GSM4195421_TCR-seq_P6-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/068/SRR10545568/SRR10545568_2.fastq.gz 
+  out=raw/SRR10545568_GSM4195421_TCR-seq_P6-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/050/SRR10545750/SRR10545750_1.fastq.gz 
+  out=raw/SRR10545750_GSM4195467_TCR-seq_P15-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/050/SRR10545750/SRR10545750_2.fastq.gz 
+  out=raw/SRR10545750_GSM4195467_TCR-seq_P15-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/067/SRR10545567/SRR10545567_1.fastq.gz 
+  out=raw/SRR10545567_GSM4195421_TCR-seq_P6-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/067/SRR10545567/SRR10545567_2.fastq.gz 
+  out=raw/SRR10545567_GSM4195421_TCR-seq_P6-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/052/SRR10545752/SRR10545752_1.fastq.gz 
+  out=raw/SRR10545752_GSM4195467_TCR-seq_P15-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/052/SRR10545752/SRR10545752_2.fastq.gz 
+  out=raw/SRR10545752_GSM4195467_TCR-seq_P15-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/066/SRR10545566/SRR10545566_1.fastq.gz 
+  out=raw/SRR10545566_GSM4195421_TCR-seq_P6-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/066/SRR10545566/SRR10545566_2.fastq.gz 
+  out=raw/SRR10545566_GSM4195421_TCR-seq_P6-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/053/SRR10545753/SRR10545753_1.fastq.gz 
+  out=raw/SRR10545753_GSM4195468_TCR-seq_P15-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/053/SRR10545753/SRR10545753_2.fastq.gz 
+  out=raw/SRR10545753_GSM4195468_TCR-seq_P15-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/054/SRR10545754/SRR10545754_1.fastq.gz 
+  out=raw/SRR10545754_GSM4195468_TCR-seq_P15-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/054/SRR10545754/SRR10545754_2.fastq.gz 
+  out=raw/SRR10545754_GSM4195468_TCR-seq_P15-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/063/SRR10545563/SRR10545563_1.fastq.gz 
+  out=raw/SRR10545563_GSM4195420_TCR-seq_P6-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/063/SRR10545563/SRR10545563_2.fastq.gz 
+  out=raw/SRR10545563_GSM4195420_TCR-seq_P6-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/065/SRR10545565/SRR10545565_1.fastq.gz 
+  out=raw/SRR10545565_GSM4195421_TCR-seq_P6-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/065/SRR10545565/SRR10545565_2.fastq.gz 
+  out=raw/SRR10545565_GSM4195421_TCR-seq_P6-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/064/SRR10545564/SRR10545564_1.fastq.gz 
+  out=raw/SRR10545564_GSM4195420_TCR-seq_P6-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/064/SRR10545564/SRR10545564_2.fastq.gz 
+  out=raw/SRR10545564_GSM4195420_TCR-seq_P6-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/055/SRR10545755/SRR10545755_1.fastq.gz 
+  out=raw/SRR10545755_GSM4195468_TCR-seq_P15-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/055/SRR10545755/SRR10545755_2.fastq.gz 
+  out=raw/SRR10545755_GSM4195468_TCR-seq_P15-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/056/SRR10545756/SRR10545756_1.fastq.gz 
+  out=raw/SRR10545756_GSM4195468_TCR-seq_P15-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/056/SRR10545756/SRR10545756_2.fastq.gz 
+  out=raw/SRR10545756_GSM4195468_TCR-seq_P15-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/062/SRR10545562/SRR10545562_1.fastq.gz 
+  out=raw/SRR10545562_GSM4195420_TCR-seq_P6-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/062/SRR10545562/SRR10545562_2.fastq.gz 
+  out=raw/SRR10545562_GSM4195420_TCR-seq_P6-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/057/SRR10545757/SRR10545757_1.fastq.gz 
+  out=raw/SRR10545757_GSM4195469_TCR-seq_P15-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/057/SRR10545757/SRR10545757_2.fastq.gz 
+  out=raw/SRR10545757_GSM4195469_TCR-seq_P15-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/061/SRR10545561/SRR10545561_1.fastq.gz 
+  out=raw/SRR10545561_GSM4195420_TCR-seq_P6-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/061/SRR10545561/SRR10545561_2.fastq.gz 
+  out=raw/SRR10545561_GSM4195420_TCR-seq_P6-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/039/SRR10546039/SRR10546039_1.fastq.gz 
+  out=raw/SRR10546039_GSM4195539_TCR-seq_P23-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/039/SRR10546039/SRR10546039_2.fastq.gz 
+  out=raw/SRR10546039_GSM4195539_TCR-seq_P23-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/058/SRR10545758/SRR10545758_1.fastq.gz 
+  out=raw/SRR10545758_GSM4195469_TCR-seq_P15-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/058/SRR10545758/SRR10545758_2.fastq.gz 
+  out=raw/SRR10545758_GSM4195469_TCR-seq_P15-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/040/SRR10546040/SRR10546040_1.fastq.gz 
+  out=raw/SRR10546040_GSM4195539_TCR-seq_P23-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/040/SRR10546040/SRR10546040_2.fastq.gz 
+  out=raw/SRR10546040_GSM4195539_TCR-seq_P23-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/059/SRR10545759/SRR10545759_1.fastq.gz 
+  out=raw/SRR10545759_GSM4195469_TCR-seq_P15-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/059/SRR10545759/SRR10545759_2.fastq.gz 
+  out=raw/SRR10545759_GSM4195469_TCR-seq_P15-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/060/SRR10545760/SRR10545760_1.fastq.gz 
+  out=raw/SRR10545760_GSM4195469_TCR-seq_P15-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/060/SRR10545760/SRR10545760_2.fastq.gz 
+  out=raw/SRR10545760_GSM4195469_TCR-seq_P15-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/038/SRR10546038/SRR10546038_1.fastq.gz 
+  out=raw/SRR10546038_GSM4195539_TCR-seq_P23-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/038/SRR10546038/SRR10546038_2.fastq.gz 
+  out=raw/SRR10546038_GSM4195539_TCR-seq_P23-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/061/SRR10545761/SRR10545761_1.fastq.gz 
+  out=raw/SRR10545761_GSM4195470_TCR-seq_P15-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/061/SRR10545761/SRR10545761_2.fastq.gz 
+  out=raw/SRR10545761_GSM4195470_TCR-seq_P15-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/037/SRR10546037/SRR10546037_1.fastq.gz 
+  out=raw/SRR10546037_GSM4195539_TCR-seq_P23-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/037/SRR10546037/SRR10546037_2.fastq.gz 
+  out=raw/SRR10546037_GSM4195539_TCR-seq_P23-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/062/SRR10545762/SRR10545762_1.fastq.gz 
+  out=raw/SRR10545762_GSM4195470_TCR-seq_P15-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/062/SRR10545762/SRR10545762_2.fastq.gz 
+  out=raw/SRR10545762_GSM4195470_TCR-seq_P15-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/036/SRR10546036/SRR10546036_1.fastq.gz 
+  out=raw/SRR10546036_GSM4195538_TCR-seq_P23-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/036/SRR10546036/SRR10546036_2.fastq.gz 
+  out=raw/SRR10546036_GSM4195538_TCR-seq_P23-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/063/SRR10545763/SRR10545763_1.fastq.gz 
+  out=raw/SRR10545763_GSM4195470_TCR-seq_P15-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/063/SRR10545763/SRR10545763_2.fastq.gz 
+  out=raw/SRR10545763_GSM4195470_TCR-seq_P15-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/034/SRR10546034/SRR10546034_1.fastq.gz 
+  out=raw/SRR10546034_GSM4195538_TCR-seq_P23-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/034/SRR10546034/SRR10546034_2.fastq.gz 
+  out=raw/SRR10546034_GSM4195538_TCR-seq_P23-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/064/SRR10545764/SRR10545764_1.fastq.gz 
+  out=raw/SRR10545764_GSM4195470_TCR-seq_P15-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/064/SRR10545764/SRR10545764_2.fastq.gz 
+  out=raw/SRR10545764_GSM4195470_TCR-seq_P15-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/035/SRR10546035/SRR10546035_1.fastq.gz 
+  out=raw/SRR10546035_GSM4195538_TCR-seq_P23-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/035/SRR10546035/SRR10546035_2.fastq.gz 
+  out=raw/SRR10546035_GSM4195538_TCR-seq_P23-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/065/SRR10545765/SRR10545765_1.fastq.gz 
+  out=raw/SRR10545765_GSM4195471_TCR-seq_P15-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/065/SRR10545765/SRR10545765_2.fastq.gz 
+  out=raw/SRR10545765_GSM4195471_TCR-seq_P15-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/033/SRR10546033/SRR10546033_1.fastq.gz 
+  out=raw/SRR10546033_GSM4195538_TCR-seq_P23-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/033/SRR10546033/SRR10546033_2.fastq.gz 
+  out=raw/SRR10546033_GSM4195538_TCR-seq_P23-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/066/SRR10545766/SRR10545766_1.fastq.gz 
+  out=raw/SRR10545766_GSM4195471_TCR-seq_P15-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/066/SRR10545766/SRR10545766_2.fastq.gz 
+  out=raw/SRR10545766_GSM4195471_TCR-seq_P15-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/032/SRR10546032/SRR10546032_1.fastq.gz 
+  out=raw/SRR10546032_GSM4195537_TCR-seq_P23-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/032/SRR10546032/SRR10546032_2.fastq.gz 
+  out=raw/SRR10546032_GSM4195537_TCR-seq_P23-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/067/SRR10545767/SRR10545767_1.fastq.gz 
+  out=raw/SRR10545767_GSM4195471_TCR-seq_P15-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/067/SRR10545767/SRR10545767_2.fastq.gz 
+  out=raw/SRR10545767_GSM4195471_TCR-seq_P15-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/031/SRR10546031/SRR10546031_1.fastq.gz 
+  out=raw/SRR10546031_GSM4195537_TCR-seq_P23-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/031/SRR10546031/SRR10546031_2.fastq.gz 
+  out=raw/SRR10546031_GSM4195537_TCR-seq_P23-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/068/SRR10545768/SRR10545768_1.fastq.gz 
+  out=raw/SRR10545768_GSM4195471_TCR-seq_P15-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/068/SRR10545768/SRR10545768_2.fastq.gz 
+  out=raw/SRR10545768_GSM4195471_TCR-seq_P15-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/069/SRR10545769/SRR10545769_1.fastq.gz 
+  out=raw/SRR10545769_GSM4195472_TCR-seq_P16-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/069/SRR10545769/SRR10545769_2.fastq.gz 
+  out=raw/SRR10545769_GSM4195472_TCR-seq_P16-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/030/SRR10546030/SRR10546030_1.fastq.gz 
+  out=raw/SRR10546030_GSM4195537_TCR-seq_P23-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/030/SRR10546030/SRR10546030_2.fastq.gz 
+  out=raw/SRR10546030_GSM4195537_TCR-seq_P23-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/029/SRR10546029/SRR10546029_1.fastq.gz 
+  out=raw/SRR10546029_GSM4195537_TCR-seq_P23-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/029/SRR10546029/SRR10546029_2.fastq.gz 
+  out=raw/SRR10546029_GSM4195537_TCR-seq_P23-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/070/SRR10545770/SRR10545770_1.fastq.gz 
+  out=raw/SRR10545770_GSM4195472_TCR-seq_P16-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/070/SRR10545770/SRR10545770_2.fastq.gz 
+  out=raw/SRR10545770_GSM4195472_TCR-seq_P16-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/028/SRR10546028/SRR10546028_1.fastq.gz 
+  out=raw/SRR10546028_GSM4195536_TCR-seq_P23-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/028/SRR10546028/SRR10546028_2.fastq.gz 
+  out=raw/SRR10546028_GSM4195536_TCR-seq_P23-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/071/SRR10545771/SRR10545771_1.fastq.gz 
+  out=raw/SRR10545771_GSM4195472_TCR-seq_P16-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/071/SRR10545771/SRR10545771_2.fastq.gz 
+  out=raw/SRR10545771_GSM4195472_TCR-seq_P16-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/072/SRR10545772/SRR10545772_1.fastq.gz 
+  out=raw/SRR10545772_GSM4195472_TCR-seq_P16-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/072/SRR10545772/SRR10545772_2.fastq.gz 
+  out=raw/SRR10545772_GSM4195472_TCR-seq_P16-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/027/SRR10546027/SRR10546027_1.fastq.gz 
+  out=raw/SRR10546027_GSM4195536_TCR-seq_P23-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/027/SRR10546027/SRR10546027_2.fastq.gz 
+  out=raw/SRR10546027_GSM4195536_TCR-seq_P23-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/026/SRR10546026/SRR10546026_1.fastq.gz 
+  out=raw/SRR10546026_GSM4195536_TCR-seq_P23-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/026/SRR10546026/SRR10546026_2.fastq.gz 
+  out=raw/SRR10546026_GSM4195536_TCR-seq_P23-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/073/SRR10545773/SRR10545773_1.fastq.gz 
+  out=raw/SRR10545773_GSM4195473_TCR-seq_P16-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/073/SRR10545773/SRR10545773_2.fastq.gz 
+  out=raw/SRR10545773_GSM4195473_TCR-seq_P16-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/025/SRR10546025/SRR10546025_1.fastq.gz 
+  out=raw/SRR10546025_GSM4195536_TCR-seq_P23-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/025/SRR10546025/SRR10546025_2.fastq.gz 
+  out=raw/SRR10546025_GSM4195536_TCR-seq_P23-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/074/SRR10545774/SRR10545774_1.fastq.gz 
+  out=raw/SRR10545774_GSM4195473_TCR-seq_P16-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/074/SRR10545774/SRR10545774_2.fastq.gz 
+  out=raw/SRR10545774_GSM4195473_TCR-seq_P16-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/024/SRR10546024/SRR10546024_1.fastq.gz 
+  out=raw/SRR10546024_GSM4195535_TCR-seq_P23-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/024/SRR10546024/SRR10546024_2.fastq.gz 
+  out=raw/SRR10546024_GSM4195535_TCR-seq_P23-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/075/SRR10545775/SRR10545775_1.fastq.gz 
+  out=raw/SRR10545775_GSM4195473_TCR-seq_P16-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/075/SRR10545775/SRR10545775_2.fastq.gz 
+  out=raw/SRR10545775_GSM4195473_TCR-seq_P16-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/023/SRR10546023/SRR10546023_1.fastq.gz 
+  out=raw/SRR10546023_GSM4195535_TCR-seq_P23-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/023/SRR10546023/SRR10546023_2.fastq.gz 
+  out=raw/SRR10546023_GSM4195535_TCR-seq_P23-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/022/SRR10546022/SRR10546022_1.fastq.gz 
+  out=raw/SRR10546022_GSM4195535_TCR-seq_P23-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/022/SRR10546022/SRR10546022_2.fastq.gz 
+  out=raw/SRR10546022_GSM4195535_TCR-seq_P23-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/076/SRR10545776/SRR10545776_1.fastq.gz 
+  out=raw/SRR10545776_GSM4195473_TCR-seq_P16-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/076/SRR10545776/SRR10545776_2.fastq.gz 
+  out=raw/SRR10545776_GSM4195473_TCR-seq_P16-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/077/SRR10545777/SRR10545777_1.fastq.gz 
+  out=raw/SRR10545777_GSM4195474_TCR-seq_P16-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/077/SRR10545777/SRR10545777_2.fastq.gz 
+  out=raw/SRR10545777_GSM4195474_TCR-seq_P16-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/021/SRR10546021/SRR10546021_1.fastq.gz 
+  out=raw/SRR10546021_GSM4195535_TCR-seq_P23-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/021/SRR10546021/SRR10546021_2.fastq.gz 
+  out=raw/SRR10546021_GSM4195535_TCR-seq_P23-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/078/SRR10545778/SRR10545778_1.fastq.gz 
+  out=raw/SRR10545778_GSM4195474_TCR-seq_P16-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/078/SRR10545778/SRR10545778_2.fastq.gz 
+  out=raw/SRR10545778_GSM4195474_TCR-seq_P16-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/020/SRR10546020/SRR10546020_1.fastq.gz 
+  out=raw/SRR10546020_GSM4195534_TCR-seq_P23-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/020/SRR10546020/SRR10546020_2.fastq.gz 
+  out=raw/SRR10546020_GSM4195534_TCR-seq_P23-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/079/SRR10545779/SRR10545779_1.fastq.gz 
+  out=raw/SRR10545779_GSM4195474_TCR-seq_P16-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/079/SRR10545779/SRR10545779_2.fastq.gz 
+  out=raw/SRR10545779_GSM4195474_TCR-seq_P16-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/019/SRR10546019/SRR10546019_1.fastq.gz 
+  out=raw/SRR10546019_GSM4195534_TCR-seq_P23-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/019/SRR10546019/SRR10546019_2.fastq.gz 
+  out=raw/SRR10546019_GSM4195534_TCR-seq_P23-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/080/SRR10545780/SRR10545780_1.fastq.gz 
+  out=raw/SRR10545780_GSM4195474_TCR-seq_P16-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/080/SRR10545780/SRR10545780_2.fastq.gz 
+  out=raw/SRR10545780_GSM4195474_TCR-seq_P16-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/081/SRR10545781/SRR10545781_1.fastq.gz 
+  out=raw/SRR10545781_GSM4195475_TCR-seq_P16-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/081/SRR10545781/SRR10545781_2.fastq.gz 
+  out=raw/SRR10545781_GSM4195475_TCR-seq_P16-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/018/SRR10546018/SRR10546018_1.fastq.gz 
+  out=raw/SRR10546018_GSM4195534_TCR-seq_P23-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/018/SRR10546018/SRR10546018_2.fastq.gz 
+  out=raw/SRR10546018_GSM4195534_TCR-seq_P23-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/082/SRR10545782/SRR10545782_1.fastq.gz 
+  out=raw/SRR10545782_GSM4195475_TCR-seq_P16-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/082/SRR10545782/SRR10545782_2.fastq.gz 
+  out=raw/SRR10545782_GSM4195475_TCR-seq_P16-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/017/SRR10546017/SRR10546017_1.fastq.gz 
+  out=raw/SRR10546017_GSM4195534_TCR-seq_P23-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/017/SRR10546017/SRR10546017_2.fastq.gz 
+  out=raw/SRR10546017_GSM4195534_TCR-seq_P23-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/083/SRR10545783/SRR10545783_1.fastq.gz 
+  out=raw/SRR10545783_GSM4195475_TCR-seq_P16-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/083/SRR10545783/SRR10545783_2.fastq.gz 
+  out=raw/SRR10545783_GSM4195475_TCR-seq_P16-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/016/SRR10546016/SRR10546016_1.fastq.gz 
+  out=raw/SRR10546016_GSM4195533_TCR-seq_P23-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/016/SRR10546016/SRR10546016_2.fastq.gz 
+  out=raw/SRR10546016_GSM4195533_TCR-seq_P23-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/015/SRR10546015/SRR10546015_1.fastq.gz 
+  out=raw/SRR10546015_GSM4195533_TCR-seq_P23-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/015/SRR10546015/SRR10546015_2.fastq.gz 
+  out=raw/SRR10546015_GSM4195533_TCR-seq_P23-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/084/SRR10545784/SRR10545784_1.fastq.gz 
+  out=raw/SRR10545784_GSM4195475_TCR-seq_P16-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/084/SRR10545784/SRR10545784_2.fastq.gz 
+  out=raw/SRR10545784_GSM4195475_TCR-seq_P16-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/014/SRR10546014/SRR10546014_1.fastq.gz 
+  out=raw/SRR10546014_GSM4195533_TCR-seq_P23-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/014/SRR10546014/SRR10546014_2.fastq.gz 
+  out=raw/SRR10546014_GSM4195533_TCR-seq_P23-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/013/SRR10546013/SRR10546013_1.fastq.gz 
+  out=raw/SRR10546013_GSM4195533_TCR-seq_P23-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/013/SRR10546013/SRR10546013_2.fastq.gz 
+  out=raw/SRR10546013_GSM4195533_TCR-seq_P23-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/085/SRR10545785/SRR10545785_1.fastq.gz 
+  out=raw/SRR10545785_GSM4195476_TCR-seq_P16-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/085/SRR10545785/SRR10545785_2.fastq.gz 
+  out=raw/SRR10545785_GSM4195476_TCR-seq_P16-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/012/SRR10546012/SRR10546012_1.fastq.gz 
+  out=raw/SRR10546012_GSM4195532_TCR-seq_P23-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/012/SRR10546012/SRR10546012_2.fastq.gz 
+  out=raw/SRR10546012_GSM4195532_TCR-seq_P23-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/086/SRR10545786/SRR10545786_1.fastq.gz 
+  out=raw/SRR10545786_GSM4195476_TCR-seq_P16-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/086/SRR10545786/SRR10545786_2.fastq.gz 
+  out=raw/SRR10545786_GSM4195476_TCR-seq_P16-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/011/SRR10546011/SRR10546011_1.fastq.gz 
+  out=raw/SRR10546011_GSM4195532_TCR-seq_P23-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/011/SRR10546011/SRR10546011_2.fastq.gz 
+  out=raw/SRR10546011_GSM4195532_TCR-seq_P23-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/087/SRR10545787/SRR10545787_1.fastq.gz 
+  out=raw/SRR10545787_GSM4195476_TCR-seq_P16-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/087/SRR10545787/SRR10545787_2.fastq.gz 
+  out=raw/SRR10545787_GSM4195476_TCR-seq_P16-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/088/SRR10545788/SRR10545788_1.fastq.gz 
+  out=raw/SRR10545788_GSM4195476_TCR-seq_P16-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/088/SRR10545788/SRR10545788_2.fastq.gz 
+  out=raw/SRR10545788_GSM4195476_TCR-seq_P16-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/010/SRR10546010/SRR10546010_1.fastq.gz 
+  out=raw/SRR10546010_GSM4195532_TCR-seq_P23-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/010/SRR10546010/SRR10546010_2.fastq.gz 
+  out=raw/SRR10546010_GSM4195532_TCR-seq_P23-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/089/SRR10545789/SRR10545789_1.fastq.gz 
+  out=raw/SRR10545789_GSM4195477_TCR-seq_P16-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/089/SRR10545789/SRR10545789_2.fastq.gz 
+  out=raw/SRR10545789_GSM4195477_TCR-seq_P16-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/009/SRR10546009/SRR10546009_1.fastq.gz 
+  out=raw/SRR10546009_GSM4195532_TCR-seq_P23-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/009/SRR10546009/SRR10546009_2.fastq.gz 
+  out=raw/SRR10546009_GSM4195532_TCR-seq_P23-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/090/SRR10545790/SRR10545790_1.fastq.gz 
+  out=raw/SRR10545790_GSM4195477_TCR-seq_P16-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/090/SRR10545790/SRR10545790_2.fastq.gz 
+  out=raw/SRR10545790_GSM4195477_TCR-seq_P16-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/008/SRR10546008/SRR10546008_1.fastq.gz 
+  out=raw/SRR10546008_GSM4195531_TCR-seq_P22-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/008/SRR10546008/SRR10546008_2.fastq.gz 
+  out=raw/SRR10546008_GSM4195531_TCR-seq_P22-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/091/SRR10545791/SRR10545791_1.fastq.gz 
+  out=raw/SRR10545791_GSM4195477_TCR-seq_P16-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/091/SRR10545791/SRR10545791_2.fastq.gz 
+  out=raw/SRR10545791_GSM4195477_TCR-seq_P16-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/007/SRR10546007/SRR10546007_1.fastq.gz 
+  out=raw/SRR10546007_GSM4195531_TCR-seq_P22-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/007/SRR10546007/SRR10546007_2.fastq.gz 
+  out=raw/SRR10546007_GSM4195531_TCR-seq_P22-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/092/SRR10545792/SRR10545792_1.fastq.gz 
+  out=raw/SRR10545792_GSM4195477_TCR-seq_P16-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/092/SRR10545792/SRR10545792_2.fastq.gz 
+  out=raw/SRR10545792_GSM4195477_TCR-seq_P16-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/006/SRR10546006/SRR10546006_1.fastq.gz 
+  out=raw/SRR10546006_GSM4195531_TCR-seq_P22-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/006/SRR10546006/SRR10546006_2.fastq.gz 
+  out=raw/SRR10546006_GSM4195531_TCR-seq_P22-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/093/SRR10545793/SRR10545793_1.fastq.gz 
+  out=raw/SRR10545793_GSM4195478_TCR-seq_P16-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/093/SRR10545793/SRR10545793_2.fastq.gz 
+  out=raw/SRR10545793_GSM4195478_TCR-seq_P16-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/005/SRR10546005/SRR10546005_1.fastq.gz 
+  out=raw/SRR10546005_GSM4195531_TCR-seq_P22-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/005/SRR10546005/SRR10546005_2.fastq.gz 
+  out=raw/SRR10546005_GSM4195531_TCR-seq_P22-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/004/SRR10546004/SRR10546004_1.fastq.gz 
+  out=raw/SRR10546004_GSM4195530_TCR-seq_P22-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/004/SRR10546004/SRR10546004_2.fastq.gz 
+  out=raw/SRR10546004_GSM4195530_TCR-seq_P22-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/094/SRR10545794/SRR10545794_1.fastq.gz 
+  out=raw/SRR10545794_GSM4195478_TCR-seq_P16-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/094/SRR10545794/SRR10545794_2.fastq.gz 
+  out=raw/SRR10545794_GSM4195478_TCR-seq_P16-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/095/SRR10545795/SRR10545795_1.fastq.gz 
+  out=raw/SRR10545795_GSM4195478_TCR-seq_P16-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/095/SRR10545795/SRR10545795_2.fastq.gz 
+  out=raw/SRR10545795_GSM4195478_TCR-seq_P16-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/003/SRR10546003/SRR10546003_1.fastq.gz 
+  out=raw/SRR10546003_GSM4195530_TCR-seq_P22-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/003/SRR10546003/SRR10546003_2.fastq.gz 
+  out=raw/SRR10546003_GSM4195530_TCR-seq_P22-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/096/SRR10545796/SRR10545796_1.fastq.gz 
+  out=raw/SRR10545796_GSM4195478_TCR-seq_P16-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/096/SRR10545796/SRR10545796_2.fastq.gz 
+  out=raw/SRR10545796_GSM4195478_TCR-seq_P16-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/002/SRR10546002/SRR10546002_1.fastq.gz 
+  out=raw/SRR10546002_GSM4195530_TCR-seq_P22-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/002/SRR10546002/SRR10546002_2.fastq.gz 
+  out=raw/SRR10546002_GSM4195530_TCR-seq_P22-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/097/SRR10545797/SRR10545797_1.fastq.gz 
+  out=raw/SRR10545797_GSM4195479_TCR-seq_P16-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/097/SRR10545797/SRR10545797_2.fastq.gz 
+  out=raw/SRR10545797_GSM4195479_TCR-seq_P16-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/001/SRR10546001/SRR10546001_1.fastq.gz 
+  out=raw/SRR10546001_GSM4195530_TCR-seq_P22-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/001/SRR10546001/SRR10546001_2.fastq.gz 
+  out=raw/SRR10546001_GSM4195530_TCR-seq_P22-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/098/SRR10545798/SRR10545798_1.fastq.gz 
+  out=raw/SRR10545798_GSM4195479_TCR-seq_P16-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/098/SRR10545798/SRR10545798_2.fastq.gz 
+  out=raw/SRR10545798_GSM4195479_TCR-seq_P16-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/099/SRR10545799/SRR10545799_1.fastq.gz 
+  out=raw/SRR10545799_GSM4195479_TCR-seq_P16-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/099/SRR10545799/SRR10545799_2.fastq.gz 
+  out=raw/SRR10545799_GSM4195479_TCR-seq_P16-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/099/SRR10545999/SRR10545999_1.fastq.gz 
+  out=raw/SRR10545999_GSM4195529_TCR-seq_P22-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/099/SRR10545999/SRR10545999_2.fastq.gz 
+  out=raw/SRR10545999_GSM4195529_TCR-seq_P22-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/000/SRR10546000/SRR10546000_1.fastq.gz 
+  out=raw/SRR10546000_GSM4195529_TCR-seq_P22-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/000/SRR10546000/SRR10546000_2.fastq.gz 
+  out=raw/SRR10546000_GSM4195529_TCR-seq_P22-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/000/SRR10545800/SRR10545800_1.fastq.gz 
+  out=raw/SRR10545800_GSM4195479_TCR-seq_P16-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/000/SRR10545800/SRR10545800_2.fastq.gz 
+  out=raw/SRR10545800_GSM4195479_TCR-seq_P16-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/098/SRR10545998/SRR10545998_1.fastq.gz 
+  out=raw/SRR10545998_GSM4195529_TCR-seq_P22-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/098/SRR10545998/SRR10545998_2.fastq.gz 
+  out=raw/SRR10545998_GSM4195529_TCR-seq_P22-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/001/SRR10545801/SRR10545801_1.fastq.gz 
+  out=raw/SRR10545801_GSM4195480_TCR-seq_P16-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/001/SRR10545801/SRR10545801_2.fastq.gz 
+  out=raw/SRR10545801_GSM4195480_TCR-seq_P16-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/097/SRR10545997/SRR10545997_1.fastq.gz 
+  out=raw/SRR10545997_GSM4195529_TCR-seq_P22-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/097/SRR10545997/SRR10545997_2.fastq.gz 
+  out=raw/SRR10545997_GSM4195529_TCR-seq_P22-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/002/SRR10545802/SRR10545802_1.fastq.gz 
+  out=raw/SRR10545802_GSM4195480_TCR-seq_P16-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/002/SRR10545802/SRR10545802_2.fastq.gz 
+  out=raw/SRR10545802_GSM4195480_TCR-seq_P16-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/096/SRR10545996/SRR10545996_1.fastq.gz 
+  out=raw/SRR10545996_GSM4195528_TCR-seq_P22-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/096/SRR10545996/SRR10545996_2.fastq.gz 
+  out=raw/SRR10545996_GSM4195528_TCR-seq_P22-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/003/SRR10545803/SRR10545803_1.fastq.gz 
+  out=raw/SRR10545803_GSM4195480_TCR-seq_P16-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/003/SRR10545803/SRR10545803_2.fastq.gz 
+  out=raw/SRR10545803_GSM4195480_TCR-seq_P16-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/004/SRR10545804/SRR10545804_1.fastq.gz 
+  out=raw/SRR10545804_GSM4195480_TCR-seq_P16-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/004/SRR10545804/SRR10545804_2.fastq.gz 
+  out=raw/SRR10545804_GSM4195480_TCR-seq_P16-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/095/SRR10545995/SRR10545995_1.fastq.gz 
+  out=raw/SRR10545995_GSM4195528_TCR-seq_P22-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/095/SRR10545995/SRR10545995_2.fastq.gz 
+  out=raw/SRR10545995_GSM4195528_TCR-seq_P22-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/094/SRR10545994/SRR10545994_1.fastq.gz 
+  out=raw/SRR10545994_GSM4195528_TCR-seq_P22-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/094/SRR10545994/SRR10545994_2.fastq.gz 
+  out=raw/SRR10545994_GSM4195528_TCR-seq_P22-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/005/SRR10545805/SRR10545805_1.fastq.gz 
+  out=raw/SRR10545805_GSM4195481_TCR-seq_P16-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/005/SRR10545805/SRR10545805_2.fastq.gz 
+  out=raw/SRR10545805_GSM4195481_TCR-seq_P16-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/093/SRR10545993/SRR10545993_1.fastq.gz 
+  out=raw/SRR10545993_GSM4195528_TCR-seq_P22-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/093/SRR10545993/SRR10545993_2.fastq.gz 
+  out=raw/SRR10545993_GSM4195528_TCR-seq_P22-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/092/SRR10545992/SRR10545992_1.fastq.gz 
+  out=raw/SRR10545992_GSM4195527_TCR-seq_P22-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/092/SRR10545992/SRR10545992_2.fastq.gz 
+  out=raw/SRR10545992_GSM4195527_TCR-seq_P22-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/006/SRR10545806/SRR10545806_1.fastq.gz 
+  out=raw/SRR10545806_GSM4195481_TCR-seq_P16-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/006/SRR10545806/SRR10545806_2.fastq.gz 
+  out=raw/SRR10545806_GSM4195481_TCR-seq_P16-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/091/SRR10545991/SRR10545991_1.fastq.gz 
+  out=raw/SRR10545991_GSM4195527_TCR-seq_P22-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/091/SRR10545991/SRR10545991_2.fastq.gz 
+  out=raw/SRR10545991_GSM4195527_TCR-seq_P22-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/007/SRR10545807/SRR10545807_1.fastq.gz 
+  out=raw/SRR10545807_GSM4195481_TCR-seq_P16-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/007/SRR10545807/SRR10545807_2.fastq.gz 
+  out=raw/SRR10545807_GSM4195481_TCR-seq_P16-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/008/SRR10545808/SRR10545808_1.fastq.gz 
+  out=raw/SRR10545808_GSM4195481_TCR-seq_P16-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/008/SRR10545808/SRR10545808_2.fastq.gz 
+  out=raw/SRR10545808_GSM4195481_TCR-seq_P16-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/089/SRR10545989/SRR10545989_1.fastq.gz 
+  out=raw/SRR10545989_GSM4195527_TCR-seq_P22-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/089/SRR10545989/SRR10545989_2.fastq.gz 
+  out=raw/SRR10545989_GSM4195527_TCR-seq_P22-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/090/SRR10545990/SRR10545990_1.fastq.gz 
+  out=raw/SRR10545990_GSM4195527_TCR-seq_P22-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/090/SRR10545990/SRR10545990_2.fastq.gz 
+  out=raw/SRR10545990_GSM4195527_TCR-seq_P22-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/088/SRR10545988/SRR10545988_1.fastq.gz 
+  out=raw/SRR10545988_GSM4195526_TCR-seq_P22-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/088/SRR10545988/SRR10545988_2.fastq.gz 
+  out=raw/SRR10545988_GSM4195526_TCR-seq_P22-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/009/SRR10545809/SRR10545809_1.fastq.gz 
+  out=raw/SRR10545809_GSM4195482_TCR-seq_P16-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/009/SRR10545809/SRR10545809_2.fastq.gz 
+  out=raw/SRR10545809_GSM4195482_TCR-seq_P16-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/010/SRR10545810/SRR10545810_1.fastq.gz 
+  out=raw/SRR10545810_GSM4195482_TCR-seq_P16-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/010/SRR10545810/SRR10545810_2.fastq.gz 
+  out=raw/SRR10545810_GSM4195482_TCR-seq_P16-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/087/SRR10545987/SRR10545987_1.fastq.gz 
+  out=raw/SRR10545987_GSM4195526_TCR-seq_P22-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/087/SRR10545987/SRR10545987_2.fastq.gz 
+  out=raw/SRR10545987_GSM4195526_TCR-seq_P22-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/011/SRR10545811/SRR10545811_1.fastq.gz 
+  out=raw/SRR10545811_GSM4195482_TCR-seq_P16-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/011/SRR10545811/SRR10545811_2.fastq.gz 
+  out=raw/SRR10545811_GSM4195482_TCR-seq_P16-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/012/SRR10545812/SRR10545812_1.fastq.gz 
+  out=raw/SRR10545812_GSM4195482_TCR-seq_P16-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/012/SRR10545812/SRR10545812_2.fastq.gz 
+  out=raw/SRR10545812_GSM4195482_TCR-seq_P16-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/086/SRR10545986/SRR10545986_1.fastq.gz 
+  out=raw/SRR10545986_GSM4195526_TCR-seq_P22-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/086/SRR10545986/SRR10545986_2.fastq.gz 
+  out=raw/SRR10545986_GSM4195526_TCR-seq_P22-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/085/SRR10545985/SRR10545985_1.fastq.gz 
+  out=raw/SRR10545985_GSM4195526_TCR-seq_P22-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/085/SRR10545985/SRR10545985_2.fastq.gz 
+  out=raw/SRR10545985_GSM4195526_TCR-seq_P22-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/013/SRR10545813/SRR10545813_1.fastq.gz 
+  out=raw/SRR10545813_GSM4195483_TCR-seq_P16-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/013/SRR10545813/SRR10545813_2.fastq.gz 
+  out=raw/SRR10545813_GSM4195483_TCR-seq_P16-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/084/SRR10545984/SRR10545984_1.fastq.gz 
+  out=raw/SRR10545984_GSM4195525_TCR-seq_P22-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/084/SRR10545984/SRR10545984_2.fastq.gz 
+  out=raw/SRR10545984_GSM4195525_TCR-seq_P22-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/014/SRR10545814/SRR10545814_1.fastq.gz 
+  out=raw/SRR10545814_GSM4195483_TCR-seq_P16-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/014/SRR10545814/SRR10545814_2.fastq.gz 
+  out=raw/SRR10545814_GSM4195483_TCR-seq_P16-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/083/SRR10545983/SRR10545983_1.fastq.gz 
+  out=raw/SRR10545983_GSM4195525_TCR-seq_P22-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/083/SRR10545983/SRR10545983_2.fastq.gz 
+  out=raw/SRR10545983_GSM4195525_TCR-seq_P22-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/015/SRR10545815/SRR10545815_1.fastq.gz 
+  out=raw/SRR10545815_GSM4195483_TCR-seq_P16-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/015/SRR10545815/SRR10545815_2.fastq.gz 
+  out=raw/SRR10545815_GSM4195483_TCR-seq_P16-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/082/SRR10545982/SRR10545982_1.fastq.gz 
+  out=raw/SRR10545982_GSM4195525_TCR-seq_P22-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/082/SRR10545982/SRR10545982_2.fastq.gz 
+  out=raw/SRR10545982_GSM4195525_TCR-seq_P22-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/016/SRR10545816/SRR10545816_1.fastq.gz 
+  out=raw/SRR10545816_GSM4195483_TCR-seq_P16-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/016/SRR10545816/SRR10545816_2.fastq.gz 
+  out=raw/SRR10545816_GSM4195483_TCR-seq_P16-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/017/SRR10545817/SRR10545817_1.fastq.gz 
+  out=raw/SRR10545817_GSM4195484_TCR-seq_P18-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/017/SRR10545817/SRR10545817_2.fastq.gz 
+  out=raw/SRR10545817_GSM4195484_TCR-seq_P18-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/081/SRR10545981/SRR10545981_1.fastq.gz 
+  out=raw/SRR10545981_GSM4195525_TCR-seq_P22-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/081/SRR10545981/SRR10545981_2.fastq.gz 
+  out=raw/SRR10545981_GSM4195525_TCR-seq_P22-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/080/SRR10545980/SRR10545980_1.fastq.gz 
+  out=raw/SRR10545980_GSM4195524_TCR-seq_P22-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/080/SRR10545980/SRR10545980_2.fastq.gz 
+  out=raw/SRR10545980_GSM4195524_TCR-seq_P22-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/018/SRR10545818/SRR10545818_1.fastq.gz 
+  out=raw/SRR10545818_GSM4195484_TCR-seq_P18-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/018/SRR10545818/SRR10545818_2.fastq.gz 
+  out=raw/SRR10545818_GSM4195484_TCR-seq_P18-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/079/SRR10545979/SRR10545979_1.fastq.gz 
+  out=raw/SRR10545979_GSM4195524_TCR-seq_P22-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/079/SRR10545979/SRR10545979_2.fastq.gz 
+  out=raw/SRR10545979_GSM4195524_TCR-seq_P22-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/019/SRR10545819/SRR10545819_1.fastq.gz 
+  out=raw/SRR10545819_GSM4195484_TCR-seq_P18-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/019/SRR10545819/SRR10545819_2.fastq.gz 
+  out=raw/SRR10545819_GSM4195484_TCR-seq_P18-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/078/SRR10545978/SRR10545978_1.fastq.gz 
+  out=raw/SRR10545978_GSM4195524_TCR-seq_P22-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/078/SRR10545978/SRR10545978_2.fastq.gz 
+  out=raw/SRR10545978_GSM4195524_TCR-seq_P22-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/020/SRR10545820/SRR10545820_1.fastq.gz 
+  out=raw/SRR10545820_GSM4195484_TCR-seq_P18-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/020/SRR10545820/SRR10545820_2.fastq.gz 
+  out=raw/SRR10545820_GSM4195484_TCR-seq_P18-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/077/SRR10545977/SRR10545977_1.fastq.gz 
+  out=raw/SRR10545977_GSM4195524_TCR-seq_P22-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/077/SRR10545977/SRR10545977_2.fastq.gz 
+  out=raw/SRR10545977_GSM4195524_TCR-seq_P22-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/021/SRR10545821/SRR10545821_1.fastq.gz 
+  out=raw/SRR10545821_GSM4195485_TCR-seq_P18-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/021/SRR10545821/SRR10545821_2.fastq.gz 
+  out=raw/SRR10545821_GSM4195485_TCR-seq_P18-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/076/SRR10545976/SRR10545976_1.fastq.gz 
+  out=raw/SRR10545976_GSM4195523_TCR-seq_P22-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/076/SRR10545976/SRR10545976_2.fastq.gz 
+  out=raw/SRR10545976_GSM4195523_TCR-seq_P22-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/075/SRR10545975/SRR10545975_1.fastq.gz 
+  out=raw/SRR10545975_GSM4195523_TCR-seq_P22-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/075/SRR10545975/SRR10545975_2.fastq.gz 
+  out=raw/SRR10545975_GSM4195523_TCR-seq_P22-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/022/SRR10545822/SRR10545822_1.fastq.gz 
+  out=raw/SRR10545822_GSM4195485_TCR-seq_P18-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/022/SRR10545822/SRR10545822_2.fastq.gz 
+  out=raw/SRR10545822_GSM4195485_TCR-seq_P18-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/026/SRR10545826/SRR10545826_1.fastq.gz 
+  out=raw/SRR10545826_GSM4195486_TCR-seq_P18-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/026/SRR10545826/SRR10545826_2.fastq.gz 
+  out=raw/SRR10545826_GSM4195486_TCR-seq_P18-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/074/SRR10545974/SRR10545974_1.fastq.gz 
+  out=raw/SRR10545974_GSM4195523_TCR-seq_P22-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/074/SRR10545974/SRR10545974_2.fastq.gz 
+  out=raw/SRR10545974_GSM4195523_TCR-seq_P22-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/027/SRR10545827/SRR10545827_1.fastq.gz 
+  out=raw/SRR10545827_GSM4195486_TCR-seq_P18-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/027/SRR10545827/SRR10545827_2.fastq.gz 
+  out=raw/SRR10545827_GSM4195486_TCR-seq_P18-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/073/SRR10545973/SRR10545973_1.fastq.gz 
+  out=raw/SRR10545973_GSM4195523_TCR-seq_P22-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/073/SRR10545973/SRR10545973_2.fastq.gz 
+  out=raw/SRR10545973_GSM4195523_TCR-seq_P22-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/028/SRR10545828/SRR10545828_1.fastq.gz 
+  out=raw/SRR10545828_GSM4195486_TCR-seq_P18-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/028/SRR10545828/SRR10545828_2.fastq.gz 
+  out=raw/SRR10545828_GSM4195486_TCR-seq_P18-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/072/SRR10545972/SRR10545972_1.fastq.gz 
+  out=raw/SRR10545972_GSM4195522_TCR-seq_P22-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/072/SRR10545972/SRR10545972_2.fastq.gz 
+  out=raw/SRR10545972_GSM4195522_TCR-seq_P22-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/029/SRR10545829/SRR10545829_1.fastq.gz 
+  out=raw/SRR10545829_GSM4195487_TCR-seq_P18-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/029/SRR10545829/SRR10545829_2.fastq.gz 
+  out=raw/SRR10545829_GSM4195487_TCR-seq_P18-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/030/SRR10545830/SRR10545830_1.fastq.gz 
+  out=raw/SRR10545830_GSM4195487_TCR-seq_P18-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/030/SRR10545830/SRR10545830_2.fastq.gz 
+  out=raw/SRR10545830_GSM4195487_TCR-seq_P18-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/071/SRR10545971/SRR10545971_1.fastq.gz 
+  out=raw/SRR10545971_GSM4195522_TCR-seq_P22-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/071/SRR10545971/SRR10545971_2.fastq.gz 
+  out=raw/SRR10545971_GSM4195522_TCR-seq_P22-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/070/SRR10545970/SRR10545970_1.fastq.gz 
+  out=raw/SRR10545970_GSM4195522_TCR-seq_P22-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/070/SRR10545970/SRR10545970_2.fastq.gz 
+  out=raw/SRR10545970_GSM4195522_TCR-seq_P22-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/031/SRR10545831/SRR10545831_1.fastq.gz 
+  out=raw/SRR10545831_GSM4195487_TCR-seq_P18-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/031/SRR10545831/SRR10545831_2.fastq.gz 
+  out=raw/SRR10545831_GSM4195487_TCR-seq_P18-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/069/SRR10545969/SRR10545969_1.fastq.gz 
+  out=raw/SRR10545969_GSM4195522_TCR-seq_P22-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/069/SRR10545969/SRR10545969_2.fastq.gz 
+  out=raw/SRR10545969_GSM4195522_TCR-seq_P22-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/032/SRR10545832/SRR10545832_1.fastq.gz 
+  out=raw/SRR10545832_GSM4195487_TCR-seq_P18-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/032/SRR10545832/SRR10545832_2.fastq.gz 
+  out=raw/SRR10545832_GSM4195487_TCR-seq_P18-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/068/SRR10545968/SRR10545968_1.fastq.gz 
+  out=raw/SRR10545968_GSM4195521_TCR-seq_P22-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/068/SRR10545968/SRR10545968_2.fastq.gz 
+  out=raw/SRR10545968_GSM4195521_TCR-seq_P22-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/033/SRR10545833/SRR10545833_1.fastq.gz 
+  out=raw/SRR10545833_GSM4195488_TCR-seq_P18-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/033/SRR10545833/SRR10545833_2.fastq.gz 
+  out=raw/SRR10545833_GSM4195488_TCR-seq_P18-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/034/SRR10545834/SRR10545834_1.fastq.gz 
+  out=raw/SRR10545834_GSM4195488_TCR-seq_P18-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/034/SRR10545834/SRR10545834_2.fastq.gz 
+  out=raw/SRR10545834_GSM4195488_TCR-seq_P18-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/067/SRR10545967/SRR10545967_1.fastq.gz 
+  out=raw/SRR10545967_GSM4195521_TCR-seq_P22-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/067/SRR10545967/SRR10545967_2.fastq.gz 
+  out=raw/SRR10545967_GSM4195521_TCR-seq_P22-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/066/SRR10545966/SRR10545966_1.fastq.gz 
+  out=raw/SRR10545966_GSM4195521_TCR-seq_P22-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/066/SRR10545966/SRR10545966_2.fastq.gz 
+  out=raw/SRR10545966_GSM4195521_TCR-seq_P22-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/035/SRR10545835/SRR10545835_1.fastq.gz 
+  out=raw/SRR10545835_GSM4195488_TCR-seq_P18-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/035/SRR10545835/SRR10545835_2.fastq.gz 
+  out=raw/SRR10545835_GSM4195488_TCR-seq_P18-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/065/SRR10545965/SRR10545965_1.fastq.gz 
+  out=raw/SRR10545965_GSM4195521_TCR-seq_P22-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/065/SRR10545965/SRR10545965_2.fastq.gz 
+  out=raw/SRR10545965_GSM4195521_TCR-seq_P22-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/036/SRR10545836/SRR10545836_1.fastq.gz 
+  out=raw/SRR10545836_GSM4195488_TCR-seq_P18-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/036/SRR10545836/SRR10545836_2.fastq.gz 
+  out=raw/SRR10545836_GSM4195488_TCR-seq_P18-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/064/SRR10545964/SRR10545964_1.fastq.gz 
+  out=raw/SRR10545964_GSM4195520_TCR-seq_P22-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/064/SRR10545964/SRR10545964_2.fastq.gz 
+  out=raw/SRR10545964_GSM4195520_TCR-seq_P22-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/037/SRR10545837/SRR10545837_1.fastq.gz 
+  out=raw/SRR10545837_GSM4195489_TCR-seq_P18-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/037/SRR10545837/SRR10545837_2.fastq.gz 
+  out=raw/SRR10545837_GSM4195489_TCR-seq_P18-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/063/SRR10545963/SRR10545963_1.fastq.gz 
+  out=raw/SRR10545963_GSM4195520_TCR-seq_P22-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/063/SRR10545963/SRR10545963_2.fastq.gz 
+  out=raw/SRR10545963_GSM4195520_TCR-seq_P22-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/038/SRR10545838/SRR10545838_1.fastq.gz 
+  out=raw/SRR10545838_GSM4195489_TCR-seq_P18-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/038/SRR10545838/SRR10545838_2.fastq.gz 
+  out=raw/SRR10545838_GSM4195489_TCR-seq_P18-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/062/SRR10545962/SRR10545962_1.fastq.gz 
+  out=raw/SRR10545962_GSM4195520_TCR-seq_P22-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/062/SRR10545962/SRR10545962_2.fastq.gz 
+  out=raw/SRR10545962_GSM4195520_TCR-seq_P22-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/061/SRR10545961/SRR10545961_1.fastq.gz 
+  out=raw/SRR10545961_GSM4195520_TCR-seq_P22-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/061/SRR10545961/SRR10545961_2.fastq.gz 
+  out=raw/SRR10545961_GSM4195520_TCR-seq_P22-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/039/SRR10545839/SRR10545839_1.fastq.gz 
+  out=raw/SRR10545839_GSM4195489_TCR-seq_P18-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/039/SRR10545839/SRR10545839_2.fastq.gz 
+  out=raw/SRR10545839_GSM4195489_TCR-seq_P18-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/040/SRR10545840/SRR10545840_1.fastq.gz 
+  out=raw/SRR10545840_GSM4195489_TCR-seq_P18-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/040/SRR10545840/SRR10545840_2.fastq.gz 
+  out=raw/SRR10545840_GSM4195489_TCR-seq_P18-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/060/SRR10545960/SRR10545960_1.fastq.gz 
+  out=raw/SRR10545960_GSM4195519_TCR-seq_P21-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/060/SRR10545960/SRR10545960_2.fastq.gz 
+  out=raw/SRR10545960_GSM4195519_TCR-seq_P21-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/041/SRR10545841/SRR10545841_1.fastq.gz 
+  out=raw/SRR10545841_GSM4195490_TCR-seq_P18-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/041/SRR10545841/SRR10545841_2.fastq.gz 
+  out=raw/SRR10545841_GSM4195490_TCR-seq_P18-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/059/SRR10545959/SRR10545959_1.fastq.gz 
+  out=raw/SRR10545959_GSM4195519_TCR-seq_P21-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/059/SRR10545959/SRR10545959_2.fastq.gz 
+  out=raw/SRR10545959_GSM4195519_TCR-seq_P21-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/042/SRR10545842/SRR10545842_1.fastq.gz 
+  out=raw/SRR10545842_GSM4195490_TCR-seq_P18-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/042/SRR10545842/SRR10545842_2.fastq.gz 
+  out=raw/SRR10545842_GSM4195490_TCR-seq_P18-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/058/SRR10545958/SRR10545958_1.fastq.gz 
+  out=raw/SRR10545958_GSM4195519_TCR-seq_P21-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/058/SRR10545958/SRR10545958_2.fastq.gz 
+  out=raw/SRR10545958_GSM4195519_TCR-seq_P21-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/043/SRR10545843/SRR10545843_1.fastq.gz 
+  out=raw/SRR10545843_GSM4195490_TCR-seq_P18-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/043/SRR10545843/SRR10545843_2.fastq.gz 
+  out=raw/SRR10545843_GSM4195490_TCR-seq_P18-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/044/SRR10545844/SRR10545844_1.fastq.gz 
+  out=raw/SRR10545844_GSM4195490_TCR-seq_P18-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/044/SRR10545844/SRR10545844_2.fastq.gz 
+  out=raw/SRR10545844_GSM4195490_TCR-seq_P18-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/057/SRR10545957/SRR10545957_1.fastq.gz 
+  out=raw/SRR10545957_GSM4195519_TCR-seq_P21-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/057/SRR10545957/SRR10545957_2.fastq.gz 
+  out=raw/SRR10545957_GSM4195519_TCR-seq_P21-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/056/SRR10545956/SRR10545956_1.fastq.gz 
+  out=raw/SRR10545956_GSM4195518_TCR-seq_P21-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/056/SRR10545956/SRR10545956_2.fastq.gz 
+  out=raw/SRR10545956_GSM4195518_TCR-seq_P21-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/045/SRR10545845/SRR10545845_1.fastq.gz 
+  out=raw/SRR10545845_GSM4195491_TCR-seq_P18-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/045/SRR10545845/SRR10545845_2.fastq.gz 
+  out=raw/SRR10545845_GSM4195491_TCR-seq_P18-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/055/SRR10545955/SRR10545955_1.fastq.gz 
+  out=raw/SRR10545955_GSM4195518_TCR-seq_P21-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/055/SRR10545955/SRR10545955_2.fastq.gz 
+  out=raw/SRR10545955_GSM4195518_TCR-seq_P21-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/046/SRR10545846/SRR10545846_1.fastq.gz 
+  out=raw/SRR10545846_GSM4195491_TCR-seq_P18-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/046/SRR10545846/SRR10545846_2.fastq.gz 
+  out=raw/SRR10545846_GSM4195491_TCR-seq_P18-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/054/SRR10545954/SRR10545954_1.fastq.gz 
+  out=raw/SRR10545954_GSM4195518_TCR-seq_P21-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/054/SRR10545954/SRR10545954_2.fastq.gz 
+  out=raw/SRR10545954_GSM4195518_TCR-seq_P21-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/053/SRR10545953/SRR10545953_1.fastq.gz 
+  out=raw/SRR10545953_GSM4195518_TCR-seq_P21-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/053/SRR10545953/SRR10545953_2.fastq.gz 
+  out=raw/SRR10545953_GSM4195518_TCR-seq_P21-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/047/SRR10545847/SRR10545847_1.fastq.gz 
+  out=raw/SRR10545847_GSM4195491_TCR-seq_P18-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/047/SRR10545847/SRR10545847_2.fastq.gz 
+  out=raw/SRR10545847_GSM4195491_TCR-seq_P18-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/052/SRR10545952/SRR10545952_1.fastq.gz 
+  out=raw/SRR10545952_GSM4195517_TCR-seq_P21-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/052/SRR10545952/SRR10545952_2.fastq.gz 
+  out=raw/SRR10545952_GSM4195517_TCR-seq_P21-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/048/SRR10545848/SRR10545848_1.fastq.gz 
+  out=raw/SRR10545848_GSM4195491_TCR-seq_P18-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/048/SRR10545848/SRR10545848_2.fastq.gz 
+  out=raw/SRR10545848_GSM4195491_TCR-seq_P18-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/049/SRR10545849/SRR10545849_1.fastq.gz 
+  out=raw/SRR10545849_GSM4195492_TCR-seq_P18-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/049/SRR10545849/SRR10545849_2.fastq.gz 
+  out=raw/SRR10545849_GSM4195492_TCR-seq_P18-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/051/SRR10545951/SRR10545951_1.fastq.gz 
+  out=raw/SRR10545951_GSM4195517_TCR-seq_P21-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/051/SRR10545951/SRR10545951_2.fastq.gz 
+  out=raw/SRR10545951_GSM4195517_TCR-seq_P21-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/050/SRR10545850/SRR10545850_1.fastq.gz 
+  out=raw/SRR10545850_GSM4195492_TCR-seq_P18-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/050/SRR10545850/SRR10545850_2.fastq.gz 
+  out=raw/SRR10545850_GSM4195492_TCR-seq_P18-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/050/SRR10545950/SRR10545950_1.fastq.gz 
+  out=raw/SRR10545950_GSM4195517_TCR-seq_P21-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/050/SRR10545950/SRR10545950_2.fastq.gz 
+  out=raw/SRR10545950_GSM4195517_TCR-seq_P21-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/052/SRR10545852/SRR10545852_1.fastq.gz 
+  out=raw/SRR10545852_GSM4195492_TCR-seq_P18-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/052/SRR10545852/SRR10545852_2.fastq.gz 
+  out=raw/SRR10545852_GSM4195492_TCR-seq_P18-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/051/SRR10545851/SRR10545851_1.fastq.gz 
+  out=raw/SRR10545851_GSM4195492_TCR-seq_P18-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/051/SRR10545851/SRR10545851_2.fastq.gz 
+  out=raw/SRR10545851_GSM4195492_TCR-seq_P18-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/049/SRR10545949/SRR10545949_1.fastq.gz 
+  out=raw/SRR10545949_GSM4195517_TCR-seq_P21-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/049/SRR10545949/SRR10545949_2.fastq.gz 
+  out=raw/SRR10545949_GSM4195517_TCR-seq_P21-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/048/SRR10545948/SRR10545948_1.fastq.gz 
+  out=raw/SRR10545948_GSM4195516_TCR-seq_P21-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/048/SRR10545948/SRR10545948_2.fastq.gz 
+  out=raw/SRR10545948_GSM4195516_TCR-seq_P21-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/053/SRR10545853/SRR10545853_1.fastq.gz 
+  out=raw/SRR10545853_GSM4195493_TCR-seq_P18-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/053/SRR10545853/SRR10545853_2.fastq.gz 
+  out=raw/SRR10545853_GSM4195493_TCR-seq_P18-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/047/SRR10545947/SRR10545947_1.fastq.gz 
+  out=raw/SRR10545947_GSM4195516_TCR-seq_P21-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/047/SRR10545947/SRR10545947_2.fastq.gz 
+  out=raw/SRR10545947_GSM4195516_TCR-seq_P21-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/054/SRR10545854/SRR10545854_1.fastq.gz 
+  out=raw/SRR10545854_GSM4195493_TCR-seq_P18-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/054/SRR10545854/SRR10545854_2.fastq.gz 
+  out=raw/SRR10545854_GSM4195493_TCR-seq_P18-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/046/SRR10545946/SRR10545946_1.fastq.gz 
+  out=raw/SRR10545946_GSM4195516_TCR-seq_P21-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/046/SRR10545946/SRR10545946_2.fastq.gz 
+  out=raw/SRR10545946_GSM4195516_TCR-seq_P21-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/055/SRR10545855/SRR10545855_1.fastq.gz 
+  out=raw/SRR10545855_GSM4195493_TCR-seq_P18-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/055/SRR10545855/SRR10545855_2.fastq.gz 
+  out=raw/SRR10545855_GSM4195493_TCR-seq_P18-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/045/SRR10545945/SRR10545945_1.fastq.gz 
+  out=raw/SRR10545945_GSM4195516_TCR-seq_P21-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/045/SRR10545945/SRR10545945_2.fastq.gz 
+  out=raw/SRR10545945_GSM4195516_TCR-seq_P21-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/044/SRR10545944/SRR10545944_1.fastq.gz 
+  out=raw/SRR10545944_GSM4195515_TCR-seq_P21-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/044/SRR10545944/SRR10545944_2.fastq.gz 
+  out=raw/SRR10545944_GSM4195515_TCR-seq_P21-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/056/SRR10545856/SRR10545856_1.fastq.gz 
+  out=raw/SRR10545856_GSM4195493_TCR-seq_P18-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/056/SRR10545856/SRR10545856_2.fastq.gz 
+  out=raw/SRR10545856_GSM4195493_TCR-seq_P18-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/057/SRR10545857/SRR10545857_1.fastq.gz 
+  out=raw/SRR10545857_GSM4195494_TCR-seq_P18-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/057/SRR10545857/SRR10545857_2.fastq.gz 
+  out=raw/SRR10545857_GSM4195494_TCR-seq_P18-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/043/SRR10545943/SRR10545943_1.fastq.gz 
+  out=raw/SRR10545943_GSM4195515_TCR-seq_P21-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/043/SRR10545943/SRR10545943_2.fastq.gz 
+  out=raw/SRR10545943_GSM4195515_TCR-seq_P21-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/058/SRR10545858/SRR10545858_1.fastq.gz 
+  out=raw/SRR10545858_GSM4195494_TCR-seq_P18-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/058/SRR10545858/SRR10545858_2.fastq.gz 
+  out=raw/SRR10545858_GSM4195494_TCR-seq_P18-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/042/SRR10545942/SRR10545942_1.fastq.gz 
+  out=raw/SRR10545942_GSM4195515_TCR-seq_P21-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/042/SRR10545942/SRR10545942_2.fastq.gz 
+  out=raw/SRR10545942_GSM4195515_TCR-seq_P21-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/059/SRR10545859/SRR10545859_1.fastq.gz 
+  out=raw/SRR10545859_GSM4195494_TCR-seq_P18-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/059/SRR10545859/SRR10545859_2.fastq.gz 
+  out=raw/SRR10545859_GSM4195494_TCR-seq_P18-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/041/SRR10545941/SRR10545941_1.fastq.gz 
+  out=raw/SRR10545941_GSM4195515_TCR-seq_P21-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/041/SRR10545941/SRR10545941_2.fastq.gz 
+  out=raw/SRR10545941_GSM4195515_TCR-seq_P21-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/060/SRR10545860/SRR10545860_1.fastq.gz 
+  out=raw/SRR10545860_GSM4195494_TCR-seq_P18-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/060/SRR10545860/SRR10545860_2.fastq.gz 
+  out=raw/SRR10545860_GSM4195494_TCR-seq_P18-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/040/SRR10545940/SRR10545940_1.fastq.gz 
+  out=raw/SRR10545940_GSM4195514_TCR-seq_P21-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/040/SRR10545940/SRR10545940_2.fastq.gz 
+  out=raw/SRR10545940_GSM4195514_TCR-seq_P21-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/061/SRR10545861/SRR10545861_1.fastq.gz 
+  out=raw/SRR10545861_GSM4195495_TCR-seq_P18-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/061/SRR10545861/SRR10545861_2.fastq.gz 
+  out=raw/SRR10545861_GSM4195495_TCR-seq_P18-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/039/SRR10545939/SRR10545939_1.fastq.gz 
+  out=raw/SRR10545939_GSM4195514_TCR-seq_P21-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/039/SRR10545939/SRR10545939_2.fastq.gz 
+  out=raw/SRR10545939_GSM4195514_TCR-seq_P21-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/062/SRR10545862/SRR10545862_1.fastq.gz 
+  out=raw/SRR10545862_GSM4195495_TCR-seq_P18-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/062/SRR10545862/SRR10545862_2.fastq.gz 
+  out=raw/SRR10545862_GSM4195495_TCR-seq_P18-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/038/SRR10545938/SRR10545938_1.fastq.gz 
+  out=raw/SRR10545938_GSM4195514_TCR-seq_P21-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/038/SRR10545938/SRR10545938_2.fastq.gz 
+  out=raw/SRR10545938_GSM4195514_TCR-seq_P21-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/063/SRR10545863/SRR10545863_1.fastq.gz 
+  out=raw/SRR10545863_GSM4195495_TCR-seq_P18-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/063/SRR10545863/SRR10545863_2.fastq.gz 
+  out=raw/SRR10545863_GSM4195495_TCR-seq_P18-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/037/SRR10545937/SRR10545937_1.fastq.gz 
+  out=raw/SRR10545937_GSM4195514_TCR-seq_P21-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/037/SRR10545937/SRR10545937_2.fastq.gz 
+  out=raw/SRR10545937_GSM4195514_TCR-seq_P21-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/064/SRR10545864/SRR10545864_1.fastq.gz 
+  out=raw/SRR10545864_GSM4195495_TCR-seq_P18-M2-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/064/SRR10545864/SRR10545864_2.fastq.gz 
+  out=raw/SRR10545864_GSM4195495_TCR-seq_P18-M2-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/065/SRR10545865/SRR10545865_1.fastq.gz 
+  out=raw/SRR10545865_GSM4195496_TCR-seq_P19-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/065/SRR10545865/SRR10545865_2.fastq.gz 
+  out=raw/SRR10545865_GSM4195496_TCR-seq_P19-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/036/SRR10545936/SRR10545936_1.fastq.gz 
+  out=raw/SRR10545936_GSM4195513_TCR-seq_P21-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/036/SRR10545936/SRR10545936_2.fastq.gz 
+  out=raw/SRR10545936_GSM4195513_TCR-seq_P21-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/035/SRR10545935/SRR10545935_1.fastq.gz 
+  out=raw/SRR10545935_GSM4195513_TCR-seq_P21-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/035/SRR10545935/SRR10545935_2.fastq.gz 
+  out=raw/SRR10545935_GSM4195513_TCR-seq_P21-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/066/SRR10545866/SRR10545866_1.fastq.gz 
+  out=raw/SRR10545866_GSM4195496_TCR-seq_P19-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/066/SRR10545866/SRR10545866_2.fastq.gz 
+  out=raw/SRR10545866_GSM4195496_TCR-seq_P19-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/034/SRR10545934/SRR10545934_1.fastq.gz 
+  out=raw/SRR10545934_GSM4195513_TCR-seq_P21-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/034/SRR10545934/SRR10545934_2.fastq.gz 
+  out=raw/SRR10545934_GSM4195513_TCR-seq_P21-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/067/SRR10545867/SRR10545867_1.fastq.gz 
+  out=raw/SRR10545867_GSM4195496_TCR-seq_P19-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/067/SRR10545867/SRR10545867_2.fastq.gz 
+  out=raw/SRR10545867_GSM4195496_TCR-seq_P19-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/033/SRR10545933/SRR10545933_1.fastq.gz 
+  out=raw/SRR10545933_GSM4195513_TCR-seq_P21-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/033/SRR10545933/SRR10545933_2.fastq.gz 
+  out=raw/SRR10545933_GSM4195513_TCR-seq_P21-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/068/SRR10545868/SRR10545868_1.fastq.gz 
+  out=raw/SRR10545868_GSM4195496_TCR-seq_P19-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/068/SRR10545868/SRR10545868_2.fastq.gz 
+  out=raw/SRR10545868_GSM4195496_TCR-seq_P19-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/032/SRR10545932/SRR10545932_1.fastq.gz 
+  out=raw/SRR10545932_GSM4195512_TCR-seq_P21-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/032/SRR10545932/SRR10545932_2.fastq.gz 
+  out=raw/SRR10545932_GSM4195512_TCR-seq_P21-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/069/SRR10545869/SRR10545869_1.fastq.gz 
+  out=raw/SRR10545869_GSM4195497_TCR-seq_P19-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/069/SRR10545869/SRR10545869_2.fastq.gz 
+  out=raw/SRR10545869_GSM4195497_TCR-seq_P19-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/031/SRR10545931/SRR10545931_1.fastq.gz 
+  out=raw/SRR10545931_GSM4195512_TCR-seq_P21-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/031/SRR10545931/SRR10545931_2.fastq.gz 
+  out=raw/SRR10545931_GSM4195512_TCR-seq_P21-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/070/SRR10545870/SRR10545870_1.fastq.gz 
+  out=raw/SRR10545870_GSM4195497_TCR-seq_P19-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/070/SRR10545870/SRR10545870_2.fastq.gz 
+  out=raw/SRR10545870_GSM4195497_TCR-seq_P19-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/071/SRR10545871/SRR10545871_1.fastq.gz 
+  out=raw/SRR10545871_GSM4195497_TCR-seq_P19-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/071/SRR10545871/SRR10545871_2.fastq.gz 
+  out=raw/SRR10545871_GSM4195497_TCR-seq_P19-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/030/SRR10545930/SRR10545930_1.fastq.gz 
+  out=raw/SRR10545930_GSM4195512_TCR-seq_P21-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/030/SRR10545930/SRR10545930_2.fastq.gz 
+  out=raw/SRR10545930_GSM4195512_TCR-seq_P21-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/025/SRR10545925/SRR10545925_1.fastq.gz 
+  out=raw/SRR10545925_GSM4195511_TCR-seq_P21-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/025/SRR10545925/SRR10545925_2.fastq.gz 
+  out=raw/SRR10545925_GSM4195511_TCR-seq_P21-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/029/SRR10545929/SRR10545929_1.fastq.gz 
+  out=raw/SRR10545929_GSM4195512_TCR-seq_P21-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/029/SRR10545929/SRR10545929_2.fastq.gz 
+  out=raw/SRR10545929_GSM4195512_TCR-seq_P21-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/076/SRR10545876/SRR10545876_1.fastq.gz 
+  out=raw/SRR10545876_GSM4195498_TCR-seq_P19-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/076/SRR10545876/SRR10545876_2.fastq.gz 
+  out=raw/SRR10545876_GSM4195498_TCR-seq_P19-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/072/SRR10545872/SRR10545872_1.fastq.gz 
+  out=raw/SRR10545872_GSM4195497_TCR-seq_P19-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/072/SRR10545872/SRR10545872_2.fastq.gz 
+  out=raw/SRR10545872_GSM4195497_TCR-seq_P19-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/024/SRR10545924/SRR10545924_1.fastq.gz 
+  out=raw/SRR10545924_GSM4195510_TCR-seq_P21-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/024/SRR10545924/SRR10545924_2.fastq.gz 
+  out=raw/SRR10545924_GSM4195510_TCR-seq_P21-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/028/SRR10545928/SRR10545928_1.fastq.gz 
+  out=raw/SRR10545928_GSM4195511_TCR-seq_P21-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/028/SRR10545928/SRR10545928_2.fastq.gz 
+  out=raw/SRR10545928_GSM4195511_TCR-seq_P21-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/077/SRR10545877/SRR10545877_1.fastq.gz 
+  out=raw/SRR10545877_GSM4195499_TCR-seq_P19-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/077/SRR10545877/SRR10545877_2.fastq.gz 
+  out=raw/SRR10545877_GSM4195499_TCR-seq_P19-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/073/SRR10545873/SRR10545873_1.fastq.gz 
+  out=raw/SRR10545873_GSM4195498_TCR-seq_P19-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/073/SRR10545873/SRR10545873_2.fastq.gz 
+  out=raw/SRR10545873_GSM4195498_TCR-seq_P19-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/023/SRR10545923/SRR10545923_1.fastq.gz 
+  out=raw/SRR10545923_GSM4195510_TCR-seq_P21-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/023/SRR10545923/SRR10545923_2.fastq.gz 
+  out=raw/SRR10545923_GSM4195510_TCR-seq_P21-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/027/SRR10545927/SRR10545927_1.fastq.gz 
+  out=raw/SRR10545927_GSM4195511_TCR-seq_P21-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/027/SRR10545927/SRR10545927_2.fastq.gz 
+  out=raw/SRR10545927_GSM4195511_TCR-seq_P21-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/078/SRR10545878/SRR10545878_1.fastq.gz 
+  out=raw/SRR10545878_GSM4195499_TCR-seq_P19-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/078/SRR10545878/SRR10545878_2.fastq.gz 
+  out=raw/SRR10545878_GSM4195499_TCR-seq_P19-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/074/SRR10545874/SRR10545874_1.fastq.gz 
+  out=raw/SRR10545874_GSM4195498_TCR-seq_P19-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/074/SRR10545874/SRR10545874_2.fastq.gz 
+  out=raw/SRR10545874_GSM4195498_TCR-seq_P19-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/022/SRR10545922/SRR10545922_1.fastq.gz 
+  out=raw/SRR10545922_GSM4195510_TCR-seq_P21-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/022/SRR10545922/SRR10545922_2.fastq.gz 
+  out=raw/SRR10545922_GSM4195510_TCR-seq_P21-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/026/SRR10545926/SRR10545926_1.fastq.gz 
+  out=raw/SRR10545926_GSM4195511_TCR-seq_P21-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/026/SRR10545926/SRR10545926_2.fastq.gz 
+  out=raw/SRR10545926_GSM4195511_TCR-seq_P21-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/079/SRR10545879/SRR10545879_1.fastq.gz 
+  out=raw/SRR10545879_GSM4195499_TCR-seq_P19-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/079/SRR10545879/SRR10545879_2.fastq.gz 
+  out=raw/SRR10545879_GSM4195499_TCR-seq_P19-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/075/SRR10545875/SRR10545875_1.fastq.gz 
+  out=raw/SRR10545875_GSM4195498_TCR-seq_P19-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/075/SRR10545875/SRR10545875_2.fastq.gz 
+  out=raw/SRR10545875_GSM4195498_TCR-seq_P19-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/021/SRR10545921/SRR10545921_1.fastq.gz 
+  out=raw/SRR10545921_GSM4195510_TCR-seq_P21-T0-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/021/SRR10545921/SRR10545921_2.fastq.gz 
+  out=raw/SRR10545921_GSM4195510_TCR-seq_P21-T0-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/080/SRR10545880/SRR10545880_1.fastq.gz 
+  out=raw/SRR10545880_GSM4195499_TCR-seq_P19-T0-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/080/SRR10545880/SRR10545880_2.fastq.gz 
+  out=raw/SRR10545880_GSM4195499_TCR-seq_P19-T0-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/020/SRR10545920/SRR10545920_1.fastq.gz 
+  out=raw/SRR10545920_GSM4195509_TCR-seq_P21-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/020/SRR10545920/SRR10545920_2.fastq.gz 
+  out=raw/SRR10545920_GSM4195509_TCR-seq_P21-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/081/SRR10545881/SRR10545881_1.fastq.gz 
+  out=raw/SRR10545881_GSM4195500_TCR-seq_P19-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/081/SRR10545881/SRR10545881_2.fastq.gz 
+  out=raw/SRR10545881_GSM4195500_TCR-seq_P19-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/019/SRR10545919/SRR10545919_1.fastq.gz 
+  out=raw/SRR10545919_GSM4195509_TCR-seq_P21-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/019/SRR10545919/SRR10545919_2.fastq.gz 
+  out=raw/SRR10545919_GSM4195509_TCR-seq_P21-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/082/SRR10545882/SRR10545882_1.fastq.gz 
+  out=raw/SRR10545882_GSM4195500_TCR-seq_P19-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/082/SRR10545882/SRR10545882_2.fastq.gz 
+  out=raw/SRR10545882_GSM4195500_TCR-seq_P19-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/018/SRR10545918/SRR10545918_1.fastq.gz 
+  out=raw/SRR10545918_GSM4195509_TCR-seq_P21-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/018/SRR10545918/SRR10545918_2.fastq.gz 
+  out=raw/SRR10545918_GSM4195509_TCR-seq_P21-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/083/SRR10545883/SRR10545883_1.fastq.gz 
+  out=raw/SRR10545883_GSM4195500_TCR-seq_P19-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/083/SRR10545883/SRR10545883_2.fastq.gz 
+  out=raw/SRR10545883_GSM4195500_TCR-seq_P19-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/017/SRR10545917/SRR10545917_1.fastq.gz 
+  out=raw/SRR10545917_GSM4195509_TCR-seq_P21-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/017/SRR10545917/SRR10545917_2.fastq.gz 
+  out=raw/SRR10545917_GSM4195509_TCR-seq_P21-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/084/SRR10545884/SRR10545884_1.fastq.gz 
+  out=raw/SRR10545884_GSM4195500_TCR-seq_P19-M1-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/084/SRR10545884/SRR10545884_2.fastq.gz 
+  out=raw/SRR10545884_GSM4195500_TCR-seq_P19-M1-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/016/SRR10545916/SRR10545916_1.fastq.gz 
+  out=raw/SRR10545916_GSM4195508_TCR-seq_P21-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/016/SRR10545916/SRR10545916_2.fastq.gz 
+  out=raw/SRR10545916_GSM4195508_TCR-seq_P21-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/085/SRR10545885/SRR10545885_1.fastq.gz 
+  out=raw/SRR10545885_GSM4195501_TCR-seq_P19-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/085/SRR10545885/SRR10545885_2.fastq.gz 
+  out=raw/SRR10545885_GSM4195501_TCR-seq_P19-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/015/SRR10545915/SRR10545915_1.fastq.gz 
+  out=raw/SRR10545915_GSM4195508_TCR-seq_P21-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/015/SRR10545915/SRR10545915_2.fastq.gz 
+  out=raw/SRR10545915_GSM4195508_TCR-seq_P21-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/086/SRR10545886/SRR10545886_1.fastq.gz 
+  out=raw/SRR10545886_GSM4195501_TCR-seq_P19-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/086/SRR10545886/SRR10545886_2.fastq.gz 
+  out=raw/SRR10545886_GSM4195501_TCR-seq_P19-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/014/SRR10545914/SRR10545914_1.fastq.gz 
+  out=raw/SRR10545914_GSM4195508_TCR-seq_P21-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/014/SRR10545914/SRR10545914_2.fastq.gz 
+  out=raw/SRR10545914_GSM4195508_TCR-seq_P21-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/087/SRR10545887/SRR10545887_1.fastq.gz 
+  out=raw/SRR10545887_GSM4195501_TCR-seq_P19-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/087/SRR10545887/SRR10545887_2.fastq.gz 
+  out=raw/SRR10545887_GSM4195501_TCR-seq_P19-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/013/SRR10545913/SRR10545913_1.fastq.gz 
+  out=raw/SRR10545913_GSM4195508_TCR-seq_P21-T0-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/013/SRR10545913/SRR10545913_2.fastq.gz 
+  out=raw/SRR10545913_GSM4195508_TCR-seq_P21-T0-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/088/SRR10545888/SRR10545888_1.fastq.gz 
+  out=raw/SRR10545888_GSM4195501_TCR-seq_P19-M1-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/088/SRR10545888/SRR10545888_2.fastq.gz 
+  out=raw/SRR10545888_GSM4195501_TCR-seq_P19-M1-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/012/SRR10545912/SRR10545912_1.fastq.gz 
+  out=raw/SRR10545912_GSM4195507_TCR-seq_P19-M2PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/012/SRR10545912/SRR10545912_2.fastq.gz 
+  out=raw/SRR10545912_GSM4195507_TCR-seq_P19-M2PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/089/SRR10545889/SRR10545889_1.fastq.gz 
+  out=raw/SRR10545889_GSM4195502_TCR-seq_P19-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/089/SRR10545889/SRR10545889_2.fastq.gz 
+  out=raw/SRR10545889_GSM4195502_TCR-seq_P19-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/011/SRR10545911/SRR10545911_1.fastq.gz 
+  out=raw/SRR10545911_GSM4195507_TCR-seq_P19-M2PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/011/SRR10545911/SRR10545911_2.fastq.gz 
+  out=raw/SRR10545911_GSM4195507_TCR-seq_P19-M2PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/090/SRR10545890/SRR10545890_1.fastq.gz 
+  out=raw/SRR10545890_GSM4195502_TCR-seq_P19-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/090/SRR10545890/SRR10545890_2.fastq.gz 
+  out=raw/SRR10545890_GSM4195502_TCR-seq_P19-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/010/SRR10545910/SRR10545910_1.fastq.gz 
+  out=raw/SRR10545910_GSM4195507_TCR-seq_P19-M2PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/010/SRR10545910/SRR10545910_2.fastq.gz 
+  out=raw/SRR10545910_GSM4195507_TCR-seq_P19-M2PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/091/SRR10545891/SRR10545891_1.fastq.gz 
+  out=raw/SRR10545891_GSM4195502_TCR-seq_P19-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/091/SRR10545891/SRR10545891_2.fastq.gz 
+  out=raw/SRR10545891_GSM4195502_TCR-seq_P19-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/009/SRR10545909/SRR10545909_1.fastq.gz 
+  out=raw/SRR10545909_GSM4195507_TCR-seq_P19-M2PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/009/SRR10545909/SRR10545909_2.fastq.gz 
+  out=raw/SRR10545909_GSM4195507_TCR-seq_P19-M2PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/092/SRR10545892/SRR10545892_1.fastq.gz 
+  out=raw/SRR10545892_GSM4195502_TCR-seq_P19-M1-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/092/SRR10545892/SRR10545892_2.fastq.gz 
+  out=raw/SRR10545892_GSM4195502_TCR-seq_P19-M1-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/008/SRR10545908/SRR10545908_1.fastq.gz 
+  out=raw/SRR10545908_GSM4195506_TCR-seq_P19-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/008/SRR10545908/SRR10545908_2.fastq.gz 
+  out=raw/SRR10545908_GSM4195506_TCR-seq_P19-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/093/SRR10545893/SRR10545893_1.fastq.gz 
+  out=raw/SRR10545893_GSM4195503_TCR-seq_P19-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/093/SRR10545893/SRR10545893_2.fastq.gz 
+  out=raw/SRR10545893_GSM4195503_TCR-seq_P19-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/007/SRR10545907/SRR10545907_1.fastq.gz 
+  out=raw/SRR10545907_GSM4195506_TCR-seq_P19-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/007/SRR10545907/SRR10545907_2.fastq.gz 
+  out=raw/SRR10545907_GSM4195506_TCR-seq_P19-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/094/SRR10545894/SRR10545894_1.fastq.gz 
+  out=raw/SRR10545894_GSM4195503_TCR-seq_P19-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/094/SRR10545894/SRR10545894_2.fastq.gz 
+  out=raw/SRR10545894_GSM4195503_TCR-seq_P19-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/006/SRR10545906/SRR10545906_1.fastq.gz 
+  out=raw/SRR10545906_GSM4195506_TCR-seq_P19-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/006/SRR10545906/SRR10545906_2.fastq.gz 
+  out=raw/SRR10545906_GSM4195506_TCR-seq_P19-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/095/SRR10545895/SRR10545895_1.fastq.gz 
+  out=raw/SRR10545895_GSM4195503_TCR-seq_P19-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/095/SRR10545895/SRR10545895_2.fastq.gz 
+  out=raw/SRR10545895_GSM4195503_TCR-seq_P19-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/005/SRR10545905/SRR10545905_1.fastq.gz 
+  out=raw/SRR10545905_GSM4195506_TCR-seq_P19-M2-DNEG_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/005/SRR10545905/SRR10545905_2.fastq.gz 
+  out=raw/SRR10545905_GSM4195506_TCR-seq_P19-M2-DNEG_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/096/SRR10545896/SRR10545896_1.fastq.gz 
+  out=raw/SRR10545896_GSM4195503_TCR-seq_P19-M1-PD1_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/096/SRR10545896/SRR10545896_2.fastq.gz 
+  out=raw/SRR10545896_GSM4195503_TCR-seq_P19-M1-PD1_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/004/SRR10545904/SRR10545904_1.fastq.gz 
+  out=raw/SRR10545904_GSM4195505_TCR-seq_P19-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/004/SRR10545904/SRR10545904_2.fastq.gz 
+  out=raw/SRR10545904_GSM4195505_TCR-seq_P19-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/097/SRR10545897/SRR10545897_1.fastq.gz 
+  out=raw/SRR10545897_GSM4195504_TCR-seq_P19-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/097/SRR10545897/SRR10545897_2.fastq.gz 
+  out=raw/SRR10545897_GSM4195504_TCR-seq_P19-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/003/SRR10545903/SRR10545903_1.fastq.gz 
+  out=raw/SRR10545903_GSM4195505_TCR-seq_P19-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/003/SRR10545903/SRR10545903_2.fastq.gz 
+  out=raw/SRR10545903_GSM4195505_TCR-seq_P19-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/098/SRR10545898/SRR10545898_1.fastq.gz 
+  out=raw/SRR10545898_GSM4195504_TCR-seq_P19-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/098/SRR10545898/SRR10545898_2.fastq.gz 
+  out=raw/SRR10545898_GSM4195504_TCR-seq_P19-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/002/SRR10545902/SRR10545902_1.fastq.gz 
+  out=raw/SRR10545902_GSM4195505_TCR-seq_P19-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/002/SRR10545902/SRR10545902_2.fastq.gz 
+  out=raw/SRR10545902_GSM4195505_TCR-seq_P19-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/099/SRR10545899/SRR10545899_1.fastq.gz 
+  out=raw/SRR10545899_GSM4195504_TCR-seq_P19-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/099/SRR10545899/SRR10545899_2.fastq.gz 
+  out=raw/SRR10545899_GSM4195504_TCR-seq_P19-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/001/SRR10545901/SRR10545901_1.fastq.gz 
+  out=raw/SRR10545901_GSM4195505_TCR-seq_P19-M2-TIGIT_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/001/SRR10545901/SRR10545901_2.fastq.gz 
+  out=raw/SRR10545901_GSM4195505_TCR-seq_P19-M2-TIGIT_Homo_sapiens_OTHER_2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/000/SRR10545900/SRR10545900_1.fastq.gz 
+  out=raw/SRR10545900_GSM4195504_TCR-seq_P19-M2-DPOS_Homo_sapiens_OTHER_1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR105/000/SRR10545900/SRR10545900_2.fastq.gz 
+  out=raw/SRR10545900_GSM4195504_TCR-seq_P19-M2-DPOS_Homo_sapiens_OTHER_2.fastq.gz
+       
