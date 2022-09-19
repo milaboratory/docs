@@ -1,0 +1,1 @@
+cp results/P15-T0-TIGIT.TRA.tsv figs/

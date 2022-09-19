@@ -4,14 +4,17 @@
 
 This tutorial uses the data from the publication: Simon S, Voillet V, Vignard V, et al, _PD-1 and TIGIT coexpression identifies a circulating CD8 T cell subset predictive of response to anti-PD-1 therapy_, Journal for ImmunoTherapy of Cancer 2020;8:e001631. [doi: 10.1136/jitc-2020-001631](https://jitc.bmj.com/content/8/2/e001631)
 
-The data was collected from 12 patients. PBMC samples were obtained at three time points for each patient. The libraries were generated using _Human TCR Panel QIAseq Immune Repertoire RNA Library Kit (QIAGEN&TRAe;)_. Sequencing was performed using Illumina NextSeq&TRAe; sequencing machine. Each samples contain sequences of TCRα and TCRβ chains enriched cDNA libraries of human. 261bp Read 1 holds CDR3 region and 41bp Read 2 with UMI (first 12bp):
+The data was collected from 12 patients. PBMC samples were obtained at three time points for each patient. The libraries were generated using _Human TCR Panel QIAseq Immune Repertoire RNA Library Kit (QIAGEN&trade;)_. Sequencing was performed using Illumina NextSeq&trade; sequencing machine. Each samples contain sequences of TCRα and TCRβ chains enriched cDNA libraries of human. 261bp Read 1 holds CDR3 region and 41bp Read 2 with UMI (first 12bp):
 
-![library-structure](generic-umi-tcr/figs/010-library-structure.svg)
+![library-structure](generic-umi-tcr/figs/library-structure.svg)
 
 All data may be downloaded directly from SRA using e.g. [SRA Explorer](https://sra-explorer.info).
-??? tip "Use this script to download the full data set with the proper filenames for the tutorial:"
+??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "generic-umi-tcr/scripts/010-download.sh"
+    --8<-- "generic-umi-tcr/scripts/010-download-aria2c.sh"
+    ```
+    ```shell title="download-list.txt"
+    --8<-- "generic-umi-tcr/scripts/download-list.txt"
     ```
 
 
@@ -48,17 +51,7 @@ universal [`mixcr analyze`](../reference/mixcr-analyze.md) command.
 According to the library preparation protocol, the library has V primers on 5'-end and C primers on 3', so the command for a single sample is the following:
 
 ```shell
-> mixcr analyze amplicon \
-    --species hsa \
-    --starting-material rna \
-    --receptor-type tcr \
-    --5-end no-v-primers \
-    --3-end c-primers \
-    --adapters adapters-present \
-    --umi-pattern '^(R1:*)\^(UMI:N{12})' \
-    fastq/SRR{{n}}_GSM4195461_TCR-seq_P15-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz \
-    fastq/SRR{{n}}_GSM4195461_TCR-seq_P15-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz \
-    results/P15-T0-TIGIT
+--8<-- "generic-umi-tcr/scripts/020-upstream-example.sh"
 ```
 
 The meaning of these options is the following.
@@ -70,8 +63,7 @@ The meaning of these options is the following.
 : RNA or DNA. It affects the choice of V gene region which will be used as target in [`align`](../reference/mixcr-align.md) step (`vParameters.geneFeatureToAlign`, see [`align` documentation](../reference/mixcr-align.md)): `rna` corresponds to the `VTranscriptWithout5UTRWithP` and `dna` to `VGeneWithP` (see [Gene features and anchor points](../reference/ref-gene-features.md) for details)
 
 `--receptor-type`
-: TCR or BCR. It affects the choice of underlying alignment algorithms: MiXCR uses fundamentally different algorithms
-for TCRs and BCRs because BCRs have somatic hypermutations and long indels.
+: TCR or BCR. It affects the choice of underlying alignment algorithms: MiXCR uses fundamentally different algorithms for TCRs and BCRs because BCRs have somatic hypermutations and long indels.
 
 `--5-end`
 : may be `no-v-primers` or `v-primers`. For this library structure we use `no-v-primers` while e.g. Depending on the presence of primers or adapters at 5'-end MiXCR uses either global or local alignment algorithm to align the left bound of V.
@@ -110,7 +102,7 @@ Clonotype tables is the main result of the upstream analysis. They are stored in
 In order to run the analysis for all samples in the project on Linux we can for example use [GNU Parallel](https://www.gnu.org/software/parallel/) in the following way:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/020-upstream.sh"
+--8<-- "generic-umi-tcr/scripts/030-upstream-parallel.sh"
 ```
 
 Briefly, we list all R1 files in the fastq directory, replace lane specifications with MiXCR `{{n}}` wildcard, pipe the list to parallel, then run `mixcr analyze` for each pair, again using sed to obtain R2 filename from R1 and the name of output.
@@ -118,7 +110,8 @@ Briefly, we list all R1 files in the fastq directory, replace lane specification
 ### Details and fine-tuning
 
 Under the hood, `mixcr analyze amplicon` executes the following pipeline of MiXCR actions:
-![pipeline](generic-umi-tcr/figs/020-pipeline.svg)
+
+![pipeline](generic-umi-tcr/figs/mixcr_pipeline.svg)
 
 Each step in this pipeline is executed with a specific options inherited from the options supplied to `mixcr analyze amplicon`. Instead of running `analyze` one can run the whole pipeline step by step and additionally fine tune the analysis parameters at each step. Another reason why sometimes it is better to execute the pipeline step by step is the ability to better manage hardware resources allocated to each step, because some steps are memory intensive and less CPU intensive, while others are vice a versa.
 
@@ -132,18 +125,7 @@ Let's go throw each step executed in the considered case.
 - pattern matching of tag pattern sequence and extraction of barcodes
 
 ```shell
- > mixcr align \
-    --species hsa \
-    --tag-pattern '^(R1:*)\^(UMI:N{12})' \
-    --report result/P15-T0-TIGIT.report \
-    --json-report result/P15-T0-TIGIT.report.json \
-    -OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
-    -OvParameters.parameters.floatingLeftBound=false \
-    -OjParameters.parameters.floatingRightBound=false \
-    -OcParameters.parameters.floatingRightBound=true \
-    fastq/SRR{{n}}_GSM4195461_TCR-seq_P15-T0-TIGIT_Homo_sapiens_OTHER_1.fastq.gz \
-    fastq/SRR{{n}}_GSM4195461_TCR-seq_P15-T0-TIGIT_Homo_sapiens_OTHER_2.fastq.gz \
-    results/P15-T0-TIGIT.vdjca
+--8<-- "generic-umi-tcr/scripts/040-upstream-align.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithout5UTRWithP` for the alignment of V segments (see [Gene features and anchor points](../reference/ref-gene-features.md). Because we have primers on V segment, we use local alignment on the left bound of V and since we have primers on C segment, we use global alignment for J and local on the right bound of C.
@@ -155,11 +137,7 @@ This step utilizes all available CPUs and scales perfectly. When there are a lot
 [Corrects](../reference/mixcr-correctAndSortTags.md) sequencing and PCR errors _inside_ barcode sequences. This step does extremely important job by correcting artificial diversity caused by errors in barcodes. In the considered example project it corrects only sequences of UMIs.
 
 ```shell
-> mixcr correctAndSortTags \
-    --report results/P15-T0-TIGIT.report \
-    --json-report results/P15-T0-TIGIT.report.json \
-    P15-T0-TIGIT.vdjca \
-    P15-T0-TIGIT.corrected.vdjca
+--8<-- "generic-umi-tcr/scripts/050-upstream-correctAndSortTags.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with the barcode correction report.
@@ -173,11 +151,7 @@ Options `--report` and `--json-report` are specified here explicitly so that the
 - clustering to correct for PCR errors, which still may present even in the case of UMI data, since a error may be introduced e.g. on the first reverse-transcription cycle
 
 ```shell
-> mixcr assemble \
-    --report results/P15-T0-TIGIT.report \
-    --json-report results/P15-T0-TIGIT.report.json \
-    P15-T0-TIGIT.corrected.vdjca \
-    P15-T0-TIGIT.clns
+--8<-- "generic-umi-tcr/scripts/060-upstream-assemble.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with assembly report.
@@ -193,28 +167,29 @@ Assembly step may be quite memory consuming for very big datasets. MiXCR offload
 Finally, to [export](../reference/mixcr-export.md#clonotype-tables) clonotype tables in tabular form `exportClones` is used:
 
 ```shell
-> mixcr exportClones \
-    -p full \
-    -uniqueTagCount UMI \
-    P15-T0-TIGIT.clns \
-    P15-T0-TIGIT.tsv
+--8<-- "generic-umi-tcr/scripts/070-upstream-exportClones.sh"
 ```
 
 Here `-p full` is a shorthand for the full preset of common export columns and `-uniqueTagCount UMI` adds a column with the UMI count for each clone.
 
+The resulting clonotype table will contain exhaustive information about each clonotype:
+
+{{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/P15-T0-TIGIT.TRA.tsv', engine='python', sep='\t', nrows=3) }}
+
+??? tip "See full clonotype table for P15-T0-TIGIT:"
+    {{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/P15-T0-TIGIT.TRA.tsv', engine='python', sep='\t') }}
+
+
 ## Quality controls
 
-MiXCR generates comprehensive reports for each step of the pipeline, containing exhaustive information about quality of
-the library and performance of the algorithms. These reports are a primary source of the feedback to the wet lab, and
-also may be used to tune the parameters of the pipeline.
+MiXCR generates comprehensive reports for each step of the pipeline, containing exhaustive information about quality of the library and performance of the algorithms. These reports are a primary source of the feedback to the wet lab, and also may be used to tune the parameters of the pipeline.
 
-The very basic overview of the library performance may be generated in a graphical form using `mixcr exportQc align`
-command:
+The very basic overview of the library performance may be generated in a graphical form using `mixcr exportQc align` command:
 
 ```shell
-> mixcr exportQc align results/*.clns alignQc.pdf
+--8<-- "generic-umi-tcr/scripts/080-qc-align.sh"
 ```
-![alignQc.svg](generic-umi-tcr/figs/030-alignQc.svg)
+![alignQc.svg](generic-umi-tcr/figs/alignQc.svg)
 
 This plot shows the fraction of raw reads that were successfully aligned against reference V/D/J/C-gene segment library. Rate of successful alignments is expected to be higher than 90% for a high quality targeted TCR library. So in the considered example something went not as expected.
 
@@ -226,7 +201,7 @@ In most cases when we observe low alignment rate for amplicon library, the reaso
 To dig deeper one can re-align one problematic sample with the options to preserve partial alignments and save not-aligned reads:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/050-debug.sh"
+--8<-- "generic-umi-tcr/scripts/090-qc-debug-align.sh"
 ```
 
 Additional options are:
@@ -243,18 +218,16 @@ Additional options are:
 Now one can check how reads cover V-D-J region using `exportQc coverage` command:
 
 ```shell
-> mixcr exportQc coverage \
-    debug/P23-T0-DPOS_debug.vdjca \
-    figs/P23-T0-DPOS_debug.coverage.pdf
+--8<-- "generic-umi-tcr/scripts/100-qc-coverage.sh"
 ```
-![coverage](generic-umi-tcr/figs/040-P23-T0-DPOS_debug.coverage_R0.svg)
+![coverage](generic-umi-tcr/figs/P23-T0-DPOS_debug.coverage_R0.svg)
 
 From this plot it is seen that there are nearly 50% of not-spliced reads in the data, which is a clear signal of some library preparation artefacts.
 
 To dig even deeper one can also export raw alignments in a human-readable way for further manual inspection:
 
 ```shell
-> mixcr exportAlignmentsPretty debug/P23-T0-DPOS_debug.vdjca
+--8<-- "generic-umi-tcr/scripts/110-qc-exportAlignmentsPretty.sh"
 ```
 
 Some examples from the output illustrating wet lab artefacts:
@@ -320,19 +293,16 @@ Finally, one can use `na.fastq` to blast not aligned sequences and precisely det
 Another useful report is a chain usage report:
 
 ```shell
-> mixcr exportQc chainUsage results/*.clns chainUsage.pdf 
+--8<-- "generic-umi-tcr/scripts/120-qc-chainUsage.sh"
 ```
-![chainUsage.svg](generic-umi-tcr/figs/050-chainUsage.svg)
+![chainUsage.svg](generic-umi-tcr/figs/chainUsage.svg)
 
 Here we see a small fraction of TRG sequences, which are not supposed to be present in the library, thus the initial cell selection probably was not ideal.
 
 Individual reports generated at each step of MiXCR pipeline can be exported either in JSON or text form using [`exportReports`](../reference/mixcr-exportReports.md) command:
 
 ```shell
-> mixcr exportReports \
-    --json \
-    results/P15-T0-TIGIT.clns \
-    results/P15-T0-TIGIT.report.json 
+--8<-- "generic-umi-tcr/scripts/125-qc-exportReports.sh"
 ```
 
 Detailed description of each report can be found in [reports section](../reference/report-align.md) of reference.
@@ -354,7 +324,7 @@ To run postanalysis routines we need to prepare a metadata file in a .tsv or .cs
 To compute individual metrics of datasets we run
 
 ```shell
---8<-- "generic-umi-tcr/scripts/060-i-pa.sh"
+--8<-- "generic-umi-tcr/scripts/130-pa-individual.sh"
 ```
 
 The meaning of specified options is the following:
@@ -405,11 +375,10 @@ MiXCR runs postanalysis for each chain individually, so we have result per each 
 
 Preprocessing summary tables (e.g. `i.preproc.TRA.tsv`) contain detailed information on how downsampling was applied for each metric:
 
-{{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/060-i.preproc.TRA.tsv',  engine='python', sep='\t', nrows=3) }}
+{{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/i.preproc.TRA.tsv',  engine='python', sep='\t', nrows=3) }}
 
 ??? tip "See full preprocessing summary:"
-    {{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/060-i.preproc.TRA.tsv', engine='python', sep='\t') }}
-
+    {{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/i.preproc.TRA.tsv', engine='python', sep='\t') }}
 
 
 The meaning of the columns is the following:
@@ -437,10 +406,10 @@ The meaning of the columns is the following:
 
 Finally, tabular results for postanalysis metrics contain information about each metric computed for each sample. For example, for diversity metrics:
 
-{{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/070-i.diversity.TRA.tsv',  engine='python', sep='\t', nrows=3) }}
+{{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/i.diversity.TRA.tsv',  engine='python', sep='\t', nrows=3) }}
 
 ??? tip "See full diversity results for TRA chain:"
-    {{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/070-i.diversity.TRA.tsv', engine='python', sep='\t') }}
+    {{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/i.diversity.TRA.tsv', engine='python', sep='\t') }}
 
 
 
@@ -453,26 +422,25 @@ For diversity metrics and CDR3 properties MiXCR allows to group data in a differ
 For example, if one interested in how diversity metrics are changed between time points for different markers we can use a combination of primary grouping and faceting:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/070-i-pa-diversity-facets.sh"
+--8<-- "generic-umi-tcr/scripts/140-pa-diversity-facets.sh"
 ```
-![diversity facets](generic-umi-tcr/figs/080-diversity-facets.TRA.svg)
+![diversity facets](generic-umi-tcr/figs/diversity-facets.TRA.svg)
 
 Or using secondary grouping:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/080-i-pa-diversity-secondary-grouping.sh"
+--8<-- "generic-umi-tcr/scripts/150-pa-diversity-secondary-grouping.sh"
 ```
-![secondary grouping](generic-umi-tcr/figs/090-diversity-secondary-grouping.TRA.svg)
-
+![secondary grouping](generic-umi-tcr/figs/diversity-grouped.TRA.svg)
 
 For further details see [exportPlots reference](../reference/mixcr-exportPlots.md).
 
 Gene usage plots may be exported as heatmaps:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/090-i-vUsage.sh"
+--8<-- "generic-umi-tcr/scripts/160-pa-vUsage.sh"
 ```
-![vUsage.TRA.svg](generic-umi-tcr/figs/100-vUsage.TRA.svg)
+![vUsage.TRA.svg](generic-umi-tcr/figs/vUsage.TRA.svg)
 
 For further details see [gene usage plots reference](../reference/mixcr-exportPlots.md).
 
@@ -481,53 +449,35 @@ For further details see [gene usage plots reference](../reference/mixcr-exportPl
 To compute samples pairwise overlap metrics we run
 
 ```shell
---8<-- "generic-umi-tcr/scripts/110-o-pa.sh"
+--8<-- "generic-umi-tcr/scripts/170-pa-overlap.sh"
 ```
 
 Then we can export graphical heatmap using `exportPlots` command: 
 
 ```shell    
---8<-- "generic-umi-tcr/scripts/120-o-pa-export.sh"
+--8<-- "generic-umi-tcr/scripts/180-pa-overlap-export.sh"
 ```
 
-![overlap](generic-umi-tcr/figs/110-overlap.TRA.svg)
+![overlap](generic-umi-tcr/figs/overlap.TRA.svg)
 
 
 However, when there are many samples such representation may be not very informative. In this case it may be worth to factor data by specific columns. For example, in the considered project we might be interested in the overlap between different groups of samples (`Time`, `Marker`):
 
 ```shell
---8<-- "generic-umi-tcr/scripts/130-o-pa-factor-by.sh"
+--8<-- "generic-umi-tcr/scripts/190-pa-overlap-factor-by.sh"
 ```
 
 This way MiXCR will perform pairwise overlap comparison between groups of samples with different `Time` and `Marker` values. 
 
 The tabular output for example for F1 metric will look like:
 
-|          | DPOS,T0              | DNEG,T0              | PD1,T0               | TIGIT,T0             | TIGIT,M2             | DPOS,M2              | DNEG,M2              | DPOS,M1              | PD1,M1               | DNEG,M1              | PD1,M2               | TIGIT,M1             |
-|----------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|----------------------|
-| DPOS,T0  | 1.0                  | 0.03337746793790493  | 0.058259182976542534 | 0.09059870818406711  | 0.12825009669622267  | 0.2176144334484892   | 0.029410436004617048 | 0.017359209495845872 | 0.05243553676756904  | 0.03135826827728167  | 0.04738844004159216  | 0.1280522128472063   |
-| DNEG,T0  | 0.03337746793790493  | 1.0                  | 0.03418407490877663  | 0.03943250459863671  | 0.05276250161505157  | 0.02475362086174232  | 0.06687176001770796  | 0.026595059180080732 | 0.037806308652629184 | 0.06568054893303528  | 0.07938598190295898  | 0.043573513512455364 |
-| PD1,T0   | 0.058259182976542534 | 0.03418407490877663  | 1.0                  | 0.07081800787700983  | 0.05257217115262162  | 0.008369965023759815 | 0.01740459412145581  | 0.02976807296962157  | 0.14421349623438343  | 0.03627398674451592  | 0.045755508326405306 | 0.060122381269133274 |
-| TIGIT,T0 | 0.09059870818406711  | 0.03943250459863671  | 0.07081800787700983  | 1.0                  | 0.1559641607179412   | 0.05807983343291177  | 0.05141606811763911  | 0.0099082284353018   | 0.05451451650549572  | 0.06538903208414093  | 0.018551059616619254 | 0.18874888313779933  |
-| TIGIT,M2 | 0.12825009669622267  | 0.05276250161505157  | 0.05257217115262162  | 0.1559641607179412   | 1.0                  | 0.06829564533263949  | 0.027036490155762566 | 0.015149807342004265 | 0.07420432828043542  | 0.03379890430872591  | 0.07419991243609103  | 0.19900355943180156  |
-| DPOS,M2  | 0.2176144334484892   | 0.02475362086174232  | 0.008369965023759815 | 0.05807983343291177  | 0.06829564533263949  | 1.0                  | 0.025777032230044617 | 0.011760089771440219 | 0.047941595476748186 | 0.03479551709273049  | 0.04834321413689425  | 0.05004620399157923  |
-| DNEG,M2  | 0.029410436004617048 | 0.06687176001770796  | 0.01740459412145581  | 0.05141606811763911  | 0.027036490155762566 | 0.025777032230044617 | 1.0                  | 0.009463737972892084 | 0.04004526421608648  | 0.08755823985957366  | 0.0278548970518577   | 0.051006595559291074 |
-| DPOS,M1  | 0.017359209495845872 | 0.026595059180080732 | 0.02976807296962157  | 0.0099082284353018   | 0.015149807342004265 | 0.011760089771440219 | 0.009463737972892084 | 1.0                  | 0.02475957071676367  | 0.019956678578503    | 0.0912924918437169   | 0.014785678846985591 |
-| PD1,M1   | 0.05243553676756904  | 0.037806308652629184 | 0.14421349623438343  | 0.05451451650549572  | 0.07420432828043542  | 0.047941595476748186 | 0.04004526421608648  | 0.02475957071676367  | 1.0                  | 0.06654790587516789  | 0.05848890523340021  | 0.12451702042730313  |
-| DNEG,M1  | 0.03135826827728167  | 0.06568054893303528  | 0.03627398674451592  | 0.06538903208414093  | 0.03379890430872591  | 0.03479551709273049  | 0.08755823985957366  | 0.019956678578503    | 0.06654790587516789  | 1.0                  | 0.039832887864485626 | 0.06412844422925826  |
-| PD1,M2   | 0.04738844004159216  | 0.07938598190295898  | 0.045755508326405306 | 0.018551059616619254 | 0.07419991243609103  | 0.04834321413689425  | 0.0278548970518577   | 0.0912924918437169   | 0.05848890523340021  | 0.039832887864485626 | 1.0                  | 0.027777591048667595 |
-| TIGIT,M1 | 0.1280522128472063   | 0.043573513512455364 | 0.060122381269133274 | 0.18874888313779933  | 0.19900355943180156  | 0.05004620399157923  | 0.051006595559291074 | 0.014785678846985591 | 0.12451702042730313  | 0.06412844422925826  | 0.027777591048667595 | 1.0                  |
+{{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/o.tm.F1Index.TRA.tsv',  engine='python', sep='\t') }} |
 
 The graphical output will be more informative as well:
 
 ```shell
-> mixcr exportPlots overlap \
-    --palette density \
-    pa/o.time_marker.json.gz \
-    plots/overlap.time_marker.pdf
+--8<-- "generic-umi-tcr/scripts/200-pa-overlap-factor-by-export.sh"
 ```
-<figure markdown>
-![overlap.time_marker.TRA.svg](generic-umi-tcr/overlap.time_marker.TRA.svg)
-</figure>
+![overlap.tm](generic-umi-tcr/figs/overlap.tm.TRA.svg)
 
 For further details see [overlap postanalysis reference](../reference/mixcr-exportPlots.md).
