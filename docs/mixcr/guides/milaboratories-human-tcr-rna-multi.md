@@ -115,7 +115,7 @@ Under the hood, `mixcr analyze amplicon` executes the following pipeline of MiXC
 
 ```shell
  > mixcr align \
-    --species mmu \
+    --species hsa \
     --tag-pattern '^N{0:2}tggtatcaacgcagagt(UMI:NNNNTNNNNTNNNN)N{21}(R1:*) \ ^N{42}(R2:*)' \
     --report result/Multi_TRA_10ng_3.report \
     --json-report result/Multi_TRA_10ng_3.report.json \
