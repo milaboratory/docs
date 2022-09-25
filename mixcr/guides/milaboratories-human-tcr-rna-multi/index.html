@@ -411,7 +411,7 @@ Multi_TRB_FS115_1.clonotypes.TRG.tsv
     <span class="o">{=</span>s:R1:R2:<span class="o">=}</span> <span class="se">\</span>
     <span class="o">{=</span>s:.*/:results/:<span class="p">;</span>s:_S.*::<span class="o">=}</span>
 </code></pre></div> <h3 id="under-the-hood-pipeline">Under the hood pipeline</h3> <p>Under the hood, <code>mixcr analyze amplicon</code> executes the following pipeline of MiXCR actions:</p> <h4 id="align"><code>align</code></h4> <p><a href="../../reference/mixcr-align/">Performs</a>:</p> <ul> <li>alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments</li> <li>pattern matching of tag pattern sequence and extraction of barcodes</li> </ul> <div class="highlight"><pre><span></span><code> &gt; mixcr align <span class="se">\</span>
-    --species mmu <span class="se">\</span>
+    --species hsa <span class="se">\</span>
     --tag-pattern <span class="s1">'^N{0:2}tggtatcaacgcagagt(UMI:NNNNTNNNNTNNNN)N{21}(R1:*) \ ^N{42}(R2:*)'</span> <span class="se">\</span>
     --report result/Multi_TRA_10ng_3.report <span class="se">\</span>
     --json-report result/Multi_TRA_10ng_3.report.json <span class="se">\</span>
