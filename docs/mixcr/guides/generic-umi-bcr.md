@@ -49,7 +49,8 @@ The exact command for a single sample you can see bellow:
     --5-end no-v-primers \
     --3-end c-primers \
     --adapters adapters-present \
-    --assemble "-OassemblingFeatures={CDR1Begin:FR4End} -OseparateByC=true" \
+    --umi-pattern "^(R1:*)\^(UMI:N{"17"})(R2:*)" \
+    --assemble "-OassemblingFeatures={FR1Begin:FR4End} -OseparateByC=true" \
     mouse_3_Cd4Cre_R1.fastq.gz \
     mouse_3_Cd4Cre_R2.fastq.gz \
     mouse_3_Cd4Cre
@@ -160,7 +161,7 @@ Options `--report` and `--json-report` are specified here explicitly so that the
 > mixcr assemble \
     --report results/mouse_3_Cd4Cre.report \
     --json-report results/mouse_3_Cd4Cre.report.json \
-    -OassemblingFeatures={CDR1Begin:FR4End} \
+    -OassemblingFeatures={FR1Begin:FR4End} \
     -OseparateByC=true \
     mouse_3_Cd4Cre.corrected.vdjca \
     mouse_3_Cd4Cre.clns

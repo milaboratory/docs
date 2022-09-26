@@ -283,7 +283,7 @@ We can also use BLAST to identify not aligned reads from na.fastq.
 Finally, lets generate and look at chain usage report.
 
 ```shell
-> mixcr chainUsage \
+> mixcr exportQc chainUsage \
     results/*.clns \
     chainUsage.pdf
 ```

@@ -107,7 +107,7 @@ Assembles alignments that only partially cover `CDR3` region. This is a mandator
 mixcr assemblePartial \
   --report results/CD8T_REH_4h_rep1.report \
   result/CD8T_REH_4h_rep1.vdjca \
-  result/CD8T_REH_4h_rep1.rescued_1.clna
+  result/CD8T_REH_4h_rep1.rescued_1.vdjca
 
 #Second round  
 mixcr assemblePartial \

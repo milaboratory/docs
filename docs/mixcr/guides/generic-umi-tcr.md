@@ -174,7 +174,7 @@ Here `-p full` is a shorthand for the full preset of common export columns and `
 
 The resulting clonotype table will contain exhaustive information about each clonotype:
 
-{{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/P15-T0-TIGIT.TRA.tsv', engine='python', sep='\t', nrows=3) }}
+{{ read_table('docs/mixcr/guides/generic-umi-tcr/figs/P15-T0-TIGIT.TRA.tsv', engine='python', sep='\t', nrows=3) }}
 
 ??? tip "See full clonotype table for P15-T0-TIGIT:"
     {{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/P15-T0-TIGIT.TRA.tsv', engine='python', sep='\t') }}
