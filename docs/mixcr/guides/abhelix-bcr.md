@@ -38,6 +38,20 @@ Nevertheless, we will process all samples as if the primers are located on the J
 
 ## Upstream analysis
 
+MiXCR has a dedicated preset for this protocol, thus analysing the data ia as easy as:
+
+```shell
+--8<-- "abhelix-bcr/scripts/020-upstream-preset.sh"
+```
+
+One might also use [GNU Parallel](https://www.gnu.org/software/parallel/) to process all samples at once:
+
+```shell
+--8<-- "abhelix-bcr/scripts/020-upstream-preset-parallel.sh"
+```
+
+### Under the hood pipeline:
+
 Under the hood the command above actually executes the following pipeline:
 
 #### `align`
@@ -105,10 +119,9 @@ SRR8365277_HIP1_female_IgG1.clonotypes.IGH.txt
 
 While `.clns` file holds all data and is used for downstream analysis, the output `.txt` clonotype table will contain exhaustive information about each clonotype as well:
 
-{{ read_csv('docs/mixcr/guides/abhelix-bcr/figs/SRR8365277_HIP1_female_IgG1.clonotypes.IGH.txt', engine='python', sep='\t', nrows=3) }}
+??? tip "See first 100 records from SRR8365277_HIP1_female_IgG1 ??? tip "See full clonotype table SRR8365277_HIP1_female_IgG1:":"
+    {{ read_csv('docs/mixcr/guides/abhelix-bcr/figs/SRR8365277_HIP1_female_IgG1.clonotypes.IGH.txt', engine='python', sep='\t', nrows=100) }}
 
-??? tip "See full clonotype table SRR8365277_HIP1_female_IgG1:"
-    {{ read_csv('docs/mixcr/guides/abhelix-bcr/figs/SRR8365277_HIP1_female_IgG1.clonotypes.IGH.txt', engine='python', sep='\t') }}
 
 ## Quality control
 
@@ -232,8 +245,22 @@ Finally, lets check chain usage among all samples.
 
 The plot suggests that this data has a low cross-contamination level, since almost all clones from IgG1, IgG2,IgG3,IgG4,IgM and IgA samples are IGH, and samples with IgK and IgL mostly consist of IGK and IGL clones.
 
-Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output aJSON-formatted report.
+Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
 
 ```shell
 --8<-- "abhelix-bcr/scripts/125-qc-exportReports.sh"
 ```
+
+```shell
+--8<-- "abhelix-bcr/scripts/125-qc-exportReports-json.sh"
+```
+
+??? "Show report file"
+    === "`.txt`"
+        ```shell
+        --8<-- "abhelix-bcr/figs/SRR8365277_HIP1_female_IgG1.report.txt"
+        ```
+    === "`.json`"
+        ```js
+        --8<-- "abhelix-bcr/figs/SRR8365277_HIP1_female_IgG1.report.json"
+        ```

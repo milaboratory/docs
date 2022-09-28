@@ -1,3 +1,3 @@
-mixcr exportQc coverage -f \
-      debug/P23-T0-DPOS_debug.vdjca \
-      figs/P23-T0-DPOS_debug.coverage.svg
+mixcr exportQc coverage \
+      debug/SRR8365459_HIP1_female_debug.vdjca \
+      figs/SRR8365459_HIP1_female_debug.vdjca.coverage.svg

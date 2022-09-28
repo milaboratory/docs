@@ -34,20 +34,22 @@ Briefly:
 1. There are 16 primers (complimentary to VH, VK and VL segments). These primers' sequences are located in `FR1`region and the longest primer consists of 32 nucleotides. `R1` is 250bp long and, depending on a certain V gene, it covers the whole V segment upto to the beginning of`CDR3` region.
 2. There are 5 primers (complimentary to JH, JK and JL segments). These primers are located in `FR4` and the longest consists of 26 nucleotides. `R2` starts from one of these primers and ends in `FR2`.
 
-Bellow you can see J primers aligned with  IGHJ / IGKL / IGLJ genes sequences. 
+Bellow you can see J primers aligned with  IGHJ / IGKL / IGLJ genes sequences.
+
 ```shell
 # IGHJ
 
+         <---------FR4----------------->
 NNNNCTTACCTGAGGAGACGGTGACC												  <- Jh-primer
          CTGAGGAGACGGTGACCAGGGTGCCCTGGCCCCAGTGCTGGAAGTATTCAGC             <- IGHJ1
-         CTGAGGAGACAGTGACCAGGGTGCCACGGCCCCAGAGATCGAAGTACCAGTAG            <- IGHJ2 ?
+         CTGAGGAGACAGTGACCAGGGTGCCACGGCCCCAGAGATCGAAGTACCAGTAG            <- IGHJ2
          CTGAAGAGACGGTGACCATTGTCCCTTGGCCCCAGACATCAAAAGCATCA               <- IGHJ3
          CTGAGGAGACGGTGACCAGGGTTCCTTGGCCCCAGTAGTCAAAGTAGT		          <- IGHJ4
          CTGAGGAGACGGTGACCAGGGTTCCTTGGCCCCAGGAGTCGAACCAGTTGT              <- IGHJ5
             AGGAGACGGTGACCGTGGTCCCTTGCCCCCAGACGTCCATACCGTAGTAGTAGTAGTAAT  <- IGHJ6
-
+  
 # IGK
-
+     <------------ FR4---------->
   NNNNTTTGATaTCCAccTTGGTCCC                   <- Jk1-primer 
      GTTTGATTTCCACCTTGGTCCCTTGGCCGAACGTCCAC   <- IGKJ1
      GTTTGATCTCCAGCTTGGTCCCCTGGCCAAAAGTGTACA  <- IGKJ2
@@ -58,7 +60,7 @@ NNNNCTTACCTGAGGAGACGGTGACC												  <- Jh-primer
      GTTTAATCTCCAGTCGTGTCCCTTGGCCGAAGGTGATC   <- IGKJ5
 
 # IGL
-
+  <------------ FR4---------->
 NNNNAGGACGGTGACCTTGGTCCC                  <- Jl1-primer
 NNNNAGGACGGTCAGCTgGGTCCC                  <- Jl2-primer
   CTAGGACGGTGACCTTGGTCCCAGTTCCGAAGACATAA  <- IGLJ1
@@ -74,10 +76,21 @@ What's important, that in all cases there is enough nucleotides, not covered by 
 
 ## Upstream analysis
 
+MiXCR has a dedicated preset for this protocol, thus analysing the data ia as easy as:
+
+```shell
+--8<-- "biomed2-bcr/scripts/020-upstream-preset.sh"
+```
+
+One might also use [GNU Parallel](https://www.gnu.org/software/parallel/) to process all samples at once:
+
+```shell
+--8<-- "biomed2-bcr/scripts/020-upstream-preset-parallel.sh"
+```
 
 ### Under the hood pipeline:
 
-Under the hood the command above actually executes the following pipeline:
+Under the hood `mixcr analyze biomed2-human-bcr-cdr3` executes the following pipeline:
 
 #### `align`
 Alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
@@ -107,18 +120,18 @@ Option `--report` is specified here explicitly.
 : Results in a global alignment algorithm for J gene right bound. We can use global alignment here, because primer sequences were trimmed with `--tag-pattern`.
 
 #### `assemble`
-Assembles alignments into clonotypes and applies several layers of errors correction(ex. quality-awared correction for sequencing errors, clustering to correct for PCR errors). Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
+Assembles alignments into clonotypes and applies several layers of errors correction(ex. quality-awared correction for sequencing errors, clustering to correct for PCR errors). Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information. By default clones will be assembled by `CDR3` gene feature.
 
 
 ```shell
 --8<-- "biomed2-bcr/scripts/050-upstream-assemble.sh"
 ```
 
-`-OassemblingFeatures="{CDR1Begin:CDR3End}"`
-: sets the assembling feature to the region which starts from `CDR1Begin` and ends at `CDR3End`. We use this feature because these regions should present in the data according to the cDNA library structure.
+`-OseparateByV=true`
+: Split clones with the same `CDR3` sequence and different V-genes
 
 `-OseparateByJ=true`
-: Since the reverse primers are located in the middle of `FR4` we did not include this region in assembling feature. With this parameter clones with the same assembling feature and different J gene will be separated.
+: Split clones with the same `CDR3` sequence and different J-genes
 
 #### `export`
 Exports clonotypes from .clns file into human-readable tables.
@@ -147,14 +160,17 @@ SRR8365468_HIP2_male.IGL.tsv
 SRR8365468_HIP2_male.IGK.tsv  
 ```
 
-Obtained `*.tsv` files can be used for manual examination. `*.clns` files can be used for downstream analysis using [`mixcr postanalisis`](../reference/mixcr-postanalysis.md).
+While `.clns` file holds all data and is used for downstream analysis using [`mixcr postanalisis`](../reference/mixcr-postanalysis.md), the output `.tsv` clonotype table will contain exhaustive information about each clonotype as well:
+
+??? tip "See first 100 records from clonotype table SRR8365468_HIP2_male:"
+    {{ read_csv('docs/mixcr/guides/biomed2-bcr/figs/SRR8365468_HIP2_male.clonotypes.IGH.tsv', engine='python', sep='\t') }}
 
 ## Quality control 
 
 Now when we have all files processed lets perform Quality Control. The first thing to check is the alignment rate. That can be easily done using [`mixcr exportQc align`](../reference/mixcr-exportQc.md#alignment-reports) function.
 
 ```shell
---8<-- "abhelix-bcr/scripts/080-qc-align.sh"
+--8<-- "biomed2-bcr/scripts/080-qc-align.sh"
 ```
 
 ![alignQc.svg](biomed2-bcr/figs/alignQc.svg)
@@ -283,9 +299,55 @@ Target1 240 CTGCTGACCCG 250  Score
 Another quality report we should investigate is chain abundance plot.
 
 ```shell
---8<-- "abhelix-bcr/scripts/120-qc-chainUsage.sh"
+--8<-- "biomed2-bcr/scripts/120-qc-chainUsage.sh"
 ```
 
 ![chainUsage.svg](biomed2-bcr/figs/chainUsage.svg)
 
 From that plot we can see another issue. According to the publication, the data was generated using a V and J primers  multiplex protocol in such a way that every sample should have sequences for both heavy and light IG chains. But we see, that most samples have only one of the chains present in the sample, and those samples that have both still have a unexpected distribution, which has to be about 50\50, as every cell has both chains.
+
+
+## Full-length clonotype assembly
+
+Biomed2 BCR protocol allows to recover a broader BCR receptor sequence then just `CDR3` region. According to the protocol, forward primers are located in `FR1` region, thus we can safely use an assembling feature that starts from `CDR1` and be sure that no primers will affect the original sequence. The reverse primers are located in `FR4` region very close to `CDR3`, thus there is not much left from to include in clone assembly.
+
+Taking into account what is mentioned above, the longest possible assembling feature for this protocol is `"{CDR1Begin:CDR3End}"`.
+
+MiXCR has a specific preset to obtain full-length BCR clones with Biomed2 protocol:
+
+```shell
+--8<-- "biomed2-bcr/scripts/130-upstream-preset-full-length.sh"
+```
+
+The `mixcr assemble` step in this preset differs from the one above in the following manner:
+
+```shell
+--8<-- "biomed2-bcr/scripts/140-upstream-assemble-full-length.sh
+```
+
+`-OassemblingFeatures="{CDR1Begin:CDR3End}"`
+: sets the assembling feature to the region which starts from `CDR1Begin` and ends at the end of `CDR3`.
+
+Notice that we do not use `-OseparateByV=true` in this case because assembling feature already covers most of the V regions, thus in case if clones have identical `CDR3` they will still be separated.
+
+## Reports
+
+Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
+
+```shell
+--8<-- "biomed2-bcr/scripts/125-qc-exportReports.sh"
+```
+
+```shell
+--8<-- "biomed2-bcr/scripts/125-qc-exportReports-json.sh"
+```
+
+??? "Show report file"
+    === "`.txt`"
+        ```shell
+        --8<-- "biomed2-bcr/figs/SRR8365468_HIP2_male.report.txt"
+        ```
+    === "`.json`"
+        ```json
+        --8<-- "biomed2-bcr/figs/SRR8365468_HIP2_male.report.json"
+        ```

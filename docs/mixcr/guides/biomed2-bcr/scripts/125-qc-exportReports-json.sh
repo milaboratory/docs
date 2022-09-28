@@ -1,4 +1,4 @@
 mixcr exportReports \
 	--json \
-	results/SRR8365277_HIP1_female_IgG1.clns \
-	results/SRR8365277_HIP1_female_IgG1.json
+	results/SRR8365468_HIP2_male.clns \
+	figs/SRR8365468_HIP2_male.report.txt

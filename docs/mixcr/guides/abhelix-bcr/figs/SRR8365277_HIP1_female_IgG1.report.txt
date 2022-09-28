@@ -1,0 +1,51 @@
+============== Align Report ==============
+Input file(s): /raw/PRJNA511481-HIP/ABHelix_BCR/SRR8365277_HIP1_female_IgG1_R1.fastq.gz,/raw/PRJNA511481-HIP/ABHelix_BCR/SRR8365277_HIP1_female_IgG1_R2.fastq.gz
+Output file(s): results/SRR8365277_HIP1_female_IgG1.vdjca
+Version: 4.0.0-306-develop; built=Fri Sep 23 00:05:26 CEST 2022; rev=f7972131fd; lib=repseqio.v2.0
+Command line arguments: align --species hsa -n 100000 -p kAligner2_4.0 -OvParameters.geneFeatureToAlign=VTranscriptWithout5UTRWithP -OvParameters.parameters.floatingLeftBound=false -OjParameters.parameters.floatingRightBound=true --report results/SRR8365277_HIP1_female_IgG1.report.txt --json-report results/SRR8365277_HIP1_female_IgG1.report.json /raw/PRJNA511481-HIP/ABHelix_BCR/SRR8365277_HIP1_female_IgG1_R1.fastq.gz /raw/PRJNA511481-HIP/ABHelix_BCR/SRR8365277_HIP1_female_IgG1_R2.fastq.gz results/SRR8365277_HIP1_female_IgG1.vdjca
+Analysis time: 0ns
+Total sequencing reads: 100000
+Successfully aligned reads: 96116 (96.12%)
+Paired-end alignment conflicts eliminated: 4965 (4.96%)
+Alignment failed, no hits (not TCR/IG?): 2056 (2.06%)
+Alignment failed because of absence of V hits: 5 (0.01%)
+Alignment failed because of absence of J hits: 1483 (1.48%)
+No target with both V and J alignments: 340 (0.34%)
+Overlapped: 93602 (93.6%)
+Overlapped and aligned: 90679 (90.68%)
+Alignment-aided overlaps: 1473 (1.62%)
+Overlapped and not aligned: 2923 (2.92%)
+No CDR3 parts alignments, percent of successfully aligned: 37 (0.04%)
+Partial aligned reads, percent of successfully aligned: 840 (0.87%)
+V gene chimeras: 93 (0.09%)
+TRB chains: 1 (0%)
+TRB non-functional: 0 (0%)
+IGH chains: 96115 (100%)
+IGH non-functional: 1190 (1.24%)
+Realigned with forced non-floating bound: 15742 (15.74%)
+Realigned with forced non-floating right bound in left read: 2751 (2.75%)
+Realigned with forced non-floating left bound in right read: 2751 (2.75%)
+============== Assemble Report ==============
+Input file(s): results/SRR8365277_HIP1_female_IgG1.vdjca
+Output file(s): results/SRR8365277_HIP1_female_IgG1.clns
+Version: 4.0.0-306-develop; built=Fri Sep 23 00:05:26 CEST 2022; rev=f7972131fd; lib=repseqio.v2.0
+Command line arguments: assemble -f -OassemblingFeatures={FR1Begin:FR4End} --report results/SRR8365277_HIP1_female_IgG1.report.txt --json-report results/SRR8365277_HIP1_female_IgG1.report.json results/SRR8365277_HIP1_female_IgG1.vdjca results/SRR8365277_HIP1_female_IgG1.clns
+Analysis time: 0ns
+Final clonotype count: 7035
+Average number of reads per clonotype: 8.45
+Reads used in clonotypes, percent of total: 59465 (59.47%)
+Reads used in clonotypes before clustering, percent of total: 61595 (61.59%)
+Number of reads used as a core, percent of used: 57233 (92.92%)
+Mapped low quality reads, percent of used: 4362 (7.08%)
+Reads clustered in PCR error correction, percent of used: 2130 (3.46%)
+Reads pre-clustered due to the similar VJC-lists, percent of used: 0 (0%)
+Reads dropped due to the lack of a clone sequence, percent of total: 17978 (17.98%)
+Reads dropped due to a too short clonal sequence, percent of total: 0 (0%)
+Reads dropped due to low quality, percent of total: 0 (0%)
+Reads dropped due to failed mapping, percent of total: 16543 (16.54%)
+Reads dropped with low quality clones, percent of total: 0 (0%)
+Clonotypes eliminated by PCR error correction: 1682
+Clonotypes dropped as low quality: 0
+Clonotypes pre-clustered due to the similar VJC-lists: 0
+IGH chains: 7035 (100%)
+IGH non-functional: 65 (0.92%)

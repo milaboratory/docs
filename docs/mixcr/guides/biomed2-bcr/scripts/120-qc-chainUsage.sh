@@ -1,1 +1,3 @@
-mixcr exportQc chainUsage results/*.clns figs/chainUsage.pdf
+mixcr exportQc chainUsage \
+	results/*.clns \
+	figs/chainUsage.pdf

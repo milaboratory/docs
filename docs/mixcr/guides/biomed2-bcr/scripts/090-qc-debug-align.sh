@@ -9,7 +9,7 @@ mixcr align -f \
     -OallowNoCDR3PartAlignments=true \
     -OallowPartialAlignments=true \
     --not-aligned-R1 debug/SRR8365459_HIP1_female_notAligned_R1.fastq \
-    --not-aligned-R2 debug/SRR8365459_HIP1_female_IgG4_notAligned_R2.fastq \
-    -report debug/SRR8365459_HIP1_female_debug.report \
+    --not-aligned-R2 debug/SRR8365459_HIP1_female_notAligned_R2.fastq \
+    --report debug/SRR8365459_HIP1_female_debug.report \
      raw/SRR8365459_HIP1_female_R1.fastq.gz raw/SRR8365459_HIP1_female_R2.fastq.gz \
      debug/SRR8365459_HIP1_female_debug.vdjca

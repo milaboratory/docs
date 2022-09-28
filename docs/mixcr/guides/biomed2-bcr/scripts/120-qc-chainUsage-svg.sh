@@ -1,1 +1,3 @@
-mixcr exportQc chainUsage results/*.clns figs/chainUsage.svg -f
+mixcr exportQc chainUsage -f \
+	results/*.clns \
+	figs/chainUsage.svg
