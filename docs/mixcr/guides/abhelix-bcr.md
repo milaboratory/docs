@@ -245,6 +245,30 @@ Finally, lets check chain usage among all samples.
 
 The plot suggests that this data has a low cross-contamination level, since almost all clones from IgG1, IgG2,IgG3,IgG4,IgM and IgA samples are IGH, and samples with IgK and IgL mostly consist of IGK and IGL clones.
 
+## Full-length clonotype assembly
+
+ABhelix BCR protocol allows to recover a broader BCR receptor sequence then just `CDR3` region. According to the protocol, forward primers are located in the leader region, thus we can safely use an assembling feature that starts from `FR1` and be sure that no primers will affect the original sequence. The reverse primers are located in C gene region close to `FR4End`.
+
+Taking into account what is mentioned above, the longest possible assembling feature for this protocol is `"{FR1Begin:FR4End}"`.
+
+MiXCR has a specific preset to obtain full-length BCR clones with ABhelix protocol:
+
+```shell
+--8<-- "abhelix-bcr/scripts/130-upstream-preset-full-length.sh"
+```
+
+The `mixcr assemble` step in this preset differs from the one above in the following manner:
+
+```shell
+--8<-- "abhelix-bcr/scripts/140-upstream-assemble-full-length.sh
+```
+
+`-OassemblingFeatures="{FR1Begin:FR4End}"`
+: sets the assembling feature to the region which starts from `FR1Begin` and ends at the end of `FR4`.
+
+Notice that we do not use `-OseparateByV=true` and `-OseparateByJ=true` in this case because assembling feature already covers full V and J sequences, thus in case if clones have identical `CDR3` they will still be separated.
+
+## Reports
 Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
 
 ```shell
