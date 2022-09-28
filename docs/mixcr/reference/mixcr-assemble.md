@@ -6,9 +6,7 @@ Assembles clonotypes. MiXCR allows to assemble clonotypes by arbitrary [gene fea
  - clustering to correct for PCR errors both in case of non-barcoded and UMI-barcoded data
  - specific barcode-guided correction for UMI and single-cell data
 
-<figure markdown>
 ![assemble](./pics/assemble.svg)
-</figure>
 
 Briefly, assemble pipeline consists of the following steps:
 
