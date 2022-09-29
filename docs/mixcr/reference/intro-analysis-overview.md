@@ -82,7 +82,7 @@ For fragmented data, assembles longest available consensus contig receptor seque
 
 ![](pics/assembleContigs.svg)
 
-B
+MiXCR uses powerful alignment-guided algorithm The typical situation in case of fragmented data is when 
 
 ### [Export](mixcr-export.md)
 
