@@ -137,7 +137,7 @@ Assembles alignments into clonotypes and applies several layers of errors correc
 Exports clonotypes from .clns file into human-readable tables.
 
 ```shell
---8<-- "biomed2-bcr/scripts/050-upstream-exportClones.sh"
+--8<-- "biomed2-bcr/scripts/060-upstream-exportClones.sh"
 ```
 
 Here `-p full` defines the full preset of common export columns. Check [`mixcr export`](../reference/mixcr-export.md) for more information.
@@ -322,7 +322,7 @@ MiXCR has a specific preset to obtain full-length BCR clones with Biomed2 protoc
 The `mixcr assemble` step in this preset differs from the one above in the following manner:
 
 ```shell
---8<-- "biomed2-bcr/scripts/140-upstream-assemble-full-length.sh
+--8<-- "biomed2-bcr/scripts/140-upstream-assemble-full-length.sh"
 ```
 
 `-OassemblingFeatures="{CDR1Begin:CDR3End}"`

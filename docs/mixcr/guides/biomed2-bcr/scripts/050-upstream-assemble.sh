@@ -1,6 +1,7 @@
 mixcr assemble \
-    -OassemblingFeatures={CDR1Begin:CDR3End} \
+    -OassemblingFeatures="CDR3" \
     -OseparateByJ=true \
+    -OseparateByV=true \
     --report results/SRR8365468_HIP2_male.report \
     --json-report results/SRR8365468_HIP2_male.json \
     results/SRR8365468_HIP2_male.vdjca \

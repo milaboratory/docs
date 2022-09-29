@@ -5,7 +5,6 @@ mixcr align -f \
     -OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
     -OvParameters.parameters.floatingLeftBound=true \
     -OjParameters.parameters.floatingRightBound=false \
-    -OcParameters.parameters.floatingRightBound=true \
     -OallowNoCDR3PartAlignments=true \
     -OallowPartialAlignments=true \
     --not-aligned-R1 debug/SRR8365280_HIP1_female_IgG4_notAligned_R1.fastq \
