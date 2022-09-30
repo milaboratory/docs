@@ -1,11 +1,11 @@
-# `mixcr correctAndSortTags`
+# `mixcr refineTagsAndSort`
 
 Corrects sequencing and PCR errors _inside_ barcode sequences and sorts resulting file by tags. This step does extremely important job by correcting artificial diversity caused by errors in barcodes.
 
 ## Command line options
 
 ```
-> mixcr correctAndSortTags [-f] \
+> mixcr refineTagsAndSort [-f] \
     [--dont-correct] \
     [--report <report>] \
     [--json-report <jsonReport>] \
@@ -18,9 +18,9 @@ Corrects sequencing and PCR errors _inside_ barcode sequences and sorts resultin
     [--use-system-temp] \
     [--memory-budget <memoryBudget>] \
     alignments.vdjca \
-    alignments.corrected.vdjca
+    alignments.refined.vdjca
 ```
-Command takes input `.vdjca` file produced at [`align`](mixcr-align.md) step and writes the resulting `.vdjca` file with corrected barcode sequences. Additionally, it provides a comprehensive [report](report-correctAndSortTags.md) with the correction performance.   
+Command takes input `.vdjca` file produced at [`align`](mixcr-align.md) step and writes the resulting `.vdjca` file with corrected barcode sequences. Additionally, it provides a comprehensive [report](report-refineTagsAndSort.md) with the correction performance.   
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).

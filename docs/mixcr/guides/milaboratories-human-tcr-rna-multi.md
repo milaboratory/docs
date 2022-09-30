@@ -135,7 +135,7 @@ This step utilizes all available CPUs and scales perfectly. When there are a lot
 
 #### `correctAndSortTags`
 
-[Corrects](../reference/mixcr-correctAndSortTags.md) artificial diversity caused by sequencing and PCR errors _inside_ barcode sequences. This step essential if any barcodes (UMI, Cel, etc.) present in the sample. In the considered example project it corrects only sequences of UMIs.
+[Corrects](../reference/mixcr-refineTagsAndSort.md) artificial diversity caused by sequencing and PCR errors _inside_ barcode sequences. This step essential if any barcodes (UMI, Cel, etc.) present in the sample. In the considered example project it corrects only sequences of UMIs.
 
 ```shell
 > mixcr correctAndSortTags \

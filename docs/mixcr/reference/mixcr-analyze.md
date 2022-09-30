@@ -4,7 +4,7 @@ Uber command to run complicated analysis pipelines for generic data types in one
 
 ## Generic targeted amplicon libraries
 
-MiXCR `analyze amplicon` runs the dedicated pipeline for the analysis of enriched targeted generic TCR/IG libraries (5’RACE, Amplicon, Multiplex, etc) with or without UMIs. The pipeline includes [alignment](./mixcr-align.md) of raw sequencing reads, [tag correction](./mixcr-correctAndSortTags.md) in case of UMI-barcoded data, [assembly](./mixcr-assemble.md) of aligned sequences into clonotypes, optional [contig assembly](./mixcr-assembleContigs.md) and finally [export](./mixcr-export.md#clonotype-tables) of the resulting clonotype tables into tab-delimited files.
+MiXCR `analyze amplicon` runs the dedicated pipeline for the analysis of enriched targeted generic TCR/IG libraries (5’RACE, Amplicon, Multiplex, etc) with or without UMIs. The pipeline includes [alignment](./mixcr-align.md) of raw sequencing reads, [tag correction](./mixcr-refineTagsAndSort.md) in case of UMI-barcoded data, [assembly](./mixcr-assemble.md) of aligned sequences into clonotypes, optional [contig assembly](./mixcr-assembleContigs.md) and finally [export](./mixcr-export.md#clonotype-tables) of the resulting clonotype tables into tab-delimited files.
 
 ![amplicon.svg](pics/analyze-amplicon-pipeline.svg)
 
@@ -200,7 +200,7 @@ The presence or absence of primer and adapter sequences affects behavior of alig
 
 #### `correctAndSortTags`
 
-[Corrects](mixcr-correctAndSortTags.md) sequencing and PCR errors _inside_ barcode sequences.
+[Corrects](mixcr-refineTagsAndSort.md) sequencing and PCR errors _inside_ barcode sequences.
 
 ```
 > mixcr correctAndSortTags \
