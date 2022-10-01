@@ -136,7 +136,7 @@ nav:
       - 'MiXCR reference':
         - 'analyze': mixcr/reference/mixcr-analyze.md
         - 'align': mixcr/reference/mixcr-align.md
-        - 'correctAndSortTags': mixcr/reference/mixcr-correctAndSortTags.md
+        - 'refineTagsAndSort': mixcr/reference/mixcr-refineTagsAndSort.md
         - 'assemblePartial': mixcr/reference/mixcr-assemblePartial.md
         - 'extend': mixcr/reference/mixcr-extend.md
         - 'assemble': mixcr/reference/mixcr-assemble.md
@@ -155,7 +155,7 @@ nav:
         - 'overlapScatterPlot': mixcr/reference/mixcr-overlapScatterPlot.md
       - 'Reports':
         - 'mixcr align': mixcr/reference/report-align.md
-        - 'mixcr correctAndSortTags': mixcr/reference/report-correctAndSortTags.md
+        - 'mixcr refineTagsAndSort': mixcr/reference/report-refineTagsAndSort.md
         - 'mixcr assemblePartial': mixcr/reference/report-assemblePartial.md
         - 'mixcr extend': mixcr/reference/report-extend.md
         - 'mixcr assemble': mixcr/reference/report-assemble.md

@@ -1,0 +1,59 @@
+============== Align Report ==============
+Input file(s): /raw/PRJNA658348_TakaraMouseTCR/S_s_R1.fastq.gz,/raw/PRJNA658348_TakaraMouseTCR/S_s_R2.fastq.gz
+Output file(s): results/S_s.vdjca
+Version: ; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0
+Command line arguments: --report results/S_s.align.report.txt --json-report results/S_s.align.report.json --preset local:takara-smarter-mouse-tcr-cdr3 +limitInput 100000 /raw/PRJNA658348_TakaraMouseTCR/S_s_R1.fastq.gz /raw/PRJNA658348_TakaraMouseTCR/S_s_R2.fastq.gz results/S_s.vdjca
+Analysis time: 0ns
+Total sequencing reads: 100000
+Successfully aligned reads: 48077 (48.08%)
+Paired-end alignment conflicts eliminated: 6461 (6.46%)
+Alignment failed, no hits (not TCR/IG?): 35335 (35.34%)
+Alignment failed because of absence of V hits: 10019 (10.02%)
+Alignment failed because of absence of J hits: 6103 (6.1%)
+No target with both V and J alignments: 400 (0.4%)
+Alignment failed because of low total score: 66 (0.07%)
+Overlapped: 72072 (72.07%)
+Overlapped and aligned: 34890 (34.89%)
+Alignment-aided overlaps: 1306 (3.74%)
+Overlapped and not aligned: 37182 (37.18%)
+No CDR3 parts alignments, percent of successfully aligned: 135 (0.28%)
+Partial aligned reads, percent of successfully aligned: 1862 (3.87%)
+V gene chimeras: 118 (0.12%)
+J gene chimeras: 25 (0.03%)
+TRA chains: 30220 (62.86%)
+TRA non-functional: 4116 (13.62%)
+TRB chains: 17849 (37.13%)
+TRB non-functional: 1382 (7.74%)
+TRD chains: 8 (0.02%)
+TRD non-functional: 2 (25%)
+Realigned with forced non-floating bound: 58468 (58.47%)
+Realigned with forced non-floating right bound in left read: 7379 (7.38%)
+Realigned with forced non-floating left bound in right read: 7379 (7.38%)
+============== Assemble Report ==============
+Input file(s): results/S_s.vdjca
+Output file(s): results/S_s.clns
+Version: ; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0
+Command line arguments: --report results/S_s.assemble.report.txt --json-report results/S_s.assemble.report.json results/S_s.vdjca results/S_s.clns
+Analysis time: 0ns
+Final clonotype count: 25533
+Average number of reads per clonotype: 1.34
+Reads used in clonotypes, percent of total: 34295 (34.3%)
+Reads used in clonotypes before clustering, percent of total: 34336 (34.34%)
+Number of reads used as a core, percent of used: 33568 (97.76%)
+Mapped low quality reads, percent of used: 768 (2.24%)
+Reads clustered in PCR error correction, percent of used: 41 (0.12%)
+Reads pre-clustered due to the similar VJC-lists, percent of used: 85 (0.25%)
+Reads dropped due to the lack of a clone sequence, percent of total: 2655 (2.65%)
+Reads dropped due to a too short clonal sequence, percent of total: 0 (0%)
+Reads dropped due to low quality, percent of total: 45 (0.04%)
+Reads dropped due to failed mapping, percent of total: 10984 (10.98%)
+Reads dropped with low quality clones, percent of total: 77 (0.08%)
+Clonotypes eliminated by PCR error correction: 22
+Clonotypes dropped as low quality: 45
+Clonotypes pre-clustered due to the similar VJC-lists: 72
+TRA chains: 15308 (59.95%)
+TRA non-functional: 2060 (13.46%)
+TRB chains: 10224 (40.04%)
+TRB non-functional: 635 (6.21%)
+TRD chains: 1 (0%)
+TRD non-functional: 1 (100%)

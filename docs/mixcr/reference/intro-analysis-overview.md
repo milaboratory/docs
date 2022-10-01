@@ -29,7 +29,7 @@ Also at the alignment step MiXCR performs barcodes sequences extraction for barc
 
 The built-in reference [gene library](http://github.com/repseqio/library) of V-, D-, J- and C- segments is thoroughly compiled for every available species using the data specifically obtained from multiple dedicated sequencing runs as well as from hundreds of other experiments. At the same time MiXCR supports using of [external libraries](../guides/external-libraries.md) or even to assemble a [custom library](../guides/create-custom-library.md) from scratch.     
 
-### [Tag refinement](mixcr-correctAndSortTags.md)
+### [Tag refinement](mixcr-refineTagsAndSort.md)
 
 For barcoded (tagged) data, corrects errors _inside_ barcode sequences and filters out spurious barcodes.
 

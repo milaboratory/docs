@@ -306,7 +306,7 @@ Option `--report` is specified here explicitly.
 
 #### `correctAndSortTags`
 
-[Corrects](../reference/mixcr-correctAndSortTags.md) sequencing and PCR errors _inside_ barcode sequences. This step is essential to correct artificial diversity caused by errors in barcodes. 
+[Corrects](../reference/mixcr-refineTagsAndSort.md) sequencing and PCR errors _inside_ barcode sequences. This step is essential to correct artificial diversity caused by errors in barcodes. 
 
 ```shell
 > mixcr correctAndSortTags \

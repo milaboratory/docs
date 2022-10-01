@@ -1,0 +1,118 @@
+{
+  "type": "alignerReport",
+  "commandLine": "--report results/S_s.align.report.txt --json-report results/S_s.align.report.json --preset local:takara-smarter-mouse-tcr-cdr3 +limitInput 100000 /raw/PRJNA658348_TakaraMouseTCR/S_s_R1.fastq.gz /raw/PRJNA658348_TakaraMouseTCR/S_s_R2.fastq.gz results/S_s.vdjca",
+  "inputFiles": [
+    "/raw/PRJNA658348_TakaraMouseTCR/S_s_R1.fastq.gz",
+    "/raw/PRJNA658348_TakaraMouseTCR/S_s_R2.fastq.gz"
+  ],
+  "outputFiles": [
+    "results/S_s.vdjca"
+  ],
+  "version": "; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0",
+  "trimmingReport": null,
+  "totalReadsProcessed": 100000,
+  "aligned": 48077,
+  "notAligned": 51923,
+  "notAlignedReasons": {
+    "NoVHits": 10019,
+    "LowTotalScore": 66,
+    "NoCDR3Parts": 0,
+    "VAndJOnDifferentTargets": 400,
+    "NoBarcode": 0,
+    "NoJHits": 6103,
+    "NoHits": 35335
+  },
+  "chimeras": 0,
+  "overlapped": 72072,
+  "alignmentAidedOverlaps": 1306,
+  "overlappedAligned": 34890,
+  "overlappedNotAligned": 37182,
+  "pairedEndAlignmentConflicts": 6461,
+  "vChimeras": 118,
+  "jChimeras": 25,
+  "chainUsage": {
+    "type": "chainUsage",
+    "chimeras": 0,
+    "total": 48077,
+    "chains": {
+      "TRA": {
+        "total": 30220,
+        "nonFunctional": 4116,
+        "isOOF": 3698,
+        "hasStops": 418
+      },
+      "TRB": {
+        "total": 17849,
+        "nonFunctional": 1382,
+        "isOOF": 1035,
+        "hasStops": 347
+      },
+      "TRD": {
+        "total": 8,
+        "nonFunctional": 2,
+        "isOOF": 2,
+        "hasStops": 0
+      }
+    }
+  },
+  "realignedWithForcedNonFloatingBound": 58468,
+  "realignedWithForcedNonFloatingRightBoundInLeftRead": 7379,
+  "realignedWithForcedNonFloatingLeftBoundInRightRead": 7379,
+  "noCDR3PartsAlignments": 135,
+  "partialAlignments": 1862,
+  "tagReport": null
+}
+{
+  "type": "assemblerReport",
+  "commandLine": "--report results/S_s.assemble.report.txt --json-report results/S_s.assemble.report.json results/S_s.vdjca results/S_s.clns",
+  "inputFiles": [
+    "results/S_s.vdjca"
+  ],
+  "outputFiles": [
+    "results/S_s.clns"
+  ],
+  "version": "; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0",
+  "preCloneAssemblerReport": null,
+  "totalReadsProcessed": 100000,
+  "initialClonesCreated": 25672,
+  "readsDroppedNoTargetSequence": 2655,
+  "readsDroppedTooShortClonalSequence": 0,
+  "readsDroppedLowQuality": 25,
+  "coreReads": 33568,
+  "readsDroppedFailedMapping": 10984,
+  "lowQualityRescued": 768,
+  "clonesClustered": 22,
+  "readsClustered": 41,
+  "clones": 25533,
+  "clonesDroppedAsLowQuality": 45,
+  "clonesPreClustered": 72,
+  "readsPreClustered": 85,
+  "readsInClones": 34295,
+  "readsInClonesBeforeClustering": 34336,
+  "readsDroppedWithLowQualityClones": 77,
+  "clonalChainUsage": {
+    "type": "chainUsage",
+    "chimeras": 0,
+    "total": 25533,
+    "chains": {
+      "TRA": {
+        "total": 15308,
+        "nonFunctional": 2060,
+        "isOOF": 2035,
+        "hasStops": 25
+      },
+      "TRB": {
+        "total": 10224,
+        "nonFunctional": 635,
+        "isOOF": 595,
+        "hasStops": 40
+      },
+      "TRD": {
+        "total": 1,
+        "nonFunctional": 1,
+        "isOOF": 1,
+        "hasStops": 0
+      }
+    }
+  }
+}

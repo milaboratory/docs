@@ -1,0 +1,108 @@
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/003/ERR5952573/ERR5952573_2.fastq.gz
+  out=raw/FebControl1_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/003/ERR5952573/ERR5952573_1.fastq.gz
+  out=raw/FebControl1_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/004/ERR5952574/ERR5952574_1.fastq.gz
+  out=raw/FebControl2_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/004/ERR5952574/ERR5952574_2.fastq.gz
+  out=raw/FebControl2_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/005/ERR5952575/ERR5952575_1.fastq.gz
+  out=raw/FebControl3_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/005/ERR5952575/ERR5952575_2.fastq.gz
+  out=raw/FebControl3_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/006/ERR5952576/ERR5952576_1.fastq.gz
+  out=raw/FebControl4_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/006/ERR5952576/ERR5952576_2.fastq.gz
+  out=raw/FebControl4_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/007/ERR5952577/ERR5952577_1.fastq.gz
+  out=raw/FebControl5_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/007/ERR5952577/ERR5952577_2.fastq.gz
+  out=raw/FebControl5_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/008/ERR5952578/ERR5952578_1.fastq.gz
+  out=raw/FebControl6_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/008/ERR5952578/ERR5952578_2.fastq.gz
+  out=raw/FebControl6_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952579/ERR5952579_1.fastq.gz
+  out=raw/FebControl7_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952579/ERR5952579_2.fastq.gz
+  out=raw/FebControl7_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/000/ERR5952580/ERR5952580_1.fastq.gz
+  out=raw/FebControl8_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/000/ERR5952580/ERR5952580_2.fastq.gz
+  out=raw/FebControl8_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/001/ERR5952581/ERR5952581_1.fastq.gz
+  out=raw/FebControl9_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/001/ERR5952581/ERR5952581_2.fastq.gz
+  out=raw/FebControl9_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/002/ERR5952582/ERR5952582_1.fastq.gz
+  out=raw/FebControl10_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/002/ERR5952582/ERR5952582_2.fastq.gz
+  out=raw/FebControl10_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/003/ERR5952583/ERR5952583_1.fastq.gz
+  out=raw/FebControl11_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/003/ERR5952583/ERR5952583_2.fastq.gz
+  out=raw/FebControl11_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/004/ERR5952584/ERR5952584_1.fastq.gz
+  out=raw/FebControl12_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/004/ERR5952584/ERR5952584_2.fastq.gz
+  out=raw/FebControl12_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/005/ERR5952585/ERR5952585_1.fastq.gz
+  out=raw/FebControl13_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/005/ERR5952585/ERR5952585_2.fastq.gz
+  out=raw/FebControl13_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/006/ERR5952586/ERR5952586_1.fastq.gz
+  out=raw/FebControl14_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/006/ERR5952586/ERR5952586_2.fastq.gz
+  out=raw/FebControl14_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/007/ERR5952587/ERR5952587_1.fastq.gz
+  out=raw/FebControl15_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/007/ERR5952587/ERR5952587_2.fastq.gz
+  out=raw/FebControl15_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/008/ERR5952588/ERR5952588_1.fastq.gz
+  out=raw/MISC1_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/008/ERR5952588/ERR5952588_2.fastq.gz
+  out=raw/MISC1_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952589/ERR5952589_1.fastq.gz
+  out=raw/MISC2_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952589/ERR5952589_2.fastq.gz
+  out=raw/MISC2_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/000/ERR5952590/ERR5952590_1.fastq.gz
+  out=raw/MISC3_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/000/ERR5952590/ERR5952590_2.fastq.gz
+  out=raw/MISC3_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/001/ERR5952591/ERR5952591_1.fastq.gz
+  out=raw/MISC4_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/001/ERR5952591/ERR5952591_2.fastq.gz
+  out=raw/MISC4_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/002/ERR5952592/ERR5952592_1.fastq.gz
+  out=raw/MISC5_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/002/ERR5952592/ERR5952592_2.fastq.gz
+  out=raw/MISC5_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/003/ERR5952593/ERR5952593_1.fastq.gz
+  out=raw/MISC6_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/003/ERR5952593/ERR5952593_2.fastq.gz
+  out=raw/MISC6_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/004/ERR5952594/ERR5952594_1.fastq.gz
+  out=raw/MISC7_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/004/ERR5952594/ERR5952594_2.fastq.gz
+  out=raw/MISC7_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/005/ERR5952595/ERR5952595_1.fastq.gz
+  out=raw/MISC8_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/005/ERR5952595/ERR5952595_2.fastq.gz
+  out=raw/MISC8_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/006/ERR5952596/ERR5952596_1.fastq.gz
+  out=raw/MISC9_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/006/ERR5952596/ERR5952596_2.fastq.gz
+  out=raw/MISC9_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/007/ERR5952597/ERR5952597_1.fastq.gz
+  out=raw/MISC10_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/007/ERR5952597/ERR5952597_2.fastq.gz
+  out=raw/MISC10_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/008/ERR5952598/ERR5952598_1.fastq.gz
+  out=raw/MISC11_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/008/ERR5952598/ERR5952598_2.fastq.gz
+  out=raw/MISC11_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952599/ERR5952599_1.fastq.gz
+  out=raw/MISC12_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952599/ERR5952599_2.fastq.gz
+  out=raw/MISC12_R2.fastq.gz

@@ -119,7 +119,7 @@ SRR8365277_HIP1_female_IgG1.clonotypes.IGH.txt
 
 While `.clns` file holds all data and is used for downstream analysis, the output `.txt` clonotype table will contain exhaustive information about each clonotype as well:
 
-??? tip "See first 100 records from SRR8365277_HIP1_female_IgG1 ??? tip "See full clonotype table SRR8365277_HIP1_female_IgG1:":"
+??? tip "See first 100 records from SRR8365277_HIP1_female_IgG1:"
     {{ read_csv('docs/mixcr/guides/abhelix-bcr/figs/SRR8365277_HIP1_female_IgG1.clonotypes.IGH.txt', engine='python', sep='\t', nrows=100) }}
 
 

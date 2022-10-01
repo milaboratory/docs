@@ -1,0 +1,281 @@
+{
+  "type": "alignerReport",
+  "commandLine": "--report results/FebControl1.align.report.txt --json-report results/FebControl1.align.report.json --preset local:takara-smarter-human-bcr-cdr3 /raw/PRJEB44566_takara_hsa_bcr/FebControl1_R1.fastq.gz /raw/PRJEB44566_takara_hsa_bcr/FebControl1_R2.fastq.gz results/FebControl1.vdjca",
+  "inputFiles": [
+    "/raw/PRJEB44566_takara_hsa_bcr/FebControl1_R1.fastq.gz",
+    "/raw/PRJEB44566_takara_hsa_bcr/FebControl1_R2.fastq.gz"
+  ],
+  "outputFiles": [
+    "results/FebControl1.vdjca"
+  ],
+  "version": "; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0",
+  "trimmingReport": null,
+  "totalReadsProcessed": 584053,
+  "aligned": 525390,
+  "notAligned": 58663,
+  "notAlignedReasons": {
+    "VAndJOnDifferentTargets": 361,
+    "NoBarcode": 0,
+    "LowTotalScore": 0,
+    "NoCDR3Parts": 0,
+    "NoHits": 49276,
+    "NoJHits": 6044,
+    "NoVHits": 2982
+  },
+  "chimeras": 0,
+  "overlapped": 509629,
+  "alignmentAidedOverlaps": 22223,
+  "overlappedAligned": 466857,
+  "overlappedNotAligned": 42772,
+  "pairedEndAlignmentConflicts": 42139,
+  "vChimeras": 1154,
+  "jChimeras": 2,
+  "chainUsage": {
+    "type": "chainUsage",
+    "chimeras": 0,
+    "total": 525390,
+    "chains": {
+      "IGH": {
+        "total": 116697,
+        "nonFunctional": 3925,
+        "isOOF": 1803,
+        "hasStops": 2122
+      },
+      "IGK": {
+        "total": 203474,
+        "nonFunctional": 8958,
+        "isOOF": 8193,
+        "hasStops": 765
+      },
+      "IGL": {
+        "total": 205219,
+        "nonFunctional": 11257,
+        "isOOF": 9534,
+        "hasStops": 1723
+      }
+    }
+  },
+  "realignedWithForcedNonFloatingBound": 193294,
+  "realignedWithForcedNonFloatingRightBoundInLeftRead": 52153,
+  "realignedWithForcedNonFloatingLeftBoundInRightRead": 52153,
+  "noCDR3PartsAlignments": 89,
+  "partialAlignments": 2659,
+  "tagReport": {
+    "type": "tagReport"
+  }
+}
+{
+  "type": "refineTagsAndSort",
+  "commandLine": "--report results/FebControl1.refine.report.txt --json-report results/FebControl1.refine.report.json results/FebControl1.vdjca results/FebControl1.refined.vdjca",
+  "inputFiles": [
+    "results/FebControl1.vdjca"
+  ],
+  "outputFiles": [
+    "results/FebControl1.refined.vdjca"
+  ],
+  "version": "; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0",
+  "correctionReport": {
+    "inputRecords": 525390,
+    "outputRecords": 487187,
+    "steps": [
+      {
+        "tagName": "UMI",
+        "inputGroups": 1,
+        "inputDiversity": 60939,
+        "inputCount": 525390,
+        "coreDiversity": 48831,
+        "coreCount": 513049,
+        "directlyCorrectedDiversity": 15939,
+        "directlyCorrectedCount": 16711,
+        "filteredDiversity": 3134,
+        "filteredCount": 3151,
+        "recursivelyCorrected": 878,
+        "diversityFilteredByWhitelist": 0,
+        "outputDiversity": 41866,
+        "outputCount": 522239
+      }
+    ],
+    "filterReport": {
+      "type": "filter_groups_report",
+      "groupingKeys": [
+        "UMI"
+      ],
+      "numberOfGroups": 41866,
+      "numberOfGroupsAccepted": 15113,
+      "totalWeight": 522239,
+      "totalWeightAccepted": 487187,
+      "operatorReports": [
+        {
+          "type": "generic_hist_report",
+          "threshold": 6
+        }
+      ],
+      "metricHists": [
+        {
+          "metric": {
+            "type": "group_metric_sum_weight",
+            "reportHist": {
+              "log": true,
+              "binNumber": 0,
+              "minBinWidth": 0.2
+            }
+          },
+          "hist": {
+            "bins": [
+              {
+                "from": 1,
+                "to": 1.5848931924611136,
+                "weight": 21923
+              },
+              {
+                "from": 1.5848931924611136,
+                "to": 2.51188643150958,
+                "weight": 2805
+              },
+              {
+                "from": 2.51188643150958,
+                "to": 3.981071705534973,
+                "weight": 988
+              },
+              {
+                "from": 3.981071705534973,
+                "to": 6.309573444801933,
+                "weight": 1402
+              },
+              {
+                "from": 6.309573444801933,
+                "to": 10,
+                "weight": 887
+              },
+              {
+                "from": 10,
+                "to": 15.848931924611142,
+                "weight": 1763
+              },
+              {
+                "from": 15.848931924611142,
+                "to": 25.11886431509581,
+                "weight": 3594
+              },
+              {
+                "from": 25.11886431509581,
+                "to": 39.810717055349734,
+                "weight": 5109
+              },
+              {
+                "from": 39.810717055349734,
+                "to": 63.09573444801933,
+                "weight": 2481
+              },
+              {
+                "from": 63.09573444801933,
+                "to": 100,
+                "weight": 548
+              },
+              {
+                "from": 100,
+                "to": 158.48931924611142,
+                "weight": 223
+              },
+              {
+                "from": 158.48931924611142,
+                "to": 251.18864315095823,
+                "weight": 118
+              },
+              {
+                "from": 251.18864315095823,
+                "to": 398.1071705534973,
+                "weight": 25
+              }
+            ],
+            "collectionSpec": {
+              "log": true,
+              "binNumber": 0,
+              "minBinWidth": 0.2
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+{
+  "type": "assemblerReport",
+  "commandLine": "--report results/FebControl1.assemble.report.txt --json-report results/FebControl1.assemble.report.json results/FebControl1.refined.vdjca results/FebControl1.clns",
+  "inputFiles": [
+    "results/FebControl1.refined.vdjca"
+  ],
+  "outputFiles": [
+    "results/FebControl1.clns"
+  ],
+  "version": "; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0",
+  "preCloneAssemblerReport": {
+    "type": "preCloneAssemblerReport",
+    "inputGroups": 15113,
+    "inputAlignments": 487187,
+    "clonotypes": 14993,
+    "clonotypesPerGroup": {
+      "0": 89,
+      "1": 14965,
+      "2": 14
+    },
+    "coreAlignments": 474527,
+    "discardedCoreAlignments": 4683,
+    "empiricallyAssignedAlignments": 5590,
+    "vjEmpiricallyAssignedAlignments": 0,
+    "umiEmpiricallyAssignedAlignments": 0,
+    "gatEmpiricallyAssignedAlignments": 5590,
+    "empiricalAssignmentConflicts": 0,
+    "unassignedAlignments": 5618,
+    "umiConflicts": 14,
+    "gatConflicts": 8,
+    "geneConflicts": {
+      "Variable": 5,
+      "Joining": 3
+    },
+    "coreClonotypesDroppedByTagSuffix": 0,
+    "coreAlignmentsDroppedByTagSuffix": 0
+  },
+  "totalReadsProcessed": 584053,
+  "initialClonesCreated": 8810,
+  "readsDroppedNoTargetSequence": 7977,
+  "readsDroppedTooShortClonalSequence": 0,
+  "readsDroppedLowQuality": 0,
+  "coreReads": 479850,
+  "readsDroppedFailedMapping": 10,
+  "lowQualityRescued": 43,
+  "clonesClustered": 60,
+  "readsClustered": 987,
+  "clones": 8448,
+  "clonesDroppedAsLowQuality": 3,
+  "clonesPreClustered": 299,
+  "readsPreClustered": 10879,
+  "readsInClones": 478906,
+  "readsInClonesBeforeClustering": 479893,
+  "readsDroppedWithLowQualityClones": 214,
+  "clonalChainUsage": {
+    "type": "chainUsage",
+    "chimeras": 0,
+    "total": 8448,
+    "chains": {
+      "IGH": {
+        "total": 1533,
+        "nonFunctional": 43,
+        "isOOF": 32,
+        "hasStops": 11
+      },
+      "IGK": {
+        "total": 3432,
+        "nonFunctional": 209,
+        "isOOF": 206,
+        "hasStops": 3
+      },
+      "IGL": {
+        "total": 3483,
+        "nonFunctional": 233,
+        "isOOF": 223,
+        "hasStops": 10
+      }
+    }
+  }
+}
