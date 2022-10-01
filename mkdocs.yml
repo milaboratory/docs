@@ -51,9 +51,6 @@ plugins:
       minify_html: true
   - glightbox
   - table-reader
-  - json-schema:
-      json_schema: docs/item.schema.json
-      markdown_tag: #JsonSchema#
 
 markdown_extensions:
   - pymdownx.superfences

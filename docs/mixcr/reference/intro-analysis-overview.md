@@ -29,9 +29,9 @@ Also at the alignment step MiXCR performs barcodes sequences extraction for barc
 
 The built-in reference [gene library](http://github.com/repseqio/library) of V-, D-, J- and C- segments is thoroughly compiled for every available species using the data specifically obtained from multiple dedicated sequencing runs as well as from hundreds of other experiments. At the same time MiXCR supports using of [external libraries](../guides/external-libraries.md) or even to assemble a [custom library](../guides/create-custom-library.md) from scratch.     
 
-### [Barcode correction](mixcr-correctAndSortTags.md)
+### [Tag refinement](mixcr-correctAndSortTags.md)
 
-For barcoded data, corrects errors _inside_ barcode sequences and filters out spurious barcodes.
+For barcoded (tagged) data, corrects errors _inside_ barcode sequences and filters out spurious barcodes.
 
 ![](pics/correctAndSortTags.svg)
 
@@ -82,8 +82,18 @@ For fragmented data, assembles longest available consensus contig receptor seque
 
 ![](pics/assembleContigs.svg)
 
-MiXCR uses powerful alignment-guided algorithm The typical situation in case of fragmented data is when 
+MiXCR uses powerful alignment-guided algorithm to reconstruct full-length (or at least longest available) of B- and T-cell receptors. This step is used for fragmented data like RNA-Seq or 10x, when individual alignments do not cover full VDJ, typically short reads, and located in a random position of VDJ region. For such case it is possible to assemble clonotypes only by CDR3 region and then apply contig assembly. It iterates over alignments used to build a particular clone (MiXCR preserves this mapping) and reconstructs a consensus contig sequence.
+
+Importantly, alignment-guided consensus algorithm detects hypermutations for B-cell data and discriminates them from PCR/sequencing errors. So a single initial CDR3 clonotype will be split into multiple clonotypes according to found hypermutations outside of CDR3 region. 
+
+Finally, if data contains cell barcodes, contig assembly procedure may be performed individually for each cell. 
+
 
 ### [Export](mixcr-export.md)
 
+The end results of upstream analysis are clonotype tables.
+
+![](pics/export.svg)
+
+MiXCR allows to export exhaustive information about each clone including nucleotide and amino acid sequences of all available [gene features](ref-gene-features.md), gene assignments, allelic and somatic mutations, positions of reference points, abundance in reads or barcodes, and many more. This info may exported in a [tabular form](mixcr-export.md) with optional possibility to adjust a set of exporting columns by choosing from the list of nearly hundred of available export fields. MiXCR also supports export in [AIRR format](mixcr-exportAirr.md). Additionally, it is possible to export a [well-formatted](mixcr-exportPretty.md) human-readable clonotypes for manual inspection. 
 
