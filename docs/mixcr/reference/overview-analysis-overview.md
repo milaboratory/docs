@@ -7,7 +7,7 @@ MiXCR analysis in a typical study consists of two parts:
 
 The exact steps and parameters of the analysis workflow are largely dependent on the data type and wet lab library preparation protocol used. In addition, downstream analysis steps may vary depending on the objectives of the particular study and available metadata.
 
-To systematize the approach of running workflows for a wide diversity of protocols and study designs, MiXCR provides a powerful concept of [presets](intro-presets.md) which allows to execute specifically optimized pre-configured analysis pipelines for a variety of widely adopted data types and library preparation protocols. The whole pipeline can be run using a convenient one-line [`analyze`](mixcr-analyze.md) command or in a step by step mode for better hardware utilization.
+To systematize the approach of running workflows for a wide diversity of protocols and study designs, MiXCR provides a powerful concept of [presets](overview-presets-and-mixins.md) which allows to execute specifically optimized pre-configured analysis pipelines for a variety of widely adopted data types and library preparation protocols. The whole pipeline can be run using a convenient one-line [`analyze`](mixcr-analyze.md) command or in a step by step mode for better hardware utilization.
 
 Below we give a high-level overview of MiXCR actions which consitute most of the data analysis pipelines.
 

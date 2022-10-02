@@ -49,7 +49,7 @@ plugins:
       lang: en
   - minify:
       minify_html: true
-  - glightbox
+#  - glightbox
   - table-reader
 
 markdown_extensions:
@@ -129,11 +129,11 @@ nav:
 
   - 'Docs':
       - 'Overview':
-        - 'Analysis overview': mixcr/reference/intro-analysis-overview.md
-        - 'Presets & mixing': mixcr/reference/intro-presets.md
-        - 'Presets list': mixcr/reference/intro-presets-list.md
-        - 'Mixins list': mixcr/reference/intro-mixins-list.md
-      - 'MiXCR reference':
+        - 'Analysis overview': mixcr/reference/overview-analysis-overview.md
+        - 'Presets & mixing': mixcr/reference/overview-presets-and-mixins.md
+        - 'Built-in presets': mixcr/reference/overview-built-in-presets.md
+        - 'Mixins list': mixcr/reference/overview-mixins-list.md
+      - 'MiXCR':
         - 'analyze': mixcr/reference/mixcr-analyze.md
         - 'align': mixcr/reference/mixcr-align.md
         - 'refineTagsAndSort': mixcr/reference/mixcr-refineTagsAndSort.md

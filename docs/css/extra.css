@@ -585,3 +585,7 @@ svg.magnify {
 .img-no-scroll p .glightbox {
     max-height: none;
 }
+
+.badge {
+    height: 16px;
+}
