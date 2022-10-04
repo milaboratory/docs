@@ -11,7 +11,7 @@ The data includes samples taken from 8 patients before and several time points a
 
 On the scheme bellow you can see structure of cDNA library. UMI is located in the first 17 bp of R2, followed by 7 to 10 bp occurred in the process of template switching (TS).
 
-??? "The set of primers used in NEBNext® Immune Sequencing Kit"
+??? "The set of primers used in NEBNext® Immune Sequencing Kits. The list includes primers for human and mice bcr and tcr kits."
     === "Human"
         ```shell
         >Human-IGHM
@@ -60,181 +60,40 @@ On the scheme bellow you can see structure of cDNA library. UMI is located in th
         >Mus-p5-TRDC
         CATGATGAAAACAGATGGTTTGGC        
         ```
-<figure markdown>
-![NEBNext.svg](nebnext-bcr/NEBNext.svg)
-</figure>
 
-All data may be downloaded directly from SRA using e.g. [SRA Explorer](https://sra-explorer.info):
-??? tip "Use this script to download the full data set with the proper filenames for the tutorial:"
-    ```shell
-    #!/usr/bin/env bash
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/032/SRR17709532/SRR17709532_1.fastq.gz -o 13_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/032/SRR17709532/SRR17709532_2.fastq.gz -o 13_d60_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/033/SRR17709533/SRR17709533_1.fastq.gz -o 07_d110_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/033/SRR17709533/SRR17709533_2.fastq.gz -o 07_d110_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/034/SRR17709534/SRR17709534_1.fastq.gz -o 07_d60_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/034/SRR17709534/SRR17709534_2.fastq.gz -o 07_d60_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/036/SRR17709536/SRR17709536_1.fastq.gz -o 01a_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/036/SRR17709536/SRR17709536_2.fastq.gz -o 01a_d60_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/031/SRR17709531/SRR17709531_1.fastq.gz -o 13_d110_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/031/SRR17709531/SRR17709531_2.fastq.gz -o 13_d110_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/035/SRR17709535/SRR17709535_1.fastq.gz -o 01a_d110_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/035/SRR17709535/SRR17709535_2.fastq.gz -o 01a_d110_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/030/SRR17709530/SRR17709530_1.fastq.gz -o 13_d60_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/030/SRR17709530/SRR17709530_2.fastq.gz -o 13_d60_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/029/SRR17709529/SRR17709529_1.fastq.gz -o 13_d110_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/029/SRR17709529/SRR17709529_2.fastq.gz -o 13_d110_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/027/SRR17709527/SRR17709527_1.fastq.gz -o 22_d110_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/027/SRR17709527/SRR17709527_2.fastq.gz -o 22_d110_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/028/SRR17709528/SRR17709528_1.fastq.gz -o 22_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/028/SRR17709528/SRR17709528_2.fastq.gz -o 22_d60_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/026/SRR17709526/SRR17709526_1.fastq.gz -o 22_d60_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/026/SRR17709526/SRR17709526_2.fastq.gz -o 22_d60_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/025/SRR17709525/SRR17709525_1.fastq.gz -o 22_d110_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/025/SRR17709525/SRR17709525_2.fastq.gz -o 22_d110_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/024/SRR17709524/SRR17709524_1.fastq.gz -o 01a_d60_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/024/SRR17709524/SRR17709524_2.fastq.gz -o 01a_d60_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/022/SRR17709522/SRR17709522_1.fastq.gz -o 20_d110_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/022/SRR17709522/SRR17709522_2.fastq.gz -o 20_d110_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/023/SRR17709523/SRR17709523_1.fastq.gz -o 20_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/023/SRR17709523/SRR17709523_2.fastq.gz -o 20_d60_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/021/SRR17709521/SRR17709521_1.fastq.gz -o 20_d60_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/021/SRR17709521/SRR17709521_2.fastq.gz -o 20_d60_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/020/SRR17709520/SRR17709520_1.fastq.gz -o 20_d110_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/020/SRR17709520/SRR17709520_2.fastq.gz -o 20_d110_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/019/SRR17709519/SRR17709519_1.fastq.gz -o 02a_d35_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/019/SRR17709519/SRR17709519_2.fastq.gz -o 02a_d35_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/018/SRR17709518/SRR17709518_1.fastq.gz -o 02a_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/018/SRR17709518/SRR17709518_2.fastq.gz -o 02a_d60_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/017/SRR17709517/SRR17709517_1.fastq.gz -o 02a_d35_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/017/SRR17709517/SRR17709517_2.fastq.gz -o 02a_d35_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/015/SRR17709515/SRR17709515_1.fastq.gz -o 02a_d35_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/015/SRR17709515/SRR17709515_2.fastq.gz -o 02a_d35_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/016/SRR17709516/SRR17709516_1.fastq.gz -o 02a_d60_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/016/SRR17709516/SRR17709516_2.fastq.gz -o 02a_d60_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/014/SRR17709514/SRR17709514_1.fastq.gz -o 02a_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/014/SRR17709514/SRR17709514_2.fastq.gz -o 02a_d60_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/013/SRR17709513/SRR17709513_1.fastq.gz -o 01a_d110_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/013/SRR17709513/SRR17709513_2.fastq.gz -o 01a_d110_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/012/SRR17709512/SRR17709512_1.fastq.gz -o 02a_d35_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/012/SRR17709512/SRR17709512_2.fastq.gz -o 02a_d35_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/011/SRR17709511/SRR17709511_1.fastq.gz -o 02a_d60_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/011/SRR17709511/SRR17709511_2.fastq.gz -o 02a_d60_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/009/SRR17709509/SRR17709509_1.fastq.gz -o 10_d60_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/009/SRR17709509/SRR17709509_2.fastq.gz -o 10_d60_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/010/SRR17709510/SRR17709510_1.fastq.gz -o 10_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/010/SRR17709510/SRR17709510_2.fastq.gz -o 10_d60_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/008/SRR17709508/SRR17709508_1.fastq.gz -o 10_d110_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/008/SRR17709508/SRR17709508_2.fastq.gz -o 10_d110_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/007/SRR17709507/SRR17709507_1.fastq.gz -o 10_d110_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/007/SRR17709507/SRR17709507_2.fastq.gz -o 10_d110_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/006/SRR17709506/SRR17709506_1.fastq.gz -o 10_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/006/SRR17709506/SRR17709506_2.fastq.gz -o 10_d60_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/005/SRR17709505/SRR17709505_1.fastq.gz -o 10_d60_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/005/SRR17709505/SRR17709505_2.fastq.gz -o 10_d60_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/003/SRR17709503/SRR17709503_1.fastq.gz -o 10_d110_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/003/SRR17709503/SRR17709503_2.fastq.gz -o 10_d110_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/004/SRR17709504/SRR17709504_1.fastq.gz -o 10_d110_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/004/SRR17709504/SRR17709504_2.fastq.gz -o 10_d110_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/002/SRR17709502/SRR17709502_1.fastq.gz -o 04_d28_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/002/SRR17709502/SRR17709502_2.fastq.gz -o 04_d28_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/001/SRR17709501/SRR17709501_1.fastq.gz -o 01a_d201_bone_marrow_bone_marrow_plasma_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/001/SRR17709501/SRR17709501_2.fastq.gz -o 01a_d201_bone_marrow_bone_marrow_plasma_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/000/SRR17709500/SRR17709500_1.fastq.gz -o 01a_d201_bone_marrow_bone_marrow_plasma_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/000/SRR17709500/SRR17709500_2.fastq.gz -o 01a_d201_bone_marrow_bone_marrow_plasma_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/099/SRR17709499/SRR17709499_1.fastq.gz -o 02a_d201_bone_marrow_bone_marrow_plasma_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/099/SRR17709499/SRR17709499_2.fastq.gz -o 02a_d201_bone_marrow_bone_marrow_plasma_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/098/SRR17709498/SRR17709498_1.fastq.gz -o 04_d201_bone_marrow_bone_marrow_plasma_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/098/SRR17709498/SRR17709498_2.fastq.gz -o 04_d201_bone_marrow_bone_marrow_plasma_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/096/SRR17709496/SRR17709496_1.fastq.gz -o 13_d201_bone_marrow_bone_marrow_plasma_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/096/SRR17709496/SRR17709496_2.fastq.gz -o 13_d201_bone_marrow_bone_marrow_plasma_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/097/SRR17709497/SRR17709497_1.fastq.gz -o 07_d201_bone_marrow_bone_marrow_plasma_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/097/SRR17709497/SRR17709497_2.fastq.gz -o 07_d201_bone_marrow_bone_marrow_plasma_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/095/SRR17709495/SRR17709495_1.fastq.gz -o 20_d201_bone_marrow_bone_marrow_plasma_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/095/SRR17709495/SRR17709495_2.fastq.gz -o 20_d201_bone_marrow_bone_marrow_plasma_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/094/SRR17709494/SRR17709494_1.fastq.gz -o 22_d201_bone_marrow_bone_marrow_plasma_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/094/SRR17709494/SRR17709494_2.fastq.gz -o 22_d201_bone_marrow_bone_marrow_plasma_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/092/SRR17709492/SRR17709492_1.fastq.gz -o 04_d201_d208_blood_memory_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/092/SRR17709492/SRR17709492_2.fastq.gz -o 04_d201_d208_blood_memory_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/093/SRR17709493/SRR17709493_1.fastq.gz -o 02a_d201_blood_memory_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/093/SRR17709493/SRR17709493_2.fastq.gz -o 02a_d201_blood_memory_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/091/SRR17709491/SRR17709491_1.fastq.gz -o 04_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/091/SRR17709491/SRR17709491_2.fastq.gz -o 04_d60_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/089/SRR17709489/SRR17709489_1.fastq.gz -o 10_d201_blood_memory_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/089/SRR17709489/SRR17709489_2.fastq.gz -o 10_d201_blood_memory_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/090/SRR17709490/SRR17709490_1.fastq.gz -o 07_d201_blood_memory_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/090/SRR17709490/SRR17709490_2.fastq.gz -o 07_d201_blood_memory_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/088/SRR17709488/SRR17709488_1.fastq.gz -o 13_d201_blood_memory_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/088/SRR17709488/SRR17709488_2.fastq.gz -o 13_d201_blood_memory_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/086/SRR17709486/SRR17709486_1.fastq.gz -o 22_d201_blood_memory_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/086/SRR17709486/SRR17709486_2.fastq.gz -o 22_d201_blood_memory_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/087/SRR17709487/SRR17709487_1.fastq.gz -o 20_d201_blood_memory_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/087/SRR17709487/SRR17709487_2.fastq.gz -o 20_d201_blood_memory_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/085/SRR17709485/SRR17709485_1.fastq.gz -o 10_d280_bone_marrow_bone_marrow_plasma_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/085/SRR17709485/SRR17709485_2.fastq.gz -o 10_d280_bone_marrow_bone_marrow_plasma_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/084/SRR17709484/SRR17709484_1.fastq.gz -o 20_d280_bone_marrow_bone_marrow_plasma_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/084/SRR17709484/SRR17709484_2.fastq.gz -o 20_d280_bone_marrow_bone_marrow_plasma_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/083/SRR17709483/SRR17709483_1.fastq.gz -o 04_d28_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/083/SRR17709483/SRR17709483_2.fastq.gz -o 04_d28_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/082/SRR17709482/SRR17709482_1.fastq.gz -o 04_d60_lymph_node_plasmablast_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/082/SRR17709482/SRR17709482_2.fastq.gz -o 04_d60_lymph_node_plasmablast_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/080/SRR17709480/SRR17709480_1.fastq.gz -o 07_d110_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/080/SRR17709480/SRR17709480_2.fastq.gz -o 07_d110_lymph_node_germinal_center_B_cell_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/081/SRR17709481/SRR17709481_1.fastq.gz -o 07_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/081/SRR17709481/SRR17709481_2.fastq.gz -o 07_d60_lymph_node_germinal_center_B_cell_R2.fastq.gz
+![NEBNext.svg](nebnext-bcr/figs/library-structure.svg)
+
+All data may be downloaded directly from SRA (PRJNA777934) using e.g. [SRA Explorer](https://sra-explorer.info).
+
+??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
+    ```shell title="download.sh"
+    --8<-- "takara-hsa-bcr/scripts/010-download-aria2c.sh"
+    ```
+    ```shell title="download-list.txt"
+    --8<-- "takara-hsa-bcr/scripts/download-list.txt"
     ```
 
-The project contains 57 paired FASTQ files. Each file name encodes the information about donor, time-point relative to vaccination, tissue of origin and cell population. For example for the first file from the above listing:
+The project contains 48 paired FASTQ files. Each file name encodes the information about donor, time-point relative to vaccination, tissue of origin and cell population. For example for the first file from the above listing:
 
-13_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz
+13_d60_LN_germCenterB_R1.fastq.gz
 - 13 - donor id
 - d60 - 60 days after vaccination
-- lymph node - tissue
-- germinal centerB cell - cell population
+- LN - lymph node (BM-bone marrow)
+- germCenterB - germinal center B cell (cell population)
 
 ## Upstream analysis
 
-The most straightforward way to get clonotype tables is to use a universal [`mixcr analyze`](../reference/mixcr-analyze.md) command.
-
-According to the library preparation protocol, the library does not have any V primers on 5'-end and has C primers on 3', so the command for a single sample is the following:
+MiXCR has a dedicated preset for this protocol, thus analysing the data is as easy as:
 
 ```shell
-> mixcr analyze amplicon \
-    --species hsa \
-    --starting-material rna \
-    --receptor-type bcr \
-    --5-end no-v-primers \
-    --3-end c-primers \
-    --adapters adapters-present \
-    --umi-pattern '^(R1:*)\^(UMI:N{17})(R2:N{*})' \
-    fastq/13_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz \
-    fastq/13_d60_lymph_node_germinal_center_B_cell_R2.fastq.gz \
-    results/13_d60_lymph_node_germinal_center_B_cell
+--8<-- "nebnext-bcr/scripts/020-upstream-preset.sh"
 ```
 
-The meaning of these options is the following.
+One might also use [GNU Parallel](https://www.gnu.org/software/parallel/) to process all samples at once:
 
-`--species`
-:   is set to `hsa` for _Homo Sapience_
-
-`--starting-material`
-:   RNA or DNA. It affects the choice of V gene region which will be used as target in [`align`](../reference/mixcr-align.md) step (`vParameters.geneFeatureToAlign`, see [`align` documentation](../reference/mixcr-align.md)): `rna` corresponds to the `VTranscriptWithout5UTRWithP` and `dna` to `VGeneWithP` (see [Gene features and anchor points](../reference/ref-gene-features.md) for details)
-
-`--receptor-type`
-:   TCR or BCR. It affects the choice of underlying alignment algorithms: MiXCR uses fundamentally different algorithms for TCRs and BCRs because BCRs have somatic hypermutations and long indels.
-
-`--5-end`
-: is set to `no-v-primers`, because the library was obtained using 5'RACE. This leads to a global alignment algorithm on the left bound of V gene.
-
-`--3-end-primers`
-:  is set `c-primers` according to the cDNA library preparation protocol. This leads to a global alignment algorithm to align the right bound of C gene segment.
-
-`--adapers`
-:  is set to `adapters-present` because primer sequence is present in the data and has not been cut prior to. Presence or absence of adapter sequences results in the choice between local and global alignment algorithms on the edges of the target sequence.
-
-`--umi-pattern`
-:   is used to specify UMI pattern for the library. MiXCR provides a powerful regex-like [language](../reference/ref-tag-pattern.md) allowing to specify almost arbitrary barcode structure. Here we
-use `^(R1:*)\^(UMI:N{17})(R2:N{*})` pattern to specify that R1 should be used as is, UMI spans the first 17 letters of R2 and the rest of R2 is used as a paired read.
+```shell
+--8<-- "nebnext-bcr/scripts/020-upstream-preset-parallel.sh"
+```
 
 Running the command above will generate the following files:
 
@@ -242,105 +101,112 @@ Running the command above will generate the following files:
 > ls result/
 
 # human-readable reports 
-13_d60_lymph_node_germinal_center_B_cell.report
+13_d60_LN_germCenterB.report
 # raw alignments (highly compressed binary file)
-13_d60_lymph_node_germinal_center_B_cell.vdjca
+13_d60_LN_germCenterB.vdjca
 # alignments with corrected UMI barcode sequences 
-13_d60_lymph_node_germinal_center_B_cell.corrected.vdjca
+13_d60_LN_germCenterB.refined.vdjca
 # IGH, IGK and IGL CDR3 clonotypes (highly compressed binary file)
-13_d60_lymph_node_germinal_center_B_cell.clns
+13_d60_LN_germCenterB.clns
 # IGH, IGK and IGL CDR3 clonotypes exported in tab-delimited txt
-13_d60_lymph_node_germinal_center_B_cell.clonotypes.IGH.tsv
-13_d60_lymph_node_germinal_center_B_cell.clonotypes.IGK.tsv
-13_d60_lymph_node_germinal_center_B_cell.clonotypes.IGL.tsv  
-
+13_d60_LN_germCenterB.clones.IGH.tsv
+13_d60_LN_germCenterB.clones.IGK.tsv
+13_d60_LN_germCenterB.clones.IGL.tsv
 ```
-
-Obtained `*.tsv` files can be used for manual examination. `*.clns` files can be used for downstream analysis using [`mixcr postanalisis`](../reference/mixcr-postanalysis.md). By default, MiXCR exports clonotypes in a tab-delimited format separately for each immunological chain.
 
 In order to run the analysis for all samples in the project on Linux we can use [GNU Parallel](https://www.gnu.org/software/parallel/) in the following way:
 
 ```shell
-> ls /fastq/*_R1* | \
-  parallel -j2 \
-  'mixcr analyze amplicon \
-    --species hsa \
-    --starting-material rna \
-    --receptor-type bcr \
-    --5-end no-v-primers \
-    --3-end c-primers \
-    --adapters adapters-present \
-    --umi-pattern "^(R1:*)\^(UMI:N{"17"})(R2:*)" \
-    {} \
-    {=s:R1:R2:=} \
-    {=s:.*/:results:;s:_R1.*::=}'
+--8<-- "nebnext-bcr/scripts/020-upstream-preset-parallel.sh"
 ```
+
+While `.clns` file holds all data and is used for downstream analysis using [`mixcr postanalisis`](../reference/mixcr-postanalysis.md), the output `.txt` clonotype table will contain exhaustive information about each clonotype as well:
+
+??? tip "See first 100 records from FebControl1.clones.IGH.tsv clonotype table"
+    {{ read_csv('docs/mixcr/guides/nebnext-bcr/figs/13_d60_LN_germCenterB.clones.tsv', engine='python', sep='\t', nrows=100) }}
 
 ### Under the hood pipeline:
 
 Under the hood the command above actually executes the following pipeline:
 
-
 #### `align`
-
 Alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
 
 ```shell
-# align raw reads
-> mixcr align -s hsa \
-    -p kAligner2 \
-    -OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
-    -OvParameters.parameters.floatingLeftBound=false \
-    -OjParameters.parameters.floatingRightBound=false \
-    -OcParameters.parameters.floatingRightBound=true \
-    --report results/13_d60_lymph_node_germinal_center_B_cell.report \
-    --tag-pattern '^(R1:N{*})\^(UMI:N{17})(R2:N{*})' \
-    fastq/13_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz \
-    fastq/13_d60_lymph_node_germinal_center_B_cell_R2.fastq.gz \
-    13_d60_lymph_node_germinal_center_B_cell.vdjca
+--8<-- "nebnext-bcr/scripts/040-upstream-align.sh"
 ```
+
 Option `--report` is specified here explicitly.
-- `-p kAligner2` specifies an BCR aligner. 
-- `-OvParameters.parameters.floatingLeftBound=false -OjParameters.parameters.floatingRightBound=false` are set to `false` because no V or J primers were used in cDNA library preparation. This results in a global aligning algorithm (instead of a local one) on the left bound of V gene and right bound of J gene.
-- `-OcParameters.parameters.floatingRightBound=true` is set to `true` because C primers sequence is present on the 3'end of the cDNA library. Thus, local alignment algorithm will be used on the right bound of C gene. 
 
-#### `correctAndSortTags`
+`--species hsa`
+: determines the organism species (hsa for _Homo Sapiens_).
 
-[Corrects](../reference/mixcr-refineTagsAndSort.md) sequencing and PCR errors _inside_ barcode sequences. This step is essential to correct artificial diversity caused by errors in barcodes. 
+`-p kaligner2_4.0`
+:  a default preset of MiXCR parameters which includes a dedicated BCR aligner.
+
+`-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP"`
+: Sets a V gene feature to align. Check [gene features](../reference/ref-gene-features.md) for more info.
+
+`-OvParameters.parameters.floatingLeftBound=false`
+: Results in a global alignment algorithm for V gene left bound. We use it because we don't have any primers covering V gene coding sequence.
+
+`-OjParameters.parameters.floatingRightBound=false -OcParameters.parameters.floatingRightBound=false`
+: Results in a global alignment algorithm for J and C gene right bound, because primer sequences have been trimmed by `--tagPattern`.
+
+
+: Results in a local alignment algorithm for C gene right bound, because reverse primers are located in C-gene region.
+
+`--tagPattern "^N{22}(R1:*) \ ^(UMI:N{17})(R2:*)"`
+: tag pattern specifies the location of the UMI barcode and also trims C primer sequences located in the beginning of R1 (22 b.p. is the length of the longest primer).
+
+
+#### `refineTagsAndSort`
+
+[Corrects](../reference/mixcr-refineTagsAndSort.md) sequencing and PCR errors _inside_ barcode sequences. This step does extremely important job by correcting artificial diversity caused by errors in barcodes. In the considered example project it corrects only sequences of UMIs.
 
 ```shell
-> mixcr correctAndSortTags \
-    --report 13_d60_lymph_node_germinal_center_B_cell.report \
-    --json-report 13_d60_lymph_node_germinal_center_B_cell.report.json \
-    13_d60_lymph_node_germinal_center_B_cell.vdjca \
-    13_d60_lymph_node_germinal_center_B_cell.corrected.vdjca
+--8<-- "nebnext-bcr/scripts/045-upstream-refineTagsAndSort.sh"
 ```
 
 #### `assemble`
+Assembles alignments into clonotypes and applies several layers of errors correction:
 
-Assembles alignments into clonotypes and applies several layers of errors correction(ex. quality-awared correction for sequencing errors, clustering to correct for PCR errors). Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
+- quality-dependent correction for sequencing errors
+- PCR-error correction by clustering 
+- UMI-based error correction)
+
+Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
 
 ```shell
-# assemble CDR3 clonotypes
-> mixcr assemble \
-    -OseparateByV=true \
-    -OseparateByJ=true \
-    --report 13_d60_lymph_node_germinal_center_B_cell.corrected.report \
-    13_d60_lymph_node_germinal_center_B_cell.corrected.vdjca \
-    13_d60_lymph_node_germinal_center_B_cell.corrected.clns
+--8<-- "nebnext-bcr/scripts/050-upstream-assemble.sh"
 ```
+
+Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with assembly report.
+
+`-OassemblingFeatures=CDR3`
+: By default `takara-hsa-bcr-cdr3` preset assembles clones by `CDR3` sequence.
+
+`-separateByJ: true`
+: Separate clones with the same assembling feature, but different V-genes.
+
+`-separateByV: true`
+: Separate clones with the same assembling feature, but different J-genes.
+
+`-separateByC: true`
+: Separate clones with the same assembling feature, but different C-genes, which is essential for isotype identification.
 
 #### `export`
+Exports clonotypes from .clns file into human-readable tables.
 
-Exports clonotypes from `.clns` file into human-readable tables.
 ```shell
-# export to tsv
-> mixcr exportClones \
-    -p full \
-    13_d60_lymph_node_germinal_center_B_cell.corrected.clns \
-    13_d60_lymph_node_germinal_center_B_cell.corrected.tsv
+--8<-- "nebnext-bcr/scripts/060-upstream-exportClones.sh"
 ```
-Here `-p full` defines the full preset of common export columns. Check [`mixcr export`](../reference/mixcr-export.md) for more information.
+
+`-с IGH`
+: defines a specific chain to be exported.
+
+`-uniqueTagCount UMI`
+: adds a column with the number of UMIs for each clone.
 
 ## Quality control
 
@@ -348,70 +214,70 @@ Now when we have all files processed lets perform Quality Control. That can be e
 function.
 
 ```shell
-# obtain alignment quality control
-> mixcr exportQc align \
-    result/*.vdjca \
-    alignQc.pdf
-
-# obtain chain usage plot
-> mixcr exportQc chainUsage \
-    result/*.vdjca \
-    usageQc.pdf
+--8<-- "nebnext-bcr/scripts/080-qc-align.sh"
 ```
 
-First let's examine the alignment quality control plot.
+![align QC](nebnext-bcr/figs/alignQc.svg)
 
-<figure markdown>
-![alignQc.svg](nebnext-bcr/alignQc.svg)
-</figure>
-
-Most of the samples have a height successful alignment score. But samples that come from blood memory B cells clearly have a lower percentage of aligned reads, and the major reason for that is the lack of immune receptor sequences. That might be due to some issues during sample preparation of this particular kind. It is recommended to realign one of these samples and save not aligned reads into separate file for manual inspection. That can be done with the following command:
+Most of the samples have a high successful alignment score. But samples that come from blood memory B cells clearly have a lower percentage of aligned reads, and the major reason for that is the lack of immune receptor sequences. That might be due to some issues during sample preparation. It is recommended to realign one of these samples and save not aligned reads (see  [`mixcr align`](../reference/mixcr-align.md)) into separate file for manual inspection. That can be done with the following command:
 
 ```shell
-mixcr align \
-    -p kAligner2 \
-    -OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
-    -OvParameters.parameters.floatingLeftBound=false \
-    -OjParameters.parameters.floatingRightBound=false \
-    -OcParameters.parameters.floatingRightBound=true \
-    --report 22_d201_blood_memory_B_cell.debug.report \
-    --tag-pattern '^(R1:N{*})\^(UMI:N{17})(R2:N{*})' \
-    -OvParameters.geneFeatureToAlign=VTranscriptWithP \
-    -OvParameters.parameters.floatingLeftBound=true \
-    -OjParameters.parameters.floatingRightBound=false \
-    -OcParameters.parameters.floatingRightBound=true \
-    --not-aligned-R1 22_d201_blood_memory_B_cell_R1.fastq \
-    --not-aligned-R2 22_d201_blood_memory_B_cell.fastq \
-    fastq/22_d201_blood_memory_B_cell_R1.fastq.gz fastq/22_d201_blood_memory_B_cell_R2.fastq.gz \
-    22_d201_blood_memory_B_cell.debug.vdjca
+--8<-- "nebnext-bcr/scripts/090-qc-debug-align.sh"
+```
+
+Resulting `13_d60_LN_germCenterB_notAligned_R1.fastq` and `13_d60_LN_germCenterB_notAligned_R2.fastq` files can be manually inspected. A brief [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) search revealed most not aligned sequences come from DNA contamination (they align within sequence between segments) and with immunoglobulin like genes (e.g.IGLL5).
+
+Now Lets look at the chain distribution in every sample.
+
+```shell
+--8<-- "nebnext-bcr/scripts/120-qc-chainUsage.sh"
 ```
 
 If we look at the chain usage plot, we see, as expected, that the samples are almost entirely consist of IGH chains, since only heavy BCR chains we sequenced.
 
-<figure markdown>
-![chainUsage.svg](nebnext-bcr/chainUsage.svg)
-</figure>
+![chainUsage.svg](nebnext-bcr/figs/chainUsage.svg)
 
 
-## Advanced parameters tuning
+## Full-length clonotype assembly
 
-In the example above, we have assembled clones by a default `CDR3` feature. But NEBNext® Immune Sequencing Kit, as we can tell from the library structure scheme covers the whole sequence of V and J genes, because it is a 5'RACE based protocol. And not only that, but it also uses a set of primers which allows isotype differentiation. To reveal the full potential of this kit (separate clones by hypermutations and isotypes) we will modify the feature used to assemble clones, and we will also use C gene to separate clones by isotypes.
+In the example above, we have assembled clones by a default `CDR3` feature. But NEBNext® Immune Sequencing Kit covers the whole sequence of V and J genes, because it is a 5'RACE based protocol. And also C primers allow to capture enough sequence for isotyping. 
 
-That can be done by modifying `mixcr analyze amplicon` parameters:
+Taking into account what is mentioned above, the longest possible assembling feature for this protocol is `VDJRegion`.
+
+MiXCR has a specific preset to obtain full-length BCR clones with NEBNext® Immune Sequencing Kit:
 
 ```shell
-> mixcr analyze amplicon \
-    --species hsa \
-    --starting-material rna \
-    --receptor-type bcr \
-    --5-end no-v-primers \
-    --3-end c-primers \
-    --adapters adapters-present \
-    --umi-pattern '^(R1:*)\^(UMI:N{17})(R2:N{*})' \
-    --assemble "-OassemblingFeatures={FR1Begin:FR4End} -OseparateByC=true" \
-    fastq/13_d60_lymph_node_germinal_center_B_cell_R1.fastq.gz \
-    fastq/13_d60_lymph_node_germinal_center_B_cell_R2.fastq.gz \
-    results/13_d60_lymph_node_germinal_center_B_cell
+--8<-- "nebnext-bcr/scripts/130-upstream-preset-full-length.sh"
 ```
 
-Under the hood this adjustment will pass extra arguments (`-OassemblingFeatures={FR1Begin:FR4End}`, `-OseparateByC=true`) to [`mixcr assemle`](../reference/mixcr-assemble.md) step.
+The `mixcr assemble` step in this preset differs from the one above in the following manner:
+
+```shell
+--8<-- "nebnext-bcr/scripts/140-upstream-assemble-full-length.sh"
+```
+
+`-OassemblingFeatures="VDJRegion"`
+: sets the assembling feature to the region which starts from `FR1Begin` and ends at the end of `FR4`.
+
+Notice we omit `-OseparateByV=true` and `-OseparateByJ=true` in this case because assembling feature already covers full V and J genes sequences, thus in case if clones have identical `CDR3` they will still be separated. We still use `-OseparateByC=true` option for isotype identification.
+
+## Reports
+Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
+
+```shell
+--8<-- "nebnext-bcr/scripts/125-qc-exportReports.sh"
+```
+
+```shell
+--8<-- "nebnext-bcr/scripts/125-qc-exportReports-json.sh"
+```
+
+??? "Show report file"
+    === "`.txt`"
+        ```shell
+        --8<-- "nebnext-bcr/figs/13_d60_LN_germCenterB.report.txt"
+        ```
+    === "`.json`"
+        ```js
+        --8<-- "nebnext-bcr/figs/13_d60_LN_germCenterB.report.json"
+        ```

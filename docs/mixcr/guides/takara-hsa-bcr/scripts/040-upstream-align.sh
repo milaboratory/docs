@@ -5,6 +5,7 @@ mixcr align \
 	-OvParameters.parameters.floatingLeftBound=false \
 	-OjParameters.parameters.floatingRightBound=false \
 	-OjParameters.parameters.floatingRightBound=true \
+	--tag-pattern "^N{7}(R1:*) \ ^(UMI:N{12})N{4}(R2:*)" \
 	--report results/FebControl1.report.txt \
 	--json-report results/FebControl1.report.json \
 	 raw/FebControl1_R1.fastq.gz \

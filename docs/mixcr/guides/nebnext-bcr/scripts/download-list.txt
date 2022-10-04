@@ -1,0 +1,228 @@
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/032/SRR17709532/SRR17709532_1.fastq.gz
+  out=raw/13_d60_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/032/SRR17709532/SRR17709532_2.fastq.gz
+  out=raw/13_d60_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/033/SRR17709533/SRR17709533_1.fastq.gz
+  out=raw/07_d110_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/033/SRR17709533/SRR17709533_2.fastq.gz
+  out=raw/07_d110_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/034/SRR17709534/SRR17709534_1.fastq.gz
+  out=raw/07_d60_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/034/SRR17709534/SRR17709534_2.fastq.gz
+  out=raw/07_d60_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/036/SRR17709536/SRR17709536_1.fastq.gz
+  out=raw/01a_d60_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/036/SRR17709536/SRR17709536_2.fastq.gz
+  out=raw/01a_d60_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/031/SRR17709531/SRR17709531_1.fastq.gz
+  out=raw/13_d110_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/031/SRR17709531/SRR17709531_2.fastq.gz
+  out=raw/13_d110_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/035/SRR17709535/SRR17709535_1.fastq.gz
+  out=raw/01a_d110_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/035/SRR17709535/SRR17709535_2.fastq.gz
+  out=raw/01a_d110_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/030/SRR17709530/SRR17709530_1.fastq.gz
+  out=raw/13_d60_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/030/SRR17709530/SRR17709530_2.fastq.gz
+  out=raw/13_d60_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/029/SRR17709529/SRR17709529_1.fastq.gz
+  out=raw/13_d110_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/029/SRR17709529/SRR17709529_2.fastq.gz
+  out=raw/13_d110_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/027/SRR17709527/SRR17709527_1.fastq.gz
+  out=raw/22_d110_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/027/SRR17709527/SRR17709527_2.fastq.gz
+  out=raw/22_d110_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/028/SRR17709528/SRR17709528_1.fastq.gz
+  out=raw/22_d60_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/028/SRR17709528/SRR17709528_2.fastq.gz
+  out=raw/22_d60_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/026/SRR17709526/SRR17709526_1.fastq.gz
+  out=raw/22_d60_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/026/SRR17709526/SRR17709526_2.fastq.gz
+  out=raw/22_d60_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/025/SRR17709525/SRR17709525_1.fastq.gz
+  out=raw/22_d110_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/025/SRR17709525/SRR17709525_2.fastq.gz
+  out=raw/22_d110_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/024/SRR17709524/SRR17709524_1.fastq.gz
+  out=raw/01a_d60_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/024/SRR17709524/SRR17709524_2.fastq.gz
+  out=raw/01a_d60_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/022/SRR17709522/SRR17709522_1.fastq.gz
+  out=raw/20_d110_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/022/SRR17709522/SRR17709522_2.fastq.gz
+  out=raw/20_d110_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/023/SRR17709523/SRR17709523_1.fastq.gz
+  out=raw/20_d60_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/023/SRR17709523/SRR17709523_2.fastq.gz
+  out=raw/20_d60_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/021/SRR17709521/SRR17709521_1.fastq.gz
+  out=raw/20_d60_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/021/SRR17709521/SRR17709521_2.fastq.gz
+  out=raw/20_d60_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/020/SRR17709520/SRR17709520_1.fastq.gz
+  out=raw/20_d110_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/020/SRR17709520/SRR17709520_2.fastq.gz
+  out=raw/20_d110_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/019/SRR17709519/SRR17709519_1.fastq.gz
+  out=raw/02a_d35_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/019/SRR17709519/SRR17709519_2.fastq.gz
+  out=raw/02a_d35_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/018/SRR17709518/SRR17709518_1.fastq.gz
+  out=raw/02a_d60_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/018/SRR17709518/SRR17709518_2.fastq.gz
+  out=raw/02a_d60_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/017/SRR17709517/SRR17709517_1.fastq.gz
+  out=raw/02a_d35_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/017/SRR17709517/SRR17709517_2.fastq.gz
+  out=raw/02a_d35_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/015/SRR17709515/SRR17709515_1.fastq.gz
+  out=raw/02a_d35_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/015/SRR17709515/SRR17709515_2.fastq.gz
+  out=raw/02a_d35_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/016/SRR17709516/SRR17709516_1.fastq.gz
+  out=raw/02a_d60_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/016/SRR17709516/SRR17709516_2.fastq.gz
+  out=raw/02a_d60_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/014/SRR17709514/SRR17709514_1.fastq.gz
+  out=raw/02a_d60_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/014/SRR17709514/SRR17709514_2.fastq.gz
+  out=raw/02a_d60_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/013/SRR17709513/SRR17709513_1.fastq.gz
+  out=raw/01a_d110_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/013/SRR17709513/SRR17709513_2.fastq.gz
+  out=raw/01a_d110_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/012/SRR17709512/SRR17709512_1.fastq.gz
+  out=raw/02a_d35_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/012/SRR17709512/SRR17709512_2.fastq.gz
+  out=raw/02a_d35_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/011/SRR17709511/SRR17709511_1.fastq.gz
+  out=raw/02a_d60_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/011/SRR17709511/SRR17709511_2.fastq.gz
+  out=raw/02a_d60_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/009/SRR17709509/SRR17709509_1.fastq.gz
+  out=raw/10_d60_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/009/SRR17709509/SRR17709509_2.fastq.gz
+  out=raw/10_d60_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/010/SRR17709510/SRR17709510_1.fastq.gz
+  out=raw/10_d60_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/010/SRR17709510/SRR17709510_2.fastq.gz
+  out=raw/10_d60_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/008/SRR17709508/SRR17709508_1.fastq.gz
+  out=raw/10_d110_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/008/SRR17709508/SRR17709508_2.fastq.gz
+  out=raw/10_d110_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/007/SRR17709507/SRR17709507_1.fastq.gz
+  out=raw/10_d110_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/007/SRR17709507/SRR17709507_2.fastq.gz
+  out=raw/10_d110_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/006/SRR17709506/SRR17709506_1.fastq.gz
+  out=raw/10_d60_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/006/SRR17709506/SRR17709506_2.fastq.gz
+  out=raw/10_d60_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/005/SRR17709505/SRR17709505_1.fastq.gz
+  out=raw/10_d60_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/005/SRR17709505/SRR17709505_2.fastq.gz
+  out=raw/10_d60_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/003/SRR17709503/SRR17709503_1.fastq.gz
+  out=raw/10_d110_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/003/SRR17709503/SRR17709503_2.fastq.gz
+  out=raw/10_d110_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/004/SRR17709504/SRR17709504_1.fastq.gz
+  out=raw/10_d110_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/004/SRR17709504/SRR17709504_2.fastq.gz
+  out=raw/10_d110_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/002/SRR17709502/SRR17709502_1.fastq.gz
+  out=raw/04_d28_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/002/SRR17709502/SRR17709502_2.fastq.gz
+  out=raw/04_d28_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/001/SRR17709501/SRR17709501_1.fastq.gz
+  out=raw/01a_d201_BM_plasmaCell_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/001/SRR17709501/SRR17709501_2.fastq.gz
+  out=raw/01a_d201_BM_plasmaCell_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/000/SRR17709500/SRR17709500_1.fastq.gz
+  out=raw/01a_d201_BM_plasmaCell_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/000/SRR17709500/SRR17709500_2.fastq.gz
+  out=raw/01a_d201_BM_plasmaCell_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/099/SRR17709499/SRR17709499_1.fastq.gz
+  out=raw/02a_d201_BM_plasmaCell_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/099/SRR17709499/SRR17709499_2.fastq.gz
+  out=raw/02a_d201_BM_plasmaCell_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/098/SRR17709498/SRR17709498_1.fastq.gz
+  out=raw/04_d201_BM_plasmaCell_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/098/SRR17709498/SRR17709498_2.fastq.gz
+  out=raw/04_d201_BM_plasmaCell_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/096/SRR17709496/SRR17709496_1.fastq.gz
+  out=raw/13_d201_BM_plasmaCell_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/096/SRR17709496/SRR17709496_2.fastq.gz
+  out=raw/13_d201_BM_plasmaCell_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/097/SRR17709497/SRR17709497_1.fastq.gz
+  out=raw/07_d201_BM_plasmaCell_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/097/SRR17709497/SRR17709497_2.fastq.gz
+  out=raw/07_d201_BM_plasmaCell_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/095/SRR17709495/SRR17709495_1.fastq.gz
+  out=raw/20_d201_BM_plasmaCell_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/095/SRR17709495/SRR17709495_2.fastq.gz
+  out=raw/20_d201_BM_plasmaCell_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/094/SRR17709494/SRR17709494_1.fastq.gz
+  out=raw/22_d201_BM_plasmaCell_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/094/SRR17709494/SRR17709494_2.fastq.gz
+  out=raw/22_d201_BM_plasmaCell_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/092/SRR17709492/SRR17709492_1.fastq.gz
+  out=raw/04_d201_d208_PBMC_Bmem_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/092/SRR17709492/SRR17709492_2.fastq.gz
+  out=raw/04_d201_d208_PBMC_Bmem_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/093/SRR17709493/SRR17709493_1.fastq.gz
+  out=raw/02a_d201_PBMC_Bmem_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/093/SRR17709493/SRR17709493_2.fastq.gz
+  out=raw/02a_d201_PBMC_Bmem_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/091/SRR17709491/SRR17709491_1.fastq.gz
+  out=raw/04_d60_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/091/SRR17709491/SRR17709491_2.fastq.gz
+  out=raw/04_d60_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/089/SRR17709489/SRR17709489_1.fastq.gz
+  out=raw/10_d201_PBMC_Bmem_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/089/SRR17709489/SRR17709489_2.fastq.gz
+  out=raw/10_d201_PBMC_Bmem_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/090/SRR17709490/SRR17709490_1.fastq.gz
+  out=raw/07_d201_PBMC_Bmem_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/090/SRR17709490/SRR17709490_2.fastq.gz
+  out=raw/07_d201_PBMC_Bmem_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/088/SRR17709488/SRR17709488_1.fastq.gz
+  out=raw/13_d201_PBMC_Bmem_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/088/SRR17709488/SRR17709488_2.fastq.gz
+  out=raw/13_d201_PBMC_Bmem_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/086/SRR17709486/SRR17709486_1.fastq.gz
+  out=raw/22_d201_PBMC_Bmem_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/086/SRR17709486/SRR17709486_2.fastq.gz
+  out=raw/22_d201_PBMC_Bmem_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/087/SRR17709487/SRR17709487_1.fastq.gz
+  out=raw/20_d201_PBMC_Bmem_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/087/SRR17709487/SRR17709487_2.fastq.gz
+  out=raw/20_d201_PBMC_Bmem_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/085/SRR17709485/SRR17709485_1.fastq.gz
+  out=raw/10_d280_BM_plasmaCell_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/085/SRR17709485/SRR17709485_2.fastq.gz
+  out=raw/10_d280_BM_plasmaCell_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/084/SRR17709484/SRR17709484_1.fastq.gz
+  out=raw/20_d280_BM_plasmaCell_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/084/SRR17709484/SRR17709484_2.fastq.gz
+  out=raw/20_d280_BM_plasmaCell_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/083/SRR17709483/SRR17709483_1.fastq.gz
+  out=raw/04_d28_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/083/SRR17709483/SRR17709483_2.fastq.gz
+  out=raw/04_d28_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/082/SRR17709482/SRR17709482_1.fastq.gz
+  out=raw/04_d60_LN_plasmablast_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/082/SRR17709482/SRR17709482_2.fastq.gz
+  out=raw/04_d60_LN_plasmablast_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/080/SRR17709480/SRR17709480_1.fastq.gz
+  out=raw/07_d110_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/080/SRR17709480/SRR17709480_2.fastq.gz
+  out=raw/07_d110_LN_germCenterB_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/081/SRR17709481/SRR17709481_1.fastq.gz
+  out=raw/07_d60_LN_germCenterB_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR177/081/SRR17709481/SRR17709481_2.fastq.gz
+  out=raw/07_d60_LN_germCenterB_R2.fastq.gz

@@ -102,6 +102,9 @@ Option `--report` is specified here explicitly.
 `-OcParameters.parameters.floatingRightBound=true`
 : Results in a local alignment algorithm for C gene right bound, because reverse primers are located in C-gene region.
 
+`--tagPattern "^N{7}(R1:*) \ ^(UMI:N{12})N{4}(R2:*)"`
+: tag pattern specifies the location of the UMI barcode and also trims N nucleotides on the 5' end of R1 according to the library structure.
+
 
 #### `refineTagsAndSort`
 
@@ -112,7 +115,14 @@ Option `--report` is specified here explicitly.
 ```
 
 #### `assemble`
-Assembles alignments into clonotypes and applies several layers of errors correction(ex. quality-dependent correction for sequencing errors, PCR-error correction by clustering). Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
+Assembles alignments into clonotypes and applies several layers of errors correction:
+
+- quality-dependent correction for sequencing errors
+- PCR-error correction by clustering
+- UMI-based error correction)
+
+Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
+
 
 ```shell
 --8<-- "takara-hsa-bcr/scripts/050-upstream-assemble.sh"
@@ -200,7 +210,7 @@ The `mixcr assemble` step in this preset differs from the one above in the follo
 `-OassemblingFeatures="VDJRegion"`
 : sets the assembling feature to the region which starts from `FR1Begin` and ends at the end of `FR4`.
 
-Notice that we do not use `-OseparateByV=true` and `-OseparateByJ=true` in this case because assembling feature already covers full V and J sequences, thus in case if clones have identical `CDR3` they will still be separated. We still use `-OseparateByC=true` option for isotipe identification.
+Notice that we do not use `-OseparateByV=true` and `-OseparateByJ=true` in this case because assembling feature already covers full V and J sequences, thus in case if clones have identical `CDR3` they will still be separated. We still use `-OseparateByC=true` option for isotype identification.
 
 ## Reports
 Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
