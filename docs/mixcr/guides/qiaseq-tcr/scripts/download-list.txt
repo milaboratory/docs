@@ -1,0 +1,16 @@
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR129/087/SRR12991387/SRR12991387_1.fastq.gz
+  out=raw/mice_tumor_1_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR129/087/SRR12991387/SRR12991387_2.fastq.gz
+  out=raw/mice_tumor_1_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR129/088/SRR12991388/SRR12991388_1.fastq.gz
+  out=raw/mice_tumor_2_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR129/088/SRR12991388/SRR12991388_2.fastq.gz
+  out=raw/mice_tumor_2_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR129/090/SRR12991390/SRR12991390_1.fastq.gz
+  out=raw/mice_spleen_2_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR129/090/SRR12991390/SRR12991390_2.fastq.gz
+  out=raw/mice_spleen_2_R2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR129/089/SRR12991389/SRR12991389_1.fastq.gz
+  out=raw/mice_spleen_1_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR129/089/SRR12991389/SRR12991389_2.fastq.gz
+  out=raw/mice_spleen_1_R2.fastq.gz

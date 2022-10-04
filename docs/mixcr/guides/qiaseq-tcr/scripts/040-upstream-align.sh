@@ -5,9 +5,9 @@ mixcr align \
 	-OvParameters.parameters.floatingLeftBound=false \
 	-OjParameters.parameters.floatingRightBound=false \
 	-OсParameters.parameters.floatingRightBound=true \
-	--tag-pattern "^N{7}(R1:*) \ ^(UMI:N{12})N{4}(R2:*)" \
-	--report results/FebControl1.report.txt \
-	--json-report results/FebControl1.report.json \
-	 raw/FebControl1_R1.fastq.gz \
-	 raw/FebControl1_R2.fastq.gz \
-	 results/FebControl1.vdjca
+	--tag-pattern "^(R1:*) \ ^(UMI:N{12})N{12}(R2:*)" \
+	--report results/mice_tumor_1.report.txt \
+	--json-report results/mice_tumor_1.report.json \
+	 raw/mice_tumor_1_R1.fastq.gz \
+	 raw/mice_tumor_1_R2.fastq.gz \
+	 results/mice_tumor_1.vdjca

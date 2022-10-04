@@ -6,7 +6,7 @@ mixcr align \
 	-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
 	-OvParameters.parameters.floatingLeftBound=false \
 	-OjParameters.parameters.floatingRightBound=false \
-	-OjParameters.parameters.floatingRightBound=true \
+	-OcParameters.parameters.floatingRightBound=true \
 	--tag-pattern "^N{7}(R1:*) \ ^(UMI:N{12})N{4}(R2:*)" \
 	--not-aligned-R1 debug/MISC9_notAligned_R1.fastq \
     --not-aligned-R2 debug/MISC9_notAligned_R2.fastq \
