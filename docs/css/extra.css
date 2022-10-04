@@ -569,3 +569,23 @@ svg.magnify {
 .md-typeset .md-clipboard:is(:focus,:hover) {
     color: var(--c-clipboard-hover-color);
 }
+
+.img-float-left p .glightbox {
+    width: auto;
+    margin-right: 16px;
+    float: left;
+}
+
+.img-float-right p .glightbox {
+    width: auto;
+    margin-left: 16px;
+    float: right;
+}
+
+.img-no-scroll p .glightbox {
+    max-height: none;
+}
+
+.badge {
+    height: 16px;
+}
