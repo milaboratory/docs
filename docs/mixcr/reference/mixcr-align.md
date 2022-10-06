@@ -30,7 +30,7 @@ mixcr align [-f] [-nw] [-n <limit>] [-t <threads>]
     [input_R2(.fastq.gz|.fq|.fastq)]
     alignments.vdjca
 ```
-The command returns a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form usign [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the alignment performance and quality of the library.
+The command returns a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form using [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the alignment performance and quality of the library.
 
 Basic command line options are:
 
@@ -103,9 +103,9 @@ Basic command line options are:
 `-O  <String=String>` 
 : Overrides default aligner parameter values (see below).
 
-## Concatenating across multiple lanes
+## Concatenating across multiple lines
 
-Sometimes it is required to concatenate several fastq files and analyse it as a single sample. This is a common practise when files are separated across sequencing lanes. MiXCR uses `{{n}}` syntax, that is similar to Linux wildcard behaviour.
+Sometimes it is required to concatenate several fastq files and analyse it as a single sample. This is a common practise when files are separated across sequencing lines. MiXCR uses `{{n}}` syntax, that is similar to Linux wildcard behaviour.
 
 Bellow you can see an example of how to pass 8 fastq files (four per each paired read) to `mixcr align`:
 
