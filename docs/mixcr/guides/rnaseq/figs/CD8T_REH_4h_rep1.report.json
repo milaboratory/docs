@@ -1,0 +1,237 @@
+{
+  "type": "alignerReport",
+  "commandLine": "--report results/CD8T_REH_4h_rep1.align.report.txt --json-report results/CD8T_REH_4h_rep1.align.report.json --preset local:rnaseq-tcr-cdr3 +species mmu /raw/PRJNA683867_Treg_CD8_RNAseq/CD8T_REH_4h_rep1.fastq.gz results/CD8T_REH_4h_rep1.vdjca",
+  "inputFiles": [
+    "/raw/PRJNA683867_Treg_CD8_RNAseq/CD8T_REH_4h_rep1.fastq.gz"
+  ],
+  "outputFiles": [
+    "results/CD8T_REH_4h_rep1.vdjca"
+  ],
+  "version": "4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0",
+  "trimmingReport": null,
+  "totalReadsProcessed": 78755048,
+  "aligned": 8509,
+  "notAligned": 78746539,
+  "notAlignedReasons": {
+    "NoBarcode": 0,
+    "NoJHits": 0,
+    "NoVHits": 0,
+    "NoHits": 78421282,
+    "NoCDR3Parts": 32282,
+    "VAndJOnDifferentTargets": 0,
+    "LowTotalScore": 292975
+  },
+  "chimeras": 0,
+  "overlapped": 0,
+  "alignmentAidedOverlaps": 0,
+  "overlappedAligned": 0,
+  "overlappedNotAligned": 0,
+  "pairedEndAlignmentConflicts": 0,
+  "vChimeras": 0,
+  "jChimeras": 0,
+  "chainUsage": {
+    "type": "chainUsage",
+    "chimeras": 0,
+    "total": 8509,
+    "chains": {
+      "TRA": {
+        "total": 1659,
+        "nonFunctional": 22,
+        "isOOF": 22,
+        "hasStops": 0
+      },
+      "TRB": {
+        "total": 6107,
+        "nonFunctional": 28,
+        "isOOF": 28,
+        "hasStops": 0
+      },
+      "TRD": {
+        "total": 53,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      },
+      "TRG": {
+        "total": 17,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      },
+      "TRA,TRD": {
+        "total": 343,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      },
+      "IGH": {
+        "total": 143,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      },
+      "IGK": {
+        "total": 181,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      },
+      "IGL": {
+        "total": 6,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      }
+    }
+  },
+  "realignedWithForcedNonFloatingBound": 0,
+  "realignedWithForcedNonFloatingRightBoundInLeftRead": 0,
+  "realignedWithForcedNonFloatingLeftBoundInRightRead": 0,
+  "noCDR3PartsAlignments": 881,
+  "partialAlignments": 6877,
+  "tagReport": null
+}
+{
+  "type": "extenderReport",
+  "commandLine": "--report results/CD8T_REH_4h_rep1.extend.report.txt --json-report results/CD8T_REH_4h_rep1.extend.report.json results/CD8T_REH_4h_rep1.vdjca results/CD8T_REH_4h_rep1.extended.vdjca",
+  "inputFiles": [
+    "results/CD8T_REH_4h_rep1.vdjca"
+  ],
+  "outputFiles": [
+    "results/CD8T_REH_4h_rep1.extended.vdjca"
+  ],
+  "version": "4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0",
+  "totalProcessed": 8509,
+  "totalExtended": 265,
+  "vExtended": 0,
+  "vExtendedMerged": 0,
+  "jExtended": 265,
+  "jExtendedMerged": 0,
+  "vjExtended": 0,
+  "meanVExtensionLength": "NaN",
+  "meanJExtensionLength": 7.796226415094339
+}
+{
+  "type": "partialAlignmentsAssemblerReport",
+  "commandLine": "--report results/CD8T_REH_4h_rep1.assemblePartial.report.txt --json-report results/CD8T_REH_4h_rep1.assemblePartial.report.json results/CD8T_REH_4h_rep1.extended.vdjca results/CD8T_REH_4h_rep1.passembled.0.vdjca",
+  "inputFiles": [
+    "results/CD8T_REH_4h_rep1.extended.vdjca"
+  ],
+  "outputFiles": [
+    "results/CD8T_REH_4h_rep1.passembled.0.vdjca"
+  ],
+  "version": "4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0",
+  "independentRuns": 1,
+  "totalProcessed": 8509,
+  "outputAlignments": 8506,
+  "withCDR3": 1016,
+  "overlapped": 3,
+  "leftTooShortNRegion": 1542,
+  "kMerDiversity": 2889,
+  "droppedWildcardsInKMer": 0,
+  "droppedSmallOverlapNRegion": 89,
+  "droppedNoNRegion": 33,
+  "leftParts": 797,
+  "rightParts": 5154,
+  "complexOverlaps": 0,
+  "overOverlaps": 0,
+  "partialAlignmentsAsIs": 7487
+}
+{
+  "type": "partialAlignmentsAssemblerReport",
+  "commandLine": "--report results/CD8T_REH_4h_rep1.assemblePartial.report.txt --json-report results/CD8T_REH_4h_rep1.assemblePartial.report.json results/CD8T_REH_4h_rep1.passembled.0.vdjca results/CD8T_REH_4h_rep1.passembled.1.vdjca",
+  "inputFiles": [
+    "results/CD8T_REH_4h_rep1.passembled.0.vdjca"
+  ],
+  "outputFiles": [
+    "results/CD8T_REH_4h_rep1.passembled.1.vdjca"
+  ],
+  "version": "4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0",
+  "independentRuns": 1,
+  "totalProcessed": 8506,
+  "outputAlignments": 8506,
+  "withCDR3": 1019,
+  "overlapped": 0,
+  "leftTooShortNRegion": 1542,
+  "kMerDiversity": 2889,
+  "droppedWildcardsInKMer": 0,
+  "droppedSmallOverlapNRegion": 91,
+  "droppedNoNRegion": 30,
+  "leftParts": 794,
+  "rightParts": 5151,
+  "complexOverlaps": 0,
+  "overOverlaps": 0,
+  "partialAlignmentsAsIs": 7487
+}
+{
+  "type": "assemblerReport",
+  "commandLine": "--report results/CD8T_REH_4h_rep1.assemble.report.txt --json-report results/CD8T_REH_4h_rep1.assemble.report.json results/CD8T_REH_4h_rep1.passembled.1.vdjca results/CD8T_REH_4h_rep1.clns",
+  "inputFiles": [
+    "results/CD8T_REH_4h_rep1.passembled.1.vdjca"
+  ],
+  "outputFiles": [
+    "results/CD8T_REH_4h_rep1.clns"
+  ],
+  "version": "4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0",
+  "preCloneAssemblerReport": null,
+  "totalReadsProcessed": 78755045,
+  "initialClonesCreated": 632,
+  "readsDroppedNoTargetSequence": 7487,
+  "readsDroppedTooShortClonalSequence": 0,
+  "readsDroppedLowQuality": 0,
+  "coreReads": 868,
+  "readsDroppedFailedMapping": 145,
+  "lowQualityRescued": 9,
+  "clonesClustered": 0,
+  "readsClustered": 0,
+  "clones": 632,
+  "clonesDroppedAsLowQuality": 0,
+  "clonesPreClustered": 0,
+  "readsPreClustered": 0,
+  "readsInClones": 877,
+  "readsInClonesBeforeClustering": 877,
+  "readsDroppedWithLowQualityClones": 0,
+  "clonalChainUsage": {
+    "type": "chainUsage",
+    "chimeras": 0,
+    "total": 632,
+    "chains": {
+      "TRA": {
+        "total": 196,
+        "nonFunctional": 29,
+        "isOOF": 28,
+        "hasStops": 1
+      },
+      "TRB": {
+        "total": 398,
+        "nonFunctional": 18,
+        "isOOF": 18,
+        "hasStops": 0
+      },
+      "TRG": {
+        "total": 1,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      },
+      "IGH": {
+        "total": 8,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      },
+      "IGK": {
+        "total": 28,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      },
+      "IGL": {
+        "total": 1,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      }
+    }
+  }
+}

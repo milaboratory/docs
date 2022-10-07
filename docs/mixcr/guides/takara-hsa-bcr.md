@@ -35,12 +35,6 @@ MiXCR has a dedicated preset for this protocol, thus analysing the data is as ea
 --8<-- "takara-hsa-bcr/scripts/020-upstream-preset.sh"
 ```
 
-One might also use [GNU Parallel](https://www.gnu.org/software/parallel/) to process all samples at once:
-
-```shell
---8<-- "takara-hsa-bcr/scripts/020-upstream-preset-parallel.sh"
-```
-
 Running the command above will generate the following files:
 
 ```shell

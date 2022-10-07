@@ -38,7 +38,7 @@ Preset names:
 
 This kit allows to obtain TCR alpha and beta repertoires for different types of available RNA material, with high sensitivity and UMI-based accuracy.
 
-![](../guides/rnaseq/RNASeq.svg)
+![](../guides/rnaseq/figs/library-structure.svg)
 
 There only required mixin is `species`. Example command:
 
