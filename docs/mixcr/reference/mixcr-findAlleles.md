@@ -2,6 +2,8 @@
 
 Find alleles that are specific to this donor. Result is a library with found allele variants and clns files that aligned on it.
 
+All clones must be cut by and fully covered by the same feature. It means that input files must not be processed by `assembleContigs` without `+cutBy` option. 
+
 Terms:
 * **Complementary gene type** - if we search for mutations in V genes it will be J, and it will be V if we search in J genes.
 * **Naive by complementary gene** - if clone have no mutations in the best hit of **complementary gene type**.
@@ -74,7 +76,7 @@ mixcr findAlleles [-f] [-nw]
     [-O <String=String>]...
     input_file.clns [input_file2.clns ...]...
 ```
-The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` (clones) file that holds exhaustive information about clonotypes. Clonotype tables can be further extracted in tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables) or in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes). Additionally, MiXCR produces a comprehensive [report](./report-findAlleles.md) which provides a detailed summary of each stage of assembly pipeline.
+The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` (clones) file that holds exhaustive information about clonotypes. Clonotype tables can be further extracted in tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables) or in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes). Additionally, MiXCR produces a comprehensive [report](./report-findAlleles.md) which provides a detailed summary of allele search.
 
 Basic command line options are:
 

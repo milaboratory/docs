@@ -149,7 +149,6 @@ Found alleles that don't fit well to data: {}
     }
   }
 }
-
 ```
 
 `Clones score delta stats	` / `clonesScoreDeltaStats`
