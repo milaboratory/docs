@@ -1,5 +1,5 @@
 mixcr exportAlignmentsPretty
 	--skip 1000 \
 	--limit 100 \
-	debug/SRR8365459_HIP1_female_debug.vdjca \
-	debug/SRR8365459_HIP1_female_debug.alignments.txt
+	debug/CRC003_therapy-08_debug.vdjca \
+	debug/CRC003_therapy-08_debug.alignments.txt

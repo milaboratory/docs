@@ -10,10 +10,7 @@ BALB/C mice were injected subcutaneously into mammary fat-pad number five with 2
 Technical replicates (two per sample) of BCR-Seq libraries were prepared based on cDNA from each mouse/tissue. cDNA was split, and library preparation was performed in parallel with different Illumina indices as described above.
 cDNA libraries were subjected to NGS on the MiSeq platform with the reagent kit V3 2 × 300 bp paired-end (Illumina).
 
-<figure markdown>
 ![PRJNA699402-library-structure.svg](generic-multiplex-bcr/PRJNA699402-library-structure.svg)
-
-</figure>
 
 ??? note "Show primers"
     ```shell

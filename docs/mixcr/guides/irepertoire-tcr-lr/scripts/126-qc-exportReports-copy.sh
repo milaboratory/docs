@@ -1,2 +1,2 @@
-cat results/SRR8365468_HIP2_male.report.json | jq > figs/SRR8365468_HIP2_male.report.json
-cp results/results/SRR8365468_HIP2_male.report.txt figs/
+cat results/CRC016_preTherapy.report.json | jq > figs/CRC016_preTherapy.report.json
+cp results/CRC016_preTherapy.report.txt figs/

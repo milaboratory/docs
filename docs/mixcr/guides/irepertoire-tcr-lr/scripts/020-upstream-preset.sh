@@ -1,4 +1,4 @@
-mixcr analyze biomed2-human-bcr-cdr3 \
-	raw/SRR8365277_HIP1_female_IgG1_R1.fastq.gz \
-   	raw/SRR8365277_HIP1_female_IgG1_R2.fastq.gz \
-   	results/SRR8365277_HIP1_female_IgG1
+mixcr analyze irepertoire-human-tcr-cdr3 \
+	raw/CRC016_preTherapy_R1.fastq.gz \
+   	raw/CRC016_preTherapy_R2.fastq.gz \
+   	results/CRC016_preTherapy

@@ -8,6 +8,8 @@ This tutorial uses the data from the following publication: *High frequency of s
 
 Peripheral blood samples were collected from three donors: HIP1 (female, 47 y.o.), HIP2 (male, 22 y.o.) and HIP3 (male, 29 y.o.). Samples were collected in multiple replicas. Total RNA was extracted from PBMCs and then RT-PCR was utilized to generate BCR amplicon libraries using BIOMED2 multiplex primers. Subsequent libraries were sequenced using next-generation sequencing.
 
+All data is available from SRA (PRJNA511481) using e.g. [SRA Explorer](https://sra-explorer.info).
+
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
     --8<-- "biomed2-bcr/scripts/010-download-aria2c.sh"

@@ -1,1 +1,1 @@
-cp results/SRR8365468_HIP2_male.clonotypes.IGH.tsv figs/
+cp results/CRC016_preTherapy.clonotypes.IGH.tsv figs/
