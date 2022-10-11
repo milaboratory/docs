@@ -1,10 +1,6 @@
-# Illumina Ampliseq TCR LR
+# iRepertoire
 
-Here we will discuss how to process the data obtained using iRepertoire TCR LR kit. This is a multiplex protocol designed in such a way that forward primers are located in FR1 region of V gene and reverse primers are complimentary to constant region. Thus, you can use these tutorial for any data obtained by similar protocols, like: 
-
-- Illumina Ampliseq TCR LR
-- Thermo Fisher Oncomine™ TCR Beta-LR
-    
+Here we will discuss how to process the data obtained using iRepertoire TCR LR kit. This is a multiplex protocol designed in such a way that forward primers are located in FR1 region of V gene and reverse primers are complimentary to constant region. 
 
 ## Data libraries
 

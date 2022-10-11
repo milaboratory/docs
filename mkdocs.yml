@@ -113,7 +113,7 @@ nav:
         - 'MiLaboratories Human TCR RNA Multiplex kit':  mixcr/guides/milaboratories-human-tcr-rna-multi.md
         - 'SMARTer Human BCR IgG IgM H/K/L Profiling Kit': mixcr/guides/takara-hsa-bcr.md
         - 'SMARTer Mouse TCR a/b Profiling Kit': mixcr/guides/takara-mmu-tcr.md
-        - 'Illumina Ampliseq TCR LR / iRepertoire' : mixcr/guides/ampliseq-tcr-lr.md
+        - 'Illumina Ampliseq TCR LR / iRepertoire' : mixcr/guides/iRepertoire.md
         - 'NEBNext Immune Sequencing': mixcr/guides/nebnext-bcr.md
         - 'QIAseq Immune Repertoire TCR' : mixcr/guides/qiaseq-tcr.md
         - 'AbHelix BCR': mixcr/guides/abhelix-bcr.md

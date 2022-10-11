@@ -1,0 +1,55 @@
+============== Align Report ==============
+Input file(s): /raw/PRJNA511481-HIP/BIOMED2/SRR8365468_HIP2_male_R1.fastq.gz,/raw/PRJNA511481-HIP/BIOMED2/SRR8365468_HIP2_male_R2.fastq.gz
+Output file(s): results/SRR8365468_HIP2_male.vdjca
+Version: ; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0
+Command line arguments: --report results/SRR8365468_HIP2_male.align.report.txt --json-report results/SRR8365468_HIP2_male.align.report.json --preset local:biomed2-human-bcr-full-length +limitInput 100000 /raw/PRJNA511481-HIP/BIOMED2/SRR8365468_HIP2_male_R1.fastq.gz /raw/PRJNA511481-HIP/BIOMED2/SRR8365468_HIP2_male_R2.fastq.gz results/SRR8365468_HIP2_male.vdjca
+Analysis time: 0ns
+Total sequencing reads: 100000
+Successfully aligned reads: 760 (0.76%)
+Paired-end alignment conflicts eliminated: 98 (0.1%)
+Alignment failed, no hits (not TCR/IG?): 82357 (82.36%)
+Alignment failed because of absence of V hits: 51 (0.05%)
+Alignment failed because of absence of J hits: 16810 (16.81%)
+No target with both V and J alignments: 22 (0.02%)
+Overlapped: 25788 (25.79%)
+Overlapped and aligned: 547 (0.55%)
+Alignment-aided overlaps: 20 (3.66%)
+Overlapped and not aligned: 25241 (25.24%)
+No CDR3 parts alignments, percent of successfully aligned: 2 (0.26%)
+Partial aligned reads, percent of successfully aligned: 9 (1.18%)
+V gene chimeras: 9 (0.01%)
+IGH chains: 44 (5.79%)
+IGH non-functional: 1 (2.27%)
+IGK chains: 496 (65.26%)
+IGK non-functional: 15 (3.02%)
+IGL chains: 220 (28.95%)
+IGL non-functional: 11 (5%)
+Realigned with forced non-floating bound: 148464 (148.46%)
+Realigned with forced non-floating right bound in left read: 997 (1%)
+Realigned with forced non-floating left bound in right read: 997 (1%)
+============== Assemble Report ==============
+Input file(s): results/SRR8365468_HIP2_male.vdjca
+Output file(s): results/SRR8365468_HIP2_male.clns
+Version: ; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0
+Command line arguments: --report results/SRR8365468_HIP2_male.assemble.report.txt --json-report results/SRR8365468_HIP2_male.assemble.report.json results/SRR8365468_HIP2_male.vdjca results/SRR8365468_HIP2_male.clns
+Analysis time: 0ns
+Final clonotype count: 19
+Average number of reads per clonotype: 1.11
+Reads used in clonotypes, percent of total: 21 (0.02%)
+Reads used in clonotypes before clustering, percent of total: 21 (0.02%)
+Number of reads used as a core, percent of used: 21 (100%)
+Mapped low quality reads, percent of used: 0 (0%)
+Reads clustered in PCR error correction, percent of used: 0 (0%)
+Reads pre-clustered due to the similar VJC-lists, percent of used: 0 (0%)
+Reads dropped due to the lack of a clone sequence, percent of total: 610 (0.61%)
+Reads dropped due to a too short clonal sequence, percent of total: 0 (0%)
+Reads dropped due to low quality, percent of total: 0 (0%)
+Reads dropped due to failed mapping, percent of total: 129 (0.13%)
+Reads dropped with low quality clones, percent of total: 0 (0%)
+Clonotypes eliminated by PCR error correction: 0
+Clonotypes dropped as low quality: 0
+Clonotypes pre-clustered due to the similar VJC-lists: 0
+IGH chains: 7 (36.84%)
+IGH non-functional: 0 (0%)
+IGL chains: 12 (63.16%)
+IGL non-functional: 0 (0%)
