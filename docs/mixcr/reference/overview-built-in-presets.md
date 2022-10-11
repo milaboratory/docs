@@ -287,7 +287,7 @@ Preset name: **`ampliseq-tcrb-plus-full-length`**
 
 ![](pics/ampliseq-lr.svg)
 
-Preset name: **`ampliseq-tcrb-plus-cdr3`**
+Preset name: **`ampliseq-tcrb-sr-cdr3`**
 
 - assemble clonotypes by `CDR3` sequence
 
