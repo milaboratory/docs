@@ -365,7 +365,7 @@ First let's examine the alignment quality control plot.
 ![alignQc.svg](nebnext-bcr/alignQc.svg)
 </figure>
 
-Most of the samples have a height successful alignment score. But samples that come from blood memory B cells clearly have a lower percentage of aligned reads, and the major reason for that is the lack of immune receptor sequences. That might be due to some issues during sample preparation of this particular kind. It is recommended to realign one of these samples and save not aligned reads into separate file for manual inspection. That can be done with the following command:
+Most of the samples have a high successful alignment score. But samples that come from blood memory B cells clearly have a lower percentage of aligned reads, and the major reason for that is the lack of immune receptor sequences. That might be due to some issues during sample preparation of this particular kind. It is recommended to realign one of these samples and save not aligned reads into separate file for manual inspection. That can be done with the following command:
 
 ```shell
 mixcr align \
