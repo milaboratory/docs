@@ -130,7 +130,7 @@ nav:
   - 'Docs':
       - 'Overview':
         - 'Analysis overview': mixcr/reference/overview-analysis-overview.md
-        - 'Presets & mixing': mixcr/reference/overview-presets-and-mixins.md
+        - 'Presets': mixcr/reference/overview-presets.md
         - 'Built-in presets': mixcr/reference/overview-built-in-presets.md
         - 'Mixins list': mixcr/reference/overview-mixins-list.md
       - 'MiXCR':
