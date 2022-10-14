@@ -316,3 +316,92 @@ Export overlap with color key:
 <figure markdown>
 ![overlap](pics/export-plots-overlap.TRAD.svg)
 </figure>
+
+## SHM trees
+```
+mixcr exportPlots shmTrees [-f] 
+    [--alignment-no-fill] 
+    [-nw] 
+    [--verbose] 
+    [--alignment-aa <alignmentGeneFeatureAa>] 
+    [--alignment-nt <alignmentGeneFeatureNt>] 
+    [--filter-aa-pattern <patternSeqAa>] 
+    [--filter-in-feature <patternInFeature>] 
+    [--filter-min-height <minHeight>] 
+    [--filter-min-nodes <minNodes>] 
+    [--filter-nt-pattern <patternSeqNt>] 
+    [--limit <limit>] 
+    [--line-color <lineColor>] 
+    [-m <metadata>] 
+    [--node-color <nodeColor>] 
+    [--node-label <nodeLabel>]
+    [--node-size <nodeSize>] 
+    [--pattern-max-errors <patternMaxErrors>] 
+    [--ids <treeIds>[,<treeIds>...]]... 
+    trees.shmt 
+    plots.pdf
+```
+Visualize SHM tree and save in PDF format
+
+`trees.shmt`
+: Input file produced by findShmTrees.
+
+`plots.pdf`
+: Output file with plots
+
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
+
+`-m, --metadata <metadata>`
+: Path to metadata file
+
+`--filter-min-nodes <minNodes>`
+: Minimal number of nodes in tree
+
+`--filter-min-height <minHeight>`
+: Minimal height of the tree
+
+`--ids <treeIds>[,<treeIds>...]`
+: Filter specific trees by id
+
+`--filter-aa-pattern <patternSeqAa>`
+: Filter specific trees by aa pattern
+
+`--filter-nt-pattern <patternSeqNt>`
+: Filter specific trees by nt pattern
+
+`--filter-in-feature <patternInFeature>`
+: Match pattern inside specified gene feature
+
+`--pattern-max-errors <patternMaxErrors>`
+: Max allowed subs & indels
+
+`--limit <limit>`
+: Take first N trees (for debug purposes)
+
+`--node-color <nodeColor>`
+: Color nodes with given metadata column
+
+`--line-color <lineColor>`
+: Color lines with given metadata column
+
+`--node-size <nodeSize>`
+: Size nodes with given metadata column. Predefined columns: "Abundance".
+
+`--node-label <nodeLabel>`
+: Label nodes with given metadata column. Predefined columns: "Isotype"
+
+`--alignment-nt <alignmentGeneFeatureNt>`
+: Show tree nucleotide alignments using specified gene feature
+
+`--alignment-aa <alignmentGeneFeatureAa>`
+: Show tree amino acid alignments using specified gene feature
+
+`--alignment-no-fill`
+: Do not highlight alignments with color

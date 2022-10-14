@@ -25,6 +25,7 @@ mixcr assembleContigs [-f] [-t <threads>]
     [--ignore-tags]
     [--report <reportFile>]
     [--json-report <jsonReport>]
+    [+assembleContigsBy]
     [-O <String=String>]...
     clonotypes.clna
     clonotypes.clns
@@ -46,6 +47,9 @@ The command returns a highly-compressed, memory- and CPU-efficient binary `.clns
 
 `-j, --json-report <jsonReport>`
 : JSON formatted [report](./report-assembleContigs.md) file
+
+`+assembleContigsBy`
+: Selects the region of interest for the action. Clones will be separated if inconsistent nucleotides will be detected in the region, assembling procedure will be limited to the region, and only clonotypes that fully cover the region will be outputted, others will be filtered out.
 
 `-O<String=String>`
 : Overrides default parameter values.
@@ -133,3 +137,12 @@ Full sequence assembler parameters that may be tuned:
 
 `-OminimalNonEdgePointsFraction=0.25`
 : Minimal fraction of non-edge points in variant that must be reached to consider the variant significant
+
+`-OsubCloningRegions=null`
+: Gene feature limiting the set of positions where sufficient number of different nucleotides may split input into several clonotypes. If position is not covered by the region, and significant disagreement between nucleotides is observed, algorithm will produce "N" letter in the corresponding contig position to indicate the ambiguity. Null - means no subcloning region, and guarantees one to one input to output clonotype correspondence. Default - null
+
+`-OassemblingRegions=null`
+: Limits the region of the sequence to assemble during the procedure, no nucleotides will be assembled outside it. Null will result in assembly of the longest possible contig sequence. Default - null
+
+`-OpostFiltering.type=NoFiltering`
+: Used only if `assemblingRegions` is not null. Sets filtering criteria to apply before outputting the resulting clonotypes. `NoFiltering` - don't filter output clonotypes. `OnlyFullyAssembled` - only clonotypes completely covering `assemblingRegions` will be retained. `OnlyFullyDefined` - only clonotypes completely covering `assemblingRegions` and having no "N" letters will be retained. Default - `NoFiltering`
