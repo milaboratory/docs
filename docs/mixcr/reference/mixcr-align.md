@@ -103,9 +103,9 @@ Basic command line options are:
 `-O  <String=String>` 
 : Overrides default aligner parameter values (see below).
 
-## Concatenating across multiple lines
+## Concatenating across multiple lanes
 
-Sometimes it is required to concatenate several fastq files and analyse it as a single sample. This is a common practise when files are separated across sequencing lines. MiXCR uses `{{n}}` syntax, that is similar to Linux wildcard behaviour.
+Sometimes it is required to concatenate several fastq files and analyse it as a single sample. This is a common practise when files are separated across sequencing lanes. MiXCR uses `{{n}}` syntax, that is similar to Linux wildcard behaviour.
 
 Bellow you can see an example of how to pass 8 fastq files (four per each paired read) to `mixcr align`:
 

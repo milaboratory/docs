@@ -11,7 +11,7 @@ mitool parse [OPTIONS] [SOURCE]... DESTINATION
 Arguments:
 
 `<SOURCE>`
-: Input `*.fastq` or `*.fastq.gz` files. Use "{{n}}" if you want to concatenate files from multiple lines.
+: Input `*.fastq` or `*.fastq.gz` files. Use "{{n}}" if you want to concatenate files from multiple lanes.
     !!! note "Example"
         `my_file_L{{n}}_R1.fastq.gz my_file_L{{n}}_R2.fastq.gz`
 

@@ -18,7 +18,7 @@ All data may be downloaded directly from SRA using e.g. [SRA Explorer](https://s
     ```
 
 
-The project contains 544 paired fastq files, separated in multiple lines and biosample ids:
+The project contains 544 paired fastq files, separated in multiple lanes and biosample ids:
 
 ```shell
 > ls raw/
@@ -77,7 +77,7 @@ The meaning of these options is the following.
 `--umi-pattern`
 : is used to specify UMI pattern for the library. MiXCR provides a powerful regex-like [language](../reference/ref-tag-pattern.md) allowing to specify almost arbitrary barcode structure. Here we use `^(R1:*)\^(UMI:N{12})` pattern to specify that R1 should be used as is, UMI spans the first 12 letters of R2 and the rest of R2 is ignored.
 
-Finally, we specify paths for both input files and a path to output folder with prefix describing the sample. Note that `{{n}}` syntax is similar to Linux wildcard behaviour: it will concatenate all fastq files matching this pattern into one sample. This is very useful when you have for example multiple lines.
+Finally, we specify paths for both input files and a path to output folder with prefix describing the sample. Note that `{{n}}` syntax is similar to Linux wildcard behaviour: it will concatenate all fastq files matching this pattern into one sample. This is very useful when you have for example multiple lanes.
 
 Running the command above will generate the following files:
 
