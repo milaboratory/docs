@@ -62,7 +62,7 @@ mixcr assemble [-f] [-nw] [--verbose] [-t <threads>]
     input.vdjca
     output.(clns|clna)
 ```
-The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` (clones) or `.clna` (clones & alignments) file that holds exhaustive information about clonotypes. Clonotype tables can be further extracted in tabular form usign [`exportClones`](./mixcr-export.md#clonotype-tables) or in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes). Additionally, MiXCR produces a comprehensive [report](./report-assemble.md) which provides a detailed summary of each stage of assembly pipeline.
+The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` (clones) or `.clna` (clones & alignments) file that holds exhaustive information about clonotypes. Clonotype tables can be further extracted in tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables) or in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes). Additionally, MiXCR produces a comprehensive [report](./report-assemble.md) which provides a detailed summary of each stage of assembly pipeline.
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).

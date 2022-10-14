@@ -1,0 +1,16 @@
+https://cdn.milaboratory.com/data/milab-tcr-mulriplex/Multi_TRA_FS115_1_S149_R1_001.fastq.gz
+  out=raw/Multi_TRA_FS115_1_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-tcr-mulriplex/Multi_TRA_FS115_1_S149_R2_001.fastq.gz
+  out=raw/Multi_TRA_FS115_1_R2.fastq.gz
+https://cdn.milaboratory.com/data/milab-tcr-mulriplex/Multi_TRA_FS115_2_S150_R1_001.fastq.gz
+  out=raw/Multi_TRA_FS115_2_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-tcr-mulriplex/Multi_TRA_FS115_2_S150_R2_001.fastq.gz
+  out=raw/Multi_TRA_FS115_2_R2.fastq.gz
+https://cdn.milaboratory.com/data/milab-tcr-mulriplex/Multi_TRB_FS115_1_S153_R1_001.fastq.gz
+  out=raw/Multi_TRB_FS115_1_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-tcr-mulriplex/Multi_TRB_FS115_1_S153_R2_001.fastq.gz
+  out=raw/Multi_TRB_FS115_1_R2.fastq.gz
+https://cdn.milaboratory.com/data/milab-tcr-mulriplex/Multi_TRB_FS115_2_S154_R1_001.fastq.gz
+  out=raw/Multi_TRB_FS115_2_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-tcr-mulriplex/Multi_TRB_FS115_2_S154_R2_001.fastq.gz
+  out=raw/Multi_TRB_FS115_2_R2.fastq.gz

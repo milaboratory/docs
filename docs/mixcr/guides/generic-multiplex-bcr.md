@@ -7,15 +7,14 @@ Aizik L, Dror Y, Taussig D, Barzel A, Carmi Y, Wine Y. Antibody *Repertoire Anal
 ## Experiment setting
 
 BALB/C mice were injected subcutaneously into mammary fat-pad number five with 2×105 4T1 cells suspended in 30 µl of DMEM (Gibco, Thermo Fisher Scientific). The induced tumors were monitored by measuring their size twice a week using calipers. After 23 days, mice were sacrificed, and B cells were isolated from four tissue types, namely, bone marrow, blood, DLNs, and tumors. For the control mice, three tissue types were collected - bone marrow, blood, and lymph nodes. Lymphocytes were isolated from every sample. For all tissues, cells were then incubated with a mixture of anti-IgG, anti-IgM, anti-CD138 magnetic beads. Later, total RNA was isolated following by first-strand cDNA synthesis using SuperScript™ III First-Strand Synthesis System with 200 ng RNA as the template and Oligo (dT) primers. After cDNA synthesis, PCR amplification of the variable heavy Ig genes was performed using a set of 19 forward primers with the gene-specific regions annealing to framework 1 of the VDJ-region and two reverse primers with the gene-specific region binding to the IgG and IgM constant regions. Recovered DNA products from the first PCR was applied to a second PCR amplification to attach Illumina adaptors to the amplified VH genes using the primer extension method.
-Technical replicates (two per sample) of BCR-Seq libraries were prepared based on cDNA from each mouse/tissue. cDNA was split, and library preparation was performed in parallel with different Illumina indices as described above.
-cDNA libraries were subjected to NGS on the MiSeq platform with the reagent kit V3 2 × 300 bp paired-end (Illumina).
+Technical replicates (two per sample) of BCR-Seq libraries were prepared based on cDNA from each mouse/tissue. cDNA was split, and library preparation was performed in parallel with different Illumina indices as described above. cDNA libraries were subjected to NGS on the MiSeq platform with the reagent kit V3 2 × 300 bp paired-end (Illumina).
 
-![PRJNA699402-library-structure.svg](generic-multiplex-bcr/PRJNA699402-library-structure.svg)
+![PRJNA699402-library-structure.svg](generic-multiplex-bcr/figs/library-structure.svg)
 
 ??? note "Show primers"
     ```shell
     # PCR1 Forward primers
-    # Primers inglude step-out(glue) sequence and gene specific region
+    # Primers include step-out(glue) sequence and gene specific region
     
     m-VH-glue-Fw1   CCCTCCTTTAATTCCCGAKGTRMAGCTTCAGGAGTC
     m-VH-glue-Fw2   CCCTCCTTTAATTCCCGAGGTBCAGCTBCAGCAGTC
@@ -40,8 +39,8 @@ cDNA libraries were subjected to NGS on the MiSeq platform with the reagent kit 
     # PCR1 Reverse primers
     # Primers inglude step-out(glue) sequence and gene specific region
     
-    m-IgMC-BC-glue-REV      GAGGAGAGAGAGAGAGCGAGGGGGAAGACATTTGGG
-    m-IgGall-BC-glue-REV    GAGGAGAGAGAGAGAGCCARKGGATAGACHGATGGG
+    m-IgMC-BC-glue-REV      GAGGAGAGAGAGAGAGCGTGATCGAGGGGGAAGACATTTGGG
+    m-IgGall-BC-glue-REV    GAGGAGAGAGAGAGAGACATCGCCARKGGATAGACHGATGGG
     
     # PCR2 Forward primer
     # Primer ingludes Universal trueSeq Illumina adaptor and glue sequence from PCR1 forward primers
@@ -54,27 +53,25 @@ cDNA libraries were subjected to NGS on the MiSeq platform with the reagent kit 
     YW23X_PE-Idx-REV    CAAGCAGAAGACGGCATACGAGATNNNNNNGTGACTGGAGTTCAGACGTGTGCTCTTCCGATCTNNNNGAGGAGAGAGAGAGAG
     ```
 
-Data for this project is available under PRJNA699402 BioProject id.   
+All data may be downloaded using the script bellow.
+
+??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
+    ```shell title="download.sh"
+    --8<-- "generic-multiplex-bcr/scripts/010-download-aria2c.sh"
+    ```
+    ```shell title="download-list.txt"
+    --8<-- "generic-multiplex-bcr/scripts/download-list.txt"
+    ```
 
 ## One command Solution
 
 The easiest way to obtain clonotype tables for this type of data is to use a universal [`mixcr analyze`](../reference/mixcr-analyze.md) command.
+This is a BCR data, so we will use a preset called `bcr_amplicon`.
 
 The exact command for a single sample you can see bellow:
 
 ```shell
-'> mixcr analyze amplicon \
-    --species mmu \
-    --starting-material rna \
-    --receptor-type bcr \
-    --align "-OvParameters.geneFeatureToAlign={CDR1Begin:VEnd}+{VEnd:VEnd(-20)}" \
-    --5-end no-v-primers \
-    --3-end c-primers \
-    --adapters adapters-present \
-    --assemble "-OassemblingFeatures={CDR1Begin:FR4End} -OseparateByC=true" \
-    M1_4T1_Blood_S2_L001_R1_001_B3.1.fastq.gz \
-    M1_4T1_Blood_S2_L001_R1_001_B3.1.fastq.gz \
-    M1_4T1_Blood_S2
+--8<-- "generic-multiplex-bcr/scripts/020-upstream-example.sh"
 ```
 
 The meaning of these options is the following.
@@ -82,53 +79,60 @@ The meaning of these options is the following.
 `--species`
 :   is set to `mmu` for _Mus Musculus_
 
-`--starting-material`
-:   is set to `rna` and corresponds to `VTranscriptWithout5UTRWithP` alignment feature for V-gene (see [Gene features and anchor points](../reference/ref-gene-features.md) for details)
+`--rna`
+:   corresponds to `VTranscriptWithout5UTRWithP` alignment feature for V-gene (see [Gene features and anchor points](../reference/ref-gene-features.md) for details)
 
-`--receptor-type`
-:  `bcr`. It affects the choice of alignment algorithms. MiXCR uses a specific set of algorithms for BCR data.
+`--rigid-left-alignment-boundary`
+:   leads to a global alignment algorithms to align the left bound of V gene because primer sequences are trimmed with tagPattern. This options sets
+`-OvParameters.parameters.floatingLeftBound=false` for `mixcr align` step of the pipeline.
 
-`--align`
-: `"-OvParameters.geneFeatureToAlign={CDR1Begin:VEnd}+{VEnd:VEnd(-20)}"` Here we pass an extra argument for [`mixcr align`](../reference/mixcr-align.md) step of the pipeline. From the library structure we see, that all V-gene specific primers are located inside `FR1` region, thus we crop the alignment region to start from beginning of `CDR1`. Thus, we can trust our alignment, knowing that there are no nucleotides that could have come from the primer sequence. Ideologically this equals to primer trimming. 
+`--rigid-right-alignment-boundary`
+:  sets `-OjParameters.parameters.loatingRightBound=false -OcParameters.parameters.floatingRightBound=true` for `mixcr align` step of the pipeline to ensure global alignment on the right bound of bot J and C gene. Global alignment should be used when primer sequences have been trimmed.
 
-`--5-end`
-:   is set to `no-v-primers` because we have cropped `-OvParameters.geneFeatureToAlign` in a way that it does not cover the region where primers are located. This leads to a global alignment algorithms to align the left bound of V gene.
+`--tag-pattern ^N{4}ccctcctttaattcccN{22}(R2:*)\^N{4}gaggagagagagagagN{26}(R1:*)`
+:  This tag-pattern trims all adapter and primer sequences from both reads.
 
-`--3-end-primers`
-:  is set to `c-primers`. Here, C primers were used in cDNA synthesis. We did not adjust this with alignment feature for C gene, because these primers are isotype specific, and we do need these sequences for correct isotype determination. If we had shrunk `-OcParameters.geneFeatureToAlign`, trimming the C-primer region, there would be too few nucleotides left from C gene for correct isotype identification. This choice leads to a global alignment algorithms to align the right bound of J gene and a local alignment algorithm for the left bound of C-gene.
+`--assemble-clonotypes-by {CDR1Begin:FR4End}`
+:  sets `-OassemblingFeatures={CDR1Begin:FR4End}` for [`mixcr assemble`](../reference/mixcr-assemble.md) step. We extend the assembling feature to start from `CDR1`. That is because this is BCR data, where hypermutations occur throughout V gene, and we want to capture as much as we can.
 
-`--adapers`
-:   `adapters-present` because we still have C-primer sequences in our data.
+`raw/M1_4T1_replica1_Blood_R1.fastq.gz raw/M1_4T1_replica1_Blood_R2.fastq.gz results/M1_4T1_replica1_Blood`
+:   Finally, we provide the names of input files and an output prefix:
 
-`--assemble`
-:  `"-OassemblingFeatures={CDR1Begin:FR4End} -OseparateByC=true"`. Here we pass two extra arguments for [`mixcr assemble`](../reference/mixcr-assemble.md) step of the pipeline. First we extend the assembling feature to start from `CDR1`. That is because this is BCR data, where hypermutations occur throughout V gene, and we want to capture as much as we can. Second, we use `-OseparateByC=true` option to separate clones with the same assembling feature sequence but different C genes, which is essential for isotype identification.
 
-`M1_4T1_Blood_S2_L001_R1_001_B3.1.fastq.gz M1_4T1_Blood_S2_L001_R1_001_B3.1.fastq.gz M1_4T1_Blood_S2`
-: Finally, we provide the names of input files and an output prefix:
+Running the command above will generate the following files:
+```shell
+> ls result/
 
+# human-readable reports 
+M1_4T1_replica1_Blood.align.report.txt
+M1_4T1_replica1_Blood.align.report.json
+M1_4T1_replica1_Blood.assemble.report.txt
+M1_4T1_replica1_Blood.assemble.report.json
+
+# raw alignments (highly compressed binary file)
+M1_4T1_replica1_Blood.vdjca
+
+# CDR3 clonotypes (highly compressed binary file)
+M1_4T1_replica1_Blood.clns
+
+# CDR3 clonotypes exported in tab-delimited txt
+M1_4T1_replica1_Blood.clones.tsv
+```
+
+While `.clns` file holds all data and is used for downstream analysis using [`mixcr postanalisis`](../reference/mixcr-postanalysis.md), the output `.tsv` clonotype table will contain exhaustive information about each clonotype as well:
+
+??? tip "See first 100 records from FebControl1.clones.IGH.tsv clonotype table"
+    {{ read_csv('docs/mixcr/guides/generic-multiplex-bcr/figs/M1_4T1_replica1_Blood.clones.tsv', engine='python', sep='\t', nrows=100) }}
 
 Now, since we have multiple files ist easier to process them all together instead of running the same command multiple times. One of the ways to achieve it is to use [GNU Parallel](https://www.gnu.org/software/parallel/): 
 
 ```shell
-> fastq/*R1* | 
-  parallel -j2 \
-   '~/mixcr-private/mixcr analyze amplicon \
-        --species mmu \
-        --starting-material rna \
-        --receptor-type bcr \
-        --5-end no-v-primers \
-        --3-end c-primers \
-        --adapters adapters-present \
-        --align "-OvParameters.geneFeatureToAlign={CDR1Begin:VEnd}+{VEnd:VEnd(-20)}" \
-        --assemble "-OassemblingFeatures={CDR1Begin:FR4End} -OseparateByC=true" \
-        {} \
-        {=s:R1:R2:=} \
-        {=s:.*/:results/:;s:_L001.*::=}'
+--8<-- "generic-multiplex-bcr/scripts/030-upstream-parallel.sh"
 ```
 
-## Under the hood of `mixcr analyze` pipeline
+## Under the hood
 
-Under the hood, `mixcr analyze amplicon` command that we use above actually executes the following pipeline of MiXCR actions:
+Under the hood, the command from above actually executes the following pipeline of MiXCR actions:
 
 #### `align`
 
@@ -137,24 +141,12 @@ Under the hood, `mixcr analyze amplicon` command that we use above actually exec
 - alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments
 - pattern matching of tag pattern sequence and extraction of barcodes
 
+
 ```shell
- > mixcr align \
-    --species mmu \
-    --report result/Multi_TRA_10ng_3.report \
-    --json-report result/Multi_TRA_10ng_3.report.json \
-    -OvParameters.geneFeatureToAlign={CDR1Begin:VEnd}+{VEnd:VEnd(-20)} \
-    -OvParameters.parameters.floatingLeftBound=false \
-    -OjParameters.parameters.floatingRightBound=false \
-    -OcParameters.parameters.floatingRightBound=true \
-    fastq/M1_4T1_Blood_S2_L001_R1_001_B3.1.fastq.gz \
-    fastq/M1_4T1_Blood_S2_L001_R2_001_B3.1.fastq.gz \
-    results/M1_4T1_Blood_S2.vdjca
+--8<-- "generic-multiplex-bcr/scripts/040-upstream-align.sh"
 ```
 
-Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithout5UTRWithP` for the alignment of V segments (see [Gene features and anchor points](../reference/ref-gene-features.md).
-
- `-OvParameters.parameters.floatingLeftBound=false -OjParameters.parameters floatingRightBound=false -OcParameters.parameters.floatingRightBound=true`
-: These option determine global vs local alignment algorithm on the bounds of gene segments. As have been mentioned above we will use global alignment on the left bound of V gene and right bound of J gene. The alignment on the right bound of C gene will be local due to the presence of primer sequence.
+Options `--report` and `--json-report` are specified here explicitly. 
 
 This step utilizes all available CPUs and scales perfectly. When there are a lot of CPUs, the only limiting factor is the speed of disk I/O. To limit the number of used CPUs one can pass `--threads N` option.
 
@@ -167,13 +159,7 @@ This step utilizes all available CPUs and scales perfectly. When there are a lot
 - clustering to correct for PCR errors
 
 ```shell
-> mixcr assemble \
-    --report results/Multi_TRA_10ng_3.report \
-    --json-report results/Multi_TRA_10ng_3.report.json \
-    -OassemblingFeatures={CDR1Begin:FR4End} \
-    -OseparateByC=true \
-    M1_4T1_Blood_S2.vdjca \
-    M1_4T1_Blood_S2.clns
+--8<-- "generic-multiplex-bcr/scripts/060-upstream-assemble.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with assembly report.
@@ -183,35 +169,28 @@ Options `--report` and `--json-report` are specified here explicitly so that the
 Finally, to [export](../reference/mixcr-export.md#clonotype-tables) clonotype tables in tabular form `exportClones` is used:
 
 ```shell
-> mixcr exportClones \
-    -p full \
-    M1_4T1_Blood_S2.clns \
-    M1_4T1_Blood_S2.tsv
+--8<-- "generic-multiplex-bcr/scripts/070-upstream-exportClones.sh"
 ```
-
-Here `-p full` is a shorthand for the full preset of common export columns.
 
 ## Quality control
 
 Now when the upstream analysis is finished we can move on to quality control. First lets look at the alignment report plot.
 
 ```shell
-# obtain alignment quality control
-> mixcr exportQc align \
-    result/*.vdjca \
-    alignQc.pdf
+--8<-- "generic-multiplex-bcr/scripts/080-qc-align.sh"
 ```
-<figure markdown>
-![alignQc.svg](generic-multiplex-bcr/alignQc.svg)
-</figure>
 
-We see that all samples have a very high score of successfully aligned reads. No signficat issues present.
+![alignQc.svg](generic-multiplex-bcr/figs/alignQc.svg)
 
-Next, lets examine chane usage distribution 
+We see that all samples have a very high score of successfully aligned reads. No significant issues present.
 
-<figure markdown>
-![chainUsage.svg](generic-multiplex-bcr/chainUsage.svg)
-</figure>
+Next, lets look at the chain usage distribution.
+
+```shell
+--8<-- "generic-multiplex-bcr/scripts/120-qc-chainUsage.sh"
+```
+
+![chainUsage.svg](generic-multiplex-bcr/figs/chainUsage.svg)
 
 We don't see any contamination from other Ig chains. As expected, all samples consist only of IGH chains.
 
@@ -222,69 +201,15 @@ There are two types of basic downstream analysis: _individual_ and _overlap_. In
 To run postanalysis routines we need to prepare a metadata file in a .tsv or .csv form. Metadata must contain a `sample` column which will be used to match metadata with cloneset files. Bellow you can find a metadata table for our samples.
 
 ??? note "Metadata"
-
-    | sample              | mice_id  | condition | tissue  | replica |
-    |---------------------|----------|-----------|---------|---------|
-    | M1_4T1_Blood_S2     | M1       | 4T1       | Blood   | 1       |
-    | M1_4T1_Blood_S6     | M1       | 4T1       | Blood   | 2       |
-    | M1_4T1_BM_S4        | M1       | 4T1       | BM      | 1       |
-    | M1_4T1_BM_S8        | M1       | 4T1       | BM      | 2       |
-    | M1_4T1_DLN_S3       | M1       | 4T1       | DLN     | 1       |
-    | M1_4T1_DLN_S7       | M1       | 4T1       | DLN     | 2       |
-    | M1_4T1_Tumor_S5     | M1       | 4T1       | Tumor   | 1       |
-    | M1_4T1_Tumor_S1     | M1       | 4T1       | Tumor   | 2       |
-    | M2_4T1_Blood_S2     | M2       | 4T1       | Blood   | 1       |
-    | M2_4T1_Blood_S6     | M2       | 4T1       | Blood   | 2       |
-    | M2_4T1_BM_S4        | M2       | 4T1       | BM      | 1       |
-    | M2_4T1_BM_S8        | M2       | 4T1       | BM      | 2       |
-    | M2_4T1_DLN_S3       | M2       | 4T1       | DLN     | 1       |
-    | M2_4T1_DLN_S7       | M2       | 4T1       | DLN     | 2       |
-    | M2_4T1_Tumor_S1     | M2       | 4T1       | Tumor   | 1       |
-    | M2_4T1_Tumor_S5     | M2       | 4T1       | Tumor   | 2       |
-    | M3_4T1_Blood_S10    | M3       | 4T1       | Blood   | 1       |
-    | M3_4T1_Blood_S9     | M3       | 4T1       | Blood   | 2       |
-    | M3_4T1_BM_S7        | M3       | 4T1       | BM      | 1       |
-    | M3_4T1_BM_S8        | M3       | 4T1       | BM      | 2       |
-    | M3_4T1_DLN_S11      | M3       | 4T1       | DLN     | 1       |
-    | M3_4T1_DLN_S12      | M3       | 4T1       | DLN     | 2       |
-    | M3_4T1_Tumor_S13    | M3       | 4T1       | Tumor   | 1       |
-    | M3_4T1_Tumor_S14    | M3       | 4T1       | Tumor   | 2       |
-    | M4_4T1_Blood_S2     | M4       | 4T1       | Blood   | 1       |
-    | M4_4T1_Blood_S7     | M4       | 4T1       | Blood   | 2       |
-    | M4_4T1_BM_S10       | M4       | 4T1       | BM      | 1       |
-    | M4_4T1_BM_S5        | M4       | 4T1       | BM      | 2       |
-    | M4_4T1_DLN_S4       | M4       | 4T1       | DLN     | 1       |
-    | M4_4T1_DLN_S9       | M4       | 4T1       | DLN     | 2       |
-    | M4_4T1_Tumor_S1     | M4       | 4T1       | Tumor   | 1       |
-    | M4_4T1_Tumor_S6     | M4       | 4T1       | Tumor   | 2       |
-    | N1_control_Blood_S5 | N1       | control   | Blood   | 1       |
-    | N1_control_Blood_S6 | N1       | control   | Blood   | 2       |
-    | N1_control_BM_S1    | N1       | control   | BM      | 1       |
-    | N1_control_BM_S2    | N1       | control   | BM      | 2       |
-    | N1_control_LN_S3    | N1       | control   | LN      | 1       |
-    | N1_control_LN_S4    | N1       | control   | LN      | 2       |
-    | N2_control_Blood_S5 | N2       | control   | Blood   | 1       |
-    | N2_control_Blood_S6 | N2       | control   | Blood   | 2       |
-    | N2_control_BM_S1    | N2       | control   | BM      | 1       |
-    | N2_control_BM_S2    | N2       | control   | BM      | 2       |
-    | N2_control_LN_S3    | N2       | control   | LN      | 1       |
-    | N2_control_LN_S4    | N2       | control   | LN      | 2       |
+    {{ read_csv('docs/mixcr/guides/generic-multiplex-bcr/scripts/metadata.tsv', engine='python', sep='\t') }}
+ 
 
 ### Individual postanalysis
 
 To compute a set of individual metrics we run the following command:
 
 ```shell
-> mixcr postanalysis individual \
-    --metadata metadata.tsv \
-    --default-downsampling count-reads-auto \
-    --default-weight-function read \
-    --only-productive \
-    --chains IGH \
-    --tables postanalysis/pa.i.tsv \
-    --preproc-tables postanalysis/preproc.i.tsv \
-    results/*.clns \
-    postanalysis/individual.json.gz
+--8<-- "generic-multiplex-bcr/scripts/130-pa-individual.sh"
 ```
 
 The meaning of specified options is the following:
@@ -313,7 +238,7 @@ The meaning of specified options is the following:
 After execution, we will have the following files:
 
 ```shell
-> ls postanalysis/
+> ls pa/
 
 # gzipped JSON with all results 
 individual.json.gz
@@ -340,16 +265,12 @@ pa.i.VSpectratype.IGH.tsv
 pa.i.VSpectratypeMean.IGH.tsv
 ```
 
-Preprocessing summary tables (e.g. `preproc.i.IGH.tsv`) contain detailed information on how downsampling was applied for each metric:
+Preprocessing summary tables (e.g. `preproc.i.IGH.tsv`) contain detailed information on how downsampling was applied for each metric (the table bellow shows first 10 rows):
 
-|characteristic|sample|preprocessor|nElementsBefore|sumWeightBefore|nElementsAfter|sumWeightAfter|preprocessor#1|nElementsBefore#1|sumWeightBefore#1|nElementsAfter#1|sumWeightAfter#1|preprocessor#2|nElementsBefore#2|sumWeightBefore#2|nElementsAfter#2|sumWeightAfter#2|preprocessor#3|nElementsBefore#3|sumWeightBefore#3|nElementsAfter#3|sumWeightAfter#3|
-|--------------|---------------------|------------------------------------------------------------------------------|-----------------------------------|---------------------|--------------|-----------------|-----------------|-----------------|-----------------|----------------|-----------------|---------------------------------|-----------------|---------------------------------|----------------|-----------------|--------------------|-----------------|--------------------|----------------|----------------|
-|IsotypeUsage|M2_4T1_BM_S8.clns|FilterIGHchains\|FilterstopsinCDR3,OOFinCDR3\|Downsampleautomatic|72121|1120769.0|30741|125550.0|FilterIGHchains|72121|1120769.0|72121|1120769.0|FilterstopsinCDR3,OOFinCDR3|72121|1120769.0|64734|1024106.0|Downsampleautomatic|64734|1024106.0|30741|125550|
-|IsotypeUsage|M2_4T1_DLN_S7.clns|FilterIGHchains\|FilterstopsinCDR3,OOFinCDR3\|Downsampleautomatic|95523|648857.0|45810|125550.0|FilterIGHchains|95523|648857.0|95523|648857.0|FilterstopsinCDR3,OOFinCDR3|95523|648857.0|86623|601517.0|Downsampleautomatic|86623|601517.0|45810|125550|
-|IsotypeUsage|N1_control_BM_S1.clns|FilterIGHchains\|FilterstopsinCDR3,OOFinCDR3\|Downsampleautomatic|92761|1111263.0|33352|125550.0|FilterIGHchains|92761|1111263.0|92761|1111263.0|FilterstopsinCDR3,OOFinCDR3|92761|1111263.0|83364|1019615.0|Downsampleautomatic|83364|1019615.0|33352|125550|
-|IsotypeUsage|M1_4T1_Tumor_S1.clns|FilterIGHchains\|FilterstopsinCDR3,OOFinCDR3\|Downsampleautomatic|1910|1542543.0|653|125550.0|FilterIGHchains|1910|1542543.0|1910|1542543.0|FilterstopsinCDR3,OOFinCDR3|1910|1542543.0|1771|1320389.0|Downsampleautomatic|1771|1320389.0|653|125550|
-|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|...|
+{{ read_csv('docs/mixcr/guides/generic-multiplex-bcr/figs/preproc.i.IGH.tsv',  engine='python', sep='\t', nrows=5) }}
 
+??? tip "See full preprocessing summary:"
+    {{ read_csv('docs/mixcr/guides/generic-multiplex-bcr/figs/preproc.i.IGH.tsv', engine='python', sep='\t') }}
 
 Columns explained:
 
@@ -400,14 +321,10 @@ Columns explained:
 Various postanalysis tables contain information about each metric computed for each sample. For
 example, let's have a look inside `pa.i.JUsage.IGH.tsv`. This table contains frequencies for each J segment present in the sample :
 
-| sample               | IGHJ3*00            | IGHJ2*00           | IGHJ1*00            | IGHJ4*00            |
-|----------------------|---------------------|--------------------|---------------------|---------------------|
-| M1_4T1_Blood_S2.clns | 0.24678614097968937 | 0.356726403823178  | 0.12035045798486659 | 0.27613699721226603 |
-| M1_4T1_Blood_S6.clns | 0.2431620868180008  | 0.37610513739546   | 0.1291358024691358  | 0.25159697331740344 |
-| M1_4T1_BM_S4.clns    | 0.24498606133014736 | 0.2887216248506571 | 0.13416168857029073 | 0.3321306252489048  |
-| M1_4T1_BM_S8.clns    | 0.24844285145360415 | 0.2861091198725607 | 0.13389088012743927 | 0.33155714854639584 |
-| M1_4T1_DLN_S3.clns   | 0.24744723217841497 | 0.2569573874950219 | 0.06846674631620868 | 0.42712863401035445 |
-| ...                  | ...                 | ...                | ...                 | ...                 |
+{{ read_csv('docs/mixcr/guides/generic-multiplex-bcr/figs/pa.i.JUsage.IGH.tsv',  engine='python', sep='\t', nrows=5) }}
+
+??? tip "See full JUsage summary:"
+    {{ read_csv('docs/mixcr/guides/generic-multiplex-bcr/figs/pa.i.JUsage.IGH.tsv', engine='python', sep='\t') }}
 
 
 #### Graphical output
@@ -420,19 +337,10 @@ For diversity metrics and CDR3 properties MiXCR allows to group data in differen
 Let's reconstruct one of the figures from the paper. Let's say we want to look at the Normalized ShannonWiener diversity index. We will group samples by tissues and use separate facets for contol and experiment group. That can be easily done with a single command:
 
 ```shell
-> mixcr exportPlots diversity \
-    --metadata metadata.tsv \
-    --plot-type boxplot \
-    --metric normalizedShannonWienerIndex \ 
-    --primary-group tissue \
-    --facet-by condition \
-    --primary-group-values Tumor,LN,DLN,Blood,BM \
-    postanalysis/individual.json.gz \
-    normalizedShannonWienerIndex.pdf
+--8<-- "generic-multiplex-bcr/scripts/140-pa-diversity.sh"
 ```
-<figure markdown>
-![normalizedShannonWienerIndex.IGH.svg](generic-multiplex-bcr/normalizedShannonWienerIndex.IGH.svg)
-</figure>
+
+![diversity.IGH.svg](generic-multiplex-bcr/figs/diversity.IGH.svg)
 
 Arguments explained:
 
@@ -465,13 +373,7 @@ Arguments explained:
 Now lets look at the J gene distribution among all samples.
 
 ```shell
-> mixcr exportPlots jUsage \
-    --metadata metadata.tsv \
-    --chains IGH \
-    --palette sequential \
-    --color-key tissue \
-    postanalysis/individual.json.gz \
-    jUsage.pdf  
+--8<-- "generic-multiplex-bcr/scripts/160-pa-vUsage.sh"
 ```
 
 `--palette`
@@ -480,9 +382,8 @@ Now lets look at the J gene distribution among all samples.
 `--color-key`
 : `tissue`. Metadata column name.
 
-<figure markdown>
-![jUsage.IGH.svg](generic-multiplex-bcr/jUsage.IGH.svg)
-</figure>
+![vUsage.IGH.svg](generic-multiplex-bcr/figs/vUsage.IGH.svg)
+
 
 ### Overlap postanalysis
 
@@ -491,31 +392,17 @@ Now lets look at the J gene distribution among all samples.
 Since our samples were prepared in replicas, it is often usefully to check if clone frequencies correlate between replicas. Let's take two replicas of one biological sample and overlap two repertoires. We will use [`mixcr overlapScatterPlot` function](../reference/mixcr-overlapScatterPlot.md):
 
 ```shell
-> mixcr overlapScatterPlot \
-    --downsampling none \
-    --chains IGH \
-    results/M1_4T1_Blood_S2.clns results/M1_4T1_Blood_S6.clns \
-    M1_4T1_Blood.overlap.pdf
+--8<-- "generic-multiplex-bcr/scripts/170-pa-overlap-scatter.sh"
 ```
-<figure markdown>
-![M1_4T1_Blood.overlap.png](generic-multiplex-bcr/M1_4T1_Blood.overlap.png)
-</figure>
+
+![overlap.png](generic-multiplex-bcr/figs/overlap.IGH.svg)
 
 #### All-vs-All overlap
 
 MiXCR also allows performing an overall overlap analysis using [`mixcr postanalysis overlap`](../reference/mixcr-postanalysis.md#overlap-postanalysis). But here, since there are a lot of samples we want to actually overlap groups of samples. Running the following command will perform pairwise overlap comparison between groups of samples with different `tissue` and `condition` values.
 
 ```shell
-> mixcr postanalysis overlap -f \
-   --factor-by tissue,condition \
-   --metadata metadata.tsv \
-   --default-downsampling count-reads-auto \
-   --default-weight-function read \
-   --only-productive \
-   --tables postanalysis/postanalysis.overlap.tsv \
-   --preproc-tables postanalysis/preproc.overlap.tsv \
-   results/*.clns \
-   postanalysisls /overlap.tissue_condition.json.gz
+--8<-- "generic-multiplex-bcr/scripts/180-pa-overlap.sh"
 ```
 
 `--factor-by`
@@ -544,32 +431,16 @@ overlap.tissue_condition.json.gz
 
 The tabular output for example for F2 metric will look like:
 
-||LN,control|BM,4T1|BM,control|DLN,4T1|Blood,4T1|Blood,control|Tumor,4T1|
-|-|----------|------|----------|-------|---------|-------------|---------|
-|**LN,control**|1.0|0.013774364765374518|0.04650437588957222|0.014099278585204775|0.031036354127937787|0.027203139358090662|0.010163687504766344|
-|**BM,4T1**|0.013774364765374518|1.0|0.05529474567524548|0.04405383350942532|0.10645680248929848|0.07417602888238424|0.09466939004888049|
-|**BM,control**|0.04650437588957222|0.05529474567524548|1.0|0.03286381709464843|0.233349361966603|0.11870207376989239|0.06314011150401469|
-|**DLN,4T1**|0.014099278585204775|0.04405383350942532|0.03286381709464843|1.0|0.1768279650269904|0.0188038306990065|0.10982393111366022|
-|**Blood,4T1**|0.031036354127937787|0.10645680248929848|0.233349361966603|0.1768279650269904|1.0|0.0634481121480744|0.13415831269714423|
-|**Blood,control**|0.027203139358090662|0.07417602888238424|0.11870207376989239|0.0188038306990065|0.0634481121480744|1.0|0.03867881035646659|
-|**Tumor,4T1**|0.010163687504766344|0.09466939004888049|0.06314011150401469|0.10982393111366022|0.13415831269714423|0.03867881035646659|1.0|
+{{ read_csv('docs/mixcr/guides/generic-multiplex-bcr/figs/postanalysis.overlap.F2Index.IGH.tsv', engine='python', sep='\t') }}
 
 Every overlap metric is also possible to present in a graphical format:
 
 ```shell
-> mixcr exportPlots overlap \
-    --chains IGH \
-    --palette density \
-    --metric f2Index \
-    postanalysis/overlap.tissue_condition.json.gz \
-    overlap.time_marker.pdf
+--8<-- "generic-multiplex-bcr/scripts/190-pa-overlap-plot-f2.sh"
 ```
-
 For list of available metrics see [`mixcr exportPlots overlap`](../reference/mixcr-exportPlots.md#overlap)
 
-<figure markdown>
-![overlap.tissue_condition.IGH.svg](generic-multiplex-bcr/overlap.tissue_condition.IGH.svg)
-</figure>
+![overlap.tissue_condition.IGH.svg](generic-multiplex-bcr/figs/overlap.tissue_condition.IGH.svg)
 
 For further details see [overlap postanalysis reference](../reference/mixcr-exportPlots.md).
 

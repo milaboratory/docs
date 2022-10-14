@@ -44,11 +44,10 @@ mice_tumor_1.vdjca
 # alignments with refined UMI barcode sequences 
 mice_tumor_1.refined.vdjca
 # TRA, TRB CDR3 clonotypes (highly compressed binary file)
-FebControl1.clns
+mice_tumor_1.clns
 # TRA,TRB CDR3 clonotypes exported in tab-delimited txt
-mice_tumor_1.clonotypes.IGH.tsv
-mice_tumor_1.clonotypes.IGK.tsv
-mice_tumor_1.clonotypes.IGL.tsv
+mice_tumor_1.clonotypes.TRA.tsv
+mice_tumor_1.clonotypes.TRB.tsv
 ```
 
 While `.clns` file holds all data and is used for downstream analysis using [`mixcr postanalisis`](../reference/mixcr-postanalysis.md), the output `.txt` clonotype table will contain exhaustive information about each clonotype as well:
@@ -102,7 +101,7 @@ Option `--report` is specified here explicitly.
 [Corrects](../reference/mixcr-refineTagsAndSort.md) sequencing and PCR errors _inside_ barcode sequences. This step does extremely important job by correcting artificial diversity caused by errors in barcodes. In the considered example project it corrects only sequences of UMIs.
 
 ```shell
---8<-- "takara-hsa-bcr/scripts/045-upstream-refineTagsAndSort.sh"
+--8<-- "qiaseq-tcr/scripts/045-upstream-refineTagsAndSort.sh"
 ```
 
 #### `assemble`

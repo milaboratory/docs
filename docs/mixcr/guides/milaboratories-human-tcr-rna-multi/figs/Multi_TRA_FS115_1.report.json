@@ -1,0 +1,562 @@
+{
+  "align": {
+    "type": "alignerReport",
+    "commandLine": "--report results/Multi_TRA_FS115_1.align.report.txt --json-report results/Multi_TRA_FS115_1.align.report.json --preset milab-human-tcr-rna-multiplex-cdr3 /raw/2s3/milab-tcr-mulriplex/Multi_TRA_FS115_1_S149_R1_001.fastq.gz /raw/2s3/milab-tcr-mulriplex/Multi_TRA_FS115_1_S149_R2_001.fastq.gz results/Multi_TRA_FS115_1.vdjca",
+    "inputFiles": [
+      "/raw/2s3/milab-tcr-mulriplex/Multi_TRA_FS115_1_S149_R1_001.fastq.gz",
+      "/raw/2s3/milab-tcr-mulriplex/Multi_TRA_FS115_1_S149_R2_001.fastq.gz"
+    ],
+    "outputFiles": [
+      "results/Multi_TRA_FS115_1.vdjca"
+    ],
+    "version": "4.0.0-432-protocols; built=Tue Oct 11 09:48:35 CEST 2022; rev=2b3b93fc41; lib=repseqio.v2.0",
+    "trimmingReport": null,
+    "totalReadsProcessed": 3567679,
+    "aligned": 3448515,
+    "notAligned": 119164,
+    "notAlignedReasons": {
+      "LowTotalScore": 157,
+      "NoVHits": 24752,
+      "NoJHits": 62293,
+      "NoBarcode": 17430,
+      "NoCDR3Parts": 0,
+      "VAndJOnDifferentTargets": 11677,
+      "NoHits": 2855
+    },
+    "chimeras": 4,
+    "overlapped": 3272356,
+    "alignmentAidedOverlaps": 3992,
+    "overlappedAligned": 3218859,
+    "overlappedNotAligned": 53497,
+    "pairedEndAlignmentConflicts": 80984,
+    "vChimeras": 57,
+    "jChimeras": 2004,
+    "chainUsage": {
+      "type": "chainUsage",
+      "chimeras": 4,
+      "total": 3448515,
+      "chains": {
+        "TRA": {
+          "total": 3448272,
+          "nonFunctional": 355157,
+          "isOOF": 319826,
+          "hasStops": 35331
+        },
+        "TRB": {
+          "total": 111,
+          "nonFunctional": 20,
+          "isOOF": 6,
+          "hasStops": 14
+        },
+        "TRD": {
+          "total": 128,
+          "nonFunctional": 31,
+          "isOOF": 30,
+          "hasStops": 1
+        }
+      }
+    },
+    "realignedWithForcedNonFloatingBound": 563770,
+    "realignedWithForcedNonFloatingRightBoundInLeftRead": 43576,
+    "realignedWithForcedNonFloatingLeftBoundInRightRead": 43576,
+    "noCDR3PartsAlignments": 1211,
+    "partialAlignments": 34409,
+    "tagParsingReport": {
+      "total": 3567679,
+      "matched": 3550249,
+      "totalBitCost": 595287.5547334387,
+      "projections": {
+        "1,2": 3550249
+      },
+      "detailedReport": [
+        {
+          "nested": {
+            "1,2": {
+              "variantId": 0,
+              "nested": [
+                [
+                  {
+                    "positionDistributions": {
+                      "UMI:Left": {
+                        "17": 982994,
+                        "18": 1232085,
+                        "19": 1335170
+                      },
+                      "UMI:Right": {
+                        "32": 1232085,
+                        "33": 1335170,
+                        "31": 982994
+                      },
+                      "R1:Left": {
+                        "52": 982994,
+                        "53": 1232085,
+                        "54": 1335170
+                      },
+                      "R1:Right": {
+                        "128": 199,
+                        "129": 217,
+                        "130": 56,
+                        "131": 45,
+                        "132": 304,
+                        "133": 556,
+                        "134": 1335,
+                        "135": 1162,
+                        "136": 1327,
+                        "137": 493,
+                        "138": 640,
+                        "139": 668,
+                        "140": 639,
+                        "141": 1721,
+                        "142": 2101,
+                        "143": 2310,
+                        "144": 1097,
+                        "145": 17799,
+                        "146": 200055,
+                        "147": 659338,
+                        "148": 1760294,
+                        "149": 874942,
+                        "52": 1,
+                        "53": 1,
+                        "54": 4,
+                        "55": 13,
+                        "56": 18,
+                        "58": 13,
+                        "59": 12,
+                        "60": 12,
+                        "66": 5,
+                        "67": 11,
+                        "68": 31,
+                        "69": 31,
+                        "70": 1,
+                        "71": 5,
+                        "72": 6,
+                        "73": 39,
+                        "74": 451,
+                        "75": 685,
+                        "76": 811,
+                        "77": 200,
+                        "78": 11,
+                        "79": 37,
+                        "80": 64,
+                        "81": 45,
+                        "82": 8,
+                        "83": 13,
+                        "84": 27,
+                        "85": 26,
+                        "86": 142,
+                        "87": 185,
+                        "88": 177,
+                        "89": 26,
+                        "90": 26,
+                        "91": 50,
+                        "92": 152,
+                        "93": 222,
+                        "94": 248,
+                        "95": 26,
+                        "96": 4,
+                        "97": 28,
+                        "98": 239,
+                        "99": 1421,
+                        "100": 2175,
+                        "101": 5016,
+                        "102": 4388,
+                        "103": 4156,
+                        "104": 127,
+                        "105": 22,
+                        "106": 37,
+                        "107": 38,
+                        "108": 36,
+                        "109": 20,
+                        "110": 1,
+                        "111": 5,
+                        "113": 1,
+                        "114": 32,
+                        "115": 27,
+                        "116": 35,
+                        "117": 8,
+                        "118": 15,
+                        "119": 224,
+                        "120": 266,
+                        "121": 266,
+                        "122": 35,
+                        "123": 29,
+                        "124": 114,
+                        "125": 104,
+                        "126": 121,
+                        "127": 126
+                      }
+                    },
+                    "lengthDistributions": {
+                      "UMI": {
+                        "14": 3550249
+                      },
+                      "R1": {
+                        "0": 1,
+                        "1": 1,
+                        "2": 32,
+                        "3": 1,
+                        "4": 4,
+                        "5": 4,
+                        "6": 31,
+                        "14": 11,
+                        "15": 66,
+                        "16": 1,
+                        "17": 1,
+                        "18": 2,
+                        "19": 10,
+                        "20": 8,
+                        "21": 119,
+                        "22": 1522,
+                        "23": 528,
+                        "24": 3,
+                        "25": 17,
+                        "26": 34,
+                        "27": 110,
+                        "29": 1,
+                        "30": 44,
+                        "31": 1,
+                        "32": 8,
+                        "33": 65,
+                        "34": 453,
+                        "35": 7,
+                        "36": 9,
+                        "37": 78,
+                        "38": 8,
+                        "39": 36,
+                        "40": 558,
+                        "41": 59,
+                        "42": 2,
+                        "43": 3,
+                        "44": 17,
+                        "45": 87,
+                        "46": 658,
+                        "47": 4287,
+                        "48": 1740,
+                        "49": 10472,
+                        "50": 265,
+                        "51": 28,
+                        "52": 29,
+                        "53": 17,
+                        "54": 58,
+                        "55": 46,
+                        "57": 5,
+                        "58": 1,
+                        "59": 1,
+                        "61": 1,
+                        "62": 86,
+                        "63": 12,
+                        "64": 3,
+                        "65": 6,
+                        "66": 47,
+                        "67": 714,
+                        "68": 10,
+                        "69": 5,
+                        "70": 81,
+                        "71": 19,
+                        "72": 273,
+                        "73": 11,
+                        "74": 60,
+                        "75": 373,
+                        "76": 164,
+                        "77": 14,
+                        "78": 21,
+                        "79": 91,
+                        "80": 1196,
+                        "81": 187,
+                        "82": 2947,
+                        "83": 194,
+                        "84": 543,
+                        "85": 939,
+                        "86": 292,
+                        "87": 719,
+                        "88": 984,
+                        "89": 4240,
+                        "90": 1525,
+                        "91": 14789,
+                        "92": 33248,
+                        "93": 93956,
+                        "94": 1523494,
+                        "95": 951209,
+                        "96": 509864,
+                        "97": 386383
+                      }
+                    },
+                    "costDistributions": {
+                      "0": 3433842,
+                      "5": 109648,
+                      "10": 6759
+                    },
+                    "variantDistribution": {
+                      "0": 3550249
+                    }
+                  }
+                ],
+                [
+                  {
+                    "positionDistributions": {
+                      "R2:Left": {
+                        "20": 3550249
+                      },
+                      "R2:Right": {
+                        "144": 422,
+                        "145": 3921,
+                        "146": 137570,
+                        "147": 149168,
+                        "35": 1,
+                        "148": 1098902,
+                        "149": 2160257,
+                        "133": 1,
+                        "138": 2,
+                        "139": 2,
+                        "142": 2,
+                        "143": 1
+                      }
+                    },
+                    "lengthDistributions": {
+                      "R2": {
+                        "128": 1098902,
+                        "129": 2160257,
+                        "15": 1,
+                        "113": 1,
+                        "118": 2,
+                        "119": 2,
+                        "122": 2,
+                        "123": 1,
+                        "124": 422,
+                        "125": 3921,
+                        "126": 137570,
+                        "127": 149168
+                      }
+                    },
+                    "costDistributions": {
+                      "0": 3550249
+                    },
+                    "variantDistribution": {
+                      "0": 3550249
+                    }
+                  }
+                ]
+              ],
+              "costDistributions": {
+                "0": 3433842,
+                "5": 109648,
+                "10": 6759
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "refineTagsAndSort": {
+    "type": "refineTagsAndSort",
+    "commandLine": "--report results/Multi_TRA_FS115_1.refine.report.txt --json-report results/Multi_TRA_FS115_1.refine.report.json results/Multi_TRA_FS115_1.vdjca results/Multi_TRA_FS115_1.refined.vdjca",
+    "inputFiles": [
+      "results/Multi_TRA_FS115_1.vdjca"
+    ],
+    "outputFiles": [
+      "results/Multi_TRA_FS115_1.refined.vdjca"
+    ],
+    "version": "4.0.0-432-protocols; built=Tue Oct 11 09:48:35 CEST 2022; rev=2b3b93fc41; lib=repseqio.v2.0",
+    "correctionReport": {
+      "inputRecords": 3448498,
+      "outputRecords": 3302573,
+      "steps": [
+        {
+          "tagName": "UMI",
+          "inputGroups": 1,
+          "inputDiversity": 266703,
+          "inputCount": 3448498,
+          "coreDiversity": 266674,
+          "coreCount": 3448469,
+          "directlyCorrectedDiversity": 129642,
+          "directlyCorrectedCount": 144398,
+          "filteredDiversity": 1,
+          "filteredCount": 1,
+          "recursivelyCorrected": 6799,
+          "diversityFilteredByWhitelist": 0,
+          "outputDiversity": 137060,
+          "outputCount": 3448497
+        }
+      ],
+      "filterReport": {
+        "type": "filter_groups_report",
+        "groupingKeys": [
+          "UMI"
+        ],
+        "numberOfGroups": 137060,
+        "numberOfGroupsAccepted": 53937,
+        "totalWeight": 3448497,
+        "totalWeightAccepted": 3302573,
+        "operatorReports": [
+          {
+            "operatorReport": {
+              "type": "generic_hist_report",
+              "threshold": 8
+            },
+            "metricHists": [
+              {
+                "bins": [
+                  {
+                    "from": 1,
+                    "to": 1.5848931924611136,
+                    "weight": 58017
+                  },
+                  {
+                    "from": 1.5848931924611136,
+                    "to": 2.51188643150958,
+                    "weight": 9696
+                  },
+                  {
+                    "from": 2.51188643150958,
+                    "to": 3.981071705534973,
+                    "weight": 5234
+                  },
+                  {
+                    "from": 3.981071705534973,
+                    "to": 6.309573444801933,
+                    "weight": 8426
+                  },
+                  {
+                    "from": 6.309573444801933,
+                    "to": 10,
+                    "weight": 4559
+                  },
+                  {
+                    "from": 10,
+                    "to": 15.848931924611142,
+                    "weight": 6605
+                  },
+                  {
+                    "from": 15.848931924611142,
+                    "to": 25.11886431509581,
+                    "weight": 8135
+                  },
+                  {
+                    "from": 25.11886431509581,
+                    "to": 39.810717055349734,
+                    "weight": 8412
+                  },
+                  {
+                    "from": 39.810717055349734,
+                    "to": 63.09573444801933,
+                    "weight": 10494
+                  },
+                  {
+                    "from": 63.09573444801933,
+                    "to": 100,
+                    "weight": 7942
+                  },
+                  {
+                    "from": 100,
+                    "to": 158.48931924611142,
+                    "weight": 6323
+                  },
+                  {
+                    "from": 158.48931924611142,
+                    "to": 251.18864315095823,
+                    "weight": 2185
+                  },
+                  {
+                    "from": 251.18864315095823,
+                    "to": 398.1071705534973,
+                    "weight": 558
+                  },
+                  {
+                    "from": 398.1071705534973,
+                    "to": 630.9573444801937,
+                    "weight": 472
+                  },
+                  {
+                    "from": 630.9573444801937,
+                    "to": 1000,
+                    "weight": 2
+                  }
+                ],
+                "collectionSpec": {
+                  "log": true,
+                  "binNumber": 0,
+                  "minBinWidth": 0.2
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "assemble": {
+    "type": "assemblerReport",
+    "commandLine": "--report results/Multi_TRA_FS115_1.assemble.report.txt --json-report results/Multi_TRA_FS115_1.assemble.report.json results/Multi_TRA_FS115_1.refined.vdjca results/Multi_TRA_FS115_1.clns",
+    "inputFiles": [
+      "results/Multi_TRA_FS115_1.refined.vdjca"
+    ],
+    "outputFiles": [
+      "results/Multi_TRA_FS115_1.clns"
+    ],
+    "version": "4.0.0-432-protocols; built=Tue Oct 11 09:48:35 CEST 2022; rev=2b3b93fc41; lib=repseqio.v2.0",
+    "preCloneAssemblerReport": {
+      "type": "preCloneAssemblerReport",
+      "inputGroups": 53937,
+      "inputAlignments": 3302573,
+      "clonotypes": 50730,
+      "clonotypesPerGroup": {
+        "0": 3239,
+        "1": 50558,
+        "2": 86
+      },
+      "coreAlignments": 2748073,
+      "discardedCoreAlignments": 504431,
+      "empiricallyAssignedAlignments": 8264,
+      "vjEmpiricallyAssignedAlignments": 0,
+      "umiEmpiricallyAssignedAlignments": 0,
+      "gatEmpiricallyAssignedAlignments": 8264,
+      "empiricalAssignmentConflicts": 0,
+      "unassignedAlignments": 545221,
+      "umiConflicts": 86,
+      "gatConflicts": 4,
+      "geneConflicts": {
+        "Variable": 3,
+        "Joining": 1
+      },
+      "coreClonotypesDroppedByTagSuffix": 0,
+      "coreAlignmentsDroppedByTagSuffix": 0
+    },
+    "totalReadsProcessed": 3567679,
+    "initialClonesCreated": 28046,
+    "readsDroppedNoTargetSequence": 50069,
+    "readsDroppedTooShortClonalSequence": 52,
+    "readsDroppedLowQuality": 0,
+    "coreReads": 2755073,
+    "readsDroppedFailedMapping": 1154,
+    "lowQualityRescued": 58,
+    "clonesClustered": 88,
+    "readsClustered": 4756,
+    "clones": 27957,
+    "clonesDroppedAsLowQuality": 0,
+    "clonesPreClustered": 1,
+    "readsPreClustered": 30,
+    "readsInClones": 2750375,
+    "readsInClonesBeforeClustering": 2755131,
+    "readsDroppedWithLowQualityClones": 0,
+    "clonalChainUsage": {
+      "type": "chainUsage",
+      "chimeras": 0,
+      "total": 27957,
+      "chains": {
+        "TRA": {
+          "total": 27956,
+          "nonFunctional": 2833,
+          "isOOF": 2717,
+          "hasStops": 116
+        },
+        "TRD": {
+          "total": 1,
+          "nonFunctional": 1,
+          "isOOF": 1,
+          "hasStops": 0
+        }
+      }
+    }
+  }
+}
