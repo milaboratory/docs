@@ -501,3 +501,14 @@ mixcr analyze 10x-vdj-bcr \
 
 
 See [this tutorial](../guides/milaboratories-human-tcr-rna-multi.md) for the under-the-hood details.
+
+
+## Publications
+
+### Mikelov et al, 2021
+==`mikelov-et-al-2021`==
+·
+[:octicons-link-16: Publication](https://www.biorxiv.org/content/10.1101/2021.12.30.474135v2)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/custom.yaml)
+
