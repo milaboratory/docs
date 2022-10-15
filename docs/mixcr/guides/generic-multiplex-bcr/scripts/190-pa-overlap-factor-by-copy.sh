@@ -1,0 +1,1 @@
+cp pa/o.tm.F1Index.TRA.tsv figs/o.tm.F1Index.TRA.tsv

@@ -7,6 +7,7 @@ MiXCR has a built-in set of reference libraries that were carefully created by o
 Compiled IMGT library file for MiXCR can be downloaded at
 [https://github.com/repseqio/library-imgt/releases](https://github.com/repseqio/library-imgt/releases).
 In order to use the library put the `.json` library file to one of the following locations:
+
 - `~/.mixcr/libraries` folder
 - the directory from where mixcr is started
 - libraries/ subfolder of mixcr installation folder

@@ -8,36 +8,21 @@ Chen JS, Chow RD, Song E, Mao T, Israelow B, Kamath K, Bozekowski J, Haynes WA, 
 
 The experiment includes 8 mice that express angiotensin-converting enzyme 2 (ACE2) in epithelial cells thus  vulnerable to SARS-CoV-2.  4 K18-hACE2 Bcl6fl/fl mice and 4 Bcl6fl/flCd4Cre (T~FH~ cell deficiency model) mice. Mice were infected intranasally with SARS-CoV-2 (isolate USA-WA1/2020) and 14 days post-infection S-specific plasmablasts were isolated. RNA from spike-specific B cells was isolated using the RNeasy Plus Micro Kit (Qiagen) following the manufacturer’s instructions. BCR libraries were prepared using the NEBNext Single Cell/Low Input cDNA Synthesis & Amplification Module (New England Biolabs (NEB), E6421) and NEBNext Immune Sequencing Kit (NEB, E6330), with additional reagents provided by NEB to integrate the two kits. High-quality RNA (1 to 20 ng) with RNA integrity number ≥ 8 was used as input. Libraries were analyzed by Bioanalyzer High Sensitivity DNA assay, pooled in equal amounts with PhiX spike-in, and sequenced on an Illumina MiSeq using the V3 kit, with 325 base pairs (bp) for read 1 and 275 bp for read 2.
 
-<figure markdown>
-![PRJNA699402-library-structure.svg](generic-multiplex-bcr/PRJNA699402-library-structure.svg)
-</figure>
+![PRJNA699402-library-structure.svg](generic-umi-bcr/figs/library-structure.svg)
 
-All data may be downloaded directly from SRA using e.g. [SRA Explorer](https://sra-explorer.info) and PRJNA780318 project id
-:
-??? tip "Use this script to download the full data set with the proper filenames for the tutorial:"
-    ```shell
-    #!/usr/bin/env bash
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/022/SRR16943422/SRR16943422_1.fastq.gz -o mouse_3_Cd4Cre_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/022/SRR16943422/SRR16943422_2.fastq.gz -o mouse_3_Cd4Cre_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/025/SRR16943425/SRR16943425_1.fastq.gz -o mouse_4_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/025/SRR16943425/SRR16943425_2.fastq.gz -o mouse_4_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/028/SRR16943428/SRR16943428_1.fastq.gz -o mouse_1_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/028/SRR16943428/SRR16943428_2.fastq.gz -o mouse_1_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/021/SRR16943421/SRR16943421_1.fastq.gz -o mouse_4_Cd4Cre_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/021/SRR16943421/SRR16943421_2.fastq.gz -o mouse_4_Cd4Cre_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/023/SRR16943423/SRR16943423_1.fastq.gz -o mouse_2_Cd4Cre_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/023/SRR16943423/SRR16943423_2.fastq.gz -o mouse_2_Cd4Cre_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/027/SRR16943427/SRR16943427_1.fastq.gz -o mouse_2_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/027/SRR16943427/SRR16943427_2.fastq.gz -o mouse_2_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/024/SRR16943424/SRR16943424_1.fastq.gz -o mouse_1_Cd4Cre_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/024/SRR16943424/SRR16943424_2.fastq.gz -o mouse_1_Cd4Cre_R2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/026/SRR16943426/SRR16943426_1.fastq.gz -o mouse_3_R1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR169/026/SRR16943426/SRR16943426_2.fastq.gz -o mouse_3_R2.fastq.gz
-    ```
+All data may be downloaded using the script bellow.
+
+??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
+```shell title="download.sh"
+--8<-- "milaboratories-human-tcr-rna-multi/scripts/010-download-aria2c.sh"
+```
+```shell title="download-list.txt"
+--8<-- "milaboratories-human-tcr-rna-multi/scripts/download-list.txt"
+```
 
 ## One command Solution
 
-The easiest way to obtain clonotype tables for this type of data is to use a universal [`mixcr analyze`](../reference/mixcr-analyze.md) command.
+The data was obtained using NEBNext Immune Sequencing Kit for BCR repertoire. The easiest way to perform upstream analysis for this data would be to use a dedicated [mixcr preset](../reference/overview-built-in-presets.md) `nebnext-mouse-bcr-full-length` with [`mixcr analyze`](../reference/mixcr-analyze.md) command.
 
 The exact command for a single sample you can see bellow:
 

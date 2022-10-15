@@ -1,6 +1,6 @@
 mixcr align \
     --species hsa \
-    -p kAligner2_4.0 \
+    -p default_4.0 \
 	-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
 	-OvParameters.parameters.floatingLeftBound=false \
 	-OjParameters.parameters.floatingRightBound=false \
