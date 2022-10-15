@@ -53,6 +53,11 @@ plugins:
   - table-reader
 
 markdown_extensions:
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
@@ -131,8 +136,8 @@ nav:
       - 'Overview':
         - 'Analysis overview': mixcr/reference/overview-analysis-overview.md
         - 'Presets': mixcr/reference/overview-presets.md
+        - 'Mix-in options list': mixcr/reference/overview-mixins-list.md
         - 'Built-in presets': mixcr/reference/overview-built-in-presets.md
-        - 'Mixins list': mixcr/reference/overview-mixins-list.md
       - 'MiXCR':
         - 'analyze': mixcr/reference/mixcr-analyze.md
         - 'align': mixcr/reference/mixcr-align.md
@@ -153,6 +158,10 @@ nav:
         - 'exportPreprocTables': mixcr/reference/mixcr-exportPreprocTables.md
         - 'exportClonesOverlap': mixcr/reference/mixcr-exportClonesOverlap.md
         - 'overlapScatterPlot': mixcr/reference/mixcr-overlapScatterPlot.md
+        - 'findAlleles': mixcr/reference/mixcr-findAlleles.md
+        - 'findShmTrees': mixcr/reference/mixcr-findShmTrees.md
+
+
       - 'Reports':
         - 'mixcr align': mixcr/reference/report-align.md
         - 'mixcr refineTagsAndSort': mixcr/reference/report-refineTagsAndSort.md

@@ -589,3 +589,7 @@ svg.magnify {
 .badge {
     height: 16px;
 }
+
+.align-left {
+    text-align: left !important;
+}

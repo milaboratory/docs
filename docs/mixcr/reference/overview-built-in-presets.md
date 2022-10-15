@@ -2,58 +2,227 @@
 
 MiXCR provides a comprehensive list of built-in presets for many of available commercial kits, data types and library preparation protocols.
 
-Bellow you caan find an example command showing how to use presets:
-
+Preset can be used to run the whole upstream analysis pipeline with [`analyze`](mixcr-analyze.md) command. For example:
 ```shell
 mixcr analyze milab-human-bcr-multiplex-cdr3 \
-      +dontSeparateBy C \
+    --dont-separate-by C \
       sample_R1.fastq.gz \
       sample_R2.fastq.gz \
       sample_result
 ```
-,where:
-- `milab-human-bcr-multiplex-cdr3` is a preset name
-- `+dontSeparateBy C` is an optional mix-in. 
+runs upstream analysis for samples obtained using Milaboratories Human BCR kit with additional optional config `--dont-separate-by C`.
 
-Bellow you will find a great variety of presets dedicated to different types of input data or to the particular commercially available kit that was used in experiment. Most of the presets do not require any additional arguments and will work out-of-the-box.
+Bellow you will find a great variety of presets dedicated to different types of input data or to the particular commercially available kits. Most of the presets do not require any additional arguments and will work out-of-the-box.
+
 
 ## Protocols
 
-## Kits
+### Generic TCR amplicon
+==`generic-tcr-amplicon`==
+·
+==`generic-tcr-amplicon-umi`==
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/general-amplicon.yaml)
+
+Generic TCR amplicon library with (`-umi`) or without UMIs. Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):
+
+
+: :fontawesome-solid-puzzle-piece: Species;
+: :fontawesome-solid-puzzle-piece: Material type;
+: :fontawesome-solid-puzzle-piece: Tag pattern (for `generic-tcr-amplicon-umi`);
+: :fontawesome-solid-puzzle-piece: Left alignment boundary (5'-end);
+: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end).
+
+The following example runs upstream analysis for some bulk mouse 5'RACE TCR RNA library with 3'-end primers located on C-gene:
+```shell
+mixcr analyze generic-tcr-amplicon \
+    --species mmu \
+    --rna \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+The following [mix-in options](overview-mixins-list.md) are used:
+
+`--species mmu`
+: specify _Mus Musculus_ species
+
+`--rna`
+: set RNA as starting material (exon regions only will be used for alignments)
+
+`--rigid-left-alignment-boundary`
+: use global _left alignment boundary_ (5'RACE)
+
+`--floating-right-alignment-boundary C`
+: use local _right alignment boundary_ on C-segment as C-primers are used
+
+### Generic BCR amplicon
+==`generic-bcr-amplicon`==
+·
+==`generic-bcr-amplicon-umi`==
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/general-amplicon.yaml)
+
+Generic BCR amplicon library with (`-umi`) or without UMIs. Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):
+
+
+: :fontawesome-solid-puzzle-piece: Species;
+: :fontawesome-solid-puzzle-piece: Material type;
+: :fontawesome-solid-puzzle-piece: Tag pattern (for `generic-bcr-amplicon-umi`);
+: :fontawesome-solid-puzzle-piece: Left alignment boundary (5'-end);
+: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end).
+
+The following example runs upstream analysis for some full-length human BCR RNA multiplex library with 3'-end primers located on C-gene and UMIs spanning first 12 letters of 5'-end, followed by 4 letters of a fixed linker sequence:
+```shell
+mixcr analyze generic-bcr-umi-amplicon \
+    --species hsa \
+    --rna \
+    --tag-pattern "^(R1:*) \ ^(UMI:N{12})GTAC(R2:*)" \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+The following [mix-in options](overview-mixins-list.md) are used:
+
+`--species hsa`
+: specify _Homo Sapiens_ species
+
+`--rna`
+: set RNA as starting material (exon regions only will be used for alignments)
+
+`--tag-pattern "^(R1:*) \ ^(UMI:N{12})GTAC(R2:*)"`
+: UMI [barcode pattern](ref-tag-pattern.md)
+
+`--rigid-left-alignment-boundary`
+: use global _left alignment boundary_ as our tag pattern removes UMIs and linked sequensed from 5'-end of reads
+
+`--floating-right-alignment-boundary C`
+: use local _right alignment boundary_ on C-segment as C-primers are used
+
+
+### RNA-Seq data
+==`rnaseq-cdr3`==
+·
+==`rnaseq-full-length`==
+·
+[:octicons-link-16: Publication](https://www.nature.com/articles/nbt.3979)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/rnaseq.yaml)
+
+Non-enriched fragmented (shotgun) RNA-Seq data. Preset `rnaseq-cdr3` is used to assemble CDR3 clonotypes, while `rnaseq-full-length` additionally runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J-C receptor rearrangement sequence. 
+
+![](../guides/rnaseq/figs/library-structure.svg)
+
+Required configs that must be specified with corresponding mix-in options:
+
+
+: :fontawesome-solid-puzzle-piece: Species; <p>
+
+Example:
+```shell
+mixcr analyze rnaseq-full-length \
+    --species hsa \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+### Biomed2
+==`biomed2-human-bcr-cdr3`==
+·
+==`biomed2-human-bcr-full-length`==
+·
+[:octicons-link-16: Publication](https://www.jmdjournal.org/article/S1525-1578(10)60580-6/fulltext)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/biomed2.yaml)
+
+Biomed2 FR1-FR4 human multiplex BCR primer set. `-cdr3` presets used to extract CDR3 clonotypes while `-full-length` full VDJ region, starting from FR1.
+
+![](pics/biomed2-human-bcr-kit.svg)
+
+Example:
+```shell
+mixcr analyze biomed2-human-bcr-full-length \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+
+
+
+
+
+
+
+## Commercial kits
 
 ### MiLaboratories
 
-#### [HUMAN IG RNA MULTIPLEX](https://milaboratories.com/human-ig-rna-multiplex-kit)
+#### Human Ig RNA Multiplex
+
+==`milab-human-bcr-multiplex-full-length`==
+·
+==`milab-human-bcr-multiplex-cdr3`==
+·
+[:octicons-link-16: Link](https://milaboratories.com/human-ig-rna-multiplex-kit)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/milab.yaml)
+
+Allows to obtain full length IG heavy and light chain repertoires with UMI-based accuracy. Discriminates all IGH isotypes including IgM, IgD, IgG3, IgG1, IgA1, IgG2, IgG4, IgE, and IgA2. `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
 
 ![](pics/milab-multiplex-bcr.svg)
 
-Preset name: **`milab-human-bcr-multiplex-cdr3`**
+By default, separates clonotypes by isotype which may be changed using `--dont-separate-by C` [mix-in option](overview-mixins-list.md).
 
-- discriminates all IGH isotypes including IgM, IgD, IgG3, IgG1, IgA1, IgG2, IgG4, IgE, and IgA2
-- assemble clonotypes by `CDR3` sequence
-- UMI-depended error-correction
-- separate clones by isotype  (C-gene) by default. To change this behavior use `+dontSeparateBy C` mix-in.
+Example:
+```shell
+mixcr analyze milab-human-bcr-multiplex-full-length \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
 
-Preset name: **`milab-human-bcr-multiplex-full-length`**
 
-- discriminates all IGH isotypes including IgM, IgD, IgG3, IgG1, IgA1, IgG2, IgG4, IgE, and IgA2
-- assemble clonotypes by `VDJ` region.
-- UMI-depended error-correction
-- separate clones by isotype (C-gene) by default. To change this behavior use `+dontSeparateBy C` mix-in.
 
-#### [HUMAN TCR RNA MULTIPLEX KIT](https://milaboratories.com/human-tcr-rna-multiplex-kit)
+
+
+
+
+
+
+#### Human TCR RNA Multiplex
+
+==`milab-human-tcr-rna-multiplex-cdr3`==
+·
+[:octicons-link-16: Link](https://milaboratories.com/human-tcr-rna-multiplex-kit)
+·
+[:octicons-mortar-board-16: Tutorial](../guides/milaboratories-human-tcr-rna-multi.md)
+
+Allows to obtain human TCR alpha and beta CDR3 repertoires for different types of available RNA material, with high sensitivity and UMI-based accuracy.
 
 ![](pics/milab-multiplex-tcr.svg)
 
-This kit allows to obtain human TCR alpha and beta repertoires for different types of available RNA material, with high sensitivity and UMI-based accuracy.
+Example:
+```shell
+mixcr analyze milab-human-tcr-rna-multiplex-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
 
-Preset name: **`milab-human-tcr-rna-multiplex-cdr3`**
-- assemble clonotypes by `CDR3` sequence
-- UMI-depended error-correction
 
-See [this tutorial](../guides/milaboratories-human-tcr-rna-multi.md) for the under-the-hood details.
 
-#### [HUMAN TCR RNA KIT](https://milaboratories.com/human-tcr-rna-kit)
+
+
+
+
+
+#### [Human TCR RNA](https://milaboratories.com/human-tcr-rna-kit)
 
 ![](pics/milab-race-tcr.svg)
 
@@ -68,7 +237,7 @@ Preset name: **`milab-human-tcr-rna-race-full-length`**
 - UMI-depended error-correction
 
 
-#### [HUMAN TCR DNA MULTIPLEX KIT](https://milaboratories.com/human-tcr-dna-multiplex-kit)
+#### [Human TCR DNA Multiplex](https://milaboratories.com/human-tcr-dna-multiplex-kit)
 The kit allows to obtain TCR alpha and beta repertoires for different types of available DNA material, with the highest possible sensitivity.
 
 Preset name: **`milab-human-tcr-dna-multiplex-cdr3`**
@@ -78,7 +247,7 @@ Preset name: **`milab-human-tcr-dna-multiplex-cdr3`**
 
 #### [SMART-Seq Human BCR (with UMIs)](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/smart-seq-human-bcr-(with-umis)) & [SMARTer Human BCR IgG IgM H/K/L Profiling Kit](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/human-bcr-profiling-kit-for-illumina-sequencing)
 
-**SMART-Seq Human BCR (with UMIs)** provides a sensitive and reproducible solution for generating high-quality NGS libraries for profiling the human BCR repertoire. The kit leverages SMART (Switching Mechanism at 5' end of RNA Template) full-length cDNA synthesis technology and pairs NGS with a 5’-RACE approach to capture the complete V(D)J variable regions of all human B-cell receptor (BCR) heavy (IgG/M/D/A/E) and light (IgK/L) chains.
+**SMART-Seq Human BCR (with UMIs)** provides a sensitive and reproducible solution for generating high-quality NGS libraries for profiling the human BCR repertoire. The kit leverages SMART (Switching Mechanism at 5' end of RNA Template) full-length cDNA synthesis technology and pairs NGS with a 5’-RACE approach to capture the complete V(D)J variable regions of all human B-cell receptor (BCR) heavy (IgG/M/D/A/E) and light (IgK/L) chains.
 
 **SMARTer Human BCR IgG IgM H/K/L Profiling Kit** pairs 5' RACE with NGS technology to provide a sensitive, accurate, and optimized approach to BCR profiling from RNA input samples. The 5' RACE method reduces variability and allows for priming from the constant region of BCR heavy or light chains. This kit combines these benefits with gene-specific amplification to capture complete V(D)J variable regions of BCR transcripts and provide a highly sensitive and reproducible method for profiling B-cell repertoires.
 
@@ -222,7 +391,7 @@ Preset name: **`nebnext-mouse-tcr-full-length`**
 
 ### [AbHelix](https://abhelix.com/)
 
-#### BCR
+#### BCR kit
 
 ![](pics/ABHelix-bcr-kit.svg)
 
@@ -236,7 +405,7 @@ Preset name: **`abhelix-human-bcr-full-length`**
 
 - assemble clonotypes by `VDJ` sequence
 
-#### TCR
+#### TCR kit
 
 ![](pics/ABHelix-tcr-kit.svg)
 
@@ -247,21 +416,6 @@ Preset name: **`abhelix-human-tcr-cdr3`**
 Preset name: **`abhelix-human-tcr-full-length`**
 
 - assemble clonotypes by `VDJ` sequence
-
-### Biomed2
-
-#### FR1-FR4 Human Multiplex BCR Primer set
-
-![](pics/biomed2-human-bcr-kit.svg)
-
-Preset name: **`biomed2-human-bcr-cdr3`**
-
-- assemble clonotypes by `CDR3` sequence
-
-
-Preset name: **`biomed2-human-bcr-full-length`**
-
-- assemble clonotypes by `VDJ` region
 
 ### Qiagen
 
