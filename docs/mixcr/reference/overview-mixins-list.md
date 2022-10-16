@@ -12,11 +12,13 @@ The following mix-in options configure [`align`](mixcr-align.md) step.
 
 `--species`
 : ==:fontawesome-solid-puzzle-piece: Species== <p>
-  Set species from the reference library
+  Species (organism), as specified in library file or taxon id. 
+  
+  Possible values: hs, HomoSapiens, musmusculus, mmu, hsa, 9606, 10090 etc.
 
 `--tag-pattern`
 : ==:fontawesome-solid-puzzle-piece: Tag pattern== <p>
-Specify [tag pattern](ref-tag-pattern.md) for barcoded data.
+  Specify [tag pattern](ref-tag-pattern.md) for barcoded data.
 
 `--dna`
 : ==:fontawesome-solid-puzzle-piece: Material type== <p>
@@ -39,26 +41,26 @@ Specify [tag pattern](ref-tag-pattern.md) for barcoded data.
   Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use semi-local alignment at reads 3'-end. Typically used with J or C gene single primer / multiplex protocols, or if there are non-trimmed adapter sequences at 3'-end. Requires either gene type (`J` for J primers / `C` for C primers) or [anchor point](ref-gene-features.md) to be specified. In latter case MiXCR will additionally strip [feature to align](mixcr-align.md#gene-features-to-align) accordingly.
 
 
-`--rigid-right-alignment-boundary [<anchor_point>]`
+`--rigid-right-alignment-boundary [(<gene_type>|<anchor_point>)]`
 : ==:fontawesome-solid-puzzle-piece: Right alignment boundary== <p> 
-  Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use global alignment at reads 3'-end. Typically used for J-C intron single primer / multiplex protocols. Optional [anchor point](ref-gene-features.md) may be specified to instruct MiXCR where how to strip J or C [feature to align](mixcr-align.md#gene-features-to-align).
-
-`--keep-non-CDR3-alignments`
-: ==:fontawesome-solid-puzzle-piece: Debug== <p>
-  Preserve alignments that do not cover CDR3 region or cover it only partially in the `.vdjca` file. 
-
-`--drop-non-CDR3-alignments`
-: ==:fontawesome-solid-puzzle-piece: Debug== <p>
-  Drop all alignments that do not cover CDR3 region or cover it only partially.
+  Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use global alignment at reads 3'-end. Typically used for J-C intron single primer / multiplex protocols. Optional gene type (`J` for J primers / `C` for C primers) or [anchor point](ref-gene-features.md) may be specified to instruct MiXCR where how to strip J or C [feature to align](mixcr-align.md#gene-features-to-align).
 
 `--limit-input`
 : ==:fontawesome-solid-puzzle-piece: Debug== <p>
-  Limit number of input sequences.
+  Maximal number of reads to process.
 
 
 ### Clonotype assembly mix-in options
 
 The following mix-in options configure [`assemble`](mixcr-assemble.md) step.
+
+`--keep-non-CDR3-alignments`
+: ==:fontawesome-solid-puzzle-piece: Debug== <p>
+Preserve alignments that do not cover CDR3 region or cover it only partially in the `.vdjca` file.
+
+`--drop-non-CDR3-alignments`
+: ==:fontawesome-solid-puzzle-piece: Debug== <p>
+Drop all alignments that do not cover CDR3 region or cover it only partially.
 
 `--assemble-clonotypes-by <gene_features>`
 : Specify [gene features used to assemble clonotypes](mixcr-assemble.md#core-assembler-parameters). One may specify any custom [gene region](ref-gene-features.md) (e.g. `FR3+CDR3`); target clonal sequence can even be disjoint. Note that `assemblingFeatures` must cover CDR3.
@@ -87,16 +89,16 @@ The following mix-in options configure clonotype [`export`](mixcr-export.md) ste
 : Export nucleotide sequences only from covered region.
 
 `--prepend-export-clones-field <field> [<param>...]`
-: Add clones export column before other columns. First param is field name as it is in 'exportClones' command, left params are params of the field
+: Add clones export column before other columns. First param is field name as it is in `exportClones` command, left params are params of the field
 
 `--append-export-clones-field <field> [<param>...]`
-: Add clones export column after other columns. First param is field name as it is in 'exportClones' command, left params are params of the field
+: Add clones export column after other columns. First param is field name as it is in `exportClones` command, left params are params of the field
 
 `--prepend-export-alignments-field <field> [<param>...]`
-: Add clones export column before other columns. First param is field name as it is in 'exportAlignments' command, left params are params of the field
+: Add clones export column before other columns. First param is field name as it is in `exportAlignments` command, left params are params of the field
 
 `--append-export-alignments-field <field> [<param>...]`
-: Add clones export column after other columns. First param is field name as it is in 'exportAlignments' command, left params are params of the field
+: Add clones export column after other columns. First param is field name as it is in `exportAlignments` command, left params are params of the field
 
 ### Pipeline configuration mix-ins
 
