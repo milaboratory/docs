@@ -126,7 +126,7 @@ nav:
       - 'Analysis cases':
         - 'Targeted TCR UMI libraries': mixcr/guides/generic-umi-tcr.md
         - 'Targeted BCR Multiplex libraries': mixcr/guides/generic-multiplex-bcr.md
-#        - 'Targeted BCR UMI libraries': mixcr/guides/generic-umi-bcr.md
+        - 'Targeted BCR UMI libraries': mixcr/guides/generic-umi-bcr.md
         - 'RNA-Seq data' : mixcr/guides/rnaseq.md
       - 'Special guides':
         - 'Assembling custom reference library': mixcr/guides/create-custom-library.md

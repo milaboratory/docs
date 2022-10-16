@@ -4,7 +4,7 @@ mkdir -p results/
 
 ls raw/*_1* | \
 	parallel -j 4 \
-	'mixcr-presets/mixcr analyze local:bcr-amplicon -f \
+	'mixcr analyze bcr-amplicon -f \
 	+species mmu \
 	+rna \
 	+rigidLeftAlignmentBoundary \

@@ -89,7 +89,7 @@ P15-T0-TIGIT.report
 # raw alignments (highly compressed binary file)
 P15-T0-TIGIT.vdjca
 # alignments with corrected UMI barcode sequences 
-P15-T0-TIGIT.corrected.vdjca
+P15-T0-TIGIT.refined.vdjca
 # TCRα & TCRβ CDR3 clonotypes (highly compressed binary file)
 P15-T0-TIGIT.clns
 # TCRα & TCRβ CDR3 clonotypes exported in tab-delimited txt

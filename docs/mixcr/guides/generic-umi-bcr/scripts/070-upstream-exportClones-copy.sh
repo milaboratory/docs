@@ -1,0 +1,1 @@
+head -500 results/mouse_3_Cd4Cre.clones_IGH.tsv > figs/mouse_3_Cd4Cre.clones_IGH.tsv
