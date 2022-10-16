@@ -49,7 +49,7 @@ mixcr align -p <name>
 ```
 The command returns a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form using [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the alignment performance and quality of the library.
 
-Basic command line options are:
+Basic command line arguments are:
 
 `(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam))`
 : Two fastq files for paired reads or one file for single read data. Use {{n}} if you want to concatenate files from multiple lanes, like: my_file_L{{n}}_R1.fastq.gz my_file_L{{n}}_R2.fastq.gz

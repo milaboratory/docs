@@ -184,7 +184,7 @@ Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with assembly report.
 
 `-OassemblingFeatures=CDR3`
-: By default `takara-hsa-bcr-cdr3` preset assembles clones by `CDR3` sequence.
+: By default `nebnext-mouse-bcr-cdr3` preset assembles clones by `CDR3` sequence.
 
 `-separateByJ: true`
 : Separate clones with the same assembling feature, but different V-genes.

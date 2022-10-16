@@ -75,7 +75,7 @@ Alignment of raw sequencing reads against reference database of V-, D-, J- and C
 Option `--report` is specified here explicitly.
 
 `--species hsa`
-: determines the organism species (hsa for _Homo Sapiens_).
+: determines the organism species (hsa for _Homo Sapiens_). Note we choose Human because mice were humanized.
 
 `-p default_4.0`
 :  a default preset of MiXCR parameters which includes a dedicated TCR aligner.

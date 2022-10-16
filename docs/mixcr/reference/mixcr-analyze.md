@@ -34,7 +34,7 @@ mixcr analyze [--add-step <step>] [--remove-step <step>]
 
 Run full MiXCR pipeline for specific input.
 
-### Basic command line options are:
+### Basic command line arguments are:
 
 `<preset_name>`
 : Name of the analysis preset.
