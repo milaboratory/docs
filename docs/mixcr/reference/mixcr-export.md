@@ -33,7 +33,7 @@ mixcr exportClones [-f]
 
 Exports tab-delimited table of alignments from `.clns` and `.clna` files.
 
-Command line options:
+Command line arguments:
 
 `-n, --limit <limit>`
 :   output first `n` clones
