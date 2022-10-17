@@ -10,47 +10,62 @@ introduce false ones. Default parameters are specifically optimized to show [zer
 ## Command line options
 
 ```
-mixcr extend [-f] [-t <threads>]
-    [--chains <chains>]
-    [--report <reportFile>]
-    [--json-report <jsonReport>]
-    [--v-anchor <vAnchorPoint>]
-    [--j-anchor <jAnchorPoint>]
-    [--quality <extensionQuality>]
-    [--min-j-score <minimalJScore>]
-    [--min-v-score <minimalVScore>]
-    input.(vdjca|clns|clna)
-    extended.(vdjca|clns|clna)
+mixcr extend 
+    [--v-anchor <anchor_point>] 
+    [--j-anchor <anchor_point>] 
+    [--min-v-score <n>] [--min-j-score <n>] 
+    [-c <chains>] 
+    [-q <n>] 
+    [-r <path>] [-j <path>] 
+    [-t <n>] [-f] [-nw] [--verbose] [-h] 
+    data.[vdjca|clns|clna] extendeed.[vdjca|clns|clna]
 ```
 
 The command takes alignments (`.vdjca`) or clones (`.clnx`) file as input and produces the same format as output. Additionally, it produces a comprehensive [report](./report-extend.md).
 
+Basic command line arguments are:
+
+`data.[vdjca|clns|clna]`
+: Path to input file.
+
+`extendeed.[vdjca|clns|clna]`
+: Path where to write output. Will have the same file type.
+
+`--v-anchor <anchor_point>`
+: V extension [anchor point](./ref-gene-features.md). Default value determined by the preset.
+
+`--j-anchor <anchor_point>`
+: J extension [anchor point](./ref-gene-features.md). Default value determined by the preset.
+
+`--min-v-score <n>`
+: Minimal V hit score to perform left extension. Default value determined by the preset.
+
+`--min-j-score <n>`
+: Minimal J hit score to perform right extension. Default value determined by the preset.
+
+`-c, --chains <chains>`
+: Apply procedure only to alignments with specific immunological-receptor chains. Default: TCR
+
+`-q, --quality <n>`
+: Quality score value to assign imputed sequences. Default: 30
+
+`-r, --report <path>`
+: [Report](./report-extend.md) file (human readable version, see `-j / --json-report` for machine readable report).
+
+`-j, --json-report <path>`
+: JSON formatted [report](./report-extend.md) file.
+
+`-t, --threads <n>`
+: Processing threads
+
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
 
-`-t, --threads <threads>`
-: Processing threads
+`-nw, --no-warnings`
+: Suppress all warning messages.
 
-`-c, --chains <chains>`
-: Apply procedure only to alignments with specific immunological receptor chains (`TCR` by default).
+`--verbose`
+: Verbose warning messages.
 
-`-r, --report <reportFile>`
-: [Report](./report-extend.md) file (human readable version, see -j / --json-report for machine readable report)
-
-`-j, --json-report <jsonReport>`
-: JSON formatted [report](./report-extend.md) file
-
-`--v-anchor`
-: V extension [anchor point](./ref-gene-features.md)  (default: `CDR3Begin`).
-
-`--j-anchor`
-: J extension [anchor point](./ref-gene-features.md) (default: `CDR3End`).
-
-`-q, --quality`
-: Quality score of extended sequence (default: `30`).
-
-`--min-v-score`
-: Minimal V hit score to perform left extension (default: `100`).
-
-`--min-j-score`
-: Minimal J hit score alignment to perform right extension (default: `70`).
+`-h, --help`
+: Show this help message and exit.

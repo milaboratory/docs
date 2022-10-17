@@ -26,8 +26,8 @@ mixcr analyze [--add-step <step>] [--remove-step <step>]
 	[--append-export-clones-field <field> [<param>...]]...
 	[--prepend-export-alignments-field <field> [<param>...]]...
 	[--append-export-alignments-field <field> [<param>...]]... 
-	[-M <key=value>]... 
 	[--no-reports] [--no-json-reports] 
+	[-M <key=value>]... 
 	[-f] [-nw] [--verbose] [-h] 
 	<preset_name> input_R1.fastq[.gz] [input_R2.fastq[.gz]] output_prefix
 ```
@@ -45,14 +45,14 @@ Run full MiXCR pipeline for specific input.
 `output_prefix`
 : Path prefix telling mixcr where to put all output files
 
-`-M  <key=value>`
-: Overrides preset parameters
-
 `--no-reports`
 : Don't output report files for each of the steps
 
 `--no-json-reports`
 : Don't output json report files for each of the steps
+
+`-M  <key=value>`
+: Overrides preset parameters
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).

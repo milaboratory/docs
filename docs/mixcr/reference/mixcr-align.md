@@ -8,7 +8,6 @@ Aligns raw sequencing data against V-, D-, J- and C- gene segment references lib
 
 ```
 mixcr align -p <name>
-    [-O <key=value>]... 
     [--trimming-quality-threshold <n>]
 	[--trimming-window-size <n>] 
 	[--write-all] 
@@ -36,16 +35,17 @@ mixcr align -p <name>
 	[--append-export-alignments-field <field> [<param>...]]...
 	[--impute-germline-on-export] 
 	[--dont-impute-germline-on-export]
-	[-M <key=value>]... 
 	[--read-buffer <n>] 
 	[--high-compression]
 	[--not-aligned-R1 <path>] 
 	[--not-aligned-R2 <path>]
 	[--not-parsed-R1 <path>] 
 	[--not-parsed-R2 <path>] 
+    [-O <key=value>]... 
+    [-M <key=value>]... 
 	[-r <path>] [-j <path>] 
 	[-t <n>] [-f] [-nw] [--verbose] [-h] 
-	(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam)) alignments. vdjca
+	(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam)) alignments.vdjca
 ```
 The command returns a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form using [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the alignment performance and quality of the library.
 
@@ -59,9 +59,6 @@ Basic command line arguments are:
 
 `-p, --preset <name>`
 : Analysis preset. Sets all significant parameters of this and all downstream analysis steps. This is a required parameter. It is very important to carefully select the most appropriate preset for the data you analyse.
-
-`-O <key=value>`
-: Overrides aligner parameters from the selected preset (see below)
 
 `--trimming-quality-threshold <n>`
 : Read pre-processing: trimming quality threshold. Zero value can be used to skip trimming. Default value determined by the preset.
@@ -117,9 +114,6 @@ Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use semi-
 : ==:fontawesome-solid-puzzle-piece: Right alignment boundary== <p>
 Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use global alignment at reads 3'-end. Typically used for J-C intron single primer / multiplex protocols. Optional gene type (`J` for J primers / `C` for C primers) or [anchor point](ref-gene-features.md) may be specified to instruct MiXCR where how to strip J or C [feature to align](mixcr-align.md#gene-features-to-align).
 
-`-M  <key=value>`
-: Overrides preset parameters
-
 `--read-buffer <n>`
 : Size of buffer for FASTQ readers in bytes. Default: 4Mb
 
@@ -137,6 +131,12 @@ Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use globa
 
 `--not-parsed-R2 <path>`
 : Pipe not parsed R2 reads into separate file.
+
+`-O <key=value>`
+: Overrides aligner parameters from the selected preset (see below)
+
+`-M  <key=value>`
+: Overrides preset parameters
 
 `-r, --report <path>`
 : [Report](./report-align.md) file (human readable version, see -j / --json-report for machine readable report)

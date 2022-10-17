@@ -64,21 +64,53 @@ For each allele (even if it is the same as germline), try to find mutations in C
 ## Command line options
 
 ```
-mixcr findAlleles [-f] [-nw]
-    [--verbose] 
-    [--use-local-temp]
-    [--export-alleles-mutations <path>] 
-    [--export-library <path>] 
-    [-o <template.clns>] 
-    [-j <jsonReport>] 
-    [-r <reportFile>] 
-    [-t <threads>] 
-    [-O <String=String>]...
-    input_file.clns [input_file2.clns ...]...
+mixcr findAlleles 
+   [-o <template.clns>] 
+   [--export-library <path>] 
+   [--export-alleles-mutations <path>] 
+   [-r <path>] [-j <path>] 
+   [--use-local-temp] 
+   [-O <key=value>]... 
+   [-t <n>] 
+   [-f] [-nw] [--verbose] [-h] 
+   input_file.clns...
 ```
 The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` (clones) file that holds exhaustive information about clonotypes. Clonotype tables can be further extracted in tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables) or in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes). Additionally, MiXCR produces a comprehensive [report](./report-findAlleles.md) which provides a detailed summary of allele search.
 
-Basic command line options are:
+Basic command line arguments are:
+
+`input_file.clns...`
+: Input files for allele search
+
+`-o, --output-template <template.clns>`
+: Output template may contain {file_name} and {file_dir_path}, 
+
+outputs for '-o /output/folder/{file_name}_with_alleles.clns input_file.clns input_file2.clns' will be /output/folder/input_file_with_alleles.clns and /output/folder/input_file2_with_alleles.clns, 
+
+outputs for '-o {file_dir_path}/{file_name}_with_alleles.clns /some/folder1/input_file.clns /some/folder2/input_file2.clns' will be /seme/folder1/input_file_with_alleles.clns and /some/folder2/input_file2_with_alleles.clns 
+
+Resulted outputs must be uniq
+
+`--export-library <path>`
+: Path where to write library with found alleles.
+
+`--export-alleles-mutations <path>`
+: Path where to write descriptions and stats for all result alleles, existed and new (see below).
+
+`-O  <key=value>`
+: Overrides default build SHM parameter values
+
+`-r, --report <path>`
+: [Report](./report-findAlleles.md) file (human readable version, see `-j / --json-report` for machine readable report).
+
+`-j, --json-report <path>`
+: JSON formatted [report](./report-findAlleles.md) file.
+
+`--use-local-temp`
+: Put temporary files in the same folder as the output files.
+
+`-t, --threads <n>`
+: Processing threads
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
@@ -87,19 +119,11 @@ Basic command line options are:
 : Suppress all warning messages.
 
 `--verbose`
-: Show verbose warning messages.
+: Verbose warning messages.
 
-`--use-local-temp`
-: Put temporary files in the same folder as the output files.
+`-h, --help`
+: Show this help message and exit.
 
-`--export-alleles-mutations`
-: Path to write descriptions and stats for all result alleles, existed and new (see below).
-
-`--export-library`
-: Path to write library with found alleles.
-
-`-o <template.clns>`
-: Output template may contain {file_name} and {file_dir_path},
 
 outputs for '-o /output/folder/{file_name}_with_alleles.clns input_file.clns input_file2.clns' will be /output/folder/input_file_with_alleles.clns and /output/folder/input_file2_with_alleles.clns,
 

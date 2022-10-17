@@ -17,63 +17,71 @@ Depending on whether the initial data have or not have UMI and cell-barcodes MiX
 To use `assemblePartial` step one has to specify the following parameters for [`align`](./mixcr-align.md):
 
 ```
-mixcr align \
-    -OallowPartialAlignments=true \
-    -OallowNoCDR3PartAlignments=true \
-    [-p rna-seq]
-    [-OvParameters.geneFeatureToAlign=VGeneWithP] \
+mixcr align -p <name>
+    --keep-non-CDR3-alignments
+    [...]
     input_R1.fastq[.gz] [input_R2.fastq[.gz]]
     alignments.vdjca
 ```
 
 where
 
-`-OallowPartialAlignments=true` and `-OallowNoCDR3PartAlignments=true`
-: required to prevent MiXCR from filtering out partial alignments, that don’t fully cover CDR3 (the default behaviour)
-
-`-p rna-seq`
-: must be used  required if the data has non-enriched RNA-Seq origin
-
-`-OvParameters.geneFeatureToAlign=VGeneWithP`
-: is required if data has a genomic origin
+`--keep-non-CDR3-alignments`
+: required to prevent MiXCR from filtering out partial alignments, that don’t fully cover CDR3
 
 
 ## Command line options
 
 ```
-mixcr assemblePartial [-f]
+mixcr assemblePartial 
+    [-o] 
+    [-d] 
     [--cell-level] 
-    [--drop-partial]
-    [--overlapped-only] 
-    [--report <reportFile>]
-    [--json-report <jsonReport>] 
-    [-O <String=String>]...
-    alignments.vdjca
-    alignments_corrected.vdjca
+    [-O <key=value>]... 
+    [-r <path>] [-j <path>] 
+    [-f] [-nw] [--verbose] [-h] 
+    alignments.vdjca alignments.recovered.vdjca
 ```
 It takes a single `.vdjca` file containing initial alignments as input and writes new `.vdjca` file with corrected alignments. Sometimes it may be useful to inspect resulting alignments with [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-assemblePartial.md) which provides a detailed summary of each stage of this partial assembly pipeline. 
+
+Basic command line arguments are:
+
+`alignments.vdjca`
+: Path to input alignments file.
+
+`alignments.recovered.vdjca`
+: Path where to write recovered alignments.
+
+`-o, --overlapped-only`
+: Write only overlapped sequences (needed for testing). Default value determined by the preset.
+
+`-d, --drop-partial`
+: Drop partial sequences which were not assembled. Can be used to reduce output file size if no additional rounds of `assemblePartial` are required. Default value determined by the preset.
+
+`--cell-level`
+: Overlap sequences on the cell level instead of UMIs for tagged data with molecular and cell barcodes. Default value determined by the preset.
+
+`-O  <key=value>`
+: Overrides default [partial assembler parameter](#partial-assembler-parameters) values.
+
+`-r, --report <path>`
+: [Report](./report-assemblePartial.md) file (human readable version, see `-j / --json-report` for machine readable report).
+
+`-j, --json-report <path>`
+: JSON formatted [report](./report-assemblePartial.md) file.
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
 
-`--cell-level`
-: Overlap sequences on the cell level instead of UMIs for tagged data with molecular and cell barcodes
+`-nw, --no-warnings`
+: Suppress all warning messages.
 
-`-d, --drop-partial`
-: Drop partial sequences which were not assembled. Can be used to reduce output file size if no additional rounds of 
-`assemblePartial` are required.
+`--verbose`
+: Verbose warning messages.
 
-`-o, --overlapped-only`
-: Write only overlapped sequences (needed for testing).
+`-h, --help`
+: Show this help message and exit.
 
-`-r, --report <reportFile>`
-: Report file (human readable version, see -j / --json-report for machine readable report)
-
-`-j, --json-report <jsonReport>`
-: JSON formatted report file
-
-`-O  <String=String>`
-: Overrides default [partial assembler parameter](#partial-assembler-parameters) values.
 
 ## Partial assembler parameters
 

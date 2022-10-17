@@ -5,59 +5,87 @@ Corrects sequencing and PCR errors _inside_ barcode sequences and sorts resultin
 ## Command line options
 
 ```
-> mixcr refineTagsAndSort [-f] \
-    [--dont-correct] \
-    [--report <report>] \
-    [--json-report <jsonReport>] \
-    [--power <power>] \
-    [--substitution-rate <backgroundSubstitutionRate>] \
-    [--indel-rate <backgroundIndelRate>] \
-    [--min-quality <minQuality>] \
-    [--max-substitutions <maxSubstitutions>] \
-    [--max-indels <maxIndels>] \
-    [--use-system-temp] \
-    [--memory-budget <memoryBudget>] \
-    alignments.vdjca \
-    alignments.refined.vdjca
+mixcr refineTagsAndSort [--dont-correct] 
+    [-p <d>] 
+    [-s <d>] 
+    [-i <d>] 
+    [-q <n>]
+    [--max-substitutions <n>] 
+    [--max-indels <n>]
+    [--max-errors <n>] 
+    [-w <tag=value>]...
+    [--memory-budget <n>] 
+    [-r <path>] [-j <path>]
+    [--use-local-temp] 
+    [-f] [-nw] [--verbose] [-h] 
+    alignments.vdjca alignments.corrected.vdjca
 ```
-Command takes input `.vdjca` file produced at [`align`](mixcr-align.md) step and writes the resulting `.vdjca` file with corrected barcode sequences. Additionally, it provides a comprehensive [report](report-refineTagsAndSort.md) with the correction performance.   
+Command takes input `.vdjca` file produced at [`align`](./mixcr-align.md) step and writes the resulting `.vdjca` file with corrected barcode sequences. Additionally, it provides a comprehensive [report](./report-refineTagsAndSort.md) with the correction performance.   
+
+Basic command line arguments are:
+
+`alignments.vdjca`
+: Path to input alignments
+
+`alignments.corrected.vdjca`
+: Path where to write corrected alignments
+
+`--dont-correct`
+: Don't correct barcodes, only sort alignments by tags. Default value determined by the preset.
+
+`-p, --power <d>`
+: This parameter determines how thorough the procedure should eliminate variants looking like errors. Smaller value leave less erroneous variants at the cost of accidentally correcting true variants. This value approximates the fraction of erroneous variants the algorithm will miss (type II errors). Default value determined by the preset.
+
+`-s, --substitution-rate <d>`
+: Expected background non-sequencing-related substitution rate. Default value determined by the preset.
+
+`-i, --indel-rate <d>`
+: Expected background non-sequencing-related indel rate. Default value determined by the preset.
+
+`-q, --min-quality <n>`
+: Minimal [Phred33](https://en.wikipedia.org/wiki/Phred_quality_score) quality score for the tag. Tags having positions with lower quality score will be discarded, if not corrected. Default value determined by the preset.
+
+`--max-substitutions <n>`
+: Maximal number of substitutions to search for. Default value determined by the preset.
+
+`--max-indels <n>`
+: Maximal number of indels to search for. Default value determined by the preset.
+
+`--max-errors <n>`
+: Maximal number of substitutions and indels combined to search for. Default value determined by the preset.
+
+`-w, --whitelist <tag=value>`
+: Use whitelist-driven correction for one of the tags.
+
+Usage: --whitelist CELL=preset:737K-august-2016 or -w UMI=file: my_umi_whitelist.txt.
+
+If not specified mixcr will set correct whitelists if --tag-preset was used on align step.
+
+Default value determined by the preset.
+
+`--memory-budget <n>`
+: Memory budget in bytes. Default: 4Gb
+
+`-r, --report <path>`
+: [Report](./report-refineTagsAndSort.md) file (human readable version, see `-j / --json-report` for machine readable report).
+
+`-j, --json-report <path>`
+: JSON formatted [report](./report-refineTagsAndSort.md) file.
+
+`--use-local-temp`
+: Store temp files in the same folder as output file.
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
 
-`--dont-correct`
-: Don't correct barcodes, only sort alignments by tags.
+`-nw, --no-warnings`
+: Suppress all warning messages.
 
-`-r, --report <reportFile>`
-: Report file (human readable version, see -j / --json-report for machine readable report)
+`--verbose`
+: Verbose warning messages.
 
-`-j, --json-report <reportFile>`
-: JSON report.
-
-`-p, --power <power>`      
-: This parameter determines how thorough the procedure should eliminate variants looking like errors. Smaller value leave less erroneous variants at the cost of accidentally correcting true variants. This value approximates the fraction of erroneous variants the algorithm will miss (type II errors). Default is `1E-3`.
-
-`-s, --substitution-rate <backgroundSubstitutionRate>`
-: Expected background non-sequencing-related substitution rate. Default is `1E-3`.
-
-`-i, --indel-rate <backgroundIndelRate>`
-: Expected background non-sequencing-related indel rate. Default is `1E-5`.
-
-`-q, --min-quality <minQuality>`
-: Minimal [Phred33](https://en.wikipedia.org/wiki/Phred_quality_score) quality score for the tag. Tags having positions with lower quality score will be discarded, if not corrected. Default is `12`.
-
-`--max-substitutions <maxSubstitutions>`
-: Maximal number of substitutions to search for. Default is `2`.
-
-`--max-indels <maxIndels>`
-: Maximal number of indels to search for. Default is `1`.
-
-`--use-system-temp`
-: Use system temp folder for temporary files.
-
-`--memory-budget <memoryBudget>`
-: Memory budget. Default is `4294967296` (4Gb).
-
+`-h, --help`
+: Show this help message and exit.
 
 ## Hardware recommendations
 
