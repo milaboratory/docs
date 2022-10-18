@@ -2,7 +2,8 @@
 
 Export clonotypes or raw alignments in a tabular form.
 
-![](pics/export.svg)
+![](pics/export-light.svg#only-light)
+![](pics/export-dark.svg#only-dark)
 
 MiXCR uses four highly efficient binary formats that hold exhaustive information on the clonotypes, alignments, barcodes and original sequencing reads:
 

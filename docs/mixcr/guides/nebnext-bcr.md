@@ -61,7 +61,8 @@ On the scheme bellow you can see structure of cDNA library. UMI is located in th
         CATGATGAAAACAGATGGTTTGGC        
         ```
 
-![NEBNext.svg](nebnext-bcr/figs/library-structure.svg)
+![](../reference/pics/NEBNext-human-bcr-kit-light.svg#only-light)
+![](../reference/pics/NEBNext-human-bcr-kit-dark.svg#only-dark)
 
 All data may be downloaded directly from SRA (PRJNA777934) using e.g. [SRA Explorer](https://sra-explorer.info).
 

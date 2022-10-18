@@ -28,7 +28,8 @@ The project contains 136 FASTQ file pairs. The above script downloads all the da
 
 The structure of the library is shown on the picture bellow. 
 
-![library-structure](abhelix-bcr/figs/library-structure.svg)
+![](../reference/pics/ABHelix-bcr-kit-light.svg#only-light)
+![](../reference/pics/ABHelix-bcr-kit-dark.svg#only-dark)
 
 It is worth noticing, that reads in IgA and IgM cDNA libraries samples cover about 20 and 21 base pairs of C gene, accordingly. In the original paper authors say that these samples were processed at AbHelix, LLC (www.AbHelix.com, South Plainfield, NJ, USA) and briefly emphasise: "For IgG sequencing reads, subclass-specific sequences in the beginning of the constant regions were used for identifying IgG1, IgG2, IgG3, and IgG4 subclass sequences." But, the reads in IgG subtypes samples (IgG1,IgG2,IgG3,IgG4) only cover last 5 nucleotides of the C gene. It is not clear how these subclasses were identified.
 Nevertheless, we will process all samples as if the primers are located on the J gene/constant region junctions for two reasons:

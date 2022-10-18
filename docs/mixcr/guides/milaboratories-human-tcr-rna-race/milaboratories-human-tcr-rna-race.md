@@ -5,9 +5,7 @@ The data for this tutorial consists of 12 samples. For each sample two cDNA libr
 
 Bellow you can see the structure of cDNA library.
 
-<figure markdown>
 ![MiLabRACE-TCR.svg](MiLabRACE-TCR.svg)
-</figure>
 
 ## Upstream analysis
 
@@ -192,7 +190,5 @@ Now when the upstream analysis is finished we can move on to quality control. Fi
 
 Let's examine the plot.
 
-<figure markdown>
 ![alignQc.svg](alignQc.svg)
-</figure>
 

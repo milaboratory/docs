@@ -6,7 +6,8 @@ Assembles clonotypes. MiXCR allows to assemble clonotypes by arbitrary [gene fea
  - clustering to correct for PCR errors both in case of non-barcoded and UMI-barcoded data
  - specific barcode-guided correction for UMI and single-cell data
 
-![assemble](./pics/assemble.svg)
+![assemble](./pics/assemble-light.svg#only-light)
+![assemble](./pics/assemble-dark.svg#only-dark)
 
 Briefly, assemble pipeline consists of the following steps:
 
@@ -41,10 +42,8 @@ Briefly, assemble pipeline consists of the following steps:
 
 In case of single-cell data MiXCR also assembles paired B-cell heavy/light and T-cell alpha/beta clonotypes.
 
-<figure markdown>
-![assembleSingleCell](./pics/assembleSingleCell.svg)
-</figure>
-
+![assembleSingleCell](./pics/assembleSingleCell-light.svg#only-light)
+![assembleSingleCell](./pics/assembleSingleCell-dark.svg#only-dark)
 
 ## Command line options
 

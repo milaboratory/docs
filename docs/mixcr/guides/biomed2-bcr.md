@@ -28,7 +28,8 @@ The project contains 147 FASTQ file pairs. The structure of sequences is shown o
 
 The structure of the library is shown on the picture bellow.
 
-![library-structure](biomed2-bcr/figs/library-structure.svg)
+![](../reference/pics/biomed2-human-bcr-kit-light.svg#only-light)
+![](../reference/pics/biomed2-human-bcr-kit-dark.svg#only-dark)
 
 This data is obtained using multiplex mix of V and J primers that can be found [here](https://www.nature.com/articles/s41586-019-0934-8/tables/3). In the original paper, where [Biomed2 primer set was published](https://www.nature.com/articles/2403202) the authors declare that some primers allow upto 2 mismatches. This means that these mismatches will end up in the final sequences and may introduce bias into alignment process.
 

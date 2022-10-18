@@ -6,7 +6,8 @@ This tutorial uses the data from the publication: Simon S, Voillet V, Vignard V,
 
 The data was collected from 12 patients. PBMC samples were obtained at three time points for each patient. The libraries were generated using _Human TCR Panel QIAseq Immune Repertoire RNA Library Kit (QIAGEN&trade;)_. Sequencing was performed using Illumina NextSeq&trade; sequencing machine. Each samples contain sequences of TCRα and TCRβ chains enriched cDNA libraries of human. 261bp Read 1 holds CDR3 region and 41bp Read 2 with UMI (first 12bp):
 
-![library-structure](generic-umi-tcr/figs/library-structure.svg)
+![](../reference/pics/QIAseq-immune-tcr-kit-light.svg#only-light)
+![](../reference/pics/QIAseq-immune-tcr-kit-dark.svg#only-dark)
 
 All data may be downloaded directly from SRA using e.g. [SRA Explorer](https://sra-explorer.info).
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"

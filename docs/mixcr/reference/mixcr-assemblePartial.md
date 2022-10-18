@@ -2,7 +2,8 @@
 
 Overlaps alignments coming from the same molecule which partially cover CDR3 regions:
 
-![img.png](pics/assemblePartial.svg)
+![img.png](pics/assemblePartial-light.svg#only-light)
+![img.png](pics/assemblePartial-dark.svg#only-dark)
 
 This step is used in two cases:
 

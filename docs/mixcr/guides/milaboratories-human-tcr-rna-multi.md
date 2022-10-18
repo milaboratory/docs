@@ -4,7 +4,8 @@ This kit allows to obtain TCR alpha and beta repertoires for different types of 
 
 Bellow you can see the structure of cDNA library.
 
-![MiLabMultiTCR.svg](milaboratories-human-tcr-rna-multi/figs/library-structure.svg)
+![](../reference/pics/milab-multiplex-tcr-light.svg#only-light)
+![](../reference/pics/milab-multiplex-tcr-dark.svg#only-dark)
 
 The data for this tutorial consists of two samples that represent two replicas of the same biological sample. Total RNA was isolated from PBMC and 25ng were used for each cDNA synthesis. Two cDNA libraries were prepared for each sample (one for TCR alpha and one for TCR betta) according to MiLaboratories Human TCR Repertoire RNA Multiplex Kit protocol. TCR sequencing was performed on an Illumina Miseq sequencer using the 300-cycle Miseq reagent kit(Illumina) with pair-end, 2x150 base pair reads.
 

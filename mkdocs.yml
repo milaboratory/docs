@@ -154,6 +154,7 @@ nav:
         - 'exportReports': mixcr/reference/mixcr-exportReports.md
         - 'exportQc': mixcr/reference/mixcr-exportQc.md
         - 'postanalysis': mixcr/reference/mixcr-postanalysis.md
+        - 'downsample': mixcr/reference/mixcr-downsample.md
         - 'exportPlots': mixcr/reference/mixcr-exportPlots.md
         - 'exportTables': mixcr/reference/mixcr-exportTables.md
         - 'exportPreprocTables': mixcr/reference/mixcr-exportPreprocTables.md

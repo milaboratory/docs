@@ -13,8 +13,8 @@ In this publication authors did not study immune repertoires. This is also an ex
 
 On the scheme bellow you can see structure of cDNA library. UMI is located in the first 12 bp of R2.
 
-![library-structure.svg](rnaseq/figs/library-structure.svg)
-
+![](../reference/pics/rnaseq-structure-light.svg#only-light)
+![](../reference/pics/rnaseq-structure-dark.svg#only-dark)
 
 All data may be downloaded directly from SRA (PRJEB44566) using e.g. [SRA Explorer](https://sra-explorer.info).
 
