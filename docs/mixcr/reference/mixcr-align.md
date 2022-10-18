@@ -142,7 +142,7 @@ Basic command line options are:
 : Show this help message and exit.
 
 
-In addition to these parameters, any of the [available mix-in options](overview-mixins-list.md) may ve additionally specify at `align`. 
+In addition to these parameters, any of the [available mix-in options](overview-mixins-list.md) may be additionally specify at `align`. 
 
 ## Concatenating across multiple lanes
 

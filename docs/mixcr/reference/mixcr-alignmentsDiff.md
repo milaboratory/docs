@@ -1,0 +1,54 @@
+# `mixcr alignmentsDiff`
+
+Calculates the difference between two .vdjca files.
+
+```
+mixcr alignmentsDiff 
+    [--only-in-first <path>] 
+    [--only-in-second <path>] 
+    [--diff-from-first <path>] 
+    [--diff-from-second <path>] 
+    [--gene-feature <gene_feature>] 
+    [--top-hits-level <n>] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help] 
+    input_file1.vdjca input_file2.vdjca [report.txt]
+```
+
+`input_file1.vdjca`
+: input_file2.vdjca
+
+`[report.txt]`
+: Path where to write report. Will write to output if omitted.
+
+`-o1, --only-in-first <path>`
+: output for alignments contained only in the first .vdjca file
+
+`-o2, --only-in-second <path>`
+: output for alignments contained only in the second .vdjca file
+
+`-d1, --diff-from-first <path>`
+: output for alignments from the first file that are different from those alignments in the second file
+
+`-d2, --diff-from-second <path>`
+: output for alignments from the second file that are different from those alignments in the first file
+
+`-g, --gene-feature <gene_feature>`
+: Specifies a gene feature to compare. Default: CDR3
+
+`-l, --top-hits-level <n>`
+: Number of top hits to search for a match
+
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
+
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.

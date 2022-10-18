@@ -1,0 +1,34 @@
+# `mixcr exportAlignmentsForClones`
+
+Export alignments for particular clones from "clones & alignments" `.clna` file. Note that such export is possible only from `.clna` files, produced by MiXCR  [`assemble`](./mixcr-assemble.md) command with option `--write-alignments`.
+
+```
+mixcr exportAlignmentsForClones 
+    [--id [<id>...]]... 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help] 
+    clones.clna alignments.vdjca
+```
+
+`clones.clna`
+: Path to input clna file
+
+`alignments.vdjca`
+: Path where to write alignments from input file
+
+`--id [<id>...]`
+: Clone ids to export. If no clone ids are specified all alignments will be exported.
+
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
+
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
