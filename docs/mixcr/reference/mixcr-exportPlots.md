@@ -204,6 +204,15 @@ Exports [gene segment usage](./mixcr-postanalysis.md#segment-usage-metrics) heat
 `--no-samples-dendro`
 : Don't add samples dendrogram on heatmap.
 
+`--bar-plot`
+:   export bar plot instead of heatmap (groups samples by genes)
+
+`--bar-plot-by-sample`
+:  export bar plot instead of heatmap (groups genes by sample)
+
+`--family-usage`
+:   show gene family usage instead
+
 `--no-genes-dendro`
 : Don't add genes dendrogram on heatmap.
 
@@ -214,7 +223,7 @@ Exports [gene segment usage](./mixcr-postanalysis.md#segment-usage-metrics) heat
 : Export bar plot instead of heatmap.
 
 `--facet-by <s>`
-: Facet barplot.
+: Facet bar-plot.
 
 `--palette <s>`
 : Color palette for heatmap. Available names: diverging, viridis2magma, lime2rose, blue2red, teal2red, softSpectral, sequential, viridis, magma, sunset, rainbow, salinity, density. Default: density
@@ -249,9 +258,7 @@ mixcr exportPlots vUsage -f \
     pa/i.json.gz \
     plots/vUsage.svg
 ```
-<figure markdown>
 ![vUsage.TRAD.svg](pics/export-plots-vUsage.TRAD.svg)
-</figure>
 
 Export Joining gene segment usage plot and specify another palette:
 ```shell
@@ -261,9 +268,36 @@ mixcr exportPlots jUsage -f \
     pa/i.json.gz \
     plots/jUsage.svg
 ```
-<figure markdown>
+
 ![vUsage.TRB.svg](pics/export-plots-jUsage.TRB.svg)
-</figure>
+
+Export Variable gene segment families usage plot as a bar-plot by samples :
+
+```shell
+mixcr exportPlots vUsage -f \ 
+  --bar-plot-by-sample \
+  --family-usage \
+  pa/individual.json.gz \
+  plots/vUsage.svg 
+
+```
+
+![vUsage.IGH.svg](pics/vUsage-barBysample-family.IGH.svg)
+
+
+Export Variable gene segment families usage plot as a bar-plot by genes :
+
+```shell
+mixcr exportPlots vUsage -f \ 
+  --bar-plot \
+  --family-usage \
+  pa/individual.json.gz \
+  plots/vUsage.svg 
+
+```
+
+![vUsage.IGH.svg](pics/vUsage-bar-family.IGH.svg)
+
 
 ## Overlap
 ```

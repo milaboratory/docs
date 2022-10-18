@@ -544,9 +544,12 @@ mixcr analyze ampliseq-tcrb-sr-cdr3 \
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml)
 
 
-This kit allows to obtain TCR alpha and beta repertoires for different types of available RNA material, with high sensitivity and UMI-based accuracy.
+Chromium Single Cell Immune Profiling provides a solution to your immunology questions. Analyze full-length V(D)J sequences for paired B-cell or T-cell receptors, all from a single cell. Notice that on the scheme bellow reads' length is shown according to the protocol recommendations, but the presets will work regardless of sequencing reads length.
 
-![](../guides/rnaseq/figs/library-structure.svg)
+![](pics/10x-vdj-bcr-light.svg#only-light)
+![](pics/10x-vdj-bcr-dark.svg#only-dark)
+![](pics/10x-vdj-tcr-light.svg#only-light)
+![](pics/10x-vdj-tcr-dark.svg#only-dark)
 
 There only required option that must be specified with corresponding [mix-in option](overview-mixins-list.md):
 
@@ -556,9 +559,9 @@ Example:
 ```shell
 mixcr analyze 10x-vdj-bcr \
      --species hsa \
-      sample_R1.fastq.gz \
-      sample_R2.fastq.gz \
-      sample_result
+     sample_R1.fastq.gz \
+     sample_R2.fastq.gz \
+     sample_result
 ```
 
 

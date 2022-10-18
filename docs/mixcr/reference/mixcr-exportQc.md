@@ -168,6 +168,7 @@ mixcr exportQc tags
     [--help]
     sample.(vdjca|clns|clna)... coverage.(pdf|eps|png|jpeg) 
 ```
+
 Tag refinement statistics plots.
 
 `sample.(vdjca|clns|clna)...`
