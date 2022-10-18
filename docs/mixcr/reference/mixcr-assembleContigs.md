@@ -25,15 +25,19 @@ mixcr assembleContigs
     [--ignore-tags] 
     [--assemble-contigs-by <gene_features>] 
     [-O <key=value>]... 
-    [-r <path>] [-j <path>] 
-    [-t <n>] 
-    [-f] [-nw] [--verbose] [-h] 
+    [--report <path>] 
+    [--json-report <path>] 
+    [--threads <n>] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
     clones.clna clones.clns
 ```
 
 The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` file that holds exhaustive information on consensus clonotype contigs. Clonotype table may be further extracted in a human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes) or in a tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables). It is also possible to [impute](./mixcr-export.md#export-contigs-with-imputation) uncovered V-D-J contig parts from germline (marking such nucleotides lowercase). Additionally, MiXCR produces a comprehensive [report](./report-assembleContigs.md).
 
-Basic command line arguments are:
+Basic command line options are:
 
 `clones.clna`
 : Path to input clna file

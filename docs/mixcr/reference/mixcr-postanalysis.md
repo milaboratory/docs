@@ -132,17 +132,20 @@ Sometimes there is no need to apply normalization for _all_ samples. For example
 
 ```
 mixcr postanalysis individual 
-  [--only-productive] 
-  [--drop-outliers] 
   --default-downsampling (<type>|none) 
   --default-weight-function (<read>|<Tag>|none) 
+  [--only-productive] 
+  [--drop-outliers] 
   [--chains <chain>[,<chain>...]]... 
   [--group <group>]... 
   [--metadata <path>] 
   [--tables <path>] 
   [--preproc-tables <path>] 
   [-O <key=value>]... 
-  [-f] [-nw] [--verbose] [-h] 
+  [--force-overwrite] 
+  [--no-warnings] 
+  [--verbose] 
+  [--help] 
   cloneset.(clns|clna)... result.json[.gz]
 ```
 
@@ -150,7 +153,7 @@ Calculates
 [CDR3 metrics](./mixcr-postanalysis.md#cdr3-metrics), [Diversity measures](./mixcr-postanalysis.md#diversity-measures) anв [Gene segment usage](./mixcr-postanalysis.md#segment-usage-metrics) for each of the specified samples.
 
 
-### Command line arguments
+### Command line options
 
 `cloneset.(clns|clna)...`
 : Paths to input clnx files.
@@ -329,7 +332,7 @@ Calculates pairwise
 
 
 
-### Command line arguments
+### Command line options
 
 `cloneset.(clns|clna)...`
 : Paths to input clnx files.

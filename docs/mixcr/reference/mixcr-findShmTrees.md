@@ -26,19 +26,25 @@ Briefly, SHM trees search consists of the following steps:
 
 ```
 mixcr findShmTrees 
-   [--v-gene-names <gene_name>]... [--j-gene-names <gene_name>]... [--cdr3-lengths <n>]... 
+   [--v-gene-names <gene_name>]... 
+   [--j-gene-names <gene_name>]... 
+   [--cdr3-lengths <n>]... 
    [--min-count <n>] 
-   [-bf <path>] 
-   [-r <path>] [-j <path>] 
-   [--use-local-temp] 
+   [--build-from <path>] 
    [-O <key=value>]... 
-   [-t <n>] 
-   [-f] [-nw] [--verbose] [-h] 
+   [--report <path>] 
+   [--json-report <path>] 
+   [--use-local-temp] 
+   [--threads <n>] 
+   [--force-overwrite] 
+   [--no-warnings] 
+   [--verbose] 
+   [--help] 
    input_file.clns... output_file.shmt
 ```
 The command returns a highly-compressed, memory- and CPU-efficient binary `.shmt` (SHM trees) file that holds exhaustive information about SHM trees. SHM trees can be further extracted in tabular form using [`exportShmTrees`](./mixcr-export.md#shm-trees-tables), [`exportShmTreesWithNodes`](./mixcr-export.md#shm-trees-with-nodes-tables) or newick form using [`exportShmTreesNewick`](./mixcr-exportShmTreesNewick.md). Additionally, MiXCR produces a comprehensive [report](./report-findShmTrees.md) which provides a detailed summary of SHM trees search.
 
-Basic command line arguments are:
+Basic command line options are:
 
 `input_file.clns...`
 : Paths to clns files that was processed by 'findAlleles' command

@@ -5,24 +5,29 @@ Corrects sequencing and PCR errors _inside_ barcode sequences and sorts resultin
 ## Command line options
 
 ```
-mixcr refineTagsAndSort [--dont-correct] 
-    [-p <d>] 
-    [-s <d>] 
-    [-i <d>] 
-    [-q <n>]
+mixcr refineTagsAndSort 
+    [--dont-correct] 
+    [--power <d>] 
+    [--substitution-rate <d>] 
+    [--indel-rate <d>] 
+    [--min-quality <n>] 
     [--max-substitutions <n>] 
-    [--max-indels <n>]
+    [--max-indels <n>] 
     [--max-errors <n>] 
-    [-w <tag=value>]...
+    [--whitelist <tag=value>]... 
     [--memory-budget <n>] 
-    [-r <path>] [-j <path>]
+    [--report <path>] 
+    [--json-report <path>] 
     [--use-local-temp] 
-    [-f] [-nw] [--verbose] [-h] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
     alignments.vdjca alignments.corrected.vdjca
 ```
 Command takes input `.vdjca` file produced at [`align`](./mixcr-align.md) step and writes the resulting `.vdjca` file with corrected barcode sequences. Additionally, it provides a comprehensive [report](./report-refineTagsAndSort.md) with the correction performance.   
 
-Basic command line arguments are:
+Basic command line options are:
 
 `alignments.vdjca`
 : Path to input alignments

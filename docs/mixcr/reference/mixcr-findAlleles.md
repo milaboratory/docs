@@ -65,19 +65,23 @@ For each allele (even if it is the same as germline), try to find mutations in C
 
 ```
 mixcr findAlleles 
-   [-o <template.clns>] 
+   [--output-template <template.clns>] 
    [--export-library <path>] 
    [--export-alleles-mutations <path>] 
-   [-r <path>] [-j <path>] 
-   [--use-local-temp] 
    [-O <key=value>]... 
-   [-t <n>] 
-   [-f] [-nw] [--verbose] [-h] 
+   [--report <path>] 
+   [--json-report <path>] 
+   [--use-local-temp] 
+   [--threads <n>] 
+   [--force-overwrite] 
+   [--no-warnings] 
+   [--verbose] 
+   [--help] 
    input_file.clns...
 ```
 The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` (clones) file that holds exhaustive information about clonotypes. Clonotype tables can be further extracted in tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables) or in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes). Additionally, MiXCR produces a comprehensive [report](./report-findAlleles.md) which provides a detailed summary of allele search.
 
-Basic command line arguments are:
+Basic command line options are:
 
 `input_file.clns...`
 : Input files for allele search

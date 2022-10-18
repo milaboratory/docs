@@ -5,36 +5,44 @@ Uber command to run complicated analysis pipelines for generic data types in one
 ## Command line options
 
 ```
-mixcr analyze [--add-step <step>] [--remove-step <step>] 
-    [-b <library>] 
-    [-s <species>] 
-    [--tag-pattern <pattern>] 
-    [--limit-input <n>] 
-    [--dna] [--rna] 
+mixcr analyze 
+    [--add-step <step>] 
+    [--remove-step <step>] 
+    [--species <species>] 
+    [--library <library>] 
+    [--dna] 
+    [--rna] 
     [--floating-left-alignment-boundary [<anchor_point>]]
-	[--rigid-left-alignment-boundary [<anchor_point>]]
-	[--floating-right-alignment-boundary (<gene_type>|<anchor_point>)] 
-	[--rigid-right-alignment-boundary [(<gene_type>|<anchor_point>)]] 
-	[--split-clones-by <gene_type>]... 
-	[--assemble-clonotypes-by <gene_features>]
-	[--keep-non-CDR3-alignments] [--drop-non-CDR3-alignments]
-	[--dont-split-clones-by <gene_type>]... 
-	[--assemble-contigs-by <gene_features>] 
-	[--impute-germline-on-export]
-	[--dont-impute-germline-on-export]
-	[--prepend-export-clones-field <field> [<param>...]]...
-	[--append-export-clones-field <field> [<param>...]]...
-	[--prepend-export-alignments-field <field> [<param>...]]...
-	[--append-export-alignments-field <field> [<param>...]]... 
-	[--no-reports] [--no-json-reports] 
-	[-M <key=value>]... 
-	[-f] [-nw] [--verbose] [-h] 
-	<preset_name> input_R1.fastq[.gz] [input_R2.fastq[.gz]] output_prefix
+    [--rigid-left-alignment-boundary [<anchor_point>]]
+    [--floating-right-alignment-boundary (<gene_type>|<anchor_point>)] 
+    [--rigid-right-alignment-boundary [(<gene_type>|<anchor_point>)]] 
+    [--tag-pattern <pattern>] 
+    [--keep-non-CDR3-alignments] 
+    [--drop-non-CDR3-alignments]
+    [--limit-input <n>] 
+    [--assemble-clonotypes-by <gene_features>]
+    [--split-clones-by <gene_type>]... 
+    [--dont-split-clones-by <gene_type>]... 
+    [--assemble-contigs-by <gene_features>] 
+    [--impute-germline-on-export]
+    [--dont-impute-germline-on-export]
+    [--prepend-export-clones-field <field> [<param>...]]...
+    [--append-export-clones-field <field> [<param>...]]...
+    [--prepend-export-alignments-field <field> [<param>...]]...
+    [--append-export-alignments-field <field> [<param>...]]... 
+    [--no-reports] 
+    [--no-json-reports] 
+    [-M <key=value>]... 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
+    <preset_name> input_R1.fastq[.gz] [input_R2.fastq[.gz]] output_prefix
 ```
 
 Run full MiXCR pipeline for specific input.
 
-### Basic command line arguments are:
+### Basic command line options are:
 
 `<preset_name>`
 : Name of the analysis preset.
@@ -76,17 +84,11 @@ Run full MiXCR pipeline for specific input.
 
 ### Params for align command:
 
-`-b, --library <library>`
-: V/D/J/C gene library. By default, the `default` MiXCR reference library is used. One can also use [external libraries](../guides/external-libraries.md)
-
 `-s, --species <species>`
 : Species (organism). Possible values: `hsa` (or HomoSapiens), `mmu` (or MusMusculus), `rat`, `spalax`, `alpaca`, `lamaGlama`, `mulatta` (_Macaca Mulatta_), `fascicularis` (_Macaca Fascicularis_) or any species from [IMGT ® library](../guides/external-libraries.md).
 
-`--tag-pattern <pattern>`
-: Specify [tag pattern](ref-tag-pattern.md) for barcoded data.
-
-`--limit-input <n>`
-: Maximal number of reads to process on [align](./mixcr-align.md).
+`-b, --library <library>`
+: V/D/J/C gene library. By default, the `default` MiXCR reference library is used. One can also use [external libraries](../guides/external-libraries.md)
 
 `--dna`
 : ==:fontawesome-solid-puzzle-piece: Material type== <p>
@@ -112,18 +114,24 @@ Run full MiXCR pipeline for specific input.
 : ==:fontawesome-solid-puzzle-piece: Right alignment boundary== <p>
   Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use global alignment at reads 3'-end. Typically used for J-C intron single primer / multiplex protocols. Optional gene type (`J` for J primers / `C` for C primers) or [anchor point](ref-gene-features.md) may be specified to instruct MiXCR where how to strip J or C [feature to align](mixcr-align.md#gene-features-to-align).
 
+`--tag-pattern <pattern>`
+: Specify [tag pattern](ref-tag-pattern.md) for barcoded data.
+
+`--keep-non-CDR3-alignments`
+: ==:fontawesome-solid-puzzle-piece: Debug== <p>
+Preserve alignments that do not cover CDR3 region or cover it only partially in the `.vdjca` file.
+
+`--drop-non-CDR3-alignments`
+: ==:fontawesome-solid-puzzle-piece: Debug== <p>
+Drop all alignments that do not cover CDR3 region or cover it only partially.
+
+`--limit-input <n>`
+: Maximal number of reads to process on [`align`](./mixcr-align.md).
+
 ### Params for assemble command:
 
 `--assemble-clonotypes-by <gene_features>`
 : Specify [gene features used to assemble clonotypes](mixcr-assemble.md#core-assembler-parameters). One may specify any custom [gene region](ref-gene-features.md) (e.g. `FR3+CDR3`); target clonal sequence can even be disjoint. Note that `assemblingFeatures` must cover CDR3.
-
-`--keep-non-CDR3-alignments`
-: ==:fontawesome-solid-puzzle-piece: Debug== <p>
-  Preserve alignments that do not cover CDR3 region or cover it only partially in the `.vdjca` file.
-
-`--drop-non-CDR3-alignments`
-: ==:fontawesome-solid-puzzle-piece: Debug== <p>
-  Drop all alignments that do not cover CDR3 region or cover it only partially.
 
 `--split-clones-by <gene_type>`
 : Clones with equal clonal sequence but different gene will not be merged.

@@ -7,49 +7,55 @@ Aligns raw sequencing data against V-, D-, J- and C- gene segment references lib
 ## Command line options
 
 ```
-mixcr align -p <name>
-    [--trimming-quality-threshold <n>]
-	[--trimming-window-size <n>] 
-	[--write-all] 
-	[--tag-pattern-file <path>] 
-	[--tag-parse-unstranded] 
-	[--tag-max-budget <n>] 
-	[-b <library>] 
-	[-s <species>] 
-	[--tag-pattern <pattern>]
-	[--limit-input <n>] 
-	[--dna] [--rna]
-	[--floating-left-alignment-boundary [<anchor_point>]]
-	[--rigid-left-alignment-boundary [<anchor_point>]]
-	[--floating-right-alignment-boundary (<gene_type>|<anchor_point>)]
-	[--rigid-right-alignment-boundary [(<gene_type>|<anchor_point>)]]
-	[--assemble-clonotypes-by <gene_features>] 
-	[--split-clones-by <gene_type>]... 
-	[--keep-non-CDR3-alignments]
-	[--drop-non-CDR3-alignments] 
-	[--dont-split-clones-by <gene_type>]... 
-	[--assemble-contigs-by <gene_features>]
-	[--prepend-export-clones-field <field> [<param>...]]...
-	[--append-export-clones-field <field> [<param>...]]...
-	[--prepend-export-alignments-field <field> [<param>...]]...
-	[--append-export-alignments-field <field> [<param>...]]...
-	[--impute-germline-on-export] 
-	[--dont-impute-germline-on-export]
-	[--read-buffer <n>] 
-	[--high-compression]
-	[--not-aligned-R1 <path>] 
-	[--not-aligned-R2 <path>]
-	[--not-parsed-R1 <path>] 
-	[--not-parsed-R2 <path>] 
+mixcr align --preset <name> 
+    [--trimming-quality-threshold <n>] 
+    [--trimming-window-size <n>] 
+    [--write-all] 
+    [--tag-pattern-file <path>] 
+    [--tag-parse-unstranded] 
+    [--tag-max-budget <n>] 
+    [--read-buffer <n>] 
+    [--high-compression] 
+    [--not-aligned-R1 <path>] 
+    [--not-aligned-R2 <path>] 
+    [--not-parsed-R1 <path>] 
+    [--not-parsed-R2 <path>] 
+    [--species <species>] 
+    [--library <library>] 
+    [--dna] 
+    [--rna] 
+    [--floating-left-alignment-boundary [<anchor_point>]] 
+    [--rigid-left-alignment-boundary [<anchor_point>]] 
+    [--floating-right-alignment-boundary (<gene_type>|<anchor_point>)] 
+    [--rigid-right-alignment-boundary [(<gene_type>|<anchor_point>)]] 
+    [--tag-pattern <pattern>] 
+    [--keep-non-CDR3-alignments] 
+    [--drop-non-CDR3-alignments] 
+    [--limit-input <n>] 
+    [--assemble-clonotypes-by <gene_features>] 
+    [--split-clones-by <gene_type>]... 
+    [--dont-split-clones-by <gene_type>]... 
+    [--assemble-contigs-by <gene_features>] 
+    [--impute-germline-on-export] 
+    [--dont-impute-germline-on-export] 
+    [--prepend-export-clones-field <field> [<param>...]]... 
+    [--append-export-clones-field <field> [<param>...]]...
+    [--prepend-export-alignments-field <field> [<param>...]]... 
+    [--append-export-alignments-field <field> [<param>...]]... 
     [-O <key=value>]... 
     [-M <key=value>]... 
-	[-r <path>] [-j <path>] 
-	[-t <n>] [-f] [-nw] [--verbose] [-h] 
+    [--repor) <path>] 
+    [--json-report <path>] 
+    [--threads <n>] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
 	(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam)) alignments.vdjca
 ```
 The command returns a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form using [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the alignment performance and quality of the library.
 
-Basic command line arguments are:
+Basic command line options are:
 
 `(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam))`
 : Two fastq files for paired reads or one file for single read data. Use {{n}} if you want to concatenate files from multiple lanes, like: my_file_L{{n}}_R1.fastq.gz my_file_L{{n}}_R2.fastq.gz
@@ -78,17 +84,11 @@ Basic command line arguments are:
 `--tag-max-budget <n>`
 : Maximal bit budget, higher values allows more substitutions in small letters. Default value determined by the preset.
 
-`--library, -b <library>`
-: V/D/J/C gene library. By default, the `default` MiXCR reference library is used. One can also use [external libraries](../guides/external-libraries.md)
-
-`--species, -s`
+`-s, --species <species>`
 : Species (organism). Possible values: `hsa` (or HomoSapiens), `mmu` (or MusMusculus), `rat`, `spalax`, `alpaca`, `lamaGlama`, `mulatta` (_Macaca Mulatta_), `fascicularis` (_Macaca Fascicularis_) or any species from [IMGT ® library](../guides/external-libraries.md).
 
-`--tag-pattern <pattern>`
-: Specify tag pattern for barcoded data.
-
-`--limit-input <n>`
-: Maximal number of reads to process on [align](./mixcr-align.md).
+`-b, --library <library>`
+: V/D/J/C gene library. By default, the `default` MiXCR reference library is used. One can also use [external libraries](../guides/external-libraries.md)
 
 `--dna`
 : ==:fontawesome-solid-puzzle-piece: Material type== <p>
@@ -113,6 +113,18 @@ Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use semi-
 `--rigid-right-alignment-boundary [(<gene_type>|<anchor_point>)]`
 : ==:fontawesome-solid-puzzle-piece: Right alignment boundary== <p>
 Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use global alignment at reads 3'-end. Typically used for J-C intron single primer / multiplex protocols. Optional gene type (`J` for J primers / `C` for C primers) or [anchor point](ref-gene-features.md) may be specified to instruct MiXCR where how to strip J or C [feature to align](mixcr-align.md#gene-features-to-align).
+
+`--tag-pattern <pattern>`
+: Specify tag pattern for barcoded data.
+
+`--keep-non-CDR3-alignments`
+: Preserve alignments that do not cover CDR3 region or cover it only partially in the .vdjca file.
+
+`--drop-non-CDR3-alignments`
+: Drop all alignments that do not cover CDR3 region or cover it only partially.
+
+`--limit-input <n>`
+: Maximal number of reads to process on [align](./mixcr-align.md).
 
 `--read-buffer <n>`
 : Size of buffer for FASTQ readers in bytes. Default: 4Mb
@@ -139,10 +151,10 @@ Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use globa
 : Overrides preset parameters
 
 `-r, --report <path>`
-: [Report](./report-align.md) file (human readable version, see -j / --json-report for machine readable report)
+: [Report](./report-align.md) file (human readable version, see `-j / --json-report` for machine readable report).
 
 `-j, --json-report <path>`
-: JSON formatted [report](./report-align.md) file
+: JSON formatted [report](./report-align.md) file.
 
 `-t, --threads <n>`
 : Processing threads
@@ -158,6 +170,42 @@ Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use globa
 
 `-h, --help`
 : Show this help message and exit.
+
+Params for [`assemble`](mixcr-assemble.md) command:
+
+`--assemble-clonotypes-by <gene_features>`
+: Specify [gene features used to assemble clonotypes](mixcr-assemble.md#core-assembler-parameters). One may specify any custom [gene region](ref-gene-features.md) (e.g. `FR3+CDR3`); target clonal sequence can even be disjoint. Note that `assemblingFeatures` must cover CDR3
+
+`--split-clones-by <gene_type>`
+: Clones with equal clonal sequence but different gene will not be merged.
+
+`--dont-split-clones-by <gene_type>`
+: Clones with equal clonal sequence but different gene will be merged into single clone.
+
+Params for [`assembleContigs`](mixcr-assembleContigs.md) command:
+
+`--assemble-contigs-by <gene_features>`
+: Selects the region of interest for the action. Clones will be separated if inconsistent nucleotides will be detected in the region, assembling procedure will be limited to the region, and only clonotypes that fully cover the region will be outputted, others will be filtered out.
+
+Params for [`export`](mixcr-export.md) commands:
+
+`--impute-germline-on-export`
+: Export nucleotide sequences using letters from germline (marked lowercase) for uncovered regions
+
+`--dont-impute-germline-on-export`
+: Export nucleotide sequences only from covered region
+
+`--prepend-export-clones-field <field> [<param>...]`
+: Add clones export column before other columns. First param is field name as it is in `exportClones` command, left params are params of the field
+
+`--append-export-clones-field <field> [<param>...]`
+: Add clones export column after other columns. First param is field name as it is in `exportClones` command, left params are params of the field
+
+`--prepend-export-alignments-field <field> [<param>...]`
+: Add clones export column before other columns. First param is field name as it is in `exportAlignments` command, left params are params of the field
+
+`--append-export-alignments-field <field> [<param>...]`
+: Add clones export column after other columns. First param is field name as it is in `exportAlignments` command, left params are params of the field
 
 
 ## Concatenating across multiple lanes

@@ -36,19 +36,22 @@ There are three types of downsampling each of which may be applied on a one of t
 
 ```
 mixcr downsample 
-    -c <chains> 
-    [--only-productive] 
+    --chains <chains>
     --downsampling <type> 
+    [--only-productive] 
     [--suffix <s>] 
     [--out <path_prefix>] 
     [--summary <path>] 
-    [-f] [-nw] [--verbose] [-h] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
     cloneset.{clns|clna}...
 ```
 
 The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` (clones) or `.clna` (clones & alignments) file that holds exhaustive information about clonotypes. Clonotype tables can be further extracted in tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables) or in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes).
 
-Basic command line arguments are:
+Basic command line options are:
 
 `cloneset.{clns|clna}...`
 : Paths to input files.

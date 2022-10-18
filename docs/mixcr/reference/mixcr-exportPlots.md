@@ -7,31 +7,34 @@ A set of routines for graphical export of [postanalysis](./mixcr-postanalysis.md
 ```
 mixcr exportPlots (diversity|cdr3metrics) 
     [--chains <chain>]... 
-    [--width <n>] [--height <n>] 
+    [--width <n>] 
+    [--height <n>] 
     [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
     [--metadata <path>] 
     [--plot-type <plotType>] 
-    [-p <meta>] 
-    [-pv <value>[,<value>...]]... 
-    [-s <meta>] 
-    [-sv <value>[,<value>...]]... 
+    [--primary-group <meta>] 
+    [--primary-group-values <value>[,<value>...]]... 
+    [--secondary-group <meta>] 
+    [--secondary-group-values <value>[,<value>...]]... 
     [--facet-by <meta>] 
-    [--metric <metric>[,<metric>...]]... 
     [--hide-overall-p-value] 
     [--pairwise-comparisons] 
-    [--ref-group refGroup] 
+    [--ref-group <refGroup>] 
     [--hide-non-significant] 
     [--paired] 
     [--method <method>] 
     [--method-multiple-groups <method>] 
     [--p-adjust-method <method>] 
     [--show-significance] 
-    [-nw] [--verbose] [-h] 
+    [--metric <metric>[,<metric>...]]... 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
     pa.json[.gz] output.(pdf|eps|png|jpeg)
 ```
 Exports [diversity](./mixcr-postanalysis.md#diversity-measures) or [CDR3 metrics](./mixcr-postanalysis.md#cdr3-metrics) visualization plots from the [individual](./mixcr-postanalysis.md#individual-postanalysis) postanalysis results. When exporting in PDF format the resulting file will contain multiple pages: one page per metric. For exaporint in other formats one need to specify `--metrics <metric>` option to export one particular metric.
 
-Basic command line arguments are:
+Basic command line options are:
 
 `pa.json[.gz]`
 : Input file with postanalysis results.

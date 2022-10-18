@@ -13,17 +13,23 @@ introduce false ones. Default parameters are specifically optimized to show [zer
 mixcr extend 
     [--v-anchor <anchor_point>] 
     [--j-anchor <anchor_point>] 
-    [--min-v-score <n>] [--min-j-score <n>] 
-    [-c <chains>] 
-    [-q <n>] 
-    [-r <path>] [-j <path>] 
-    [-t <n>] [-f] [-nw] [--verbose] [-h] 
+    [--min-v-score <n>] 
+    [--min-j-score <n>] 
+    [--chains <chains>] 
+    [--quality <n>] 
+    [--report <path>] 
+    [--json-report <path>] 
+    [--threads <n>] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
     data.[vdjca|clns|clna] extendeed.[vdjca|clns|clna]
 ```
 
 The command takes alignments (`.vdjca`) or clones (`.clnx`) file as input and produces the same format as output. Additionally, it produces a comprehensive [report](./report-extend.md).
 
-Basic command line arguments are:
+Basic command line options are:
 
 `data.[vdjca|clns|clna]`
 : Path to input file.

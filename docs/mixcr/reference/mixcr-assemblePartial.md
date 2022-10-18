@@ -34,17 +34,21 @@ where
 
 ```
 mixcr assemblePartial 
-    [-o] 
-    [-d] 
+    [--overlapped-only] 
+    [--drop-partial] 
     [--cell-level] 
     [-O <key=value>]... 
-    [-r <path>] [-j <path>] 
-    [-f] [-nw] [--verbose] [-h] 
+    [--report <path>] 
+    [--json-report <path>] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
     alignments.vdjca alignments.recovered.vdjca
 ```
 It takes a single `.vdjca` file containing initial alignments as input and writes new `.vdjca` file with corrected alignments. Sometimes it may be useful to inspect resulting alignments with [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-assemblePartial.md) which provides a detailed summary of each stage of this partial assembly pipeline. 
 
-Basic command line arguments are:
+Basic command line options are:
 
 `alignments.vdjca`
 : Path to input alignments file.

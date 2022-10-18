@@ -49,25 +49,29 @@ In case of single-cell data MiXCR also assembles paired B-cell heavy/light and T
 ## Command line options
 
 ```
-mixcr assemble [-a] 
+mixcr assemble 
+    [--write-alignments] 
     [--cell-level] 
-    [-s] 
+    [--sort-by-sequence] 
     [--dont-infer-threshold] 
-    [--split-clones-by <gene_type>]... 
-    [--assemble-clonotypes-by <gene_features>] 
-    [--keep-non-CDR3-alignments] [--drop-non-CDR3-alignments] 
-    [--dont-split-clones-by <gene_type>]... 
     [--high-compression] 
+    [--assemble-clonotypes-by <gene_features>] 
+    [--split-clones-by <gene_type>]... 
+    [--dont-split-clones-by <gene_type>]... 
     [-O <key=value>]... 
     [-P <key=value>]... 
-    [-r <path>] [-j <path>] 
+    [--report <path>] 
+    [--json-report <path>] 
     [--use-local-temp] 
-    [-f] [-nw] [--verbose] [-h] 
+    [--force-overwrite] 
+    [--no-warnings]
+    [--verbose] 
+    [--help]
     alignments.vdjca clones.[clns|clna]
 ```
 The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` (clones) or `.clna` (clones & alignments) file that holds exhaustive information about clonotypes. Clonotype tables can be further extracted in tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables) or in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes). Additionally, MiXCR produces a comprehensive [report](./report-assemble.md) which provides a detailed summary of each stage of assembly pipeline.
 
-Basic command line arguments are:
+Basic command line options are:
 
 `alignments.vdjca`
 : Path to input file with alignments.
@@ -92,12 +96,6 @@ Basic command line arguments are:
 
 `--assemble-clonotypes-by <gene_features>`
 : Specify gene features used to assemble clonotypes. One may specify any custom gene region (e.g. `FR3+CDR3`); target clonal sequence can even be disjoint. Note that `assemblingFeatures` must cover CDR3
-
-`--keep-non-CDR3-alignments`
-: Preserve alignments that do not cover CDR3 region or cover it only partially in the .vdjca file.
-
-`--drop-non-CDR3-alignments`
-: Drop all alignments that do not cover CDR3 region or cover it only partially.
 
 `--dont-split-clones-by <gene_type>`
 : Clones with equal clonal sequence but different gene will be merged into single clone.
