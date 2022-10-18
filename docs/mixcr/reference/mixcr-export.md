@@ -4,7 +4,7 @@ Export clonotypes or raw alignments in a tabular form.
 
 ![](pics/export.svg)
 
-MiXCR uses three highly efficient binary formats that hold exhaustive information on the clonotypes, alignments, barcodes and original sequencing reads:
+MiXCR uses four highly efficient binary formats that hold exhaustive information on the clonotypes, alignments, barcodes and original sequencing reads:
 
 - `.vdjca` produced by [`align`](./mixcr-align.md) and holds alignments
 - `.clns` produced by [`assemble`](./mixcr-assemble.md) and [`assembleContigs`](./mixcr-assembleContigs.md) holds clonotypes

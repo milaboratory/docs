@@ -6,7 +6,7 @@ Reconstructs somatic hypermutations trees from cloneset(s).
 
 Input `.clns` files must be pre-processed by [`findAlleles`](mixcr-findAlleles.md).
 
-Briefly, lineage reconstruction algorithm groups clones with same V- and J- genes, applies initial clustering inside those groups to find clusters of clones sharing enough number of common mutations and not too distant NDN regions, refining clusters by attaching individual clones, followed by final trees reconstruction and recombination.
+Briefly, lineage reconstruction algorithm groups clones with same V- and J- genes, applies initial clustering inside those groups to find clusters of clones sharing enough number of common mutations and not too distant NDN regions, refining clusters by attaching individual clones, followed by final trees reconstruction and recombination. All steps of the algorithm heavily rely on the alignments with reference segments, compared to many other algorithms for the task, which don't take into account structure of the underlying sequence, and "wild-type" states of the V and J regions, which are exactly known thanks to the allele reconstruction step.
 
 ## Command line options
 
