@@ -4,7 +4,7 @@ MiXCR generates a comprehensive summary of search for trees process. Find trees 
 
 ??? note "Show sample report"
     === ".txt"
-    ```
+        ```
         ======================================
         Analysis date: Thu Oct 06 17:42:26 CEST 2022
         Input file(s): alleles/MRK_p02_Bmem_1_CGTACTAG-AAGGAGTA_L00M.with_alleles.clns,alleles/MRK_p03_Bmem_1_TCCTGAGC-GTAAGGAG_L00M.with_alleles.clns
