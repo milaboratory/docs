@@ -11,6 +11,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.milaboratories.com/mixcr/getting-started/first-run/</loc>
+         <lastmod>2022-10-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.milaboratories.com/mixcr/getting-started/installation/</loc>
          <lastmod>2022-10-18</lastmod>
          <changefreq>daily</changefreq>
@@ -22,11 +27,6 @@
     </url>
     <url>
          <loc>https://docs.milaboratories.com/mixcr/getting-started/milm/</loc>
-         <lastmod>2022-10-18</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://docs.milaboratories.com/mixcr/getting-started/overview/</loc>
          <lastmod>2022-10-18</lastmod>
          <changefreq>daily</changefreq>
     </url>
