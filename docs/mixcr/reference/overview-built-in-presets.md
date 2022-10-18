@@ -15,161 +15,9 @@ runs upstream analysis for samples obtained using Milaboratories Human BCR kit w
 Bellow you will find a great variety of presets dedicated to different types of input data or to the particular commercially available kits. Most of the presets do not require any additional arguments and will work out-of-the-box.
 
 
-## Protocols
-
-### Generic TCR amplicon
-==`generic-tcr-amplicon`==
-·
-==`generic-tcr-amplicon-umi`==
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/general-amplicon.yaml)
-·
-[:octicons-mortar-board-16: Tutorial](../guides/generic-umi-tcr.md)
 
 
-Generic TCR amplicon library with (`-umi`) or without UMIs. Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):
-
-
-: :fontawesome-solid-puzzle-piece: Species;
-: :fontawesome-solid-puzzle-piece: Material type;
-: :fontawesome-solid-puzzle-piece: Tag pattern (for `generic-tcr-amplicon-umi`);
-: :fontawesome-solid-puzzle-piece: Left alignment boundary (5'-end);
-: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end).
-
-The following example runs upstream analysis for some bulk mouse 5'RACE TCR RNA library with 3'-end primers located on C-gene:
-```shell
-mixcr analyze generic-tcr-amplicon \
-    --species mmu \
-    --rna \
-    --rigid-left-alignment-boundary \
-    --floating-right-alignment-boundary C \
-      input_R1.fastq.gz \
-      input_R2.fastq.gz \
-      result
-```
-The following [mix-in options](overview-mixins-list.md) are used:
-
-`--species mmu`
-: specify _Mus Musculus_ species
-
-`--rna`
-: set RNA as starting material (exon regions only will be used for alignments)
-
-`--rigid-left-alignment-boundary`
-: use global _left alignment boundary_ (5'RACE)
-
-`--floating-right-alignment-boundary C`
-: use local _right alignment boundary_ on C-segment as C-primers are used
-
-### Generic BCR amplicon
-==`generic-bcr-amplicon`==
-·
-==`generic-bcr-amplicon-umi`==
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/general-amplicon.yaml)
-·
-[:octicons-mortar-board-16: Tutorial](../guides/generic-umi-bcr.md)
-·
-[:octicons-mortar-board-16: Tutorial](../guides/generic-multiplex-bcr.md)
-
-
-Generic BCR amplicon library with (`-umi`) or without UMIs. Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):
-
-
-: :fontawesome-solid-puzzle-piece: Species;
-: :fontawesome-solid-puzzle-piece: Material type;
-: :fontawesome-solid-puzzle-piece: Tag pattern (for `generic-bcr-amplicon-umi`);
-: :fontawesome-solid-puzzle-piece: Left alignment boundary (5'-end);
-: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end).
-
-The following example runs upstream analysis for some full-length human BCR RNA multiplex library with 3'-end primers located on C-gene and UMIs spanning first 12 letters of 5'-end, followed by 4 letters of a fixed linker sequence:
-```shell
-mixcr analyze generic-bcr-umi-amplicon \
-    --species hsa \
-    --rna \
-    --tag-pattern "^(R1:*) \ ^(UMI:N{12})GTAC(R2:*)" \
-    --rigid-left-alignment-boundary \
-    --floating-right-alignment-boundary C \
-      input_R1.fastq.gz \
-      input_R2.fastq.gz \
-      result
-```
-The following [mix-in options](overview-mixins-list.md) are used:
-
-`--species hsa`
-: specify _Homo Sapiens_ species
-
-`--rna`
-: set RNA as starting material (exon regions only will be used for alignments)
-
-`--tag-pattern "^(R1:*) \ ^(UMI:N{12})GTAC(R2:*)"`
-: UMI [barcode pattern](ref-tag-pattern.md)
-
-`--rigid-left-alignment-boundary`
-: use global _left alignment boundary_ as our tag pattern removes UMIs and linked sequensed from 5'-end of reads
-
-`--floating-right-alignment-boundary C`
-: use local _right alignment boundary_ on C-segment as C-primers are used
-
-
-### RNA-Seq data
-==`rnaseq-cdr3`==
-·
-==`rnaseq-full-length`==
-·
-[:octicons-link-16: Publication](https://www.nature.com/articles/nbt.3979)
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/rnaseq.yaml)
-
-Non-enriched fragmented (shotgun) RNA-Seq data. Preset `rnaseq-cdr3` is used to assemble CDR3 clonotypes, while `rnaseq-full-length` additionally runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J-C receptor rearrangement sequence. 
-
-![](../guides/rnaseq/figs/library-structure.svg)
-
-Required configs that must be specified with corresponding mix-in options:
-
-
-: :fontawesome-solid-puzzle-piece: Species; <p>
-
-Example:
-```shell
-mixcr analyze rnaseq-full-length \
-    --species hsa \
-      input_R1.fastq.gz \
-      input_R2.fastq.gz \
-      result
-```
-
-### Biomed2
-==`biomed2-human-bcr-cdr3`==
-·
-==`biomed2-human-bcr-full-length`==
-·
-[:octicons-link-16: Publication](https://www.jmdjournal.org/article/S1525-1578(10)60580-6/fulltext)
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/biomed2.yaml)
-·
-[:octicons-mortar-board-16: Tutorial](../guides/biomed2-bcr.md)
-
-Biomed2 FR1-FR4 human multiplex BCR primer set. `-cdr3` presets used to extract CDR3 clonotypes while `-full-length` full VDJ region, starting from FR1.
-
-![](pics/biomed2-human-bcr-kit.svg)
-
-Example:
-```shell
-mixcr analyze biomed2-human-bcr-full-length \
-      input_R1.fastq.gz \
-      input_R2.fastq.gz \
-      result
-```
-
-
-
-
-
-
-
-
-## Commercial kits
+## Kits
 
 ### MiLaboratories
 
@@ -717,7 +565,33 @@ mixcr analyze 10x-vdj-bcr \
 [//]: # (See [this tutorial]&#40;../guides/milaboratories-human-tcr-rna-multi.md&#41; for the under-the-hood details.)
 
 
-## Publications
+
+
+## Public protocols
+
+### Biomed2
+==`biomed2-human-bcr-cdr3`==
+·
+==`biomed2-human-bcr-full-length`==
+·
+[:octicons-link-16: Publication](https://www.jmdjournal.org/article/S1525-1578(10)60580-6/fulltext)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/biomed2.yaml)
+·
+[:octicons-mortar-board-16: Tutorial](../guides/biomed2-bcr.md)
+
+Biomed2 FR1-FR4 human multiplex BCR primer set. `-cdr3` presets used to extract CDR3 clonotypes while `-full-length` full VDJ region, starting from FR1.
+
+![](pics/biomed2-human-bcr-kit.svg)
+
+Example:
+```shell
+mixcr analyze biomed2-human-bcr-full-length \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
 
 ### Mikelov et al, 2021
 ==`mikelov-et-al-2021`==
@@ -726,3 +600,131 @@ mixcr analyze 10x-vdj-bcr \
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/custom.yaml)
 
+
+
+
+
+
+## Generic data
+
+
+### RNA-Seq data
+==`rnaseq-cdr3`==
+·
+==`rnaseq-full-length`==
+·
+[:octicons-link-16: Publication](https://www.nature.com/articles/nbt.3979)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/rnaseq.yaml)
+
+Non-enriched fragmented (shotgun) RNA-Seq data. Preset `rnaseq-cdr3` is used to assemble CDR3 clonotypes, while `rnaseq-full-length` additionally runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J-C receptor rearrangement sequence.
+
+![](../guides/rnaseq/figs/library-structure.svg)
+
+Required configs that must be specified with corresponding mix-in options:
+
+
+: :fontawesome-solid-puzzle-piece: Species; <p>
+
+Example:
+```shell
+mixcr analyze rnaseq-full-length \
+    --species hsa \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+### Generic TCR amplicon
+==`generic-tcr-amplicon`==
+·
+==`generic-tcr-amplicon-umi`==
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/general-amplicon.yaml)
+·
+[:octicons-mortar-board-16: Tutorial](../guides/generic-umi-tcr.md)
+
+
+Generic TCR amplicon library with (`-umi`) or without UMIs. Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):
+
+
+: :fontawesome-solid-puzzle-piece: Species;
+: :fontawesome-solid-puzzle-piece: Material type;
+: :fontawesome-solid-puzzle-piece: Tag pattern (for `generic-tcr-amplicon-umi`);
+: :fontawesome-solid-puzzle-piece: Left alignment boundary (5'-end);
+: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end).
+
+The following example runs upstream analysis for some bulk mouse 5'RACE TCR RNA library with 3'-end primers located on C-gene:
+```shell
+mixcr analyze generic-tcr-amplicon \
+    --species mmu \
+    --rna \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+The following [mix-in options](overview-mixins-list.md) are used:
+
+`--species mmu`
+: specify _Mus Musculus_ species
+
+`--rna`
+: set RNA as starting material (exon regions only will be used for alignments)
+
+`--rigid-left-alignment-boundary`
+: use global _left alignment boundary_ (5'RACE)
+
+`--floating-right-alignment-boundary C`
+: use local _right alignment boundary_ on C-segment as C-primers are used
+
+### Generic BCR amplicon
+==`generic-bcr-amplicon`==
+·
+==`generic-bcr-amplicon-umi`==
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/general-amplicon.yaml)
+·
+[:octicons-mortar-board-16: Tutorial](../guides/generic-umi-bcr.md)
+·
+[:octicons-mortar-board-16: Tutorial](../guides/generic-multiplex-bcr.md)
+
+
+Generic BCR amplicon library with (`-umi`) or without UMIs. Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):
+
+
+: :fontawesome-solid-puzzle-piece: Species;
+: :fontawesome-solid-puzzle-piece: Material type;
+: :fontawesome-solid-puzzle-piece: Tag pattern (for `generic-bcr-amplicon-umi`);
+: :fontawesome-solid-puzzle-piece: Left alignment boundary (5'-end);
+: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end).
+
+The following example runs upstream analysis for some full-length human BCR RNA multiplex library with 3'-end primers located on C-gene and UMIs spanning first 12 letters of 5'-end, followed by 4 letters of a fixed linker sequence:
+```shell
+mixcr analyze generic-bcr-umi-amplicon \
+    --species hsa \
+    --rna \
+    --tag-pattern "^(R1:*) \ ^(UMI:N{12})GTAC(R2:*)" \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+The following [mix-in options](overview-mixins-list.md) are used:
+
+`--species hsa`
+: specify _Homo Sapiens_ species
+
+`--rna`
+: set RNA as starting material (exon regions only will be used for alignments)
+
+`--tag-pattern "^(R1:*) \ ^(UMI:N{12})GTAC(R2:*)"`
+: UMI [barcode pattern](ref-tag-pattern.md)
+
+`--rigid-left-alignment-boundary`
+: use global _left alignment boundary_ as our tag pattern removes UMIs and linked sequensed from 5'-end of reads
+
+`--floating-right-alignment-boundary C`
+: use local _right alignment boundary_ on C-segment as C-primers are used

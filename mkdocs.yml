@@ -111,7 +111,7 @@ nav:
       - 'Installation': mixcr/getting-started/installation.md
       - 'Using with Docker': mixcr/getting-started/docker.md
       - 'Obtaining and using license key': mixcr/getting-started/milm.md
-      - 'MiXCR Overview': mixcr/getting-started/overview.md
+      - 'First run': mixcr/getting-started/first-run.md
       - 'License': mixcr/getting-started/license.md
   - 'Guides':
       - 'Kits & Protocols':

@@ -13,20 +13,20 @@ Download and extract `mixcr`:
     > cd ~/mixcr
     ```
 
-2. Go to [MiXCR GitHub page](https://github.com/milaboratory/mixcr) and copy the link for latest build. The command bellow downloads MiXCR v4.0. For other builds replace the link with the one you obtained from GitHub.
+2. Go to [MiXCR GitHub page](https://github.com/milaboratory/mixcr) and copy the link for latest build. The command bellow downloads MiXCR v4.1. For other builds replace the link with the one you obtained from GitHub.
 
     ```shell
-    wget https://github.com/milaboratory/mixcr/releases/download/v4.0.0/mixcr-4.0.0.zip
+    wget https://github.com/milaboratory/mixcr/releases/download/v4.1.0/mixcr-4.1.0.zip
     ```
 
 3. Unpack the zip archive using the `unzip` command
 
     ```shell
-    > unzip mixcr-4.0.0.zip
+    > unzip mixcr-4.1.0.zip
     ```
     The output looks similar to this:
     ```shell
-    Archive:  mixcr-4.0.0.zip
+    Archive:  mixcr-4.1.0.zip
       inflating: mixcr
       inflating: LICENSE
       inflating: mixcr.jar

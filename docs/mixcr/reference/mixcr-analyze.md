@@ -50,7 +50,7 @@ mixcr analyze [--help]
 ### Analyze-specific command line options:
 
 `<preset_name>`
-: Name of the analysis preset (see complete list of available presets in the corresponding [section](./overview-presets.md)). This is the only required option to run the analysis.
+: Name of the analysis preset (see [complete list of available presets](overview-built-in-presets.md)). This is the only required option to run the analysis.
 
 `input_R1.fastq[.gz] [input_R2.fastq[.gz]]`
 : Paths of input files with sequencing data. File name pattern [expansion](./ref-input-file-name-expansion.md) can be used here to merge sequences from multiple sequences or just for convenience.
