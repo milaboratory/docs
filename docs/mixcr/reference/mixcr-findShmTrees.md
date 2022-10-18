@@ -1,26 +1,12 @@
 # `mixcr findShmTrees`
 
-Build trees of somatic hypermutations (**SHM**) from input clns files.
+Reconstructs somatic hypermutations trees from cloneset(s).
 
-Input files must be processed by findAlleles.
+![](pics/findShmTrees.svg)
 
-Briefly, SHM trees search consists of the following steps:
+Input `.clns` files must be pre-processed by [`findAlleles`](mixcr-findAlleles.md).
 
-1. Grouping clones with the same V, J and CDR3 length.
-
-   All next steps will be produced on those groups separately.
-
-2. Initial clusterization
-
-   Clones may form edge if they have enough the same mutations in V and J genes and have small distance between NDN segments (gene feature {VEndTrimmed:JBeingTrimmed}).
-
-3. Attach clones
-
-   Try to attach single clones for trees formed by clusters. Clone must be not far from tree trunk (comparing distance from root and change of distance if clone will be added). Clone must not be too far by distance between NDN segment of the clone and a node.
-
-4. Combine trees
-
-   Try to combine trees with similar roots. Roots will be compared by NDN.
+Briefly, lineage reconstruction algorithm groups clones with same V- and J- genes, applies initial clustering inside those groups to find clusters of clones sharing enough number of common mutations and not too distant NDN regions, refining clusters by attaching individual clones, followed by final trees reconstruction and recombination.
 
 ## Command line options
 
@@ -84,9 +70,9 @@ Basic command line options are:
 `-O  <String=String>` 
 : Overrides default find alleles parameter values (see below).
 
-## Find SHM trees parameters
+## Lineage reconstruction algorithm parameters
 
-Find SHM tree parameters that may be tuned:
+The following algorithm parameters may be tuned.
 
 `-OtopologyBuilder.topToVoteOnNDNSize=5`
 : Count of clones nearest to the root that will be used to determinate borders of NDN region (default `5`).
