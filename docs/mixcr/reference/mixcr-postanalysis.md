@@ -368,7 +368,7 @@ Calculates pairwise
 : Output path for the [preprocessing summary tables](./mixcr-postanalysis.md#preprocessing-summary-tables) (filtering and downsampling)
 
 `--criteria <s>`
-: Overlap criteria. It allows to specify gene feature for overlap (nucleotide or amino acid), and optionally use V and J hits. Examples: `CDR3|AA|V|J` (overlap by a.a. CDR3 and V and J), `VDJRegion|AA` (overlap by a.a. `VDJRegion`), `CDR3|NT|V` (overlap by nt CDR3 and V). Default: CDR3|AA|V|J
+: Overlap criteria. Defines the rules to treat clones as equal. It allows to specify gene feature for overlap (nucleotide or amino acid), and optionally use V and J hits. Examples: `CDR3|AA|V|J` (overlap by a.a. CDR3 and V and J), `VDJRegion|AA` (overlap by a.a. `VDJRegion`), `CDR3|NT|V` (overlap by nt CDR3 and V). Default: CDR3|AA|V|J
 
 `--factor-by <meta>[,<meta>...]`
 : Pools samples with the same values of specified metadata columns and performs overlap between such pooled samples

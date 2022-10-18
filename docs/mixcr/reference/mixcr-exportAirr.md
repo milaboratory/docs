@@ -3,31 +3,49 @@
 Exports alignments from `.vdjca` file or clonotypes from `.clns`/`.clna` files in [AIRR format](https://docs.airr-community.org/en/stable/datarep/rearrangements.html).
 
 ```
-mixcr exportAirr [-f] [-n]
-    [--from-alignment]
-    [--imgt-gaps]
-    [--target]
-    input.(vdjca|clns|clna)
-    output.tsv
+mixcr exportAirr 
+    [--target <n>] 
+    [--imgt-gaps] 
+    [--from-alignment] 
+    [--limit <n>] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
+    input.(vdjca|clna|clns) [output.tsv]
 ```
 
 Command line options:
 
-`-n`, `--limit`
+`input_file.(vdjca|clna|clns)`
+: Path to input file
 
-:   limit number of filtered alignments; no more than N alignments will be outputted
+`[output.tsv]`
+: Path where to write export. Will write to output if omitted.
 
-`--from-alignment`, `-a`
+`-t, --target <n>`
+: Target id (use -1 to export from the target containing CDR3).
 
-:   get fields like fwr1, cdr2, etc.. from alignment
+`-g, --imgt-gaps`
+: If this option is specified, alignment fields will be padded with IMGT-style gaps.
 
-`--imgt-gaps`, `-g`
+`-a, --from-alignment`
+: Get fields like fwr1, cdr2, etc.. from alignment.
 
-:   if this option is specified, alignment fields will be padded with IMGT-style gaps.`
+`-n, --limit <n>`
+: Limit number of filtered alignments; no more than N alignments will be outputted
 
-`--target <targetId>`, `-t <targetId>`
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
 
-:   target id (use -1 to export from the target containing CDR3)
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
 
 For some downstream analysis tools one also should prepare gapped reference using `--imgt` option for [repseqio](./repseqio-fasta.md):
 

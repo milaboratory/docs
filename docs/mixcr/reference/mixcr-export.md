@@ -84,7 +84,7 @@ Command line options:
 : Show this help message and exit.
 
 `<exportField>`
-:   a list of [export fields](#export-fields)
+: A list of [export fields](#export-fields)
 
 ## Alignments
 
@@ -137,7 +137,7 @@ Command line options:
 : Show this help message and exit.
 
 `<exportField>`
-:   a list of [export fields](#export-fields)
+: A list of [export fields](#export-fields)
 
 ## SHM trees tables
 
@@ -185,7 +185,7 @@ Command line options:
 : Show this help message and exit.
 
 `<exportField>`
-:   a list of [export fields](#export-fields)
+: A list of [export fields](#export-fields)
 
 ## SHM trees with nodes tables
 
@@ -238,7 +238,7 @@ Command line options:
 : Show this help message and exit.
 
 `<exportField>`
-:   a list of [export fields](#export-fields)
+: A list of [export fields](#export-fields)
 
 
 ## Examples
