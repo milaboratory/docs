@@ -169,6 +169,8 @@ nav:
         - 'mixcr extend': mixcr/reference/report-extend.md
         - 'mixcr assemble': mixcr/reference/report-assemble.md
         - 'mixcr assembleContigs': mixcr/reference/report-assembleContigs.md
+        - 'mixcr findAlleles': mixcr/reference/report-findAlleles.md
+        - 'mixcr findShmTrees': mixcr/reference/report-findShmTrees.md
       - 'RepSeq.io':
         - 'fasta': mixcr/reference/repseqio-fasta.md
         - 'compile': mixcr/reference/repseqio-compile.md
@@ -197,4 +199,4 @@ nav:
         - 'Gene features and reference points': mixcr/reference/ref-gene-features.md
         - 'Translation rules': mixcr/reference/ref-translation-rules.md
         - 'Mutations encoding': mixcr/reference/ref-mutations-encoding.md
-        - 'RepSeq.io JSON format': mixcr/reference/repseqio-json-format.md
+        - 'RepSeq.io JSON format': mixcr/reference/ref-repseqio-json-format.md

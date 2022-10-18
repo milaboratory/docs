@@ -22,6 +22,7 @@ There are several important common aspects of individual and overlap postanalysi
 
 Downsampling is a required procedure without which it is not possible to make a statistical comparisons between datasets.
 
+[//]: # (copy of mixcr-downsample.md)
 <figure markdown>
 ![downsampling](./pics/downsampling.svg)
 </figure>
@@ -130,19 +131,22 @@ Sometimes there is no need to apply normalization for _all_ samples. For example
 ## Individual postanalysis
 
 ```
-mixcr postanalysis individual [-f]
-      --default-downsampling <defaultDownsampling>
-      --default-weight-function <defaultWeightFunction> 
-      [--drop-outliers]
-      [--only-productive]
-      [--chains <chains>]
-      [--metadata <file>]
-      [--preproc-tables <path>]
-      [--tables <path>]
-      [--group <meta>]...
-      [-O<String=String>]...
-      sample_1.clnx[<sample_2.clnx>...]
-      output.json.gz
+mixcr postanalysis individual 
+  --default-downsampling (<type>|none) 
+  --default-weight-function (<read>|<Tag>|none) 
+  [--only-productive] 
+  [--drop-outliers] 
+  [--chains <chain>[,<chain>...]]... 
+  [--group <group>]... 
+  [--metadata <path>] 
+  [--tables <path>] 
+  [--preproc-tables <path>] 
+  [-O <key=value>]... 
+  [--force-overwrite] 
+  [--no-warnings] 
+  [--verbose] 
+  [--help] 
+  cloneset.(clns|clna)... result.json[.gz]
 ```
 
 Calculates 
@@ -151,41 +155,54 @@ Calculates
 
 ### Command line options
 
-`--default-downsampling <defaultDownsampling>`
+`cloneset.(clns|clna)...`
+: Paths to input clnx files.
 
-:   default [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets
-
-`--drop-outliers`
-
-:   drop samples which are below downsampling value as computed according to specified default downsampling option
-
-`--default-weight-function <defaultWeightFunction>`
-
-:   default clonotype [weight function](./mixcr-postanalysis.md#weight-functions)
+`result.json[.gz]`
+: Path where to write postanalysis result.
 
 `--only-productive`
+: Filter out-of-frame sequences and sequences with stop-codons.
 
-:   drop clonotypes with out-of-frame CDR3 sequence or CDR3 containing stop codon
+`--drop-outliers`
+: Drop samples which are below downsampling value as computed according to specified default downsampling option.
 
-`--chains <chains>`
+`--default-downsampling (<type>|none)`
+: Default [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`, `none`
 
-:   possible values: `TRAD`, `TRG`, `TCR`, `IGH`, `IGK`, `IGL`, `IG`, `ALL`. Restrict the analysis to the specified immunological chains.
+`--default-weight-function (<read>|<Tag>|none)`
+: Default clonotype [weight function](./mixcr-postanalysis.md#weight-functions)
 
-`--metadata <file>`
+`--chains <chain>[,<chain>...]`
+: Limit analysis to specific chains (e.g. TRA or IGH) (fractions will be recalculated). Possible values (multiple values allowed): `TRA`, `TRD`, `TRAD` (for human), `TRG`, `IGH`, `IGK`, `IGL`
 
-:   [metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files. Optionally may have `chains` column.
+`--group <group>`
+: Metadata column used to group samples into [isolation groups](./mixcr-postanalysis.md#isolation-groups); postanalysis will be performed in each of the groups separately. It is possible to specify several isolation groups.
 
-`--preproc-tables <path>`
-
-:   output path for the [preprocessing summary tables](./mixcr-postanalysis.md#preprocessing-summary-tables) (filtering and downsampling)
+`--metadata <path>`
+: [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files. Optionally may have `chains` column.
 
 `--tables <path>`
+: Tabular results output path (path/table.tsv).
 
-:   output path for tabular postanalysis results 
+`--preproc-tables <path>`
+: Output path for the [preprocessing summary tables](./mixcr-postanalysis.md#preprocessing-summary-tables) (filtering and downsampling)
 
-`--group <meta>`
+`-O  <key=value>`
+: Overrides default postanalysis settings
 
-:   metadata column used to group samples into [isolation groups](./mixcr-postanalysis.md#isolation-groups); postanalysis will be performed in each of the groups separately. It is possible to specify several isolation groups.
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
+
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
+
 
 MiXCR allows to override downsampling and filtering parameters for any postanalysis metric using `-Oparameter=value` syntax. Example:
 
@@ -294,21 +311,21 @@ Variable, Joining segment and Isotype usage vectors, i.e. the frequency of assoc
 ## Overlap postanalysis
 
 ```
-mixcr postanalysis overlap [-f]
-      --default-downsampling <defaultDownsampling>
-      --default-weight-function <defaultWeightFunction>
-      [--criteria <overlapCriteria>]
-      [--factor-by <meta>[,<meta>...]]... 
-      [--drop-outliers]
-      [--only-productive]
-      [--chains <chains>]
-      [--metadata <file>]
-      [--preproc-tables <path>]
-      [--tables <path>]
-      [--group <meta>]...
-      [-O<String=String>]...
-      sample_1.clnx[<sample_2.clnx>...]
-      output.json.gz
+mixcr postanalysis overlap 
+  [--only-productive] 
+  [--drop-outliers] 
+  --default-downsampling (<type>|none) 
+  --default-weight-function (<read>|<Tag>|none) 
+  [--chains <chain>[,<chain>...]]... 
+  [--group <group>]... 
+  [--metadata <path>] 
+  [--tables <path>] 
+  [--preproc-tables <path>] 
+  [--criteria <s>] 
+  [--factor-by <column>[,<column>...]]... 
+  [-O <key=value>]... 
+  [-f] [-nw] [--verbose] [-h] 
+  cloneset.(clns|clna)... result.json[.gz]
 ```
 Calculates pairwise 
 [Distance metrics](./mixcr-postanalysis.md#overlap-metrics).
@@ -317,49 +334,59 @@ Calculates pairwise
 
 ### Command line options
 
-`--default-downsampling <defaultDownsampling>`
+`cloneset.(clns|clna)...`
+: Paths to input clnx files.
 
-:   default [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets
-
-`--drop-outliers`
-
-:   drop samples which are below downsampling value as computed according to specified default downsampling option
-
-`--default-weight-function <defaultWeightFunction>`
-
-:   default clonotype [weight function](./mixcr-postanalysis.md#weight-functions)
-
-`--criteria <overlapCriteria>`
-
-:   overlap criteria. It allows to specify gene feature for overlap (nucleotide or amino acid), and optionally use V and J hits. Examples: `CDR3|AA|V|J` (overlap by a.a. CDR3 and V and J), `VDJRegion|AA` (overlap by a.a. `VDJRegion`), `CDR3|NT|V` (overlap by nt CDR3 and V).
-
-`--factor-by <meta>[,<meta>...]`
-
-:   pools samples with the same values of specified metadata columns and performs overlap between such pooled samples
+`result.json[.gz]`
+: Path where to write postanalysis result.
 
 `--only-productive`
+: Filter out-of-frame sequences and sequences with stop-codons.
 
-:   drop clonotypes with out-of-frame CDR3 sequence or CDR3 containing stop codon
+`--drop-outliers`
+: Drop samples which are below downsampling value as computed according to specified default downsampling option.
 
-`--chains <chains>`
+`--default-downsampling (<type>|none)`
+: Default [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`, `none`
 
-:   possible values: `TRAD`, `TRG`, `TCR`, `IGH`, `IGK`, `IGL`, `IG`, `ALL`. Restrict the analysis to the specified immunological chains.
+`--default-weight-function (<read>|<Tag>|none)`
+: Default clonotype [weight function](./mixcr-postanalysis.md#weight-functions)
 
-`--metadata <file>`
+`--chains <chain>[,<chain>...]`
+: Limit analysis to specific chains (e.g. TRA or IGH) (fractions will be recalculated). Possible values (multiple values allowed): `TRA`, `TRD`, `TRAD` (for human), `TRG`, `IGH`, `IGK`, `IGL`
 
-:   [metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files. Optionally may have `chains` column.
+`--group <group>`
+: Metadata column used to group samples into [isolation groups](./mixcr-postanalysis.md#isolation-groups); postanalysis will be performed in each of the groups separately. It is possible to specify several isolation groups.
 
-`--preproc-tables <path>`
-
-:   output path for the [preprocessing summary tables](./mixcr-postanalysis.md#preprocessing-summary-tables) (filtering and downsampling)
+`--metadata <path>`
+: [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files. Optionally may have `chains` column.
 
 `--tables <path>`
+: Tabular results output path (path/table.tsv).
 
-:   output path for tabular postanalysis results
+`--preproc-tables <path>`
+: Output path for the [preprocessing summary tables](./mixcr-postanalysis.md#preprocessing-summary-tables) (filtering and downsampling)
 
-`--group <meta>`
+`--criteria <s>`
+: Overlap criteria. It allows to specify gene feature for overlap (nucleotide or amino acid), and optionally use V and J hits. Examples: `CDR3|AA|V|J` (overlap by a.a. CDR3 and V and J), `VDJRegion|AA` (overlap by a.a. `VDJRegion`), `CDR3|NT|V` (overlap by nt CDR3 and V). Default: CDR3|AA|V|J
 
-:   metadata column used to group samples into [isolation groups](./mixcr-postanalysis.md#isolation-groups); postanalysis will be performed in each of the groups separately. It is possible to specify several isolation groups.
+`--factor-by <meta>[,<meta>...]`
+: Pools samples with the same values of specified metadata columns and performs overlap between such pooled samples
+
+`-O  <key=value>`
+: Overrides default postanalysis settings
+
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
+
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
 
 MiXCR allows to override downsampling and filtering parameters for any postanalysis metric using `-Oparameter=value` syntax. Example:
 

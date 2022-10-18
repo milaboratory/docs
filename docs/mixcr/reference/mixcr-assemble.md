@@ -49,56 +49,86 @@ In case of single-cell data MiXCR also assembles paired B-cell heavy/light and T
 ## Command line options
 
 ```
-mixcr assemble [-f] [-nw] [--verbose] [-t <threads>]
-    [--write-alignments]
-    [--cell-level]
-    [--report <reportFile>]
-    [--json-report <jsonReport>]
-    [--sort-by-sequence]
-    [--high-compression]
-    [--use-system-temp]
-    [-O <String=String>]...
-    [-P <String=String>]...
-    input.vdjca
-    output.(clns|clna)
+mixcr assemble 
+    [--write-alignments] 
+    [--cell-level] 
+    [--sort-by-sequence] 
+    [--dont-infer-threshold] 
+    [--high-compression] 
+    [--assemble-clonotypes-by <gene_features>] 
+    [--split-clones-by <gene_type>]... 
+    [--dont-split-clones-by <gene_type>]... 
+    [-O <key=value>]... 
+    [-P <key=value>]... 
+    [--report <path>] 
+    [--json-report <path>] 
+    [--use-local-temp] 
+    [--force-overwrite] 
+    [--no-warnings]
+    [--verbose] 
+    [--help]
+    alignments.vdjca clones.[clns|clna]
 ```
 The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` (clones) or `.clna` (clones & alignments) file that holds exhaustive information about clonotypes. Clonotype tables can be further extracted in tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables) or in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes). Additionally, MiXCR produces a comprehensive [report](./report-assemble.md) which provides a detailed summary of each stage of assembly pipeline.
 
-`-f, --force-overwrite`
-: Force overwrite of output file(s).
+Basic command line options are:
 
-`-t, --threads <threads>`
-: Processing threads
+`alignments.vdjca`
+: Path to input file with alignments.
 
-`-nw, --no-warnings`
-: Suppress all warning messages.
+`clones.[clns|clna]`
+: Path where to write assembled clones.
 
-`--write-alignments`
-: If this option is specified, output file will be written in "Clones & Alignments" `.clna` format, containing clones and all corresponding alignments. This file then can be used to build [wider contigs](./mixcr-assembleContigs.md) for clonal sequence and [extract original reads](./mixcr-exportReadsForClones.md) for each clone.
+`-a, --write-alignments`
+: If this option is specified, output file will be written in "Clones & Alignments" `.clna` format, containing clones and all corresponding alignments. This file then can be used to build [wider contigs](./mixcr-assembleContigs.md) for clonal sequence or [extract original reads](./mixcr-exportReadsForClones.md) for each clone (if -OsaveOriginalReads=true was use on 'align' stage). Default value determined by the preset.
 
 `--cell-level`
-: If tags are present, do assemble pre-clones on the cell level rather than on the molecular level. If there are no molecular tags in the data, but cell tags are present, this option will be used by default. This option has no effect on the data without tags.
-
-`-r, --report <reportFile>`
-: [Report](./report-assemble.md) file (human readable version, see -j / --json-report for machine readable report)
-
-`-j, --json-report <jsonReport>`
-: JSON formatted [report](./report-assemble.md) file
+: If tags are present, do assemble pre-clones on the cell level rather than on the molecular level. If there are no molecular tags in the data, but cell tags are present, this option will be used by default. This option has no effect on the data without tags. Default value determined by the preset.
 
 `-s, --sort-by-sequence`
-: Sort by sequence. Clones in the output file will be sorted by clonal sequence,which allows to build overlaps between clonesets.
+: Sort by sequence. Clones in the output file will be sorted by clonal sequence,which allows to build overlaps between clonesets. Default value determined by the preset.
+
+`--dont-infer-threshold`
+: Turns off automatic inference of minRecordsPerConsensus parameter.  Default value determined by the preset.
+
+`--split-clones-by <gene_type>`
+: Clones with equal clonal sequence but different gene will not be merged.
+
+`--assemble-clonotypes-by <gene_features>`
+: Specify gene features used to assemble clonotypes. One may specify any custom gene region (e.g. `FR3+CDR3`); target clonal sequence can even be disjoint. Note that `assemblingFeatures` must cover CDR3
+
+`--dont-split-clones-by <gene_type>`
+: Clones with equal clonal sequence but different gene will be merged into single clone.
 
 `--high-compression`
 : Use higher compression for output file.
 
-`--use-system-temp`
-: Use system temp folder for temporary files, the output folder will be used if this option is omitted.
-
-`-O  <String=String>`
+`-O  <key=value>`
 : Overrides default parameter values.
 
-`-P  <String=String>`
+`-P  <key=value>`
 : Overrides default pre-clone assembler parameter values.
+
+`-r, --report <path>`
+: [Report](./report-assemble.md) file (human readable version, see `-j / --json-report` for machine readable report).
+
+`-j, --json-report <path>`
+: JSON formatted [report](./report-assemble.md) file.
+
+`--use-local-temp`
+: Store temp files in the same folder as output file.
+
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
+
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
 
 ## Pre-clone assembler parameters
 
