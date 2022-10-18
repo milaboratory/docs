@@ -12,21 +12,57 @@ Allele inference algorithms applies different different strategies to identify a
 ## Command line options
 
 ```
-mixcr findAlleles [-f] [-nw]
-    [--verbose] 
-    [--use-local-temp]
-    [--export-alleles-mutations <path>] 
-    [--export-library <path>] 
-    [-o <template.clns>] 
-    [-j <jsonReport>] 
-    [-r <reportFile>] 
-    [-t <threads>] 
-    [-O <String=String>]...
-    input_file.clns [input_file2.clns ...]...
+mixcr findAlleles 
+   [--output-template <template.clns>] 
+   [--export-library <path>] 
+   [--export-alleles-mutations <path>] 
+   [-O <key=value>]... 
+   [--report <path>] 
+   [--json-report <path>] 
+   [--use-local-temp] 
+   [--threads <n>] 
+   [--force-overwrite] 
+   [--no-warnings] 
+   [--verbose] 
+   [--help] 
+   input_file.clns...
 ```
 The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` (clones) file that holds exhaustive information about clonotypes re-aligned to novelly discovered allelic variants. The resulting [reference library](ref-repseqio-json-format.md) is built-in in the `.clns` file but also may be exported directly with `--export-library` option. Clonotype tables can be further extracted in tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables) or in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes). Additionally, MiXCR produces a comprehensive [report](./report-findAlleles.md) which provides a detailed summary of allele search.
 
 Basic command line options are:
+
+`input_file.clns...`
+: Input files for allele search
+
+`-o, --output-template <template.clns>`
+: Output template may contain {file_name} and {file_dir_path},
+
+outputs for '-o /output/folder/{file_name}_with_alleles.clns input_file.clns input_file2.clns' will be /output/folder/input_file_with_alleles.clns and /output/folder/input_file2_with_alleles.clns,
+
+outputs for '-o {file_dir_path}/{file_name}_with_alleles.clns /some/folder1/input_file.clns /some/folder2/input_file2.clns' will be /seme/folder1/input_file_with_alleles.clns and /some/folder2/input_file2_with_alleles.clns
+
+Resulted outputs must be uniq
+
+`--export-library <path>`
+: Path where to write library with found alleles.
+
+`--export-alleles-mutations <path>`
+: Path to write descriptions and stats (see [below](#allelic-variants-summary-table)) for all result alleles, existed and new (see below).
+
+`-O  <key=value>`
+: Overrides default build SHM parameter values
+
+`-r, --report <path>`
+: [Report](./report-findAlleles.md) file (human readable version, see `-j / --json-report` for machine readable report).
+
+`-j, --json-report <path>`
+: JSON formatted [report](./report-findAlleles.md) file.
+
+`--use-local-temp`
+: Put temporary files in the same folder as the output files.
+
+`-t, --threads <n>`
+: Processing threads
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
@@ -35,19 +71,10 @@ Basic command line options are:
 : Suppress all warning messages.
 
 `--verbose`
-: Show verbose warning messages.
+: Verbose warning messages.
 
-`--use-local-temp`
-: Put temporary files in the same folder as the output files.
-
-`--export-alleles-mutations`
-: Path to write descriptions and stats (see [below](#allelic-variants-summary-table)) for all result alleles, existed and new (see below).
-
-`--export-library`
-: Path to write library with found alleles.
-
-`-o <template.clns>`
-: Output template may contain {file_name} and {file_dir_path},
+`-h, --help`
+: Show this help message and exit.
 
 `-r, --report <reportFile>`
 : [Report](./report-findAlleles.md) file (human readable version, see -j / --json-report for machine readable report)
@@ -67,7 +94,7 @@ Example:
 mixcr findAlleles \
     --output-template {file_name}.allelic.clns \
     --output-library alleles.repseqio.json \
-    --export-alleles-mutations allele_stats.txt \
+    --export-alleles-mutations allele_stats.tsv \
     donor1_t1.clns donor1_t2.clns donor1_t3.clns
 ```
 

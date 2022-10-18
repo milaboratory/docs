@@ -5,112 +5,119 @@ A set of routines for graphical export of [postanalysis](./mixcr-postanalysis.md
 ## Diversity and CDR3 metrics
 
 ```
-mixcr exportPlots (diversity|cdr3metrics) [-f]
-    [--chains <chains>]...
-    [--metadata <file>]
-    [--metric <metric>]...
-    [--filter <meta(|>|>=|=|<=|<)value>]...
-    [--primary-group <meta>]
-    [--primary-group-values <value>[,<value>...]]...
-    [--secondary-group <meta>]
-    [--secondary-group-values <value>[,<value>...]]...
-    [--facet-by <facetBy>]
-    [--plot-type <plotType>]
-    [--hide-overall-p-value]
-    [--ref-group <refGroup>]
-    [--pairwise-comparisons]
-    [--hide-non-significant]
-    [--show-significance]
-    [--method <method>]
-    [--p-adjust-method <method>]
-    [--width <width>]
-    [--height <height>]
-    individual.pa.json.gz
-    plot.(pdf|svg|eps|png|jpg)
+mixcr exportPlots (diversity|cdr3metrics) 
+    [--chains <chain>]... 
+    [--width <n>] 
+    [--height <n>] 
+    [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
+    [--metadata <path>] 
+    [--plot-type <plotType>] 
+    [--primary-group <meta>] 
+    [--primary-group-values <value>[,<value>...]]... 
+    [--secondary-group <meta>] 
+    [--secondary-group-values <value>[,<value>...]]... 
+    [--facet-by <meta>] 
+    [--hide-overall-p-value] 
+    [--pairwise-comparisons] 
+    [--ref-group <refGroup>] 
+    [--hide-non-significant] 
+    [--paired] 
+    [--method <method>] 
+    [--method-multiple-groups <method>] 
+    [--p-adjust-method <method>] 
+    [--show-significance] 
+    [--metric <metric>[,<metric>...]]... 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
+    pa.json[.gz] output.(pdf|eps|png|jpeg)
 ```
 Exports [diversity](./mixcr-postanalysis.md#diversity-measures) or [CDR3 metrics](./mixcr-postanalysis.md#cdr3-metrics) visualization plots from the [individual](./mixcr-postanalysis.md#individual-postanalysis) postanalysis results. When exporting in PDF format the resulting file will contain multiple pages: one page per metric. For exaporint in other formats one need to specify `--metrics <metric>` option to export one particular metric.
 
-`--chains <chains>`
+Basic command line options are:
 
-:   export only for specified immunological chains
+`pa.json[.gz]`
+: Input file with postanalysis results.
 
-`--metadata <file>`
+`output.(pdf|eps|png|jpeg)`
+: Output PDF/EPS/PNG/JPEG file name.
 
-:   supply additional [metadata](./mixcr-postanalysis.md#metadata) `.tsv` or `.csv` table
+`--chains <chain>`
+: Export only for specified immunological chains.
 
-`--metric <metric>...`
+`--width <n>`
+: Plot width.
 
-:   output only specified list of metrics:
+`--height <n>`
+: Plot height.
 
-    - for [`cdr3metrics`](./mixcr-postanalysis.md#cdr3-metrics) possible values are: `cdr3lenNT`, `cdr3lenAA`, `ndnLenNT`, `addedNNT`, `strength`, `hydrophobicity`, `surface`, `volume`, `charge`
-    
-    - for [`diversity`](./mixcr-postanalysis.md#diversity-measures): `observed`, `shannonWiener`, `chao1`, `normalizedShannonWienerIndex`, `inverseSimpsonIndex`, `giniIndex`, `d50`, `efronThisted`
+`--filter <filter>[,<filter>...]`
+: Filter samples to put on a plot by their metadata values. Filter allows equality (`species=cat`) or arithmetic comparison (`age>=10`) etc.
 
-`--filter <meta(|>|>=|=|<=|<)value>...`
-
-:   filter samples to put on a plot by their metadata values. Filter allows equality (`species=cat`) or arithmetic comparison (`age>=10`) etc.
-
-
-`--primary-group <meta>`
-
-:   specify metadata column used to group datasets
-
-`--primary-group-values <value>[,<value>...]...`
-
-:   set particular order of primary group values
-
-`--secondary-group <meta>`
-
-:   specify metadata column used to apply secondary grouping of datasets (if primary grouping is already applied)
-
-`--secondary-group-values <value>[,<value>...]...`
-
-:   set particular order of secondary group values
-
-
-`--facet-by <meta>`
-
-:   specify metadata column to use for plotting facets
+`--metadata <path>`
+: [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files.
 
 `--plot-type <plotType>`
+: Plot type. Possible values: `boxplot`, `boxplot-bindot`, `boxplot-jitter`, `violin`, `violin-bindot`, `barplot`, `barplot-stacked`, `lineplot`, `lineplot-jitter`, `lineplot-bindot`, `scatter`
 
-:   possible values: `boxplot`, `boxplot-bindot`, `boxplot-jitter`, `lineplot`, `lineplot-bindot`, `lineplot-jitter`, `violin`, `violin-bindot`, `barplot`, `barplot-stacked`, `scatter`
+`-p, --primary-group <meta>`
+: Specify metadata column used to group datasets.
+
+`-pv, --primary-group-values <value>[,<value>...]`
+: List of comma separated primary group values.
+
+`-s, --secondary-group <meta>`
+: Secondary group.
+
+`-sv, --secondary-group-values <value>[,<value>...]`
+: List of comma separated secondary group values.
+
+`--facet-by <meta>`
+: Facet by.
+
+`--metric <metric>[,<metric>...]`
+: Output only specified list of metrics:
+
+    - for [`cdr3metrics`](./mixcr-postanalysis.md#cdr3-metrics) possible values are: `cdr3lenAA`, `cdr3lenNT`, `ndnLenNT`, `addedNNT`, `strength`, `hydrophobicity`, `surface`, `volume`, `charge`
+    
+    - for [`diversity`](./mixcr-postanalysis.md#diversity-measures) possible values are: `observed`, `shannonWiener`, `chao1`, `normalizedShannonWienerIndex`, `inverseSimpsonIndex`, `giniIndex`, `d50`, `efronThisted`
+
 
 `--hide-overall-p-value`
-
-:   do not show overall p-value on the plot
-
-`--ref-group <refGroup>`
-
-:   specify reference group for compare means statistics
+: Hide overall p-value.
 
 `--pairwise-comparisons`
+: Show pairwise p-value comparisons.
 
-:   show all pairwise p-values
+`--ref-group <refGroup>`
+: Reference group for compare means statistics. Can be 'all' or some specific value.
 
 `--hide-non-significant`
+: Hide non-significant observations.
 
-:   do not show non-significant p-values
-
-`--show-significance`
-
-:   show significance levels instead of p-values ( `ns` for p-value >= 0.05, `***` for p-value < 0.0001,  `**` for p-value < 0.001, `*` in other case)
+`--paired`
+: Do paired analysis
 
 `--method <method>`
+: Statistical test method. Available methods: [`Wilcoxon`](https://en.wikipedia.org/wiki/Mann–Whitney_U_test) (default), [`ANOVA`](https://en.wikipedia.org/wiki/Analysis_of_variance), [`TTest`](https://en.wikipedia.org/wiki/Student%27s_t-test), [`KruskalWallis`](https://en.wikipedia.org/wiki/Kruskal–Wallis_one-way_analysis_of_variance), [`KolmogorovSmirnov`](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)
 
-:   statistical test method. Available methods: [`Wilcoxon`](https://en.wikipedia.org/wiki/Mann–Whitney_U_test) (default), [`ANOVA`](https://en.wikipedia.org/wiki/Analysis_of_variance), [`TTest`](https://en.wikipedia.org/wiki/Student%27s_t-test), [`KruskalWallis`](https://en.wikipedia.org/wiki/Kruskal–Wallis_one-way_analysis_of_variance), [`KolmogorovSmirnov`](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)
+`--method-multiple-groups <method>`
+: Test method for multiple groups comparison. Available methods: [`KruskalWallis`](https://en.wikipedia.org/wiki/Kruskal–Wallis_one-way_analysis_of_variance) (default), [`Wilcoxon`](https://en.wikipedia.org/wiki/Mann–Whitney_U_test), [`ANOVA`](https://en.wikipedia.org/wiki/Analysis_of_variance), [`TTest`](https://en.wikipedia.org/wiki/Student%27s_t-test), [`KolmogorovSmirnov`](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)
 
 `--p-adjust-method <method>`
+: Method used to adjust p-values. Available methods: Available methods: [`Holm`](https://www.jstor.org/stable/4615733) (default), [`BenjaminiHochberg`](https://www.jstor.org/stable/2346101), [`BenjaminiYekutieli`](https://www.jstor.org/stable/2674075), [`Bonferroni`](https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method), [`Hochberg`](https://www.jstor.org/stable/2336325), [`Hommel`](https://www.jstor.org/stable/2336190), `none`
 
-:   p-value correction method. Available methods: [`Holm`](https://www.jstor.org/stable/4615733) (default), [`BenjaminiHochberg`](https://www.jstor.org/stable/2346101), [`BenjaminiYekutieli`](https://www.jstor.org/stable/2674075), [`Bonferroni`](https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method), [`Hochberg`](https://www.jstor.org/stable/2336325), [`Hommel`](https://www.jstor.org/stable/2336190), `none`
+`--show-significance`
+: Show significance levels instead of p-values ( `ns` for p-value >= 0.05, `***` for p-value < 0.0001,  `**` for p-value < 0.001, `*` in other case).
 
-`--width <width>`
+`-nw, --no-warnings`
+: Suppress all warning messages.
 
-:   width of a plot
+`--verbose`
+: Verbose warning messages.
 
-`--height <height>`
-
-:   height of a plot
+`-h, --help`
+: Show this help message and exit.
 
 ### Examples
 

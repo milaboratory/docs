@@ -45,6 +45,14 @@ The following mix-in options configure [`align`](mixcr-align.md) step.
 : ==:fontawesome-solid-puzzle-piece: Right alignment boundary== <p> 
   Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use global alignment at reads 3'-end. Typically used for J-C intron single primer / multiplex protocols. Optional gene type (`J` for J primers / `C` for C primers) or [anchor point](ref-gene-features.md) may be specified to instruct MiXCR where how to strip J or C [feature to align](mixcr-align.md#gene-features-to-align).
 
+`--keep-non-CDR3-alignments`
+: ==:fontawesome-solid-puzzle-piece: Debug== <p>
+Preserve alignments that do not cover CDR3 region or cover it only partially in the `.vdjca` file.
+
+`--drop-non-CDR3-alignments`
+: ==:fontawesome-solid-puzzle-piece: Debug== <p>
+Drop all alignments that do not cover CDR3 region or cover it only partially.
+
 `--limit-input`
 : ==:fontawesome-solid-puzzle-piece: Debug== <p>
   Maximal number of reads to process.
@@ -53,14 +61,6 @@ The following mix-in options configure [`align`](mixcr-align.md) step.
 ### Clonotype assembly mix-in options
 
 The following mix-in options configure [`assemble`](mixcr-assemble.md) step.
-
-`--keep-non-CDR3-alignments`
-: ==:fontawesome-solid-puzzle-piece: Debug== <p>
-Preserve alignments that do not cover CDR3 region or cover it only partially in the `.vdjca` file.
-
-`--drop-non-CDR3-alignments`
-: ==:fontawesome-solid-puzzle-piece: Debug== <p>
-Drop all alignments that do not cover CDR3 region or cover it only partially.
 
 `--assemble-clonotypes-by <gene_features>`
 : Specify [gene features used to assemble clonotypes](mixcr-assemble.md#core-assembler-parameters). One may specify any custom [gene region](ref-gene-features.md) (e.g. `FR3+CDR3`); target clonal sequence can even be disjoint. Note that `assemblingFeatures` must cover CDR3.

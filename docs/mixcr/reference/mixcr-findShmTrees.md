@@ -11,25 +11,62 @@ Briefly, lineage reconstruction algorithm groups clones with same V- and J- gene
 ## Command line options
 
 ```
-mixcr findShmTrees [-f] [-nw] 
-   [--verbose] 
+mixcr findShmTrees 
+   [--v-gene-names <gene_name>]... 
+   [--j-gene-names <gene_name>]... 
+   [--cdr3-lengths <n>]... 
+   [--min-count <n>] 
+   [--build-from <path>] 
+   [-O <key=value>]... 
+   [--report <path>] 
+   [--json-report <path>] 
    [--use-local-temp] 
-   [-bf <buildFrom>]
-   [--min-count <minCountForClone>] 
-   [--cdr3-lengths <CDR3LengthToFilter>]... 
-   [--j-gene-names <JGenesToFilter>]... 
-   [--v-gene-names <VGenesToFilter>]... 
-   [-O <String=String>]...
-   [-j <jsonReport>] 
-   [-r <reportFile>] 
-   [-t <threads>]
-   input_file.clns
-   [input_file2.clns ....] 
-   output_file.shmt
+   [--threads <n>] 
+   [--force-overwrite] 
+   [--no-warnings] 
+   [--verbose] 
+   [--help] 
+   input_file.clns... output_file.shmt
 ```
 The command returns a highly-compressed, memory- and CPU-efficient binary `.shmt` (SHM trees) file that holds exhaustive information about SHM trees. SHM trees can be further extracted in tabular form using [`exportShmTrees`](./mixcr-export.md#shm-trees-tables), [`exportShmTreesWithNodes`](./mixcr-export.md#shm-trees-with-nodes-tables) or newick form using [`exportShmTreesNewick`](./mixcr-exportShmTreesNewick.md). Additionally, MiXCR produces a comprehensive [report](./report-findShmTrees.md) which provides a detailed summary of SHM trees search.
 
 Basic command line options are:
+
+`input_file.clns...`
+: Paths to clns files that was processed by 'findAlleles' command
+
+`output_file.shmt`
+: Path where to write output trees
+
+`--v-gene-names <gene_name>`
+: List of VGene names to filter clones
+
+`--j-gene-names <gene_name>`
+: List of JGene names to filter clones
+
+`--cdr3-lengths <n>`
+: List of CDR3 nucleotide sequence lengths to filter clones
+
+`--min-count <n>`
+: Filter clones with counts great or equal to that parameter
+
+`-bf, --build-from <path>`
+: If specified, trees will be build from data in the file. Main logic of command will be omitted. File must be formatted as tsv and have 3 columns: treeId, fileName, cloneId V and J genes will be chosen by majority of clones in a clonal group. CDR3 length must be the same in all clones. treeId - uniq id for clonal group, fileName - file name as was used in command line to search for clone, cloneId - clone id in the specified file
+
+`-O <key=value>`
+: Overrides default build SHM parameter values
+
+`-r, --report <path>`
+: [Report](./report-findShmTrees.md) file (human readable version, see `-j / --json-report` for machine readable report).
+
+`-j, --json-report <path>`
+: JSON formatted [report](./report-findShmTrees.md) file.
+
+`--use-local-temp`
+: Put temporary files in the same folder as the output files.
+
+`-t, --threads <n>`
+: Processing threads
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
@@ -38,37 +75,10 @@ Basic command line options are:
 : Suppress all warning messages.
 
 `--verbose`
-: Show verbose warning messages.
+: Verbose warning messages.
 
-`--use-local-temp`
-: Put temporary files in the same folder as the output files.
-
-`[-bf <buildFrom>]`
-: If specified, trees will be build from data in the file. Main logic of command will be omitted. File must be formatted as tsv and have 3 columns: treeId, fileName, cloneId. V and J genes will be chosen by majority of clones in a clonal group. CDR3 length must be the same in all clones. treeId - uniq id for clonal group, fileName - file name as was used in command line to search for clone, cloneId - clone id in the specified file.
-
-`[--min-count <minCountForClone>]`
-: Filter clones with counts great or equal to that parameter
-
-`[--cdr3-lengths <CDR3LengthToFilter>]...`
-: List of CDR3 nucleotide sequence lengths to filter clones
-
-`[--j-gene-names <JGenesToFilter>]...`
-: List of JGene names to filter clones
-
-`[--v-gene-names <VGenesToFilter>]...`
-: List of VGene names to filter clones
-
-`-r, --report <reportFile>`
-: [Report](./report-findShmTrees.md) file (human readable version, see -j / --json-report for machine readable report)
-
-`-j, --json-report <jsonReport>`
-: JSON formatted [report](./report-findShmTrees.md) file
-
-`-t, --threads <threads>`
-: Specify number of processing threads
-
-`-O  <String=String>` 
-: Overrides default find alleles parameter values (see below).
+`-h, --help`
+: Show this help message and exit.
 
 ## Lineage reconstruction algorithm parameters
 

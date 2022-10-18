@@ -7,56 +7,64 @@ Aligns raw sequencing data against V-, D-, J- and C- gene segment references lib
 ## Command line options
 
 ```
-mixcr align 
-    --preset <preset_name>
+mixcr align --preset <name> 
+    [--trimming-quality-threshold <n>] 
+    [--trimming-window-size <n>] 
+    [--write-all] 
+    [--tag-pattern-file <path>] 
+    [--tag-parse-unstranded] 
+    [--tag-max-budget <n>] 
+    [--read-buffer <n>] 
+    [--high-compression] 
+    [--not-aligned-R1 <path>] 
+    [--not-aligned-R2 <path>] 
+    [--not-parsed-R1 <path>] 
+    [--not-parsed-R2 <path>] 
+    [--species <species>] 
+    [--library <library>] 
+    [--dna] 
+    [--rna] 
+    [--floating-left-alignment-boundary [<anchor_point>]] 
+    [--rigid-left-alignment-boundary [<anchor_point>]] 
+    [--floating-right-alignment-boundary (<gene_type>|<anchor_point>)] 
+    [--rigid-right-alignment-boundary [(<gene_type>|<anchor_point>)]] 
+    [--tag-pattern <pattern>] 
+    [--keep-non-CDR3-alignments] 
+    [--drop-non-CDR3-alignments] 
+    [--limit-input <n>] 
+    [--assemble-clonotypes-by <gene_features>] 
+    [--split-clones-by <gene_type>]... 
+    [--dont-split-clones-by <gene_type>]... 
+    [--assemble-contigs-by <gene_features>] 
+    [--impute-germline-on-export] 
+    [--dont-impute-germline-on-export] 
+    [--prepend-export-clones-field <field> [<param>...]]... 
+    [--append-export-clones-field <field> [<param>...]]...
+    [--prepend-export-alignments-field <field> [<param>...]]... 
+    [--append-export-alignments-field <field> [<param>...]]... 
     [-O <key=value>]... 
-    [--trimming-quality-threshold <n>]
-	[--trimming-window-size <n>] 
-	[--write-all] 
-	[--tag-pattern-file <path>] 
-	[--tag-parse-unstranded] 
-	[--tag-max-budget <n>] 
-	[-b <library>] 
-	[-s <species>] 
-	[--tag-pattern <pattern>]
-	[--limit-input <n>] 
-	[--dna] [--rna]
-	[--floating-left-alignment-boundary [<anchor_point>]]
-	[--rigid-left-alignment-boundary [<anchor_point>]]
-	[--floating-right-alignment-boundary (<gene_type>|<anchor_point>)]
-	[--rigid-right-alignment-boundary [(<gene_type>|<anchor_point>)]]
-	[--assemble-clonotypes-by <gene_features>] 
-	[--split-clones-by <gene_type>]... 
-	[--keep-non-CDR3-alignments]
-	[--drop-non-CDR3-alignments] 
-	[--dont-split-clones-by <gene_type>]... 
-	[--assemble-contigs-by <gene_features>]
-	[--prepend-export-clones-field <field> [<param>...]]...
-	[--append-export-clones-field <field> [<param>...]]...
-	[--prepend-export-alignments-field <field> [<param>...]]...
-	[--append-export-alignments-field <field> [<param>...]]...
-	[--impute-germline-on-export] 
-	[--dont-impute-germline-on-export]
-	[-M <key=value>]... 
-	[--read-buffer <n>] 
-	[--high-compression]
-	[--not-aligned-R1 <path>] 
-	[--not-aligned-R2 <path>]
-	[--not-parsed-R1 <path>] 
-	[--not-parsed-R2 <path>] 
-	[-r <path>] [-j <path>] 
-	[-t <n>] [-f] [-nw] [--verbose] [-h] 
-	(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam)) alignments. vdjca
+    [-M <key=value>]... 
+    [--repor) <path>] 
+    [--json-report <path>] 
+    [--threads <n>] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
+	(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam)) alignments.vdjca
 ```
 The command returns a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form using [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the alignment performance and quality of the library.
 
-Basic command line arguments are:
+Basic command line options are:
+
+`(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam))`
+: Two fastq files for paired reads or one file for single read data. Use {{n}} if you want to concatenate files from multiple lanes, like: my_file_L{{n}}_R1.fastq.gz my_file_L{{n}}_R2.fastq.gz
+
+`alignments.vdjca`
+: Path where to write output alignments
 
 `-p, --preset <name>`
 : Analysis preset. Sets all important parameters of this and all downstream analysis steps. It is  important to carefully select the most appropriate preset for the data you analyse. See [list of presets](overview-built-in-presets.md). 
-
-`-O <key=value>`
-: Overrides aligner parameters from the selected preset (see below)
 
 `--trimming-quality-threshold <n>`
 : Read pre-processing: trimming quality threshold. Zero value can be used to skip trimming. Default value determined by the preset.
@@ -70,20 +78,20 @@ Basic command line arguments are:
 `--tag-pattern-file <path>`
 : Read tag pattern from a file. Default tag pattern determined by the preset.
 
+`--tag-pattern <pattern>`
+: Specify tag pattern for barcoded data.
+
 `--tag-parse-unstranded`
 : If paired-end input is used, determines whether to try all combinations of mate-pairs or only match reads to the corresponding pattern sections (i.e. first file to first section, etc...). Default value determined by the preset.
 
 `--tag-max-budget <n>`
 : Maximal bit budget, higher values allows more substitutions in small letters. Default value determined by the preset.
 
-`--library, -b <library>`
-: V/D/J/C gene library. By default, the `default` MiXCR reference library is used. One can also use [external libraries](../guides/external-libraries.md)
-
-`--species, -s`
+`-s, --species <species>`
 : Species (organism). Possible values: `hsa` (or HomoSapiens), `mmu` (or MusMusculus), `rat`, `spalax`, `alpaca`, `lamaGlama`, `mulatta` (_Macaca Mulatta_), `fascicularis` (_Macaca Fascicularis_) or any species from [IMGT ® library](../guides/external-libraries.md).
 
-`--tag-pattern <pattern>`
-: Specify tag pattern for barcoded data.
+`-b, --library <library>`
+: V/D/J/C gene library. By default, the `default` MiXCR reference library is used. One can also use [external libraries](../guides/external-libraries.md)
 
 `--limit-input <n>`
 : Maximal number of reads to process on [align](./mixcr-align.md).
@@ -106,11 +114,17 @@ Basic command line arguments are:
 `--not-parsed-R2 <path>`
 : Pipe not parsed R2 reads into separate file.
 
+`-O <key=value>`
+: Overrides aligner parameters from the selected preset (see below)
+
+`-M  <key=value>`
+: Overrides preset parameters
+
 `-r, --report <path>`
-: [Report](./report-align.md) file (human readable version, see -j / --json-report for machine readable report)
+: [Report](./report-align.md) file (human readable version, see `-j / --json-report` for machine readable report).
 
 `-j, --json-report <path>`
-: JSON formatted [report](./report-align.md) file
+: JSON formatted [report](./report-align.md) file.
 
 `-t, --threads <n>`
 : Processing threads
