@@ -3,10 +3,44 @@
 Export all reports from any MiXCR binary file (`.vdjca`, `.clns`, `.clna` and `.shmt`).
 
 ```
-mixcr exportReports [-f] [--json]
-    input.(vdjca|clns|clna|shmt)
-    [output.(json|txt)]
+mixcr exportReports 
+    [--step <step>] 
+    [--yaml | --json] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help] 
+    data.(vdjca|clns|clna|shmt) [report.(txt|json|yaml)]
 ```
+
+Command line options:
+
+`data.(vdjca|clns|clna|shmt)`
+: Path to input file.
+
+`[report.(txt|json|yaml)]`
+: Path where to write reports. Print in stdout if omitted.
+
+`--yaml`
+: Export as yaml
+
+`--json`
+: Export as json
+
+`--step <step>`
+: Export report only for a specific step
+
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
+
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
 
 If the output file is not specified then MiXCR will print to a standard output. 
 
