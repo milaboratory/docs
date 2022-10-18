@@ -63,7 +63,7 @@ Basic command line options are:
 : Filter out-of-frame sequences and sequences with stop-codons.
 
 `--downsampling <type>`
-: Choose downsampling. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`
+: Choose [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`
 
 `--suffix <s>`
 : Suffix to add to output clns file. Default: downsampled
