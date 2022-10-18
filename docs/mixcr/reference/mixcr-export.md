@@ -4,7 +4,7 @@ Export clonotypes or raw alignments in a tabular form.
 
 ![](pics/export.svg)
 
-MiXCR uses three highly efficient binary formats that hold exhaustive information on the clonotypes, alignments, barcodes and original sequencing reads:
+MiXCR uses four highly efficient binary formats that hold exhaustive information on the clonotypes, alignments, barcodes and original sequencing reads:
 
 - `.vdjca` produced by [`align`](./mixcr-align.md) and holds alignments
 - `.clns` produced by [`assemble`](./mixcr-assemble.md) and [`assembleContigs`](./mixcr-assembleContigs.md) holds clonotypes
@@ -46,12 +46,6 @@ Command line options:
 
 `--split-by-tag <tag>`
 :   split clonotype containing multiple values for specified `tag` into multiple rows (one row for one `tag` value). Typically, used for single cell analysis with `--split-by-tag cell` option to export clonotype that present in multiple cells in separate rows
-
-`--minimal-clone-count, -m <count>`
-:   export clonotypes with count greater than specified value
-
-`--minimal-clone-fraction, -q <fraction>`
-:   export clonotypes with clone abundance greater than specified value
 
 `--filter-out-of-frames`, `-o`
 :   do not export clonotypes with out-of-frame CDR3 sequences
