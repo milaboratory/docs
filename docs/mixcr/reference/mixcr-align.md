@@ -7,7 +7,8 @@ Aligns raw sequencing data against V-, D-, J- and C- gene segment references lib
 ## Command line options
 
 ```
-mixcr align -p <name>
+mixcr align 
+    --preset <preset_name>
     [-O <key=value>]... 
     [--trimming-quality-threshold <n>]
 	[--trimming-window-size <n>] 
@@ -51,14 +52,8 @@ The command returns a highly-compressed, memory- and CPU-efficient binary `.vdjc
 
 Basic command line arguments are:
 
-`(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam))`
-: Two fastq files for paired reads or one file for single read data. Use {{n}} if you want to concatenate files from multiple lanes, like: my_file_L{{n}}_R1.fastq.gz my_file_L{{n}}_R2.fastq.gz
-
-`alignments.vdjca`
-: Path where to write output alignments
-
 `-p, --preset <name>`
-: Analysis preset. Sets all significant parameters of this and all downstream analysis steps. This is a required parameter. It is very important to carefully select the most appropriate preset for the data you analyse.
+: Analysis preset. Sets all important parameters of this and all downstream analysis steps. It is  important to carefully select the most appropriate preset for the data you analyse. See [list of presets](overview-built-in-presets.md). 
 
 `-O <key=value>`
 : Overrides aligner parameters from the selected preset (see below)
@@ -92,33 +87,6 @@ Basic command line arguments are:
 
 `--limit-input <n>`
 : Maximal number of reads to process on [align](./mixcr-align.md).
-
-`--dna`
-: ==:fontawesome-solid-puzzle-piece: Material type== <p>
-For DNA starting material. Setups V [gene feature to align](mixcr-align.md#gene-features-to-align) to [`VGeneWithP`](ref-gene-features.md) (full intron) and also instructs MiXCR to skip C gene alignment since it is too far from CDR3 in DNA data.
-
-`--rna`
-: ==:fontawesome-solid-puzzle-piece: Material type== <p>
-For RNA starting material; setups [`VTranscriptWithP`](ref-gene-features.md) (full exon) [gene feature to align](mixcr-align.md#gene-features-to-align) for V gene and [`CExon1`](ref-gene-features.md) for C gene.
-
-`--floating-left-alignment-boundary [<anchor_point>]`
-: ==:fontawesome-solid-puzzle-piece: Left alignment boundary== <p>
-Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use semi-local alignment at reads 5'-end. Typically used with V gene single primer / multiplex protocols, or if there are non-trimmed adapter sequences at 5'-end. Optional [anchor point](ref-gene-features.md) may be specified to instruct MiXCR where the primer is located and strip V [feature to align](mixcr-align.md#gene-features-to-align) accordingly, resulting in a more precise alignments.
-
-`--rigid-left-alignment-boundary [<anchor_point>]`
-: ==:fontawesome-solid-puzzle-piece: Left alignment boundary== <p>
-Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use global alignment at reads 5'-end. Typically used for 5'RACE with template switch oligo or a like protocols. Optional [anchor point](ref-gene-features.md) may be specified to instruct MiXCR how to strip V [feature to align](mixcr-align.md#gene-features-to-align).
-
-`--floating-right-alignment-boundary (<gene_type>|<anchor_point>)`
-: ==:fontawesome-solid-puzzle-piece: Right alignment boundary== <p>
-Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use semi-local alignment at reads 3'-end. Typically used with J or C gene single primer / multiplex protocols, or if there are non-trimmed adapter sequences at 3'-end. Requires either gene type (`J` for J primers / `C` for C primers) or [anchor point](ref-gene-features.md) to be specified. In latter case MiXCR will additionally strip [feature to align](mixcr-align.md#gene-features-to-align) accordingly.
-
-`--rigid-right-alignment-boundary [(<gene_type>|<anchor_point>)]`
-: ==:fontawesome-solid-puzzle-piece: Right alignment boundary== <p>
-Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use global alignment at reads 3'-end. Typically used for J-C intron single primer / multiplex protocols. Optional gene type (`J` for J primers / `C` for C primers) or [anchor point](ref-gene-features.md) may be specified to instruct MiXCR where how to strip J or C [feature to align](mixcr-align.md#gene-features-to-align).
-
-`-M  <key=value>`
-: Overrides preset parameters
 
 `--read-buffer <n>`
 : Size of buffer for FASTQ readers in bytes. Default: 4Mb
@@ -159,6 +127,8 @@ Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use globa
 `-h, --help`
 : Show this help message and exit.
 
+
+In addition to these parameters, any of the [available mix-in options](overview-mixins-list.md) may ve additionally specify at `align`. 
 
 ## Concatenating across multiple lanes
 
