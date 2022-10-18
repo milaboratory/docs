@@ -52,8 +52,11 @@ Command takes input `.vdjca` file produced at [`align`](mixcr-align.md) step and
 `--max-indels <maxIndels>`
 : Maximal number of indels to search for. Default is `1`.
 
-`--use-system-temp`
-: Use system temp folder for temporary files.
+`--max-errors <n>`
+: Maximal number of substitutions and indels combined to search for.
+
+`--use-local-temp`
+: Store temp files in the same folder as output file.
 
 `--memory-budget <memoryBudget>`
 : Memory budget. Default is `4294967296` (4Gb).
