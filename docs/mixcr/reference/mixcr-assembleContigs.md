@@ -2,7 +2,8 @@
 
 Assembles longest possible TCR/Ig receptor contig sequences.
 
-![img.png](pics/assembleContigs.svg)
+![img.png](pics/assembleContigs-light.svg#only-light)
+![img.png](pics/assembleContigs-dark.svg#only-dark)
 
 This step may be used in the following cases:
 

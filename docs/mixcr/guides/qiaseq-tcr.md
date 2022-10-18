@@ -11,8 +11,8 @@ A humanized (Hu)-mouse melanoma model was created by injecting fetal liver-deriv
 
 On the scheme bellow you can see structure of cDNA library. UMI is located in the first 12 bp of R2.
 
-![library-structure.svg](qiaseq-tcr/figs/library-structure.svg)
-
+![](../reference/pics/QIAseq-immune-tcr-kit-light.svg#only-light)
+![](../reference/pics/QIAseq-immune-tcr-kit-dark.svg#only-dark)
 
 All data may be downloaded directly from SRA (PRJEB44566) using e.g. [SRA Explorer](https://sra-explorer.info).
 

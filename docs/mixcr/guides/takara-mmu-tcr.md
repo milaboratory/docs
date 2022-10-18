@@ -24,7 +24,8 @@ The project contains 100 FASTQ file pairs. For the purpose of this tutorial we a
 
 The structure of the library is shown on the picture bellow.
 
-![library-structure](abhelix-bcr/figs/library-structure.svg)
+![](../reference/pics/SMARTer-Mouse-TCR-light.svg#only-light)
+![](../reference/pics/SMARTer-Mouse-TCR-dark.svg#only-dark)
 
 ## Upstream analysis
 

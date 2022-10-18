@@ -132,9 +132,7 @@ Use primary grouping and facets:
     pa/i.json.gz \
     plots/diversity_facets.pdf
 ```
-<figure markdown>
 ![export-plots-primary-facets.TRAD.svg](pics/export-plots-primary-facets.TRAD.svg)
-</figure>
 
 
 Use secondary grouping:
@@ -147,9 +145,7 @@ Use secondary grouping:
     pa/i.json.gz \
     plots/pdf
 ```
-<figure markdown>
 ![export-plots-secondary.TRAD.svg](pics/export-plots-secondary.TRAD.svg)
-</figure>
 
 [TODO more examples]
 
@@ -386,9 +382,7 @@ Export overlap with color key:
     pa/o.json.gz \
     plots/overlap.pdf
 ```
-<figure markdown>
 ![overlap](pics/export-plots-overlap.TRAD.svg)
-</figure>
 
 ## SHM trees
 ```

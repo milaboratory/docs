@@ -2,7 +2,8 @@
 
 Finds V- and J-gene allelic variants in a given sample(s). As result MiXCR creates a new [repseq.io](ref-repseqio-json-format.md) reference library and re-aligns clonotypes against it.
 
-![](pics/findAlleles.svg)
+![](pics/findAlleles-light.svg#only-light)
+![](pics/findAlleles-dark.svg#only-dark)
 
 Note that clontypes passed as input must be cut by and fully covered by the same [gene feature](mixcr-assemble.md#core-assembler-parameters). So, for example `.clns` files with [contigs](overview-analysis-overview.md#contig-assemblymixcr-assemblecontigsmd), must be assembled using [`assembleContigs`](mixcr-assembleContigs.md) with `--cut-by` option.
 

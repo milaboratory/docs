@@ -22,10 +22,8 @@ There are several important common aspects of individual and overlap postanalysi
 
 Downsampling is a required procedure without which it is not possible to make a statistical comparisons between datasets.
 
-[//]: # (copy of mixcr-downsample.md)
-<figure markdown>
-![downsampling](./pics/downsampling.svg)
-</figure>
+![](./pics/downsampling-light.svg#only-light)
+![](./pics/downsampling-dark.svg#only-dark)
 
 There are three types of downsampling each of which may be applied on a one of three tag levels: `read`, `umi` or `cell`:
 

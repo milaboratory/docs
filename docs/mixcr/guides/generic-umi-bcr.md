@@ -8,7 +8,8 @@ Chen JS, Chow RD, Song E, Mao T, Israelow B, Kamath K, Bozekowski J, Haynes WA, 
 
 The experiment includes 8 mice that express angiotensin-converting enzyme 2 (ACE2) in epithelial cells thus  vulnerable to SARS-CoV-2.  4 K18-hACE2 Bcl6fl/fl mice and 4 Bcl6fl/flCd4Cre (T~FH~ cell deficiency model) mice. Mice were infected intranasally with SARS-CoV-2 (isolate USA-WA1/2020) and 14 days post-infection S-specific plasmablasts were isolated. RNA from spike-specific B cells was isolated using the RNeasy Plus Micro Kit (Qiagen) following the manufacturer’s instructions. BCR libraries were prepared using the NEBNext Single Cell/Low Input cDNA Synthesis & Amplification Module (New England Biolabs (NEB), E6421) and NEBNext Immune Sequencing Kit (NEB, E6330), with additional reagents provided by NEB to integrate the two kits. High-quality RNA (1 to 20 ng) with RNA integrity number ≥ 8 was used as input. Libraries were analyzed by Bioanalyzer High Sensitivity DNA assay, pooled in equal amounts with PhiX spike-in, and sequenced on an Illumina MiSeq using the V3 kit, with 325 base pairs (bp) for read 1 and 275 bp for read 2.
 
-![library-structure.svg](generic-umi-bcr/figs/library-structure.svg)
+![](../reference/pics/NEBNext-mouse-bcr-kit-light.svg#only-light)
+![](../reference/pics/NEBNext-mouse-bcr-kit-dark.svg#only-dark)
 
 All data may be downloaded directly from SRA (PRJNA780318) using e.g. [SRA Explorer](https://sra-explorer.info).
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
@@ -317,7 +318,7 @@ We are going to construct a box plot to compare inverse Simpson diversity Index 
 --8<-- "generic-umi-bcr/scripts/140-pa-diversity.sh"
 ```
 
-![diversity.svg](generic-umi-bcr/figs/diversity.IGH.svg)
+![](generic-umi-bcr/figs/diversity.IGH.svg)
 
 Arguments explained:
 

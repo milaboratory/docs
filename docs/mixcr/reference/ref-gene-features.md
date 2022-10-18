@@ -40,25 +40,21 @@ Features defined for germline genes are mainly used in
 
 ### V Gene structure
 
-<figure markdown>
-![vgene](./pics/gene-features-v-gene-structure.svg)
-</figure>
-
+![](./pics/gene-features-v-gene-structure-light.svg#only-light)
+![](./pics/gene-features-v-gene-structure-dark.svg#only-dark)
 
 Additionally to core gene features in V region (like `FR3`) we introduce
 `VGene`, `VTranscript` and `VRegion` for convenience.
 
 ### D Gene structure
 
-<figure markdown>
-![dgene](./pics/gene-features-d-gene-structure.svg)
-</figure>
+![](./pics/gene-features-d-gene-structure-light.svg#only-light)
+![](./pics/gene-features-d-gene-structure-dark.svg#only-dark)
 
 ### J Gene structure
 
-<figure markdown>
-![jgene](./pics/gene-features-j-gene-structure.svg)
-</figure>
+![](./pics/gene-features-j-gene-structure-light.svg#only-light)
+![](./pics/gene-features-j-gene-structure-dark.svg#only-dark)
 
 ## Mature TCR/BCR gene features
 
@@ -74,9 +70,8 @@ end of D gene and begin of J gene varies. As a result in most cases
 actual `VEnd`, `DBegin`, `DEnd` and `JBegin` anchor positions are not
 covered by alignment:
 
-<figure markdown>
-![vdj](./pics/gene-features-V(D)J-junction-structure-1.svg)
-</figure>
+![](./pics/gene-features-V(D)J-junction-structure-1-light.svg#only-light)
+![](./pics/gene-features-V(D)J-junction-structure-1-dark.svg#only-dark)
 
 In order to use actual V, D, J gene boundaries we introduce four
 additional anchor positions: `VEndTrimmed`, `DBeginTrimmed`,
@@ -84,9 +79,8 @@ additional anchor positions: `VEndTrimmed`, `DBeginTrimmed`,
 `VDJunction`, `DJJunction` and `VJJunction`. On the following
 picture one can see the structure of V(D)J junction:
 
-<figure markdown>
-![vdj](./pics/gene-features-V(D)J-junction-structure-2.svg)
-</figure>
+![](./pics/gene-features-V(D)J-junction-structure-2-light.svg#only-light)
+![](./pics/gene-features-V(D)J-junction-structure-2-dark.svg#only-dark)
 
 If D gene is not found in the sequence or is not present in target locus
 (e.g. TRA), `DBeginTrimmed` and `DEndTrimmed` anchor points as well

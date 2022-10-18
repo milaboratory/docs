@@ -2,6 +2,9 @@
 
 Corrects sequencing and PCR errors _inside_ barcode sequences and sorts resulting file by tags. This step does extremely important job by correcting artificial diversity caused by errors in barcodes.
 
+![](pics/refineAndSortTags-light.svg#only-light)
+![](pics/refineAndSortTags-dark.svg#only-dark)
+
 ## Command line options
 
 ```

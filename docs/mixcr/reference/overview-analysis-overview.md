@@ -19,7 +19,8 @@ Upstream analysis basically includes alignment of raw sequencing data against re
 
 The initial step of the analysis is alignment of raw sequencing data against reference V-, D-, J- and C- gene segment database.
     
-![](./pics/align.svg)
+![](./pics/align-light.svg#only-light)
+![](./pics/align-dark.svg#only-dark)
 
 MiXCR implements a family of highly efficient alignment algorithms, which may be tuned depending on the particular library architecture. At a top level it uses fast [k-mer seed-and-vote approach](http://nar.oxfordjournals.org/content/41/10/e108) and implements two aligners: the first one with [linear scoring](mixcr-align.md#parameters-for-kaligner) is better designed for T-cells and the second one with [affine scoring](mixcr-align.md#parameters-for-kaligner2) better supports long indels which are more typical for B-cells. In the depths it switches to different variations of more expensive classical [Needleman–Wunsch](https://en.wikipedia.org/wiki/Needleman–Wunsch_algorithm) and [Smith–Waterman](https://en.wikipedia.org/wiki/Smith–Waterman_algorithm) algoritms to find optimal alignments. It may use either [global, local or glocal](https://en.wikipedia.org/wiki/Sequence_alignment#Global_and_local_alignments) alignments at 5'- and 3'- ends of raw reads depending on the presense of absence of primers and adapters. 
  
@@ -33,7 +34,8 @@ The built-in reference [gene library](http://github.com/repseqio/library) of V-,
 
 For barcoded (tagged) data, corrects errors _inside_ barcode sequences and filters out spurious barcodes.
 
-![](pics/correctAndSortTags.svg)
+![](pics/refineAndSortTags-light.svg#only-light)
+![](pics/refineAndSortTags-dark.svg#only-dark)
 
 There are multiple sources of erroneous and spurious barcodes and this step is crucial to eliminate artificial diversity caused by them.
 
@@ -46,7 +48,8 @@ Spurious barcodes arise from multiple sources. For UMIs this is oftenly a recomb
 
 For shotgun/fragmented data, rescues alignments that partially cover CDR3 region.
 
-![](pics/assemblePartial.svg)
+![img.png](pics/assemblePartial-light.svg#only-light)
+![img.png](pics/assemblePartial-dark.svg#only-dark)
 
 Typically this step is applied for non-targeted RNA-Seq data or in case of a fragmented data when target molecule is randomly shredded (e.g. 10x chemistry). In such cases there may be a fraction of alignmets that do not cover whole CDR3 region, especially for short read data. MiXCR implements a [powerful algorithm](https://www.nature.com/articles/nbt.3979) to identify groups of such alignments coming from the same molecule but different reads and merge them in order to reconstruct CDR3 region and prevent this information from losing. The algorithm applies multiple criteria to identify such groups and utilizes barcodes if they are present in the data.
  
@@ -58,7 +61,8 @@ The procedure is [throughly optimized](https://www.nature.com/articles/nbt.3979)
 
 For non-enriched RNA-Seq TCR data, imputes missing nucleotides at the edges of CDR3 region.  
 
-![](pics/extend.svg)
+![extend.svg](pics/extend-light.svg#only-light)
+![extend.svg](pics/extend-dark.svg#only-dark)
 
 To safely utilize even those reads that still only partially cover CDR3 but fully cover the N-D-N region, an optional CDR3 extension step for TCRs (but not Igs, due to possible presence of hypermutations). This step fills in the edges of the CDR3 based on known information on the relevant germline gene segments. This is only applied for sequences assigned with definite V and J genes (often supported by companion paired-end reads), but at the same time do not cover the CDR3 sequence end-to-end, missing few germline nucleotides. Since TCRs do not undergo hypermutations and their germline sequences are quite well-conserved, it is reasonable to artificially extend the CDR3 for such junctions with existing data from reference germline genes. 
 
@@ -68,7 +72,8 @@ The procedure is also [throughly optimized](https://www.nature.com/articles/nbt.
 
 The key step of the upstream analysis is clonotype assembly.
 
-![](pics/assemble.svg)
+![assemble](./pics/assemble-light.svg#only-light)
+![assemble](./pics/assemble-dark.svg#only-dark)
 
 Basically, clone assembler groups alignments by similar nucleotide sequences of assembling feature, possibly using fuzzy matching and clustering for PCR and sequencing error correction. It allows to use arbitrary [gene feature](./ref-gene-features.md) that covers N-D-N region, which gives a flexibility to adjust assembling feature for a particular wet lab protocol or kit, for example using VDJRegion or just CDR3 or even CDR2+FR3+CDR3 (when paired-end sequences have gap in FR2).
 
@@ -80,7 +85,8 @@ MiXCR applies [two basic layers of error correction](https://www.nature.com/arti
 
 For fragmented data, assembles longest available consensus contig receptor sequences.  
 
-![](pics/assembleContigs.svg)
+![img.png](pics/assembleContigs-light.svg#only-light)
+![img.png](pics/assembleContigs-dark.svg#only-dark)
 
 MiXCR uses powerful alignment-guided algorithm to reconstruct full-length (or at least longest available) of B- and T-cell receptors. This step is used for fragmented data like RNA-Seq or 10x, when individual alignments do not cover full VDJ, typically short reads, and located in a random position of VDJ region. For such case it is possible to assemble clonotypes only by CDR3 region and then apply contig assembly. It iterates over alignments used to build a particular clone (MiXCR preserves this mapping) and reconstructs a consensus contig sequence.
 
@@ -93,7 +99,8 @@ Finally, if data contains cell barcodes, contig assembly procedure may be perfor
 
 The end results of upstream analysis are clonotype tables.
 
-![](pics/export.svg)
+![](pics/export-light.svg#only-light)
+![](pics/export-dark.svg#only-dark)
 
 MiXCR allows to export exhaustive information about each clone including nucleotide and amino acid sequences of all available [gene features](ref-gene-features.md), gene assignments, allelic and somatic mutations, positions of reference points, abundance in reads or barcodes, and many more. This info may exported in a [tabular form](mixcr-export.md) with optional possibility to adjust a set of exporting columns by choosing from the list of nearly hundred of available export fields. MiXCR also supports export in [AIRR format](mixcr-exportAirr.md). Additionally, it is possible to export a [well-formatted](mixcr-exportPretty.md) human-readable clonotypes for manual inspection. 
 

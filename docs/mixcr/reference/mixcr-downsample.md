@@ -2,10 +2,8 @@
 
 Downsample clonesets.
 
-[//]: # (copy of mixcr-postanalysis.md#downsampling)
-<figure markdown>
-![downsampling](./pics/downsampling.svg)
-</figure>
+![](./pics/downsampling-light.svg#only-light)
+![](./pics/downsampling-dark.svg#only-dark)
 
 There are three types of downsampling each of which may be applied on a one of three tag levels: `read`, `umi` or `cell`:
 

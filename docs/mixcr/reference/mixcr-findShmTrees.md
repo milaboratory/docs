@@ -2,7 +2,8 @@
 
 Reconstructs somatic hypermutations trees from cloneset(s).
 
-![](pics/findShmTrees.svg)
+![](pics/findShmTrees-light.svg#only-light)
+![](pics/findShmTrees-dark.svg#only-dark)
 
 Input `.clns` files must be pre-processed by [`findAlleles`](mixcr-findAlleles.md).
 

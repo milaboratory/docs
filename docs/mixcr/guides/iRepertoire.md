@@ -20,8 +20,8 @@ All data is available from SRA (PRJNA754274) using e.g. [SRA Explorer](https://s
 
 The project contains 103 FASTQ file pairs. For the purpose of this tutorial we assume that all fastq files are stored  in `fastq/` folder. The structure of sequences is shown on the picture bellow. The data was obtained using multiplex primers for V and J genes. Below you can see the structure of cDNA library.
 
-![iRepertoire.svg](irepertoire-tcr-lr/figs/library-structure.svg)
-
+![](irepertoire-tcr-lr/figs/irepertoire-library-structure-light.svg#only-light)
+![](irepertoire-tcr-lr/figs/irepertoire-library-structure-dark.svg#only-dark)
 
 ## Upstream analysis
 
