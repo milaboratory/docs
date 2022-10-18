@@ -865,12 +865,12 @@ https://cdn.milaboratory.com/data/PRJNA699402/N2_control_LN_S4_L001_R1_001.fastq
 https://cdn.milaboratory.com/data/PRJNA699402/N2_control_LN_S4_L001_R2_001.fastq.gz
   <span class=nv>out</span><span class=o>=</span>raw/N2_control_replica2_LN_R2.fastq.gz
 </code></pre></div></p> </details> <h2 id=one-command-solution>One command Solution</h2> <p>The easiest way to obtain clonotype tables for this type of data is to use a universal <a href=../../reference/mixcr-analyze/ ><code>mixcr analyze</code></a> command. This is a BCR data, so we will use a preset called <code>bcr_amplicon</code>.</p> <p>The exact command for a single sample you can see bellow:</p> <div class=highlight><pre><span></span><code>mixcr analyze bcr_amplicon <span class=se>\</span>
-    +species mmu <span class=se>\</span>
-    +rna <span class=se>\</span>
-    +rigidLeftAlignmentBoundary <span class=se>\</span>
-    +rigidRightAlignmentBoundary <span class=se>\</span>
-    +tagPattern ^N<span class=o>{</span><span class=m>4</span><span class=o>}</span>ccctcctttaattccc<span class=o>{</span><span class=m>21</span><span class=o>}(</span>R1:*<span class=o>)</span><span class=se>\^</span>N<span class=o>{</span><span class=m>4</span><span class=o>}</span>gaggagagagagagagN<span class=o>{</span><span class=m>26</span><span class=o>}(</span>R2:*<span class=o>)</span> <span class=se>\</span>
-    +assembleClonotypesBy <span class=o>{</span>CDR1Begin:FR4End<span class=o>}</span> <span class=se>\</span>
+    --species mmu <span class=se>\</span>
+    --rna <span class=se>\</span>
+    --rigid-left-alignment-boundary <span class=se>\</span>
+    --rigid-right-alignment-boundary <span class=se>\</span>
+    --tagPattern ^N<span class=o>{</span><span class=m>4</span><span class=o>}</span>ccctcctttaattccc<span class=o>{</span><span class=m>21</span><span class=o>}(</span>R1:*<span class=o>)</span><span class=se>\^</span>N<span class=o>{</span><span class=m>4</span><span class=o>}</span>gaggagagagagagagN<span class=o>{</span><span class=m>26</span><span class=o>}(</span>R2:*<span class=o>)</span> <span class=se>\</span>
+    --assemble-clonotypes-by <span class=o>{</span>CDR1Begin:FR4End<span class=o>}</span> <span class=se>\</span>
     raw/M1_4T1_replica1_Blood_R1.fastq.gz <span class=se>\</span>
     raw/M1_4T1_replica1_Blood_R2.fastq.gz <span class=se>\</span>
     results/M1_4T1_replica1_Blood
@@ -897,12 +897,12 @@ mkdir -p results/
 ls raw/*_1* <span class=p>|</span> <span class=se>\</span>
     parallel -j <span class=m>4</span> <span class=se>\</span>
     <span class=s1>&#39;mixcr analyze bcr-amplicon -f \</span>
-<span class=s1>    +species mmu \</span>
-<span class=s1>    +rna \</span>
-<span class=s1>    +rigidLeftAlignmentBoundary \</span>
-<span class=s1>    +rigidRightAlignmentBoundary \</span>
-<span class=s1>    +tagPattern &quot;^N{&quot;4&quot;}ccctcctttaattcccN{&quot;22&quot;}(R2:*)\^N{&quot;4&quot;}gaggagagagagagagN{&quot;26&quot;}(R1:*)&quot; \</span>
-<span class=s1>    +assembleClonotypesBy {&quot;CDR1Begin:FR4End&quot;} \</span>
+<span class=s1>    --species mmu \</span>
+<span class=s1>    --rna \</span>
+<span class=s1>    --rigid-left-alignment-boundary \</span>
+<span class=s1>    --rigid-right-alignment-boundary \</span>
+<span class=s1>    --tagPattern &quot;^N{&quot;4&quot;}ccctcctttaattccc{&quot;21&quot;}(R1:*)\^N{&quot;4&quot;}gaggagagagagagagN{&quot;26&quot;}(R2:*)&quot; \</span>
+<span class=s1>    --assemble-clonotypes-by {CDR1Begin:FR4End} \</span>
 <span class=s1>    {} \</span>
 <span class=s1>    {=s:R1:R2:=} \</span>
 <span class=s1>    {=s:.*/:results/:;s:_R.*::=}&#39;</span>
