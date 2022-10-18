@@ -1,11 +1,11 @@
 # Presets
 
-To run a qualified upstream analysis one need to basically understand the wet lab protocol used and architecture of the libraries. The list of steps in the analysis pipeline may be also different depending on the data type. MiXCR like a swiss knife gives a full flexibility to optimize workflow for every particular type of data and achieve the highest possible analysis performance. MiXCR _presets_ provide a convenient and intuitive interface allowing users to run complicated pipelines easily.
+To run a qualified upstream analysis one need to understand the wet lab protocol used and the architecture of the cDNA/DNA libraries. The list of steps in the analysis pipeline may also differ depending on the data type. MiXCR is like a "swiss knife" that provides full flexibility to optimize a workflow for every particular type of data and achieve the highest possible analysis performance. MiXCR _presets_ is a convenient and intuitive interface allowing users to run complicated pipelines easily.
 
 
-Basically, _preset_ is a list of pre-configured MiXCR steps needed to run analysis for a particular data type, bundled under a certain name and defined in a [YAML](ref-presets-yaml.md) format. Preset determines the list of MiXCR analysis steps, their parameter values and additional required parameters needed to be specified by the user. There is a [comprehensive list](overview-built-in-presets.md) of built-in presets for many of available commercial kits, known library preparation protocols and sequencing data types.
+A _preset_ is a list of pre-configured MiXCR steps needed to run an analysis for a particular data type, bundled under a certain name and defined in a [YAML](ref-presets-yaml.md) format. Preset determines the list of MiXCR analysis steps, their parameter values and additional required parameters needed to be specified by the user. There is a [comprehensive list](overview-built-in-presets.md) of built-in presets for many of commercialy available kits, known library preparation protocols and sequencing data types.
 
-In the simplest way preset can be used with [`analyze`](mixcr-analyze.md) command. For example, to run the analysis of 10x Genomics single cell human VDJ data for B-cells we can use `10x-vdj-bcr` preset:
+Presets can be used with [`mixcr analyze`](mixcr-analyze.md) command. For example, to run the analysis of 10x Genomics single cell human VDJ data for B-cells we can use `10x-vdj-bcr` preset:
 ```shell
 mixcr analyze 10x-vdj-bcr \
     --species hsa \
@@ -15,9 +15,9 @@ mixcr analyze 10x-vdj-bcr \
 ```
 The only required option we had to specify here is species. Under the hood MiXCR will run pre-configured steps for this 10x preset, including [alignment](mixcr-align.md), [barcode correction](mixcr-refineTagsAndSort.md), [partial assembly](mixcr-assemblePartial.md), [clonotype assembly](mixcr-assemble.md), [full-length contig assembly](mixcr-assembleContigs.md) and [export](mixcr-export.md).
 
-For each step, preset [contains](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml) many pre-configured parameters optimized specifically for this protocol e.g. the type of the aligners used, scoring matrices and other aligner parameters, barcode filters, different threshold values, etc.  
+For every step, a preset [contains](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml) many pre-configured parameters optimized specifically for this protocol e.g. the type of alignment algorithms, scoring matrices and other aligner parameters, barcode filters, different threshold values, etc.  
 
-The same pipeline can be also executed step by step. In this case preset must be specified for the first step only (align) and then will be used at all subsequent steps automatically:
+The same pipeline can be also executed step by step. In this case the preset must be specified for the first step only (`mixcr align`) and it will be automatically used by all subsequent steps :
 ```shell
 mixcr align \
     --preset 10x-vdj-bcr \
@@ -51,9 +51,9 @@ If there is no built-in preset for some specific protocol, one can use one of th
 
 ## Mix-in options
 
-While preset already determines the whole analysis pipeline, one can add additional configs using _mix-in_ options. Such options "mix in" additional configs or modifies the pre-configured ones for a given preset. There is a [list](overview-mixins-list.md) of built-in mixins allowing to conveniently adjust pipeline for a certain needs.
+While preset already determines the whole analysis pipeline, one can add additional configs using _mix-in_ options. Such options "mix in" additional configs or modifies the pre-configured ones for a given preset. There is a [list](overview-mixins-list.md) of built-in mixins allowing to conveniently adjust any pipeline for certain needs.
 
-Some presets may have required mixins (_flags_) to be specified by the user (like species in the above case). For example, let's consider a universal preset `tcr-amplicon` for analysis of generic TCR amplicon library. It requires to specify species, type of starting material (DNA or RNA), 3'- and 5'- library structure (primers/adapters on V and J or C genes):
+Some presets have required mixins (_flags_) to be specified by the user (like species in the above case). For example, let's consider a universal preset `tcr-amplicon`, used for analysis of generic TCR amplicon library. It requires to specify species, type of starting material (DNA or RNA), 3'- and 5'- library structure (primers/adapters on V, J or C genes):
 ```shell
 mixcr analyze tcr-amplicon \
     --species hsa \

@@ -68,6 +68,25 @@ Example:
 ```shell
 > mixcr exportQc chainUsage --hide-non-functional results/*.clns chainUsage.pdf 
 ```
-<figure markdown>
 ![chainUsage.svg](pics/exportQc-chainUsage.svg)
-</figure>
+
+## Barcodes
+```
+mixcr exportQc tags \
+    sample1.(vdjca|clns|clna)... \
+    tagsQc.(pdf|eps|svg|png|jpg)  
+```
+Exports tags filtering summary plots.
+
+`--log`
+: use log10 scale along y-axis.
+
+For example, for 10x VDJ data:
+```shell
+> mixcr exportQc plots 10x-data.clns barcodesFiltering.pdf 
+```
+![](pics/exportQc-umi.svg)
+
+![](pics/exportQc-cell.svg)
+
+The upper plot shows reads per UMI distribution and cut-off threshold used to filter erroneous UMIs. The second plot shows UMI per cell barcode distribution and cut-off threshold used to filter erroneous cell barcodes.

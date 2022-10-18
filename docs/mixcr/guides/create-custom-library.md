@@ -17,13 +17,13 @@ ACTCTGAAGATCCAGCCCTCAGAACCCAGGGACTCAGCTGTGTACTTCTGTGCCAGCAGTTTAGC
 TAACAACCAGGCCCAGTATTTTGGAGAAGGGACTCGGCTCTCTGTTCTAG
 ```
 
-To use these sequences in MiXCR or any other `repseqio`-based software, we have to create JSON library file for them (see format description [here](../reference/repseqio-json-format.md)).
+To use these sequences in MiXCR or any other `repseqio`-based software, we have to create JSON library file for them (see format description [here](../reference/ref-repseqio-json-format.md)).
 
 There are two main options of creating library file:
 - create repseqio-JSON formatted library using two automated steps and then, if required, fill in information that was not automatically detected
 - from scratch, manually provide JSON file with meta information and positions of `CDR`s (complementarity determining regions) and `FR`s (framework regions) along with positions of other important gene features required for downstream software (see list of available anchor points [here](../reference/ref-gene-features.md)).
 
-Here we will cover automatic import procedure. Please see [library format description](../reference/repseqio-json-format.md) for more details.
+Here we will cover automatic import procedure. Please see [library format description](../reference/ref-repseqio-json-format.md) for more details.
 
 ## Automatically create boilerplate library
 
@@ -106,7 +106,7 @@ AA:  Not Available
 
 basically this shows us how `repseqio` see the library content. After [`fromFasta`](../reference/repseqio-fromFasta.md) action library contains information only on begin and end positions of genes (strictly speaking begin and end positions of gene feature we specified using `--gene-feature` option), so the only regions it can extract are `VRegion` for `V` gene and `JRegion` for `J` (see illustration [here](../reference/ref-gene-features.md)). For normal repertoire extraction we, at least, must specify positions of `CDR3Begin` (in V gene) and `CDR3End` (in J gene), and probably also need `FR`s, if we plan to extract corresponding regions from repertoire data. Here we again have two options:
 
-* manually specify corresponding positions by adding new items to the `anchorPoints` field (see [library format description](../reference/repseqio-json-format.md))
+* manually specify corresponding positions by adding new items to the `anchorPoints` field (see [library format description](../reference/ref-repseqio-json-format.md))
 * let repseqio find sequence with known anchor points homologous to our sequences from other library (built-in library in this case) and infer missing anchor point from them.
 
 The first option may be the only way if target 'V'/'J' segments are not homologous to any sequences from available library.
