@@ -3,13 +3,16 @@
 Exports overlap table for a given list of clonesets.
 
 ```
-mixcr exportClonesOverlap [-p]
-    [--chains <chains>]...
-    [--criteria <overlapCriteria>]
-    [--only-productive]
+mixcr exportClonesOverlap 
+    [--chains <chain>[,<chain>...]]... 
+    [--criteria <s>] 
+    [--only-productive] 
     [<exportField>]...
-    sample1.clnx sample2.clnx [sampleN.clnx]...
-    overlap.tsv
+    [--force-overwrite]
+    [--no-warnings] 
+    [--verbose]
+    [--help]
+    cloneset.(clns|clna)... output.tsv
 ```
 
 The resulting tab-delimited `.tsv` table contains:
@@ -21,18 +24,35 @@ Since the resulting `.tsv` table may be rather large, MiXCR by default exports o
 
 Other command line options are: 
 
-`--chains <chains>`
+`cloneset.(clns|clna)...`
+: Paths to input files
 
-:   output overlap for specified chains only; if multiple chains are specified, results per each chains will be exported in separate files 
+`output.tsv`
+: Path where to write output export table
 
-`--criteria <overlapCriteria>`
+`--chains <chain>[,<chain>...]`
+: Output overlap for specified chains only; if multiple chains are specified, results per each chains will be exported in separate files.
 
-:   overlap criteria. It allows to specify gene feature for overlap (nucleotide or amino acid), and optionally use V and J hits. Examples: `CDR3|AA|V|J` (overlap by a.a. CDR3 and V and J), `VDJRegion|AA` (overlap by a.a. `VDJRegion`), `CDR3|NT|V` (overlap by nt CDR3 and V).
+`--criteria <s>`
+: Overlap criteria. Defines the rules to treat clones as equal. It allows to specify gene feature for overlap (nucleotide or amino acid), and optionally use V and J hits. Examples: `CDR3|AA|V|J` (overlap by a.a. CDR3 and V and J), `VDJRegion|AA` (overlap by a.a. `VDJRegion`), `CDR3|NT|V` (overlap by nt CDR3 and V). Default: CDR3|AA|V|J
 
 `--only-productive`
+: Filter out-of-frame sequences and clonotypes with stop-codons
 
-:   drop clonotypes with out-of-frame CDR3 sequence or CDR3 containing stop codon
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
 
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
+
+`<exportField>`
+: A list of [export fields](./mixcr-export.md#export-fields) for clones.
 
 ## Example
 

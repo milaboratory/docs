@@ -5,45 +5,52 @@
 
 ## Command line options
 
-```shell
-> mixcr overlapScatterPlot [-f] [--no-log] 
-    [-nw] [--only-productive] 
+```
+mixcr overlapScatterPlot 
+     --downsampling (<type>|none) 
+    [--chains <chain>[,<chain>...]]... 
+    [--only-productive] 
+    [--criteria <s>] 
+    [--method <method>] 
+    [--no-log] 
+    [--force-overwrite] 
+    [--no-warnings] 
     [--verbose] 
-    [--criteria <overlapCriteria>] 
-    --downsampling <downsampling> 
-    [--method <method>] [--chains <chains>]
-    ... 
-    <in1> <in2> <out>
+    [--help] 
+    cloneset_1.(clns|clna) cloneset_2.(clns|clna) output.(pdf|eps|png|jpeg)
 ```
 
 The command takes `.clna` or `.clns` file as input and produces one of the following graphical formats depending on the extension of output file: `.pdf`, `.eps`, `.png`, `.svg` and `.jpeg`
 
-`-f, --force-overwrite`
-: Force overwrite of output file(s).
-
-`--no-log`
-: Do not apply log10 to clonotype frequencies.
+`--chains <chain>[,<chain>...]`
+: Chains to export.
 
 `--only-productive`
 : Filter out-of-frame sequences and sequences with stop-codons.
 
-`--downsampling <downsampling>`
-: Choose downsampling. Possible values: `none`,  `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`. Check [mixcr postanalysis downsampling](mixcr-postanalysis.md#downsampling) for more information.
+`--downsampling (<type>|none)`
+: Choose [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`, `none`
+
+`--criteria <s>`
+: Overlap criteria. Defines the rules to treat clones as equal. Default: `CDR3|AA|V|J` (For two clones to me equal they must share `CDR3` amino acid sequence, V and J genes)
 
 `--method <method>`
-: Correlation method to use. Possible value: `pearson`, `kendal`, `spearman`.
+: Correlation method to use. Possible value: Pearson, Kendall, Spearman. Default: Pearson
 
-`--criteria <overlapCriteria>`
-: Overlap criteria. Defines the rules to treat clones as equal. Default `CDR3|AA|V|J` (For two clones to me equal they must share `CDR3` amino acid sequence, V and J genes)
+`--no-log`
+: Do not apply log10 to clonotype frequencies.
 
-`--chains <chains>`
-: Chains to export
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
 
 `-nw, --no-warnings`
 : Suppress all warning messages.
 
 `--verbose`
 : Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
 
 Example:
 
