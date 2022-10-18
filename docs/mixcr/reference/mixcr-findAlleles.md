@@ -1,12 +1,12 @@
 # `mixcr findAlleles`
 
-Finds V- and J-gene allelic variants in a given sample(s). As result MiXCR creates a new [repseq.io](ref-repseqio-json-format.md) reference library and re-aligns clonotypes against this library with allelic variants.
+Finds V- and J-gene allelic variants in a given sample(s). As result MiXCR creates a new [repseq.io](ref-repseqio-json-format.md) reference library and re-aligns clonotypes against it.
 
 ![](pics/findAlleles.svg)
 
 Note that clontypes passed as input must be cut by and fully covered by the same [gene feature](mixcr-assemble.md#core-assembler-parameters). So, for example `.clns` files with [contigs](overview-analysis-overview.md#contig-assemblymixcr-assemblecontigsmd), must be assembled using [`assembleContigs`](mixcr-assembleContigs.md) with `--cut-by` option.
 
-Allele inference algorithms applies different different strategies to identify allelic variants with sufficient statistical significance. The algorithm for B-cells allows to reliably discriminate between somatic hypermutations, hot spots and real allelic variants.  
+Allele inference algorithms applies different strategies to identify allelic variants with sufficient statistical significance. The algorithm for B-cells reliably discriminate between somatic hypermutations (including those in  hot spot positions) and real allelic variants.  
 
 
 ## Command line options
@@ -27,6 +27,7 @@ mixcr findAlleles
    [--help] 
    input_file.clns...
 ```
+
 The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` (clones) file that holds exhaustive information about clonotypes re-aligned to novelly discovered allelic variants. The resulting [reference library](ref-repseqio-json-format.md) is built-in in the `.clns` file but also may be exported directly with `--export-library` option. Clonotype tables can be further extracted in tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables) or in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes). Additionally, MiXCR produces a comprehensive [report](./report-findAlleles.md) which provides a detailed summary of allele search.
 
 Basic command line options are:
@@ -97,8 +98,6 @@ mixcr findAlleles \
     --export-alleles-mutations allele_stats.tsv \
     donor1_t1.clns donor1_t2.clns donor1_t3.clns
 ```
-
-
 
 ## Allelic variants summary table
 
