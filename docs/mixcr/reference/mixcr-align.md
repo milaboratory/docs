@@ -130,12 +130,15 @@ Basic command line arguments are:
 
 In addition to these parameters, any of the [available mix-in options](overview-mixins-list.md) may ve additionally specify at `align`. 
 
-## Concatenating across multiple lanes
+## Concatenating across multiple files
 
-Sometimes it is required to concatenate several fastq files and analyse it as a single sample. This is a common practise when files are separated across sequencing lanes. MiXCR uses `{{n}}` syntax, that is similar to Linux wildcard behaviour.
+Sometimes it is required to concatenate several fastq files and analyse it as a single sample. This is a common practise when files are separated across sequencing lanes. 
+
+MiXCR uses `{{n}}` syntax as a placeholder for any number. Meaning MiXCR will concatenate all files that match the pattern regardless of digits in the place of  `{{n}}`
 
 Bellow you can see an example of how to pass 8 fastq files (four per each paired read) to `mixcr align`:
 
+Example:
 ```shell
 > ls fastq/
     sample1_L001_S25_R1.fastq.gz    sample1_L001_S25_R2.fastq.gz 
@@ -145,7 +148,54 @@ Bellow you can see an example of how to pass 8 fastq files (four per each paired
 
 > mixcr align -s hsa \
     fastq/sample1_L{{n}}_S25_R1.fastq.gz \
-    fastq/sample1_L{{n}}_S25_R2.fastq.gz
+    fastq/sample1_L{{n}}_S25_R2.fastq.gz \
+    results/sample1
+```
+
+MiXCR uses `{{a}}` syntax which works just like {{n}} but works with any pattern, not just numbers.
+
+Example:
+
+```shell
+> ls fastq/
+    sample1_nameA1_S25_R1.fastq.gz    sample1_nameA1_S25_R2.fastq.gz
+    sample1_nameA_S25_R1.fastq.gz     sample1_nameA_S25_R2.fastq.gz
+    sample1_nameC3_S25_R1.fastq.gz    sample1_nameC3_S25_R2.fastq.gz
+    sample1_fileD_S25_R1.fastq.gz     sample1_fileD_S25_R2.fastq.gz
+
+> mixcr align -s hsa \
+    fastq/sample1_{{n}}_S25_R1.fastq.gz \
+    fastq/sample1_{{n}}_S25_R2.fastq.gz \
+    results/sample1
+```
+
+Finally, MiXCR uses `{{R}}` syntax that marks the reads' number, so you don't have to submit the second read filename.
+
+Bellow is the example of how you can combine multiple MiXCR wildcards and concatenate 16 pairs of files using one pattern. 
+
+Example:
+```shell
+> ls fastq/
+    sampleA_primer1_L001_R1.fastq.gz       sampleA_primer1_L001_R2.fastq.gz    
+    sampleA_primer1_L002_R1.fastq.gz       sampleA_primer1_L002_R2.fastq.gz    
+    sampleA_primer1_L003_R1.fastq.gz       sampleA_primer1_L003_R2.fastq.gz    
+    sampleA_primer1_L004_R1.fastq.gz       sampleA_primer1_L004_R2.fastq.gz    
+    sampleA_primer2_L001_R1.fastq.gz       sampleA_primer2_L001_R2.fastq.gz
+    sampleA_primer2_L002_R1.fastq.gz       sampleA_primer2_L002_R2.fastq.gz
+    sampleA_primer2_L003_R1.fastq.gz       sampleA_primer2_L003_R2.fastq.gz
+    sampleA_primer2_L004_R1.fastq.gz       sampleA_primer2_L004_R2.fastq.gz
+    sampleA_primer3_L001_R1.fastq.gz       sampleA_primer3_L001_R2.fastq.gz
+    sampleA_primer3_L002_R1.fastq.gz       sampleA_primer3_L002_R2.fastq.gz
+    sampleA_primer3_L003_R1.fastq.gz       sampleA_primer3_L003_R2.fastq.gz
+    sampleA_primer3_L004_R1.fastq.gz       sampleA_primer3_L004_R2.fastq.gz
+    sampleA_primer4_L001_R1.fastq.gz       sampleA_primer4_L001_R2.fastq.gz
+    sampleA_primer4_L002_R1.fastq.gz       sampleA_primer4_L002_R2.fastq.gz
+    sampleA_primer4_L003_R1.fastq.gz       sampleA_primer4_L003_R2.fastq.gz
+    sampleA_primer4_L004_R1.fastq.gz       sampleA_primer4_L004_R2.fastq.gz
+    
+> mixcr align -s hsa \
+    fastq/sampleA_{{a}}_L{{n}}_{{R}}.fastq.gz
+    results/sampleA
 ```
 
 ## Aligner parameters

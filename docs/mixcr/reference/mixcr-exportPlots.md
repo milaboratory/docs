@@ -220,9 +220,7 @@ mixcr exportPlots vUsage -f \
     pa/i.json.gz \
     plots/vUsage.svg
 ```
-<figure markdown>
 ![vUsage.TRAD.svg](pics/export-plots-vUsage.TRAD.svg)
-</figure>
 
 Export Joining gene segment usage plot and specify another palette:
 ```shell
@@ -232,9 +230,10 @@ mixcr exportPlots jUsage -f \
     pa/i.json.gz \
     plots/jUsage.svg
 ```
-<figure markdown>
+
 ![vUsage.TRB.svg](pics/export-plots-jUsage.TRB.svg)
-</figure>
+
+
 
 ## Overlap
 ```

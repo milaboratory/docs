@@ -76,7 +76,7 @@ mixcr exportQc tags \
     sample1.(vdjca|clns|clna)... \
     tagsQc.(pdf|eps|svg|png|jpg)  
 ```
-Exports tags filtering summary plots.
+This command exports tags filtering summary plots.
 
 `--log`
 : use log10 scale along y-axis.
