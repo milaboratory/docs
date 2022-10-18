@@ -6,7 +6,7 @@ Finds V- and J-gene allelic variants in a given sample(s). As result MiXCR creat
 
 Note that clontypes passed as input must be cut by and fully covered by the same [gene feature](mixcr-assemble.md#core-assembler-parameters). So, for example `.clns` files with [contigs](overview-analysis-overview.md#contig-assemblymixcr-assemblecontigsmd), must be assembled using [`assembleContigs`](mixcr-assembleContigs.md) with `--cut-by` option.
 
-Allele inference algorithms applies different different strategies to identify allelic variants with sufficient statistical significance. The algorithm for B-cells allows to reliably discriminate between somatic hypermutations, hot spots and real allelic variants.  
+Allele inference algorithms applies different strategies to identify allelic variants with sufficient statistical significance. The algorithm for B-cells allows to reliably discriminate between somatic hypermutations, hot spots and real allelic variants.  
 
 
 ## Command line options

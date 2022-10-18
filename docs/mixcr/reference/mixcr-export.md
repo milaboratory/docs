@@ -16,54 +16,72 @@ MiXCR provides functions for export [alignments](#alignments), [clonotype tables
 ## Clonotype tables
 
 ```
-mixcr exportClones [-f]
-    [--split-by-tag <tag>]
-    [--chains <chains>]
-    [--no-header]
-    [--minimal-clone-count <count>]
-    [--minimal-clone-fraction <fraction>]
-    [--filter-out-of-frames]
-    [--filter-stops]
-    [--preset <preset>]
-    [--preset-file <file>]
+mixcr exportClones 
+    [--chains <chains>] 
+    [--filter-out-of-frames] 
+    [--filter-stops] 
+    [--split-by-tag <tag>] 
+    [--split-files-by <splitFilesBy>]... 
+    [--dont-split-files] 
+    [--no-header] 
+    [--drop-default-fields] 
+    [--prepend-columns] 
     [<exportField>]...
-    input.(clns|clna)
-    [output.tsv]
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help] 
+    data.(clns|clna) [table.tsv]
 ```
 
 Exports tab-delimited table of alignments from `.clns` and `.clna` files.
 
 Command line options:
 
-`-n, --limit <limit>`
-:   output first `n` clones
+`data.(clns|clna)`
+: Path to input file with clones
 
-`--chains, -c <chains>`
-:   filter only specified chains
+`[table.tsv]`
+: Path where to write export table. Will write to output if omitted.
 
-`--no-header`
-:   don't print first header line, print only data
+`-c, --chains <chains>`
+: Limit export to specific chain (e.g. TRA or IGH) (fractions will be recalculated). Default value determined by the preset.
+
+`-o, --filter-out-of-frames`
+: Exclude clones with out-of-frame clone sequences (fractions will be recalculated). Default value determined by the preset.
+
+`-t, --filter-stops`
+: Exclude sequences containing stop codons (fractions will be recalculated). Default value determined by the preset.
 
 `--split-by-tag <tag>`
-:   split clonotype containing multiple values for specified `tag` into multiple rows (one row for one `tag` value). Typically, used for single cell analysis with `--split-by-tag cell` option to export clonotype that present in multiple cells in separate rows
+: Split clones by tag values Default value determined by the preset.
 
-`--minimal-clone-count, -m <count>`
-:   export clonotypes with count greater than specified value
+`--split-files-by <splitFilesBy>`
+: Split files by (currently the only supported value is "geneLabel:reliableChain" etc... ). Default value determined by the preset.
 
-`--minimal-clone-fraction, -q <fraction>`
-:   export clonotypes with clone abundance greater than specified value
+`--dont-split-files`
+: Don't split files.
 
-`--filter-out-of-frames`, `-o`
-:   do not export clonotypes with out-of-frame CDR3 sequences
+`--no-header`
+: Don't print first header line, print only data Default value determined by the preset.
 
-`--filter-stops`, `-t`
-:   do not export clonotypes with CDR3 sequences containing stop codons
+`--drop-default-fields`
+: Don't export fields from preset.
 
-`--preset, -p <preset>`
-:   use specified preset of [export fields](#export-fields). Possible values: `min`, `full` (default), `minImputed`, `fullImputed`
+`--prepend-columns`
+: Added columns will be inserted before default columns. By default columns will be added after default columns
 
-`--preset-file <file>`
-:   file containing a list of [export fields](#export-fields) to be exported
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
+
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
 
 `<exportField>`
 :   a list of [export fields](#export-fields)
@@ -72,33 +90,51 @@ Command line options:
 
 ```
 mixcr exportAlignments [-f]
-    [--chains <chains>]
-    [--no-header]
-    [--preset <preset>]
-    [--preset-file <file>]
+    [--chains <chains>] 
+    [--no-header] 
+    [--drop-default-fields] 
+    [--prepend-columns] 
     [<exportField>]...
-    input.(vdjca|clns|clna)
-    [output.tsv]
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help] 
+    data.(vdjca|clns|clna) [table.tsv]
 ```
 
 Exports tab-delimited alignments from `.vdjca`, `.clns` and `.clna` files.
 
 Command line options:
 
-`-n, --limit <limit>`
-:   output first `n` alignments
+`data.[vdjca|clns|clna]`
+: Path to input file
 
-`--chains, -c <chains>`
-:   filter only specified chains
+`[table.tsv]`
+: Path where to write export table. Will write to output if omitted.
+
+`-c, --chains <chains>`
+: Limit export to specific chain (e.g. TRA or IGH) (fractions will be recalculated) Default value determined by the preset.
 
 `--no-header`
-:   don't print first header line, print only data
+: Don't print first header line, print only data Default value determined by the preset.
 
-`--preset, -p <preset>`
-:   use specified preset of [export fields](#export-fields). Possible values: `min`, `full` (default), `minImputed`, `fullImputed`
+`--drop-default-fields`
+: Don't export fields from preset.
 
-`--preset-file <file>`
-:   file containing a list of [export fields](#export-fields) to be exported
+`--prepend-columns`
+: Added columns will be inserted before default columns. By default columns will be added after default columns
+
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
+
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
 
 `<exportField>`
 :   a list of [export fields](#export-fields)
@@ -107,22 +143,46 @@ Command line options:
 
 ```
 mixcr exportShmTrees [-f]
-    [--no-header]
     [--preset-file <file>]
+    [--no-header] 
     [<exportField>]...
-    input.shmt
-    [output.tsv]
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help] 
+    trees.shmt [trees.tsv]
 ```
 
 Exports tab-delimited alignments from `.shmt` file.
 
 Command line options:
 
-`--no-header`
-:   don't print first header line, print only data
+`trees.shmt`
+: Input file produced by 'findShmTrees' command.
 
-`--preset-file <file>`
-:   file containing a list of [export fields](#export-fields) to be exported
+`[trees.tsv]`
+: Path to output table. Print in stdout if omitted.
+
+`--no-header`
+: Don't print column names
+
+`-p, --preset <preset>`
+: Specify preset of export fields (possible values: 'full', 'min'; 'full' by default)
+
+`-pf, --preset-file <presetFile>`
+: Specify preset file of export fields
+
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
+
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
 
 `<exportField>`
 :   a list of [export fields](#export-fields)
@@ -131,26 +191,51 @@ Command line options:
 
 ```
 mixcr exportShmTreesWithNodes [-f]
+    [--onlyObserved] 
+    [--preset <preset>] 
+    [--preset-file <presetFile>] 
     [--no-header]
-    [--onlyObserved]
-    [--preset-file <file>]
     [<exportField>]...
-    input.shmt
-    [output.tsv]
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose]  
+    [--help] 
+    trees.shmt [trees.tsv]
 ```
 
 Exports tab-delimited alignments from `.shmt` file.
 
 Command line options:
 
+`trees.shmt`
+: Input file produced by 'findShmTrees' command.
+
+`[trees.tsv]`
+: Path where to write output export table. Print in stdout if omitted.
+
 `--no-header`
-:   don't print first header line, print only data
+: Don't print column names
 
 `--onlyObserved`
-:   exclude nodes that was reconstructed by algorithm
+: Exclude nodes that was reconstructed by algorithm
 
-`--preset-file <file>`
-:   file containing a list of [export fields](#export-fields) to be exported
+`-p, --preset <preset>`
+: Specify preset of export fields (possible values: 'min', 'full'; 'full' by default)
+
+`-pf, --preset-file <presetFile>`
+: Specify preset file of export fields
+
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
+
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
 
 `<exportField>`
 :   a list of [export fields](#export-fields)
@@ -323,158 +408,158 @@ One can also use default presets with imputation (all gene features will use imp
 These fields available for `exportAlignments`, `exportClones` and `exportShmTreesWithNodes` (for `exportShmTreesWithNodes` only for nodes with clones):
 
 `-targets`
-: Number of targets
+: Export number of targets
 
 `-vHit`
-: Best V hit
+: Export best V hit
 
 `-dHit`
-: Best D hit
+: Export best D hit
 
 `-jHit`
-: Best J hit
+: Export best J hit
 
 `-cHit`
-: Best C hit
+: Export best C hit
 
 `-vGene`
-: Best V hit gene name (e.g. TRBV12-3 for TRBV12-3*00)
+: Export best V hit gene name (e.g. TRBV12-3 for TRBV12-3*00)
 
 `-dGene`
-: Best D hit gene name (e.g. TRBV12-3 for TRBV12-3*00)
+: Export best D hit gene name (e.g. TRBV12-3 for TRBV12-3*00)
 
 `-jGene`
-: Best J hit gene name (e.g. TRBV12-3 for TRBV12-3*00)
+: Export best J hit gene name (e.g. TRBV12-3 for TRBV12-3*00)
 
 `-cGene`
-: Best C hit gene name (e.g. TRBV12-3 for TRBV12-3*00)
+: Export best C hit gene name (e.g. TRBV12-3 for TRBV12-3*00)
 
 `-vFamily`
-: Best V hit family name (e.g. TRBV12 for TRBV12-3*00)
+: Export best V hit family name (e.g. TRBV12 for TRBV12-3*00)
 
 `-dFamily`
-: Best D hit family name (e.g. TRBV12 for TRBV12-3*00)
+: Export best D hit family name (e.g. TRBV12 for TRBV12-3*00)
 
 `-jFamily`
-: Best J hit family name (e.g. TRBV12 for TRBV12-3*00)
+: Export best J hit family name (e.g. TRBV12 for TRBV12-3*00)
 
 `-cFamily`
-: Best C hit family name (e.g. TRBV12 for TRBV12-3*00)
+: Export best C hit family name (e.g. TRBV12 for TRBV12-3*00)
 
 `-vHitScore`
-: Score for best V hit
+: Export score for best V hit
 
 `-dHitScore`
-: Score for best D hit
+: Export score for best D hit
 
 `-jHitScore`
-: Score for best J hit
+: Export score for best J hit
 
 `-cHitScore`
-: Score for best C hit
+: Export score for best C hit
 
 `-vHitsWithScore`
-: All V hits with score
+: Export all V hits with score
 
 `-dHitsWithScore`
-: All D hits with score
+: Export all D hits with score
 
 `-jHitsWithScore`
-: All J hits with score
+: Export all J hits with score
 
 `-cHitsWithScore`
-: All C hits with score
+: Export all C hits with score
 
 `-vHits`
-: All V hits
+: Export all V hits
 
 `-dHits`
-: All D hits
+: Export all D hits
 
 `-jHits`
-: All J hits
+: Export all J hits
 
 `-cHits`
-: All C hits
+: Export all C hits
 
 `-vGenes`
-: All V gene names (e.g. TRBV12-3 for TRBV12-3*00)
+: Export all V gene names (e.g. TRBV12-3 for TRBV12-3*00)
 
 `-dGenes`
-: All D gene names (e.g. TRBV12-3 for TRBV12-3*00)
+: Export all D gene names (e.g. TRBV12-3 for TRBV12-3*00)
 
 `-jGenes`
-: All J gene names (e.g. TRBV12-3 for TRBV12-3*00)
+: Export all J gene names (e.g. TRBV12-3 for TRBV12-3*00)
 
 `-cGenes`
-: All C gene names (e.g. TRBV12-3 for TRBV12-3*00)
+: Export all C gene names (e.g. TRBV12-3 for TRBV12-3*00)
 
 `-vFamilies`
-: All V gene family anmes (e.g. TRBV12 for TRBV12-3*00)
+: Export all V gene family anmes (e.g. TRBV12 for TRBV12-3*00)
 
 `-dFamilies`
-: All D gene family anmes (e.g. TRBV12 for TRBV12-3*00)
+: Export all D gene family anmes (e.g. TRBV12 for TRBV12-3*00)
 
 `-jFamilies`
-: All J gene family anmes (e.g. TRBV12 for TRBV12-3*00)
+: Export all J gene family anmes (e.g. TRBV12 for TRBV12-3*00)
 
 `-cFamilies`
-: All C gene family anmes (e.g. TRBV12 for TRBV12-3*00)
+: Export all C gene family anmes (e.g. TRBV12 for TRBV12-3*00)
 
 `-vAlignment`
-: Best V alignment
+: Export best V alignment
 
 `-dAlignment`
-: Best D alignment
+: Export best D alignment
 
 `-jAlignment`
-: Best J alignment
+: Export best J alignment
 
 `-cAlignment`
-: Best C alignment
+: Export best C alignment
 
 `-vAlignments`
-: All V alignments
+: Export all V alignments
 
 `-dAlignments`
-: All D alignments
+: Export all D alignments
 
 `-jAlignments`
-: All J alignments
+: Export all J alignments
 
 `-cAlignments`
-: All C alignments
+: Export all C alignments
 
 `-qFeature <gene_feature>`
-: Quality string of specified gene feature
+: Export quality string of specified gene feature
 
 `-nFeatureImputed <gene_feature>`
-: Nucleotide sequence of specified gene feature using letters from germline (marked lowercase) for uncovered regions
+: Export nucleotide sequence of specified gene feature using letters from germline (marked lowercase) for uncovered regions
 
 `-aaFeatureImputed <gene_feature>`
-: Amino acid sequence of specified gene feature using letters from germline (marked lowercase) for uncovered regions
+: Export amino acid sequence of specified gene feature using letters from germline (marked lowercase) for uncovered regions
 
 `-minFeatureQuality <gene_feature>`
-: Minimal quality of specified gene feature
+: Export minimal quality of specified gene feature
 
 `-avrgFeatureQuality <gene_feature>`
-: Average quality of specified gene feature
+: Export average quality of specified gene feature
 
 `-positionInReferenceOf <reference_point>`
-: Position of specified reference point inside reference sequences (clonal sequence / read sequence).
+: Export position of specified reference point inside reference sequences (clonal sequence / read sequence).
 
 `-positionOf <reference_point>`
-: Position of specified reference point inside target sequences (clonal sequence / read sequence).
+: Export position of specified reference point inside target sequences (clonal sequence / read sequence).
 
 `-defaultAnchorPoints`
 : Outputs a list of default reference points (like CDR2Begin, FR4End, etc. see documentation bellow
 for the full list and formatting)
 
 `-targetSequences`
-: Aligned sequences (targets), separated with comma
+: Export aligned sequences (targets), separated with comma
 
 `-targetQualities`
-: Aligned sequence (target) qualities, separated with comma
+: Export aligned sequence (target) qualities, separated with comma
 
 `-vIdentityPercents`
 : V alignment identity percents
@@ -506,26 +591,29 @@ for the full list and formatting)
 `-topChains`
 : Top chains
 
+`-geneLabel <label>`
+: Export gene label (i.e. ReliableChain)
+
 `-tagCounts`
 : All tags with counts
 
-`-tag <tag>`
-: Tag value (i.e. cell barcode or UMI sequence)
+`-tag <tag_name>`
+: Tag value (i.e. CELL barcode or UMI sequence)
 
-`-uniqueTagCount <tag>`
+`-uniqueTagCount <tag_name>`
 : Unique tag count
 
 
 These fields available for both `exportAlignments` and `exportClones`:
 
+`-lengthOf <gene_feature>`
+: Export length of specified gene feature.
+
 `-nFeature <gene_feature>`
-: Nucleotide sequence of specified gene feature
+: Export nucleotide sequence of specified gene feature
 
 `-aaFeature <gene_feature>`
-: Amino acid sequence of specified gene feature
-
-`-lengthOf <gene_feature>`
-: Length of specified gene feature.
+: Export amino acid sequence of specified gene feature
 
 `-nMutations <gene_feature>`
 : Extract nucleotide mutations for specific gene feature; relative to germline sequence.
@@ -554,12 +642,10 @@ The following fields are only available for `exportAlignments`:
 : Id(s) of read(s) corresponding to alignment
 
 `-descrsR1`
-: Description lines from initial `.fasta` or `.fastq` file for R1 reads (only available if `-OsaveOriginalReads=
-true` was used in `align` command)
+: Export description lines from initial `.fasta` or `.fastq` file for R1 reads (only available if `-OsaveOriginalReads= true` was used in `align` command)
 
 `-descrsR2`
-: Description lines from initial `.fastq` file for R2 reads (only available if `-OsaveOriginalReads=true` was
-used in `alig`n command)
+: Export description lines from initial `.fastq` file for R2 reads (only available if `-OsaveOriginalReads=true` was used in `align`n command)
 
 `-readHistory`
 : Read history
@@ -568,8 +654,7 @@ used in `alig`n command)
 : To which clone alignment was attached (make sure using `.clna` file as input for `exportAlignments`)
 
 `-cloneIdWithMappingType`
-: To which clone alignment was attached with additional info on mapping type (make sure using `.clna` file as input for
-`exportAlignments`)
+: To which clone alignment was attached with additional info on mapping type (make sure using `.clna` file as input for `exportAlignments`)
 
 ### Clonotype-specific fields
 
@@ -578,14 +663,14 @@ The following fields are available for `exportClones` and `exportShmTreesWithNod
 `-cloneId`
 : Unique clone identifier
 
-`-count`
-: Clone count
+`-readCount`
+: Number of reads assigned to the clonotype
 
-`-fraction` 	
-: Clone fraction
+`-readFraction`
+: Fraction of reads assigned to the clonotype
 
-`-tagFractions`
-: All tags with fractions
+`-uniqueTagFraction <tag_name>`
+: Fraction of unique tags (UMI, CELL, etc.) the clone or alignment collected.
 
 `-cellGroup`
 : Cell group (for single cell analysis)
