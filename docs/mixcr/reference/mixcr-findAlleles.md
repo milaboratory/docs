@@ -13,7 +13,7 @@ Allele inference algorithms applies different strategies to identify allelic var
 
 ```
 mixcr findAlleles 
-   [--output-template <template.clns>] 
+   (--output-template <template.clns> | --no-clns-output) 
    [--export-library <path>] 
    [--export-alleles-mutations <path>] 
    [-O <key=value>]... 
@@ -35,7 +35,7 @@ Basic command line options are:
 `input_file.clns...`
 : Input files for allele search
 
-`-o, --output-template <template.clns>`
+`--output-template <template.clns>`
 : Output template may contain {file_name} and {file_dir_path},
 
 outputs for '-o /output/folder/{file_name}_with_alleles.clns input_file.clns input_file2.clns' will be /output/folder/input_file_with_alleles.clns and /output/folder/input_file2_with_alleles.clns,
@@ -43,6 +43,9 @@ outputs for '-o /output/folder/{file_name}_with_alleles.clns input_file.clns inp
 outputs for '-o {file_dir_path}/{file_name}_with_alleles.clns /some/folder1/input_file.clns /some/folder2/input_file2.clns' will be /seme/folder1/input_file_with_alleles.clns and /some/folder2/input_file2_with_alleles.clns
 
 Resulted outputs must be uniq
+
+`--no-clns-output`
+: Command will not realign input clns files. Must be specified if `--output-template` is omitted.
 
 `--export-library <path>`
 : Path where to write library with found alleles.
