@@ -1,0 +1,124 @@
+============== Align Report ==============
+Input file(s): /raw/PRJNA683867_Treg_CD8_RNAseq/CD8T_REH_4h_rep1.fastq.gz
+Output file(s): results/CD8T_REH_4h_rep1.vdjca
+Version: 4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0
+Command line arguments: --report results/CD8T_REH_4h_rep1.align.report.txt --json-report results/CD8T_REH_4h_rep1.align.report.json --preset local:rnaseq-tcr-cdr3 +species mmu /raw/PRJNA683867_Treg_CD8_RNAseq/CD8T_REH_4h_rep1.fastq.gz results/CD8T_REH_4h_rep1.vdjca
+Analysis time: 0ns
+Total sequencing reads: 78755048
+Successfully aligned reads: 8509 (0.01%)
+Alignment failed, no hits (not TCR/IG?): 78421282 (99.58%)
+Alignment failed because of absence of CDR3 parts: 32282 (0.04%)
+Alignment failed because of low total score: 292975 (0.37%)
+Overlapped: 0 (0%)
+Overlapped and aligned: 0 (0%)
+Alignment-aided overlaps: 0 (NaN%)
+Overlapped and not aligned: 0 (0%)
+No CDR3 parts alignments, percent of successfully aligned: 881 (10.35%)
+Partial aligned reads, percent of successfully aligned: 6877 (80.82%)
+TRA chains: 1659 (19.5%)
+TRA non-functional: 22 (1.33%)
+TRB chains: 6107 (71.77%)
+TRB non-functional: 28 (0.46%)
+TRD chains: 53 (0.62%)
+TRD non-functional: 0 (0%)
+TRG chains: 17 (0.2%)
+TRG non-functional: 0 (0%)
+TRA,TRD chains: 343 (4.03%)
+TRA,TRD non-functional: 0 (0%)
+IGH chains: 143 (1.68%)
+IGH non-functional: 0 (0%)
+IGK chains: 181 (2.13%)
+IGK non-functional: 0 (0%)
+IGL chains: 6 (0.07%)
+IGL non-functional: 0 (0%)
+Realigned with forced non-floating bound: 0 (0%)
+Realigned with forced non-floating right bound in left read: 0 (0%)
+Realigned with forced non-floating left bound in right read: 0 (0%)
+============== Extend Report ==============
+Input file(s): results/CD8T_REH_4h_rep1.vdjca
+Output file(s): results/CD8T_REH_4h_rep1.extended.vdjca
+Version: 4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0
+Command line arguments: --report results/CD8T_REH_4h_rep1.extend.report.txt --json-report results/CD8T_REH_4h_rep1.extend.report.json results/CD8T_REH_4h_rep1.vdjca results/CD8T_REH_4h_rep1.extended.vdjca
+Analysis time: 0ns
+Extended alignments count: 265 (3.11%)
+V extensions total: 0 (0%)
+V extensions with merged targets: 0 (0%)
+J extensions total: 265 (3.11%)
+J extensions with merged targets: 0 (0%)
+V+J extensions: 0 (0%)
+Mean V extension length: NaN
+Mean J extension length: 7.796226415094339
+============== AssemblePartial Report ==============
+Input file(s): results/CD8T_REH_4h_rep1.extended.vdjca
+Output file(s): results/CD8T_REH_4h_rep1.passembled.0.vdjca
+Version: 4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0
+Command line arguments: --report results/CD8T_REH_4h_rep1.assemblePartial.report.txt --json-report results/CD8T_REH_4h_rep1.assemblePartial.report.json results/CD8T_REH_4h_rep1.extended.vdjca results/CD8T_REH_4h_rep1.passembled.0.vdjca
+Analysis time: 0ns
+Total alignments analysed: 8509
+Number of output alignments: 8506 (99.96%)
+Alignments already with CDR3 (no overlapping is performed): 1016 (11.94%)
+Successfully overlapped alignments: 3 (0.04%)
+Left parts with too small N-region (failed to extract k-mer): 1542 (18.12%)
+Extracted k-mer diversity: 2889
+Dropped due to wildcard in k-mer: 0 (0%)
+Dropped due to too short NRegion parts in overlap: 89 (1.05%)
+Dropped overlaps with empty N region due to no complete NDN coverage: 33 (0.39%)
+Number of left-side alignments: 797 (9.37%)
+Number of right-side alignments: 5154 (60.57%)
+Complex overlaps: 0 (0%)
+Over-overlaps: 0 (0%)
+Partial alignments written to output: 7487 (87.99%)
+============== AssemblePartial Report ==============
+Input file(s): results/CD8T_REH_4h_rep1.passembled.0.vdjca
+Output file(s): results/CD8T_REH_4h_rep1.passembled.1.vdjca
+Version: 4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0
+Command line arguments: --report results/CD8T_REH_4h_rep1.assemblePartial.report.txt --json-report results/CD8T_REH_4h_rep1.assemblePartial.report.json results/CD8T_REH_4h_rep1.passembled.0.vdjca results/CD8T_REH_4h_rep1.passembled.1.vdjca
+Analysis time: 0ns
+Total alignments analysed: 8506
+Number of output alignments: 8506 (100%)
+Alignments already with CDR3 (no overlapping is performed): 1019 (11.98%)
+Successfully overlapped alignments: 0 (0%)
+Left parts with too small N-region (failed to extract k-mer): 1542 (18.13%)
+Extracted k-mer diversity: 2889
+Dropped due to wildcard in k-mer: 0 (0%)
+Dropped due to too short NRegion parts in overlap: 91 (1.07%)
+Dropped overlaps with empty N region due to no complete NDN coverage: 30 (0.35%)
+Number of left-side alignments: 794 (9.33%)
+Number of right-side alignments: 5151 (60.56%)
+Complex overlaps: 0 (0%)
+Over-overlaps: 0 (0%)
+Partial alignments written to output: 7487 (88.02%)
+============== Assemble Report ==============
+Input file(s): results/CD8T_REH_4h_rep1.passembled.1.vdjca
+Output file(s): results/CD8T_REH_4h_rep1.clns
+Version: 4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0
+Command line arguments: --report results/CD8T_REH_4h_rep1.assemble.report.txt --json-report results/CD8T_REH_4h_rep1.assemble.report.json results/CD8T_REH_4h_rep1.passembled.1.vdjca results/CD8T_REH_4h_rep1.clns
+Analysis time: 0ns
+Final clonotype count: 632
+Average number of reads per clonotype: 1.39
+Reads used in clonotypes, percent of total: 877 (0%)
+Reads used in clonotypes before clustering, percent of total: 877 (0%)
+Number of reads used as a core, percent of used: 868 (98.97%)
+Mapped low quality reads, percent of used: 9 (1.03%)
+Reads clustered in PCR error correction, percent of used: 0 (0%)
+Reads pre-clustered due to the similar VJC-lists, percent of used: 0 (0%)
+Reads dropped due to the lack of a clone sequence, percent of total: 7487 (0.01%)
+Reads dropped due to a too short clonal sequence, percent of total: 0 (0%)
+Reads dropped due to low quality, percent of total: 0 (0%)
+Reads dropped due to failed mapping, percent of total: 145 (0%)
+Reads dropped with low quality clones, percent of total: 0 (0%)
+Clonotypes eliminated by PCR error correction: 0
+Clonotypes dropped as low quality: 0
+Clonotypes pre-clustered due to the similar VJC-lists: 0
+TRA chains: 196 (31.01%)
+TRA non-functional: 29 (14.8%)
+TRB chains: 398 (62.97%)
+TRB non-functional: 18 (4.52%)
+TRG chains: 1 (0.16%)
+TRG non-functional: 0 (0%)
+IGH chains: 8 (1.27%)
+IGH non-functional: 0 (0%)
+IGK chains: 28 (4.43%)
+IGK non-functional: 0 (0%)
+IGL chains: 1 (0.16%)
+IGL non-functional: 0 (0%)

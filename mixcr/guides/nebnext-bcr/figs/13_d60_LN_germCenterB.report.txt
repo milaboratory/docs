@@ -1,0 +1,102 @@
+============== Align Report ==============
+Input file(s): /raw/PRJNA777934_NEB_Immune_sequencing/13_d60_LN_germCenterB_R1.fastq.gz,/raw/PRJNA777934_NEB_Immune_sequencing/13_d60_LN_germCenterB_R2.fastq.gz
+Output file(s): results/13_d60_LN_germCenterB.vdjca
+Version: ; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0
+Command line arguments: --report results/13_d60_LN_germCenterB.align.report.txt --json-report results/13_d60_LN_germCenterB.align.report.json --preset local:nebnext-human-bcr-cdr3 +limitInput 100000 /raw/PRJNA777934_NEB_Immune_sequencing/13_d60_LN_germCenterB_R1.fastq.gz /raw/PRJNA777934_NEB_Immune_sequencing/13_d60_LN_germCenterB_R2.fastq.gz results/13_d60_LN_germCenterB.vdjca
+Analysis time: 0ns
+Total sequencing reads: 100000
+Successfully aligned reads: 88595 (88.59%)
+Paired-end alignment conflicts eliminated: 30693 (30.69%)
+Alignment failed, no hits (not TCR/IG?): 3851 (3.85%)
+Alignment failed because of absence of V hits: 3260 (3.26%)
+Alignment failed because of absence of J hits: 2521 (2.52%)
+No target with both V and J alignments: 1773 (1.77%)
+Overlapped: 49087 (49.09%)
+Overlapped and aligned: 44737 (44.74%)
+Alignment-aided overlaps: 2058 (4.6%)
+Overlapped and not aligned: 4350 (4.35%)
+No CDR3 parts alignments, percent of successfully aligned: 44 (0.05%)
+Partial aligned reads, percent of successfully aligned: 1970 (2.22%)
+V gene chimeras: 2068 (2.07%)
+J gene chimeras: 5 (0.01%)
+IGH chains: 88288 (99.65%)
+IGH non-functional: 2924 (3.31%)
+IGK chains: 253 (0.29%)
+IGK non-functional: 10 (3.95%)
+IGL chains: 54 (0.06%)
+IGL non-functional: 5 (9.26%)
+Realigned with forced non-floating bound: 105942 (105.94%)
+Realigned with forced non-floating right bound in left read: 25837 (25.84%)
+Realigned with forced non-floating left bound in right read: 25837 (25.84%)
+============== RefineTagsAndSort Report ==============
+Input file(s): results/13_d60_LN_germCenterB.vdjca
+Output file(s): results/13_d60_LN_germCenterB.refined.vdjca
+Version: ; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0
+Command line arguments: --report results/13_d60_LN_germCenterB.refine.report.txt --json-report results/13_d60_LN_germCenterB.refine.report.json results/13_d60_LN_germCenterB.vdjca results/13_d60_LN_germCenterB.refined.vdjca
+Analysis time: 0ns
+Time spent in correction: 0ns
+UMI input diversity: 44135
+UMI output diversity: 23581 (53.43%)
+UMI input reads: 88595
+UMI output count: 70348 (79.4%)
+UMI mean reads per tag: 2.01
+UMI input core diversity: 23770 (53.86%)
+UMI input core reads: 64187 (72.45%)
+UMI directly corrected diversity: 5918 (13.41%)
+UMI directly corrected reads: 6351 (7.17%)
+UMI diversity filtered by tag quality: 14636 (33.16%)
+UMI reads filtered by tag quality: 18247 (20.6%)
+UMI diversity filtered by whitelist: 0 (0%)
+UMI recursively corrected: 6
+Number of output records: 52064 (58.77%)
+Filter report:
+  Number of groups: 23581
+  Number of groups accepted: 11348 (48.12%)
+  Total records weight: 70348.0
+  Records weight accepted: 52064.0 (74.01%)
+  Operator #0:
+    Effective threshold: 3.0
+============== Assemble Report ==============
+Input file(s): results/13_d60_LN_germCenterB.refined.vdjca
+Output file(s): results/13_d60_LN_germCenterB.clns
+Version: ; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0
+Command line arguments: --report results/13_d60_LN_germCenterB.assemble.report.txt --json-report results/13_d60_LN_germCenterB.assemble.report.json results/13_d60_LN_germCenterB.refined.vdjca results/13_d60_LN_germCenterB.clns
+Analysis time: 0ns
+Number of input groups: 11348
+Number of input alignments: 52064
+Number of output pre-clonotypes: 10644
+Number of clonotypes per group:
+  0: + 674 (5.96%) = 674 (5.96%)
+  1: + 10644 (94.04%) = 11318 (100%)
+Number of core alignments: 47804 (91.82%)
+Discarded core alignments: 1661 (3.47%)
+Empirically assigned alignments: 1695 (3.26%)
+Empirical assignment conflicts: 0 (0%)
+UMI+VJ-gene empirically assigned alignments: 1695 (3.26%)
+VJ-gene empirically assigned alignments: 0 (0%)
+UMI empirically assigned alignments: 0 (0%)
+Number of ambiguous UMIs: 0
+Number of ambiguous UMI+V/J-gene combinations: 0
+Unassigned alignments: 2430 (4.67%)
+Final clonotype count: 1180
+Average number of reads per clonotype: 39.9
+Reads used in clonotypes, percent of total: 47080 (47.08%)
+Reads used in clonotypes before clustering, percent of total: 49371 (49.37%)
+Number of reads used as a core, percent of used: 49353 (99.96%)
+Mapped low quality reads, percent of used: 18 (0.04%)
+Reads clustered in PCR error correction, percent of used: 2291 (4.64%)
+Reads pre-clustered due to the similar VJC-lists, percent of used: 108 (0.23%)
+Reads dropped due to the lack of a clone sequence, percent of total: 2599 (2.6%)
+Reads dropped due to a too short clonal sequence, percent of total: 0 (0%)
+Reads dropped due to low quality, percent of total: 9 (0.01%)
+Reads dropped due to failed mapping, percent of total: 71 (0.07%)
+Reads dropped with low quality clones, percent of total: 57 (0.06%)
+Clonotypes eliminated by PCR error correction: 223
+Clonotypes dropped as low quality: 9
+Clonotypes pre-clustered due to the similar VJC-lists: 12
+IGH chains: 1173 (99.41%)
+IGH non-functional: 31 (2.64%)
+IGK chains: 5 (0.42%)
+IGK non-functional: 0 (0%)
+IGL chains: 2 (0.17%)
+IGL non-functional: 0 (0%)

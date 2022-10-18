@@ -1,0 +1,114 @@
+============== Align Report ==============
+Input file(s): /raw/PRJNA674781_QiaSeqTCR/mice_tumor_1_R1.fastq.gz,/raw/PRJNA674781_QiaSeqTCR/mice_tumor_1_R2.fastq.gz
+Output file(s): results/mice_tumor_1.vdjca
+Version: ; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0
+Command line arguments: --report results/mice_tumor_1.align.report.txt --json-report results/mice_tumor_1.align.report.json --preset local:qiaseq-human-tcr-cdr3 /raw/PRJNA674781_QiaSeqTCR/mice_tumor_1_R1.fastq.gz /raw/PRJNA674781_QiaSeqTCR/mice_tumor_1_R2.fastq.gz results/mice_tumor_1.vdjca
+Analysis time: 0ns
+Total sequencing reads: 8434205
+Successfully aligned reads: 6386814 (75.73%)
+Chimeras: 21 (0%)
+Paired-end alignment conflicts eliminated: 6804 (0.08%)
+Alignment failed, no hits (not TCR/IG?): 907328 (10.76%)
+Alignment failed because of absence of V hits: 682699 (8.09%)
+Alignment failed because of absence of J hits: 397253 (4.71%)
+No target with both V and J alignments: 42539 (0.5%)
+Alignment failed because of low total score: 17572 (0.21%)
+Overlapped: 105392 (1.25%)
+Overlapped and aligned: 32073 (0.38%)
+Alignment-aided overlaps: 6062 (18.9%)
+Overlapped and not aligned: 73319 (0.87%)
+No CDR3 parts alignments, percent of successfully aligned: 896 (0.01%)
+Partial aligned reads, percent of successfully aligned: 25755 (0.4%)
+ chains: 1 (0%)
+ non-functional: 0 (0%)
+TRA chains: 4345983 (68.05%)
+TRA non-functional: 508098 (11.69%)
+TRB chains: 1615970 (25.3%)
+TRB non-functional: 65867 (4.08%)
+TRD chains: 34445 (0.54%)
+TRD non-functional: 4804 (13.95%)
+TRG chains: 390383 (6.11%)
+TRG non-functional: 240407 (61.58%)
+IGH chains: 6 (0%)
+IGH non-functional: 0 (0%)
+IGL chains: 5 (0%)
+IGL non-functional: 1 (20%)
+Realigned with forced non-floating bound: 16669750 (197.64%)
+Realigned with forced non-floating right bound in left read: 5429 (0.06%)
+Realigned with forced non-floating left bound in right read: 5429 (0.06%)
+============== RefineTagsAndSort Report ==============
+Input file(s): results/mice_tumor_1.vdjca
+Output file(s): results/mice_tumor_1.refined.vdjca
+Version: ; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0
+Command line arguments: --report results/mice_tumor_1.refine.report.txt --json-report results/mice_tumor_1.refine.report.json results/mice_tumor_1.vdjca results/mice_tumor_1.refined.vdjca
+Analysis time: 0ns
+Time spent in correction: 0ns
+UMI input diversity: 394970
+UMI output diversity: 146618 (37.12%)
+UMI input reads: 6386814
+UMI output count: 6386809 (100%)
+UMI mean reads per tag: 16.17
+UMI input core diversity: 394493 (99.88%)
+UMI input core reads: 6386335 (99.99%)
+UMI directly corrected diversity: 248347 (62.88%)
+UMI directly corrected reads: 304865 (4.77%)
+UMI diversity filtered by tag quality: 5 (0%)
+UMI reads filtered by tag quality: 5 (0%)
+UMI diversity filtered by whitelist: 0 (0%)
+UMI recursively corrected: 29628
+Number of output records: 6028293 (94.39%)
+Filter report:
+  Number of groups: 146618
+  Number of groups accepted: 44866 (30.6%)
+  Total records weight: 6386809.0
+  Records weight accepted: 6028293.0 (94.39%)
+  Operator #0:
+    Effective threshold: 14.0
+============== Assemble Report ==============
+Input file(s): results/mice_tumor_1.refined.vdjca
+Output file(s): results/mice_tumor_1.clns
+Version: ; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0
+Command line arguments: --report results/mice_tumor_1.assemble.report.txt --json-report results/mice_tumor_1.assemble.report.json results/mice_tumor_1.refined.vdjca results/mice_tumor_1.clns
+Analysis time: 0ns
+Number of input groups: 44866
+Number of input alignments: 6028293
+Number of output pre-clonotypes: 43546
+Number of clonotypes per group:
+  0: + 1430 (3.19%) = 1430 (3.19%)
+  1: + 43192 (96.41%) = 44622 (99.6%)
+  2: + 177 (0.4%) = 44799 (100%)
+Number of core alignments: 5825926 (96.64%)
+Discarded core alignments: 178462 (3.06%)
+Empirically assigned alignments: 852 (0.01%)
+Empirical assignment conflicts: 1 (0%)
+UMI+VJ-gene empirically assigned alignments: 853 (0.01%)
+VJ-gene empirically assigned alignments: 0 (0%)
+UMI empirically assigned alignments: 0 (0%)
+Number of ambiguous UMIs: 177
+Number of ambiguous V-genes: 18
+Number of ambiguous UMI+V/J-gene combinations: 18
+Unassigned alignments: 196243 (3.26%)
+Final clonotype count: 3733
+Average number of reads per clonotype: 1551.2
+Reads used in clonotypes, percent of total: 5790634 (68.66%)
+Reads used in clonotypes before clustering, percent of total: 5826317 (69.08%)
+Number of reads used as a core, percent of used: 5824845 (99.97%)
+Mapped low quality reads, percent of used: 1472 (0.03%)
+Reads clustered in PCR error correction, percent of used: 35683 (0.61%)
+Reads pre-clustered due to the similar VJC-lists, percent of used: 755 (0.01%)
+Reads dropped due to the lack of a clone sequence, percent of total: 23905 (0.28%)
+Reads dropped due to a too short clonal sequence, percent of total: 0 (0%)
+Reads dropped due to low quality, percent of total: 0 (0%)
+Reads dropped due to failed mapping, percent of total: 461 (0.01%)
+Reads dropped with low quality clones, percent of total: 0 (0%)
+Clonotypes eliminated by PCR error correction: 260
+Clonotypes dropped as low quality: 0
+Clonotypes pre-clustered due to the similar VJC-lists: 4
+TRA chains: 2169 (58.1%)
+TRA non-functional: 354 (16.32%)
+TRB chains: 1091 (29.23%)
+TRB non-functional: 62 (5.68%)
+TRD chains: 47 (1.26%)
+TRD non-functional: 8 (17.02%)
+TRG chains: 426 (11.41%)
+TRG non-functional: 245 (57.51%)

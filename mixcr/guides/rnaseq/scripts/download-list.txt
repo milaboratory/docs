@@ -1,0 +1,40 @@
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/028/SRR13228528/SRR13228528.fastq.gz
+  out=raw/CD8T_REH_4h_rep1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/010/SRR13228510/SRR13228510.fastq.gz
+  out=raw/Treg_IL2_1.5h_rep1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/027/SRR13228527/SRR13228527.fastq.gz
+  out=raw/CD8T_IL2_4h_rep1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/016/SRR13228516/SRR13228516.fastq.gz
+  out=raw/Treg_REH_1.5h_rep2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/009/SRR13228509/SRR13228509.fastq.gz
+  out=raw/Treg_0h_rep1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/015/SRR13228515/SRR13228515.fastq.gz
+  out=raw/Treg_IL2_1.5h_rep2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/017/SRR13228517/SRR13228517.fastq.gz
+  out=raw/Treg_IL2_4h_rep2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/011/SRR13228511/SRR13228511.fastq.gz
+  out=raw/Treg_REH_1.5h_rep1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/026/SRR13228526/SRR13228526.fastq.gz
+  out=raw/CD8T_REH_1.5h_rep1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/012/SRR13228512/SRR13228512.fastq.gz
+  out=raw/Treg_IL2_4h_rep1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/025/SRR13228525/SRR13228525.fastq.gz
+  out=raw/CD8T_IL2_1.5h_rep1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/013/SRR13228513/SRR13228513.fastq.gz
+  out=raw/Treg_REH_4h_rep1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/018/SRR13228518/SRR13228518.fastq.gz
+  out=raw/Treg_REH_4h_rep2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/024/SRR13228524/SRR13228524.fastq.gz
+  out=raw/CD8T_0h_rep1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/023/SRR13228523/SRR13228523.fastq.gz
+  out=raw/Treg_REH_4h_rep3.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/014/SRR13228514/SRR13228514.fastq.gz
+  out=raw/Treg_0h_rep2.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/022/SRR13228522/SRR13228522.fastq.gz
+  out=raw/Treg_IL2_4h_rep3.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/019/SRR13228519/SRR13228519.fastq.gz
+  out=raw/Treg_0h_rep3.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/021/SRR13228521/SRR13228521.fastq.gz
+  out=raw/Treg_REH_1.5h_rep3.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/020/SRR13228520/SRR13228520.fastq.gz
+  out=raw/Treg_IL2_1.5h_rep3.fastq.gz

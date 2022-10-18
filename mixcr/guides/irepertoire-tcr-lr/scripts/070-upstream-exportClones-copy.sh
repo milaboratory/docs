@@ -1,0 +1,1 @@
+cp results/CRC016_preTherapy.clonotypes.IGH.tsv figs/

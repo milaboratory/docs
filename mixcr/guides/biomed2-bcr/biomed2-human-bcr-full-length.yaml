@@ -1,0 +1,24 @@
+inheritFrom: _universal
+pipeline:
+  - align
+  - assemble
+  - exportClones
+mixins:
+  - type: SetSpecies
+    species: hs
+  - type: SetClonotypeAssemblingFeatures
+    features: "{CDR1Begin:CDR3End}"
+  - type: LeftAlignmentBoundaryNoPoint
+    floating: false
+  - type: RightAlignmentBoundaryNoPoint
+    floating: false
+    geneType: J
+align:
+  inheritFrom: align_kaligner2_4.0
+  overrides:
+    tagPattern: ^N{32}(R1:*)\^N{26}(R2:*)
+assemble:
+  inheritFrom: assemble_universal
+  overrides:
+    cloneAssemblerParameters:
+      separateByJ: true

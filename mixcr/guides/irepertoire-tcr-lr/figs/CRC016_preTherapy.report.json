@@ -1,0 +1,112 @@
+{
+  "type": "alignerReport",
+  "commandLine": "--report results-trimmed/CRC016_preTherapy.align.report.txt --json-report results-trimmed/CRC016_preTherapy.align.report.json --preset local:irepertoire-human-tcr-lr-cdr3 /raw/iRepertoire/CRC016_preTherapy_R1.fastq.gz /raw/iRepertoire/CRC016_preTherapy_R2.fastq.gz results-trimmed/CRC016_preTherapy.vdjca",
+  "inputFiles": [
+    "/raw/iRepertoire/CRC016_preTherapy_R1.fastq.gz",
+    "/raw/iRepertoire/CRC016_preTherapy_R2.fastq.gz"
+  ],
+  "outputFiles": [
+    "results-trimmed/CRC016_preTherapy.vdjca"
+  ],
+  "version": "4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0",
+  "trimmingReport": null,
+  "totalReadsProcessed": 409090,
+  "aligned": 386658,
+  "notAligned": 22432,
+  "notAlignedReasons": {
+    "NoCDR3Parts": 0,
+    "NoBarcode": 0,
+    "LowTotalScore": 202,
+    "NoHits": 4045,
+    "VAndJOnDifferentTargets": 203,
+    "NoVHits": 29,
+    "NoJHits": 17953
+  },
+  "chimeras": 0,
+  "overlapped": 392724,
+  "alignmentAidedOverlaps": 722,
+  "overlappedAligned": 371487,
+  "overlappedNotAligned": 21237,
+  "pairedEndAlignmentConflicts": 3486,
+  "vChimeras": 481,
+  "jChimeras": 0,
+  "chainUsage": {
+    "type": "chainUsage",
+    "chimeras": 0,
+    "total": 386658,
+    "chains": {
+      "TRA": {
+        "total": 370,
+        "nonFunctional": 57,
+        "isOOF": 41,
+        "hasStops": 16
+      },
+      "TRB": {
+        "total": 386282,
+        "nonFunctional": 8075,
+        "isOOF": 6763,
+        "hasStops": 1312
+      },
+      "TRD": {
+        "total": 5,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      },
+      "IGH": {
+        "total": 1,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      }
+    }
+  },
+  "realignedWithForcedNonFloatingBound": 34176,
+  "realignedWithForcedNonFloatingRightBoundInLeftRead": 9768,
+  "realignedWithForcedNonFloatingLeftBoundInRightRead": 9768,
+  "noCDR3PartsAlignments": 94,
+  "partialAlignments": 575,
+  "tagReport": null
+}
+{
+  "type": "assemblerReport",
+  "commandLine": "--report results-trimmed/CRC016_preTherapy.assemble.report.txt --json-report results-trimmed/CRC016_preTherapy.assemble.report.json results-trimmed/CRC016_preTherapy.vdjca results-trimmed/CRC016_preTherapy.clns",
+  "inputFiles": [
+    "results-trimmed/CRC016_preTherapy.vdjca"
+  ],
+  "outputFiles": [
+    "results-trimmed/CRC016_preTherapy.clns"
+  ],
+  "version": "4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0",
+  "preCloneAssemblerReport": null,
+  "totalReadsProcessed": 409090,
+  "initialClonesCreated": 33832,
+  "readsDroppedNoTargetSequence": 2924,
+  "readsDroppedTooShortClonalSequence": 143,
+  "readsDroppedLowQuality": 68,
+  "coreReads": 377014,
+  "readsDroppedFailedMapping": 3571,
+  "lowQualityRescued": 2937,
+  "clonesClustered": 9372,
+  "readsClustered": 21459,
+  "clones": 24390,
+  "clonesDroppedAsLowQuality": 1,
+  "clonesPreClustered": 69,
+  "readsPreClustered": 76,
+  "readsInClones": 358492,
+  "readsInClonesBeforeClustering": 379951,
+  "readsDroppedWithLowQualityClones": 1,
+  "clonalChainUsage": {
+    "type": "chainUsage",
+    "chimeras": 0,
+    "total": 24390,
+    "chains": {
+      "TRB": {
+        "total": 24390,
+        "nonFunctional": 1117,
+        "isOOF": 905,
+        "hasStops": 212
+      }
+    }
+  }
+}

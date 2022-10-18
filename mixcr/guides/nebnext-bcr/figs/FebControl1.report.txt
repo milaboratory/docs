@@ -1,0 +1,105 @@
+============== Align Report ==============
+Input file(s): /raw/PRJEB44566_takara_hsa_bcr/FebControl1_R1.fastq.gz,/raw/PRJEB44566_takara_hsa_bcr/FebControl1_R2.fastq.gz
+Output file(s): results/FebControl1.vdjca
+Version: ; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0
+Command line arguments: --report results/FebControl1.align.report.txt --json-report results/FebControl1.align.report.json --preset local:takara-smarter-human-bcr-cdr3 /raw/PRJEB44566_takara_hsa_bcr/FebControl1_R1.fastq.gz /raw/PRJEB44566_takara_hsa_bcr/FebControl1_R2.fastq.gz results/FebControl1.vdjca
+Analysis time: 0ns
+Total sequencing reads: 584053
+Successfully aligned reads: 525390 (89.96%)
+Paired-end alignment conflicts eliminated: 42139 (7.21%)
+Alignment failed, no hits (not TCR/IG?): 49276 (8.44%)
+Alignment failed because of absence of V hits: 2982 (0.51%)
+Alignment failed because of absence of J hits: 6044 (1.03%)
+No target with both V and J alignments: 361 (0.06%)
+Overlapped: 509629 (87.26%)
+Overlapped and aligned: 466857 (79.93%)
+Alignment-aided overlaps: 22223 (4.76%)
+Overlapped and not aligned: 42772 (7.32%)
+No CDR3 parts alignments, percent of successfully aligned: 89 (0.02%)
+Partial aligned reads, percent of successfully aligned: 2659 (0.51%)
+V gene chimeras: 1154 (0.2%)
+J gene chimeras: 2 (0%)
+IGH chains: 116697 (22.21%)
+IGH non-functional: 3925 (3.36%)
+IGK chains: 203474 (38.73%)
+IGK non-functional: 8958 (4.4%)
+IGL chains: 205219 (39.06%)
+IGL non-functional: 11257 (5.49%)
+Realigned with forced non-floating bound: 193294 (33.1%)
+Realigned with forced non-floating right bound in left read: 52153 (8.93%)
+Realigned with forced non-floating left bound in right read: 52153 (8.93%)
+============== RefineTagsAndSort Report ==============
+Input file(s): results/FebControl1.vdjca
+Output file(s): results/FebControl1.refined.vdjca
+Version: ; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0
+Command line arguments: --report results/FebControl1.refine.report.txt --json-report results/FebControl1.refine.report.json results/FebControl1.vdjca results/FebControl1.refined.vdjca
+Analysis time: 0ns
+Time spent in correction: 0ns
+UMI input diversity: 60939
+UMI output diversity: 41866 (68.7%)
+UMI input reads: 525390
+UMI output count: 522239 (99.4%)
+UMI mean reads per tag: 8.62
+UMI input core diversity: 48831 (80.13%)
+UMI input core reads: 513049 (97.65%)
+UMI directly corrected diversity: 15939 (26.16%)
+UMI directly corrected reads: 16711 (3.18%)
+UMI diversity filtered by tag quality: 3134 (5.14%)
+UMI reads filtered by tag quality: 3151 (0.6%)
+UMI diversity filtered by whitelist: 0 (0%)
+UMI recursively corrected: 878
+Number of output records: 487187 (92.73%)
+Filter report:
+  Number of groups: 41866
+  Number of groups accepted: 15113 (36.1%)
+  Total records weight: 522239.0
+  Records weight accepted: 487187.0 (93.29%)
+  Operator #0:
+    Effective threshold: 6.0
+============== Assemble Report ==============
+Input file(s): results/FebControl1.refined.vdjca
+Output file(s): results/FebControl1.clns
+Version: ; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0
+Command line arguments: --report results/FebControl1.assemble.report.txt --json-report results/FebControl1.assemble.report.json results/FebControl1.refined.vdjca results/FebControl1.clns
+Analysis time: 0ns
+Number of input groups: 15113
+Number of input alignments: 487187
+Number of output pre-clonotypes: 14993
+Number of clonotypes per group:
+  0: + 89 (0.59%) = 89 (0.59%)
+  1: + 14965 (99.32%) = 15054 (99.91%)
+  2: + 14 (0.09%) = 15068 (100%)
+Number of core alignments: 474527 (97.4%)
+Discarded core alignments: 4683 (0.99%)
+Empirically assigned alignments: 5590 (1.15%)
+Empirical assignment conflicts: 0 (0%)
+UMI+VJ-gene empirically assigned alignments: 5590 (1.15%)
+VJ-gene empirically assigned alignments: 0 (0%)
+UMI empirically assigned alignments: 0 (0%)
+Number of ambiguous UMIs: 14
+Number of ambiguous V-genes: 5
+Number of ambiguous J-genes: 3
+Number of ambiguous UMI+V/J-gene combinations: 8
+Unassigned alignments: 5618 (1.15%)
+Final clonotype count: 8448
+Average number of reads per clonotype: 56.69
+Reads used in clonotypes, percent of total: 478906 (82%)
+Reads used in clonotypes before clustering, percent of total: 479893 (82.17%)
+Number of reads used as a core, percent of used: 479850 (99.99%)
+Mapped low quality reads, percent of used: 43 (0.01%)
+Reads clustered in PCR error correction, percent of used: 987 (0.21%)
+Reads pre-clustered due to the similar VJC-lists, percent of used: 10879 (2.27%)
+Reads dropped due to the lack of a clone sequence, percent of total: 7977 (1.37%)
+Reads dropped due to a too short clonal sequence, percent of total: 0 (0%)
+Reads dropped due to low quality, percent of total: 3 (0%)
+Reads dropped due to failed mapping, percent of total: 10 (0%)
+Reads dropped with low quality clones, percent of total: 214 (0.04%)
+Clonotypes eliminated by PCR error correction: 60
+Clonotypes dropped as low quality: 3
+Clonotypes pre-clustered due to the similar VJC-lists: 299
+IGH chains: 1533 (18.15%)
+IGH non-functional: 43 (2.8%)
+IGK chains: 3432 (40.62%)
+IGK non-functional: 209 (6.09%)
+IGL chains: 3483 (41.23%)
+IGL non-functional: 233 (6.69%)

@@ -1,0 +1,100 @@
+{
+  "type": "alignerReport",
+  "commandLine": "align --species hsa -n 100000 -p kAligner2_4.0 -OvParameters.geneFeatureToAlign=VTranscriptWithout5UTRWithP -OvParameters.parameters.floatingLeftBound=false -OjParameters.parameters.floatingRightBound=true --report results/SRR8365277_HIP1_female_IgG1.report.txt --json-report results/SRR8365277_HIP1_female_IgG1.report.json /raw/PRJNA511481-HIP/ABHelix_BCR/SRR8365277_HIP1_female_IgG1_R1.fastq.gz /raw/PRJNA511481-HIP/ABHelix_BCR/SRR8365277_HIP1_female_IgG1_R2.fastq.gz results/SRR8365277_HIP1_female_IgG1.vdjca",
+  "inputFiles": [
+    "/raw/PRJNA511481-HIP/ABHelix_BCR/SRR8365277_HIP1_female_IgG1_R1.fastq.gz",
+    "/raw/PRJNA511481-HIP/ABHelix_BCR/SRR8365277_HIP1_female_IgG1_R2.fastq.gz"
+  ],
+  "outputFiles": [
+    "results/SRR8365277_HIP1_female_IgG1.vdjca"
+  ],
+  "version": "4.0.0-306-develop; built=Fri Sep 23 00:05:26 CEST 2022; rev=f7972131fd; lib=repseqio.v2.0",
+  "trimmingReport": null,
+  "totalReadsProcessed": 100000,
+  "aligned": 96116,
+  "notAligned": 3884,
+  "notAlignedReasons": {
+    "NoCDR3Parts": 0,
+    "NoJHits": 1483,
+    "VAndJOnDifferentTargets": 340,
+    "NoHits": 2056,
+    "LowTotalScore": 0,
+    "NoVHits": 5,
+    "NoBarcode": 0
+  },
+  "chimeras": 0,
+  "overlapped": 93602,
+  "alignmentAidedOverlaps": 1473,
+  "overlappedAligned": 90679,
+  "overlappedNotAligned": 2923,
+  "pairedEndAlignmentConflicts": 4965,
+  "vChimeras": 93,
+  "jChimeras": 0,
+  "chainUsage": {
+    "type": "chainUsage",
+    "chimeras": 0,
+    "total": 96116,
+    "chains": {
+      "TRB": {
+        "total": 1,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      },
+      "IGH": {
+        "total": 96115,
+        "nonFunctional": 1190,
+        "isOOF": 653,
+        "hasStops": 537
+      }
+    }
+  },
+  "realignedWithForcedNonFloatingBound": 15742,
+  "realignedWithForcedNonFloatingRightBoundInLeftRead": 2751,
+  "realignedWithForcedNonFloatingLeftBoundInRightRead": 2751,
+  "noCDR3PartsAlignments": 37,
+  "partialAlignments": 840,
+  "tagReport": null
+}
+{
+  "type": "assemblerReport",
+  "commandLine": "assemble -f -OassemblingFeatures={FR1Begin:FR4End} --report results/SRR8365277_HIP1_female_IgG1.report.txt --json-report results/SRR8365277_HIP1_female_IgG1.report.json results/SRR8365277_HIP1_female_IgG1.vdjca results/SRR8365277_HIP1_female_IgG1.clns",
+  "inputFiles": [
+    "results/SRR8365277_HIP1_female_IgG1.vdjca"
+  ],
+  "outputFiles": [
+    "results/SRR8365277_HIP1_female_IgG1.clns"
+  ],
+  "version": "4.0.0-306-develop; built=Fri Sep 23 00:05:26 CEST 2022; rev=f7972131fd; lib=repseqio.v2.0",
+  "preCloneAssemblerReport": null,
+  "totalReadsProcessed": 100000,
+  "initialClonesCreated": 8717,
+  "readsDroppedNoTargetSequence": 17978,
+  "readsDroppedTooShortClonalSequence": 0,
+  "readsDroppedLowQuality": 0,
+  "coreReads": 57233,
+  "readsDroppedFailedMapping": 16543,
+  "lowQualityRescued": 4362,
+  "clonesClustered": 1682,
+  "readsClustered": 2130,
+  "clones": 7035,
+  "clonesDroppedAsLowQuality": 0,
+  "clonesPreClustered": 0,
+  "readsPreClustered": 0,
+  "readsInClones": 59465,
+  "readsInClonesBeforeClustering": 61595,
+  "readsDroppedWithLowQualityClones": 0,
+  "clonalChainUsage": {
+    "type": "chainUsage",
+    "chimeras": 0,
+    "total": 7035,
+    "chains": {
+      "IGH": {
+        "total": 7035,
+        "nonFunctional": 65,
+        "isOOF": 55,
+        "hasStops": 10
+      }
+    }
+  }
+}

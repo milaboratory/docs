@@ -1,0 +1,1 @@
+cp results/FebControl1.clones.txt figs/

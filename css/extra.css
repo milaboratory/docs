@@ -9,6 +9,9 @@
     --md-admonition-fg-color: var(--md-typeset-color);
     --md-code-bg-color: #F7F8FA;
 
+    --md-typeset-mark-color: rgba(73, 204, 73, 0.24);
+    --c-mark-border-color: rgba(73, 204, 73, 0.24);
+
     --md-default-fg-color--light: rgba(10, 10, 51, 0.5);
     --md-footer-fg-color--light: var(--md-typeset-color);
 
@@ -56,6 +59,8 @@
     --md-code-fg-color: rgba(255, 255, 255, 0.6);
     --md-admonition-fg-color: rgba(255, 255, 255);
     --md-code-bg-color: rgba(255, 255, 255, 0.06);
+
+    --c-mark-border-color: rgba(255, 255, 255, 0.06);
 
     --md-default-bg-color: #1d1d29;
 
@@ -568,4 +573,42 @@ svg.magnify {
 
 .md-typeset .md-clipboard:is(:focus,:hover) {
     color: var(--c-clipboard-hover-color);
+}
+
+.img-float-left p .glightbox {
+    width: auto;
+    margin-right: 16px;
+    float: left;
+}
+
+.img-float-right p .glightbox {
+    width: auto;
+    margin-left: 16px;
+    float: right;
+}
+
+.img-no-scroll p .glightbox {
+    max-height: none;
+}
+
+.badge {
+    height: 16px;
+}
+
+.align-left {
+    text-align: left !important;
+}
+
+mark {
+    border: 1px solid var(--c-mark-border-color);
+    border-radius: 4px;
+    padding: 0 4px;
+    display: inline;
+}
+
+mark code {
+    border: none !important;
+    background-color: transparent !important;
+    line-height: 24px;
+    vertical-align: top;
 }

@@ -1,0 +1,1 @@
+cp results/mice_tumor_1.clones.TRA.txt figs/
