@@ -1,6 +1,6 @@
 # `mixcr analyze`
 
-Single command to execute complete MiXCR analysis pipeline, from raw fastq files to resulting clone-sets in a tabular and binary formats. Each preset along with step parameters defines a sequence of steps that are required to analyze the target dataset type, `analyze` retrieves this information, and executed all the steps for you, using meaningful names for the intermediate files and saving all the reports along the pipeline in both `txt` and `json` formats (if not set otherwise by command line options).
+A single command to execute complete MiXCR analysis pipeline, from the raw fastq files to resulting clone-sets (in a tabular and binary formats). Each MiXCR preset, among other parameters, defines a sequence of steps required to analyze the target dataset type, `analyze` retrieves this information, and executed all the steps for you, setting meaningful names for the intermediate files and saving all the reports along the pipeline in both `txt` and `json` formats (if not set otherwise by command line options).
 
 ??? warning "Starting from MiXCR 4.1 logic of this command was changed completely"
 
@@ -36,12 +36,10 @@ mixcr analyze [--add-step <step>] [--remove-step <step>]
 	<preset_name> input_R1.fastq[.gz] [input_R2.fastq[.gz]] output_prefix
 ```
 
-Run full MiXCR pipeline for specific input.
-
-### Basic command line arguments are:
+### Analyze-specific command line options:
 
 `<preset_name>`
-: Name of the analysis preset.
+: Name of the analysis preset (see complete list of available presets in the corresponding [section](./overview-presets.md))
 
 `input_R1.fastq[.gz] [input_R2.fastq[.gz]]`
 : Paths of input files with sequencing data
