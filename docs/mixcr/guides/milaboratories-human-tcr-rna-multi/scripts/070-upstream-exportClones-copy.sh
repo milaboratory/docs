@@ -1,0 +1,1 @@
+cp results/Multi_TRA_FS115_1.clones.TRA.txt figs/

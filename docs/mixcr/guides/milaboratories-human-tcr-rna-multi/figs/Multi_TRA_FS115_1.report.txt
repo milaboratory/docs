@@ -1,0 +1,132 @@
+============== Align Report ==============
+============== Align Report ==============
+Total sequencing reads: 3567679
+Successfully aligned reads: 3448515 (96.66%)
+Chimeras: 4 (0%)
+Paired-end alignment conflicts eliminated: 80984 (2.27%)
+Alignment failed, no hits (not TCR/IG?): 2855 (0.08%)
+Alignment failed because of absence of V hits: 24752 (0.69%)
+Alignment failed because of absence of J hits: 62293 (1.75%)
+No target with both V and J alignments: 11677 (0.33%)
+Alignment failed because of low total score: 157 (0%)
+Absent barcode: 17430 (0.49%)
+Overlapped: 3272356 (91.72%)
+Overlapped and aligned: 3218859 (90.22%)
+Alignment-aided overlaps: 3992 (0.12%)
+Overlapped and not aligned: 53497 (1.5%)
+No CDR3 parts alignments, percent of successfully aligned: 1211 (0.04%)
+Partial aligned reads, percent of successfully aligned: 34409 (1%)
+V gene chimeras: 57 (0%)
+J gene chimeras: 2004 (0.06%)
+TRA chains: 3448272 (99.99%)
+TRA non-functional: 355157 (10.3%)
+TRB chains: 111 (0%)
+TRB non-functional: 20 (18.02%)
+TRD chains: 128 (0%)
+TRD non-functional: 31 (24.22%)
+Realigned with forced non-floating bound: 563770 (15.8%)
+Realigned with forced non-floating right bound in left read: 43576 (1.22%)
+Realigned with forced non-floating left bound in right read: 43576 (1.22%)
+Tag parsing report:
+  Total reads: 3567679
+  Matched reads: 3550249 (99.51%)
+  Projection +R1 +R2: 3550249 (99.51%)
+  For variant 0:
+    For projection [1, 2]:
+      UMI:Left position:
+        17: + 982994 (27.69%) = 982994 (27.69%)
+        18: + 1232085 (34.7%) = 2215079 (62.39%)
+        19: + 1335170 (37.61%) = 3550249 (100%)
+      UMI:Right position:
+        31: + 982994 (27.69%) = 982994 (27.69%)
+        32: + 1232085 (34.7%) = 2215079 (62.39%)
+        33: + 1335170 (37.61%) = 3550249 (100%)
+      R1:Left position:
+        52: + 982994 (27.69%) = 982994 (27.69%)
+        53: + 1232085 (34.7%) = 2215079 (62.39%)
+        54: + 1335170 (37.61%) = 3550249 (100%)
+      R1:Right position:
+        52~146: + 255675 (7.2%) = 255675 (7.2%)
+        147: + 659338 (18.57%) = 915013 (25.77%)
+        148: + 1760294 (49.58%) = 2675307 (75.36%)
+        149: + 874942 (24.64%) = 3550249 (100%)
+      R2:Left position: 20
+      Variants: 0
+      Cost:
+        0: + 3433842 (96.72%) = 3433842 (96.72%)
+        5~10: + 116407 (3.28%) = 3550249 (100%)
+      UMI length: 14
+      R1 length:
+        0~93: + 179299 (5.05%) = 179299 (5.05%)
+        94: + 1523494 (42.91%) = 1702793 (47.96%)
+        95: + 951209 (26.79%) = 2654002 (74.76%)
+        96~97: + 896247 (25.24%) = 3550249 (100%)
+      R2 length:
+        15~127: + 291090 (8.2%) = 291090 (8.2%)
+        128: + 1098902 (30.95%) = 1389992 (39.15%)
+        129: + 2160257 (60.85%) = 3550249 (100%)
+  ============== RefineTagsAndSort Report ==============
+============== RefineTagsAndSort Report ==============
+Time spent in correction: 0ns
+UMI input diversity: 266703
+UMI output diversity: 137060 (51.39%)
+UMI input reads: 3448498
+UMI output count: 3448497 (100%)
+UMI mean reads per tag: 12.93
+UMI input core diversity: 266674 (99.99%)
+UMI input core reads: 3448469 (100%)
+UMI directly corrected diversity: 129642 (48.61%)
+UMI directly corrected reads: 144398 (4.19%)
+UMI diversity filtered by tag quality: 1 (0%)
+UMI reads filtered by tag quality: 1 (0%)
+UMI diversity filtered by whitelist: 0 (0%)
+UMI recursively corrected: 6799
+Number of output records: 3302573 (95.77%)
+Filter report:
+  Number of groups: 137060
+  Number of groups accepted: 53937 (39.35%)
+  Total records weight: 3448497.0
+  Records weight accepted: 3302573.0 (95.77%)
+  Operator #0:
+    Effective threshold: 8.0
+============== Assemble Report ==============
+============== Assemble Report ==============
+Number of input groups: 53937
+Number of input alignments: 3302573
+Number of output pre-clonotypes: 50730
+Number of clonotypes per group:
+  0: + 3239 (6.01%) = 3239 (6.01%)
+  1: + 50558 (93.83%) = 53797 (99.84%)
+  2: + 86 (0.16%) = 53883 (100%)
+Number of core alignments: 2748073 (83.21%)
+Discarded core alignments: 504431 (18.36%)
+Empirically assigned alignments: 8264 (0.25%)
+Empirical assignment conflicts: 0 (0%)
+UMI+VJ-gene empirically assigned alignments: 8264 (0.25%)
+VJ-gene empirically assigned alignments: 0 (0%)
+UMI empirically assigned alignments: 0 (0%)
+Number of ambiguous UMIs: 86
+Number of ambiguous V-genes: 3
+Number of ambiguous J-genes: 1
+Number of ambiguous UMI+V/J-gene combinations: 4
+Unassigned alignments: 545221 (16.51%)
+Final clonotype count: 27957
+Average number of reads per clonotype: 98.38
+Reads used in clonotypes, percent of total: 2750375 (77.09%)
+Reads used in clonotypes before clustering, percent of total: 2755131 (77.22%)
+Number of reads used as a core, percent of used: 2755073 (100%)
+Mapped low quality reads, percent of used: 58 (0%)
+Reads clustered in PCR error correction, percent of used: 4756 (0.17%)
+Reads pre-clustered due to the similar VJC-lists, percent of used: 30 (0%)
+Reads dropped due to the lack of a clone sequence, percent of total: 50069 (1.4%)
+Reads dropped due to a too short clonal sequence, percent of total: 52 (0%)
+Reads dropped due to low quality, percent of total: 0 (0%)
+Reads dropped due to failed mapping, percent of total: 1154 (0.03%)
+Reads dropped with low quality clones, percent of total: 0 (0%)
+Clonotypes eliminated by PCR error correction: 88
+Clonotypes dropped as low quality: 0
+Clonotypes pre-clustered due to the similar VJC-lists: 1
+TRA chains: 27956 (100%)
+TRA non-functional: 2833 (10.13%)
+TRD chains: 1 (0%)
+TRD non-functional: 1 (100%)

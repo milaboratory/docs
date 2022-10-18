@@ -1,0 +1,247 @@
+{
+  "type": "alignerReport",
+  "commandLine": "--report results/13_d60_LN_germCenterB.align.report.txt --json-report results/13_d60_LN_germCenterB.align.report.json --preset local:nebnext-human-bcr-cdr3 +limitInput 100000 /raw/PRJNA777934_NEB_Immune_sequencing/13_d60_LN_germCenterB_R1.fastq.gz /raw/PRJNA777934_NEB_Immune_sequencing/13_d60_LN_germCenterB_R2.fastq.gz results/13_d60_LN_germCenterB.vdjca",
+  "inputFiles": [
+    "/raw/PRJNA777934_NEB_Immune_sequencing/13_d60_LN_germCenterB_R1.fastq.gz",
+    "/raw/PRJNA777934_NEB_Immune_sequencing/13_d60_LN_germCenterB_R2.fastq.gz"
+  ],
+  "outputFiles": [
+    "results/13_d60_LN_germCenterB.vdjca"
+  ],
+  "version": "; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0",
+  "trimmingReport": null,
+  "totalReadsProcessed": 100000,
+  "aligned": 88595,
+  "notAligned": 11405,
+  "notAlignedReasons": {
+    "NoJHits": 2521,
+    "VAndJOnDifferentTargets": 1773,
+    "NoCDR3Parts": 0,
+    "NoBarcode": 0,
+    "NoHits": 3851,
+    "LowTotalScore": 0,
+    "NoVHits": 3260
+  },
+  "chimeras": 0,
+  "overlapped": 49087,
+  "alignmentAidedOverlaps": 2058,
+  "overlappedAligned": 44737,
+  "overlappedNotAligned": 4350,
+  "pairedEndAlignmentConflicts": 30693,
+  "vChimeras": 2068,
+  "jChimeras": 5,
+  "chainUsage": {
+    "type": "chainUsage",
+    "chimeras": 0,
+    "total": 88595,
+    "chains": {
+      "IGH": {
+        "total": 88288,
+        "nonFunctional": 2924,
+        "isOOF": 516,
+        "hasStops": 2408
+      },
+      "IGK": {
+        "total": 253,
+        "nonFunctional": 10,
+        "isOOF": 7,
+        "hasStops": 3
+      },
+      "IGL": {
+        "total": 54,
+        "nonFunctional": 5,
+        "isOOF": 5,
+        "hasStops": 0
+      }
+    }
+  },
+  "realignedWithForcedNonFloatingBound": 105942,
+  "realignedWithForcedNonFloatingRightBoundInLeftRead": 25837,
+  "realignedWithForcedNonFloatingLeftBoundInRightRead": 25837,
+  "noCDR3PartsAlignments": 44,
+  "partialAlignments": 1970,
+  "tagReport": {
+    "type": "tagReport"
+  }
+}
+{
+  "type": "refineTagsAndSort",
+  "commandLine": "--report results/13_d60_LN_germCenterB.refine.report.txt --json-report results/13_d60_LN_germCenterB.refine.report.json results/13_d60_LN_germCenterB.vdjca results/13_d60_LN_germCenterB.refined.vdjca",
+  "inputFiles": [
+    "results/13_d60_LN_germCenterB.vdjca"
+  ],
+  "outputFiles": [
+    "results/13_d60_LN_germCenterB.refined.vdjca"
+  ],
+  "version": "; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0",
+  "correctionReport": {
+    "inputRecords": 88595,
+    "outputRecords": 52064,
+    "steps": [
+      {
+        "tagName": "UMI",
+        "inputGroups": 1,
+        "inputDiversity": 44135,
+        "inputCount": 88595,
+        "coreDiversity": 23770,
+        "coreCount": 64187,
+        "directlyCorrectedDiversity": 5918,
+        "directlyCorrectedCount": 6351,
+        "filteredDiversity": 14636,
+        "filteredCount": 18247,
+        "recursivelyCorrected": 6,
+        "diversityFilteredByWhitelist": 0,
+        "outputDiversity": 23581,
+        "outputCount": 70348
+      }
+    ],
+    "filterReport": {
+      "type": "filter_groups_report",
+      "groupingKeys": [
+        "UMI"
+      ],
+      "numberOfGroups": 23581,
+      "numberOfGroupsAccepted": 11348,
+      "totalWeight": 70348,
+      "totalWeightAccepted": 52064,
+      "operatorReports": [
+        {
+          "type": "generic_hist_report",
+          "threshold": 3
+        }
+      ],
+      "metricHists": [
+        {
+          "metric": {
+            "type": "group_metric_sum_weight",
+            "reportHist": {
+              "log": true,
+              "binNumber": 0,
+              "minBinWidth": 0.2
+            }
+          },
+          "hist": {
+            "bins": [
+              {
+                "from": 1,
+                "to": 1.5848931924611136,
+                "weight": 6182
+              },
+              {
+                "from": 1.5848931924611136,
+                "to": 2.51188643150958,
+                "weight": 6051
+              },
+              {
+                "from": 2.51188643150958,
+                "to": 3.981071705534973,
+                "weight": 4316
+              },
+              {
+                "from": 3.981071705534973,
+                "to": 6.309573444801933,
+                "weight": 5455
+              },
+              {
+                "from": 6.309573444801933,
+                "to": 10,
+                "weight": 1223
+              },
+              {
+                "from": 10,
+                "to": 15.848931924611142,
+                "weight": 333
+              },
+              {
+                "from": 15.848931924611142,
+                "to": 25.11886431509581,
+                "weight": 21
+              }
+            ],
+            "collectionSpec": {
+              "log": true,
+              "binNumber": 0,
+              "minBinWidth": 0.2
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+{
+  "type": "assemblerReport",
+  "commandLine": "--report results/13_d60_LN_germCenterB.assemble.report.txt --json-report results/13_d60_LN_germCenterB.assemble.report.json results/13_d60_LN_germCenterB.refined.vdjca results/13_d60_LN_germCenterB.clns",
+  "inputFiles": [
+    "results/13_d60_LN_germCenterB.refined.vdjca"
+  ],
+  "outputFiles": [
+    "results/13_d60_LN_germCenterB.clns"
+  ],
+  "version": "; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0",
+  "preCloneAssemblerReport": {
+    "type": "preCloneAssemblerReport",
+    "inputGroups": 11348,
+    "inputAlignments": 52064,
+    "clonotypes": 10644,
+    "clonotypesPerGroup": {
+      "0": 674,
+      "1": 10644
+    },
+    "coreAlignments": 47804,
+    "discardedCoreAlignments": 1661,
+    "empiricallyAssignedAlignments": 1695,
+    "vjEmpiricallyAssignedAlignments": 0,
+    "umiEmpiricallyAssignedAlignments": 0,
+    "gatEmpiricallyAssignedAlignments": 1695,
+    "empiricalAssignmentConflicts": 0,
+    "unassignedAlignments": 2430,
+    "umiConflicts": 0,
+    "gatConflicts": 0,
+    "geneConflicts": {},
+    "coreClonotypesDroppedByTagSuffix": 0,
+    "coreAlignmentsDroppedByTagSuffix": 0
+  },
+  "totalReadsProcessed": 100000,
+  "initialClonesCreated": 1424,
+  "readsDroppedNoTargetSequence": 2599,
+  "readsDroppedTooShortClonalSequence": 0,
+  "readsDroppedLowQuality": 0,
+  "coreReads": 49353,
+  "readsDroppedFailedMapping": 71,
+  "lowQualityRescued": 18,
+  "clonesClustered": 223,
+  "readsClustered": 2291,
+  "clones": 1180,
+  "clonesDroppedAsLowQuality": 9,
+  "clonesPreClustered": 12,
+  "readsPreClustered": 108,
+  "readsInClones": 47080,
+  "readsInClonesBeforeClustering": 49371,
+  "readsDroppedWithLowQualityClones": 57,
+  "clonalChainUsage": {
+    "type": "chainUsage",
+    "chimeras": 0,
+    "total": 1180,
+    "chains": {
+      "IGH": {
+        "total": 1173,
+        "nonFunctional": 31,
+        "isOOF": 27,
+        "hasStops": 4
+      },
+      "IGK": {
+        "total": 5,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      },
+      "IGL": {
+        "total": 2,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      }
+    }
+  }
+}

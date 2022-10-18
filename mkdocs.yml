@@ -49,10 +49,15 @@ plugins:
       lang: en
   - minify:
       minify_html: true
-  - glightbox
+#  - glightbox
   - table-reader
 
 markdown_extensions:
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
   - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
@@ -85,9 +90,6 @@ markdown_extensions:
 #      toc_depth: 3
 
 extra:
-  version:
-    provider: mike
-    default: latest
   generator: false
   analytics:
     provider: google
@@ -116,7 +118,7 @@ nav:
         - 'MiLaboratories Human TCR RNA Multiplex kit':  mixcr/guides/milaboratories-human-tcr-rna-multi.md
         - 'SMARTer Human BCR IgG IgM H/K/L Profiling Kit': mixcr/guides/takara-hsa-bcr.md
         - 'SMARTer Mouse TCR a/b Profiling Kit': mixcr/guides/takara-mmu-tcr.md
-        - 'Illumina Ampliseq TCR LR / iRepertoire' : mixcr/guides/ampliseq-tcr-lr.md
+        - 'Illumina Ampliseq TCR LR / iRepertoire' : mixcr/guides/iRepertoire.md
         - 'NEBNext Immune Sequencing': mixcr/guides/nebnext-bcr.md
         - 'QIAseq Immune Repertoire TCR' : mixcr/guides/qiaseq-tcr.md
         - 'AbHelix BCR': mixcr/guides/abhelix-bcr.md
@@ -124,17 +126,22 @@ nav:
       - 'Analysis cases':
         - 'Targeted TCR UMI libraries': mixcr/guides/generic-umi-tcr.md
         - 'Targeted BCR Multiplex libraries': mixcr/guides/generic-multiplex-bcr.md
-#        - 'Targeted BCR UMI libraries': mixcr/guides/generic-umi-bcr.md
+        - 'Targeted BCR UMI libraries': mixcr/guides/generic-umi-bcr.md
         - 'RNA-Seq data' : mixcr/guides/rnaseq.md
       - 'Special guides':
         - 'Assembling custom reference library': mixcr/guides/create-custom-library.md
         - 'Using external libraries': mixcr/guides/external-libraries.md
 
-  - 'Reference':
+  - 'Docs':
+      - 'Overview':
+        - 'Analysis overview': mixcr/reference/overview-analysis-overview.md
+        - 'Presets': mixcr/reference/overview-presets.md
+        - 'Mix-in options list': mixcr/reference/overview-mixins-list.md
+        - 'Built-in presets': mixcr/reference/overview-built-in-presets.md
       - 'MiXCR':
         - 'analyze': mixcr/reference/mixcr-analyze.md
         - 'align': mixcr/reference/mixcr-align.md
-        - 'correctAndSortTags': mixcr/reference/mixcr-correctAndSortTags.md
+        - 'refineTagsAndSort': mixcr/reference/mixcr-refineTagsAndSort.md
         - 'assemblePartial': mixcr/reference/mixcr-assemblePartial.md
         - 'extend': mixcr/reference/mixcr-extend.md
         - 'assemble': mixcr/reference/mixcr-assemble.md
@@ -151,13 +158,19 @@ nav:
         - 'exportPreprocTables': mixcr/reference/mixcr-exportPreprocTables.md
         - 'exportClonesOverlap': mixcr/reference/mixcr-exportClonesOverlap.md
         - 'overlapScatterPlot': mixcr/reference/mixcr-overlapScatterPlot.md
+        - 'findAlleles': mixcr/reference/mixcr-findAlleles.md
+        - 'findShmTrees': mixcr/reference/mixcr-findShmTrees.md
+
+
       - 'Reports':
         - 'mixcr align': mixcr/reference/report-align.md
-        - 'mixcr correctAndSortTags': mixcr/reference/report-correctAndSortTags.md
+        - 'mixcr refineTagsAndSort': mixcr/reference/report-refineTagsAndSort.md
         - 'mixcr assemblePartial': mixcr/reference/report-assemblePartial.md
         - 'mixcr extend': mixcr/reference/report-extend.md
         - 'mixcr assemble': mixcr/reference/report-assemble.md
         - 'mixcr assembleContigs': mixcr/reference/report-assembleContigs.md
+        - 'mixcr findAlleles': mixcr/reference/report-findAlleles.md
+        - 'mixcr findShmTrees': mixcr/reference/report-findShmTrees.md
       - 'RepSeq.io':
         - 'fasta': mixcr/reference/repseqio-fasta.md
         - 'compile': mixcr/reference/repseqio-compile.md
@@ -180,9 +193,10 @@ nav:
         - 'process-fastq': mixcr/reference/mitool-process-fastq.md
         - 'format-fastq': mixcr/reference/mitool-format-fastq.md
         - 'compress-sequence-set': mixcr/reference/mitool-compress-sequence-set.md
-      - 'Specs':
-        - 'Tag Pattern': mixcr/reference/ref-tag-pattern.md
+      - 'Specifications':
+        - 'Tag pattern': mixcr/reference/ref-tag-pattern.md
+        - 'Input file name expansion': mixcr/reference/ref-input-file-name-expansion.md
         - 'Gene features and reference points': mixcr/reference/ref-gene-features.md
         - 'Translation rules': mixcr/reference/ref-translation-rules.md
         - 'Mutations encoding': mixcr/reference/ref-mutations-encoding.md
-        - 'RepSeq.io JSON format': mixcr/reference/repseqio-json-format.md
+        - 'RepSeq.io JSON format': mixcr/reference/ref-repseqio-json-format.md

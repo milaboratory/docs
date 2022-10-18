@@ -77,7 +77,7 @@ The meaning of these options is the following.
 `--umi-pattern`
 : is used to specify UMI pattern for the library. MiXCR provides a powerful regex-like [language](../reference/ref-tag-pattern.md) allowing to specify almost arbitrary barcode structure. Here we use `^(R1:*)\^(UMI:N{12})` pattern to specify that R1 should be used as is, UMI spans the first 12 letters of R2 and the rest of R2 is ignored.
 
-Finally we specify paths for both input files and a path to output folder with prefix describing the sample. Note that `{{n}}` syntax is similar to Linux wildcard behaviour: it will concatenate all fastq files matching this pattern into one sample. This is very useful when you have for example multiple lanes.
+Finally, we specify paths for both input files and a path to output folder with prefix describing the sample. Note that `{{n}}` syntax is similar to Linux wildcard behaviour: it will concatenate all fastq files matching this pattern into one sample. This is very useful when you have for example multiple lanes.
 
 Running the command above will generate the following files:
 
@@ -89,7 +89,7 @@ P15-T0-TIGIT.report
 # raw alignments (highly compressed binary file)
 P15-T0-TIGIT.vdjca
 # alignments with corrected UMI barcode sequences 
-P15-T0-TIGIT.corrected.vdjca
+P15-T0-TIGIT.refined.vdjca
 # TCRα & TCRβ CDR3 clonotypes (highly compressed binary file)
 P15-T0-TIGIT.clns
 # TCRα & TCRβ CDR3 clonotypes exported in tab-delimited txt
@@ -134,7 +134,7 @@ This step utilizes all available CPUs and scales perfectly. When there are a lot
 
 #### `correctAndSortTags`
 
-[Corrects](../reference/mixcr-correctAndSortTags.md) sequencing and PCR errors _inside_ barcode sequences. This step does extremely important job by correcting artificial diversity caused by errors in barcodes. In the considered example project it corrects only sequences of UMIs.
+[Corrects](../reference/mixcr-refineTagsAndSort.md) sequencing and PCR errors _inside_ barcode sequences. This step does extremely important job by correcting artificial diversity caused by errors in barcodes. In the considered example project it corrects only sequences of UMIs.
 
 ```shell
 --8<-- "generic-umi-tcr/scripts/050-upstream-correctAndSortTags.sh"
@@ -174,7 +174,7 @@ Here `-p full` is a shorthand for the full preset of common export columns and `
 
 The resulting clonotype table will contain exhaustive information about each clonotype:
 
-{{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/P15-T0-TIGIT.TRA.tsv', engine='python', sep='\t', nrows=3) }}
+{{ read_table('docs/mixcr/guides/generic-umi-tcr/figs/P15-T0-TIGIT.TRA.tsv', engine='python', sep='\t', nrows=3) }}
 
 ??? tip "See full clonotype table for P15-T0-TIGIT:"
     {{ read_csv('docs/mixcr/guides/generic-umi-tcr/figs/P15-T0-TIGIT.TRA.tsv', engine='python', sep='\t') }}

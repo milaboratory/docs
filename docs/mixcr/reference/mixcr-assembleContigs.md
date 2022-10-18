@@ -21,34 +21,59 @@ Note that since `assembleContigs` uses original alignments, it takes `.clna` (cl
 ## Command line options
 
 ```
-mixcr assembleContigs [-f] [-t <threads>]
-    [--ignore-tags]
-    [--report <reportFile>]
-    [--json-report <jsonReport>]
-    [-O <String=String>]...
-    clonotypes.clna
-    clonotypes.clns
+mixcr assembleContigs 
+    [--ignore-tags] 
+    [--assemble-contigs-by <gene_features>] 
+    [-O <key=value>]... 
+    [--report <path>] 
+    [--json-report <path>] 
+    [--threads <n>] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
+    clones.clna clones.clns
 ```
 
 The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` file that holds exhaustive information on consensus clonotype contigs. Clonotype table may be further extracted in a human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes) or in a tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables). It is also possible to [impute](./mixcr-export.md#export-contigs-with-imputation) uncovered V-D-J contig parts from germline (marking such nucleotides lowercase). Additionally, MiXCR produces a comprehensive [report](./report-assembleContigs.md).
 
+Basic command line options are:
+
+`clones.clna`
+: Path to input clna file
+
+`clones.clns`
+: Path where to write assembled clones.
+
+`--ignore-tags`
+: Ignore tags (UMIs, cell-barcodes). Default value determined by the preset.
+
+`--assemble-contigs-by <gene_features>`
+: Selects the region of interest for the action. Clones will be separated if inconsistent nucleotides will be detected in the region, assembling procedure will be limited to the region, and only clonotypes that fully cover the region will be outputted, others will be filtered out.
+
+`-O  <key=value>`
+: Overrides for the assembler parameters.
+
+`-r, --report <path>`
+: [Report](./report-assembleContigs.md) file (human readable version, see `-j / --json-report` for machine readable report).
+
+`-j, --json-report <path>`
+: JSON formatted [report](./report-assembleContigs.md) file.
+
+`-t, --threads <n>`
+: Processing threads
+
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
 
-`-t, --threads <threads>`
-: Processing threads
+`-nw, --no-warnings`
+: Suppress all warning messages.
 
-`--ignore-tags`
-: Ignore tags (UMIs, cell-barcodes)
+`--verbose`
+: Verbose warning messages.
 
-`-r, --report <reportFile>`
-: [Report](./report-assembleContigs.md) file (human-readable version, see `-j / --json-report` for a machine-readable report)
-
-`-j, --json-report <jsonReport>`
-: JSON formatted [report](./report-assembleContigs.md) file
-
-`-O<String=String>`
-: Overrides default parameter values.
+`-h, --help`
+: Show this help message and exit.
 
 ## Example
 
@@ -133,3 +158,12 @@ Full sequence assembler parameters that may be tuned:
 
 `-OminimalNonEdgePointsFraction=0.25`
 : Minimal fraction of non-edge points in variant that must be reached to consider the variant significant
+
+`-OsubCloningRegions=null`
+: Gene feature limiting the set of positions where sufficient number of different nucleotides may split input into several clonotypes. If position is not covered by the region, and significant disagreement between nucleotides is observed, algorithm will produce "N" letter in the corresponding contig position to indicate the ambiguity. Null - means no subcloning region, and guarantees one to one input to output clonotype correspondence. Default - null
+
+`-OassemblingRegions=null`
+: Limits the region of the sequence to assemble during the procedure, no nucleotides will be assembled outside it. Null will result in assembly of the longest possible contig sequence. Default - null
+
+`-OpostFiltering.type=NoFiltering`
+: Used only if `assemblingRegions` is not null. Sets filtering criteria to apply before outputting the resulting clonotypes. `NoFiltering` - don't filter output clonotypes. `OnlyFullyAssembled` - only clonotypes completely covering `assemblingRegions` will be retained. `OnlyFullyDefined` - only clonotypes completely covering `assemblingRegions` and having no "N" letters will be retained. Default - `NoFiltering`

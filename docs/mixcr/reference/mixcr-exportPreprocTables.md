@@ -3,10 +3,10 @@
 Export postanalysis [preprocessing summary tables](./mixcr-postanalysis.md#preprocessing-summary-tables) in a tabular form.
 
 ```
-mixcr exportPreprocTables [-f] 
-    [--chains <chains>]...
-    pa.json.gz
-    dir/pa.preproc.(tsv|csv)
+mixcr exportPreprocTables 
+    [--chains <chain>]... 
+    [-nw] [--verbose] [-h] 
+    pa.json[.gz] table.tsv
 ```
 
 Allows to export in tab-delimited (`.tsv`) or coma-separated (`.csv`) formats. Option `--chains` may be used to export results only for a specified chains.

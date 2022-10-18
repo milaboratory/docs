@@ -5,112 +5,119 @@ A set of routines for graphical export of [postanalysis](./mixcr-postanalysis.md
 ## Diversity and CDR3 metrics
 
 ```
-mixcr exportPlots (diversity|cdr3metrics) [-f]
-    [--chains <chains>]...
-    [--metadata <file>]
-    [--metric <metric>]...
-    [--filter <meta(|>|>=|=|<=|<)value>]...
-    [--primary-group <meta>]
-    [--primary-group-values <value>[,<value>...]]...
-    [--secondary-group <meta>]
-    [--secondary-group-values <value>[,<value>...]]...
-    [--facet-by <facetBy>]
-    [--plot-type <plotType>]
-    [--hide-overall-p-value]
-    [--ref-group <refGroup>]
-    [--pairwise-comparisons]
-    [--hide-non-significant]
-    [--show-significance]
-    [--method <method>]
-    [--p-adjust-method <method>]
-    [--width <width>]
-    [--height <height>]
-    individual.pa.json.gz
-    plot.(pdf|svg|eps|png|jpg)
+mixcr exportPlots (diversity|cdr3metrics) 
+    [--chains <chain>]... 
+    [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
+    [--metadata <path>] 
+    [--plot-type <plotType>] 
+    [--primary-group <meta>] 
+    [--primary-group-values <value>[,<value>...]]... 
+    [--secondary-group <meta>] 
+    [--secondary-group-values <value>[,<value>...]]... 
+    [--facet-by <meta>] 
+    [--hide-overall-p-value] 
+    [--pairwise-comparisons] 
+    [--ref-group <refGroup>] 
+    [--hide-non-significant] 
+    [--paired] 
+    [--method <method>] 
+    [--method-multiple-groups <method>] 
+    [--p-adjust-method <method>] 
+    [--show-significance] 
+    [--metric <metric>[,<metric>...]]... 
+    [--width <n>] 
+    [--height <n>] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
+    pa.json[.gz] output.(pdf|eps|png|jpeg)
 ```
 Exports [diversity](./mixcr-postanalysis.md#diversity-measures) or [CDR3 metrics](./mixcr-postanalysis.md#cdr3-metrics) visualization plots from the [individual](./mixcr-postanalysis.md#individual-postanalysis) postanalysis results. When exporting in PDF format the resulting file will contain multiple pages: one page per metric. For exaporint in other formats one need to specify `--metrics <metric>` option to export one particular metric.
 
-`--chains <chains>`
+Basic command line options are:
 
-:   export only for specified immunological chains
+`pa.json[.gz]`
+: Input file with postanalysis results.
 
-`--metadata <file>`
+`output.(pdf|eps|png|jpeg)`
+: Output PDF/EPS/PNG/JPEG file name.
 
-:   supply additional [metadata](./mixcr-postanalysis.md#metadata) `.tsv` or `.csv` table
+`--chains <chain>`
+: Export only for specified immunological chains.
 
-`--metric <metric>...`
+`--filter <filter>[,<filter>...]`
+: Filter samples to put on a plot by their metadata values. Filter allows equality (`species=cat`) or arithmetic comparison (`age>=10`) etc.
 
-:   output only specified list of metrics:
-
-    - for [`cdr3metrics`](./mixcr-postanalysis.md#cdr3-metrics) possible values are: `cdr3lenNT`, `cdr3lenAA`, `ndnLenNT`, `addedNNT`, `strength`, `hydrophobicity`, `surface`, `volume`, `charge`
-    
-    - for [`diversity`](./mixcr-postanalysis.md#diversity-measures): `observed`, `shannonWiener`, `chao1`, `normalizedShannonWienerIndex`, `inverseSimpsonIndex`, `giniIndex`, `d50`, `efronThisted`
-
-`--filter <meta(|>|>=|=|<=|<)value>...`
-
-:   filter samples to put on a plot by their metadata values. Filter allows equality (`species=cat`) or arithmetic comparison (`age>=10`) etc.
-
-
-`--primary-group <meta>`
-
-:   specify metadata column used to group datasets
-
-`--primary-group-values <value>[,<value>...]...`
-
-:   set particular order of primary group values
-
-`--secondary-group <meta>`
-
-:   specify metadata column used to apply secondary grouping of datasets (if primary grouping is already applied)
-
-`--secondary-group-values <value>[,<value>...]...`
-
-:   set particular order of secondary group values
-
-
-`--facet-by <meta>`
-
-:   specify metadata column to use for plotting facets
+`--metadata <path>`
+: [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files.
 
 `--plot-type <plotType>`
+: Plot type. Possible values: `boxplot`, `boxplot-bindot`, `boxplot-jitter`, `violin`, `violin-bindot`, `barplot`, `barplot-stacked`, `lineplot`, `lineplot-jitter`, `lineplot-bindot`, `scatter`
 
-:   possible values: `boxplot`, `boxplot-bindot`, `boxplot-jitter`, `lineplot`, `lineplot-bindot`, `lineplot-jitter`, `violin`, `violin-bindot`, `barplot`, `barplot-stacked`, `scatter`
+`-p, --primary-group <meta>`
+: Specify metadata column used to group datasets.
+
+`-pv, --primary-group-values <value>[,<value>...]`
+: List of comma separated primary group values.
+
+`-s, --secondary-group <meta>`
+: Secondary group.
+
+`-sv, --secondary-group-values <value>[,<value>...]`
+: List of comma separated secondary group values.
+
+`--facet-by <meta>`
+: Facet by.
+
+`--metric <metric>[,<metric>...]`
+: Output only specified list of metrics:
+
+    - for [`cdr3metrics`](./mixcr-postanalysis.md#cdr3-metrics) possible values are: `cdr3lenAA`, `cdr3lenNT`, `ndnLenNT`, `addedNNT`, `strength`, `hydrophobicity`, `surface`, `volume`, `charge`
+    
+    - for [`diversity`](./mixcr-postanalysis.md#diversity-measures) possible values are: `observed`, `shannonWiener`, `chao1`, `normalizedShannonWienerIndex`, `inverseSimpsonIndex`, `giniIndex`, `d50`, `efronThisted`
+
 
 `--hide-overall-p-value`
-
-:   do not show overall p-value on the plot
-
-`--ref-group <refGroup>`
-
-:   specify reference group for compare means statistics
+: Hide overall p-value.
 
 `--pairwise-comparisons`
+: Show pairwise p-value comparisons.
 
-:   show all pairwise p-values
+`--ref-group <refGroup>`
+: Reference group for compare means statistics. Can be 'all' or some specific value.
 
 `--hide-non-significant`
+: Hide non-significant observations.
 
-:   do not show non-significant p-values
-
-`--show-significance`
-
-:   show significance levels instead of p-values ( `ns` for p-value >= 0.05, `***` for p-value < 0.0001,  `**` for p-value < 0.001, `*` in other case)
+`--paired`
+: Do paired analysis
 
 `--method <method>`
+: Statistical test method. Available methods: [`Wilcoxon`](https://en.wikipedia.org/wiki/Mann–Whitney_U_test) (default), [`ANOVA`](https://en.wikipedia.org/wiki/Analysis_of_variance), [`TTest`](https://en.wikipedia.org/wiki/Student%27s_t-test), [`KruskalWallis`](https://en.wikipedia.org/wiki/Kruskal–Wallis_one-way_analysis_of_variance), [`KolmogorovSmirnov`](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)
 
-:   statistical test method. Available methods: [`Wilcoxon`](https://en.wikipedia.org/wiki/Mann–Whitney_U_test) (default), [`ANOVA`](https://en.wikipedia.org/wiki/Analysis_of_variance), [`TTest`](https://en.wikipedia.org/wiki/Student%27s_t-test), [`KruskalWallis`](https://en.wikipedia.org/wiki/Kruskal–Wallis_one-way_analysis_of_variance), [`KolmogorovSmirnov`](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)
+`--method-multiple-groups <method>`
+: Test method for multiple groups comparison. Available methods: [`KruskalWallis`](https://en.wikipedia.org/wiki/Kruskal–Wallis_one-way_analysis_of_variance) (default), [`Wilcoxon`](https://en.wikipedia.org/wiki/Mann–Whitney_U_test), [`ANOVA`](https://en.wikipedia.org/wiki/Analysis_of_variance), [`TTest`](https://en.wikipedia.org/wiki/Student%27s_t-test), [`KolmogorovSmirnov`](https://en.wikipedia.org/wiki/Kolmogorov–Smirnov_test)
 
 `--p-adjust-method <method>`
+: Method used to adjust p-values. Available methods: Available methods: [`Holm`](https://www.jstor.org/stable/4615733) (default), [`BenjaminiHochberg`](https://www.jstor.org/stable/2346101), [`BenjaminiYekutieli`](https://www.jstor.org/stable/2674075), [`Bonferroni`](https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method), [`Hochberg`](https://www.jstor.org/stable/2336325), [`Hommel`](https://www.jstor.org/stable/2336190), `none`
 
-:   p-value correction method. Available methods: [`Holm`](https://www.jstor.org/stable/4615733) (default), [`BenjaminiHochberg`](https://www.jstor.org/stable/2346101), [`BenjaminiYekutieli`](https://www.jstor.org/stable/2674075), [`Bonferroni`](https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method), [`Hochberg`](https://www.jstor.org/stable/2336325), [`Hommel`](https://www.jstor.org/stable/2336190), `none`
+`--show-significance`
+: Show significance levels instead of p-values ( `ns` for p-value >= 0.05, `***` for p-value < 0.0001,  `**` for p-value < 0.001, `*` in other case).
 
-`--width <width>`
+`--width <n>`
+: Plot width.
 
-:   width of a plot
+`--height <n>`
+: Plot height.
 
-`--height <height>`
+`-nw, --no-warnings`
+: Suppress all warning messages.
 
-:   height of a plot
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
 
 ### Examples
 
@@ -151,65 +158,87 @@ Use secondary grouping:
 
 ```
 mixcr exportPlots (vUsage|jUsage|isotypeUsage|vjUsage) [-f]
-    [--chains <chains>]...
-    [--metadata <metadata>]
-    [--filter <filterByMetadata>]...
-    [--color-key <colorKey>]...
+    [--chains <chain>]... 
+    [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
+    [--metadata <path>] 
+    [--group-by <s>]... 
+    [--family-usage] 
+    [--no-samples-dendro] 
     [--no-genes-dendro]
-    [--no-samples-dendro]
-    [--palette <palette>]
-    [--h-labels-size <hLabelsSize>]
-    [--v-labels-size <vLabelsSize>]
-    [--width <width>]
-    [--height <height>]
-    individual.pa.json.gz
-    plot.(pdf|svg|eps|png|jpg)
+    [--color-key <key>]... 
+    [--bar-plot] 
+    [--facet-by <s>]
+    [--width <n>] 
+    [--height <n>] 
+    [--palette <s>] 
+    [--h-labels-size <d>] 
+    [--v-labels-size <d>]   
+    [--no-warnings] 
+    [--verbose] 
+    [--help] 
+    pa.json[.gz] output.(pdf|eps|png|jpeg)
 ```
 Exports [gene segment usage](./mixcr-postanalysis.md#segment-usage-metrics) heatmap plots from the [individual](./mixcr-postanalysis.md#individual-postanalysis) postanalysis results.
 
-`--chains <chains>`
+`pa.json[.gz]`
+: Input file with postanalysis results.
 
-:   export only for specified immunological chains
+`output.(pdf|eps|png|jpeg)`
+: Output PDF/EPS/PNG/JPEG file name.
 
-`--metadata <file>`
+`--chains <chain>`
+: Export only for specified immunological chains.
 
-:   supply additional [metadata](./mixcr-postanalysis.md#metadata) `.tsv` or `.csv` table
+`--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]`
+: Filter samples to put on a plot by their metadata values. Filter allows equality (`species=cat`) or arithmetic comparison (`age>=10`) etc.
 
-`--filter <meta(|>|>=|=|<=|<)value>...`
+`--metadata <path>`
+: [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files.
 
-:   filter samples to put on a plot by their metadata values. Filter allows equality (`species=cat`) or arithmetic comparison (`age>=10`) etc.
+`--group-by <s>`
+: Group heatmaps by specific metadata properties.
 
-`--color-key <meta>`
-
-:   add color key layer to the heatmap
-
-`--no-genes-dendro`
-
-:   do not plot genes dendrogram
+`--family-usage`
+: Show gene family usage instead.
 
 `--no-samples-dendro`
+: Don't add samples dendrogram on heatmap.
 
-:   do not plot samples dendrogram
+`--no-genes-dendro`
+: Don't add genes dendrogram on heatmap.
 
-`palette <palette>`
+`--color-key <key>`
+: Add color key layer to heatmap.
 
-:   specify color palette to be used: `density` (default), `diverging`, `viridis2magma`, `lime2rose`, `blue2red`, `teal2red`, `softSpectral`, `sequential`, `viridis`, `magma`, `sunset`, `rainbow`, `salinity` 
+`--bar-plot`
+: Export bar plot instead of heatmap.
 
-`--h-labels-size`
+`--facet-by <s>`
+: Facet barplot.
 
-:   size of horizontal labels in tile units
+`--palette <s>`
+: Color palette for heatmap. Available names: diverging, viridis2magma, lime2rose, blue2red, teal2red, softSpectral, sequential, viridis, magma, sunset, rainbow, salinity, density. Default: density
 
-`--v-labels-size`
+`--h-labels-size <d>`
+: Width of horizontal labels. One unit corresponds to the width of one tile.
 
-:   size of vertical labels in tile units
+`--v-labels-size <d>`
+: Height of vertical labels. One unit corresponds to the height of one tile.
 
-`--width <width>`
+`--width <n>`
+: Plot width.
 
-:   width of a plot
+`--height <n>`
+: Plot height.
 
-`--height <height>`
+`-nw, --no-warnings`
+: Suppress all warning messages.
 
-:   height of a plot
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
 
 ### Examples
 
@@ -238,70 +267,80 @@ mixcr exportPlots jUsage -f \
 
 ## Overlap
 ```
-mixcr exportPlots overlap [-f]
-    [--chains <chains>]...
-    [--metadata <metadata>]
-    [--filter <filterByMetadata>]...
-    [--color-key <colorKey>]...
+mixcr exportPlots overlap 
+    [--chains <chain>]... 
+    [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
+    [--metadata <path>] 
+    [--group-by <s>]... 
     [--no-dendro]
+    [--color-key <meta>]... 
     [--fill-diagonal]
-    [--palette <palette>]
-    [--h-labels-size <hLabelsSize>]
-    [--v-labels-size <vLabelsSize>]
-    [--width <width>]
-    [--height <height>]
-    individual.pa.json.gz
-    plot.(pdf|svg|eps|png|jpg)
+    [--metric <metric>]... 
+    [--width <n>] 
+    [--height <n>] 
+    [--palette <s>] 
+    [--h-labels-size <d>] 
+    [--v-labels-size <d>] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help] 
+    pa.json[.gz] output.(pdf|eps|png|jpeg)
 ```
 Exports [pairwise distance metrics](./mixcr-postanalysis.md#segment-usage-metrics) heatmap plots from the [overlap](./mixcr-postanalysis.md#overlap-postanalysis) postanalysis results.
 
-`--chains <chains>`
+`pa.json[.gz]`
+: Input file with postanalysis results.
 
-:   export only for specified immunological chains
+`output.(pdf|eps|png|jpeg)`
+: Output PDF/EPS/PNG/JPEG file name.
 
-`--metadata <file>`
+`--chains <chain>`
+: Export only for specified immunological chains.
 
-:   supply additional [metadata](./mixcr-postanalysis.md#metadata) `.tsv` or `.csv` table
+`--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]`
+: Filter samples to put on a plot by their metadata values. Filter allows equality (`species=cat`) or arithmetic comparison (`age>=10`) etc.
 
-`--filter <meta(|>|>=|=|<=|<)value>...`
+`--metadata <path>`
+: [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files.
 
-:   filter samples to put on a plot by their metadata values. Filter allows equality (`species=cat`) or arithmetic comparison (`age>=10`) etc.
-
-`--color-key <meta>`
-
-:   add color key layer to the heatmap. One may write `--color-key x_meta` to draw color key horizontally (default) or `--color-key y_meta` to draw vertically.
-
-`--metric <metric>`
-: The following <metric> values are supported : sharedClonotypes, f1Index, f2Index, jaccardIndex, pearson, pearsonAll
+`--group-by <s>`
+: Group heatmaps by specific metadata properties.
 
 `--no-dendro`
+: Don't add dendrograms
 
-:   do not plot dendrogram
+`--color-key <meta>`
+: Add color key layer to the heatmap. One may write `--color-key x_meta` to draw color key horizontally (default) or `--color-key y_meta` to draw vertically.
 
 `--fill-diagonal`
+: Fill diagonal line
 
-:   fill diagonal values
+`--metric <metric>`
+: Select specific metrics to export. Possible values are: SharedClonotypes, RelativeDiversity, F1Index, F2Index, JaccardIndex, Pearson, PearsonAll
 
-`palette <palette>`
+`--palette <s>`
+: Color palette for heatmap. Available names: diverging, viridis2magma, lime2rose, blue2red, teal2red, softSpectral, sequential, viridis, magma, sunset, rainbow, salinity, density. Default: density
 
-:   specify color palette to be used: `density` (default), `diverging`, `viridis2magma`, `lime2rose`, `blue2red`, `teal2red`, `softSpectral`, `sequential`, `viridis`, `magma`, `sunset`, `rainbow`, `salinity`
+`--width <n>`
+: Plot width.
 
-`--h-labels-size`
+`--height <n>`
+: Plot height.
 
-:   size of horizontal labels in tile units
+`--h-labels-size <d>`
+: Width of horizontal labels. One unit corresponds to the width of one tile.
 
-`--v-labels-size`
+`--v-labels-size <d>`
+: Height of vertical labels. One unit corresponds to the height of one tile.
 
-:   size of vertical labels in tile units
+`-nw, --no-warnings`
+: Suppress all warning messages.
 
-`--width <width>`
+`--verbose`
+: Verbose warning messages.
 
-:   width of a plot
-
-`--height <height>`
-
-:   height of a plot
-
+`-h, --help`
+: Show this help message and exit.
 ### Examples
 
 Export overlap with color key:
@@ -316,3 +355,91 @@ Export overlap with color key:
 <figure markdown>
 ![overlap](pics/export-plots-overlap.TRAD.svg)
 </figure>
+
+## SHM trees
+```
+mixcr exportPlots shmTrees 
+    [--ids <id>[,<id>...]]... 
+    [--node-color <meta>] 
+    [--line-color <meta>] 
+    [--node-size <meta>] 
+    [--node-label <meta>] 
+    [--alignment-nt <gene_feature>] 
+    [--alignment-aa <gene_feature>] 
+    [--alignment-no-fill] 
+    [--metadata <path>] 
+    [--filter-min-nodes <n>] 
+    [--filter-min-height <n>] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help] 
+    [[--filter-in-feature <gene_feature>] [--pattern-max-errors <n>] (--filter-aa-pattern <pattern> | --filter-nt-pattern <pattern>)] 
+    trees.shmt plots.pdf 
+```
+Visualize SHM tree and save in PDF format
+
+`trees.shmt`
+: Input file produced by 'findShmTrees' command.
+
+`plots.pdf`
+: Path where to write PDF file with plots.
+
+`--ids <id>[,<id>...]`
+: Filter specific trees by id
+
+`--node-color <meta>`
+: Color nodes with given metadata column
+
+`--line-color <meta>`
+: Color lines with given metadata column
+
+`--node-size <meta>`
+: Size nodes with given metadata column. Predefined columns: "Abundance". Default: Abundance
+
+`--node-label <meta>`
+: Label nodes with given metadata column. Predefined columns: "Isotype"
+
+`--alignment-nt <gene_feature>`
+: Show tree nucleotide alignments using specified gene feature
+
+`--alignment-aa <gene_feature>`
+: Show tree amino acid alignments using specified gene feature
+
+`--alignment-no-fill`
+: Do not highlight alignments with color
+
+`-m, --metadata <path>`
+: Path to metadata file Metadata should be a .tsv or .csv file with a column named 'sample' with filenames of .clns files used in findShmTrees
+
+`--filter-min-nodes <n>`
+: Minimal number of nodes in tree
+
+`--filter-min-height <n>`
+: Minimal height of the tree
+
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
+
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.
+
+Filter by pattern options:
+
+`--filter-in-feature <gene_feature>`
+: Match pattern inside specified gene feature. Default: CDR3
+
+`--pattern-max-errors <n>`
+: Max allowed subs & indels. Default: 0
+
+`--filter-aa-pattern <pattern>`
+: Filter specific trees by aa pattern.
+
+`--filter-nt-pattern <pattern>`
+: Filter specific trees by nt pattern.

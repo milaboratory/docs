@@ -1,0 +1,56 @@
+============== Align Report ==============
+Input file(s): /raw/iRepertoire/CRC016_preTherapy_R1.fastq.gz,/raw/iRepertoire/CRC016_preTherapy_R2.fastq.gz
+Output file(s): results-trimmed/CRC016_preTherapy.vdjca
+Version: 4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0
+Command line arguments: --report results-trimmed/CRC016_preTherapy.align.report.txt --json-report results-trimmed/CRC016_preTherapy.align.report.json --preset local:irepertoire-human-tcr-lr-cdr3 /raw/iRepertoire/CRC016_preTherapy_R1.fastq.gz /raw/iRepertoire/CRC016_preTherapy_R2.fastq.gz results-trimmed/CRC016_preTherapy.vdjca
+Analysis time: 0ns
+Total sequencing reads: 409090
+Successfully aligned reads: 386658 (94.52%)
+Paired-end alignment conflicts eliminated: 3486 (0.85%)
+Alignment failed, no hits (not TCR/IG?): 4045 (0.99%)
+Alignment failed because of absence of V hits: 29 (0.01%)
+Alignment failed because of absence of J hits: 17953 (4.39%)
+No target with both V and J alignments: 203 (0.05%)
+Alignment failed because of low total score: 202 (0.05%)
+Overlapped: 392724 (96%)
+Overlapped and aligned: 371487 (90.81%)
+Alignment-aided overlaps: 722 (0.19%)
+Overlapped and not aligned: 21237 (5.19%)
+No CDR3 parts alignments, percent of successfully aligned: 94 (0.02%)
+Partial aligned reads, percent of successfully aligned: 575 (0.15%)
+V gene chimeras: 481 (0.12%)
+TRA chains: 370 (0.1%)
+TRA non-functional: 57 (15.41%)
+TRB chains: 386282 (99.9%)
+TRB non-functional: 8075 (2.09%)
+TRD chains: 5 (0%)
+TRD non-functional: 0 (0%)
+IGH chains: 1 (0%)
+IGH non-functional: 0 (0%)
+Realigned with forced non-floating bound: 34176 (8.35%)
+Realigned with forced non-floating right bound in left read: 9768 (2.39%)
+Realigned with forced non-floating left bound in right read: 9768 (2.39%)
+============== Assemble Report ==============
+Input file(s): results-trimmed/CRC016_preTherapy.vdjca
+Output file(s): results-trimmed/CRC016_preTherapy.clns
+Version: 4.0.0-331-protocols; built=Thu Oct 06 19:33:27 CEST 2022; rev=83ef6ba9c4; lib=repseqio.v2.0
+Command line arguments: --report results-trimmed/CRC016_preTherapy.assemble.report.txt --json-report results-trimmed/CRC016_preTherapy.assemble.report.json results-trimmed/CRC016_preTherapy.vdjca results-trimmed/CRC016_preTherapy.clns
+Analysis time: 0ns
+Final clonotype count: 24390
+Average number of reads per clonotype: 14.7
+Reads used in clonotypes, percent of total: 358492 (87.63%)
+Reads used in clonotypes before clustering, percent of total: 379951 (92.88%)
+Number of reads used as a core, percent of used: 377014 (99.23%)
+Mapped low quality reads, percent of used: 2937 (0.77%)
+Reads clustered in PCR error correction, percent of used: 21459 (5.65%)
+Reads pre-clustered due to the similar VJC-lists, percent of used: 76 (0.02%)
+Reads dropped due to the lack of a clone sequence, percent of total: 2924 (0.71%)
+Reads dropped due to a too short clonal sequence, percent of total: 143 (0.03%)
+Reads dropped due to low quality, percent of total: 1 (0%)
+Reads dropped due to failed mapping, percent of total: 3571 (0.87%)
+Reads dropped with low quality clones, percent of total: 1 (0%)
+Clonotypes eliminated by PCR error correction: 9372
+Clonotypes dropped as low quality: 1
+Clonotypes pre-clustered due to the similar VJC-lists: 69
+TRB chains: 24390 (100%)
+TRB non-functional: 1117 (4.58%)

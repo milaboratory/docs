@@ -2,108 +2,147 @@
 
 Aligns raw sequencing data against V-, D-, J- and C- gene segment references library database for specified species. If the input sequences have barcodes (UMIs, cell barcodes etc.), MiXCR allows to parse barcodes using powerful [pattern matching syntax](./ref-tag-pattern.md) and assign them to every alignment. Additionally, read trimming may be applied if corresponding options are specified. MiXCR supports paired-end and single-end [`.fastq`](https://en.wikipedia.org/wiki/FASTQ_format), [`.fasta`](https://en.wikipedia.org/wiki/FASTA_format), [`.bam` and `.sam`](https://en.wikipedia.org/wiki/Binary_Alignment_Map) formats.
 
-<figure markdown>
 ![align](./pics/align.svg)
-</figure>
 
 ## Command line options
 
 ```
-mixcr align [-f] [-nw] [-n <limit>] [-t <threads>]
-    --species <species>
-    [--library <library>]
-    [--report <reportFile>]
-    [--json-report <jsonReport>]
-    [--tag-pattern <tagPattern>]
-    [--tag-pattern-name <tagPatternName>]
-    [--tag-pattern-file <tagPatternFile>]
-    [--tag-parse-unstranded]
-    [--tag-max-budget <tagMaxBudget>]
-    [--preset <alignerParametersName>]
-    [--not-aligned-R1 <failedReadsR1>]
-    [--not-aligned-R2 <failedReadsR2>]
-    [--trimming-quality-threshold <trimmingQualityThreshold>]
-    [--trimming-window-size <trimmingWindowSize>]
-    [--write-all]
-    [--high-compression]
-    [--read-buffer <readBufferSize>]
-    [-O<String=String>]... 
-    input_R1(.fastq.gz|.fq|.fastq|.fasta|.fa|.BAM|.SAM)
-    [input_R2(.fastq.gz|.fq|.fastq)]
-    alignments.vdjca
+mixcr align --preset <name> 
+    [--trimming-quality-threshold <n>] 
+    [--trimming-window-size <n>] 
+    [--write-all] 
+    [--tag-pattern-file <path>] 
+    [--tag-parse-unstranded] 
+    [--tag-max-budget <n>] 
+    [--read-buffer <n>] 
+    [--high-compression] 
+    [--not-aligned-R1 <path>] 
+    [--not-aligned-R2 <path>] 
+    [--not-parsed-R1 <path>] 
+    [--not-parsed-R2 <path>] 
+    [--species <species>] 
+    [--library <library>] 
+    [--dna] 
+    [--rna] 
+    [--floating-left-alignment-boundary [<anchor_point>]] 
+    [--rigid-left-alignment-boundary [<anchor_point>]] 
+    [--floating-right-alignment-boundary (<gene_type>|<anchor_point>)] 
+    [--rigid-right-alignment-boundary [(<gene_type>|<anchor_point>)]] 
+    [--tag-pattern <pattern>] 
+    [--keep-non-CDR3-alignments] 
+    [--drop-non-CDR3-alignments] 
+    [--limit-input <n>] 
+    [--assemble-clonotypes-by <gene_features>] 
+    [--split-clones-by <gene_type>]... 
+    [--dont-split-clones-by <gene_type>]... 
+    [--assemble-contigs-by <gene_features>] 
+    [--impute-germline-on-export] 
+    [--dont-impute-germline-on-export] 
+    [--prepend-export-clones-field <field> [<param>...]]... 
+    [--append-export-clones-field <field> [<param>...]]...
+    [--prepend-export-alignments-field <field> [<param>...]]... 
+    [--append-export-alignments-field <field> [<param>...]]... 
+    [-O <key=value>]... 
+    [-M <key=value>]... 
+    [--repor) <path>] 
+    [--json-report <path>] 
+    [--threads <n>] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
+	(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam)) alignments.vdjca
 ```
-The command returns a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form usign [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the alignment performance and quality of the library.
+The command returns a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form using [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the alignment performance and quality of the library.
 
 Basic command line options are:
 
-`-n, --limit <limit>`
-: Take only first `limit` sequences from input file(s) to process
+`(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam))`
+: Two fastq files for paired reads or one file for single read data. Use {{n}} if you want to concatenate files from multiple lanes, like: my_file_L{{n}}_R1.fastq.gz my_file_L{{n}}_R2.fastq.gz
 
-`-t, --threads <threads>`
-: Specify number of processing threads
+`alignments.vdjca`
+: Path where to write output alignments
 
-`-nw, --no-warnings`
-: Suppress all warning messages
+`-p, --preset <name>`
+: Analysis preset. Sets all important parameters of this and all downstream analysis steps. It is  important to carefully select the most appropriate preset for the data you analyse. See [list of presets](overview-built-in-presets.md). 
 
-`--verbose`
-: Show verbose warning messages
+`--trimming-quality-threshold <n>`
+: Read pre-processing: trimming quality threshold. Zero value can be used to skip trimming. Default value determined by the preset.
+
+`--trimming-window-size <n>`
+: Read pre-processing: trimming window size. Default value determined by the preset.
+
+`--write-all`
+: Write alignment results for all input reads (even if alignment failed). Default value determined by the preset.
+
+`--tag-pattern-file <path>`
+: Read tag pattern from a file. Default tag pattern determined by the preset.
+
+`--tag-pattern <pattern>`
+: Specify tag pattern for barcoded data.
+
+`--tag-parse-unstranded`
+: If paired-end input is used, determines whether to try all combinations of mate-pairs or only match reads to the corresponding pattern sections (i.e. first file to first section, etc...). Default value determined by the preset.
+
+`--tag-max-budget <n>`
+: Maximal bit budget, higher values allows more substitutions in small letters. Default value determined by the preset.
+
+`-s, --species <species>`
+: Species (organism). Possible values: `hsa` (or HomoSapiens), `mmu` (or MusMusculus), `rat`, `spalax`, `alpaca`, `lamaGlama`, `mulatta` (_Macaca Mulatta_), `fascicularis` (_Macaca Fascicularis_) or any species from [IMGT ® library](../guides/external-libraries.md).
+
+`-b, --library <library>`
+: V/D/J/C gene library. By default, the `default` MiXCR reference library is used. One can also use [external libraries](../guides/external-libraries.md)
+
+`--limit-input <n>`
+: Maximal number of reads to process on [align](./mixcr-align.md).
+
+`--read-buffer <n>`
+: Size of buffer for FASTQ readers in bytes. Default: 4Mb
+
+`--high-compression`
+: Use higher compression for output file, 10~25% slower, minus 30~50% of file size.
+
+`--not-aligned-R1 <path>`
+: Pipe not aligned R1 reads into separate file.
+
+`--not-aligned-R2 <path>`
+: Pipe not aligned R2 reads into separate file.
+
+`--not-parsed-R1 <path>`
+: Pipe not parsed R1 reads into separate file.
+
+`--not-parsed-R2 <path>`
+: Pipe not parsed R2 reads into separate file.
+
+`-O <key=value>`
+: Overrides aligner parameters from the selected preset (see below)
+
+`-M  <key=value>`
+: Overrides preset parameters
+
+`-r, --report <path>`
+: [Report](./report-align.md) file (human readable version, see `-j / --json-report` for machine readable report).
+
+`-j, --json-report <path>`
+: JSON formatted [report](./report-align.md) file.
+
+`-t, --threads <n>`
+: Processing threads
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
 
-`--species, -s` 
-: Species (organism). Possible values: `hsa` (or HomoSapiens), `mmu` (or MusMusculus), `rat`, `spalax`, `alpaca`, `lamaGlama`, `mulatta` (_Macaca Mulatta_), `fascicularis` (_Macaca Fascicularis_) or any species from [IMGT ® library](../guides/external-libraries.md). 
+`-nw, --no-warnings`
+: Suppress all warning messages.
 
-`--library, -b <library>`
-: V/D/J/C gene library. By default, the `default` MiXCR reference library is used. One can also use [external libraries](../guides/external-libraries.md)
+`--verbose`
+: Verbose warning messages.
 
-`-r, --report <reportFile>` 
-: [Report](./report-align.md) file (human readable version, see -j / --json-report for machine readable report) 
+`-h, --help`
+: Show this help message and exit.
 
-`-j, --json-report <jsonReport>` 
-: JSON formatted [report](./report-align.md) file 
 
-`--tag-pattern <tagPattern>` 
-: [Tag pattern](./ref-tag-pattern.md) to extract from the read. 
-
-`--tag-pattern-name <tagPatternName>` 
-: Tag pattern name from the built-in list. Available patterns: [TODO] 
-
-`--tag-pattern-file <tagPatternFile>` 
-: Read tag pattern from a file 
-
-`--tag-parse-unstranded` 
-: If paired-end input is used, determines whether to try all combinations of mate-pairs or only match reads to the corresponding pattern sections (i.e. first file to first section, etc.) 
-
-`--tag-max-budget <tagMaxBudget>` 
-: Maximal bit budget, higher values allows more substitutions in small letters.
-
-`-p, --preset <alignerParametersName>`
-: Parameters preset. Available [values](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/parameters/vdjcaligner_parameters.json): `default`, `rna-seq`, `kAligner2`.
-
-`--not-aligned-R1 <failedReadsR1>`
-: Pipe not aligned R1 reads into separate file.
-
-`--not-aligned-R2 <failedReadsR2>`
-: Pipe not aligned R2 reads into separate file.                                            
-
-`--write-all`
-: Write alignment results for all input reads (even if alignment failed).
-
-`--high-compression` 
-: Use higher compression for output file, 10~25% slower, minus 30~50% of file size. 
-
-`--read-buffer <readBufferSize>`
-: Size of buffer for FASTQ readers
-
-`-trimming-quality-threshold <trimmingQualityThreshold>` 
-: Read pre-processing: trimming quality threshold. Zero value (default) can be used to skip trimming. 
-
-`--trimming-window-size <trimmingWindowSize>` 
-: Read pre-processing: trimming window size 
-
-`-O  <String=String>` 
-: Overrides default aligner parameter values (see below).
+In addition to these parameters, any of the [available mix-in options](overview-mixins-list.md) may ve additionally specify at `align`. 
 
 ## Concatenating across multiple lanes
 
@@ -509,7 +548,7 @@ The following parameters can be overridden for D aligner:
 : Minimal relative score of alignment: if alignment score is smaller than `relativeMinScore * maxScore`, where `maxScore` is the best score among all alignments for particular sequence, it will be dropped.
  
 `-OdParameters.maxHits=3`
-: Maximal number of hits: if input sequence align with more than `maxHits` queries, only top `maxHits` hits will be kept.                                                                                                                   
+: Maximal number of hits: if input sequence align with more than `maxHits` queries, only top `maxHits` hits will be kept.			                
 
 One can override these parameters like in the following example:"
 ```shell
@@ -533,7 +572,7 @@ Scoring parameters for D aligner are the following:
     specified; for  example: `raw(5,-9,-9,-9,-9,5,-9,-9,-9,-9,5,-9,-9,-9,-9,5)` (equivalent to the default value) 
 
 `-OdParameters.gapPenalty=-12`
-: Penalty for a gap.                                                                                                                   
+: Penalty for a gap.			                
 
 D aligner parameters can be overridden in the following way:
 ```shell

@@ -5,74 +5,84 @@ MiXCR is able to export [alignments](#raw-alignments) and [clonotypes](#clonotyp
 ## Raw alignments 
 
 ```
-mixcr exportAlignmentsPretty [-dft]
-    [-n <limitAfter>]
-    [-s <skipAfter>]
-    [-b <limitBefore>]
-    [-e <cdr3Equals>]
-    [-c <chain>]
-    [-g <feature>]
-    [-r <readContains>]
-    [--alignment-idx <alignmentIdx>]...
-    [--clone-ids <cloneIds>]...
-    [-i <readIds>]...
-    [--verbose]
-    input.vdjca 
-    [output.txt]
+mixcr exportAlignmentsPretty 
+    [--top] 
+    [--gene] 
+    [--limit-before <n>] 
+    [--limit <n>] 
+    [--chains <chains>] 
+    [--skip <n>] 
+    [--cdr3-equals <seq>] 
+    [--feature <gene_feature>] 
+    [--read-contains <seq>] 
+    [--filter <s>] 
+    [--descriptions] 
+    [--read-ids <id>]... 
+    [--clone-ids <id>]... 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help] 
+    alignments.vdjca [output.txt]
 ```
 Exports pretty formatted alignments from `.vdjca` file.
 
-`-n`, `--limit <limitAfter>`
+`alignments.vdjca`
+: Path to input file with alignments.
 
-:   limit number of filtered alignments; no more than N alignments will be outputted
+`[output.txt]`
+: Path where to write export. Will write to output if omitted.
 
-`-s`, `--skip <skipAfter>`
+`-t, --top`
+: Output only top hits
 
-:   number of output alignments to skip
+`-a, --gene`
+: Output full gene sequence
 
-`-b`, `--limit-before <limitBefore>`
+`-b, --limit-before <n>`
+: Limit number of alignments before filtering
 
-:   Limit number of alignments before filtering
+`-n, --limit <n>`
+: Limit number of filtered alignments; no more than N alignments will be outputted
 
-`-e`, `--cdr3-equals <cdr3Equals>`
+`-s, --skip <n>`
+: Number of output alignments to skip
 
-:   output only alignments where CDR3 exactly equals to given sequence
+`-c, --chains <chains>`
+: Filter export to a specific protein chain gene (e.g. TRA or IGH). Default: ALL
 
-`-c`, `--chains <chain>`
+`-e, --cdr3-equals <seq>`
+: Output only alignments where CDR3 exactly equals to given sequence
 
-:   filter export to a specific immunological chain
+`-g, --feature <gene_feature>`
+: Output only alignments which contain a corresponding gene feature
 
-`-g`, `--feature <feature>`
+`-r, --read-contains <seq>`
+: Output only alignments where target read contains a given substring
 
-:   output only alignments which contain a corresponding gene feature
+`--filter <s>`
+: Custom filter
 
-`-r`, `--read-contains <readContains>`
+`-d, --descriptions`
+: Print read descriptions
 
-:   output only alignments where target read contains a given substring
+`-i, --read-ids <id>`
+: List of read ids to export
 
-`--clone-ids <cloneIds>`
+`--clone-ids <id>`
+: List of clone ids to export
 
-:   list of clone ids to export
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
 
-`-i`, `--read-ids <readIds>`
-
-:   list of read ids to export
-
-`--alignment-idx <alignmentIdx>`
-
-:   alignment index
-
-`-t`, `--top`
-
-:   output only top hits
-
-`-d`, `--descriptions`
-
-:   print read descriptions
+`-nw, --no-warnings`
+: Suppress all warning messages.
 
 `--verbose`
+: Verbose warning messages.
 
-:   use a more verbose format for alignments
+`-h, --help`
+: Show this help message and exit.
 
 
 Example:
@@ -289,48 +299,57 @@ No hits.
 ## Clonotypes 
 
 ```
-mixcr exportClonesPretty [-f]
-    [-n <limitAfter>]
-    [-s <skipAfter>]
-    [-b <limitBefore>]
-    [-e <cdr3Equals>]
-    [-c <chain>]
-    [-g <feature>]
-    [-r <readContains>]
-    [--alignment-idx <alignmentIdx>]...
-    [--clone-ids <cloneIds>]...
-    [-i <readIds>]...
-    [--verbose]
-    input.vdjca 
-    [output.txt]
+mixcr exportClonesPretty 
+    [--limitBefore <n>] 
+    [--limit <n>] 
+    [--skip <n>] 
+    [--clone-ids <id>]... 
+    [--chains <chains>] 
+    [--cdr3-equals <seq>] 
+    [--clonal-sequence-contains <seq>] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help] 
+    clones.(clns|clna) [output.txt]
 ```
 Exports pretty formatted clonotypes from `.clnx` files. Especially useful after [`assembleContigs`](./mixcr-assembleContigs.md) to manually check how contig clonotypes are covered.
 
-`-n`, `--limit <limitAfter>`
+`clones.(clns|clna)`
+: Path to input file with clones
 
-:   limit number of filtered alignments; no more than N alignments will be outputted
+`[output.txt]`
+: Path where to write export. Will write to output if omitted.
 
-`-s`, `--skip <skipAfter>`
-
-:   number of output alignments to skip
-
-`-b`, `--limit-before <limitBefore>`
-
+`-b, --limitBefore <n>`
 :   Limit number of alignments before filtering
 
-`-e`, `--cdr3-equals <cdr3Equals>`
+`-n, --limit <n>`
+: Limit number of filtered alignments; no more than N alignments will be outputted
 
-:   output only alignments where CDR3 exactly equals to given sequence
+`-s, --skip <n>`
+: Number of output alignments to skip
 
-`-c`, `--chains <chain>`
+`-i, --clone-ids <id>`
+: List of clone ids to export
 
-:   filter export to a specific immunological chain
+`-c, --chains <chains>`
+: Filter export to a specific protein chain gene (e.g. TRA or IGH). Default: ALL
 
-`-r`, `--clonal-sequence-contains <csContain>`
+`-e, --cdr3-equals <seq>`
+: Only output clones where CDR3 (not whole clonal sequence) exactly equals to given sequence
 
-:   filter export to clones which contain specified nucleotide sequence
+`-r, --clonal-sequence-contains <seq>`
+: Only output clones where target clonal sequence contains sub-sequence.
 
-`-i`, `--clone-ids <ids>
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
 
-:   list of clone ids to export
+`-nw, --no-warnings`
+: Suppress all warning messages.
 
+`--verbose`
+: Verbose warning messages.
+
+`-h, --help`
+: Show this help message and exit.

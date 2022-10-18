@@ -1,0 +1,176 @@
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_Blood_S2_L001_R1_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica1_Blood_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_Blood_S2_L001_R2_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica1_Blood_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_Blood_S6_L001_R1_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica2_Blood_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_Blood_S6_L001_R2_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica2_Blood_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_BM_S4_L001_R1_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica1_BM_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_BM_S4_L001_R2_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica1_BM_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_BM_S8_L001_R1_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica2_BM_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_BM_S8_L001_R2_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica2_BM_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_DLN_S3_L001_R1_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica1_DLN_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_DLN_S3_L001_R2_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica1_DLN_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_DLN_S7_L001_R1_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica2_DLN_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_DLN_S7_L001_R2_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica2_DLN_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_Tumor_S1_L001_R1_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica1_Tumor_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_Tumor_S1_L001_R2_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica1_Tumor_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_Tumor_S5_L001_R1_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica2_Tumor_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M1_4T1_Tumor_S5_L001_R2_001_B3.1.fastq.gz
+  out=raw/M1_4T1_replica2_Tumor_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_Blood_S2_L001_R1_001.fastq.gz
+  out=raw/M2_4T1_replica1_Blood_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_Blood_S2_L001_R2_001.fastq.gz
+  out=raw/M2_4T1_replica1_Blood_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_Blood_S6_L001_R1_001.fastq.gz
+  out=raw/M2_4T1_replica2_Blood_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_Blood_S6_L001_R2_001.fastq.gz
+  out=raw/M2_4T1_replica2_Blood_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_BM_S4_L001_R1_001.fastq.gz
+  out=raw/M2_4T1_replica1_BM_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_BM_S4_L001_R2_001.fastq.gz
+  out=raw/M2_4T1_replica1_BM_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_BM_S8_L001_R1_001.fastq.gz
+  out=raw/M2_4T1_replica2_BM_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_BM_S8_L001_R2_001.fastq.gz
+  out=raw/M2_4T1_replica2_BM_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_DLN_S3_L001_R1_001.fastq.gz
+  out=raw/M2_4T1_replica1_DLN_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_DLN_S3_L001_R2_001.fastq.gz
+  out=raw/M2_4T1_replica1_DLN_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_DLN_S7_L001_R1_001.fastq.gz
+  out=raw/M2_4T1_replica2_DLN_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_DLN_S7_L001_R2_001.fastq.gz
+  out=raw/M2_4T1_replica2_DLN_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_Tumor_S1_L001_R1_001.fastq.gz
+  out=raw/M2_4T1_replica1_Tumor_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_Tumor_S1_L001_R2_001.fastq.gz
+  out=raw/M2_4T1_replica1_Tumor_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_Tumor_S5_L001_R1_001.fastq.gz
+  out=raw/M2_4T1_replica2_Tumor_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M2_4T1_Tumor_S5_L001_R2_001.fastq.gz
+  out=raw/M2_4T1_replica2_Tumor_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_Blood_S10_L001_R1_001.fastq.gz
+  out=raw/M3_4T1_replica1_Blood_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_Blood_S10_L001_R2_001.fastq.gz
+  out=raw/M3_4T1_replica1_Blood_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_Blood_S9_L001_R1_001.fastq.gz
+  out=raw/M3_4T1_replica2_Blood_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_Blood_S9_L001_R2_001.fastq.gz
+  out=raw/M3_4T1_replica2_Blood_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_BM_S7_L001_R1_001.fastq.gz
+  out=raw/M3_4T1_replica1_BM_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_BM_S7_L001_R2_001.fastq.gz
+  out=raw/M3_4T1_replica1_BM_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_BM_S8_L001_R1_001.fastq.gz
+  out=raw/M3_4T1_replica2_BM_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_BM_S8_L001_R2_001.fastq.gz
+  out=raw/M3_4T1_replica2_BM_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_DLN_S11_L001_R1_001.fastq.gz
+  out=raw/M3_4T1_replica1_DLN_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_DLN_S11_L001_R2_001.fastq.gz
+  out=raw/M3_4T1_replica1_DLN_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_DLN_S12_L001_R1_001.fastq.gz
+  out=raw/M3_4T1_replica2_DLN_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_DLN_S12_L001_R2_001.fastq.gz
+  out=raw/M3_4T1_replica2_DLN_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_Tumor_S13_L001_R1_001.fastq.gz
+  out=raw/M3_4T1_replica1_Tumor_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_Tumor_S13_L001_R2_001.fastq.gz
+  out=raw/M3_4T1_replica1_Tumor_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_Tumor_S14_L001_R1_001.fastq.gz
+  out=raw/M3_4T1_replica2_Tumor_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M3_4T1_Tumor_S14_L001_R2_001.fastq.gz
+  out=raw/M3_4T1_replica2_Tumor_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_Blood_S2_L001_R1_001.fastq.gz
+  out=raw/M4_4T1_replica1_Blood_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_Blood_S2_L001_R2_001.fastq.gz
+  out=raw/M4_4T1_replica1_Blood_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_Blood_S7_L001_R1_001.fastq.gz
+  out=raw/M4_4T1_replica2_Blood_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_Blood_S7_L001_R2_001.fastq.gz
+  out=raw/M4_4T1_replica2_Blood_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_BM_S10_L001_R1_001.fastq.gz
+  out=raw/M4_4T1_replica1_BM_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_BM_S10_L001_R2_001.fastq.gz
+  out=raw/M4_4T1_replica1_BM_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_BM_S5_L001_R1_001.fastq.gz
+  out=raw/M4_4T1_replica2_BM_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_BM_S5_L001_R2_001.fastq.gz
+  out=raw/M4_4T1_replica2_BM_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_DLN_S4_L001_R1_001.fastq.gz
+  out=raw/M4_4T1_replica1_DLN_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_DLN_S4_L001_R2_001.fastq.gz
+  out=raw/M4_4T1_replica1_DLN_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_DLN_S9_L001_R1_001.fastq.gz
+  out=raw/M4_4T1_replica2_DLN_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_DLN_S9_L001_R2_001.fastq.gz
+  out=raw/M4_4T1_replica2_DLN_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_Tumor_S1_L001_R1_001.fastq.gz
+  out=raw/M4_4T1_replica1_Tumor_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_Tumor_S1_L001_R2_001.fastq.gz
+  out=raw/M4_4T1_replica1_Tumor_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_Tumor_S6_L001_R1_001.fastq.gz
+  out=raw/M4_4T1_replica2_Tumor_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/M4_4T1_Tumor_S6_L001_R2_001.fastq.gz
+  out=raw/M4_4T1_replica2_Tumor_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N1_control_Blood_S5_L001_R1_001.fastq.gz
+  out=raw/N1_control_replica1_Blood_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N1_control_Blood_S5_L001_R2_001.fastq.gz
+  out=raw/N1_control_replica1_Blood_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N1_control_Blood_S6_L001_R1_001.fastq.gz
+  out=raw/N1_control_replica2_Blood_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N1_control_Blood_S6_L001_R2_001.fastq.gz
+  out=raw/N1_control_replica2_Blood_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N1_control_BM_S1_L001_R1_001.fastq.gz
+  out=raw/N1_control_replica1_BM_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N1_control_BM_S1_L001_R2_001.fastq.gz
+  out=raw/N1_control_replica1_BM_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N1_control_BM_S2_L001_R1_001.fastq.gz
+  out=raw/N1_control_replica2_BM_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N1_control_BM_S2_L001_R2_001.fastq.gz
+  out=raw/N1_control_replica2_BM_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N1_control_LN_S3_L001_R1_001.fastq.gz
+  out=raw/N1_control_replica1_LN_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N1_control_LN_S3_L001_R2_001.fastq.gz
+  out=raw/N1_control_replica1_LN_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N1_control_LN_S4_L001_R1_001.fastq.gz
+  out=raw/N1_control_replica2_LN_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N1_control_LN_S4_L001_R2_001.fastq.gz
+  out=raw/N1_control_replica2_LN_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N2_control_Blood_S5_L001_R1_001.fastq.gz
+  out=raw/N2_control_replica1_Blood_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N2_control_Blood_S5_L001_R2_001.fastq.gz
+  out=raw/N2_control_replica1_Blood_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N2_control_Blood_S6_L001_R1_001.fastq.gz
+  out=raw/N2_control_replica2_Blood_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N2_control_Blood_S6_L001_R2_001.fastq.gz
+  out=raw/N2_control_replica2_Blood_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N2_control_BM_S1_L001_R1_001.fastq.gz
+  out=raw/N2_control_replica1_BM_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N2_control_BM_S1_L001_R2_001.fastq.gz
+  out=raw/N2_control_replica1_BM_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N2_control_BM_S2_L001_R1_001.fastq.gz
+  out=raw/N2_control_replica2_BM_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N2_control_BM_S2_L001_R2_001.fastq.gz
+  out=raw/N2_control_replica2_BM_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N2_control_LN_S3_L001_R1_001.fastq.gz
+  out=raw/N2_control_replica1_LN_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N2_control_LN_S3_L001_R2_001.fastq.gz
+  out=raw/N2_control_replica1_LN_R2.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N2_control_LN_S4_L001_R1_001.fastq.gz
+  out=raw/N2_control_replica2_LN_R1.fastq.gz
+https://cdn.milaboratory.com/data/PRJNA699402/N2_control_LN_S4_L001_R2_001.fastq.gz
+  out=raw/N2_control_replica2_LN_R2.fastq.gz

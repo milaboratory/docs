@@ -1,0 +1,360 @@
+{
+  "type": "alignerReport",
+  "commandLine": "--report results/mice_tumor_1.align.report.txt --json-report results/mice_tumor_1.align.report.json --preset local:qiaseq-human-tcr-cdr3 /raw/PRJNA674781_QiaSeqTCR/mice_tumor_1_R1.fastq.gz /raw/PRJNA674781_QiaSeqTCR/mice_tumor_1_R2.fastq.gz results/mice_tumor_1.vdjca",
+  "inputFiles": [
+    "/raw/PRJNA674781_QiaSeqTCR/mice_tumor_1_R1.fastq.gz",
+    "/raw/PRJNA674781_QiaSeqTCR/mice_tumor_1_R2.fastq.gz"
+  ],
+  "outputFiles": [
+    "results/mice_tumor_1.vdjca"
+  ],
+  "version": "; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0",
+  "trimmingReport": null,
+  "totalReadsProcessed": 8434205,
+  "aligned": 6386814,
+  "notAligned": 2047391,
+  "notAlignedReasons": {
+    "NoJHits": 397253,
+    "LowTotalScore": 17572,
+    "NoBarcode": 0,
+    "VAndJOnDifferentTargets": 42539,
+    "NoVHits": 682699,
+    "NoHits": 907328,
+    "NoCDR3Parts": 0
+  },
+  "chimeras": 21,
+  "overlapped": 105392,
+  "alignmentAidedOverlaps": 6062,
+  "overlappedAligned": 32073,
+  "overlappedNotAligned": 73319,
+  "pairedEndAlignmentConflicts": 6804,
+  "vChimeras": 0,
+  "jChimeras": 0,
+  "chainUsage": {
+    "type": "chainUsage",
+    "chimeras": 21,
+    "total": 6386814,
+    "chains": {
+      "": {
+        "total": 1,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      },
+      "TRA": {
+        "total": 4345983,
+        "nonFunctional": 508098,
+        "isOOF": 456455,
+        "hasStops": 51643
+      },
+      "TRB": {
+        "total": 1615970,
+        "nonFunctional": 65867,
+        "isOOF": 46247,
+        "hasStops": 19620
+      },
+      "TRD": {
+        "total": 34445,
+        "nonFunctional": 4804,
+        "isOOF": 4036,
+        "hasStops": 768
+      },
+      "TRG": {
+        "total": 390383,
+        "nonFunctional": 240407,
+        "isOOF": 225458,
+        "hasStops": 14949
+      },
+      "IGH": {
+        "total": 6,
+        "nonFunctional": 0,
+        "isOOF": 0,
+        "hasStops": 0
+      },
+      "IGL": {
+        "total": 5,
+        "nonFunctional": 1,
+        "isOOF": 1,
+        "hasStops": 0
+      }
+    }
+  },
+  "realignedWithForcedNonFloatingBound": 16669750,
+  "realignedWithForcedNonFloatingRightBoundInLeftRead": 5429,
+  "realignedWithForcedNonFloatingLeftBoundInRightRead": 5429,
+  "noCDR3PartsAlignments": 896,
+  "partialAlignments": 25755,
+  "tagReport": {
+    "type": "tagReport"
+  }
+}
+{
+  "type": "refineTagsAndSort",
+  "commandLine": "--report results/mice_tumor_1.refine.report.txt --json-report results/mice_tumor_1.refine.report.json results/mice_tumor_1.vdjca results/mice_tumor_1.refined.vdjca",
+  "inputFiles": [
+    "results/mice_tumor_1.vdjca"
+  ],
+  "outputFiles": [
+    "results/mice_tumor_1.refined.vdjca"
+  ],
+  "version": "; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0",
+  "correctionReport": {
+    "inputRecords": 6386814,
+    "outputRecords": 6028293,
+    "steps": [
+      {
+        "tagName": "UMI",
+        "inputGroups": 1,
+        "inputDiversity": 394970,
+        "inputCount": 6386814,
+        "coreDiversity": 394493,
+        "coreCount": 6386335,
+        "directlyCorrectedDiversity": 248347,
+        "directlyCorrectedCount": 304865,
+        "filteredDiversity": 5,
+        "filteredCount": 5,
+        "recursivelyCorrected": 29628,
+        "diversityFilteredByWhitelist": 0,
+        "outputDiversity": 146618,
+        "outputCount": 6386809
+      }
+    ],
+    "filterReport": {
+      "type": "filter_groups_report",
+      "groupingKeys": [
+        "UMI"
+      ],
+      "numberOfGroups": 146618,
+      "numberOfGroupsAccepted": 44866,
+      "totalWeight": 6386809,
+      "totalWeightAccepted": 6028293,
+      "operatorReports": [
+        {
+          "type": "generic_hist_report",
+          "threshold": 14
+        }
+      ],
+      "metricHists": [
+        {
+          "metric": {
+            "type": "group_metric_sum_weight",
+            "reportHist": {
+              "log": true,
+              "binNumber": 0,
+              "minBinWidth": 0.2
+            }
+          },
+          "hist": {
+            "bins": [
+              {
+                "from": 1,
+                "to": 1.5848931924611136,
+                "weight": 48029
+              },
+              {
+                "from": 1.5848931924611136,
+                "to": 2.51188643150958,
+                "weight": 6986
+              },
+              {
+                "from": 2.51188643150958,
+                "to": 3.981071705534973,
+                "weight": 8072
+              },
+              {
+                "from": 3.981071705534973,
+                "to": 6.309573444801933,
+                "weight": 19829
+              },
+              {
+                "from": 6.309573444801933,
+                "to": 10,
+                "weight": 10844
+              },
+              {
+                "from": 10,
+                "to": 15.848931924611142,
+                "weight": 10546
+              },
+              {
+                "from": 15.848931924611142,
+                "to": 25.11886431509581,
+                "weight": 7380
+              },
+              {
+                "from": 25.11886431509581,
+                "to": 39.810717055349734,
+                "weight": 4391
+              },
+              {
+                "from": 39.810717055349734,
+                "to": 63.09573444801933,
+                "weight": 5943
+              },
+              {
+                "from": 63.09573444801933,
+                "to": 100,
+                "weight": 5518
+              },
+              {
+                "from": 100,
+                "to": 158.48931924611142,
+                "weight": 4183
+              },
+              {
+                "from": 158.48931924611142,
+                "to": 251.18864315095823,
+                "weight": 5180
+              },
+              {
+                "from": 251.18864315095823,
+                "to": 398.1071705534973,
+                "weight": 7798
+              },
+              {
+                "from": 398.1071705534973,
+                "to": 630.9573444801937,
+                "weight": 1894
+              },
+              {
+                "from": 630.9573444801937,
+                "to": 1000,
+                "weight": 24
+              },
+              {
+                "from": 1000,
+                "to": 1584.893192461114,
+                "weight": 0
+              },
+              {
+                "from": 1584.893192461114,
+                "to": 2511.886431509582,
+                "weight": 0
+              },
+              {
+                "from": 2511.886431509582,
+                "to": 3981.0717055349733,
+                "weight": 0
+              },
+              {
+                "from": 3981.0717055349733,
+                "to": 6309.573444801937,
+                "weight": 0
+              },
+              {
+                "from": 6309.573444801937,
+                "to": 10000,
+                "weight": 0
+              },
+              {
+                "from": 10000,
+                "to": 15848.93192461114,
+                "weight": 0
+              },
+              {
+                "from": 15848.93192461114,
+                "to": 25118.864315095823,
+                "weight": 0
+              },
+              {
+                "from": 25118.864315095823,
+                "to": 39810.71705534977,
+                "weight": 1
+              }
+            ],
+            "collectionSpec": {
+              "log": true,
+              "binNumber": 0,
+              "minBinWidth": 0.2
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+{
+  "type": "assemblerReport",
+  "commandLine": "--report results/mice_tumor_1.assemble.report.txt --json-report results/mice_tumor_1.assemble.report.json results/mice_tumor_1.refined.vdjca results/mice_tumor_1.clns",
+  "inputFiles": [
+    "results/mice_tumor_1.refined.vdjca"
+  ],
+  "outputFiles": [
+    "results/mice_tumor_1.clns"
+  ],
+  "version": "; built=Mon Sep 26 10:55:18 CEST 2022; rev=8c998df1ab; lib=repseqio.v2.0",
+  "preCloneAssemblerReport": {
+    "type": "preCloneAssemblerReport",
+    "inputGroups": 44866,
+    "inputAlignments": 6028293,
+    "clonotypes": 43546,
+    "clonotypesPerGroup": {
+      "0": 1430,
+      "1": 43192,
+      "2": 177
+    },
+    "coreAlignments": 5825926,
+    "discardedCoreAlignments": 178462,
+    "empiricallyAssignedAlignments": 852,
+    "vjEmpiricallyAssignedAlignments": 0,
+    "umiEmpiricallyAssignedAlignments": 0,
+    "gatEmpiricallyAssignedAlignments": 853,
+    "empiricalAssignmentConflicts": 1,
+    "unassignedAlignments": 196243,
+    "umiConflicts": 177,
+    "gatConflicts": 18,
+    "geneConflicts": {
+      "Variable": 18
+    },
+    "coreClonotypesDroppedByTagSuffix": 0,
+    "coreAlignmentsDroppedByTagSuffix": 0
+  },
+  "totalReadsProcessed": 8434205,
+  "initialClonesCreated": 3997,
+  "readsDroppedNoTargetSequence": 23905,
+  "readsDroppedTooShortClonalSequence": 0,
+  "readsDroppedLowQuality": 0,
+  "coreReads": 5824845,
+  "readsDroppedFailedMapping": 461,
+  "lowQualityRescued": 1472,
+  "clonesClustered": 260,
+  "readsClustered": 35683,
+  "clones": 3733,
+  "clonesDroppedAsLowQuality": 0,
+  "clonesPreClustered": 4,
+  "readsPreClustered": 755,
+  "readsInClones": 5790634,
+  "readsInClonesBeforeClustering": 5826317,
+  "readsDroppedWithLowQualityClones": 0,
+  "clonalChainUsage": {
+    "type": "chainUsage",
+    "chimeras": 0,
+    "total": 3733,
+    "chains": {
+      "TRA": {
+        "total": 2169,
+        "nonFunctional": 354,
+        "isOOF": 328,
+        "hasStops": 26
+      },
+      "TRB": {
+        "total": 1091,
+        "nonFunctional": 62,
+        "isOOF": 56,
+        "hasStops": 6
+      },
+      "TRD": {
+        "total": 47,
+        "nonFunctional": 8,
+        "isOOF": 8,
+        "hasStops": 0
+      },
+      "TRG": {
+        "total": 426,
+        "nonFunctional": 245,
+        "isOOF": 234,
+        "hasStops": 11
+      }
+    }
+  }
+}

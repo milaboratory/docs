@@ -11,72 +11,73 @@ Tregs were isolated from B6-Foxp3EGFP mice using CD4+ T cell isolation kit follo
 
 In this publication authors did not study immune repertoires. This is also an example of how MiXCR can retrieve data from experiments that were nor originally designed for obtaining TCR or BCR repertoires.
 
-<figure markdown>
-![RNASeq.svg](rnaseq/RNASeq.svg)
-</figure>
+On the scheme bellow you can see structure of cDNA library. UMI is located in the first 12 bp of R2.
 
-The data for this tutorial can be downloaded using the script bellow.
+![library-structure.svg](rnaseq/figs/library-structure.svg)
 
-??? note "Download raw data"
-    ```shell
-    #!/usr/bin/env bash
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/028/SRR13228528/SRR13228528.fastq.gz -o CD8T_REH_4h_rep1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/010/SRR13228510/SRR13228510.fastq.gz -o Treg_IL2_1.5h_rep1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/027/SRR13228527/SRR13228527.fastq.gz -o CD8T_IL2_4h_rep1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/016/SRR13228516/SRR13228516.fastq.gz -o Treg_REH_1.5h_rep2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/009/SRR13228509/SRR13228509.fastq.gz -o Treg_0h_rep1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/015/SRR13228515/SRR13228515.fastq.gz -o Treg_IL2_1.5h_rep2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/017/SRR13228517/SRR13228517.fastq.gz -o Treg_IL2_4h_rep2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/011/SRR13228511/SRR13228511.fastq.gz -o Treg_REH_1.5h_rep1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/026/SRR13228526/SRR13228526.fastq.gz -o CD8T_REH_1.5h_rep1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/012/SRR13228512/SRR13228512.fastq.gz -o Treg_IL2_4h_rep1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/025/SRR13228525/SRR13228525.fastq.gz -o CD8T_IL2_1.5h_rep1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/013/SRR13228513/SRR13228513.fastq.gz -o Treg_REH_4h_rep1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/018/SRR13228518/SRR13228518.fastq.gz -o Treg_REH_4h_rep2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/024/SRR13228524/SRR13228524.fastq.gz -o CD8T_0h_rep1.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/023/SRR13228523/SRR13228523.fastq.gz -o Treg_REH_4h_rep3.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/014/SRR13228514/SRR13228514.fastq.gz -o Treg_0h_rep2.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/022/SRR13228522/SRR13228522.fastq.gz -o Treg_IL2_4h_rep3.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/019/SRR13228519/SRR13228519.fastq.gz -o Treg_0h_rep3.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/021/SRR13228521/SRR13228521.fastq.gz -o Treg_REH_1.5h_rep3.fastq.gz
-    curl -L ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR132/020/SRR13228520/SRR13228520.fastq.gz -o Treg_IL2_1.5h_rep3.fastq.gz    
+
+All data may be downloaded directly from SRA (PRJEB44566) using e.g. [SRA Explorer](https://sra-explorer.info).
+
+??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
+    ```shell title="download.sh"
+    --8<-- "rnaseq/scripts/010-download-aria2c.sh"
     ```
+    ```shell title="download-list.txt"
+    --8<-- "rnaseq/scripts/download-list.txt"
+    ```
+
 ## Upstream analysis
 
 The easiest way to obtain results from this type of data is to use `mixcr analyze shotgun` command:
 
-```shell
-> mixcr analyze shotgun \ 
-  --species hsa \
-  --starting-material rna \
-  --receptor-type tcr \
-  fastq/CD8T_REH_4h_rep1.fastq.gz \
-  result/CD8T_REH_4h_rep1
-```
-
-Arguments explained:
-
-`--species`
-: is set to `mmu` for _Mus Musculus_
-
-`--starting-material`
-: `rna` It affects the choice of V gene region which will be used as target in [`align`](../reference/mixcr-align.md) step (`vParameters.geneFeatureToAlign`, see [`align` documentation](../reference/mixcr-align.md)). By specifying `rna` as starting material, `VTranscriptWithout5UTRWithP` will be used as `geneFeatureToAlign` for V segment.
-
-`--receptor-type`
-: is set to `tcr` since as the samples consist of isolated Treg and CD8+ T-cells. For BCR data you would want to use `bcr` as it affects omitting `mixcr extend`.
-
-To process all samples together in one command a common practice is to use [GNU Parallel](https://www.gnu.org/software/parallel/):
+MiXCR has a dedicated preset for RNA-seq data, thus running the pipeline is as easy as:
 
 ```shell
-ls fastq/*.gz | parallel -j2 \
-'mixcr analyze shotgun \
-  --species mmu \
-  --starting-material rna \
-  --receptor-type tcr \
-  {} \
-  {=s:.*\/:result/:;s:\.fastq.gz::=}'
+--8<-- "rnaseq/scripts/020-upstream-preset.sh"
 ```
 
+`+species mmu`
+: is a mix-in that specifies the name of the species. mmu for _Mus Musculus_ in this case.
+
+Running the command above will generate the following files:
+
+```shell
+> ls results/
+
+# human-readable reports 
+CD8T_REH_4h_rep1.report
+
+# raw alignments (highly compressed binary file)
+CD8T_REH_4h_rep1.vdjca
+
+# files for each mixcr assemblePartial
+CD8T_REH_4h_rep1.passembled.0.vdjca
+CD8T_REH_4h_rep1.passembled.1.vdjca
+
+# `mixcr extend` outputfile with CDR3 region extended alignments 
+CD8T_REH_4h_rep1.extended.vdjca
+
+# A binary file wich has all the information on the clonotypes
+CD8T_REH_4h_rep1.clns
+
+# TRA, TRB, TRG and TRD CDR3 clonotypes exported in tab-delimited txt
+CD8T_REH_4h_rep1.clonotypes.TRA.tsv
+CD8T_REH_4h_rep1.clonotypes.TRB.tsv
+CD8T_REH_4h_rep1.clonotypes.TRG.tsv
+CD8T_REH_4h_rep1.clonotypes.TRD.tsv
+CD8T_REH_4h_rep1.clonotypes.TRAD.tsv
+```
+
+While `.clns` file holds all data and is used for downstream analysis using [`mixcr postanalisis`](../reference/mixcr-postanalysis.md), the output `.txt` clonotype table will contain exhaustive information about each clonotype as well:
+
+??? tip "See first 100 records from FebControl1.clones.IGH.tsv clonotype table"
+    {{ read_csv('docs/mixcr/guides/rnaseq/figs/CD8T_REH_4h_rep1.clones.tsv', engine='python', sep='\t', nrows=100) }}
+
+In order to run the analysis for all samples in the project on Linux we can use [GNU Parallel](https://www.gnu.org/software/parallel/) in the following way:
+
+```shell
+--8<-- "rnaseq/scripts/020-upstream-preset-parallel.sh"
+```
 ### Under the hood pipeline:
 
 Under the hood the command above actually executes the following pipeline:
@@ -87,126 +88,129 @@ Under the hood the command above actually executes the following pipeline:
 Alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
 
 ```shell
-# align raw reads
-mixcr align -s hsa \
-    -p rna-seq \
-    -OvParameters.geneFeatureToAlign=VTranscriptWithout5UTRWithP \
-    -OallowPartialAlignments=true \
-    --report results/CD8T_REH_4h_rep1.report \
-    fastq/CD8T_REH_4h_rep1.fastq.gz \
-    result/CD8T_REH_4h_rep1.vdjca
+--8<-- "rnaseq/scripts/040-upstream-align.sh"
 ```
-Option `--report` is specified here explicitly. `-p rnaseq` defines a set of aligner parameters specifically for RNASeq data. `-OallowPartialAlignments=true` preserves partial alignments to be assembled with `assemblePartial` on the next step.
+
+Option `--report` is specified here explicitly. 
+
+`--species mmu`
+: mmu for _Mus Musculus_
+
+`-p align_rna-seq_4.0`
+: defines a set of aligner parameters specifically for RNASeq data. 
+
+`-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP"`
+: defines V gene feature to align, which includes the full V-gene sequence excluding 5'UTR.
+
+`-OvParameters.parameters.floatingLeftBound=false -OjParameters.parameters.floatingRightBound=false -OсParameters.parameters.floatingRightBound=false`
+: a global alignment will be used on every gene-segment bound due to the absence of primers
+
+`-OallowPartialAlignments=true`
+: preserves partial alignments to be assembled with `assemblePartial` on the next step.
+
+
 
 #### `assemblePartial`
-Assembles alignments that only partially cover `CDR3` region. This is a mandatory step for RNA-Seq data, as reads randomly cover all TCR / BCR segments. This function works with pairs of alignments (assembles two alignments at a time), thus it is usually recommended to perform two rounds of `assemblePartial` for better yield. For more information check [`mixcr assemblePartial`](../reference/mixcr-assemblePartial.md)
+Assembles alignments that only partially cover `CDR3` region. This is a mandatory step for RNA-Seq data, as reads randomly cover all TCR / BCR segments. This function works with pairs of alignments (assembles two alignments at a time), thus it is usually recommended to perform two rounds of `assemblePartial` for better yield. For more information check [`mixcr assemblePartial`](../reference/mixcr-assemblePartial.md).
 
 ```shell
-# assemble overlapping fragmented sequencing reads
-# First round
-mixcr assemblePartial \
-  --report results/CD8T_REH_4h_rep1.report \
-  result/CD8T_REH_4h_rep1.vdjca \
-  result/CD8T_REH_4h_rep1.rescued_1.clna
-
-#Second round  
-mixcr assemblePartial \
-  --report results/CD8T_REH_4h_rep1.report \
-  result/CD8T_REH_4h_rep1.rescued_1.vdjca \
-  result/CD8T_REH_4h_rep1.rescued_2.vdjca
+--8<-- "rnaseq/scripts/041-upstream-assemblePartial.sh"
 ```
+
 Note that we specify the same report file on every step, thus reports will be appended to the same file.
 
 #### `extend`
 
-If V- and/or J- segments  are uniquely determined, but `CDR3` edges lack nucleotides, `mixcr extend` will impute those from germline. This step is only applicable to T-cells due to the absence of hypermutations! In case of BCR data this step is omitted.
+If V- and/or J- segments  are uniquely determined, but `CDR3` edges lack nucleotides, `mixcr extend` will impute those from germline. 
+
+!!! note 
+    This step is only applicable to T-cells due to the absence of hypermutations! In case of BCR data this step is omitted.
 
 ```shell
-mixcr extend \
-    --report result/CD8T_REH_4h_rep1.report \
-    result/CD8T_REH_4h_rep1.rescued_2.vdjca \
-    result/CD8T_REH_4h_rep1.extended.vdjca
+--8<-- "rnaseq/scripts/042-upstream-extend.sh"
 ```
 
 #### `assemble`
 
-Assembles alignments into clonotypes and applies several layers of errors correction(ex. quality-awared correction for sequencing errors, clustering to correct for PCR errors). Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information. Since data contains no primer sequences options `-OseparateByV=true` and `-OseparateByJ=true` are used, because we can be sure of V and J segments sequences and can use it to distinguish clones. 
+Assembles alignments into clonotypes and applies several layers of errors correction(ex. quality-awared correction for sequencing errors, clustering to correct for PCR errors). Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information. 
 
 ```shell
-# assemble CDR3 clonotypes
-mixcr assemble \
-    -OseparateByV=true \
-    -OseparateByJ=true \
-    --report results/CD8T_REH_4h_rep1.report \
-    result/CD8T_REH_4h_rep1.extended.vdjca \
-    result/CD8T_REH_4h_rep1.clns
+--8<-- "rnaseq/scripts/050-upstream-assemble.sh"
 ```
+
+`-OassemblingFeatures="CDR3"`
+: clones will be assembled by `CDR3` sequence.
+
+`-OseparateByV=true`
+: Separate clones by V-gene
+
+`-OseparateByJ=true`
+: Separate clones by J-gene
 
 #### `export`
 
 Exports clonotypes from `.clns` file into human-readable tables.
+
 ```shell
-# export to tsv
-> mixcr exportClones \
-    -p full \
-    result/CD8T_REH_4h_rep1.clns \
-    CD8T_REH_4h_rep1.txt
+--8<-- "rnaseq/scripts/060-upstream-exportClones.sh"
 ```
-Here `-p full` defines the full preset of common export columns. Check [`mixcr export`](../reference/mixcr-export.md) for more information.
+
+Check [`mixcr export`](../reference/mixcr-export.md) for more additional fields.
 
 ## Quality control
 
-Now, when the analysis is complete, lets visualize quality report data. Looking at the alignment report in this case won't be of much help, because the cDNA library was ton enriched with TCR sequences, thus we already know that only a small part of reads has been successfully aligned. What is going to be more descriptive is to look at the chain usage among samples.
+Now, when the analysis is complete, lets visualize quality report data. Looking at the alignment report in this case won't be of much help, because the cDNA library was not enriched with TCR sequences, thus we already know that only a small part of reads has been successfully aligned. What is going to be more descriptive is to look at the chain usage among samples.
 
 ```shell
-> mixcr exportQc chainUsage \
-    result/*.vdjca \
-    chainUsage.pdf
+--8<-- "rnaseq/scripts/120-qc-chainUsage.sh"
 ```
 
-<figure markdown>
-![chainUsage.svg](rnaseq/chainUsage.svg)
-</figure>
+![chainUsage.svg](rnaseq/figs/chainUsage.svg)
 
 This plot reveals a mild contamination by B-cells, since IGH and IGKL chains present in the samples despite Treg and CD8+ cells have been isolated for library preparation.
 
 
 ## Full length receptor assembly
 
-Because RNA-Seq reads randomly cover the whole receptor gene region it is possible to assemble full-length sequences. This is usually more relevant to BCR data, because, due to hypermutations, two different clones can share same `CDR3` sequence. To do that we should specify `--contig-assembly` option for `mixcr analyze shotgun` command.
+Because RNA-Seq reads randomly cover the whole receptor gene region it is possible to assemble longer clone sequences then just `CDR3`. To do that we can use another RNA-seq preset specifically tuned to assemble the longest clone sequence possible.
 
 ```shell
-> mixcr analyze shotgun \ 
-    --species hsa \
-    --starting-material rna \
-    --receptor-type bcr \
-    --contig-assembly \
-    fastq/CD8T_REH_4h_rep1.fastq.gz \
-    result/CD8T_REH_4h_rep1
+--8<-- "rnaseq/scripts/130-upstream-preset-full-length.sh"
 ```
 
-With this option MiXCR will try to assemble the longest possible sequences from input data.
-
-Under the hood this adjusts the pipeline in the following manner:
+Under the hood this preset differs from the one used previously in the following manner:
 
 
-1. Modify `mixcr assemble command` by adding `--write-alignments` option. With this option MiXCR will output `.clna` file that preserves original alignments.
-    ```shell
-    > mixcr assemble \
-        -OseparateByV=true \
-        -OseparateByJ=true \
-        --write-alignments \
-        --report results/CD8T_REH_4h_rep1.report \
-        result/CD8T_REH_4h_rep1.extended.vdjca \
-        result/CD8T_REH_4h_rep1.clna 
-    ```
-2. An additional [`assembleContigs`](../reference/mixcr-assembleContigs.md) step will be added after `mixcr assemble`. On this step MiXCR will use previously preserved alignments to build wider contigs for
-   clonal sequence.
-    
-    ```shell
-    > mixcr assembleContigs \
-        --report results/CD8T_REH_4h_rep1.report \
-        result/CD8T_REH_4h_rep1.clna \
-        result/CD8T_REH_4h_rep1.clns
-    ```
+1. `--write-alignments` option is added to `mixcr assemble` command to preserve the alignments that were not used in `CDR3` clone assembly.
+!!! note 
+    With this option MiXCR will output `.clna` (instead of `.clns`) file that preserves original alignments.
 
+```shell
+--8<-- "rnaseq/scripts/140-upstream-assemble-full-length.sh"
+```
+
+2. An additional [`assembleContigs`](../reference/mixcr-assembleContigs.md) step will be added after `mixcr assemble`. On this step MiXCR will use previously preserved alignments to build the longest possible clonal sequence.
+
+```shell
+--8<-- "rnaseq/scripts/150-upstream-assembleContigs.sh"
+```
+## Reports
+Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
+
+```shell
+--8<-- "rnaseq/scripts/125-qc-exportReports.sh"
+```
+
+```shell
+--8<-- "rnaseq/scripts/125-qc-exportReports-json.sh"
+```
+
+??? "Show report file"
+    === "`.txt`"
+        ```shell
+        --8<-- "rnaseq/figs/CD8T_REH_4h_rep1.report.txt"
+        ```
+    === "`.json`"
+        ```js
+        --8<-- "rnaseq/figs/CD8T_REH_4h_rep1.report.json"
+        ```
