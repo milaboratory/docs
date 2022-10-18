@@ -609,4 +609,6 @@ mark {
 mark code {
     border: none !important;
     background-color: transparent !important;
+    line-height: 24px;
+    vertical-align: top;
 }
