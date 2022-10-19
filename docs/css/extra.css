@@ -190,10 +190,16 @@ article.md-content__inner .glightbox {
     max-height: 600px;
     overflow: auto;
 }
+
 article.md-content__inner .glightbox img:only-child {
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+article.md-content__inner p:has(img:only-child:not(.no-wrap)) {
+    max-height: 600px;
+    overflow: auto;
 }
 
 .md-typeset {
