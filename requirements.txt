@@ -9,3 +9,4 @@ pymdown-extensions
 plantuml-markdown
 mkdocs-glightbox
 mkdocs-table-reader-plugin
+pandas == 1.5.0
