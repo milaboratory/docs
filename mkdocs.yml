@@ -28,7 +28,7 @@ theme:
     text: IBM Plex Sans
     code: IBM Plex Mono
   features:
-#    - navigation.instant # see https://github.com/squidfunk/mkdocs-material/issues/3797
+    - navigation.instant # see https://github.com/squidfunk/mkdocs-material/issues/3797
     - navigation.tabs
     - navigation.top
     - navigation.sections
