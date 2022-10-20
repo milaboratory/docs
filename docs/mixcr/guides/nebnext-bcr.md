@@ -90,12 +90,6 @@ MiXCR has a dedicated preset for this protocol, thus analysing the data is as ea
 --8<-- "nebnext-bcr/scripts/020-upstream-preset.sh"
 ```
 
-One might also use [GNU Parallel](https://www.gnu.org/software/parallel/) to process all samples at once:
-
-```shell
---8<-- "nebnext-bcr/scripts/020-upstream-preset-parallel.sh"
-```
-
 Running the command above will generate the following files:
 
 ```shell
@@ -153,9 +147,6 @@ Option `--report` is specified here explicitly.
 
 `-OjParameters.parameters.floatingRightBound=false -OcParameters.parameters.floatingRightBound=false`
 : Results in a global alignment algorithm for J and C gene right bound, because primer sequences have been trimmed by `--tagPattern`.
-
-
-: Results in a local alignment algorithm for C gene right bound, because reverse primers are located in C-gene region.
 
 `--tagPattern "^N{22}(R1:*) \ ^(UMI:N{17})(R2:*)"`
 : tag pattern specifies the location of the UMI barcode and also trims C primer sequences located in the beginning of R1 (22 b.p. is the length of the longest primer).

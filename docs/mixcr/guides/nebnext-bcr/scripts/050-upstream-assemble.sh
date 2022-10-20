@@ -1,5 +1,5 @@
 mixcr assemble \
-    -OassemblingFeatures="CDR3"
+    -OassemblingFeatures="CDR3" \
     -OseparateByJ=true \
     -OseparateByV=true \
     -OseparateByC=true \
