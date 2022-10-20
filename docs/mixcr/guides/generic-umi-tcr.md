@@ -47,7 +47,7 @@ Each file name encodes the information about lane, biosample id, metadata, R1 or
 ## Upstream analysis
 
 The most straightforward way to get clonotype tables is to use a
-universal [`mixcr analyze`](../reference/mixcr-analyze.md) command.
+universal [`mixcr analyze`](../reference/mixcr-analyze.md) command with `generic-tcr-amplicon-umi` preset.
 
 According to the library preparation protocol, the library has V primers on 5'-end and C primers on 3', so the command for a single sample is the following:
 
@@ -60,22 +60,16 @@ The meaning of these options is the following.
 `--species`
 : is set to `hsa` for _Homo Sapience_
 
-`--starting-material`
-: RNA or DNA. It affects the choice of V gene region which will be used as target in [`align`](../reference/mixcr-align.md) step (`vParameters.geneFeatureToAlign`, see [`align` documentation](../reference/mixcr-align.md)): `rna` corresponds to the `VTranscriptWithout5UTRWithP` and `dna` to `VGeneWithP` (see [Gene features and anchor points](../reference/ref-gene-features.md) for details)
+`--rna`
+:  affects the choice of V gene region which will be used as target in [`align`](../reference/mixcr-align.md) step (`vParameters.geneFeatureToAlign`, see [`align` documentation](../reference/mixcr-align.md)): `--rna` corresponds to the `VTranscriptWithP` and `--dna` to `VGeneWithP` (see [Gene features and anchor points](../reference/ref-gene-features.md) for details)
 
-`--receptor-type`
-: TCR or BCR. It affects the choice of underlying alignment algorithms: MiXCR uses fundamentally different algorithms for TCRs and BCRs because BCRs have somatic hypermutations and long indels.
+`--rigid-left-alignment-boundary`
+: MiXCR will use global alignment algorithm to align the left bound of V.
 
-`--5-end`
-: may be `no-v-primers` or `v-primers`. For this library structure we use `no-v-primers` while e.g. Depending on the presence of primers or adapters at 5'-end MiXCR uses either global or local alignment algorithm to align the left bound of V.
+`--floating-right-alignment-boundary C`
+: MiXCR will use global alignment algorithms to align the right bound of J gene and local alignment algorithms to align the right bound of C gene segments due to the presence of primer sequences.
 
-`--3-end-primers`
-: may be `j-primers`, `j-c-intron-primers` or `c-primers`. Here we use `c-primers` since the primer used for library preparation is complimentary to C-region of TCR genes. Depending on the presence of primers or adapters at 3'-end MiXCR uses either global or local alignment algorithms to align the right bound of J and C gene segments.
-
-`--adapers`
-: may be `adapters-present` or `no-adapters`. We use `adapters-present` because primer sequence is present in the data and has not been cut prior to. Presence or absence of adapter sequences results in the choice between local and global alignment algorithms on the edges of the target sequence.
-
-`--umi-pattern`
+`--tag-pattern`
 : is used to specify UMI pattern for the library. MiXCR provides a powerful regex-like [language](../reference/ref-tag-pattern.md) allowing to specify almost arbitrary barcode structure. Here we use `^(R1:*)\^(UMI:N{12})` pattern to specify that R1 should be used as is, UMI spans the first 12 letters of R2 and the rest of R2 is ignored.
 
 Finally, we specify paths for both input files and a path to output folder with prefix describing the sample. Note that `{{n}}` syntax is similar to Linux wildcard behaviour: it will concatenate all fastq files matching this pattern into one sample. This is very useful when you have for example multiple lanes.
@@ -86,7 +80,13 @@ Running the command above will generate the following files:
 > ls results/
 
 # human-readable reports 
-P15-T0-TIGIT.report
+P15-T0-TIGIT.align.report.txt
+P15-T0-TIGIT.align.report.json
+P15-T0-TIGIT.refine.report.txt
+P15-T0-TIGIT.refine.report.json
+P15-T0-TIGIT.assemble.report.txt
+P15-T0-TIGIT.assemble.report.json
+
 # raw alignments (highly compressed binary file)
 P15-T0-TIGIT.vdjca
 # alignments with corrected UMI barcode sequences 
@@ -94,8 +94,8 @@ P15-T0-TIGIT.refined.vdjca
 # TCRα & TCRβ CDR3 clonotypes (highly compressed binary file)
 P15-T0-TIGIT.clns
 # TCRα & TCRβ CDR3 clonotypes exported in tab-delimited txt
-P15-T0-TIGIT.clonotypes.TRA.tsv
-P15-T0-TIGIT.clonotypes.TRB.tsv  
+P15-T0-TIGIT.clonotypes.TRA.txt
+P15-T0-TIGIT.clonotypes.TRB.txt  
 ```
 
 Clonotype tables is the main result of the upstream analysis. They are stored in a highly compressed and efficient binary `.clns` file and can be exported in many ways: detailed [tab-delimited format](../reference/mixcr-export.md) with dozens of customizable columns, [human readable](../reference/mixcr-exportPretty.md) for manual inspection, and [AIRR format](../reference/mixcr-exportAirr.md) suitable for many scientific downstream analysis tools. By default, MiXCR exports clonotypes in a tab-delimited format separately for each immunological chain.
@@ -110,11 +110,11 @@ Briefly, we list all R1 files in the fastq directory, replace lane specification
 
 ### Details and fine-tuning
 
-Under the hood, `mixcr analyze amplicon` executes the following pipeline of MiXCR actions:
+Under the hood, `mixcr analyze generic-tcr-amplicon-umi` executes the following pipeline of MiXCR actions:
 
 ![pipeline](generic-umi-tcr/figs/mixcr_pipeline.svg)
 
-Each step in this pipeline is executed with a specific options inherited from the options supplied to `mixcr analyze amplicon`. Instead of running `analyze` one can run the whole pipeline step by step and additionally fine tune the analysis parameters at each step. Another reason why sometimes it is better to execute the pipeline step by step is the ability to better manage hardware resources allocated to each step, because some steps are memory intensive and less CPU intensive, while others are vice a versa.
+Each step in this pipeline is executed with a specific options inherited from the options supplied to `mixcr analyze generic-tcr-amplicon-umi`. Instead of running `analyze` one can run the whole pipeline step by step and additionally fine tune the analysis parameters at each step. Another reason why sometimes it is better to execute the pipeline step by step is the ability to better manage hardware resources allocated to each step, because some steps are memory intensive and less CPU intensive, while others are vice a versa.
 
 Let's go throw each step executed in the considered case.
 
@@ -129,16 +129,19 @@ Let's go throw each step executed in the considered case.
 --8<-- "generic-umi-tcr/scripts/040-upstream-align.sh"
 ```
 
-Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithout5UTRWithP` for the alignment of V segments (see [Gene features and anchor points](../reference/ref-gene-features.md). Because we have primers on V segment, we use local alignment on the left bound of V and since we have primers on C segment, we use global alignment for J and local on the right bound of C.
+Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithP` for the alignment of V segments (see [Gene features and anchor points](../reference/ref-gene-features.md). Because we have primers on V segment, we use local alignment on the left bound of V and since we have primers on C segment, we use global alignment for J and local on the right bound of C.
+
+`-p bundle-umi-kaligner1-v1-base`
+: this preset defines parameters for aligner and for subsequent steps also including UMI related options.
 
 This step utilizes all available CPUs and scales perfectly. When there are a lot of CPUs, the only limiting factor is the speed of disk I/O. To limit the number of used CPUs one can pass `--threads N` option.
 
-#### `correctAndSortTags`
+#### `refineTagsAndSort`
 
 [Corrects](../reference/mixcr-refineTagsAndSort.md) sequencing and PCR errors _inside_ barcode sequences. This step does extremely important job by correcting artificial diversity caused by errors in barcodes. In the considered example project it corrects only sequences of UMIs.
 
 ```shell
---8<-- "generic-umi-tcr/scripts/050-upstream-correctAndSortTags.sh"
+--8<-- "generic-umi-tcr/scripts/050-upstream-refineTagsAndSort.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with the barcode correction report.
@@ -170,8 +173,6 @@ Finally, to [export](../reference/mixcr-export.md#clonotype-tables) clonotype ta
 ```shell
 --8<-- "generic-umi-tcr/scripts/070-upstream-exportClones.sh"
 ```
-
-Here `-p full` is a shorthand for the full preset of common export columns and `-uniqueTagCount UMI` adds a column with the UMI count for each clone.
 
 The resulting clonotype table will contain exhaustive information about each clonotype:
 

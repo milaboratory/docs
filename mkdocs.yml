@@ -124,7 +124,7 @@ nav:
         - 'AbHelix BCR': mixcr/guides/abhelix-bcr.md
         - 'BioMed2':  mixcr/guides/biomed2-bcr.md
       - 'Analysis cases':
-#        - 'Targeted TCR UMI libraries': mixcr/guides/generic-umi-tcr.md
+        - 'Targeted TCR UMI libraries': mixcr/guides/generic-umi-tcr.md
         - 'Targeted BCR Multiplex libraries': mixcr/guides/generic-multiplex-bcr.md
         - 'Targeted BCR UMI libraries': mixcr/guides/generic-umi-bcr.md
         - 'RNA-Seq data' : mixcr/guides/rnaseq.md
