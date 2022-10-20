@@ -29,7 +29,7 @@ The first step that we have to do is to obtain `.clns` clonotype files for the s
 Bellow you can see an example command for one sample:
 
 ```shell
-    --8<-- "ig-trees-mikelov/scripts/020-upstream-preset.sh"
+--8<-- "ig-trees-mikelov/scripts/020-upstream-preset.sh"
 ```
 
 This generic presets requires a few options:
@@ -119,7 +119,7 @@ Assembles alignments into clonotypes and applies several layers of errors correc
 Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/050-upstream-assemble.sh"
+--8<-- "ig-trees-mikelov/scripts/060-upstream-assemble.sh"
 ```
 
 ## Quality control
@@ -150,8 +150,8 @@ The next step, after obtaining clonotypes is to perform allele inference to sepa
 
 - a new personalized reference gene library is generated based on the provided samples. 
 
-  !!! "note"
-    Thus, it is worth noticing that only samples obtained from a single donor (or genetic mice strain) should be provided for allele inference.
+!!! note
+    Only samples obtained from a single donor (or genetic mice strain) should be provided for allele inference.
 
 - the newly generated reference is used to realign each clone. New `.clns` files are generated.
 
@@ -207,7 +207,7 @@ This command will generate a separate Newick formatted file for every linage tre
 It is also possible to plot lineage trees and add metadata values for better visualization.
 
 ??? note "Metadata"
-    {{ read_csv(docs/mixcr/guides/ig-trees-mikelov/scripts/metadata.tsv, engine='python', sep='\t') }}
+    {{ read_csv('docs/mixcr/guides/ig-trees-mikelov/scripts/metadata.tsv', engine='python', sep='\t') }}
 
 ```shell
 --8<-- "ig-trees-mikelov/scripts/140-plot-shmTrees.sh"
