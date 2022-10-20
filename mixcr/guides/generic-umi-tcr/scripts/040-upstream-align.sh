@@ -1,8 +1,9 @@
 mixcr align \
+	-p bundle-umi-kaligner1-v1-base \
     --species hsa \
     --tag-pattern '^(R1:*)\^(UMI:N{12})' \
-    --report result/P15-T0-TIGIT.report \
-    --json-report result/P15-T0-TIGIT.report.json \
+    --report result/P15-T0-TIGIT.align.report.txt \
+    --json-report result/P15-T0-TIGIT.align.report.json \
     -OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
     -OvParameters.parameters.floatingLeftBound=false \
     -OjParameters.parameters.floatingRightBound=false \
