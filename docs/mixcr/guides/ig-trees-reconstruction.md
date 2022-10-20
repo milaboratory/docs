@@ -178,6 +178,10 @@ Now, when the alleles have been reassigned we can export clonotype tables in a h
 ```shell
 --8<-- "ig-trees-mikelov/scripts/100-export-clones.sh"
 ```
+??? note "Show top 500 clones in IM_p01_Bmem_1_IGH.txt"
+    {{ read_csv('docs/mixcr/guides/ig-trees-mikelov/figs/IM_p01_Bmem_1_IGH.txt', engine='python', sep='\t') }}
+
+
 ##  Generate lineage trees
 
 Now we can reconstruct clonal lineage trees with [`mixcr findShmTrees`](../reference/mixcr-findShmTrees.md)  command:
@@ -194,6 +198,9 @@ To export information on lineage trees in human-readable format use [`mixcr expo
 --8<-- "ig-trees-mikelov/scripts/120-export-shm-trees-with-nodes.sh"
 ```
 
+??? note "Show top 500 records from in IM_trees.txt"
+    {{ read_csv('docs/mixcr/guides/ig-trees-mikelov/figs/IM_trees.txt', engine='python', sep='\t') }}
+
 The trees can also be exported in a standard Newick format with [`mixcr exportShmTreesNewick`](../reference/mixcr-exportShmTreesNewick.md):
 
 ```shell
@@ -201,6 +208,9 @@ The trees can also be exported in a standard Newick format with [`mixcr exportSh
 ```
 
 This command will generate a separate Newick formatted file for every linage tree and put it in a `IM_newick` folder. For this dataset  18916 trees have been generated.
+
+??? note "Show tree with id 4992"
+    {{ read_csv('docs/mixcr/guides/ig-trees-mikelov/figs/4992.tree', engine='python', sep='\t') }}
 
 ### Export linage trees in a graphical format
 

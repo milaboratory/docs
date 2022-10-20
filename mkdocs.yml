@@ -128,10 +128,10 @@ nav:
         - 'Targeted BCR Multiplex libraries': mixcr/guides/generic-multiplex-bcr.md
         - 'Targeted BCR UMI libraries': mixcr/guides/generic-umi-bcr.md
         - 'RNA-Seq data' : mixcr/guides/rnaseq.md
+        - 'Immunoglobulin lineage trees reconstruction': mixcr/guides/ig-trees-reconstruction.md
       - 'Special guides':
         - 'Assembling custom reference library': mixcr/guides/create-custom-library.md
         - 'Using external libraries': mixcr/guides/external-libraries.md
-        - 'Immunoglobulin lineage trees reconstruction': mixcr/guides/ig-trees-reconstruction.md
   - 'Docs':
       - 'Overview':
         - 'Analysis overview': mixcr/reference/overview-analysis-overview.md
