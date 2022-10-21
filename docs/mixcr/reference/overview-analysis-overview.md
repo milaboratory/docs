@@ -15,7 +15,8 @@ Below we give a high-level overview of MiXCR actions which consitute most of the
 
 Upstream analysis basically includes alignment of raw sequencing data against reference V-, D-, J- and C- gene segment database and assembling of clonotypes based on different criteria. There are plenty of peculiarities caused by different data types and library preparation protocols. Below is the list of key upstream analysis steps.
 
-### [Alignment](mixcr-align.md)
+### Alignment
+==[`align`](mixcr-align.md)==
 
 The initial step of the analysis is alignment of raw sequencing data against reference V-, D-, J- and C- gene segment database.
     
@@ -30,7 +31,8 @@ Also at the alignment step MiXCR performs barcodes sequences extraction for barc
 
 The built-in reference [gene library](http://github.com/repseqio/library) of V-, D-, J- and C- segments is thoroughly compiled for every available species using the data specifically obtained from multiple dedicated sequencing runs as well as from hundreds of other experiments. At the same time MiXCR supports using of [external libraries](../guides/external-libraries.md) or even to assemble a [custom library](../guides/create-custom-library.md) from scratch.     
 
-### [Tag refinement](mixcr-refineTagsAndSort.md)
+### Tag refinement
+==[`refineTagsAndSort`](mixcr-refineTagsAndSort.md)==
 
 For barcoded (tagged) data, corrects errors _inside_ barcode sequences and filters out spurious barcodes.
 
@@ -44,7 +46,8 @@ Errors inside barcode sequences are generated either during PCR or sequencig ste
 Spurious barcodes arise from multiple sources. For UMIs this is oftenly a recombination and formation of chimeric molecules. For many of droplet-based single cell technologies, spruious barcodes come from exploded cells and/or empty droplets. MiXCR has a powerful and highly tunebale filtering strategies able to identify and filter out clusters of such spurious barcodes. Importantly, fraction of spurious barcodes in some protocols may be as high as 90% which makes this filtering extremely important.
 
 
-### [Partial assembly](mixcr-assemblePartial.md)
+### Partial assembly
+==[`assemblePartial`](mixcr-assemblePartial.md)==
 
 For shotgun/fragmented data, rescues alignments that partially cover CDR3 region.
 
@@ -57,7 +60,8 @@ The procedure is [throughly optimized](https://www.nature.com/articles/nbt.3979)
 
 
 
-### [CDR3 extension](mixcr-extend.md)
+### CDR3 extension
+==[`extend`](mixcr-extend.md)==
 
 For non-enriched RNA-Seq TCR data, imputes missing nucleotides at the edges of CDR3 region.  
 
@@ -68,7 +72,8 @@ To safely utilize even those reads that still only partially cover CDR3 but full
 
 The procedure is also [throughly optimized](https://www.nature.com/articles/nbt.3979) and tested on many real and in-silico datasets,  showing approximately zero false extension rate.
 
-### [Clonotype assembly](mixcr-assemble.md)
+### Clonotype assembly
+==[`assemble`](mixcr-assemble.md)==
 
 The key step of the upstream analysis is clonotype assembly.
 
@@ -81,7 +86,8 @@ For barcoded data, MiXCR first builds pre-clones by grouping alignments with the
 
 MiXCR applies [two basic layers of error correction](https://www.nature.com/articles/nmeth.3364). The first one is [quality-guided mapping](https://pubmed.ncbi.nlm.nih.gov/22806588/) to account for sequencing errors and rescue reads containing nucleotides with low [Phred quality score](https://en.wikipedia.org/wiki/Phred_quality_score). The second layer is used to correct PCR errors which may still present even for UMI-barcoded data. PCR errors are corrected by applying a special heuristic multi-layer clustering with fuzzy matching to identify clusters of erroneous clonotypes and distinguish them from real hypermutations or allelic variants.
 
-### [Contig assembly](mixcr-assembleContigs.md)
+### Contig assembly
+==[`assembleContigs`](mixcr-assembleContigs.md)==
 
 For fragmented data, assembles longest available consensus contig receptor sequences.  
 
@@ -95,7 +101,8 @@ Importantly, alignment-guided consensus algorithm detects hypermutations for B-c
 Finally, if data contains cell barcodes, contig assembly procedure may be performed individually for each cell. 
 
 
-### [Export](mixcr-export.md)
+### Export
+==[`export`](mixcr-export.md)==
 
 The end results of upstream analysis are clonotype tables.
 
