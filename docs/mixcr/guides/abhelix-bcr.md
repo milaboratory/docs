@@ -132,6 +132,7 @@ alignment quality. This can be easily done with the following command:
 ```shell
 --8<-- "abhelix-bcr/scripts/080-qc-align.sh"
 ```
+
 ![alignQc.svg](abhelix-bcr/figs/alignQc.svg)
 
 From the plot above we see that most samples have high percentage of successfully aligned reads (above 90%). What we can
@@ -151,6 +152,7 @@ Let's look at the same plot, but instead of percentages of reads  we will plot a
 ```shell
 --8<-- "abhelix-bcr/scripts/081-qc-align-absolute.sh"
 ```
+
 ![alignQc.svg](abhelix-bcr/figs/alignQcAbsolute.svg)
 
 The plot shows that nearly all bad samples have significantly lower total reads count. 
@@ -242,6 +244,7 @@ Finally, lets check chain usage among all samples.
 ```shell
 --8<-- "abhelix-bcr/scripts/120-qc-chainUsage.sh"
 ```
+
 ![chainUsage.svg](abhelix-bcr/figs/chainUsage.svg)
 
 The plot suggests that this data has a low cross-contamination level, since almost all clones from IgG1, IgG2,IgG3,IgG4,IgM and IgA samples are IGH, and samples with IgK and IgL mostly consist of IGK and IGL clones.
