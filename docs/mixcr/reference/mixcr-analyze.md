@@ -4,7 +4,7 @@ A single command to execute complete MiXCR analysis pipeline, from raw fastq fil
 
 ??? warning "Starting from MiXCR 4.1 logic of this command was changed completely"
 
-    Previous logic with `mixcr analyze amplicon ...` and `mixcr analyze shotgun ...` was remove in MiXCR 4.1 in favour of the new logic centered around the preset
+    Previous logic with `mixcr analyze amplicon ...` and `mixcr analyze shotgun ...` was removed in MiXCR 4.1 in favour of the new logic centered around the preset
 
 ## Command line options
 
