@@ -7,7 +7,7 @@ Bellow you can see the structure of cDNA library.
 ![](milaboratories-human-tcr-dna-multi/figs/library-structure-light.svg#only-light)
 ![](milaboratories-human-tcr-dna-multi/figs/library-structure-dark.svg#only-dark)
 
-The data for this tutorial consists of four samples. Total DNA was isolated from human PBMC and 300ng were used for each library synthesis. Every sample is present in two technical replicas. DNA libraries were prepared for each sample according to MiLaboratories Human TCR DNA Multiplex kit protocol simultaneously for both TRA and TRB chains. Sequencing was performed on an Illumina NextSeq500 sequencer single-end 150bp reads.
+The data for this tutorial consists of four samples. Total DNA was isolated from human PBMC and 300 ng were used for each library synthesis. Every sample is present in two technical replicas. DNA libraries were prepared for each sample according to MiLaboratories Human TCR DNA Multiplex kit protocol simultaneously for both TRA and TRB chains. Sequencing was performed on an Illumina NextSeq500 sequencer single-end 150 bp reads.
 
 All data may be downloaded using the script bellow.
 
