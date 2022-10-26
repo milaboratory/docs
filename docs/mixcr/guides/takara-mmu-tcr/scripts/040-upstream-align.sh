@@ -1,6 +1,6 @@
 mixcr align \
     --species mmu \
-    -p default_4.0 \
+    -p bundle-kaligner1-v1-base \
 	-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
 	-OvParameters.parameters.floatingLeftBound=false \
 	-OjParameters.parameters.floatingRightBound=false \

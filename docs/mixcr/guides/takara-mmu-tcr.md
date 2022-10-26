@@ -161,7 +161,7 @@ MiXCR has a specific preset to obtain full-length TCR clones with SMARTer Mouse 
 The `mixcr assemble` step in this preset differs from the one above in the following manner:
 
 ```shell
---8<-- "takara-mmu-tcr/scripts/140-upstream-assemble-full-length.sh
+--8<-- "takara-mmu-tcr/scripts/140-upstream-assemble-full-length.sh"
 ```
 
 `-OassemblingFeatures="{FR1Begin:FR4End}"`
