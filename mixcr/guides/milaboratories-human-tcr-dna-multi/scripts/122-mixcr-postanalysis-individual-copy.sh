@@ -1,0 +1,1 @@
+cp pa/pa.i.diversity.TR* figs/

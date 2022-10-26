@@ -1,0 +1,16 @@
+https://cdn.milaboratory.com/data/milab-dna-tcr/GeneMind_TRABkit_DNA77_300ng_repl1_L01_R1_001.fastq.gz
+  out=raw/DNA77_repl1_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-dna-tcr/GeneMind_TRABkit_DNA77_300ng_repl2_L01_R1_001.fastq.gz
+  out=raw/DNA77_repl2_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-dna-tcr/GeneMind_TRABkit_DNA78_300ng_repl1_L01_R1_001.fastq.gz
+  out=raw/DNA78_repl1_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-dna-tcr/GeneMind_TRABkit_DNA78_300ng_repl2_L01_R1_001.fastq.gz
+  out=raw/DNA78_repl2_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-dna-tcr/GeneMind_TRABkit_DNA80_300ng_repl1_L01_R1_001.fastq.gz
+  out=raw/DNA80_repl1_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-dna-tcr/GeneMind_TRABkit_DNA80_300ng_repl2_L01_R1_001.fastq.gz
+  out=raw/DNA80_repl2_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-dna-tcr/GeneMind_TRABkit_DNA82_300ng_repl1_L01_R1_001.fastq.gz
+  out=raw/DNA82_repl1_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-dna-tcr/GeneMind_TRABkit_DNA82_300ng_repl2_L01_R1_001.fastq.gz
+  out=raw/DNA82_repl2_R1.fastq.gz
