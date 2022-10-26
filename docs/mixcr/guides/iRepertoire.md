@@ -273,7 +273,7 @@ Finally, MiXCR provides a very convenient way to look at the reports generated a
 ??? "Show report file"
     === "`.txt`"
         ```shell
-        --8<-- "irepertoire-tcr-lr/figs/CRC016_preTherapy.clones.tsv"
+        --8<-- "irepertoire-tcr-lr/figs/CRC016_preTherapy.report.txt"
         ```
     === "`.json`"
         ```json

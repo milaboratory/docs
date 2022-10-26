@@ -1,0 +1,1 @@
+cat results/DNA77_repl1.clones_TRAD.tsv | sed 's:|:\\|:g' | head -500 > figs/DNA77_repl1.clones_TRAD.tsv

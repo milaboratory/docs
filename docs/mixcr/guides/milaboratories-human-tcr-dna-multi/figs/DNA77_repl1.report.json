@@ -1,0 +1,123 @@
+{
+  "align": {
+    "type": "alignerReport",
+    "commandLine": "align --report results/DNA77_repl1.align.report.txt --json-report results/DNA77_repl1.align.report.json --preset milab-human-tcr-dna-multiplex-cdr3 raw/DNA77_repl1_R1.fastq.gz results/DNA77_repl1.vdjca",
+    "inputFiles": [
+      "raw/DNA77_repl1_R1.fastq.gz"
+    ],
+    "outputFiles": [
+      "results/DNA77_repl1.vdjca"
+    ],
+    "version": "4.1.0; built=Tue Oct 18 19:33:21 CEST 2022; rev=852d9d8feb; lib=repseqio.v2.0",
+    "trimmingReport": null,
+    "totalReadsProcessed": 2430499,
+    "aligned": 2329033,
+    "notAligned": 101466,
+    "notAlignedReasons": {
+      "NoBarcode": 0,
+      "NoHits": 92436,
+      "LowTotalScore": 62,
+      "NoVHits": 0,
+      "NoCDR3Parts": 0,
+      "NoJHits": 8968,
+      "VAndJOnDifferentTargets": 0
+    },
+    "chimeras": 0,
+    "overlapped": 0,
+    "alignmentAidedOverlaps": 0,
+    "overlappedAligned": 0,
+    "overlappedNotAligned": 0,
+    "pairedEndAlignmentConflicts": 0,
+    "vChimeras": 0,
+    "jChimeras": 0,
+    "chainUsage": {
+      "type": "chainUsage",
+      "chimeras": 0,
+      "total": 2329033,
+      "chains": {
+        "TRA": {
+          "total": 1125139,
+          "nonFunctional": 481681,
+          "isOOF": 435631,
+          "hasStops": 46050
+        },
+        "TRB": {
+          "total": 1203859,
+          "nonFunctional": 238321,
+          "isOOF": 224073,
+          "hasStops": 14248
+        },
+        "TRD": {
+          "total": 35,
+          "nonFunctional": 21,
+          "isOOF": 21,
+          "hasStops": 0
+        }
+      }
+    },
+    "realignedWithForcedNonFloatingBound": 0,
+    "realignedWithForcedNonFloatingRightBoundInLeftRead": 0,
+    "realignedWithForcedNonFloatingLeftBoundInRightRead": 0,
+    "noCDR3PartsAlignments": 412,
+    "partialAlignments": 19557,
+    "tagParsingReport": null
+  },
+  "assemble": {
+    "type": "assemblerReport",
+    "commandLine": "assemble --report results/DNA77_repl1.assemble.report.txt --json-report results/DNA77_repl1.assemble.report.json results/DNA77_repl1.vdjca results/DNA77_repl1.clns",
+    "inputFiles": [
+      "results/DNA77_repl1.vdjca"
+    ],
+    "outputFiles": [
+      "results/DNA77_repl1.clns"
+    ],
+    "version": "4.1.0; built=Tue Oct 18 19:33:21 CEST 2022; rev=852d9d8feb; lib=repseqio.v2.0",
+    "preCloneAssemblerReport": null,
+    "totalReadsProcessed": 2430499,
+    "initialClonesCreated": 108317,
+    "readsDroppedNoTargetSequence": 19969,
+    "readsDroppedTooShortClonalSequence": 102,
+    "readsDroppedLowQuality": 0,
+    "coreReads": 2238669,
+    "readsDroppedFailedMapping": 26222,
+    "lowQualityRescued": 42906,
+    "clonesClustered": 54207,
+    "readsClustered": 125506,
+    "clones": 52422,
+    "clonesDroppedAsLowQuality": 664,
+    "clonesPreClustered": 1024,
+    "readsPreClustered": 1615,
+    "readsInClones": 2156069,
+    "readsInClonesBeforeClustering": 2281575,
+    "readsDroppedWithLowQualityClones": 1165,
+    "clonalChainUsage": {
+      "type": "chainUsage",
+      "chimeras": 0,
+      "total": 52422,
+      "chains": {
+        "TRA": {
+          "total": 39404,
+          "nonFunctional": 15898,
+          "isOOF": 15219,
+          "hasStops": 679
+        },
+        "TRB": {
+          "total": 13000,
+          "nonFunctional": 2617,
+          "isOOF": 2315,
+          "hasStops": 302
+        },
+        "TRD": {
+          "total": 18,
+          "nonFunctional": 10,
+          "isOOF": 10,
+          "hasStops": 0
+        }
+      }
+    },
+    "clonesFilteredInPostFiltering": 0,
+    "readsFilteredInPostFiltering": 0,
+    "postFilteringReports": null,
+    "alignmentsFilteredByTagPrefix": 0
+  }
+}

@@ -116,10 +116,14 @@ mixcr analyze milab-human-tcr-rna-race-cdr3 \
 ·
 [:octicons-link-16: Link](https://milaboratories.com/human-tcr-dna-multiplex-kit)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/milab.yamll)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/milab.yaml#L99-L117)
 
 
 The kit allows to obtain TCR alpha and beta repertoires for different types of available DNA material, with the highest possible sensitivity. Clones are assembled by `CDR3` sequence.
+
+
+![](pics/milab-dna-light.svg#only-light)
+![](pics/milab-dna-dark.svg#only-dark)
 
 Example:
 ```shell

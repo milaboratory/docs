@@ -116,6 +116,7 @@ nav:
   - 'Guides':
       - 'Kits & Protocols':
         - 'MiLaboratories Human TCR RNA Multiplex kit':  mixcr/guides/milaboratories-human-tcr-rna-multi.md
+        - 'MiLaboratories Human TCR DNA Multiplex kit':  mixcr/guides/milab-dna-multiplex-tcr.md
         - 'SMARTer Human BCR IgG IgM H/K/L Profiling Kit': mixcr/guides/takara-hsa-bcr.md
         - 'SMARTer Mouse TCR a/b Profiling Kit': mixcr/guides/takara-mmu-tcr.md
         - 'Illumina Ampliseq TCR LR / iRepertoire' : mixcr/guides/iRepertoire.md

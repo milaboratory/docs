@@ -180,5 +180,5 @@ Finally, MiXCR provides a very convenient way to look at the reports generated a
         ```
     === "`.json`"
         ```js
-        --8<-- "milaboratories-human-tcr-rna-multi/figs/Multi_TRA_FS115_1.report.json.json"
+        --8<-- "milaboratories-human-tcr-rna-multi/figs/Multi_TRA_FS115_1.report.json"
         ```

@@ -1,0 +1,49 @@
+============== Align Report ==============
+============== Align Report ==============
+Total sequencing reads: 2430499
+Successfully aligned reads: 2329033 (95.83%)
+Alignment failed, no hits (not TCR/IG?): 92436 (3.8%)
+Alignment failed because of absence of J hits: 8968 (0.37%)
+Alignment failed because of low total score: 62 (0%)
+Overlapped: 0 (0%)
+Overlapped and aligned: 0 (0%)
+Alignment-aided overlaps: 0 (NaN%)
+Overlapped and not aligned: 0 (0%)
+No CDR3 parts alignments, percent of successfully aligned: 412 (0.02%)
+Partial aligned reads, percent of successfully aligned: 19557 (0.84%)
+TRA chains: 1125139 (48.31%)
+TRA non-functional: 481681 (42.81%)
+TRB chains: 1203859 (51.69%)
+TRB non-functional: 238321 (19.8%)
+TRD chains: 35 (0%)
+TRD non-functional: 21 (60%)
+Realigned with forced non-floating bound: 0 (0%)
+Realigned with forced non-floating right bound in left read: 0 (0%)
+Realigned with forced non-floating left bound in right read: 0 (0%)
+============== Assemble Report ==============
+============== Assemble Report ==============
+Final clonotype count: 52422
+Average number of reads per clonotype: 41.13
+Reads used in clonotypes, percent of total: 2156069 (88.71%)
+Reads used in clonotypes before clustering, percent of total: 2281575 (93.87%)
+Number of reads used as a core, percent of used: 2238669 (98.12%)
+Mapped low quality reads, percent of used: 42906 (1.88%)
+Reads clustered in PCR error correction, percent of used: 125506 (5.5%)
+Reads pre-clustered due to the similar VJC-lists, percent of used: 1615 (0.07%)
+Reads dropped due to the lack of a clone sequence, percent of total: 19969 (0.82%)
+Reads dropped due to a too short clonal sequence, percent of total: 102 (0%)
+Reads dropped due to low quality, percent of total: 664 (0.03%)
+Reads dropped due to failed mapping, percent of total: 26222 (1.08%)
+Reads dropped with low quality clones, percent of total: 1165 (0.05%)
+Clonotypes eliminated by PCR error correction: 54207
+Clonotypes dropped as low quality: 664
+Clonotypes pre-clustered due to the similar VJC-lists: 1024
+Clones dropped in post filtering: 0 (0%)
+Reads dropped in post filtering: 0.0 (0%)
+Alignments filtered by tag prefix: 0 (0%)
+TRA chains: 39404 (75.17%)
+TRA non-functional: 15898 (40.35%)
+TRB chains: 13000 (24.8%)
+TRB non-functional: 2617 (20.13%)
+TRD chains: 18 (0.03%)
+TRD non-functional: 10 (55.56%)
