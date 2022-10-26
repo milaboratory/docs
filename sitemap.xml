@@ -31,6 +31,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.milaboratories.com/mixcr/getting-started/support/</loc>
+         <lastmod>2022-10-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.milaboratories.com/mixcr/guides/abhelix-bcr/</loc>
          <lastmod>2022-10-26</lastmod>
          <changefreq>daily</changefreq>
