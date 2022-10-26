@@ -970,7 +970,7 @@ ls /raw/*R1* <span class=p>|</span>
 <span class=s2>    {=s:.*/:results/:;s:_R.*::=}&quot;</span>
 </code></pre></div> <p>Under the hood the command above actually executes the following pipeline:</p> <h3 id=under-the-hood-pipeline>Under the hood pipeline:</h3> <p>Under the hood the command above actually executes the following pipeline:</p> <h4 id=align><code>align</code></h4> <p>Alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.</p> <div class=highlight><pre><span></span><code>mixcr align <span class=se>\</span>
     --species mmu <span class=se>\</span>
-    -p default_4.0 <span class=se>\</span>
+    -p bundle-kaligner1-v1-base <span class=se>\</span>
     -OvParameters.geneFeatureToAlign<span class=o>=</span><span class=s2>&quot;VTranscriptWithout5UTRWithP&quot;</span> <span class=se>\</span>
     -OvParameters.parameters.floatingLeftBound<span class=o>=</span><span class=nb>false</span> <span class=se>\</span>
     -OjParameters.parameters.floatingRightBound<span class=o>=</span><span class=nb>false</span> <span class=se>\</span>
@@ -1019,7 +1019,12 @@ mixcr align -f <span class=se>\</span>
     raw/S_s_R1.fastq.gz <span class=se>\</span>
     raw/S_s_R2.fastq.gz <span class=se>\</span>
     results/S_s.vdjca
-</code></pre></div> <p>The <code>mixcr assemble</code> step in this preset differs from the one above in the following manner:</p> <div class=highlight><pre><span></span><code>--8&lt;-- <span class=s2>&quot;takara-mmu-tcr/scripts/140-upstream-assemble-full-length.sh</span>
+</code></pre></div> <p>The <code>mixcr assemble</code> step in this preset differs from the one above in the following manner:</p> <div class=highlight><pre><span></span><code>mixcr assemble <span class=se>\</span>
+    -OassemblingFeatures<span class=o>=</span><span class=s2>&quot;{FR1Begin:FR4End}&quot;</span> <span class=se>\</span>
+    --report results/S_s.report <span class=se>\</span>
+    --json-report results/S_s.json <span class=se>\</span>
+    results/S_s.vdjca <span class=se>\</span>
+    results/S_s.clns
 </code></pre></div> <dl> <dt><code>-OassemblingFeatures="{FR1Begin:FR4End}"</code></dt> <dd>sets the assembling feature to the region which starts from <code>FR1Begin</code> and ends at the end of <code>FR4</code>.</dd> </dl> <p>Notice that we do not use <code>-OseparateByV=true</code> and <code>-OseparateByJ=true</code> in this case because assembling feature already covers full V and J sequences, thus in case several clones have identical <code>CDR3</code> they will still be separated.</p> <h2 id=reports>Reports</h2> <p>Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every <code>.vdjca</code>, <code>.clns</code> and <code>.clna</code> file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case <code>.clns</code> file contains reports for <code>mixcr align</code> and <code>mixcr assemble</code>. To output this report use <a href=../../reference/mixcr-exportReports/ ><code>mixcr exportReports</code></a> as shown bellow. Note <code>--json</code> parameter will output a JSON-formatted report.</p> <div class=highlight><pre><span></span><code>mixcr exportReports <span class=se>\</span>
     results/S_s.clns <span class=se>\</span>
     results/S_s.report.txt
