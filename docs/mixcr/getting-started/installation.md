@@ -1,5 +1,14 @@
 # Installation
 
+The latest releases can be obtained from our GitHub:
+
+: [https://github.com/milaboratory/mixcr/releases/](https://github.com/milaboratory/mixcr/releases/)
+
+The latest development pre-builds can be downloaded from: 
+
+: [https://link.milaboratory.com/software/mixcr/mixcr-develop.zip](https://link.milaboratory.com/software/mixcr/mixcr-develop.zip)
+
+
 ## Linux / MacOS
 
 ### Manual installation
