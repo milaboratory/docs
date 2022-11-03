@@ -645,20 +645,20 @@ By default, boundaries will be got from analysis parameters if possible or `FR1B
 `-positionInReferenceOf <reference_point>`
 : Export position of specified reference point inside reference sequences (clonal sequence / read sequence).
 
-`-allPositionsInReferenceOf [<from_reference_point> <to_reference_point>]`
-: Export position inside reference sequences (clonal sequence / read sequence) for all reference between specified reference points (in separate columns).
+`-allPositionsInReference [<from_reference_point> <to_reference_point>]`
+: Export position inside reference sequences (clonal sequence / read sequence) for all reference points between specified (in separate columns).
 
-For example, `-allPositionsInReferenceOf FR3Begin FR4End` will export `-positionInReferenceOf FR3Begin`, -positionInReferenceOf CDR3Begin`, -positionInReferenceOf CDR3End` and `-positionInReferenceOf FR4End`.
+For example, `-allPositionsInReference FR3Begin FR4End` will export `-positionInReferenceOf FR3Begin`, -positionInReferenceOf CDR3Begin`, -positionInReferenceOf CDR3End` and `-positionInReferenceOf FR4End`.
 
 By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-positionOf <reference_point>`
 : Export position of specified reference point inside target sequences (clonal sequence / read sequence).
 
-`-allPositionsOf [<from_reference_point> <to_reference_point>]`
-: Export position inside target sequences (clonal sequence / read sequence) for all reference between specified reference points (in separate columns).
+`-allPositions [<from_reference_point> <to_reference_point>]`
+: Export position inside target sequences (clonal sequence / read sequence) for all reference points between specified (in separate columns).
 
-For example, `-allPositionsOf FR3Begin FR4End` will export `-positionOf FR3Begin`, -positionOf CDR3Begin`, -positionOf CDR3End` and `-positionOf FR4End`.
+For example, `-allPositions FR3Begin FR4End` will export `-positionOf FR3Begin`, -positionOf CDR3Begin`, -positionOf CDR3End` and `-positionOf FR4End`.
 
 By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
