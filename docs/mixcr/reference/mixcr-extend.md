@@ -25,17 +25,17 @@ mixcr extend
     [--no-warnings] 
     [--verbose] 
     [--help]
-    data.[vdjca|clns|clna] extendeed.[vdjca|clns|clna]
+    data.(vdjca|clns|clna) extendeed.(vdjca|clns|clna)
 ```
 
 The command takes alignments (`.vdjca`) or clones (`.clnx`) file as input and produces the same format as output. Additionally, it produces a comprehensive [report](./report-extend.md).
 
 Basic command line options are:
 
-`data.[vdjca|clns|clna]`
+`data.(vdjca|clns|clna)`
 : Path to input file.
 
-`extendeed.[vdjca|clns|clna]`
+`extendeed.(vdjca|clns|clna)`
 : Path where to write output. Will have the same file type.
 
 `--v-anchor <anchor_point>`

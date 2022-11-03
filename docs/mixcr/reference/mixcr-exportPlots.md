@@ -30,7 +30,7 @@ mixcr exportPlots (diversity|cdr3metrics)
     [--no-warnings] 
     [--verbose] 
     [--help]
-    pa.json[.gz] output.(pdf|eps|png|jpeg)
+    pa.json[.gz] output.(pdf|eps|svg|png|jpeg)
 ```
 Exports [diversity](./mixcr-postanalysis.md#diversity-measures) or [CDR3 metrics](./mixcr-postanalysis.md#cdr3-metrics) visualization plots from the [individual](./mixcr-postanalysis.md#individual-postanalysis) postanalysis results. When exporting in PDF format the resulting file will contain multiple pages: one page per metric. For exaporint in other formats one need to specify `--metrics <metric>` option to export one particular metric.
 
@@ -39,7 +39,7 @@ Basic command line options are:
 `pa.json[.gz]`
 : Input file with postanalysis results.
 
-`output.(pdf|eps|png|jpeg)`
+`output.(pdf|eps|svg|png|jpeg)`
 : Output PDF/EPS/PNG/JPEG file name.
 
 `--chains <chain>`
@@ -172,14 +172,14 @@ mixcr exportPlots (vUsage|jUsage|isotypeUsage|vjUsage) [-f]
     [--no-warnings] 
     [--verbose] 
     [--help] 
-    pa.json[.gz] output.(pdf|eps|png|jpeg)
+    pa.json[.gz] output.(pdf|eps|svg|png|jpeg)
 ```
 Exports [gene segment usage](./mixcr-postanalysis.md#segment-usage-metrics) heatmap plots from the [individual](./mixcr-postanalysis.md#individual-postanalysis) postanalysis results.
 
 `pa.json[.gz]`
 : Input file with postanalysis results.
 
-`output.(pdf|eps|png|jpeg)`
+`output.(pdf|eps|svg|png|jpeg)`
 : Output PDF/EPS/PNG/JPEG file name.
 
 `--chains <chain>`
@@ -314,14 +314,14 @@ mixcr exportPlots overlap
     [--no-warnings] 
     [--verbose] 
     [--help] 
-    pa.json[.gz] output.(pdf|eps|png|jpeg)
+    pa.json[.gz] output.(pdf|eps|svg|png|jpeg)
 ```
 Exports [pairwise distance metrics](./mixcr-postanalysis.md#segment-usage-metrics) heatmap plots from the [overlap](./mixcr-postanalysis.md#overlap-postanalysis) postanalysis results.
 
 `pa.json[.gz]`
 : Input file with postanalysis results.
 
-`output.(pdf|eps|png|jpeg)`
+`output.(pdf|eps|svg|png|jpeg)`
 : Output PDF/EPS/PNG/JPEG file name.
 
 `--chains <chain>`
@@ -388,6 +388,8 @@ Export overlap with color key:
 ```
 mixcr exportPlots shmTrees 
     [--ids <id>[,<id>...]]... 
+    [--filter-min-nodes <n>] 
+    [--filter-min-height <n>] 
     [--node-color <meta>] 
     [--line-color <meta>] 
     [--node-size <meta>] 
@@ -395,9 +397,7 @@ mixcr exportPlots shmTrees
     [--alignment-nt <gene_feature>] 
     [--alignment-aa <gene_feature>] 
     [--alignment-no-fill] 
-    [--metadata <path>] 
-    [--filter-min-nodes <n>] 
-    [--filter-min-height <n>] 
+    [--metadata <path.(tsv|csv)>] 
     [--force-overwrite] 
     [--no-warnings] 
     [--verbose] 
@@ -415,6 +415,12 @@ Visualize SHM tree and save in PDF format
 
 `--ids <id>[,<id>...]`
 : Filter specific trees by id
+
+`--filter-min-nodes <n>`
+: Minimal number of nodes in tree
+
+`--filter-min-height <n>`
+: Minimal height of the tree
 
 `--node-color <meta>`
 : Color nodes with given metadata column
@@ -437,14 +443,8 @@ Visualize SHM tree and save in PDF format
 `--alignment-no-fill`
 : Do not highlight alignments with color
 
-`-m, --metadata <path>`
+`-m, --metadata <path.(tsv|csv)>`
 : Path to metadata file Metadata should be a .tsv or .csv file with a column named 'sample' with filenames of .clns files used in findShmTrees
-
-`--filter-min-nodes <n>`
-: Minimal number of nodes in tree
-
-`--filter-min-height <n>`
-: Minimal height of the tree
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).

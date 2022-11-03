@@ -44,7 +44,7 @@ mixcr analyze [--help]
     
     // inputs and outputs
     
-    <preset_name> input_R1.fastq[.gz] [input_R2.fastq[.gz]] output_prefix
+    <preset_name> (file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam)) output_prefix
 ```
 
 ### Analyze-specific command line options:
@@ -52,7 +52,7 @@ mixcr analyze [--help]
 `<preset_name>`
 : Name of the analysis preset (see [complete list of available presets](overview-built-in-presets.md)). This is the only required option to run the analysis.
 
-`input_R1.fastq[.gz] [input_R2.fastq[.gz]]`
+`(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam))`
 : Paths of input files with sequencing data. File name pattern [expansion](./ref-input-file-name-expansion.md) can be used here to merge sequences from multiple sequences or just for convenience.
 
 `output_prefix`

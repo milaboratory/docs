@@ -137,14 +137,14 @@ mixcr postanalysis individual
   [--chains <chain>[,<chain>...]]... 
   [--group <group>]... 
   [--metadata <path>] 
-  [--tables <path>] 
-  [--preproc-tables <path>] 
+  [--tables <path.(tsv|csv)>] 
+  [--preproc-tables <path.(tsv|csv)>] 
   [-O <key=value>]... 
   [--force-overwrite] 
   [--no-warnings] 
   [--verbose] 
   [--help] 
-  cloneset.(clns|clna)... result.json[.gz]
+  (cloneset.(clns|clna)|directory)... result.json[.gz]
 ```
 
 Calculates 
@@ -153,8 +153,8 @@ Calculates
 
 ### Command line options
 
-`cloneset.(clns|clna)...`
-: Paths to input clnx files.
+`(cloneset.(clns|clna)|directory)...`
+: Paths to input clnx files or to directories with clnx files. Files in directories will not be filtered by extension.
 
 `result.json[.gz]`
 : Path where to write postanalysis result.
@@ -180,11 +180,11 @@ Calculates
 `--metadata <path>`
 : [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files. Optionally may have `chains` column.
 
-`--tables <path>`
-: Tabular results output path (path/table.tsv).
+`--tables <path.(tsv|csv)>`
+: Results output path. By default, will be `{outputDir}/{outputFileName}.tsv`. For each `chain` and `metric` will be generated file with path `{dir}/{fileName}.{metric}.{chain}.(tsv|csv)`
 
-`--preproc-tables <path>`
-: Output path for the [preprocessing summary tables](./mixcr-postanalysis.md#preprocessing-summary-tables) (filtering and downsampling)
+`--preproc-tables <path.(tsv|csv)>`
+: Output path for the [preprocessing summary tables](./mixcr-postanalysis.md#preprocessing-summary-tables) (filtering and downsampling). By default, will be `{outputDir}/{outputFileName}.preproc.tsv`. For each `chain` will be generated file with path `{dir}/{fileName}.{chain}.(tsv|csv)`
 
 `-O  <key=value>`
 : Overrides default postanalysis settings
@@ -317,13 +317,13 @@ mixcr postanalysis overlap
   [--chains <chain>[,<chain>...]]... 
   [--group <group>]... 
   [--metadata <path>] 
-  [--tables <path>] 
-  [--preproc-tables <path>] 
+  [--tables <path.(tsv|csv)>] 
+  [--preproc-tables <path.(tsv|csv)>] 
   [--criteria <s>] 
   [--factor-by <column>[,<column>...]]... 
   [-O <key=value>]... 
   [-f] [-nw] [--verbose] [-h] 
-  cloneset.(clns|clna)... result.json[.gz]
+  (cloneset.(clns|clna)|directory)... result.json[.gz]
 ```
 Calculates pairwise 
 [Distance metrics](./mixcr-postanalysis.md#overlap-metrics).
@@ -332,8 +332,8 @@ Calculates pairwise
 
 ### Command line options
 
-`cloneset.(clns|clna)...`
-: Paths to input clnx files.
+`(cloneset.(clns|clna)|directory)...`
+: Paths to input clnx files or to directories with clnx files. Files in directories will not be filtered by extension.
 
 `result.json[.gz]`
 : Path where to write postanalysis result.
@@ -359,11 +359,11 @@ Calculates pairwise
 `--metadata <path>`
 : [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files. Optionally may have `chains` column.
 
-`--tables <path>`
-: Tabular results output path (path/table.tsv).
+`--tables <path.(tsv|csv)>`
+: Results output path. By default, will be `{outputDir}/{outputFileName}.tsv`. For each `chain` and `metric` will be generated file with path `{dir}/{fileName}.{metric}.{chain}.(tsv|csv)`
 
-`--preproc-tables <path>`
-: Output path for the [preprocessing summary tables](./mixcr-postanalysis.md#preprocessing-summary-tables) (filtering and downsampling)
+`--preproc-tables <path.(tsv|csv)>`
+: Output path for the [preprocessing summary tables](./mixcr-postanalysis.md#preprocessing-summary-tables) (filtering and downsampling). By default, will be `{outputDir}/{outputFileName}.preproc.tsv`. For each `chain` will be generated file with path `{dir}/{fileName}.{chain}.(tsv|csv)`
 
 `--criteria <s>`
 : Overlap criteria. Defines the rules to treat clones as equal. It allows to specify gene feature for overlap (nucleotide or amino acid), and optionally use V and J hits. Examples: `CDR3|AA|V|J` (overlap by a.a. CDR3 and V and J), `VDJRegion|AA` (overlap by a.a. `VDJRegion`), `CDR3|NT|V` (overlap by nt CDR3 and V). Default: CDR3|AA|V|J
