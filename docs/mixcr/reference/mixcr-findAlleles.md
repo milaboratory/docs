@@ -15,7 +15,7 @@ Allele inference algorithms applies different strategies to identify allelic var
 ```
 mixcr findAlleles 
    (--output-template <template.clns> | --no-clns-output) 
-   [--export-library <path>] 
+   [--export-library <path.(json|fasta)>] 
    [--export-alleles-mutations <path>] 
    [-O <key=value>]... 
    [--report <path>] 
@@ -48,8 +48,12 @@ Resulted outputs must be uniq
 `--no-clns-output`
 : Command will not realign input clns files. Must be specified if `--output-template` is omitted.
 
-`--export-library <path>`
-: Path where to write library with found alleles.
+`--export-library <path.(json|fasta)>`
+: Paths where to write library with found alleles and other genes that exits in inputs.
+
+For `.json` library will be written in reqpseqio format.
+
+For `.fasta` library will be written in FASTA format with gene name and reliable range in description. There will be several records for one gene if clnx were assembled by composite gene feature.
 
 `--export-alleles-mutations <path>`
 : Path to write descriptions and stats (see [below](#allelic-variants-summary-table)) for all result alleles, existed and new (see below).
