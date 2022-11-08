@@ -17,10 +17,10 @@ mixcr align --preset <name>
     [--tag-max-budget <n>] 
     [--read-buffer <n>] 
     [--high-compression] 
-    [--not-aligned-R1 <path>] 
-    [--not-aligned-R2 <path>] 
-    [--not-parsed-R1 <path>] 
-    [--not-parsed-R2 <path>] 
+    [--not-aligned-R1 <path.fastq[.gz]>] 
+    [--not-aligned-R2 <path.fastq[.gz]>] 
+    [--not-parsed-R1 <path.fastq[.gz]>] 
+    [--not-parsed-R2 <path.fastq[.gz]>] 
     [--species <species>] 
     [--library <library>] 
     [--dna] 
@@ -103,16 +103,16 @@ Basic command line options are:
 `--high-compression`
 : Use higher compression for output file, 10~25% slower, minus 30~50% of file size.
 
-`--not-aligned-R1 <path>`
+`--not-aligned-R1 <path.fastq[.gz]>`
 : Pipe not aligned R1 reads into separate file.
 
-`--not-aligned-R2 <path>`
+`--not-aligned-R2 <path.fastq[.gz]>`
 : Pipe not aligned R2 reads into separate file.
 
-`--not-parsed-R1 <path>`
+`--not-parsed-R1 <path.fastq[.gz]>`
 : Pipe not parsed R1 reads into separate file.
 
-`--not-parsed-R2 <path>`
+`--not-parsed-R2 <path.fastq[.gz]>`
 : Pipe not parsed R2 reads into separate file.
 
 `-O <key=value>`
