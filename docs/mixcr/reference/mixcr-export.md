@@ -304,7 +304,7 @@ Filter by pattern options:
 > mixcr exportClones clones.clns clones.tsv
 ```
 
-The resulting tab-delimited text file will contain default set of columns (`--preset full`) which includes clonotype abundances, nucleotide and amino acid clonotype sequences, Phred qualities, all or just best hit for V, D, J and C genes, corresponding alignments, nucleotide and amino acid sequences of gene regions present in sequence, etc. Example output (for BCR full-length data):
+The resulting tab-delimited text file will contain default set of columns from [preset](overview-built-in-presets.md) which may include clonotype abundances, nucleotide and amino acid clonotype sequences, Phred qualities, all or just best hit for V, D, J and C genes, corresponding alignments, nucleotide and amino acid sequences of gene regions present in sequence, etc. Example output (for BCR full-length data):
 
 | cloneId | cloneCount         | cloneFraction        | allVHitsWithScore   | allDHitsWithScore             | allJHitsWithScore | allCHitsWithScore  | allVAlignments                                                                                                                                                                                                                                                                            | allDAlignments                                                                                                                                                    | allJAlignments                                                        | allCAlignments | nSeqFR1                                                                     | minQualFR1 | nSeqCDR1                 | minQualCDR1 | nSeqFR2                                             | minQualFR2 | nSeqCDR2                 | minQualCDR2 | nSeqFR3                                                                                                         | minQualFR3 | nSeqCDR3                                                        | minQualCDR3 | nSeqFR4                         | minQualFR4 | aaSeqFR1                  | aaSeqCDR1 | aaSeqFR2          | aaSeqCDR2 | aaSeqFR3                              | aaSeqCDR3             | aaSeqFR4    | refPoints                                                                           | targetSequences                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | targetQualities                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |---------|--------------------|----------------------|---------------------|-------------------------------|-------------------|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|----------------|-----------------------------------------------------------------------------|------------|--------------------------|-------------|-----------------------------------------------------|------------|--------------------------|-------------|-----------------------------------------------------------------------------------------------------------------|------------|-----------------------------------------------------------------|-------------|---------------------------------|------------|---------------------------|-----------|-------------------|-----------|---------------------------------------|-----------------------|-------------|-------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -318,6 +318,7 @@ One can customize the list of fields that will be exported. For example, in orde
 
 ```shell
 > mixcr exportClones \
+    --drop-default-fields \
     -count \
     -vHit -jHit \
     -vAlignment -jAlignment \
@@ -328,35 +329,11 @@ One can customize the list of fields that will be exported. For example, in orde
 
 The columns in the resulting file will be exported in exactly the same order as parameters on the command line.
 
-For convenience, MiXCR provides two predefined sets of fields for exporting: `min` (will export minimal required information about clones or alignments) and `full` (used by default); one can use these sets by specifying the `--preset` option:
-
-```shell
-> mixcr exportClones --preset min clones.clns clones.txt
-```
-
-One can add additional columns to the preset in the following way:
-
-```shell
-> mixcr exportClones --preset min -qFeature CDR2 clones.clns clones.tsv
-```
-
-One can also put all specify export fields in a separate file
-
-```shell
-> cat myFields.txt
--vHits
--dHits
--feature CDR3
- 
-> mixcr exportClones --preset-file myFields.txt clones.clns clones.tsv
-```
-
 ### UMI libraries
 
 ```shell
 > mixcr exportClones \
     -uniqueTagCount umi \
-    -p full \
     clones.clns \
     clones.tsv
 ```
@@ -369,7 +346,6 @@ It is also possible to export full list of UMIs with their read counts that were
 > mixcr exportClones \
     -uniqueTagCount umi \
     -tagCounts \
-    -p full \
     clones.clns \
     clones.tsv
 ```
@@ -389,6 +365,7 @@ Export paired TCR-alpha/beta or BCR-heavy/light clonotype pairs from single cell
 
 ```shell
 > mixcr exportClones \
+    --drop-default-fields \
     --split-by-tag cell \
     -tag cell \
     -cellGroup \
@@ -420,7 +397,6 @@ In the above example we specified particular columns to export. To export all co
     -tag cell \
     -cellGroup \
     -uniqueTagCount UMI \
-    -p full \
     clones.clns \
     clones.tsv
 ```
@@ -433,7 +409,6 @@ When V-D-J contigs assembled with [assembleContigs](./mixcr-assembleContigs.md) 
 > mixcr exportClones \
     -aaFeatureImputed VDJRegion \
     -nFeatureImputed VDJRegion \
-    -p min \
     clones.clns clones.tsv  
 ```
 
@@ -450,10 +425,36 @@ One can also use default presets with imputation (all gene features will use imp
 
 ```shell
 > mixcr exportClones \
+    --drop-default-fields \
     -aaFeatureImputed VDJRegion \
     -nFeatureImputed VDJRegion \
     -p fullImputed \
     clones.clns clones.tsv  
+```
+
+### SHM trees export presets
+
+For convenience, MiXCR provides two predefined sets of fields for exporting SHM trees: `min` (will export minimal required information about tree or tree nodes) and `full` (used by default); one can use these sets by specifying the `--preset` option:
+
+```shell
+> mixcr exportShmTrees --preset min trees.shmt trees.tsv
+```
+
+One can add additional columns to the preset in the following way:
+
+```shell
+> mixcr exportShmTreesWithNodes --preset min -qFeature CDR2 trees.shmt trees_with_nodes.tsv
+```
+
+One can also put all specify export fields in a separate file
+
+```shell
+> cat myFields.txt
+-vHits
+-dHits
+-nFeature CDR3
+ 
+> mixcr exportShmTreesWithNodes --preset-file myFields.txt trees.shmt trees_with_nodes.tsv
 ```
 
 ## Export fields
