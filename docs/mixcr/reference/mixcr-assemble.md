@@ -115,7 +115,7 @@ Basic command line options are:
 : JSON formatted [report](./report-assemble.md) file.
 
 `--use-local-temp`
-: Store temp files in the same folder as output file.
+: Put temporary files in the same folder as the output files.
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).

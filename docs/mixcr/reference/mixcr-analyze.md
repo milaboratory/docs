@@ -19,6 +19,7 @@ mixcr analyze [--help]
     [--not-parsed-R2 <path.fastq[.gz]>] 
     [--no-reports] 
     [--no-json-reports]  
+    [--use-local-temp]
     [--threads <n>] 
     [--force-overwrite]
     [--add-step <step>] 
@@ -80,6 +81,9 @@ mixcr analyze [--help]
 
 `--no-json-reports`
 : Don't output `json` report files for each of the steps
+
+`--use-local-temp`
+: Put temporary files in the same folder as the output files.
 
 `-t, --threads <n>`
 : Processing threads
