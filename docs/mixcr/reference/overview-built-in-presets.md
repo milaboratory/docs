@@ -558,12 +558,12 @@ mixcr analyze ampliseq-tcrb-sr-cdr3 \
 iRepertoire has multiple different primer systems that vary by the regions targeted, the desired read length, and the species. Regardless of what primer system works best for your study, all of our primers cover the highly variable CDR3 region at a minimum, as this is generally the greatest area of diversity and interest.
 
 [:octicons-link-16: Link](https://irepertoire.com/ir-complete-kits/)
-
+·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/irepertoire.yaml)
 
 #### Long Read Human iR-Profile Reagent System
 ==`irepertoire-human-tcr-full-length`==
-·
+
 The clones are assembled by the features that cover CDR1, FR2, CDR2, FR3, CDR3 and FR4 regions. 
 
 ![](pics/ampliseq-oncomine-lr-light.svg#only-light)
@@ -580,7 +580,7 @@ mixcr irepertoire-human-tcr-full-length \
 #### Short Read Human iR-Profile Reagent System
 
 ==`irepertoire-human-tcr-cdr3`==
-·
+
 Clones' assembly is performed by CDR3 region. Use this preset for Long Read kit also if you only want to assemble clones by CDR3.
 
 ![](pics/ampliseq-lr-light.svg#only-light)
