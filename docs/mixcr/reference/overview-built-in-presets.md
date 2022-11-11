@@ -659,7 +659,7 @@ mixcr analyze biomed2-human-bcr-full-length \
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/custom.yaml)
 
-#### Han et al, 2014
+### Han et al, 2014
 
 ==`han-et-al-2014-tcr`==
 ·
