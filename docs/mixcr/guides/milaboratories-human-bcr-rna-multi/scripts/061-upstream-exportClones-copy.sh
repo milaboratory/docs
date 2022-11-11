@@ -1,0 +1,1 @@
+cat results/DChu_p1_1.clones_IGH.tsv | sed 's:|:\\|:g' | head -500 > figs/DChu_p1_1.clones_IGH.tsv

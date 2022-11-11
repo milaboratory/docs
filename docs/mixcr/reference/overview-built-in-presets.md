@@ -591,6 +591,38 @@ mixcr analyze 10x-vdj-bcr \
 [//]: # (See [this tutorial]&#40;../guides/milaboratories-human-tcr-rna-multi.md&#41; for the under-the-hood details.)
 
 
+### BD Rhapsody
+
+#### BD Rhapsody™ VDJ CDR3 Protocol with V1 beads
+
+==`bd-rhapsody-human-tcr-v1`==
+·
+==`bd-rhapsody-human-bcr-v1`==
+·
+==`bd-rhapsody-mouce-tcr-v1`==
+·
+==`bd-rhapsody-mouse-bcr-v1`==
+
+[:octicons-link-16: Link](https://www.bdbiosciences.com/en-us/products/reagents/single-cell-multiomics/vdj#Overview)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/bd.yaml)
+
+
+The BD Rhapsody™ VDJ CDR3 Protocol utilizes the existing BD Rhapsody™ Targeted Kits and the human/mouse immune response primer panel and is designed to work alongside the BD® AbSeq Assay and BD® Single-Cell Multiplexing Kit (SMK). Details about the individual reagents needed to run the assay are included in the respective protocols. A dedicated bioinformatics pipeline is also available for you to analyze sequencing data generated using the CDR3 protocol.
+
+#### BD Rhapsody™ VDJ CDR3 Protocol with Enhanced Bead (introduced in 2022)
+
+==`bd-rhapsody-human-tcr-v2`==
+·
+==`bd-rhapsody-human-bcr-v2`==
+·
+==`bd-rhapsody-mouce-tcr-v2`==
+·
+==`bd-rhapsody-mouse-bcr-v2`==
+
+[:octicons-link-16: Link](https://www.bdbiosciences.com/en-us/products/reagents/single-cell-multiomics/vdj#Overview)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/bd.yaml)
 
 
 ## Public protocols
@@ -627,10 +659,15 @@ mixcr analyze biomed2-human-bcr-full-length \
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/custom.yaml)
 
+#### Han et al, 2014
 
-
-
-
+==`han-et-al-2014-tcr`==
+·
+==`han-et-al-2014-bcr`==
+·
+[:octicons-link-16: Publication](https://www.nature.com/articles/nbt.2938)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/custom.yaml#L46)
 
 ## Generic data
 

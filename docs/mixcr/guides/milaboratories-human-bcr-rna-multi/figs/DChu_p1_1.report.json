@@ -1,0 +1,344 @@
+{
+  "align": {
+    "type": "alignerReport",
+    "commandLine": "align --report results/DChu_p1_1.align.report.txt --json-report results/DChu_p1_1.align.report.json --preset milab-human-bcr-multiplex-cdr3 /raw0/chudakov_covid_bcrkit/DChu_p1_pbmc_beforeSV2_1_R1.fastq.gz /raw0/chudakov_covid_bcrkit/DChu_p1_pbmc_beforeSV2_1_R2.fastq.gz results/DChu_p1_1.vdjca",
+    "inputFiles": [
+      "/raw0/chudakov_covid_bcrkit/DChu_p1_pbmc_beforeSV2_1_R1.fastq.gz",
+      "/raw0/chudakov_covid_bcrkit/DChu_p1_pbmc_beforeSV2_1_R2.fastq.gz"
+    ],
+    "outputFiles": [
+      "results/DChu_p1_1.vdjca"
+    ],
+    "version": "4.1.0; built=Tue Oct 18 17:33:21 UTC 2022; rev=852d9d8feb; lib=repseqio.v2.0",
+    "trimmingReport": null,
+    "totalReadsProcessed": 4024748,
+    "aligned": 3883927,
+    "notAligned": 140821,
+    "notAlignedReasons": {
+      "VAndJOnDifferentTargets": 60241,
+      "NoVHits": 4544,
+      "NoCDR3Parts": 0,
+      "NoJHits": 51949,
+      "NoHits": 12041,
+      "NoBarcode": 12046,
+      "LowTotalScore": 0
+    },
+    "chimeras": 0,
+    "overlapped": 2529706,
+    "alignmentAidedOverlaps": 19737,
+    "overlappedAligned": 2504136,
+    "overlappedNotAligned": 25570,
+    "pairedEndAlignmentConflicts": 952220,
+    "vChimeras": 47322,
+    "jChimeras": 7527,
+    "chainUsage": {
+      "type": "chainUsage",
+      "chimeras": 0,
+      "total": 3883927,
+      "chains": {
+        "IGH": {
+          "total": 3883925,
+          "nonFunctional": 180224,
+          "isOOF": 35974,
+          "hasStops": 144250
+        },
+        "IGK": {
+          "total": 1,
+          "nonFunctional": 0,
+          "isOOF": 0,
+          "hasStops": 0
+        },
+        "IGL": {
+          "total": 1,
+          "nonFunctional": 0,
+          "isOOF": 0,
+          "hasStops": 0
+        }
+      }
+    },
+    "realignedWithForcedNonFloatingBound": 3005466,
+    "realignedWithForcedNonFloatingRightBoundInLeftRead": 1315803,
+    "realignedWithForcedNonFloatingLeftBoundInRightRead": 1315803,
+    "noCDR3PartsAlignments": 62,
+    "partialAlignments": 20466,
+    "tagParsingReport": {
+      "total": 4024748,
+      "matched": 4012702,
+      "totalBitCost": 492103.28305074805,
+      "projections": {
+        "1,2": 4012702
+      },
+      "detailedReport": [
+        {
+          "nested": {
+            "1,2": {
+              "variantId": 0,
+              "nested": [
+                [
+                  {
+                    "positionDistributions": {
+                      "UMI:Left": {
+                        "17": 1923214,
+                        "18": 1023743,
+                        "19": 1065745
+                      },
+                      "UMI:Right": {
+                        "32": 1023743,
+                        "33": 1065745,
+                        "31": 1923214
+                      },
+                      "R1:Left": {
+                        "51": 1923214,
+                        "52": 1023743,
+                        "53": 1065745
+                      },
+                      "R1:Right": {
+                        "301": 4012702
+                      }
+                    },
+                    "lengthDistributions": {
+                      "UMI": {
+                        "14": 4012702
+                      },
+                      "R1": {
+                        "248": 1065745,
+                        "249": 1023743,
+                        "250": 1923214
+                      }
+                    },
+                    "costDistributions": {
+                      "0": 3918453,
+                      "5": 86681,
+                      "10": 7568
+                    },
+                    "variantDistribution": {
+                      "0": 4012702
+                    }
+                  }
+                ],
+                [
+                  {
+                    "positionDistributions": {
+                      "R2:Left": {
+                        "22": 4012702
+                      },
+                      "R2:Right": {
+                        "301": 4012702
+                      }
+                    },
+                    "lengthDistributions": {
+                      "R2": {
+                        "279": 4012702
+                      }
+                    },
+                    "costDistributions": {
+                      "0": 4012702
+                    },
+                    "variantDistribution": {
+                      "0": 4012702
+                    }
+                  }
+                ]
+              ],
+              "costDistributions": {
+                "0": 3918453,
+                "5": 86681,
+                "10": 7568
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "refineTagsAndSort": {
+    "type": "refineTagsAndSort",
+    "commandLine": "refineTagsAndSort --report results/DChu_p1_1.refine.report.txt --json-report results/DChu_p1_1.refine.report.json results/DChu_p1_1.vdjca results/DChu_p1_1.refined.vdjca",
+    "inputFiles": [
+      "results/DChu_p1_1.vdjca"
+    ],
+    "outputFiles": [
+      "results/DChu_p1_1.refined.vdjca"
+    ],
+    "version": "4.1.0; built=Tue Oct 18 17:33:21 UTC 2022; rev=852d9d8feb; lib=repseqio.v2.0",
+    "correctionReport": {
+      "inputRecords": 3883884,
+      "outputRecords": 3568733,
+      "steps": [
+        {
+          "tagName": "UMI",
+          "inputGroups": 1,
+          "inputDiversity": 601954,
+          "inputCount": 3883884,
+          "coreDiversity": 447172,
+          "coreCount": 3725914,
+          "directlyCorrectedDiversity": 166207,
+          "directlyCorrectedCount": 169331,
+          "filteredDiversity": 12096,
+          "filteredCount": 12557,
+          "recursivelyCorrected": 4172,
+          "diversityFilteredByWhitelist": 0,
+          "outputDiversity": 423651,
+          "outputCount": 3871327
+        }
+      ],
+      "filterReport": {
+        "type": "filter_groups_report",
+        "groupingKeys": [
+          "UMI"
+        ],
+        "numberOfGroups": 423651,
+        "numberOfGroupsAccepted": 273729,
+        "totalWeight": 3871327,
+        "totalWeightAccepted": 3568733,
+        "operatorReports": [
+          {
+            "operatorReport": {
+              "type": "generic_hist_report",
+              "threshold": 5
+            },
+            "metricHists": [
+              {
+                "bins": [
+                  {
+                    "from": 1,
+                    "to": 1.5848931924611136,
+                    "weight": 62497
+                  },
+                  {
+                    "from": 1.5848931924611136,
+                    "to": 2.51188643150958,
+                    "weight": 42228
+                  },
+                  {
+                    "from": 2.51188643150958,
+                    "to": 3.981071705534973,
+                    "weight": 25147
+                  },
+                  {
+                    "from": 3.981071705534973,
+                    "to": 6.309573444801933,
+                    "weight": 57487
+                  },
+                  {
+                    "from": 6.309573444801933,
+                    "to": 10,
+                    "weight": 57850
+                  },
+                  {
+                    "from": 10,
+                    "to": 15.848931924611142,
+                    "weight": 100955
+                  },
+                  {
+                    "from": 15.848931924611142,
+                    "to": 25.11886431509581,
+                    "weight": 63745
+                  },
+                  {
+                    "from": 25.11886431509581,
+                    "to": 39.810717055349734,
+                    "weight": 12289
+                  },
+                  {
+                    "from": 39.810717055349734,
+                    "to": 63.09573444801933,
+                    "weight": 1419
+                  },
+                  {
+                    "from": 63.09573444801933,
+                    "to": 100,
+                    "weight": 32
+                  },
+                  {
+                    "from": 100,
+                    "to": 158.48931924611142,
+                    "weight": 2
+                  }
+                ],
+                "collectionSpec": {
+                  "log": true,
+                  "binNumber": 0,
+                  "minBinWidth": 0.2
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "assemble": {
+    "type": "assemblerReport",
+    "commandLine": "assemble --report results/DChu_p1_1.assemble.report.txt --json-report results/DChu_p1_1.assemble.report.json results/DChu_p1_1.refined.vdjca results/DChu_p1_1.clns",
+    "inputFiles": [
+      "results/DChu_p1_1.refined.vdjca"
+    ],
+    "outputFiles": [
+      "results/DChu_p1_1.clns"
+    ],
+    "version": "4.1.0; built=Tue Oct 18 17:33:21 UTC 2022; rev=852d9d8feb; lib=repseqio.v2.0",
+    "preCloneAssemblerReport": {
+      "type": "preCloneAssemblerReport",
+      "inputGroups": 273729,
+      "inputAlignments": 3568733,
+      "clonotypes": 251037,
+      "clonotypesPerGroup": {
+        "0": 32563,
+        "1": 230862,
+        "2": 9807,
+        "3": 187
+      },
+      "coreAlignments": 2641099,
+      "discardedCoreAlignments": 260152,
+      "empiricallyAssignedAlignments": 447979,
+      "vjEmpiricallyAssignedAlignments": 0,
+      "umiEmpiricallyAssignedAlignments": 0,
+      "gatEmpiricallyAssignedAlignments": 448106,
+      "empiricalAssignmentConflicts": 127,
+      "unassignedAlignments": 476426,
+      "umiConflicts": 9994,
+      "gatConflicts": 4025,
+      "geneConflicts": {
+        "Variable": 636,
+        "Joining": 3389
+      },
+      "coreClonotypesDroppedByTagSuffix": 0,
+      "coreAlignmentsDroppedByTagSuffix": 0
+    },
+    "totalReadsProcessed": 4024748,
+    "initialClonesCreated": 100052,
+    "readsDroppedNoTargetSequence": 667482,
+    "readsDroppedTooShortClonalSequence": 9,
+    "readsDroppedLowQuality": 0,
+    "coreReads": 3088193,
+    "readsDroppedFailedMapping": 571,
+    "lowQualityRescued": 109,
+    "clonesClustered": 112,
+    "readsClustered": 1553,
+    "clones": 99569,
+    "clonesDroppedAsLowQuality": 14,
+    "clonesPreClustered": 357,
+    "readsPreClustered": 4293,
+    "readsInClones": 3086749,
+    "readsInClonesBeforeClustering": 3088302,
+    "readsDroppedWithLowQualityClones": 196,
+    "clonalChainUsage": {
+      "type": "chainUsage",
+      "chimeras": 0,
+      "total": 99569,
+      "chains": {
+        "IGH": {
+          "total": 99569,
+          "nonFunctional": 2213,
+          "isOOF": 1803,
+          "hasStops": 410
+        }
+      }
+    },
+    "clonesFilteredInPostFiltering": 0,
+    "readsFilteredInPostFiltering": 0,
+    "postFilteringReports": null,
+    "alignmentsFilteredByTagPrefix": 0
+  }
+}
