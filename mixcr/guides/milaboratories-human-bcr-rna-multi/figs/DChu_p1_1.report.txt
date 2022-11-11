@@ -1,0 +1,124 @@
+============== Align Report ==============
+============== Align Report ==============
+Total sequencing reads: 4024748
+Successfully aligned reads: 3883927 (96.5%)
+Paired-end alignment conflicts eliminated: 952220 (23.66%)
+Alignment failed, no hits (not TCR/IG?): 12041 (0.3%)
+Alignment failed because of absence of V hits: 4544 (0.11%)
+Alignment failed because of absence of J hits: 51949 (1.29%)
+No target with both V and J alignments: 60241 (1.5%)
+Absent barcode: 12046 (0.3%)
+Overlapped: 2529706 (62.85%)
+Overlapped and aligned: 2504136 (62.22%)
+Alignment-aided overlaps: 19737 (0.79%)
+Overlapped and not aligned: 25570 (0.64%)
+No CDR3 parts alignments, percent of successfully aligned: 62 (0%)
+Partial aligned reads, percent of successfully aligned: 20466 (0.53%)
+V gene chimeras: 47322 (1.18%)
+J gene chimeras: 7527 (0.19%)
+IGH chains: 3883925 (100%)
+IGH non-functional: 180224 (4.64%)
+IGK chains: 1 (0%)
+IGK non-functional: 0 (0%)
+IGL chains: 1 (0%)
+IGL non-functional: 0 (0%)
+Realigned with forced non-floating bound: 3005466 (74.67%)
+Realigned with forced non-floating right bound in left read: 1315803 (32.69%)
+Realigned with forced non-floating left bound in right read: 1315803 (32.69%)
+Tag parsing report:
+  Total reads: 4024748
+  Matched reads: 4012702 (99.7%)
+  Projection +R1 +R2: 4012702 (99.7%)
+  For variant 0:
+    For projection [1, 2]:
+      UMI:Left position:
+        17: + 1923214 (47.93%) = 1923214 (47.93%)
+        18: + 1023743 (25.51%) = 2946957 (73.44%)
+        19: + 1065745 (26.56%) = 4012702 (100%)
+      UMI:Right position:
+        31: + 1923214 (47.93%) = 1923214 (47.93%)
+        32: + 1023743 (25.51%) = 2946957 (73.44%)
+        33: + 1065745 (26.56%) = 4012702 (100%)
+      R1:Left position:
+        51: + 1923214 (47.93%) = 1923214 (47.93%)
+        52: + 1023743 (25.51%) = 2946957 (73.44%)
+        53: + 1065745 (26.56%) = 4012702 (100%)
+      R1:Right position: 301
+      R2:Left position: 22
+      Variants: 0
+      Cost:
+        0: + 3918453 (97.65%) = 3918453 (97.65%)
+        5~10: + 94249 (2.35%) = 4012702 (100%)
+      UMI length: 14
+      R1 length:
+        248: + 1065745 (26.56%) = 1065745 (26.56%)
+        249: + 1023743 (25.51%) = 2089488 (52.07%)
+        250: + 1923214 (47.93%) = 4012702 (100%)
+      R2 length: 279
+  ============== RefineTagsAndSort Report ==============
+============== RefineTagsAndSort Report ==============
+Time spent in correction: 0ns
+UMI input diversity: 601954
+UMI output diversity: 423651 (70.38%)
+UMI input reads: 3883884
+UMI output count: 3871327 (99.68%)
+UMI mean reads per tag: 6.45
+UMI input core diversity: 447172 (74.29%)
+UMI input core reads: 3725914 (95.93%)
+UMI directly corrected diversity: 166207 (27.61%)
+UMI directly corrected reads: 169331 (4.36%)
+UMI diversity filtered by tag quality: 12096 (2.01%)
+UMI reads filtered by tag quality: 12557 (0.32%)
+UMI diversity filtered by whitelist: 0 (0%)
+UMI recursively corrected: 4172
+Number of output records: 3568733 (91.89%)
+Filter report:
+  Number of groups: 423651
+  Number of groups accepted: 273729 (64.61%)
+  Total records weight: 3871327.0
+  Records weight accepted: 3568733.0 (92.18%)
+  Operator #0:
+    Effective threshold: 5.0
+============== Assemble Report ==============
+============== Assemble Report ==============
+Number of input groups: 273729
+Number of input alignments: 3568733
+Number of output pre-clonotypes: 251037
+Number of clonotypes per group:
+  0: + 32563 (11.91%) = 32563 (11.91%)
+  1: + 230862 (84.44%) = 263425 (96.34%)
+  2: + 9807 (3.59%) = 273232 (99.93%)
+  3: + 187 (0.07%) = 273419 (100%)
+Number of core alignments: 2641099 (74.01%)
+Discarded core alignments: 260152 (9.85%)
+Empirically assigned alignments: 447979 (12.55%)
+Empirical assignment conflicts: 127 (0%)
+UMI+VJ-gene empirically assigned alignments: 448106 (12.56%)
+VJ-gene empirically assigned alignments: 0 (0%)
+UMI empirically assigned alignments: 0 (0%)
+Number of ambiguous UMIs: 9994
+Number of ambiguous V-genes: 636
+Number of ambiguous J-genes: 3389
+Number of ambiguous UMI+V/J-gene combinations: 4025
+Unassigned alignments: 476426 (13.35%)
+Final clonotype count: 99569
+Average number of reads per clonotype: 31
+Reads used in clonotypes, percent of total: 3086749 (76.69%)
+Reads used in clonotypes before clustering, percent of total: 3088302 (76.73%)
+Number of reads used as a core, percent of used: 3088193 (100%)
+Mapped low quality reads, percent of used: 109 (0%)
+Reads clustered in PCR error correction, percent of used: 1553 (0.05%)
+Reads pre-clustered due to the similar VJC-lists, percent of used: 4293 (0.14%)
+Reads dropped due to the lack of a clone sequence, percent of total: 667482 (16.58%)
+Reads dropped due to a too short clonal sequence, percent of total: 9 (0%)
+Reads dropped due to low quality, percent of total: 14 (0%)
+Reads dropped due to failed mapping, percent of total: 571 (0.01%)
+Reads dropped with low quality clones, percent of total: 196 (0%)
+Clonotypes eliminated by PCR error correction: 112
+Clonotypes dropped as low quality: 14
+Clonotypes pre-clustered due to the similar VJC-lists: 357
+Clones dropped in post filtering: 0 (0%)
+Reads dropped in post filtering: 0.0 (0%)
+Alignments filtered by tag prefix: 0 (0%)
+IGH chains: 99569 (100%)
+IGH non-functional: 2213 (2.22%)
