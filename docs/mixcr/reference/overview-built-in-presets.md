@@ -1,3 +1,8 @@
+---
+description: TOC depth is limited to 3 levels
+toc_depth: 3
+---
+
 # Built-in presets
 
 MiXCR provides a comprehensive list of built-in presets for many of available commercial kits, data types and library preparation protocols.

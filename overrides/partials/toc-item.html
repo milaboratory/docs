@@ -19,9 +19,9 @@
   FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
   IN THE SOFTWARE.
 -->
-
+{% if not page.meta.toc_depth or toc_item.level <= page.meta.toc_depth %}
 <!-- Table of contents item -->
-<li class="md-nav__item  iiitem">
+<li class="md-nav__item  item">
   <a href="{{ toc_item.url }}" class="md-nav__link">
     {{ toc_item.title }}
   </a>
@@ -37,3 +37,4 @@
   </nav>
   {% endif %}
 </li>
+{% endif %}
