@@ -700,6 +700,29 @@ mixcr analyze rnaseq-full-length \
       result
 ```
 
+
+### Exom data
+==`exom-cdr3`==
+·
+==`exom-full-length`==
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/exom.yaml)
+
+Non-enriched fragmented (shotgun) Exom-Seq data. Preset `exom-cdr3` is used to assemble CDR3 clonotypes, while `exom-full-length` additionally runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J receptor rearrangement sequence.
+
+Required configs that must be specified with corresponding mix-in options:
+
+: :fontawesome-solid-puzzle-piece: Species; <p>
+
+Example:
+```shell
+mixcr analyze exom-full-length \
+    --species hsa \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
 ### Generic TCR amplicon
 ==`generic-tcr-amplicon`==
 ·
