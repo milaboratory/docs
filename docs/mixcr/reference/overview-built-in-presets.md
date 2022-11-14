@@ -699,9 +699,29 @@ mixcr analyze 10x-vdj-bcr \
      sample_R2.fastq.gz \
      sample_result
 ```
+#### 10x Genomics single cell 5' gene expression
+==`10x-5gex-cdr3`==
+·
+==`10x-5gex-full-length`==
+·
+[:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml)
 
+These presets are specifically optimized to extract TCR and BCR repertoires from non-enriched single cell 5' RNA-seq cDNA libraries.
 
-[//]: # (See [this tutorial]&#40;../guides/milaboratories-human-tcr-rna-multi.md&#41; for the under-the-hood details.)
+There only required option that must be specified with corresponding [mix-in option](overview-mixins-list.md):
+
+: :fontawesome-solid-puzzle-piece: Species;  mixin is `species`.
+
+Example:
+```shell
+mixcr analyze 10x-5gex-full-length \
+     --species hsa \
+     sample_R1.fastq.gz \
+     sample_R2.fastq.gz \
+     sample_result
+```
 
 
 ### BD Rhapsody
