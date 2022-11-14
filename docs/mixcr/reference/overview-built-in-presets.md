@@ -768,7 +768,7 @@ mixcr analyze bd-rhapsody-mouse-bcr-v2 \
 
 #### Parse Evercode™ single-cell
 
-==`parsebio-vdj-3gex`==
+==`parse-bio-vdj-3gex`==
 ·
 [:octicons-link-16: Link](https://www.parsebiosciences.com/)
 ·
@@ -848,7 +848,7 @@ mixcr analyze han-et-al-2014-bcr \
 ```
 
 ### SPLiT-seq
-==`split-seq-3gex-vdj`==
+==`split-seq-vdj-3gex`==
 ·
 [:octicons-link-16: Publication](https://www.science.org/doi/10.1126/science.aam8999)
 ·
