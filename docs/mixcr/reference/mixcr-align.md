@@ -15,12 +15,13 @@ mixcr align --preset <name>
     [--tag-pattern-file <path>] 
     [--tag-parse-unstranded] 
     [--tag-max-budget <n>] 
+    [--read-id-as-cell-tag]
     [--read-buffer <n>] 
     [--high-compression] 
-    [--not-aligned-R1 <path>] 
-    [--not-aligned-R2 <path>] 
-    [--not-parsed-R1 <path>] 
-    [--not-parsed-R2 <path>] 
+    [--not-aligned-R1 <path.fastq[.gz]>] 
+    [--not-aligned-R2 <path.fastq[.gz]>] 
+    [--not-parsed-R1 <path.fastq[.gz]>] 
+    [--not-parsed-R2 <path.fastq[.gz]>] 
     [--species <species>] 
     [--library <library>] 
     [--dna] 
@@ -88,6 +89,11 @@ Basic command line options are:
 `--tag-max-budget <n>`
 : Maximal bit budget, higher values allows more substitutions in small letters. Default value determined by the preset.
 
+`--read-id-as-cell-tag`
+: Marks reads, coming from different files, but having the same positions in those files, as reads coming from the same cells. Main use-case is protocols with overlapped alpha-beta, gamma-delta or heavy-light cDNA molecules, where each side was sequenced by separate mate pairs in a paired-end sequencer. Use special expansion group CELLSPLIT instead of R index (i.e. "my_file_R{{CELLSPLIT:n}}.fastq.gz").
+
+Default value determined by the preset.
+
 `-s, --species <species>`
 : Species (organism). Possible values: `hsa` (or HomoSapiens), `mmu` (or MusMusculus), `rat`, `spalax`, `alpaca`, `lamaGlama`, `mulatta` (_Macaca Mulatta_), `fascicularis` (_Macaca Fascicularis_) or any species from [IMGT ® library](../guides/external-libraries.md).
 
@@ -103,16 +109,16 @@ Basic command line options are:
 `--high-compression`
 : Use higher compression for output file, 10~25% slower, minus 30~50% of file size.
 
-`--not-aligned-R1 <path>`
+`--not-aligned-R1 <path.fastq[.gz]>`
 : Pipe not aligned R1 reads into separate file.
 
-`--not-aligned-R2 <path>`
+`--not-aligned-R2 <path.fastq[.gz]>`
 : Pipe not aligned R2 reads into separate file.
 
-`--not-parsed-R1 <path>`
+`--not-parsed-R1 <path.fastq[.gz]>`
 : Pipe not parsed R1 reads into separate file.
 
-`--not-parsed-R2 <path>`
+`--not-parsed-R2 <path.fastq[.gz]>`
 : Pipe not parsed R2 reads into separate file.
 
 `-O <key=value>`

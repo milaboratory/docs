@@ -15,7 +15,7 @@ Allele inference algorithms applies different strategies to identify allelic var
 ```
 mixcr findAlleles 
    (--output-template <template.clns> | --no-clns-output) 
-   [--export-library <path>] 
+   [--export-library <path.(json|fasta)>] 
    [--export-alleles-mutations <path>] 
    [-O <key=value>]... 
    [--report <path>] 
@@ -26,14 +26,14 @@ mixcr findAlleles
    [--no-warnings] 
    [--verbose] 
    [--help] 
-   input_file.clns...
+   input_file.(clns|clna)...
 ```
 
 The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` (clones) file that holds exhaustive information about clonotypes re-aligned to novelly discovered allelic variants. The resulting [reference library](ref-repseqio-json-format.md) is built-in in the `.clns` file but also may be exported directly with `--export-library` option. Clonotype tables can be further extracted in tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables) or in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes). Additionally, MiXCR produces a comprehensive [report](./report-findAlleles.md) which provides a detailed summary of allele search.
 
 Basic command line options are:
 
-`input_file.clns...`
+`input_file.(clns|clna)...`
 : Input files for allele search
 
 `--output-template <template.clns>`
@@ -48,8 +48,12 @@ Resulted outputs must be uniq
 `--no-clns-output`
 : Command will not realign input clns files. Must be specified if `--output-template` is omitted.
 
-`--export-library <path>`
-: Path where to write library with found alleles.
+`--export-library <path.(json|fasta)>`
+: Paths where to write library with found alleles and other genes that exits in inputs.
+
+For `.json` library will be written in reqpseqio format.
+
+For `.fasta` library will be written in FASTA format with gene name and reliable range in description. There will be several records for one gene if clnx were assembled by composite gene feature.
 
 `--export-alleles-mutations <path>`
 : Path to write descriptions and stats (see [below](#allelic-variants-summary-table)) for all result alleles, existed and new (see below).
