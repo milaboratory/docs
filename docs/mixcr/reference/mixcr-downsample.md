@@ -57,11 +57,11 @@ Basic command line options are:
 `-c, --chains <chains>`
 : Specify chains
 
-`--only-productive`
-: Filter out-of-frame sequences and sequences with stop-codons.
-
 `--downsampling <type>`
 : Choose [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`
+
+`--only-productive`
+: Filter out-of-frame sequences and sequences with stop-codons.
 
 `--summary <path>`
 : Write downsampling summary tsv/csv table.

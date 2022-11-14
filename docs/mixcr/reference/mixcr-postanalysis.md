@@ -159,17 +159,17 @@ Calculates
 `result.json[.gz]`
 : Path where to write postanalysis result.
 
-`--only-productive`
-: Filter out-of-frame sequences and sequences with stop-codons.
-
-`--drop-outliers`
-: Drop samples which are below downsampling value as computed according to specified default downsampling option.
-
 `--default-downsampling (<type>|none)`
 : Default [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`, `none`
 
 `--default-weight-function (<read>|<Tag>|none)`
 : Default clonotype [weight function](./mixcr-postanalysis.md#weight-functions)
+
+`--only-productive`
+: Filter out-of-frame sequences and sequences with stop-codons.
+
+`--drop-outliers`
+: Drop samples which are below downsampling value as computed according to specified default downsampling option.
 
 `--chains <chain>[,<chain>...]`
 : Limit analysis to specific chains (e.g. TRA or IGH) (fractions will be recalculated). Possible values (multiple values allowed): `TRA`, `TRD`, `TRAD` (for human), `TRG`, `IGH`, `IGK`, `IGL`
@@ -338,6 +338,12 @@ Calculates pairwise
 `result.json[.gz]`
 : Path where to write postanalysis result.
 
+`--default-downsampling (<type>|none)`
+: Default [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`, `none`
+
+`--default-weight-function (<read>|<Tag>|none)`
+: Default clonotype [weight function](./mixcr-postanalysis.md#weight-functions)
+
 `--criteria <s>`
 : Overlap criteria. Defines the rules to treat clones as equal. It allows to specify gene feature for overlap (nucleotide or amino acid), and optionally use V and J hits. Examples: `CDR3|AA|V|J` (overlap by a.a. CDR3 and V and J), `VDJRegion|AA` (overlap by a.a. `VDJRegion`), `CDR3|NT|V` (overlap by nt CDR3 and V). Default: CDR3|AA|V|J
 
@@ -349,12 +355,6 @@ Calculates pairwise
 
 `--drop-outliers`
 : Drop samples which are below downsampling value as computed according to specified default downsampling option.
-
-`--default-downsampling (<type>|none)`
-: Default [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`, `none`
-
-`--default-weight-function (<read>|<Tag>|none)`
-: Default clonotype [weight function](./mixcr-postanalysis.md#weight-functions)
 
 `--chains <chain>[,<chain>...]`
 : Limit analysis to specific chains (e.g. TRA or IGH) (fractions will be recalculated). Possible values (multiple values allowed): `TRA`, `TRD`, `TRAD` (for human), `TRG`, `IGH`, `IGK`, `IGL`
