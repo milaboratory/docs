@@ -250,7 +250,7 @@ Command line options:
 > mixcr exportClones clones.clns clones.tsv
 ```
 
-The resulting tab-delimited text file will contain default set of columns (`--preset full`) which includes clonotype abundances, nucleotide and amino acid clonotype sequences, Phred qualities, all or just best hit for V, D, J and C genes, corresponding alignments, nucleotide and amino acid sequences of gene regions present in sequence, etc. Example output (for BCR full-length data):
+The resulting tab-delimited text file will contain default set of columns (determined by the used preset) which includes clonotype abundances, nucleotide and amino acid clonotype sequences, Phred qualities, all or just best hit for V, D, J and C genes, corresponding alignments, nucleotide and amino acid sequences of gene regions present in sequence, etc. Example output (for BCR full-length data):
 
 | cloneId | cloneCount         | cloneFraction        | allVHitsWithScore   | allDHitsWithScore             | allJHitsWithScore | allCHitsWithScore  | allVAlignments                                                                                                                                                                                                                                                                            | allDAlignments                                                                                                                                                    | allJAlignments                                                        | allCAlignments | nSeqFR1                                                                     | minQualFR1 | nSeqCDR1                 | minQualCDR1 | nSeqFR2                                             | minQualFR2 | nSeqCDR2                 | minQualCDR2 | nSeqFR3                                                                                                         | minQualFR3 | nSeqCDR3                                                        | minQualCDR3 | nSeqFR4                         | minQualFR4 | aaSeqFR1                  | aaSeqCDR1 | aaSeqFR2          | aaSeqCDR2 | aaSeqFR3                              | aaSeqCDR3             | aaSeqFR4    | refPoints                                                                           | targetSequences                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | targetQualities                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 |---------|--------------------|----------------------|---------------------|-------------------------------|-------------------|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|----------------|-----------------------------------------------------------------------------|------------|--------------------------|-------------|-----------------------------------------------------|------------|--------------------------|-------------|-----------------------------------------------------------------------------------------------------------------|------------|-----------------------------------------------------------------|-------------|---------------------------------|------------|---------------------------|-----------|-------------------|-----------|---------------------------------------|-----------------------|-------------|-------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -302,7 +302,6 @@ One can also put all specify export fields in a separate file
 ```shell
 > mixcr exportClones \
     -uniqueTagCount umi \
-    -p full \
     clones.clns \
     clones.tsv
 ```
@@ -315,7 +314,6 @@ It is also possible to export full list of UMIs with their read counts that were
 > mixcr exportClones \
     -uniqueTagCount umi \
     -tagCounts \
-    -p full \
     clones.clns \
     clones.tsv
 ```
@@ -366,20 +364,18 @@ In the above example we specified particular columns to export. To export all co
     -tag cell \
     -cellGroup \
     -uniqueTagCount UMI \
-    -p full \
     clones.clns \
     clones.tsv
 ```
 
 ### Export contigs with imputation
 
-When V-D-J contigs assembled with [assembleContigs](./mixcr-assembleContigs.md) does not cover all gene features, it still might be useful to impute non covered parts from germline (for example for the purposes of synthesis). Typically, there may be uncovered parts in `VDJRegion` for example due to long CDR3 region and non-overlapping R1 or R2, or in case of fragmented data (RNA-Seq or 10x single cell).
+When V-D-J contigs assembled with [assembleContigs](./mixcr-assembleContigs.md) does not cover all gene features, it still might be useful to impute non-covered parts from germline (for example for the purposes of synthesis). Typically, there may be uncovered parts in `VDJRegion` for example due to long CDR3 region and non-overlapping R1 or R2, or in case of fragmented data (RNA-Seq or 10x single cell).
 
 ```shell
 > mixcr exportClones \
     -aaFeatureImputed VDJRegion \
     -nFeatureImputed VDJRegion \
-    -p min \
     clones.clns clones.tsv  
 ```
 
@@ -398,7 +394,6 @@ One can also use default presets with imputation (all gene features will use imp
 > mixcr exportClones \
     -aaFeatureImputed VDJRegion \
     -nFeatureImputed VDJRegion \
-    -p fullImputed \
     clones.clns clones.tsv  
 ```
 
