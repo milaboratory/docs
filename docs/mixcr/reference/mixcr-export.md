@@ -17,8 +17,10 @@ MiXCR provides functions for export [alignments](#alignments), [clonotype tables
 ## Clonotype tables
 
 ```
-mixcr exportClones 
+mixcr exportClones
     [--chains <chains>] 
+    [--impute-germline-on-export]
+    [--dont-impute-germline-on-export] 
     [--filter-out-of-frames] 
     [--filter-stops] 
     [--split-by-tag <tag>] 
@@ -47,6 +49,12 @@ Command line options:
 
 `-c, --chains <chains>`
 : Limit export to specific chain (e.g. TRA or IGH) (fractions will be recalculated). Default value determined by the preset.
+
+`--impute-germline-on-export`
+: Export nucleotide sequences using letters from germline (marked lowercase) for uncovered regions
+
+`--dont-impute-germline-on-export`
+: Export nucleotide sequences only from covered region
 
 `-o, --filter-out-of-frames`
 : Exclude clones with out-of-frame clone sequences (fractions will be recalculated). Default value determined by the preset.
@@ -90,8 +98,10 @@ Command line options:
 ## Alignments
 
 ```
-mixcr exportAlignments [-f]
+mixcr exportAlignments
     [--chains <chains>] 
+    [--impute-germline-on-export]
+    [--dont-impute-germline-on-export] 
     [--no-header] 
     [--drop-default-fields] 
     [--prepend-columns] 
@@ -115,6 +125,12 @@ Command line options:
 
 `-c, --chains <chains>`
 : Limit export to specific chain (e.g. TRA or IGH) (fractions will be recalculated) Default value determined by the preset.
+
+`--impute-germline-on-export`
+: Export nucleotide sequences using letters from germline (marked lowercase) for uncovered regions
+
+`--dont-impute-germline-on-export`
+: Export nucleotide sequences only from covered region
 
 `--no-header`
 : Don't print first header line, print only data Default value determined by the preset.
