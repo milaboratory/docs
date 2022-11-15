@@ -1,3 +1,8 @@
+---
+description: TOC depth is limited to 3 levels
+toc_depth: 3
+---
+
 # Built-in presets
 
 MiXCR provides a comprehensive list of built-in presets for many of available commercial kits, data types and library preparation protocols.
@@ -526,9 +531,6 @@ mixcr analyze ampliseq-tcrb-plus-cdr3 \
 ```
 
 
-
-
-
 #### AmpliSeq™ for Illumina® TCR beta-SR Panel
 
 ==`ampliseq-tcrb-sr-cdr3`==
@@ -551,8 +553,119 @@ mixcr analyze ampliseq-tcrb-sr-cdr3 \
 ```
 
 
+### iRepertoire
+
+iRepertoire has multiple different primer systems that vary by the regions targeted, the desired read length, and the species. 
+
+Repertoire’s RepSeq service (formerly AMP2Seq) utilizes arm-PCR technology, which uses hundreds of VDJ-specific primers in one reaction to semi-quantitatively and inclusively amplify all the expressed V(D)Js in B or T cells from a single sample.
+
+#### Human RepSeq RNA Reagent System
+==`irepertoire-human-rna-tcr-sr`==
+·
+==`irepertoire-human-rna-tcr-lr`==
+·
+==`irepertoire-human-rna-bcr-sr`==
+·
+==`irepertoire-human-rna-bcr-lr`==
+·
+[:octicons-link-16: Link](https://irepertoire.com/repseq/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/irepertoire.yaml)
+
+Short-read (SR) RNA-compatible human primers (presets that end with `sr`) cover from within Framework-3 (FR3) into the Constant Region (C). These SR primers are compatible with 100/150 paired end read (PER) sequencing. Long-read (LR) primer systems (presets that end with `ls`) cover from within FR1 and continue through to the C region. iRepertoire’s LR primers are compatible with 250 PER sequencing. Note that by default the clones are assembled by the regions not covered by the primers (`CDR3` for `sr` and `{CDR1Begin:FR4End}` for `lr`).
+
+![](pics/irepertoire-human-rna-tcr-light.svg#only-light)
+![](pics/irepertoire-human-rna-tcr-dark.svg#only-dark)
+![](pics/irepertoire-human-rna-bcr-light.svg#only-light)
+![](pics/irepertoire-human-rna-bcr-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze irepertoire-human-rna-tcr-sr \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
+
+#### Mouse RepSeq RNA Reagent System
+==`irepertoire-mouse-rna-tcr-sr`==
+·
+==`irepertoire-mouse-rna-tcr-lr`==
+·
+==`irepertoire-mouse-rna-bcr-sr`==
+·
+==`irepertoire-mouse-rna-bcr-lr`==
+·
+[:octicons-link-16: Link](https://irepertoire.com/repseq/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/irepertoire.yaml)
+
+Short-read (SR) RNA-compatible human primers (presets that end with `sr`) cover from within Framework-3 (FR3) into the Constant Region (C). These SR primers are compatible with 100/150 paired end read (PER) sequencing. Long-read (LR) primer systems (presets that end with `ls`) cover from within FR2 and continue through to the C region. iRepertoire’s LR primers are compatible with 250 PER sequencing. Note that by default the clones are assembled by the regions not covered by the primers (`CDR3` for `sr` and `{CDR2Begin:FR4End}` for `lr`).
+
+![](pics/irepertoire-mouse-rna-tcr-light.svg#only-light)
+![](pics/irepertoire-mouse-rna-tcr-dark.svg#only-dark)
+![](pics/irepertoire-mouse-rna-bcr-light.svg#only-light)
+![](pics/irepertoire-mouse-rna-bcr-dark.svg#only-dark)
 
 
+Example:
+```shell
+mixcr analyze irepertoire-mouse-rna-tcr-sr \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
+
+
+#### Human RepSeq+ Reagent System
+
+==`irepertoire-human-rna-repseq-plus`==
+·
+[:octicons-link-16: Link](https://irepertoire.com/repseq-2/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/irepertoire.yaml)
+
+iRepertoire’s RepSeq+ service utilizes dam-PCR technology, which allows for any combination of TCR and BCR chains (TCR-alpha, TCR-beta, TCR-delta, TCR-gamma, BCR-IgHeavy, and BCR-kappa/lambda) to be amplified within a single reaction.
+
+![](pics/irepertoire-repseq-plus-light.svg#only-light)
+![](pics/irepertoire-repseq-plus-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze irepertoire-human-rna-repseq-plus \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
+
+#### Human gDNA based RepSeq Reagent System
+
+==`irepertoire-human-dna-trb-sr`==
+·
+==`irepertoire-human-dna-trb-lr`==
+·
+==`irepertoire-human-dna-igh-sr`==
+·
+==`irepertoire-human-dna-igh-lr`==
+·
+[:octicons-link-16: Link](https://irepertoire.com/repseq-2/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/irepertoire.yaml)
+
+SR gDNA compatible primers (SR-VJ) cover from within FR3 to the end of the J-gene. These have been LR gDNA compatible primers cover from within FR1 to the end of the J-gene. LR versions are available for both human TCR beta and human IgH. These can be sequenced as single end read on 300-cycle kits or for full amplicon coverage as 250 PER sequencing.
+
+![](pics/irepertoire-human-dna-trb-light.svg#only-light)
+![](pics/irepertoire-human-dna-trb-dark.svg#only-dark)
+![](pics/irepertoire-human-dna-igh-light.svg#only-light)
+![](pics/irepertoire-human-dna-igh-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze irepertoire-human-dna-igh-lr \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
 
 ### 10XGenomics
 
@@ -586,12 +699,115 @@ mixcr analyze 10x-vdj-bcr \
      sample_R2.fastq.gz \
      sample_result
 ```
+#### 10x Genomics single cell 5' gene expression
+==`10x-5gex-cdr3`==
+·
+==`10x-5gex-full-length`==
+·
+[:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml)
+
+These presets are specifically optimized to extract TCR and BCR repertoires from non-enriched single cell 5' RNA-seq cDNA libraries.
+
+There only required option that must be specified with corresponding [mix-in option](overview-mixins-list.md):
+
+: :fontawesome-solid-puzzle-piece: Species;  mixin is `species`.
+
+Example:
+```shell
+mixcr analyze 10x-5gex-full-length \
+     --species hsa \
+     sample_R1.fastq.gz \
+     sample_R2.fastq.gz \
+     sample_result
+```
 
 
-[//]: # (See [this tutorial]&#40;../guides/milaboratories-human-tcr-rna-multi.md&#41; for the under-the-hood details.)
+### BD Rhapsody
+
+#### BD Rhapsody™ VDJ CDR3 Protocol with V1 beads
+
+==`bd-rhapsody-human-tcr-v1`==
+·
+==`bd-rhapsody-human-bcr-v1`==
+·
+==`bd-rhapsody-mouse-tcr-v1`==
+·
+==`bd-rhapsody-mouse-bcr-v1`==
+·
+[:octicons-link-16: Link](https://www.bdbiosciences.com/en-us/products/reagents/single-cell-multiomics/vdj#Overview)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/bd.yaml)
 
 
+The BD Rhapsody™ VDJ CDR3 Protocol utilizes the existing BD Rhapsody™ Targeted Kits and the human/mouse immune response primer panel and is designed to work alongside the BD® AbSeq Assay and BD® Single-Cell Multiplexing Kit (SMK). Details about the individual reagents needed to run the assay are included in the respective protocols. A dedicated bioinformatics pipeline is also available for you to analyze sequencing data generated using the CDR3 protocol.
 
+![](pics/rhapsody-v1-light.svg#only-light)
+![](pics/rhapsody-v1-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze bd-rhapsody-mouse-tcr-v1 \
+     --species hsa \
+     sample_R1.fastq.gz \
+     sample_R2.fastq.gz \
+     sample_result
+```
+
+
+#### BD Rhapsody™ VDJ CDR3 Protocol with Enhanced Bead (introduced in 2022)
+
+==`bd-rhapsody-human-tcr-v2`==
+·
+==`bd-rhapsody-human-bcr-v2`==
+·
+==`bd-rhapsody-mouse-tcr-v2`==
+·
+==`bd-rhapsody-mouse-bcr-v2`==
+
+[:octicons-link-16: Link](https://www.bdbiosciences.com/en-us/products/reagents/single-cell-multiomics/vdj#Overview)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/bd.yaml)
+
+In 2022, BD introduced a new version of beads , called Enhanced Beads, which have slightly different oilgo design. Use these presets for the new updated protocol.
+
+![](pics/rhapsody-v2-light.svg#only-light)
+![](pics/rhapsody-v2-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze bd-rhapsody-mouse-bcr-v2 \
+     --species hsa \
+     sample_R1.fastq.gz \
+     sample_R2.fastq.gz \
+     sample_result
+```
+
+### Parse Biosciences
+
+#### Parse Evercode™ single-cell
+
+==`parse-bio-vdj-3gex`==
+·
+[:octicons-link-16: Link](https://www.parsebiosciences.com/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/parsebio.yaml)
+
+Conventional droplet-based single-cell technologies struggle as cell or experiment sizes change. Parse makes it easy to scale your experiments regardless of cell size or sample type. The Evercode™ Whole Transcriptome technology, originally based on the split-pool combinatorial barcoding method published in Science and known widely as SPLiT-Seq, is accessible to any standard biology lab.
+Please note that as a 3'end RNA-seq based protocol it was not originally optimized for immune repertoire analysis, thus tcr/bcr yield might be low.
+
+![](pics/parse-bio-light.svg#only-light)
+![](pics/parse-bio-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze parsebio-vdj-3gex \
+     --species hsa \
+     sample_R1.fastq.gz \
+     sample_R2.fastq.gz \
+     sample_result
+```
 
 ## Public protocols
 
@@ -627,10 +843,50 @@ mixcr analyze biomed2-human-bcr-full-length \
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/custom.yaml)
 
+### Han et al, 2014
 
+==`han-et-al-2014-tcr`==
+·
+==`han-et-al-2014-bcr`==
+·
+[:octicons-link-16: Publication](https://www.nature.com/articles/nbt.2938)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/custom.yaml#L46)
 
+These presets are optimized for a single-cell use of the protocol when each plate well contains a single cell.
 
+![](pics/han-et-al-2014-light.svg#only-light)
+![](pics/han-et-al-2014-dark.svg#only-dark)
 
+Example:
+```shell
+mixcr analyze han-et-al-2014-bcr \
+      --species hsa \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+### SPLiT-seq
+==`split-seq-vdj-3gex`==
+·
+[:octicons-link-16: Publication](https://www.science.org/doi/10.1126/science.aam8999)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/parsebio.yaml)
+
+The SPLiT-seq uses the combinatorial indexing to identify single cells without single cell isolation. Multi-level indexing can be performed by ligation.
+Please note that as a 3'end RNA-seq based protocol it was not originally optimized for immune repertoire analysis, thus tcr/bcr yield might be low.
+
+![](pics/split-seq-light.svg#only-light)
+![](pics/split-seq-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze split-seq-3gex-vdj \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
 
 ## Generic data
 
@@ -657,6 +913,29 @@ Required configs that must be specified with corresponding mix-in options:
 Example:
 ```shell
 mixcr analyze rnaseq-full-length \
+    --species hsa \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+
+### Exom data
+==`exom-cdr3`==
+·
+==`exom-full-length`==
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/exom.yaml)
+
+Non-enriched fragmented (shotgun) Exom-Seq data. Preset `exom-cdr3` is used to assemble CDR3 clonotypes, while `exom-full-length` additionally runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J receptor rearrangement sequence.
+
+Required configs that must be specified with corresponding mix-in options:
+
+: :fontawesome-solid-puzzle-piece: Species; <p>
+
+Example:
+```shell
+mixcr analyze exom-full-length \
     --species hsa \
       input_R1.fastq.gz \
       input_R2.fastq.gz \

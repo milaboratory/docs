@@ -116,6 +116,7 @@ nav:
       - 'Support': mixcr/getting-started/support.md
   - 'Guides':
       - 'Kits & Protocols':
+        - 'MiLaboratories Human BCR RNA Multiplex kit': mixcr/guides/milaboratories-human-bcr-rna-multi.md
         - 'MiLaboratories Human TCR RNA Multiplex kit':  mixcr/guides/milaboratories-human-tcr-rna-multi.md
         - 'MiLaboratories Human TCR DNA Multiplex kit':  mixcr/guides/milab-dna-multiplex-tcr.md
         - 'SMARTer Human BCR IgG IgM H/K/L Profiling Kit': mixcr/guides/takara-hsa-bcr.md
