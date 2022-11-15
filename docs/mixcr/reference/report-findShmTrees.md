@@ -72,18 +72,6 @@ MiXCR generates a comprehensive summary of search for trees process. Find trees 
               "surenessOfDecisions": {
                 "size": 101,
                 "sum": "..."
-              },
-              "mutationsRateDifferences": {
-                "size": 338,
-                "sum": "..."
-              },
-              "minMutationsRateDifferences": {
-                "size": 101,
-                "sum": "..."
-              },
-              "maxMutationsRateDifferences": {
-                "size": 101,
-                "sum": "..."
               }
             },
             {
@@ -116,18 +104,6 @@ MiXCR generates a comprehensive summary of search for trees process. Find trees 
                 "sum": "..."
               },
               "surenessOfDecisions": {
-                "size": 101,
-                "sum": "..."
-              },
-              "mutationsRateDifferences": {
-                "size": 349,
-                "sum": "..."
-              },
-              "minMutationsRateDifferences": {
-                "size": 101,
-                "sum": "..."
-              },
-              "maxMutationsRateDifferences": {
                 "size": 101,
                 "sum": "..."
               }
@@ -163,18 +139,6 @@ MiXCR generates a comprehensive summary of search for trees process. Find trees 
               "surenessOfDecisions": {
                 "size": 101,
                 "sum": "..."
-              },
-              "mutationsRateDifferences": {
-                "size": 349,
-                "sum": "..."
-              },
-              "minMutationsRateDifferences": {
-                "size": 101,
-                "sum": "..."
-              },
-              "maxMutationsRateDifferences": {
-                "size": 101,
-                "sum": "..."
               }
             }
           ]
@@ -191,4 +155,4 @@ MiXCR generates a comprehensive summary of search for trees process. Find trees 
 : How many uniq clones included in found trees.
 
 `stepResults`
-: Stats for every step. `step` - name and parameters of step, `clonesWasAdded` - count of uniq clones that was added, `cloneNodesWasAdded` - count of clones that are uniq by target sequence (tree structure doesn't distinct C genes and sample names, that clones will be on the same node), `treesCountDelta` - change of tree count, `commonVJMutationsCounts` - stats of VJ mutations count of MRCA, `clonesCountInTrees` - stats of clones count, `wildcardsScore` - stats of wildcards in NDN (average for every tree), `wildcardsScoreForRoots` - stats of wildcards in NDN (for MRCA nodes), `maxNDNsWildcardsScoreInTree` - stats of wildcards in NDN (max for every tree), `surenessOfDecisions` - stats of main metric that used on this step, `mutationsRateDifferences` - stats of ratio between mutation rate in NDN and outside it (for every node), `minMutationsRateDifferences` - stats of ratio between mutation rate in NDN and outside it (min for tree), `maxMutationsRateDifferences` - stats of ratio between mutation rate in NDN and outside it (max for tree), 
+: Stats for every step. `step` - name and parameters of step, `clonesWasAdded` - count of uniq clones that was added, `cloneNodesWasAdded` - count of clones that are uniq by target sequence (tree structure doesn't distinct C genes and sample names, that clones will be on the same node), `treesCountDelta` - change of tree count, `commonVJMutationsCounts` - stats of VJ mutations count of MRCA, `clonesCountInTrees` - stats of clones count, `wildcardsScore` - stats of wildcards in NDN (average for every tree), `wildcardsScoreForRoots` - stats of wildcards in NDN (for MRCA nodes), `maxNDNsWildcardsScoreInTree` - stats of wildcards in NDN (max for every tree), `surenessOfDecisions` - stats of main metric that used on this step 

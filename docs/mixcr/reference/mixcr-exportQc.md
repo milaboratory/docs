@@ -11,7 +11,7 @@ mixcr exportQc align
     [--no-warnings] 
     [--verbose] 
     [--help] 
-    sample.(vdjca|clns|clna)... align.(pdf|eps|png|jpeg)  
+    sample.(vdjca|clns|clna)... align.(pdf|eps|svg|png|jpeg)  
 ```
 
 Exports [alignment reports](report-align.md).
@@ -19,7 +19,7 @@ Exports [alignment reports](report-align.md).
 `sample.(vdjca|clns|clna)...`
 : Paths to input files with alignments
 
-`align.(pdf|eps|png|jpeg)`
+`align.(pdf|eps|svg|png|jpeg)`
 : Path where to write output plots
 
 `--absolute-values`
@@ -58,14 +58,14 @@ mixcr exportQc coverage
     [--no-warnings] 
     [--verbose] 
     [--help] 
-    sample.vdjca... coverage.(pdf|eps|png|jpeg)  
+    sample.vdjca... coverage.(pdf|eps|svg|png|jpeg)  
 ```
 Exports [anchor points](ref-gene-features.md) coverage by the library. It separately plots coverage for R1, R2 and overlapping reads.
 
 `sample.vdjca...`
 : Paths to input files
 
-`coverage.(pdf|eps|png|jpeg)`
+`coverage.(pdf|eps|svg|png|jpeg)`
 : Path where to write output plots
 
 `--show-boundaries`
@@ -113,7 +113,7 @@ mixcr exportQc chainUsage
     [--no-warnings] 
     [--verbose] 
     [--help] 
-    sample.(vdjca|clns|clna)... usage.(pdf|eps|png|jpeg)  
+    sample.(vdjca|clns|clna)... usage.(pdf|eps|svg|png|jpeg)  
 ```
 Exports chain usage summary in either alignments (`.vdjca`) or clonotypes (`.clns`). 
 
@@ -122,7 +122,7 @@ Command line options are:
 `sample.(vdjca|clns|clna)...`
 : Paths to input files
 
-`usage.(pdf|eps|png|jpeg)`
+`usage.(pdf|eps|svg|png|jpeg)`
 : Path where to write output plots
 
 `--absolute-values`
@@ -166,7 +166,7 @@ mixcr exportQc tags
     [--no-warnings] 
     [--verbose] 
     [--help]
-    sample.(vdjca|clns|clna)... coverage.(pdf|eps|png|jpeg) 
+    sample.(vdjca|clns|clna)... coverage.(pdf|eps|svg|png|jpeg) 
 ```
 
 Tag refinement statistics plots.
@@ -174,7 +174,7 @@ Tag refinement statistics plots.
 `sample.(vdjca|clns|clna)...`
 : Paths to input files
 
-`coverage.(pdf|eps|png|jpeg)`
+`coverage.(pdf|eps|svg|png|jpeg)`
 : Path where to write output plots
 
 `--log`

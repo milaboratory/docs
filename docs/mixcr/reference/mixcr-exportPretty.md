@@ -23,11 +23,11 @@ mixcr exportAlignmentsPretty
     [--no-warnings] 
     [--verbose] 
     [--help] 
-    alignments.vdjca [output.txt]
+    alignments.(vdjca|clna) [output.txt]
 ```
 Exports pretty formatted alignments from `.vdjca` file.
 
-`alignments.vdjca`
+`alignments.(vdjca|clna)`
 : Path to input file with alignments.
 
 `[output.txt]`

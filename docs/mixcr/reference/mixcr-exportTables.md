@@ -6,7 +6,7 @@ Export [postanalysis](./mixcr-postanalysis.md) results in a tabular form.
 mixcr exportTables 
     [--chains <chain>]... 
     [-nw] [--verbose] [-h] 
-    pa.json[.gz] table.tsv
+    pa.json[.gz] table.(tsv|csv)
 ```
 
 Allows to export in tab-delimited (`.tsv`) or coma-separated (`.csv`) formats. Option `--chains` may be used to export results only for a specified chains.

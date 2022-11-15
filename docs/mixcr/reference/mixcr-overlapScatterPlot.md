@@ -17,7 +17,7 @@ mixcr overlapScatterPlot
     [--no-warnings] 
     [--verbose] 
     [--help] 
-    cloneset_1.(clns|clna) cloneset_2.(clns|clna) output.(pdf|eps|png|jpeg)
+    cloneset_1.(clns|clna) cloneset_2.(clns|clna) output.(pdf|eps|svg|png|jpeg)
 ```
 
 The command takes `.clna` or `.clns` file as input and produces one of the following graphical formats depending on the extension of output file: `.pdf`, `.eps`, `.png`, `.svg` and `.jpeg`

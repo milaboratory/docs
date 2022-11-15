@@ -28,7 +28,7 @@ Other command line options are:
 : Paths to input files
 
 `output.tsv`
-: Path where to write output export table
+: Path template where to write output export tables. For each `chain` will be generated table with path `{outputDir}/{outputFileName}.{chain}.tsv`
 
 `--chains <chain>[,<chain>...]`
 : Output overlap for specified chains only; if multiple chains are specified, results per each chains will be exported in separate files.
