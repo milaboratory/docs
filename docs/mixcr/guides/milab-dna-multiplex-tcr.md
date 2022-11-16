@@ -126,10 +126,8 @@ First we will look at the alignment report:
 
 ![align QC](milaboratories-human-tcr-dna-multi/figs/alignQc.svg)
 
-`--absolute-values`
-: this parameter leads to absolute reads numbers instead of relative fractions of total number by default.
 
-From this plot we can tell that all samples have high alignment rate, almost all reads each sample have been successfully aligned to the reference sequences and CDR3 has been established. Most replicas have similar number of total reads. But for DNA77 first replica has a significantly lower amount of reads then the second one. We should take this into account before we compare replicas between each other.
+From this plot we can tell that all samples have high alignment rate, almost all reads each sample have been successfully aligned to the reference sequences and CDR3 has been established. 
 
 Now we can check chain distribution plot:
 
@@ -156,9 +154,6 @@ Since we have two replicas for every sample we can perform a pairwise comparison
 
 `--criteria "CDR3|NT|V|J"`
 : clones are treated equal if they share `CDR3` nucleotide sequence, V and J genes.
-
-`--no-log`
-: to see the overall trend wi will not apply log10 to clonotype frequencies.
 
 Bellow you can see the figures obtained for all pairs:
 
@@ -206,6 +201,15 @@ Bellow you can see the diversity metrics tables for both chains:
 
 ??? tip "TRB diversity"
     {{ read_csv('docs/mixcr/guides/milaboratories-human-tcr-dna-multi/figs/pa.i.diversity.TRB.tsv', engine='python', sep='\t') }}
+
+[//]: # (## Segment usage)
+
+[//]: # ()
+[//]: # (Yet another important quality control feature for primer-multiplex based protocols is segment usage. Because different V and J genes are amplified by different set of primers we have to be sure that all functional genes are present in the data.)
+
+[//]: # ()
+[//]: # (Here we are gonna examine V and J segment usage for one of the samples.)
+
 
 
 ## Reports
