@@ -1,0 +1,56 @@
+{% extends "main.html" %}
+
+<!-- Render hero under tabs -->
+{% block tabs %}
+{{ super() }}
+
+<style>
+  .md-main {
+    display: none;
+  }
+
+  /* body {
+    background: linear-gradient(90deg, #478063 0%, #2E4652 50.13%, #24223D 100%);
+    overflow: hidden !important;
+  }
+
+  body[data-md-color-scheme="slate"] {
+    background: linear-gradient(0deg, #2E5246 0%, #201F29 100%);
+    background-blend-mode: lighten, normal;
+  } */
+
+  body {
+    background: linear-gradient(0deg, #2E5246 0%, #201F29 100%);
+    background-blend-mode: lighten, normal;
+    overflow: hidden !important;
+  }
+
+  .md-footer {
+    background-color: transparent !important;
+  }
+
+  .md-footer-meta {
+    background-color: transparent !important;
+  }
+
+  .md-header {
+    background: transparent !important;
+  }
+
+  .md-tabs {
+    background: transparent !important;
+  }
+</style>
+
+
+<div class="not-found">
+  <div class="not-found__content"></div>
+</div>
+
+{% endblock %}
+
+<!-- Content -->
+{% block content %}{% endblock %}
+
+<!-- Application footer -->
+{% block footer %}{% endblock %}

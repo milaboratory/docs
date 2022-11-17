@@ -618,3 +618,53 @@ mark code {
     line-height: 24px;
     vertical-align: top;
 }
+
+/*** Not found ****/
+
+.not-found {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.star.middle {
+    width: 2px;
+    height: 2px;
+    opacity: 0.9;
+}
+.star.far {
+    width: 1px;
+    height: 1px;
+    opacity: 0.7;
+}
+
+.not-found__content {
+    width: 328px;
+    height: 285px;
+    background: url("/assets/404-small.svg") no-repeat;
+}
+
+@media screen and (min-width: 768px) {
+    .not-found__content {
+        width: 600px;
+        height: 294px;
+        background: url("/assets/404-medium.svg") no-repeat;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .not-found__content {
+        width: 650px;
+        height: 362px;
+        background: url("/assets/404-large.svg") no-repeat;
+    }
+}
