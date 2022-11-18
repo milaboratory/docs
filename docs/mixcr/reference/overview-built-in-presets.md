@@ -138,7 +138,30 @@ mixcr analyze milab-human-tcr-dna-multiplex-cdr3 \
       result 
 ```
 
+#### Mouse TCR RNA
 
+==`milab-mouse-tcr-rna-race-cdr3`==
+·
+==`milab-mouse-tcr-rna-race-full-length`==
+·
+[:octicons-link-16: Link](https://milaboratories.com/mouse-tcr-rna-kit)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/milab.yamll)
+
+
+The kit allows to obtain unbiased TCR alpha and beta repertoires with UMI-based accuracy. `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
+
+![](pics/milab-race-tcr-light.svg#only-light)
+![](pics/milab-race-tcr-dark.svg#only-dark)
+
+
+Example:
+```shell
+mixcr analyze milab-mouse-tcr-rna-race-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
 
 
 
