@@ -146,7 +146,7 @@ mixcr analyze milab-human-tcr-dna-multiplex-cdr3 \
 ·
 [:octicons-link-16: Link](https://milaboratories.com/mouse-tcr-rna-kit)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/milab.yamll)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/milab.yaml)
 
 
 The kit allows to obtain unbiased TCR alpha and beta repertoires with UMI-based accuracy. `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
