@@ -9,12 +9,12 @@ MiXCR provides a comprehensive list of built-in presets for many of available co
 Preset can be used to run the whole upstream analysis pipeline with [`analyze`](mixcr-analyze.md) command. For example:
 ```shell
 mixcr analyze milab-human-bcr-multiplex-cdr3 \
-    --dont-separate-by C \
+    --dont-split-clones-by C \
       sample_R1.fastq.gz \
       sample_R2.fastq.gz \
       sample_result
 ```
-runs upstream analysis for samples obtained using Milaboratories Human BCR kit with additional optional config `--dont-separate-by C`.
+runs upstream analysis for samples obtained using Milaboratories Human BCR kit with additional optional config `--dont-split-clones-by C`.
 
 Bellow you one can find a variety of presets for different types of input data and commercially available kits. Most of these presets do not require any additional arguments.
 
@@ -37,7 +37,7 @@ Allows to obtain full length IG heavy and light chain repertoires with UMI-based
 ![](pics/milab-multiplex-bcr-light.svg#only-light)
 ![](pics/milab-multiplex-bcr-dark.svg#only-dark)
 
-By default, separates clonotypes by isotype which may be changed using `--dont-separate-by C` [mix-in option](overview-mixins-list.md).
+By default, separates clonotypes by isotype which may be changed using `--dont-split-clones-by C` [mix-in option](overview-mixins-list.md).
 
 Example:
 ```shell
@@ -157,7 +157,7 @@ mixcr analyze milab-mouse-tcr-rna-race-cdr3 \
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/takara.yaml)
 
 
-SMART-Seq Human BCR Kit (with UMIs) provides a sensitive and reproducible solution for generating high-quality NGS libraries for profiling the human BCR repertoire. The kit leverages SMART (Switching Mechanism at 5' end of RNA Template) full-length cDNA synthesis technology and pairs NGS with a 5’-RACE approach to capture the complete V(D)J variable regions of all human B-cell receptor (BCR) heavy (IgG/M/D/A/E) and light (IgK/L) chains. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-separate-by C` may be used to not separate clones by isotypes.
+SMART-Seq Human BCR Kit (with UMIs) provides a sensitive and reproducible solution for generating high-quality NGS libraries for profiling the human BCR repertoire. The kit leverages SMART (Switching Mechanism at 5' end of RNA Template) full-length cDNA synthesis technology and pairs NGS with a 5’-RACE approach to capture the complete V(D)J variable regions of all human B-cell receptor (BCR) heavy (IgG/M/D/A/E) and light (IgK/L) chains. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-split-clones-by C` may be used to not separate clones by isotypes.
 
 ![](pics/SMARTer-Human-BCR-IgG-IgM-H-K-L-light.svg#only-light)
 ![](pics/SMARTer-Human-BCR-IgG-IgM-H-K-L-dark.svg#only-dark)
@@ -186,7 +186,7 @@ mixcr analyze takara-human-bcr-cdr3 \
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/takara-hsa-bcr.md)
 
-SMARTer Human BCR IgG IgM H/K/L Profiling Kit pairs 5' RACE with NGS technology to provide a sensitive, accurate, and optimized approach to BCR profiling from RNA input samples. The 5' RACE method reduces variability and allows for priming from the constant region of BCR heavy or light chains. This kit combines these benefits with gene-specific amplification to capture complete V(D)J variable regions of BCR transcripts and provide a highly sensitive and reproducible method for profiling B-cell repertoires. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option`--dont-separate-by C` mix-in may be used to not separate clones by isotypes.
+SMARTer Human BCR IgG IgM H/K/L Profiling Kit pairs 5' RACE with NGS technology to provide a sensitive, accurate, and optimized approach to BCR profiling from RNA input samples. The 5' RACE method reduces variability and allows for priming from the constant region of BCR heavy or light chains. This kit combines these benefits with gene-specific amplification to capture complete V(D)J variable regions of BCR transcripts and provide a highly sensitive and reproducible method for profiling B-cell repertoires. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option`--dont-split-clones-by C` mix-in may be used to not separate clones by isotypes.
 
 ![](pics/SMARTer-Human-BCR-IgG-IgM-H-K-L-dark.svg#only-dark)
 ![](pics/SMARTer-Human-BCR-IgG-IgM-H-K-L-light.svg#only-light)
@@ -335,7 +335,7 @@ mixcr analyze takara-mouse-tcr-cdr3 \
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/nebnext-bcr.md)
 
-With the NEBNext® Immune Sequencing Kit (Human), sequence the full-length immune gene repertoires of B cells and T cells. Profile somatic mutations across all relevant contexts (e.g., V, D, and J segments and isotypes IgM, IgD, IgG, IgA, and IgE) with improved sequence accuracy. Characterize BCR light, BCR heavy, TCRα and TCRβ chains. This kit includes UMIs for source-molecule identification. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-separate-by C` may be used for BCR data to not separate clones by isotypes
+With the NEBNext® Immune Sequencing Kit (Human), sequence the full-length immune gene repertoires of B cells and T cells. Profile somatic mutations across all relevant contexts (e.g., V, D, and J segments and isotypes IgM, IgD, IgG, IgA, and IgE) with improved sequence accuracy. Characterize BCR light, BCR heavy, TCRα and TCRβ chains. This kit includes UMIs for source-molecule identification. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-split-clones-by C` may be used for BCR data to not separate clones by isotypes
 
 
 ![](pics/NEBNext-human-bcr-kit-dark.svg#only-dark)
@@ -368,7 +368,7 @@ mixcr analyze nebnext-human-bcr-cdr3 \
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/neb.yaml)
 
 
-With the NEBNext® Immune Sequencing Kit (Mouse), sequence the full-length immune gene repertoires of B cells and T cells. Profile somatic mutations across all relevant contexts (e.g., V, D, and J segments and isotypes IgM, IgD, IgG, IgA, and IgE) with improved sequence accuracy. Characterize BCR light, BCR heavy, TCRα, TCRβ, TCRγ and TCRδ chains. This kit includes UMIs for source-molecule identification. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-separate-by C` may be used for BCR data to not separate clones by isotypes
+With the NEBNext® Immune Sequencing Kit (Mouse), sequence the full-length immune gene repertoires of B cells and T cells. Profile somatic mutations across all relevant contexts (e.g., V, D, and J segments and isotypes IgM, IgD, IgG, IgA, and IgE) with improved sequence accuracy. Characterize BCR light, BCR heavy, TCRα, TCRβ, TCRγ and TCRδ chains. This kit includes UMIs for source-molecule identification. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-split-clones-by C` may be used for BCR data to not separate clones by isotypes
 
 ![](pics/NEBNext-mouse-bcr-kit-dark.svg#only-dark)
 ![](pics/NEBNext-mouse-bcr-kit-light.svg#only-light)
@@ -379,7 +379,7 @@ With the NEBNext® Immune Sequencing Kit (Mouse), sequence the full-length immun
 Example:
 ```shell
 mixcr analyze nebnext-mouse-bcr-cdr3 \
-      --dont-separate-by C \
+      --dont-split-clones-by C \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
