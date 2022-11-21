@@ -315,74 +315,56 @@ mixcr analyze takara-mouse-tcr-cdr3 \
 
 
 
+### 10xGenomics
 
+#### 10x Genomics single cell VDJ
 
-### New England BioLabs
-
-#### NEBNext® Immune Sequencing Kit (Human) BCR & TCR
-
-==`nebnext-human-bcr-cdr3`==
+==`10x-vdj-tcr`==
 ·
-==`nebnext-human-bcr-full-length`==
+==`10x-vdj-bcr`==
 ·
-==`nebnext-human-tcr-cdr3`==
+[:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
 ·
-==`nebnext-human-tcr-full-length`==
-·
-[:octicons-link-16: Link](https://www.neb.com/products/e6320-nebnext-immune-sequencing-kit-human#Product%20Information)
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/neb.yaml)
-·
-[:octicons-mortar-board-16: Tutorial](../guides/nebnext-bcr.md)
-
-With the NEBNext® Immune Sequencing Kit (Human), sequence the full-length immune gene repertoires of B cells and T cells. Profile somatic mutations across all relevant contexts (e.g., V, D, and J segments and isotypes IgM, IgD, IgG, IgA, and IgE) with improved sequence accuracy. Characterize BCR light, BCR heavy, TCRα and TCRβ chains. This kit includes UMIs for source-molecule identification. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-split-clones-by C` may be used for BCR data to not separate clones by isotypes
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml)
 
 
-![](pics/NEBNext-human-bcr-kit-dark.svg#only-dark)
-![](pics/NEBNext-human-bcr-kit-light.svg#only-light)
+Chromium Single Cell Immune Profiling provides a solution to your immunology questions. Analyze full-length V(D)J sequences for paired B-cell or T-cell receptors, all from a single cell. Notice that on the scheme bellow reads' length is shown according to the protocol recommendations, but the presets will work regardless of sequencing reads length.
 
-![](pics/NEBNext-human-tcr-kit-light.svg#only-light)
-![](pics/NEBNext-human-tcr-kit-dark.svg#only-dark)
+![](pics/10x-vdj-bcr-light.svg#only-light)
+![](pics/10x-vdj-bcr-dark.svg#only-dark)
+![](pics/10x-vdj-tcr-light.svg#only-light)
+![](pics/10x-vdj-tcr-dark.svg#only-dark)
 
+The `--species` option is required.
 
 Example:
 ```shell
-mixcr analyze nebnext-human-bcr-cdr3 \
-      input_R1.fastq.gz \
-      input_R2.fastq.gz \
-      result 
+mixcr analyze 10x-vdj-bcr \
+     --species hsa \
+     sample_R1.fastq.gz \
+     sample_R2.fastq.gz \
+     sample_result
 ```
-
-#### NEBNext® Immune Sequencing Kit (Mouse) BCR & TCR
-
-==`nebnext-mouse-bcr-cdr3`==
+#### 10x Genomics single cell 5' gene expression
+==`10x-5gex-cdr3`==
 ·
-==`nebnext-mouse-bcr-full-length`==
+==`10x-5gex-full-length`==
 ·
-==`nebnext-mouse-tcr-cdr3`==
+[:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
 ·
-==`nebnext-mouse-tcr-full-length`==
-·
-[:octicons-link-16: Link](https://www.neb.com/products/e6330-nebnext-immune-sequencing-kit-mouse#Product%20Information)
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/neb.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml)
 
+These presets are specifically optimized to extract TCR and BCR repertoires from non-enriched single cell 5' RNA-seq cDNA libraries.
 
-With the NEBNext® Immune Sequencing Kit (Mouse), sequence the full-length immune gene repertoires of B cells and T cells. Profile somatic mutations across all relevant contexts (e.g., V, D, and J segments and isotypes IgM, IgD, IgG, IgA, and IgE) with improved sequence accuracy. Characterize BCR light, BCR heavy, TCRα, TCRβ, TCRγ and TCRδ chains. This kit includes UMIs for source-molecule identification. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-split-clones-by C` may be used for BCR data to not separate clones by isotypes
-
-![](pics/NEBNext-mouse-bcr-kit-dark.svg#only-dark)
-![](pics/NEBNext-mouse-bcr-kit-light.svg#only-light)
-
-![](pics/NEBNext-mouse-tcr-kit-light.svg#only-light)
-![](pics/NEBNext-mouse-tcr-kit-dark.svg#only-dark)
+The `--species` option is required.
 
 Example:
 ```shell
-mixcr analyze nebnext-mouse-bcr-cdr3 \
-      --dont-split-clones-by C \
-      input_R1.fastq.gz \
-      input_R2.fastq.gz \
-      result 
+mixcr analyze 10x-5gex-full-length \
+     --species hsa \
+     sample_R1.fastq.gz \
+     sample_R2.fastq.gz \
+     sample_result
 ```
 
 
@@ -390,58 +372,54 @@ mixcr analyze nebnext-mouse-bcr-cdr3 \
 
 
 
-### AbHelix
+### Illumina
 
-[:octicons-link-16: Link](https://abhelix.com/)
+#### AmpliSeq for Illumina Immune Repertoire Plus, TCR beta Panel
 
-#### BCR data
-
-==`abhelix-human-bcr-cdr3`==
+==`ampliseq-tcrb-plus-cdr3`==
 ·
-==`abhelix-human-bcr-full-length`==
+==`ampliseq-tcrb-plus-full-length`==
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/abhelix.yaml)
+[:octicons-link-16: Link](https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/ampliseq-immune-repertoire-panel.html)
 ·
-[:octicons-mortar-board-16: Tutorial](../guides/abhelix-bcr.md)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/illumina.yaml)
 
-This kit allows identification of IgG1,IgG1,IgG1,IgG1,IgGM,IgA isotypes. Isotypes are separated prior to the final PCR reaction, in a way that resulting sequences don't cover C region enough. Thus, this preset does not separate clones by C-gene, implying that different isotypes have been already separated into different samples. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
 
-![](pics/ABHelix-bcr-kit-dark.svg#only-dark)
-![](pics/ABHelix-bcr-kit-light.svg#only-light)
+AmpliSeq for Illumina Immune Repertoire Plus, TCR beta Panel is a highly multiplexed targeted resequencing panel to measure T cell diversity and clonal expansion by sequencing T cell receptor (TCR) beta chain rearrangements. RNA evaluation of TCRβ chain rearrangements, including CDR1, CDR2, and CDR3 (with up to 400 bp read-length amplicons). The `-cdr3` preset may be used to reduce clonotype assembling feature from `{CDR1:FR4}` region to CDR3 only.
+
+![](pics/ampliseq-oncomine-lr-light.svg#only-light)
+![](pics/ampliseq-oncomine-lr-dark.svg#only-dark)
 
 Example:
 ```shell
-mixcr analyze abhelix-human-bcr-cdr3 \
+mixcr analyze ampliseq-tcrb-plus-cdr3 \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
 ```
 
 
+#### AmpliSeq™ for Illumina® TCR beta-SR Panel
 
-
-
-#### TCR data
-
-==`abhelix-human-tcr-cdr3`==
+==`ampliseq-tcrb-sr-cdr3`==
 ·
-==`abhelix-human-tcr-full-length`==
+[:octicons-link-16: Link](https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/ampliseq-immune-repertoire-panel.html)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/abhelix.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/illumina.yaml)
 
+Sequences TCR beta chain rearrangements, with up to 80 bp read-length amplicons for characterizing CDR3.
 
-The kit allows to obtain full-length sequences of TCR-alpha and TCR-beta V(D)J variable regions. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
-
-![](pics/ABHelix-tcr-kit-light.svg#only-light)
-![](pics/ABHelix-tcr-kit-dark.svg#only-dark)
+![](pics/ampliseq-lr-light.svg#only-light)
+![](pics/ampliseq-lr-dark.svg#only-dark)
 
 Example:
 ```shell
-mixcr analyze abhelix-human-tcr-cdr3 \
+mixcr analyze ampliseq-tcrb-sr-cdr3 \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
 ```
+
 
 
 
@@ -496,58 +474,6 @@ The QIAseq Mouse TCR Panel Immune Repertoire RNA Library Kit uses unique Molecul
 Example:
 ```shell
 mixcr analyze qiaseq-mouse-tcr-cdr3 \
-      input_R1.fastq.gz \
-      input_R2.fastq.gz \
-      result 
-```
-
-
-
-
-
-### Illumina
-
-#### AmpliSeq for Illumina Immune Repertoire Plus, TCR beta Panel
-
-==`ampliseq-tcrb-plus-cdr3`==
-·
-==`ampliseq-tcrb-plus-full-length`==
-·
-[:octicons-link-16: Link](https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/ampliseq-immune-repertoire-panel.html)
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/illumina.yaml)
-
-
-AmpliSeq for Illumina Immune Repertoire Plus, TCR beta Panel is a highly multiplexed targeted resequencing panel to measure T cell diversity and clonal expansion by sequencing T cell receptor (TCR) beta chain rearrangements. RNA evaluation of TCRβ chain rearrangements, including CDR1, CDR2, and CDR3 (with up to 400 bp read-length amplicons). The `-cdr3` preset may be used to reduce clonotype assembling feature from `{CDR1:FR4}` region to CDR3 only.
-
-![](pics/ampliseq-oncomine-lr-light.svg#only-light)
-![](pics/ampliseq-oncomine-lr-dark.svg#only-dark)
-
-Example:
-```shell
-mixcr analyze ampliseq-tcrb-plus-cdr3 \
-      input_R1.fastq.gz \
-      input_R2.fastq.gz \
-      result 
-```
-
-
-#### AmpliSeq™ for Illumina® TCR beta-SR Panel
-
-==`ampliseq-tcrb-sr-cdr3`==
-·
-[:octicons-link-16: Link](https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/ampliseq-immune-repertoire-panel.html)
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/illumina.yaml)
-
-Sequences TCR beta chain rearrangements, with up to 80 bp read-length amplicons for characterizing CDR3.
-
-![](pics/ampliseq-lr-light.svg#only-light)
-![](pics/ampliseq-lr-dark.svg#only-dark)
-
-Example:
-```shell
-mixcr analyze ampliseq-tcrb-sr-cdr3 \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -668,56 +594,57 @@ mixcr analyze irepertoire-human-dna-igh-lr \
       result 
 ```
 
-### 10XGenomics
 
-#### 10x Genomics single cell VDJ
 
-==`10x-vdj-tcr`==
+### AbHelix
+
+#### BCR data
+
+==`abhelix-human-bcr-cdr3`==
 ·
-==`10x-vdj-bcr`==
+==`abhelix-human-bcr-full-length`==
 ·
-[:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
+[:octicons-link-16: Link](https://abhelix.com/)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/abhelix.yaml)
+·
+[:octicons-mortar-board-16: Tutorial](../guides/abhelix-bcr.md)
 
+This kit allows identification of IgG1,IgG1,IgG1,IgG1,IgGM,IgA isotypes. Isotypes are separated prior to the final PCR reaction, in a way that resulting sequences don't cover C region enough. Thus, this preset does not separate clones by C-gene, implying that different isotypes have been already separated into different samples. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
 
-Chromium Single Cell Immune Profiling provides a solution to your immunology questions. Analyze full-length V(D)J sequences for paired B-cell or T-cell receptors, all from a single cell. Notice that on the scheme bellow reads' length is shown according to the protocol recommendations, but the presets will work regardless of sequencing reads length.
-
-![](pics/10x-vdj-bcr-light.svg#only-light)
-![](pics/10x-vdj-bcr-dark.svg#only-dark)
-![](pics/10x-vdj-tcr-light.svg#only-light)
-![](pics/10x-vdj-tcr-dark.svg#only-dark)
-
-The `--species` option is required.
+![](pics/ABHelix-bcr-kit-dark.svg#only-dark)
+![](pics/ABHelix-bcr-kit-light.svg#only-light)
 
 Example:
 ```shell
-mixcr analyze 10x-vdj-bcr \
-     --species hsa \
-     sample_R1.fastq.gz \
-     sample_R2.fastq.gz \
-     sample_result
+mixcr analyze abhelix-human-bcr-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
 ```
-#### 10x Genomics single cell 5' gene expression
-==`10x-5gex-cdr3`==
-·
-==`10x-5gex-full-length`==
-·
-[:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml)
 
-These presets are specifically optimized to extract TCR and BCR repertoires from non-enriched single cell 5' RNA-seq cDNA libraries.
 
-The `--species` option is required.
+#### TCR data
+==`abhelix-human-tcr-cdr3`==
+·
+==`abhelix-human-tcr-full-length`==
+·
+[:octicons-link-16: Link](https://abhelix.com/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/abhelix.yaml)
+
+
+The kit allows to obtain full-length sequences of TCR-alpha and TCR-beta V(D)J variable regions. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
+
+![](pics/ABHelix-tcr-kit-light.svg#only-light)
+![](pics/ABHelix-tcr-kit-dark.svg#only-dark)
 
 Example:
 ```shell
-mixcr analyze 10x-5gex-full-length \
-     --species hsa \
-     sample_R1.fastq.gz \
-     sample_R2.fastq.gz \
-     sample_result
+mixcr analyze abhelix-human-tcr-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
 ```
 
 
@@ -810,6 +737,80 @@ mixcr analyze parsebio-vdj-3gex \
      sample_R2.fastq.gz \
      sample_result
 ```
+
+
+
+
+### New England BioLabs
+
+#### NEBNext® Immune Sequencing Kit (Human) BCR & TCR
+
+==`nebnext-human-bcr-cdr3`==
+·
+==`nebnext-human-bcr-full-length`==
+·
+==`nebnext-human-tcr-cdr3`==
+·
+==`nebnext-human-tcr-full-length`==
+·
+[:octicons-link-16: Link](https://www.neb.com/products/e6320-nebnext-immune-sequencing-kit-human#Product%20Information)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/neb.yaml)
+·
+[:octicons-mortar-board-16: Tutorial](../guides/nebnext-bcr.md)
+
+With the NEBNext® Immune Sequencing Kit (Human), sequence the full-length immune gene repertoires of B cells and T cells. Profile somatic mutations across all relevant contexts (e.g., V, D, and J segments and isotypes IgM, IgD, IgG, IgA, and IgE) with improved sequence accuracy. Characterize BCR light, BCR heavy, TCRα and TCRβ chains. This kit includes UMIs for source-molecule identification. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-split-clones-by C` may be used for BCR data to not separate clones by isotypes
+
+
+![](pics/NEBNext-human-bcr-kit-dark.svg#only-dark)
+![](pics/NEBNext-human-bcr-kit-light.svg#only-light)
+
+![](pics/NEBNext-human-tcr-kit-light.svg#only-light)
+![](pics/NEBNext-human-tcr-kit-dark.svg#only-dark)
+
+
+Example:
+```shell
+mixcr analyze nebnext-human-bcr-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
+
+#### NEBNext® Immune Sequencing Kit (Mouse) BCR & TCR
+
+==`nebnext-mouse-bcr-cdr3`==
+·
+==`nebnext-mouse-bcr-full-length`==
+·
+==`nebnext-mouse-tcr-cdr3`==
+·
+==`nebnext-mouse-tcr-full-length`==
+·
+[:octicons-link-16: Link](https://www.neb.com/products/e6330-nebnext-immune-sequencing-kit-mouse#Product%20Information)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/neb.yaml)
+
+
+With the NEBNext® Immune Sequencing Kit (Mouse), sequence the full-length immune gene repertoires of B cells and T cells. Profile somatic mutations across all relevant contexts (e.g., V, D, and J segments and isotypes IgM, IgD, IgG, IgA, and IgE) with improved sequence accuracy. Characterize BCR light, BCR heavy, TCRα, TCRβ, TCRγ and TCRδ chains. This kit includes UMIs for source-molecule identification. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-split-clones-by C` may be used for BCR data to not separate clones by isotypes
+
+![](pics/NEBNext-mouse-bcr-kit-dark.svg#only-dark)
+![](pics/NEBNext-mouse-bcr-kit-light.svg#only-light)
+
+![](pics/NEBNext-mouse-tcr-kit-light.svg#only-light)
+![](pics/NEBNext-mouse-tcr-kit-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze nebnext-mouse-bcr-cdr3 \
+      --dont-split-clones-by C \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
+
+
+
 
 ## Public protocols
 
