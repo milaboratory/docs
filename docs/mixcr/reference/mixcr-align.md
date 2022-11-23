@@ -219,6 +219,8 @@ Example:
     results/sampleA
 ```
 
+For details see [this section](/mixcr/reference/ref-input-file-name-expansion).
+
 ## Aligner parameters
 
 MiXCR uses a [wide range of parameters](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/parameters/vdjcaligner_parameters.json) that control aligners behaviour. There are global parameters and gene-specific parameters organized in groups: `vParameters`, `dParameters`, `jParameters` and `cParameters`. Each group of parameters may contain further subgroups of parameters. In order to override a parameter value one can use `-O` followed by fully qualified parameter name and parameter value (e.g. `-Ogroup1.group2.parameter=value`).

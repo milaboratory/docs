@@ -14,13 +14,16 @@ MiXCR provides a [comprehensive list](../reference/overview-built-in-presets.md)
 
 | Supplier                                                                   | Species                         | Data types |
 |----------------------------------------------------------------------------|---------------------------------|--|
-| [MiLaboratories](../reference/overview-built-in-presets.md#milaboratories) | _Homo Sapience_, _Mus Musculus_ | amplicon BCR, TCR |
+| [MiLaboratories](../reference/overview-built-in-presets.md#milaboratories) | _Homo Sapience_, _Mus Musculus_, _Monkey_ | amplicon BCR, TCR |
 | [Takara Bio](../reference/overview-built-in-presets.md#takara-bio) | _Homo Sapience_, _Mus Musculus_ | amplicon BCR, TCR |
-| [10x Genomics](../reference/overview-built-in-presets.md#10xgenomics) | _any_ | single-cell VDJ, GEX |
+| [10x Genomics](../reference/overview-built-in-presets.md#10xgenomics) | _any_ | single-cell VDJ, 5' GEX |
 | [Illumina](../reference/overview-built-in-presets.md#illumina) | _Homo Sapience_ | amplicon TCR |
-| [AbHelix](../reference/overview-built-in-presets.md#abhelix) | _Homo Sapience_ | amplicon TCR, BCR |
-| [NEB](../reference/overview-built-in-presets.md#new-england-biolabs) | _Homo Sapience_, _Mus Musculus_ | amplicon TCR, BCR |
 | [Qiagen](../reference/overview-built-in-presets.md#qiagen) | _Homo Sapience_, _Mus Musculus_ | amplicon TCR |
+| [iRepertoire](../reference/overview-built-in-presets.md#irepertoire) | _Homo Sapience_, _Mus Musculus_ | amplicon BCR, TCR |
+| [AbHelix](../reference/overview-built-in-presets.md#abhelix) | _Homo Sapience_ | amplicon TCR, BCR |
+| [BD](../reference/overview-built-in-presets.md#bd-rhapsody) | _Homo Sapience_, _Mus Musculus_ | single-cell VDJ |
+| [ParseBio](../reference/overview-built-in-presets.md#parse-biosciences) | _any_ | single-cell 3' GEX |
+| [NEB](../reference/overview-built-in-presets.md#new-england-biolabs) | _Homo Sapience_, _Mus Musculus_ | amplicon TCR, BCR |
 
 
 Also, there are dedicated presets for generic data types and open-source protocols, including:
