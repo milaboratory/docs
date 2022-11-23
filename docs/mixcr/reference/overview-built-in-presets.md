@@ -522,7 +522,27 @@ mixcr analyze qiaseq-mouse-tcr-cdr3 \
       result 
 ```
 
+### Cellecta
+#### DriverMap Adaptive Immune Receptor (AIR) TCR-BCR Profiling
 
+==`cellecta-air-human`==
+·
+[:octicons-link-16: Link](https://cellecta.com/products/drivermap-immune-receptor-profiling-service)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/cellecta.yaml)
+
+Cellecta’s DriverMap™ AIR TCR-BCR assay is designed to specifically amplify only functional CDR3 RNA molecules' TCR and BCR cells, avoiding non-functional pseudogenes with similar structures. The assay simultaneously amplifies, in a single, multiplex RT-PCR reaction, all TCR and BCR CDR3 regions using a set of 300 experimentally validated PCR primers to yield Illumina-compatible, next-generation sequencing (NGS) libraries.
+
+![](pics/cellecta-light.svg#only-light)
+![](pics/cellecta-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze cellecta-air-human \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
 
 
 
@@ -689,6 +709,8 @@ mixcr analyze irepertoire-human-dna-igh-lr \
       input_R2.fastq.gz \
       result 
 ```
+
+
 
 ### 10XGenomics
 
@@ -859,10 +881,20 @@ mixcr analyze biomed2-human-bcr-full-length \
 ```
 
 
+
 ### Mikelov et al, 2021
 ==`mikelov-et-al-2021`==
 ·
 [:octicons-link-16: Publication](https://www.biorxiv.org/content/10.1101/2021.12.30.474135v2)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/custom.yaml)
+
+### Vergani et al, 2017
+==`vergani-et-al-2017-cdr3`==
+·
+==`vergani-et-al-2017-full-length`==
+·
+[:octicons-link-16: Publication](https://www.frontiersin.org/articles/10.3389/fimmu.2017.01157/full)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/custom.yaml)
 

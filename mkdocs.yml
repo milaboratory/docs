@@ -126,6 +126,7 @@ nav:
         - 'QIAseq Immune Repertoire TCR' : mixcr/guides/qiaseq-tcr.md
         - 'AbHelix BCR': mixcr/guides/abhelix-bcr.md
         - 'BioMed2':  mixcr/guides/biomed2-bcr.md
+        - 'Cellecta AIR':  mixcr/guides/cellecta-air-tcr-bcr.md
       - 'Analysis cases':
         - 'Targeted TCR UMI libraries': mixcr/guides/generic-umi-tcr.md
         - 'Targeted BCR Multiplex libraries': mixcr/guides/generic-multiplex-bcr.md
