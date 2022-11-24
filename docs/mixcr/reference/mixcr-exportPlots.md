@@ -157,7 +157,6 @@ mixcr exportPlots (vUsage|jUsage|isotypeUsage|vjUsage) [-f]
     [--chains <chain>]... 
     [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
     [--metadata <path>] 
-    [--group-by <s>]... 
     [--family-usage] 
     [--no-samples-dendro] 
     [--no-genes-dendro]
@@ -190,9 +189,6 @@ Exports [gene segment usage](./mixcr-postanalysis.md#segment-usage-metrics) heat
 
 `--metadata <path>`
 : [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files.
-
-`--group-by <s>`
-: Group heatmaps by specific metadata properties.
 
 `--family-usage`
 : Show gene family usage instead.
@@ -301,7 +297,6 @@ mixcr exportPlots overlap
     [--chains <chain>]... 
     [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
     [--metadata <path>] 
-    [--group-by <s>]... 
     [--no-dendro]
     [--color-key <meta>]... 
     [--fill-diagonal]
