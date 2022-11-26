@@ -162,7 +162,6 @@ mixcr exportPlots (vUsage|jUsage|isotypeUsage|vjUsage) [-f]
     [--color-key <key>]... 
     [--bar-plot] 
     [--facet-by <s>]
-    [--group-by <s>]... 
     [--palette <s>] 
     [--h-labels-size <d>] 
     [--v-labels-size <d>]   
@@ -216,9 +215,6 @@ Exports [gene segment usage](./mixcr-postanalysis.md#segment-usage-metrics) heat
 
 `--facet-by <s>`
 : Facet bar-plot.
-
-`--group-by <s>`
-: Group heatmaps by specific metadata properties.
 
 `--palette <s>`
 : Color palette for heatmap. Available names: diverging, viridis2magma, lime2rose, blue2red, teal2red, softSpectral, sequential, viridis, magma, sunset, rainbow, salinity, density. Default: density

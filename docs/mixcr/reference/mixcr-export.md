@@ -23,7 +23,7 @@ mixcr exportClones
     [--dont-impute-germline-on-export] 
     [--filter-out-of-frames] 
     [--filter-stops] 
-    [--split-by-tag <tag>] 
+    [--split-by-tags <(Molecule|Cell|Sample)>] 
     [--split-files-by <splitFilesBy>]... 
     [--dont-split-files] 
     [--no-header] 
@@ -62,8 +62,8 @@ Command line options:
 `-t, --filter-stops`
 : Exclude sequences containing stop codons (fractions will be recalculated). Default value determined by the preset.
 
-`--split-by-tag <tag>`
-: Split clones by tag values Default value determined by the preset.
+`--split-by-tags <(Molecule|Cell|Sample)>`
+: Split clones by tag type. Will be calculated from export columns if not specified. Default value determined by the preset.
 
 `--split-files-by <splitFilesBy>`
 : Split files by (currently the only supported value is "geneLabel:reliableChain" etc... ). Default value determined by the preset.
@@ -349,7 +349,7 @@ The columns in the resulting file will be exported in exactly the same order as 
 
 ```shell
 > mixcr exportClones \
-    -uniqueTagCount umi \
+    -uniqueTagCount Molecule \
     clones.clns \
     clones.tsv
 ```
@@ -360,20 +360,20 @@ It is also possible to export full list of UMIs with their read counts that were
 
 ```shell
 > mixcr exportClones \
-    -uniqueTagCount umi \
+    -uniqueTagCount Molecule \
     -tagCounts \
     clones.clns \
     clones.tsv
 ```
 
-| cloneId | uniqueTagCountUMI | tagCounts                                                   | cloneCount         | ... |
-|---------|-------------------|-------------------------------------------------------------|--------------------|-----|
-| 1       | 901               | {AGGATCTAGCTC=47.0,GATTCAGGCAAA=12.0,GTTTGTATATAG=119.0 ... | 157166.58695588264 | ... |
-| 2       | 123               | {AGGGTACACCAG=12.0,GTTTAAAAATAA=42.0,ATTACAGCCTAA=19.0 ...  | 113072.80475962501 | ... |
-| 3       | 110               | {GCAAGCGCTGGC=40.0,TCGAAAAAAACA=42.0,AGCACAGGTGAT=113.0 ... | 17367.706440640646 | ... |
-| 4       | 98                | {CGATCGAAGGAT=47.0,ACCCGCATCAGA=112.0,TCAGTTTGTAAA=1.0 ...  | 14959.662854752114 | ... |
-| 5       | 82                | {CTGTGGATAGTA=117.0,ATCCAGAAGCGT=12.0,ATCGGTGATCAC=93.0 ... | 13653.505182577868 | ... |
-| ...     | ...               | ...                                                         | ...                | ... |
+| cloneId | uniqueTagCountMolecule | tagCounts                                                   | cloneCount         | ... |
+|---------|------------------------|-------------------------------------------------------------|--------------------|-----|
+| 1       | 901                    | {AGGATCTAGCTC=47.0,GATTCAGGCAAA=12.0,GTTTGTATATAG=119.0 ... | 157166.58695588264 | ... |
+| 2       | 123                    | {AGGGTACACCAG=12.0,GTTTAAAAATAA=42.0,ATTACAGCCTAA=19.0 ...  | 113072.80475962501 | ... |
+| 3       | 110                    | {GCAAGCGCTGGC=40.0,TCGAAAAAAACA=42.0,AGCACAGGTGAT=113.0 ... | 17367.706440640646 | ... |
+| 4       | 98                     | {CGATCGAAGGAT=47.0,ACCCGCATCAGA=112.0,TCAGTTTGTAAA=1.0 ...  | 14959.662854752114 | ... |
+| 5       | 82                     | {CTGTGGATAGTA=117.0,ATCCAGAAGCGT=12.0,ATCGGTGATCAC=93.0 ... | 13653.505182577868 | ... |
+| ...     | ...                    | ...                                                         | ...                | ... |
 
 ### Single cell libraries
 
@@ -382,10 +382,10 @@ Export paired TCR-alpha/beta or BCR-heavy/light clonotype pairs from single cell
 ```shell
 > mixcr exportClones \
     --drop-default-fields \
-    --split-by-tag cell \
+    --split-by-tags Cell \
     -tag cell \
     -cellGroup \
-    -uniqueTagCount UMI \
+    -uniqueTagCount Molecule \
     -count \
     -vFamily -jFamily \
     -aaFeature CDR3 \
@@ -394,25 +394,25 @@ Export paired TCR-alpha/beta or BCR-heavy/light clonotype pairs from single cell
     clones.tsv
 ```
 
-Here we use `--split-by-tag` option to export cells that contain the same clonotype on separate rows, `-tag` to export cell barcode for each clonotype and `-cellGroup` which is cell identifier.
+Here we use `--split-by-tags` option to export cells that contain the same clonotype on separate rows, `-tags` to export cell barcode for each clonotype and `-cellGroup` which is cell identifier.
 
-| tagValueCELL | cellGroup | uniqueTagCountUMI | cloneCount      | bestVFamily | bestJFamily | nSeqCDR3                                                           | aaSeqVDJRegionImputed                                                                                                                 |
-|--------------|-----------|-------------------|-----------------|-------------|-------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| CTAGGCTAGC   | 11        | 198               | 10716.64        | IGLV1       | IGLJ3       | TGCGGAACATGGGATAGCAGCCTGAGTGCTTGGGTGTTC                            | QVQLVESGGALVRPGGSLRLSCAASGFPFANFGITWVRLPPGKGLEWVADITPDGGTTYYADSVKGRFTISKDNAKNTVALQMNTLSPEDTAVYYCATPMYDHWGQGTQVTVSS_                   |
-| CTAGGCTAGC   | 11        | 93                | 11372.5962501   | IGKV1       | IGKJ1       | TGTCAACAGTCTGAAAATCTCCCTCCGACGTTC                                  | QVQLVETGGGLVQAGGSLRLSCAASGRTFSSYAMGWFRQAPGKEREFVSAISWSGGSTFYADSVKGRFTISRDNAKNTVYLQMNSLKPEDTAVYYCAAATHRHDGLALIGEYDYWGQGTQVTVSS_        |
-| CTAGGCTAGC   | 11        | 80                | 17467.0640646   | IGHV2       | IGHJ5       | TGTGCACGGATACGGAGGTATAGCAGTGGCTGGTACTCAACGAACTGGTTCGACCCCTGG       | QVQLVETGGGLVQAGGSLRLSCAASGFTFDDYVIGWFRQAPGKEREGVSCINSSDGSTYYADSVKGRFTISSDNAKNTVYLQMNSLKPEDTAVYYCAAELIDRLIAIMGASCPLEYDYWGQGTQVTVSS_    |
-| TGCTGAATCG   | 187       | 98                | 12959.5475211   | IGKV3       | IGKJ2       | TGTCAACTCGATTGCATTGCACCTCCGACGTTC                                  | QVQLVETGGRLGAGWGVSETLLCLLWIQFP\*I\*YRVVPPGPREGA\*GSWMY\*FQRW\*YIPSRLREGPIHHLPRQFEECGISAHEQLET*RHGRLLLCKRSGRMCCVYRGLLPRHGLLGQRDPGHRLL_ |
-| TGCTGAATCG   | 187       | 82                | 11653.182577868 | IGHV1       | IGHJ2       | TGTGCACTACGTAGCAAGGTATAGCAGCTAGGCTGCTGGTGCAACTAGGCTAGCTTCGACCCCTGG | QLQLVESGGGLVQAGGSLRLSCAASGRTDSRYTMGWFRQAPGKEREIVAQISPFGGNQYYADSVKGRFTISRDNAKNTVYLQMNSLKAEDTAVYYCYAEGPGRWVAGTWTRDYWGQGTQVTISS_         |
-| ...          | ...       | ...               | ...             | ...         | ...         | ...                                                                | ...                                                                                                                                   |
+| tagValueCELL | cellGroup | uniqueTagCountMolecule | cloneCount      | bestVFamily | bestJFamily | nSeqCDR3                                                           | aaSeqVDJRegionImputed                                                                                                                 |
+|--------------|-----------|------------------------|-----------------|-------------|-------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| CTAGGCTAGC   | 11        | 198                    | 10716.64        | IGLV1       | IGLJ3       | TGCGGAACATGGGATAGCAGCCTGAGTGCTTGGGTGTTC                            | QVQLVESGGALVRPGGSLRLSCAASGFPFANFGITWVRLPPGKGLEWVADITPDGGTTYYADSVKGRFTISKDNAKNTVALQMNTLSPEDTAVYYCATPMYDHWGQGTQVTVSS_                   |
+| CTAGGCTAGC   | 11        | 93                     | 11372.5962501   | IGKV1       | IGKJ1       | TGTCAACAGTCTGAAAATCTCCCTCCGACGTTC                                  | QVQLVETGGGLVQAGGSLRLSCAASGRTFSSYAMGWFRQAPGKEREFVSAISWSGGSTFYADSVKGRFTISRDNAKNTVYLQMNSLKPEDTAVYYCAAATHRHDGLALIGEYDYWGQGTQVTVSS_        |
+| CTAGGCTAGC   | 11        | 80                     | 17467.0640646   | IGHV2       | IGHJ5       | TGTGCACGGATACGGAGGTATAGCAGTGGCTGGTACTCAACGAACTGGTTCGACCCCTGG       | QVQLVETGGGLVQAGGSLRLSCAASGFTFDDYVIGWFRQAPGKEREGVSCINSSDGSTYYADSVKGRFTISSDNAKNTVYLQMNSLKPEDTAVYYCAAELIDRLIAIMGASCPLEYDYWGQGTQVTVSS_    |
+| TGCTGAATCG   | 187       | 98                     | 12959.5475211   | IGKV3       | IGKJ2       | TGTCAACTCGATTGCATTGCACCTCCGACGTTC                                  | QVQLVETGGRLGAGWGVSETLLCLLWIQFP\*I\*YRVVPPGPREGA\*GSWMY\*FQRW\*YIPSRLREGPIHHLPRQFEECGISAHEQLET*RHGRLLLCKRSGRMCCVYRGLLPRHGLLGQRDPGHRLL_ |
+| TGCTGAATCG   | 187       | 82                     | 11653.182577868 | IGHV1       | IGHJ2       | TGTGCACTACGTAGCAAGGTATAGCAGCTAGGCTGCTGGTGCAACTAGGCTAGCTTCGACCCCTGG | QLQLVESGGGLVQAGGSLRLSCAASGRTDSRYTMGWFRQAPGKEREIVAQISPFGGNQYYADSVKGRFTISRDNAKNTVYLQMNSLKAEDTAVYYCYAEGPGRWVAGTWTRDYWGQGTQVTISS_         |
+| ...          | ...       | ...                    | ...             | ...         | ...         | ...                                                                | ...                                                                                                                                   |
 
 In the above example we specified particular columns to export. To export all columns one can use simply:
 
 ```shell
 > mixcr exportClones \
-    --split-by-tag cell \
+    --split-by-tags Cell \
     -tag cell \
     -cellGroup \
-    -uniqueTagCount UMI \
+    -uniqueTagCount Molecule \
     clones.clns \
     clones.tsv
 ```
@@ -724,19 +724,11 @@ for the full list and formatting)
 `-tagCounts`
 : All tags with counts
 
-`-tag <tag_name>`
-: Tag value (i.e. CELL barcode or UMI sequence)
+`-tags <(Molecule|Cell|Sample)>`
+: All tags values (i.e. CELL barcode or UMI sequence).
 
-`-allTags <(Sample|Cell|Molecule)>`
-: Tag values (i.e. CELL barcode or UMI sequence) for all available tags in separate columns.
-
-Tag type will be used for filtering tags for export.
-
-`-uniqueTagCount <tag_name>`
+`-uniqueTagCount <(Molecule|Cell|Sample)>`
 : Unique tag count
-
-`-allUniqueTagsCount <(Sample|Cell|Molecule)>`
-: Unique tag count for all available tags in separate columns.
 
 Tag type will be used for filtering tags for export.
 
@@ -848,11 +840,8 @@ The following fields are available for `exportClones` and `exportShmTreesWithNod
 `-readFraction`
 : Fraction of reads assigned to the clonotype
 
-`-uniqueTagFraction <tag_name>`
+`-uniqueTagFraction <(Molecule|Cell|Sample)>`
 : Fraction of unique tags (UMI, CELL, etc.) the clone or alignment collected.
-
-`-allUniqueTagFractions <(Sample|Cell|Molecule)>`
-: Fractions of unique tags (i.e. CELL barcode or UMI sequence) for all available tags in separate columns.
 
 Tag type will be used for filtering tags for export.
 
@@ -866,11 +855,14 @@ The following fields are available for both `exportShmTrees` and `exportShmTrees
 `-treeId`
 : SHM tree id
 
-`-uniqClonesCount`
+`-numberOfClonesInTree`
 : Number of uniq clones in the SHM tree
 
-`-totalClonesCount`
-: Total sum of counts of clones in the SHM tree
+`-totalReadsCountInTree`
+: Total sum of read counts of clones in the SHM tree
+
+`-totalUniqueTagCountInTree <(Molecule|Cell|Sample)>`
+: Total count of unique tags in the SHM tree with specified type
 
 The following fields are only available for `exportShmTrees`:
 
@@ -900,7 +892,7 @@ The following fields are available only for `exportShmTreesWithNodes`:
 : Parent node id in SHM tree
 
 `-distance <(germline|mrca|parent)>`
-: Distance from another node
+: Distance from another node in number of mutations.
 
 `-fileName`
 : Name of clns file with sample
