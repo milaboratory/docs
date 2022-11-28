@@ -192,7 +192,7 @@ Now we can reconstruct clonal lineage trees with [`mixcr findShmTrees`](../refer
 
 ### Export lineage trees in a tabular format
 
-To export information on lineage trees in human-readable format use [`mixcr exportShmTreesWithNodes`](../reference/mixcr-export.md#shm-trees-with-nodes-tables).
+To export information on lineage trees in human-readable format use [`mixcr exportShmTreesWithNodes`](../reference/mixcr-exportShmTrees.md#shm-trees-with-nodes-tables).
 
 ```shell
 --8<-- "ig-trees-mikelov/scripts/120-export-shm-trees-with-nodes.sh"
@@ -201,7 +201,7 @@ To export information on lineage trees in human-readable format use [`mixcr expo
 ??? note "Show top 500 records from in IM_trees.txt"
     {{ read_csv('docs/mixcr/guides/ig-trees-mikelov/figs/IM_trees.txt', engine='python', sep='\t') }}
 
-The trees can also be exported in a standard Newick format with [`mixcr exportShmTreesNewick`](../reference/mixcr-exportShmTreesNewick.md):
+The trees can also be exported in a standard Newick format with [`mixcr exportShmTreesNewick`](../reference/mixcr-exportShmTrees.md#newick):
 
 ```shell
 --8<-- "ig-trees-mikelov/scripts/130-export-trees-newick.sh"

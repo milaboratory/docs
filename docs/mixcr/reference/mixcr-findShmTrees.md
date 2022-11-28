@@ -29,7 +29,7 @@ mixcr findShmTrees
    [--help] 
    (input_file.clns|directory)... output_file.shmt
 ```
-The command returns a highly-compressed, memory- and CPU-efficient binary `.shmt` (SHM trees) file that holds exhaustive information about SHM trees. SHM trees can be further extracted in tabular form using [`exportShmTrees`](./mixcr-export.md#shm-trees-tables), [`exportShmTreesWithNodes`](./mixcr-export.md#shm-trees-with-nodes-tables) or newick form using [`exportShmTreesNewick`](./mixcr-exportShmTreesNewick.md). Additionally, MiXCR produces a comprehensive [report](./report-findShmTrees.md) which provides a detailed summary of SHM trees search.
+The command returns a highly-compressed, memory- and CPU-efficient binary `.shmt` (SHM trees) file that holds exhaustive information about SHM trees. SHM trees can be further extracted in tabular form using [`exportShmTrees`](./mixcr-exportShmTrees.md#shm-trees-tables), [`exportShmTreesWithNodes`](./mixcr-exportShmTrees.md#shm-trees-with-nodes-tables) or newick form using [`exportShmTreesNewick`](./mixcr-exportShmTrees.md#newick). Additionally, MiXCR produces a comprehensive [report](./report-findShmTrees.md) which provides a detailed summary of SHM trees search.
 
 Basic command line options are:
 
