@@ -22,14 +22,14 @@ mixcr overlapScatterPlot
 
 The command takes `.clna` or `.clns` file as input and produces one of the following graphical formats depending on the extension of output file: `.pdf`, `.eps`, `.png`, `.svg` and `.jpeg`
 
+`--downsampling (<type>|none)`
+: Choose [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`, `none`
+
 `--chains <chain>[,<chain>...]`
 : Chains to export.
 
 `--only-productive`
 : Filter out-of-frame sequences and sequences with stop-codons.
-
-`--downsampling (<type>|none)`
-: Choose [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`, `none`
 
 `--criteria <s>`
 : Overlap criteria. Defines the rules to treat clones as equal. Default: `CDR3|AA|V|J` (For two clones to me equal they must share `CDR3` amino acid sequence, V and J genes)

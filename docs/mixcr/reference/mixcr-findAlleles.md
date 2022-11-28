@@ -7,6 +7,8 @@ Finds V- and J-gene allelic variants in a given sample(s). As result MiXCR creat
 
 Note that clontypes passed as input must be cut by and fully covered by the same [gene feature](mixcr-assemble.md#core-assembler-parameters). So, for example `.clns` files with [contigs](overview-analysis-overview.md#contig-assemblymixcr-assemblecontigsmd), must be assembled using [`assembleContigs`](mixcr-assembleContigs.md) with `--cut-by` option.
 
+Also, all inputs must have the same align library, the same scoring of V and J genes and the same features to align.
+
 Allele inference algorithms applies different strategies to identify allelic variants with sufficient statistical significance. The algorithm for B-cells reliably discriminate between somatic hypermutations (including those in hot spot positions) and real allelic variants.
 
 
@@ -26,15 +28,17 @@ mixcr findAlleles
    [--no-warnings] 
    [--verbose] 
    [--help] 
-   input_file.(clns|clna)...
+   (input_file.(clns|clna)|directory)...
 ```
 
 The command returns a highly-compressed, memory- and CPU-efficient binary `.clns` (clones) file that holds exhaustive information about clonotypes re-aligned to novelly discovered allelic variants. The resulting [reference library](ref-repseqio-json-format.md) is built-in in the `.clns` file but also may be exported directly with `--export-library` option. Clonotype tables can be further extracted in tabular form using [`exportClones`](./mixcr-export.md#clonotype-tables) or in human-readable form using [`exportClonesPretty`](./mixcr-exportPretty.md#clonotypes). Additionally, MiXCR produces a comprehensive [report](./report-findAlleles.md) which provides a detailed summary of allele search.
 
 Basic command line options are:
 
-`input_file.(clns|clna)...`
-: Input files for allele search
+`(input_file.(clns|clna)|directory)`
+: Input files or directory with files for allele search. 
+
+In case of directory no filter by file type will be applied.
 
 `--output-template <template.clns>`
 : Output template may contain {file_name} and {file_dir_path},

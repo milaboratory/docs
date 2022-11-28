@@ -67,7 +67,7 @@ mixcr analyze [--help]
 : Paths of input files with sequencing data. File name pattern [expansion](./ref-input-file-name-expansion.md) can be used here to merge sequences from multiple sequences or just for convenience.
 
 `output_prefix`
-: Path prefix telling mixcr where to put all output files, individual intermediate and resulting files will have suffixes according to the steps they were produced with
+: Path prefix telling mixcr where to put all output files, individual intermediate and resulting files will have suffixes according to the steps they were produced with. If argument ends with file separator, then outputs will be written in specified directory.
 
 `--not-aligned-R1 <path.fastq[.gz]>`
 : Pipe not aligned R1 reads into separate file.

@@ -6,9 +6,10 @@ A set of routines for graphical export of [postanalysis](./mixcr-postanalysis.md
 
 ```
 mixcr exportPlots (diversity|cdr3metrics) 
-    [--chains <chain>]... 
-    [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
     [--metadata <path>] 
+    [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
+    [--chains <chain>]... 
+    [--metric <metric>[,<metric>...]]... 
     [--plot-type <plotType>] 
     [--primary-group <meta>] 
     [--primary-group-values <value>[,<value>...]]... 
@@ -24,7 +25,6 @@ mixcr exportPlots (diversity|cdr3metrics)
     [--method-multiple-groups <method>] 
     [--p-adjust-method <method>] 
     [--show-significance] 
-    [--metric <metric>[,<metric>...]]... 
     [--width <n>] 
     [--height <n>] 
     [--no-warnings] 
@@ -42,14 +42,21 @@ Basic command line options are:
 `output.(pdf|eps|svg|png|jpeg)`
 : Output PDF/EPS/PNG/JPEG file name.
 
-`--chains <chain>`
-: Export only for specified immunological chains.
+`--metadata <path>`
+: [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files.
 
 `--filter <filter>[,<filter>...]`
 : Filter samples to put on a plot by their metadata values. Filter allows equality (`species=cat`) or arithmetic comparison (`age>=10`) etc.
 
-`--metadata <path>`
-: [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files.
+`--chains <chain>`
+: Export only for specified immunological chains.
+
+`--metric <metric>[,<metric>...]`
+: Output only specified list of metrics:
+
+    - for [`cdr3metrics`](./mixcr-postanalysis.md#cdr3-metrics) possible values are: `cdr3lenAA`, `cdr3lenNT`, `ndnLenNT`, `addedNNT`, `strength`, `hydrophobicity`, `surface`, `volume`, `charge`
+    
+    - for [`diversity`](./mixcr-postanalysis.md#diversity-measures) possible values are: `observed`, `shannonWiener`, `chao1`, `normalizedShannonWienerIndex`, `inverseSimpsonIndex`, `giniIndex`, `d50`, `efronThisted`
 
 `--plot-type <plotType>`
 : Plot type. Possible values: `boxplot`, `boxplot-bindot`, `boxplot-jitter`, `violin`, `violin-bindot`, `barplot`, `barplot-stacked`, `lineplot`, `lineplot-jitter`, `lineplot-bindot`, `scatter`
@@ -68,14 +75,6 @@ Basic command line options are:
 
 `--facet-by <meta>`
 : Facet by.
-
-`--metric <metric>[,<metric>...]`
-: Output only specified list of metrics:
-
-    - for [`cdr3metrics`](./mixcr-postanalysis.md#cdr3-metrics) possible values are: `cdr3lenAA`, `cdr3lenNT`, `ndnLenNT`, `addedNNT`, `strength`, `hydrophobicity`, `surface`, `volume`, `charge`
-    
-    - for [`diversity`](./mixcr-postanalysis.md#diversity-measures) possible values are: `observed`, `shannonWiener`, `chao1`, `normalizedShannonWienerIndex`, `inverseSimpsonIndex`, `giniIndex`, `d50`, `efronThisted`
-
 
 `--hide-overall-p-value`
 : Hide overall p-value.
@@ -154,20 +153,20 @@ Use secondary grouping:
 
 ```
 mixcr exportPlots (vUsage|jUsage|isotypeUsage|vjUsage) [-f]
-    [--chains <chain>]... 
-    [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
     [--metadata <path>] 
+    [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
+    [--chains <chain>]... 
     [--family-usage] 
     [--no-samples-dendro] 
     [--no-genes-dendro]
     [--color-key <key>]... 
     [--bar-plot] 
     [--facet-by <s>]
-    [--width <n>] 
-    [--height <n>] 
     [--palette <s>] 
     [--h-labels-size <d>] 
     [--v-labels-size <d>]   
+    [--width <n>] 
+    [--height <n>] 
     [--no-warnings] 
     [--verbose] 
     [--help] 
@@ -181,14 +180,14 @@ Exports [gene segment usage](./mixcr-postanalysis.md#segment-usage-metrics) heat
 `output.(pdf|eps|svg|png|jpeg)`
 : Output PDF/EPS/PNG/JPEG file name.
 
-`--chains <chain>`
-: Export only for specified immunological chains.
+`--metadata <path>`
+: [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files.
 
 `--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]`
 : Filter samples to put on a plot by their metadata values. Filter allows equality (`species=cat`) or arithmetic comparison (`age>=10`) etc.
 
-`--metadata <path>`
-: [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files.
+`--chains <chain>`
+: Export only for specified immunological chains.
 
 `--family-usage`
 : Show gene family usage instead.
@@ -294,18 +293,18 @@ mixcr exportPlots vUsage -f \
 ## Overlap
 ```
 mixcr exportPlots overlap 
-    [--chains <chain>]... 
-    [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
     [--metadata <path>] 
+    [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
+    [--chains <chain>]... 
     [--no-dendro]
     [--color-key <meta>]... 
     [--fill-diagonal]
     [--metric <metric>]... 
-    [--width <n>] 
-    [--height <n>] 
     [--palette <s>] 
     [--h-labels-size <d>] 
     [--v-labels-size <d>] 
+    [--width <n>] 
+    [--height <n>] 
     [--no-warnings] 
     [--verbose] 
     [--help] 
@@ -319,17 +318,14 @@ Exports [pairwise distance metrics](./mixcr-postanalysis.md#segment-usage-metric
 `output.(pdf|eps|svg|png|jpeg)`
 : Output PDF/EPS/PNG/JPEG file name.
 
-`--chains <chain>`
-: Export only for specified immunological chains.
+`--metadata <path>`
+: [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files.
 
 `--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]`
 : Filter samples to put on a plot by their metadata values. Filter allows equality (`species=cat`) or arithmetic comparison (`age>=10`) etc.
 
-`--metadata <path>`
-: [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files.
-
-`--group-by <s>`
-: Group heatmaps by specific metadata properties.
+`--chains <chain>`
+: Export only for specified immunological chains.
 
 `--no-dendro`
 : Don't add dendrograms
@@ -346,17 +342,17 @@ Exports [pairwise distance metrics](./mixcr-postanalysis.md#segment-usage-metric
 `--palette <s>`
 : Color palette for heatmap. Available names: diverging, viridis2magma, lime2rose, blue2red, teal2red, softSpectral, sequential, viridis, magma, sunset, rainbow, salinity, density. Default: density
 
-`--width <n>`
-: Plot width.
-
-`--height <n>`
-: Plot height.
-
 `--h-labels-size <d>`
 : Width of horizontal labels. One unit corresponds to the width of one tile.
 
 `--v-labels-size <d>`
 : Height of vertical labels. One unit corresponds to the height of one tile.
+
+`--width <n>`
+: Plot width.
+
+`--height <n>`
+: Plot height.
 
 `-nw, --no-warnings`
 : Suppress all warning messages.
@@ -382,9 +378,7 @@ Export overlap with color key:
 ## SHM trees
 ```
 mixcr exportPlots shmTrees 
-    [--ids <id>[,<id>...]]... 
-    [--filter-min-nodes <n>] 
-    [--filter-min-height <n>] 
+    [--metadata <path.(tsv|csv)>] 
     [--node-color <meta>] 
     [--line-color <meta>] 
     [--node-size <meta>] 
@@ -392,7 +386,9 @@ mixcr exportPlots shmTrees
     [--alignment-nt <gene_feature>] 
     [--alignment-aa <gene_feature>] 
     [--alignment-no-fill] 
-    [--metadata <path.(tsv|csv)>] 
+    [--filter-min-nodes <n>] 
+    [--filter-min-height <n>] 
+    [--ids <id>[,<id>...]]... 
     [--force-overwrite] 
     [--no-warnings] 
     [--verbose] 
@@ -408,14 +404,8 @@ Visualize SHM tree and save in PDF format
 `plots.pdf`
 : Path where to write PDF file with plots.
 
-`--ids <id>[,<id>...]`
-: Filter specific trees by id
-
-`--filter-min-nodes <n>`
-: Minimal number of nodes in tree
-
-`--filter-min-height <n>`
-: Minimal height of the tree
+`-m, --metadata <path.(tsv|csv)>`
+: Path to metadata file Metadata should be a .tsv or .csv file with a column named 'sample' with filenames of .clns files used in findShmTrees
 
 `--node-color <meta>`
 : Color nodes with given metadata column
@@ -438,8 +428,14 @@ Visualize SHM tree and save in PDF format
 `--alignment-no-fill`
 : Do not highlight alignments with color
 
-`-m, --metadata <path.(tsv|csv)>`
-: Path to metadata file Metadata should be a .tsv or .csv file with a column named 'sample' with filenames of .clns files used in findShmTrees
+`--filter-min-nodes <n>`
+: Minimal number of nodes in tree
+
+`--filter-min-height <n>`
+: Minimal height of the tree
+
+`--ids <id>[,<id>...]`
+: Filter specific trees by id
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
