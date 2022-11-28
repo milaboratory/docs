@@ -1,13 +1,13 @@
-# MiLaboratories Human BCR Multiplex kit
+# MiLaboratories Human IG RNA Multiplex
 
-This kit allows to obtain TCR alpha and beta repertoires for different types of available RNA material, with high sensitivity and UMI-based accuracy.
+This kit allows to obtain full length IG heavy and light chain repertoires with UMI-based accuracy. Discriminates all IGH isotypes including IgM, IgD, IgG3, IgG1, IgA1, IgG2, IgG4, IgE, and IgA2.
 
 Bellow you can see the structure of cDNA library.
 
 ![](../reference/pics/milab-multiplex-bcr-light.svg#only-light)
 ![](../reference/pics/milab-multiplex-bcr-dark.svg#only-dark)
 
-The data for this tutorial consists of four samples. Total RNA was isolated from human PBMC. cDNA libraries were prepared for each sample according to MiLaboratories Human BCR RNA Multiplex kit protocol for all IGH chain. Sequencing was performed on an Illumina NextSeq500 sequencer paired-end 2x250 bp reads.
+The data for this tutorial consists of four samples. Total RNA was isolated from human PBMC. cDNA libraries were prepared for each sample according to MiLaboratories Human IG RNA Multiplex kit protocol for all IGH chain. Sequencing was performed on an Illumina NextSeq500 sequencer paired-end 2x250 bp reads.
 
 All data may be downloaded using the script bellow.
 

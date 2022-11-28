@@ -296,7 +296,6 @@ mixcr exportPlots overlap
     [--metadata <path>] 
     [--filter <meta(|>|>=|=|<=|<)value>[,<meta(|>|>=|=|<=|<)value>...]]... 
     [--chains <chain>]... 
-    [--group-by <s>]... 
     [--no-dendro]
     [--color-key <meta>]... 
     [--fill-diagonal]
@@ -339,9 +338,6 @@ Exports [pairwise distance metrics](./mixcr-postanalysis.md#segment-usage-metric
 
 `--metric <metric>`
 : Select specific metrics to export. Possible values are: SharedClonotypes, RelativeDiversity, F1Index, F2Index, JaccardIndex, Pearson, PearsonAll
-
-`--group-by <s>`
-: Group heatmaps by specific metadata properties.
 
 `--palette <s>`
 : Color palette for heatmap. Available names: diverging, viridis2magma, lime2rose, blue2red, teal2red, softSpectral, sequential, viridis, magma, sunset, rainbow, salinity, density. Default: density

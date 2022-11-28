@@ -1,17 +1,20 @@
 # `mixcr analyze`
 
-A single command to execute complete MiXCR analysis pipeline, from raw fastq files to resulting clone-sets (in a tabular and binary formats). Each MiXCR preset, among other parameters, defines a sequence of steps required to analyze the target dataset, `analyze` retrieves this information, and executed all the steps for you, setting meaningful names for the intermediate files and saving all the reports along the pipeline in both `txt` and `json` formats (if not set otherwise by command line options).
+A single command to execute a complete upstream analysis pipeline from the raw fastq files to clonotype tables. 
 
-??? warning "Starting from MiXCR 4.1 logic of this command was changed completely"
+![](pics/analyze-light.svg#only-light)
+![](pics/analyze-dark.svg#only-dark)
 
-    Previous logic with `mixcr analyze amplicon ...` and `mixcr analyze shotgun ...` was removed in MiXCR 4.1 in favour of the new logic centered around the preset
+The `analyze` command takes a [preset name](overview-presets.md) as a required argument and runs a sequence of analysis steps defined by the preset. It sets meaningful names for the intermediate and resulting files and saves all the reports along the pipeline in both `txt` and `json` formats (if not set otherwise by command line options). Preset defines specifically optimized parameters for the particular data type for each of the execution analysis steps.
+
+MiXCR provides a [comprehensive list](overview-built-in-presets.md) of built-in preset for many of commercially available kits and public protocols.
 
 ## Command line options
 
 ```
 mixcr analyze [--help]
 
-    // analyze-specific options
+    # analyze-specific options
     
     [--not-aligned-R1 <path.fastq[.gz]>] 
     [--not-aligned-R2 <path.fastq[.gz]>] 
@@ -25,7 +28,7 @@ mixcr analyze [--help]
     [--add-step <step>] 
     [--remove-step <step>] 
 
-    // mix-ins
+    # mix-ins
 
     [--limit-input <n>]
     [--species <species>] 
@@ -48,9 +51,11 @@ mixcr analyze [--help]
     [--append-export-alignments-field <field> [<param>...]]... 
     [-M <key=value>]...      
     
-    // inputs and outputs
+    # inputs and outputs
     
-    <preset_name> (file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam)) output_prefix
+    <preset_name> 
+    (file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam)) 
+    output_prefix
 ```
 
 ### Analyze-specific command line options:
@@ -101,3 +106,74 @@ mixcr analyze [--help]
 
 `--remove-step <step>`
 : Remove a step from pipeline (i.e. `--add-step assemblePartial`)
+
+
+## Concatenating across multiple files
+
+Sometimes it is required to concatenate several fastq files and analyse it as a single sample. This is a common practise when files are separated across sequencing lanes.
+
+MiXCR uses `{{n}}` syntax as a placeholder for any number. Meaning MiXCR will concatenate all files that match the pattern regardless of digits in the place of  `{{n}}`
+
+Bellow you can see an example of how to pass 8 fastq files (four per each paired read) to `mixcr align`:
+
+Example:
+```shell
+> ls fastq/
+    sample1_L001_S25_R1.fastq.gz    sample1_L001_S25_R2.fastq.gz 
+    sample1_L002_S25_R1.fastq.gz    sample1_L002_S25_R2.fastq.gz
+    sample1_L003_S25_R1.fastq.gz    sample1_L003_S25_R2.fastq.gz
+    sample1_L004_S25_R1.fastq.gz    sample1_L004_S25_R2.fastq.gz
+
+> mixcr align -s hsa \
+    fastq/sample1_L{{n}}_S25_R1.fastq.gz \
+    fastq/sample1_L{{n}}_S25_R2.fastq.gz \
+    results/sample1
+```
+
+MiXCR uses `{{a}}` syntax which works just like {{n}} but works with any pattern, not just numbers.
+
+Example:
+
+```shell
+> ls fastq/
+    sample1_nameA1_S25_R1.fastq.gz    sample1_nameA1_S25_R2.fastq.gz
+    sample1_nameA_S25_R1.fastq.gz     sample1_nameA_S25_R2.fastq.gz
+    sample1_nameC3_S25_R1.fastq.gz    sample1_nameC3_S25_R2.fastq.gz
+    sample1_fileD_S25_R1.fastq.gz     sample1_fileD_S25_R2.fastq.gz
+
+> mixcr align -s hsa \
+    fastq/sample1_{{n}}_S25_R1.fastq.gz \
+    fastq/sample1_{{n}}_S25_R2.fastq.gz \
+    results/sample1
+```
+
+Finally, MiXCR uses `{{R}}` syntax that marks the reads' number, so you don't have to submit the second read filename.
+
+Bellow is the example of how you can combine multiple MiXCR wildcards and concatenate 16 pairs of files using one pattern.
+
+Example:
+```shell
+> ls fastq/
+    sampleA_primer1_L001_R1.fastq.gz       sampleA_primer1_L001_R2.fastq.gz    
+    sampleA_primer1_L002_R1.fastq.gz       sampleA_primer1_L002_R2.fastq.gz    
+    sampleA_primer1_L003_R1.fastq.gz       sampleA_primer1_L003_R2.fastq.gz    
+    sampleA_primer1_L004_R1.fastq.gz       sampleA_primer1_L004_R2.fastq.gz    
+    sampleA_primer2_L001_R1.fastq.gz       sampleA_primer2_L001_R2.fastq.gz
+    sampleA_primer2_L002_R1.fastq.gz       sampleA_primer2_L002_R2.fastq.gz
+    sampleA_primer2_L003_R1.fastq.gz       sampleA_primer2_L003_R2.fastq.gz
+    sampleA_primer2_L004_R1.fastq.gz       sampleA_primer2_L004_R2.fastq.gz
+    sampleA_primer3_L001_R1.fastq.gz       sampleA_primer3_L001_R2.fastq.gz
+    sampleA_primer3_L002_R1.fastq.gz       sampleA_primer3_L002_R2.fastq.gz
+    sampleA_primer3_L003_R1.fastq.gz       sampleA_primer3_L003_R2.fastq.gz
+    sampleA_primer3_L004_R1.fastq.gz       sampleA_primer3_L004_R2.fastq.gz
+    sampleA_primer4_L001_R1.fastq.gz       sampleA_primer4_L001_R2.fastq.gz
+    sampleA_primer4_L002_R1.fastq.gz       sampleA_primer4_L002_R2.fastq.gz
+    sampleA_primer4_L003_R1.fastq.gz       sampleA_primer4_L003_R2.fastq.gz
+    sampleA_primer4_L004_R1.fastq.gz       sampleA_primer4_L004_R2.fastq.gz
+    
+> mixcr align -s hsa \
+    fastq/sampleA_{{a}}_L{{n}}_{{R}}.fastq.gz
+    results/sampleA
+```
+
+For details see [this section](/mixcr/reference/ref-input-file-name-expansion).

@@ -116,16 +116,17 @@ nav:
       - 'Support': mixcr/getting-started/support.md
   - 'Guides':
       - 'Kits & Protocols':
-        - 'MiLaboratories Human BCR RNA Multiplex kit': mixcr/guides/milaboratories-human-bcr-rna-multi.md
+        - 'MiLaboratories Human IG RNA Multiplex kit': mixcr/guides/milaboratories-human-bcr-rna-multi.md
         - 'MiLaboratories Human TCR RNA Multiplex kit':  mixcr/guides/milaboratories-human-tcr-rna-multi.md
         - 'MiLaboratories Human TCR DNA Multiplex kit':  mixcr/guides/milab-dna-multiplex-tcr.md
         - 'SMARTer Human BCR IgG IgM H/K/L Profiling Kit': mixcr/guides/takara-hsa-bcr.md
         - 'SMARTer Mouse TCR a/b Profiling Kit': mixcr/guides/takara-mmu-tcr.md
         - 'Illumina Ampliseq TCR LR / iRepertoire' : mixcr/guides/iRepertoire.md
-        - 'NEBNext Immune Sequencing': mixcr/guides/nebnext-bcr.md
         - 'QIAseq Immune Repertoire TCR' : mixcr/guides/qiaseq-tcr.md
+        - 'Cellecta AIR':  mixcr/guides/cellecta-air-tcr-bcr.md
         - 'AbHelix BCR': mixcr/guides/abhelix-bcr.md
         - 'BioMed2':  mixcr/guides/biomed2-bcr.md
+        - 'NEBNext Immune Sequencing': mixcr/guides/nebnext-bcr.md
       - 'Analysis cases':
         - 'Targeted TCR UMI libraries': mixcr/guides/generic-umi-tcr.md
         - 'Targeted BCR Multiplex libraries': mixcr/guides/generic-multiplex-bcr.md

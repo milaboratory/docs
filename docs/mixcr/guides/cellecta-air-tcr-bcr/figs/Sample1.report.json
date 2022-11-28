@@ -1,0 +1,449 @@
+{
+  "align": {
+    "type": "alignerReport",
+    "commandLine": "align --report results/Sample1.align.report.txt --json-report results/Sample1.align.report.json --preset local:cellecta-air-cdr3 /raw0/cellecta/Sample1_R1.fastq.gz /raw0/cellecta/Sample1_R2.fastq.gz results/Sample1.vdjca",
+    "inputFiles": [
+      "/raw0/cellecta/Sample1_R1.fastq.gz",
+      "/raw0/cellecta/Sample1_R2.fastq.gz"
+    ],
+    "outputFiles": [
+      "results/Sample1.vdjca"
+    ],
+    "version": "4.1.0; built=Tue Oct 18 17:33:21 UTC 2022; rev=852d9d8feb; lib=repseqio.v2.0",
+    "trimmingReport": null,
+    "totalReadsProcessed": 9718563,
+    "aligned": 8996138,
+    "notAligned": 722425,
+    "notAlignedReasons": {
+      "NoCDR3Parts": 0,
+      "NoHits": 922,
+      "NoVHits": 0,
+      "NoBarcode": 0,
+      "NoJHits": 721503,
+      "VAndJOnDifferentTargets": 0,
+      "LowTotalScore": 0
+    },
+    "chimeras": 7,
+    "overlapped": 0,
+    "alignmentAidedOverlaps": 0,
+    "overlappedAligned": 0,
+    "overlappedNotAligned": 0,
+    "pairedEndAlignmentConflicts": 0,
+    "vChimeras": 0,
+    "jChimeras": 0,
+    "chainUsage": {
+      "type": "chainUsage",
+      "chimeras": 7,
+      "total": 8996138,
+      "chains": {
+        "TRA": {
+          "total": 1318953,
+          "nonFunctional": 136353,
+          "isOOF": 121473,
+          "hasStops": 14880
+        },
+        "TRB": {
+          "total": 2112628,
+          "nonFunctional": 49478,
+          "isOOF": 28849,
+          "hasStops": 20629
+        },
+        "TRD": {
+          "total": 44783,
+          "nonFunctional": 2117,
+          "isOOF": 1668,
+          "hasStops": 449
+        },
+        "TRG": {
+          "total": 151598,
+          "nonFunctional": 76265,
+          "isOOF": 74066,
+          "hasStops": 2199
+        },
+        "IGH": {
+          "total": 1919314,
+          "nonFunctional": 45899,
+          "isOOF": 15629,
+          "hasStops": 30270
+        },
+        "IGK": {
+          "total": 1801988,
+          "nonFunctional": 57301,
+          "isOOF": 46094,
+          "hasStops": 11207
+        },
+        "IGL": {
+          "total": 1646867,
+          "nonFunctional": 62120,
+          "isOOF": 50213,
+          "hasStops": 11907
+        }
+      }
+    },
+    "realignedWithForcedNonFloatingBound": 0,
+    "realignedWithForcedNonFloatingRightBoundInLeftRead": 0,
+    "realignedWithForcedNonFloatingLeftBoundInRightRead": 0,
+    "noCDR3PartsAlignments": 486,
+    "partialAlignments": 80481,
+    "tagParsingReport": {
+      "total": 9718563,
+      "matched": 9718563,
+      "totalBitCost": 0,
+      "projections": {
+        "1,2": 9718563
+      },
+      "detailedReport": [
+        {
+          "nested": {
+            "1,2": {
+              "variantId": 0,
+              "nested": [
+                [
+                  {
+                    "positionDistributions": {
+                      "R1:Left": {
+                        "0": 9718563
+                      },
+                      "R1:Right": {
+                        "148": 9718563
+                      }
+                    },
+                    "lengthDistributions": {
+                      "R1": {
+                        "148": 9718563
+                      }
+                    },
+                    "costDistributions": {
+                      "0": 9718563
+                    },
+                    "variantDistribution": {
+                      "0": 9718563
+                    }
+                  }
+                ],
+                [
+                  {
+                    "positionDistributions": {
+                      "UMI:Left": {
+                        "0": 9718563
+                      },
+                      "UMI:Right": {
+                        "14": 9718563
+                      }
+                    },
+                    "lengthDistributions": {
+                      "UMI": {
+                        "14": 9718563
+                      }
+                    },
+                    "costDistributions": {
+                      "0": 9718563
+                    },
+                    "variantDistribution": {
+                      "0": 9718563
+                    }
+                  }
+                ]
+              ],
+              "costDistributions": {
+                "0": 9718563
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "refineTagsAndSort": {
+    "type": "refineTagsAndSort",
+    "commandLine": "refineTagsAndSort --report results/Sample1.refine.report.txt --json-report results/Sample1.refine.report.json results/Sample1.vdjca results/Sample1.refined.vdjca",
+    "inputFiles": [
+      "results/Sample1.vdjca"
+    ],
+    "outputFiles": [
+      "results/Sample1.refined.vdjca"
+    ],
+    "version": "; built=Sat Nov 12 10:47:36 UTC 2022; rev=1bb0f1fe0c; lib=repseqio.v2.0",
+    "correctionReport": {
+      "inputRecords": 8996138,
+      "outputRecords": 8250369,
+      "steps": [
+        {
+          "tagName": "UMI",
+          "inputGroups": 1,
+          "inputDiversity": 1250193,
+          "inputCount": 8996138,
+          "coreDiversity": 1245586,
+          "coreCount": 8991529,
+          "directlyCorrectedDiversity": 159060,
+          "directlyCorrectedCount": 162316,
+          "filteredDiversity": 517,
+          "filteredCount": 517,
+          "recursivelyCorrected": 2670,
+          "diversityFilteredByWhitelist": 0,
+          "outputDiversity": 1090616,
+          "outputCount": 8995621
+        }
+      ],
+      "filterReport": {
+        "type": "filter_groups_report",
+        "groupingKeys": [
+          "UMI"
+        ],
+        "numberOfGroups": 1090616,
+        "numberOfGroupsAccepted": 790459,
+        "totalWeight": 8995621,
+        "totalWeightAccepted": 8250369,
+        "operatorReports": [
+          {
+            "operatorReport": {
+              "type": "generic_hist_report",
+              "threshold": 5
+            },
+            "metricHists": [
+              {
+                "bins": [
+                  {
+                    "from": 1,
+                    "to": 1.5848931924611136,
+                    "weight": 97497
+                  },
+                  {
+                    "from": 1.5848931924611136,
+                    "to": 2.51188643150958,
+                    "weight": 46831
+                  },
+                  {
+                    "from": 2.51188643150958,
+                    "to": 3.981071705534973,
+                    "weight": 69223
+                  },
+                  {
+                    "from": 3.981071705534973,
+                    "to": 6.309573444801933,
+                    "weight": 272496
+                  },
+                  {
+                    "from": 6.309573444801933,
+                    "to": 10,
+                    "weight": 232107
+                  },
+                  {
+                    "from": 10,
+                    "to": 15.848931924611142,
+                    "weight": 262978
+                  },
+                  {
+                    "from": 15.848931924611142,
+                    "to": 25.11886431509581,
+                    "weight": 98543
+                  },
+                  {
+                    "from": 25.11886431509581,
+                    "to": 39.810717055349734,
+                    "weight": 10554
+                  },
+                  {
+                    "from": 39.810717055349734,
+                    "to": 63.09573444801933,
+                    "weight": 366
+                  },
+                  {
+                    "from": 63.09573444801933,
+                    "to": 100,
+                    "weight": 11
+                  },
+                  {
+                    "from": 100,
+                    "to": 158.48931924611142,
+                    "weight": 3
+                  },
+                  {
+                    "from": 158.48931924611142,
+                    "to": 251.18864315095823,
+                    "weight": 3
+                  },
+                  {
+                    "from": 251.18864315095823,
+                    "to": 398.1071705534973,
+                    "weight": 2
+                  },
+                  {
+                    "from": 398.1071705534973,
+                    "to": 630.9573444801937,
+                    "weight": 1
+                  },
+                  {
+                    "from": 630.9573444801937,
+                    "to": 1000,
+                    "weight": 0
+                  },
+                  {
+                    "from": 1000,
+                    "to": 1584.893192461114,
+                    "weight": 0
+                  },
+                  {
+                    "from": 1584.893192461114,
+                    "to": 2511.886431509582,
+                    "weight": 0
+                  },
+                  {
+                    "from": 2511.886431509582,
+                    "to": 3981.0717055349733,
+                    "weight": 0
+                  },
+                  {
+                    "from": 3981.0717055349733,
+                    "to": 6309.573444801937,
+                    "weight": 0
+                  },
+                  {
+                    "from": 6309.573444801937,
+                    "to": 10000,
+                    "weight": 0
+                  },
+                  {
+                    "from": 10000,
+                    "to": 15848.93192461114,
+                    "weight": 0
+                  },
+                  {
+                    "from": 15848.93192461114,
+                    "to": 25118.864315095823,
+                    "weight": 0
+                  },
+                  {
+                    "from": 25118.864315095823,
+                    "to": 39810.71705534977,
+                    "weight": 0
+                  },
+                  {
+                    "from": 39810.71705534977,
+                    "to": 63095.73444801943,
+                    "weight": 1
+                  }
+                ],
+                "collectionSpec": {
+                  "log": true,
+                  "binNumber": 0,
+                  "minBinWidth": 0.2,
+                  "multiplyWeightByKey": false
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "assemble": {
+    "type": "assemblerReport",
+    "commandLine": "assemble --report results/Sample1.assemble.report.txt --json-report results/Sample1.assemble.report.json results/Sample1.refined.vdjca results/Sample1.clns",
+    "inputFiles": [
+      "results/Sample1.refined.vdjca"
+    ],
+    "outputFiles": [
+      "results/Sample1.clns"
+    ],
+    "version": "; built=Sat Nov 12 10:47:36 UTC 2022; rev=1bb0f1fe0c; lib=repseqio.v2.0",
+    "preCloneAssemblerReport": {
+      "type": "preCloneAssemblerReport",
+      "inputGroups": 790459,
+      "inputAlignments": 8250369,
+      "clonotypes": 796354,
+      "clonotypesPerGroup": {
+        "0": 10553,
+        "1": 752646,
+        "2": 21461,
+        "3": 262
+      },
+      "coreAlignments": 7973163,
+      "discardedCoreAlignments": 205350,
+      "empiricallyAssignedAlignments": 7336,
+      "vjEmpiricallyAssignedAlignments": 0,
+      "umiEmpiricallyAssignedAlignments": 0,
+      "gatEmpiricallyAssignedAlignments": 7349,
+      "empiricalAssignmentConflicts": 13,
+      "unassignedAlignments": 217734,
+      "umiConflicts": 21723,
+      "gatConflicts": 2971,
+      "geneConflicts": {
+        "Variable": 610,
+        "Joining": 2361
+      },
+      "coreClonotypesDroppedByTagSuffix": 0,
+      "coreAlignmentsDroppedByTagSuffix": 0
+    },
+    "totalReadsProcessed": 9718563,
+    "initialClonesCreated": 336248,
+    "readsDroppedNoTargetSequence": 71856,
+    "readsDroppedTooShortClonalSequence": 161,
+    "readsDroppedLowQuality": 0,
+    "coreReads": 7975521,
+    "readsDroppedFailedMapping": 4411,
+    "lowQualityRescued": 406,
+    "clonesClustered": 549,
+    "readsClustered": 4380,
+    "clones": 335571,
+    "clonesDroppedAsLowQuality": 0,
+    "clonesPreClustered": 128,
+    "readsPreClustered": 1734,
+    "readsInClones": 7971547,
+    "readsInClonesBeforeClustering": 7975927,
+    "readsDroppedWithLowQualityClones": 0,
+    "clonalChainUsage": {
+      "type": "chainUsage",
+      "chimeras": 0,
+      "total": 335571,
+      "chains": {
+        "TRA": {
+          "total": 50185,
+          "nonFunctional": 6876,
+          "isOOF": 6596,
+          "hasStops": 280
+        },
+        "TRB": {
+          "total": 72010,
+          "nonFunctional": 1704,
+          "isOOF": 1572,
+          "hasStops": 132
+        },
+        "TRD": {
+          "total": 539,
+          "nonFunctional": 72,
+          "isOOF": 67,
+          "hasStops": 5
+        },
+        "TRG": {
+          "total": 1917,
+          "nonFunctional": 992,
+          "isOOF": 965,
+          "hasStops": 27
+        },
+        "IGH": {
+          "total": 111674,
+          "nonFunctional": 1424,
+          "isOOF": 1171,
+          "hasStops": 253
+        },
+        "IGK": {
+          "total": 48436,
+          "nonFunctional": 3316,
+          "isOOF": 3205,
+          "hasStops": 111
+        },
+        "IGL": {
+          "total": 50810,
+          "nonFunctional": 3503,
+          "isOOF": 3362,
+          "hasStops": 141
+        }
+      }
+    },
+    "clonesFilteredInPostFiltering": 0,
+    "readsFilteredInPostFiltering": 0,
+    "postFilteringReports": null,
+    "alignmentsFilteredByTagPrefix": 0
+  }
+}
