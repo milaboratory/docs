@@ -1,6 +1,6 @@
 site_name: Docs @ MiLaboratories
 site_url: https://docs.milaboratories.com/
-site_description: "MiXCR documentation portal"
+site_description: "Documentation for MiXCR: universal software for fast and accurate analysis of raw T- or B- cell receptor repertoire sequencing data."
 site_author: MiLaboratories Inc
 copyright: Copyright &copy; MiLaboratories Inc
 
@@ -108,6 +108,7 @@ extra_javascript:
 nav:
   - 'Home': index.md
   - 'Getting Started':
+      - 'About': mixcr/getting-started/about.md
       - 'Installation': mixcr/getting-started/installation.md
       - 'Using with Docker': mixcr/getting-started/docker.md
       - 'Obtaining and using license key': mixcr/getting-started/milm.md
