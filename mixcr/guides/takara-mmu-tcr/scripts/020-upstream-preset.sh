@@ -1,4 +1,4 @@
-mixcr analyze takara-smarter-mouse-tcr-cdr3 \
+mixcr analyze takara-mouse-tcr-cdr3 \
 	raw/S_s_R1.fastq.gz \
    	raw/S_s_R2.fastq.gz \
    	results/S_s

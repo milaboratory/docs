@@ -558,7 +558,7 @@ ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952599/ERR5952599_1.fastq.gz
   <span class=nv>out</span><span class=o>=</span>raw/MISC12_R1.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/ERR595/009/ERR5952599/ERR5952599_2.fastq.gz
   <span class=nv>out</span><span class=o>=</span>raw/MISC12_R2.fastq.gz
-</code></pre></div></p> </details> <h2 id=upstream-analysis>Upstream analysis</h2> <p>MiXCR has a dedicated preset for this protocol, thus analysing the data is as easy as:</p> <div class=highlight><pre><span></span><code>mixcr analyze takara-smarter-human-bcr-cdr3 <span class=se>\</span>
+</code></pre></div></p> </details> <h2 id=upstream-analysis>Upstream analysis</h2> <p>MiXCR has a dedicated preset for this protocol, thus analysing the data is as easy as:</p> <div class=highlight><pre><span></span><code>mixcr analyze takara-human-bcr-cdr3 <span class=se>\</span>
     raw/FebControl1_R1.fastq.gz <span class=se>\</span>
     raw/FebControl1_R2.fastq.gz <span class=se>\</span>
     results/FebControl1
@@ -582,7 +582,7 @@ mkdir -p results
 
 ls /raw/*R1* <span class=p>|</span>
     parallel -j <span class=m>2</span> --line-buffer <span class=se>\</span>
-    <span class=s2>&quot;mixcr analyze takara-smarter-human-bcr-cdr3 \</span>
+    <span class=s2>&quot;mixcr analyze takara-human-bcr-cdr3 \</span>
 <span class=s2>    {} \</span>
 <span class=s2>    {=s:R1:R2:=} \</span>
 <span class=s2>    {=s:.*/:results/:;s:_R.*::=}&quot;</span>
@@ -636,7 +636,7 @@ mixcr align <span class=se>\</span>
      raw/MISC9_R2.fastq.gz <span class=se>\</span>
      debug/MISC9.vdjca
 </code></pre></div> <p>Resulting <code>MISC9_notAligned_R1.fastq</code> and <code>MISC9_notAligned_R2.fastq</code> files can be manually inspected. A brief <a href=https://blast.ncbi.nlm.nih.gov/Blast.cgi>BLAST</a> search revealed most not aligned sequences come from DNA sequence (in between gene segments or from immunoglobulin like genes (e.g.IGLL5) )</p> <p>Now Lets look at the chain distribution in every sample.</p> <div class=highlight><pre><span></span><code>mixcr exportQc chainUsage results/*.clns figs/chainUsage.pdf
-</code></pre></div> <p><img alt="chain usage QC" src=figs/chainUsage.svg></p> <p>We see that in most sample number of light chains significantly dominate over IGH. Since libraries for all chains were generated in a separate PCR reactions according to the protocol, we might suggest that this bias arise from unequal mixing of cDNA libraries prior sequencing.</p> <h2 id=full-length-clonotype-assembly>Full-length clonotype assembly</h2> <p>SMARTer Human BCR IgG IgM H/K/L Profiling Sequencing Kit allows to recover a broader BCR receptor sequence then just <code>CDR3</code> region. Since this protocol is based on 5'RACE method, the full V-gene sequence should present. Reverse sequence specific primers are located in C-gene region providing enough sequence for IgG\IgM isotype identification.</p> <p>Taking into account what is mentioned above, the longest possible assembling feature for this protocol is <code>VDJRegion</code>.</p> <p>MiXCR has a specific preset to obtain full-length BCR clones with SMARTer Human BCR IgG IgM H/K/L Profiling Sequencing Kit:</p> <div class=highlight><pre><span></span><code>mixcr analyze takara-smarter-human-bcr-full-length <span class=se>\</span>
+</code></pre></div> <p><img alt="chain usage QC" src=figs/chainUsage.svg></p> <p>We see that in most sample number of light chains significantly dominate over IGH. Since libraries for all chains were generated in a separate PCR reactions according to the protocol, we might suggest that this bias arise from unequal mixing of cDNA libraries prior sequencing.</p> <h2 id=full-length-clonotype-assembly>Full-length clonotype assembly</h2> <p>SMARTer Human BCR IgG IgM H/K/L Profiling Sequencing Kit allows to recover a broader BCR receptor sequence then just <code>CDR3</code> region. Since this protocol is based on 5'RACE method, the full V-gene sequence should present. Reverse sequence specific primers are located in C-gene region providing enough sequence for IgG\IgM isotype identification.</p> <p>Taking into account what is mentioned above, the longest possible assembling feature for this protocol is <code>VDJRegion</code>.</p> <p>MiXCR has a specific preset to obtain full-length BCR clones with SMARTer Human BCR IgG IgM H/K/L Profiling Sequencing Kit:</p> <div class=highlight><pre><span></span><code>mixcr analyze takara-human-bcr-full-length <span class=se>\</span>
     raw/FebControl1_R1.fastq.gz <span class=se>\</span>
     raw/FebControl1_R2.fastq.gz <span class=se>\</span>
     results/FebControl1

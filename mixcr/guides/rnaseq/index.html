@@ -564,7 +564,7 @@ mkdir -p results
 
 ls /raw/*.gz <span class=p>|</span>
     parallel -j <span class=m>2</span> --line-buffer <span class=se>\</span>
-    <span class=s2>&quot;mixcr analyze rnaseq-tcr-cdr3 \</span>
+    <span class=s2>&quot;mixcr analyze rnaseq-cdr3 \</span>
 <span class=s2>    --species hsa \</span>
 <span class=s2>    {} \</span>
 <span class=s2>    {=s:.*/:results/:;s:\.fastq\.gz::=}&quot;</span>
@@ -611,8 +611,8 @@ mixcr assemblePartial <span class=se>\</span>
     results/CD8T_REH_4h_rep1.clns <span class=se>\</span>
     results/CD8T_REH_4h_rep1.clones.tsv
 </code></pre></div> <p>Check <a href=../../reference/mixcr-export/ ><code>mixcr export</code></a> for more additional fields.</p> <h2 id=quality-control>Quality control</h2> <p>Now, when the analysis is complete, lets visualize quality report data. Looking at the alignment report in this case won't be of much help, because the cDNA library was not enriched with TCR sequences, thus we already know that only a small part of reads has been successfully aligned. What is going to be more descriptive is to look at the chain usage among samples.</p> <div class=highlight><pre><span></span><code>mixcr exportQc chainUsage results/*.clns figs/chainUsage.pdf
-</code></pre></div> <p><img alt=chainUsage.svg src=figs/chainUsage.svg></p> <p>This plot reveals a mild contamination by B-cells, since IGH and IGKL chains present in the samples despite Treg and CD8+ cells have been isolated for library preparation.</p> <h2 id=full-length-receptor-assembly>Full length receptor assembly</h2> <p>Because RNA-Seq reads randomly cover the whole receptor gene region it is possible to assemble longer clone sequences then just <code>CDR3</code>. To do that we can use another RNA-seq preset specifically tuned to assemble the longest clone sequence possible.</p> <div class=highlight><pre><span></span><code>mixcr analyze rnaseq-tcr-full-length <span class=se>\</span>
-    +species hsa <span class=se>\</span>
+</code></pre></div> <p><img alt=chainUsage.svg src=figs/chainUsage.svg></p> <p>This plot reveals a mild contamination by B-cells, since IGH and IGKL chains present in the samples despite Treg and CD8+ cells have been isolated for library preparation.</p> <h2 id=full-length-receptor-assembly>Full length receptor assembly</h2> <p>Because RNA-Seq reads randomly cover the whole receptor gene region it is possible to assemble longer clone sequences then just <code>CDR3</code>. To do that we can use another RNA-seq preset specifically tuned to assemble the longest clone sequence possible.</p> <div class=highlight><pre><span></span><code>mixcr analyze rnaseq-full-length <span class=se>\</span>
+    --species hsa <span class=se>\</span>
     raw/CD8T_REH_4h_rep1.fastq.gz <span class=se>\</span>
     results/CD8T_REH_4h_rep1
 </code></pre></div> <p>Under the hood this preset differs from the one used previously in the following manner:</p> <ol> <li><code>--write-alignments</code> option is added to <code>mixcr assemble</code> command to preserve the alignments that were not used in <code>CDR3</code> clone assembly.</li> </ol> <div class="admonition note"> <p class=admonition-title>Note</p> <p>With this option MiXCR will output <code>.clna</code> (instead of <code>.clns</code>) file that preserves original alignments.</p> </div> <div class=highlight><pre><span></span><code>mixcr assemble <span class=se>\</span>

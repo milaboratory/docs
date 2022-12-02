@@ -954,7 +954,7 @@ ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR836/006/SRR8365486/SRR8365486_2.fastq.gz
   <span class=nv>out</span><span class=o>=</span>raw/SRR8365486_HIP1_female_IgG4_R2.fastq.gz
 ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR836/007/SRR8365487/SRR8365487_2.fastq.gz
   <span class=nv>out</span><span class=o>=</span>raw/SRR8365487_HIP1_female_IgG3_R2.fastq.gz
-</code></pre></div></p> </details> <p>The project contains 100 FASTQ file pairs. For the purpose of this tutorial we assume that all fastq files are stored in <code>fastq/</code> folder. Each file name encodes the information about mouse id and PMBC sample time-point (0,7,14,21 days) or tissue (s - spleen, t -tumor) - <code>S</code> - mouce id, experiment group - <code>s</code> - spleen tissue</p> <p>The structure of the library is shown on the picture bellow.</p> <p><img alt src=../../reference/pics/SMARTer-Mouse-TCR-light.svg#only-light> <img alt src=../../reference/pics/SMARTer-Mouse-TCR-dark.svg#only-dark></p> <h2 id=upstream-analysis>Upstream analysis</h2> <p>MiXCR has a dedicated preset for this protocol, thus analysing the data is as easy as:</p> <div class=highlight><pre><span></span><code>mixcr analyze takara-smarter-mouse-tcr-cdr3 <span class=se>\</span>
+</code></pre></div></p> </details> <p>The project contains 100 FASTQ file pairs. For the purpose of this tutorial we assume that all fastq files are stored in <code>fastq/</code> folder. Each file name encodes the information about mouse id and PMBC sample time-point (0,7,14,21 days) or tissue (s - spleen, t -tumor) - <code>S</code> - mouce id, experiment group - <code>s</code> - spleen tissue</p> <p>The structure of the library is shown on the picture bellow.</p> <p><img alt src=../../reference/pics/SMARTer-Mouse-TCR-light.svg#only-light> <img alt src=../../reference/pics/SMARTer-Mouse-TCR-dark.svg#only-dark></p> <h2 id=upstream-analysis>Upstream analysis</h2> <p>MiXCR has a dedicated preset for this protocol, thus analysing the data is as easy as:</p> <div class=highlight><pre><span></span><code>mixcr analyze takara-mouse-tcr-cdr3 <span class=se>\</span>
     raw/S_s_R1.fastq.gz <span class=se>\</span>
     raw/S_s_R2.fastq.gz <span class=se>\</span>
     results/S_s
@@ -964,7 +964,7 @@ mkdir -p results
 
 ls /raw/*R1* <span class=p>|</span>
     parallel -j <span class=m>2</span> --line-buffer <span class=se>\</span>
-    <span class=s2>&quot;mixcr analyze takara-smarter-mouse-tcr-cdr3 \</span>
+    <span class=s2>&quot;mixcr analyze takara-mouse-tcr-cdr3 \</span>
 <span class=s2>    {} \</span>
 <span class=s2>    {=s:R1:R2:=} \</span>
 <span class=s2>    {=s:.*/:results/:;s:_R.*::=}&quot;</span>
@@ -1015,7 +1015,7 @@ mixcr align -f <span class=se>\</span>
      raw/S_s_R2.fastq.gz <span class=se>\</span>
      debug/S_s.vdjca
 </code></pre></div> <p>Now one can use BLAST to determine the origin of the reads in <code>S_7_notAligned_R1.fastq</code> and <code>S_7_notAligned_R2.fastq</code>. In this particular case BLAST showed that major part of the non-aligned reads aligns with DNA sequence in between TCR gene segments which may be consequences of DNA contamination.</p> <p>Finally, we can look at the chain distribution among all clones. </p> <div class=highlight><pre><span></span><code>mixcr exportQc chainUsage results/*.clns figs/chainUsage.pdf
-</code></pre></div> <p>On the plot bellow we see, despite some TRB dominance, both (TCR alpha and TCR beta) chains equally present in each sample.</p> <p><img alt=chainUsage.svg src=figs/chainUsage.svg></p> <h2 id=full-length-clonotype-assembly>Full-length clonotype assembly</h2> <p>SMARTer Mouse TCR a/b Profiling Kit allows to recover a broader TCR receptor sequence then just <code>CDR3</code> region. Since this protocol is based on 5'RACE method, the full V-gene sequence should present. Reverse sequence specific primers are located in C-gene region, thus the read fully covers J-gene.</p> <p>The longest possible assembling feature for this protocol is <code>"{FR1Begin:FR4End}"</code>.</p> <p>MiXCR has a specific preset to obtain full-length TCR clones with SMARTer Mouse TCR a/b Profiling protocol:</p> <div class=highlight><pre><span></span><code>mixcr analyze takara-smarter-mouse-tcr-full-length <span class=se>\</span>
+</code></pre></div> <p>On the plot bellow we see, despite some TRB dominance, both (TCR alpha and TCR beta) chains equally present in each sample.</p> <p><img alt=chainUsage.svg src=figs/chainUsage.svg></p> <h2 id=full-length-clonotype-assembly>Full-length clonotype assembly</h2> <p>SMARTer Mouse TCR a/b Profiling Kit allows to recover a broader TCR receptor sequence then just <code>CDR3</code> region. Since this protocol is based on 5'RACE method, the full V-gene sequence should present. Reverse sequence specific primers are located in C-gene region, thus the read fully covers J-gene.</p> <p>The longest possible assembling feature for this protocol is <code>"{FR1Begin:FR4End}"</code>.</p> <p>MiXCR has a specific preset to obtain full-length TCR clones with SMARTer Mouse TCR a/b Profiling protocol:</p> <div class=highlight><pre><span></span><code>mixcr analyze takara-mouse-tcr-full-length <span class=se>\</span>
     raw/S_s_R1.fastq.gz <span class=se>\</span>
     raw/S_s_R2.fastq.gz <span class=se>\</span>
     results/S_s.vdjca
