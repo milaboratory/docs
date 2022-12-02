@@ -5,23 +5,26 @@ Export clonotypes or raw alignments in a tabular form.
 ![](pics/export-light.svg#only-light)
 ![](pics/export-dark.svg#only-dark)
 
-MiXCR uses four highly efficient binary formats that hold exhaustive information on the clonotypes, alignments, barcodes and original sequencing reads:
+MiXCR uses highly efficient binary formats that hold exhaustive information on the clonotypes, alignments, barcodes and original sequencing reads:
 
 - `.vdjca` produced by [`align`](./mixcr-align.md) and holds alignments
 - `.clns` produced by [`assemble`](./mixcr-assemble.md) and [`assembleContigs`](./mixcr-assembleContigs.md) holds clonotypes
 - `.clna` produced by [`assemble`](./mixcr-assemble.md) and holds both clonotypes and alignments
-- `.shmt` produced by [`findShmTrees`](./mixcr-findShmTrees.md) and holds clonotypes, alignments and SHM trees
 
-MiXCR provides functions for export [alignments](#alignments), [clonotype tables](#clonotype-tables), [SHM trees tables](#shm-trees-tables) and [SHM with nodes tables](#shm-trees-with-nodes-tables) in a tab-delimited way. For human-readable formatted output see [pretty export](./mixcr-exportPretty.md).
+MiXCR provides functions for export [alignments](#alignments), [clonotype tables](#clonotype-tables) in a tab-delimited way. For human-readable formatted output see [pretty export](./mixcr-exportPretty.md).
+
+For export of `.shmt` produced by [`findShmTrees`](./mixcr-findShmTrees.md) see [`exportShmTrees.md`](./mixcr-exportShmTrees.md).
 
 ## Clonotype tables
 
 ```
-mixcr exportClones 
+mixcr exportClones
     [--chains <chains>] 
+    [--impute-germline-on-export]
+    [--dont-impute-germline-on-export] 
     [--filter-out-of-frames] 
     [--filter-stops] 
-    [--split-by-tag <tag>] 
+    [--split-by-tags <(Molecule|Cell|Sample)>] 
     [--split-files-by <splitFilesBy>]... 
     [--dont-split-files] 
     [--no-header] 
@@ -48,14 +51,20 @@ Command line options:
 `-c, --chains <chains>`
 : Limit export to specific chain (e.g. TRA or IGH) (fractions will be recalculated). Default value determined by the preset.
 
+`--impute-germline-on-export`
+: Export nucleotide sequences using letters from germline (marked lowercase) for uncovered regions
+
+`--dont-impute-germline-on-export`
+: Export nucleotide sequences only from covered region
+
 `-o, --filter-out-of-frames`
 : Exclude clones with out-of-frame clone sequences (fractions will be recalculated). Default value determined by the preset.
 
 `-t, --filter-stops`
 : Exclude sequences containing stop codons (fractions will be recalculated). Default value determined by the preset.
 
-`--split-by-tag <tag>`
-: Split clones by tag values Default value determined by the preset.
+`--split-by-tags <(Molecule|Cell|Sample)>`
+: Split clones by tag type. Will be calculated from export columns if not specified. Default value determined by the preset.
 
 `--split-files-by <splitFilesBy>`
 : Split files by (currently the only supported value is "geneLabel:reliableChain" etc... ). Default value determined by the preset.
@@ -90,8 +99,10 @@ Command line options:
 ## Alignments
 
 ```
-mixcr exportAlignments [-f]
+mixcr exportAlignments
     [--chains <chains>] 
+    [--impute-germline-on-export]
+    [--dont-impute-germline-on-export] 
     [--no-header] 
     [--drop-default-fields] 
     [--prepend-columns] 
@@ -116,6 +127,12 @@ Command line options:
 `-c, --chains <chains>`
 : Limit export to specific chain (e.g. TRA or IGH) (fractions will be recalculated) Default value determined by the preset.
 
+`--impute-germline-on-export`
+: Export nucleotide sequences using letters from germline (marked lowercase) for uncovered regions
+
+`--dont-impute-germline-on-export`
+: Export nucleotide sequences only from covered region
+
 `--no-header`
 : Don't print first header line, print only data Default value determined by the preset.
 
@@ -139,162 +156,6 @@ Command line options:
 
 `<exportField>`
 : A list of [export fields](#export-fields)
-
-## SHM trees tables
-
-```
-mixcr exportShmTrees [-f]
-    [--ids <id>[,<id>...]]... 
-    [--filter-min-nodes <n>] 
-    [--filter-min-height <n>] 
-    [--preset <preset>]
-    [--preset-file <file>]
-    [--no-header] 
-    [<exportField>]...
-    [--force-overwrite] 
-    [--no-warnings] 
-    [--verbose] 
-    [--help] 
-    [[--filter-in-feature <gene_feature>] [--pattern-max-errors <n>] (--filter-aa-pattern <pattern> | --filter-nt-pattern <pattern>)] 
-    trees.shmt [trees.tsv]
-```
-
-Exports tab-delimited alignments from `.shmt` file.
-
-Command line options:
-
-`trees.shmt`
-: Input file produced by 'findShmTrees' command.
-
-`[trees.tsv]`
-: Path to output table. Print in stdout if omitted.
-
-`--no-header`
-: Don't print column names
-
-`--ids <id>[,<id>...]`   
-: Filter specific trees by id
-
-`--filter-min-nodes <n>` 
-: Minimal number of nodes in tree
-
-`--filter-min-height <n>`
-: Minimal height of the tree
-
-`-p, --preset <preset>`
-: Specify preset of export fields (possible values: 'full', 'min'; 'full' by default)
-
-`-pf, --preset-file <presetFile>`
-: Specify preset file of export fields
-
-`-f, --force-overwrite`
-: Force overwrite of output file(s).
-
-`-nw, --no-warnings`
-: Suppress all warning messages.
-
-`--verbose`
-: Verbose warning messages.
-
-`-h, --help`
-: Show this help message and exit.
-
-`<exportField>`
-: A list of [export fields](#export-fields)
-
-Filter by pattern options:
-
-`--filter-in-feature <gene_feature>`
-: Match pattern inside specified gene feature. Default: CDR3
-
-`--pattern-max-errors <n>`
-: Max allowed subs & indels. Default: 0
-
-`--filter-aa-pattern <pattern>`
-: Filter specific trees by aa pattern.
-
-`--filter-nt-pattern <pattern>`
-: Filter specific trees by nt pattern.
-
-## SHM trees with nodes tables
-
-```
-mixcr exportShmTreesWithNodes [-f]
-    [--ids <id>[,<id>...]]... 
-    [--filter-min-nodes <n>] 
-    [--filter-min-height <n>] 
-    [--onlyObserved] 
-    [--preset <preset>] 
-    [--preset-file <presetFile>] 
-    [--no-header]
-    [<exportField>]...
-    [--force-overwrite] 
-    [--no-warnings] 
-    [--verbose]  
-    [--help] 
-    [[--filter-in-feature <gene_feature>] [--pattern-max-errors <n>] (--filter-aa-pattern <pattern> | --filter-nt-pattern <pattern>)] 
-    trees.shmt [trees.tsv]
-```
-
-Exports tab-delimited alignments from `.shmt` file.
-
-Command line options:
-
-`trees.shmt`
-: Input file produced by 'findShmTrees' command.
-
-`[trees.tsv]`
-: Path where to write output export table. Print in stdout if omitted.
-
-`--ids <id>[,<id>...]`   
-: Filter specific trees by id
-
-`--filter-min-nodes <n>`
-: Minimal number of nodes in tree
-
-`--filter-min-height <n>`
-: Minimal height of the tree
-
-`--no-header`
-: Don't print column names
-
-`--onlyObserved`
-: Exclude nodes that was reconstructed by algorithm
-
-`-p, --preset <preset>`
-: Specify preset of export fields (possible values: 'min', 'full'; 'full' by default)
-
-`-pf, --preset-file <presetFile>`
-: Specify preset file of export fields
-
-`-f, --force-overwrite`
-: Force overwrite of output file(s).
-
-`-nw, --no-warnings`
-: Suppress all warning messages.
-
-`--verbose`
-: Verbose warning messages.
-
-`-h, --help`
-: Show this help message and exit.
-
-`<exportField>`
-: A list of [export fields](#export-fields)
-
-Filter by pattern options:
-
-`--filter-in-feature <gene_feature>`
-: Match pattern inside specified gene feature. Default: CDR3
-
-`--pattern-max-errors <n>`
-: Max allowed subs & indels. Default: 0
-
-`--filter-aa-pattern <pattern>`
-: Filter specific trees by aa pattern.
-
-`--filter-nt-pattern <pattern>`
-: Filter specific trees by nt pattern.
 
 ## Examples
 
@@ -333,7 +194,7 @@ The columns in the resulting file will be exported in exactly the same order as 
 
 ```shell
 > mixcr exportClones \
-    -uniqueTagCount umi \
+    -uniqueTagCount Molecule \
     clones.clns \
     clones.tsv
 ```
@@ -344,20 +205,20 @@ It is also possible to export full list of UMIs with their read counts that were
 
 ```shell
 > mixcr exportClones \
-    -uniqueTagCount umi \
+    -uniqueTagCount Molecule \
     -tagCounts \
     clones.clns \
     clones.tsv
 ```
 
-| cloneId | uniqueTagCountUMI | tagCounts                                                   | cloneCount         | ... |
-|---------|-------------------|-------------------------------------------------------------|--------------------|-----|
-| 1       | 901               | {AGGATCTAGCTC=47.0,GATTCAGGCAAA=12.0,GTTTGTATATAG=119.0 ... | 157166.58695588264 | ... |
-| 2       | 123               | {AGGGTACACCAG=12.0,GTTTAAAAATAA=42.0,ATTACAGCCTAA=19.0 ...  | 113072.80475962501 | ... |
-| 3       | 110               | {GCAAGCGCTGGC=40.0,TCGAAAAAAACA=42.0,AGCACAGGTGAT=113.0 ... | 17367.706440640646 | ... |
-| 4       | 98                | {CGATCGAAGGAT=47.0,ACCCGCATCAGA=112.0,TCAGTTTGTAAA=1.0 ...  | 14959.662854752114 | ... |
-| 5       | 82                | {CTGTGGATAGTA=117.0,ATCCAGAAGCGT=12.0,ATCGGTGATCAC=93.0 ... | 13653.505182577868 | ... |
-| ...     | ...               | ...                                                         | ...                | ... |
+| cloneId | uniqueTagCountMolecule | tagCounts                                                   | cloneCount         | ... |
+|---------|------------------------|-------------------------------------------------------------|--------------------|-----|
+| 1       | 901                    | {AGGATCTAGCTC=47.0,GATTCAGGCAAA=12.0,GTTTGTATATAG=119.0 ... | 157166.58695588264 | ... |
+| 2       | 123                    | {AGGGTACACCAG=12.0,GTTTAAAAATAA=42.0,ATTACAGCCTAA=19.0 ...  | 113072.80475962501 | ... |
+| 3       | 110                    | {GCAAGCGCTGGC=40.0,TCGAAAAAAACA=42.0,AGCACAGGTGAT=113.0 ... | 17367.706440640646 | ... |
+| 4       | 98                     | {CGATCGAAGGAT=47.0,ACCCGCATCAGA=112.0,TCAGTTTGTAAA=1.0 ...  | 14959.662854752114 | ... |
+| 5       | 82                     | {CTGTGGATAGTA=117.0,ATCCAGAAGCGT=12.0,ATCGGTGATCAC=93.0 ... | 13653.505182577868 | ... |
+| ...     | ...                    | ...                                                         | ...                | ... |
 
 ### Single cell libraries
 
@@ -366,10 +227,10 @@ Export paired TCR-alpha/beta or BCR-heavy/light clonotype pairs from single cell
 ```shell
 > mixcr exportClones \
     --drop-default-fields \
-    --split-by-tag cell \
+    --split-by-tags Cell \
     -tag cell \
     -cellGroup \
-    -uniqueTagCount UMI \
+    -uniqueTagCount Molecule \
     -count \
     -vFamily -jFamily \
     -aaFeature CDR3 \
@@ -378,25 +239,25 @@ Export paired TCR-alpha/beta or BCR-heavy/light clonotype pairs from single cell
     clones.tsv
 ```
 
-Here we use `--split-by-tag` option to export cells that contain the same clonotype on separate rows, `-tag` to export cell barcode for each clonotype and `-cellGroup` which is cell identifier.
+Here we use `--split-by-tags` option to export cells that contain the same clonotype on separate rows, `-tags` to export cell barcode for each clonotype and `-cellGroup` which is cell identifier.
 
-| tagValueCELL | cellGroup | uniqueTagCountUMI | cloneCount      | bestVFamily | bestJFamily | nSeqCDR3                                                           | aaSeqVDJRegionImputed                                                                                                                 |
-|--------------|-----------|-------------------|-----------------|-------------|-------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| CTAGGCTAGC   | 11        | 198               | 10716.64        | IGLV1       | IGLJ3       | TGCGGAACATGGGATAGCAGCCTGAGTGCTTGGGTGTTC                            | QVQLVESGGALVRPGGSLRLSCAASGFPFANFGITWVRLPPGKGLEWVADITPDGGTTYYADSVKGRFTISKDNAKNTVALQMNTLSPEDTAVYYCATPMYDHWGQGTQVTVSS_                   |
-| CTAGGCTAGC   | 11        | 93                | 11372.5962501   | IGKV1       | IGKJ1       | TGTCAACAGTCTGAAAATCTCCCTCCGACGTTC                                  | QVQLVETGGGLVQAGGSLRLSCAASGRTFSSYAMGWFRQAPGKEREFVSAISWSGGSTFYADSVKGRFTISRDNAKNTVYLQMNSLKPEDTAVYYCAAATHRHDGLALIGEYDYWGQGTQVTVSS_        |
-| CTAGGCTAGC   | 11        | 80                | 17467.0640646   | IGHV2       | IGHJ5       | TGTGCACGGATACGGAGGTATAGCAGTGGCTGGTACTCAACGAACTGGTTCGACCCCTGG       | QVQLVETGGGLVQAGGSLRLSCAASGFTFDDYVIGWFRQAPGKEREGVSCINSSDGSTYYADSVKGRFTISSDNAKNTVYLQMNSLKPEDTAVYYCAAELIDRLIAIMGASCPLEYDYWGQGTQVTVSS_    |
-| TGCTGAATCG   | 187       | 98                | 12959.5475211   | IGKV3       | IGKJ2       | TGTCAACTCGATTGCATTGCACCTCCGACGTTC                                  | QVQLVETGGRLGAGWGVSETLLCLLWIQFP\*I\*YRVVPPGPREGA\*GSWMY\*FQRW\*YIPSRLREGPIHHLPRQFEECGISAHEQLET*RHGRLLLCKRSGRMCCVYRGLLPRHGLLGQRDPGHRLL_ |
-| TGCTGAATCG   | 187       | 82                | 11653.182577868 | IGHV1       | IGHJ2       | TGTGCACTACGTAGCAAGGTATAGCAGCTAGGCTGCTGGTGCAACTAGGCTAGCTTCGACCCCTGG | QLQLVESGGGLVQAGGSLRLSCAASGRTDSRYTMGWFRQAPGKEREIVAQISPFGGNQYYADSVKGRFTISRDNAKNTVYLQMNSLKAEDTAVYYCYAEGPGRWVAGTWTRDYWGQGTQVTISS_         |
-| ...          | ...       | ...               | ...             | ...         | ...         | ...                                                                | ...                                                                                                                                   |
+| tagValueCELL | cellGroup | uniqueTagCountMolecule | cloneCount      | bestVFamily | bestJFamily | nSeqCDR3                                                           | aaSeqVDJRegionImputed                                                                                                                 |
+|--------------|-----------|------------------------|-----------------|-------------|-------------|--------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------|
+| CTAGGCTAGC   | 11        | 198                    | 10716.64        | IGLV1       | IGLJ3       | TGCGGAACATGGGATAGCAGCCTGAGTGCTTGGGTGTTC                            | QVQLVESGGALVRPGGSLRLSCAASGFPFANFGITWVRLPPGKGLEWVADITPDGGTTYYADSVKGRFTISKDNAKNTVALQMNTLSPEDTAVYYCATPMYDHWGQGTQVTVSS_                   |
+| CTAGGCTAGC   | 11        | 93                     | 11372.5962501   | IGKV1       | IGKJ1       | TGTCAACAGTCTGAAAATCTCCCTCCGACGTTC                                  | QVQLVETGGGLVQAGGSLRLSCAASGRTFSSYAMGWFRQAPGKEREFVSAISWSGGSTFYADSVKGRFTISRDNAKNTVYLQMNSLKPEDTAVYYCAAATHRHDGLALIGEYDYWGQGTQVTVSS_        |
+| CTAGGCTAGC   | 11        | 80                     | 17467.0640646   | IGHV2       | IGHJ5       | TGTGCACGGATACGGAGGTATAGCAGTGGCTGGTACTCAACGAACTGGTTCGACCCCTGG       | QVQLVETGGGLVQAGGSLRLSCAASGFTFDDYVIGWFRQAPGKEREGVSCINSSDGSTYYADSVKGRFTISSDNAKNTVYLQMNSLKPEDTAVYYCAAELIDRLIAIMGASCPLEYDYWGQGTQVTVSS_    |
+| TGCTGAATCG   | 187       | 98                     | 12959.5475211   | IGKV3       | IGKJ2       | TGTCAACTCGATTGCATTGCACCTCCGACGTTC                                  | QVQLVETGGRLGAGWGVSETLLCLLWIQFP\*I\*YRVVPPGPREGA\*GSWMY\*FQRW\*YIPSRLREGPIHHLPRQFEECGISAHEQLET*RHGRLLLCKRSGRMCCVYRGLLPRHGLLGQRDPGHRLL_ |
+| TGCTGAATCG   | 187       | 82                     | 11653.182577868 | IGHV1       | IGHJ2       | TGTGCACTACGTAGCAAGGTATAGCAGCTAGGCTGCTGGTGCAACTAGGCTAGCTTCGACCCCTGG | QLQLVESGGGLVQAGGSLRLSCAASGRTDSRYTMGWFRQAPGKEREIVAQISPFGGNQYYADSVKGRFTISRDNAKNTVYLQMNSLKAEDTAVYYCYAEGPGRWVAGTWTRDYWGQGTQVTISS_         |
+| ...          | ...       | ...                    | ...             | ...         | ...         | ...                                                                | ...                                                                                                                                   |
 
 In the above example we specified particular columns to export. To export all columns one can use simply:
 
 ```shell
 > mixcr exportClones \
-    --split-by-tag cell \
+    --split-by-tags Cell \
     -tag cell \
     -cellGroup \
-    -uniqueTagCount UMI \
+    -uniqueTagCount Molecule \
     clones.clns \
     clones.tsv
 ```
@@ -431,36 +292,11 @@ One can also use default presets with imputation (all gene features will use imp
     clones.clns clones.tsv  
 ```
 
-### SHM trees export presets
-
-For convenience, MiXCR provides two predefined sets of fields for exporting SHM trees: `min` (will export minimal required information about tree or tree nodes) and `full` (used by default); one can use these sets by specifying the `--preset` option:
-
-```shell
-> mixcr exportShmTrees --preset min trees.shmt trees.tsv
-```
-
-One can add additional columns to the preset in the following way:
-
-```shell
-> mixcr exportShmTreesWithNodes --preset min -qFeature CDR2 trees.shmt trees_with_nodes.tsv
-```
-
-One can also put all specify export fields in a separate file
-
-```shell
-> cat myFields.txt
--vHits
--dHits
--nFeature CDR3
- 
-> mixcr exportShmTreesWithNodes --preset-file myFields.txt trees.shmt trees_with_nodes.tsv
-```
-
 ## Export fields
 
 ### Common fields
 
-These fields available for `exportAlignments`, `exportClones` and `exportShmTreesWithNodes` (for `exportShmTreesWithNodes` only for nodes with clones):
+These fields available for `exportAlignments` and `exportClones`:
 
 `-targets`
 : Export number of targets
@@ -601,10 +437,10 @@ By default, boundaries will be got from analysis parameters if possible or `FR1B
 `-aaFeatureImputed <gene_feature>`
 : Export amino acid sequence of specified gene feature using letters from germline (marked lowercase) for uncovered regions
 
-`-allAaFeaturesImputed [<from_reference_point> <to_reference_point>]`
+`-allAAFeaturesImputed [<from_reference_point> <to_reference_point>]`
 : Export amino acid sequence using letters from germline (marked lowercase) for uncovered regions for all gene features between specified reference points (in separate columns).
 
-For example, `-allAaFeaturesImputed FR3Begin FR4End` will export `-aaFeatureImputed FR3`, `-aaFeatureImputed CDR3`, `-aaFeatureImputed FR4`.
+For example, `-allAAFeaturesImputed FR3Begin FR4End` will export `-aaFeatureImputed FR3`, `-aaFeatureImputed CDR3`, `-aaFeatureImputed FR4`.
 
 By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
@@ -641,6 +477,75 @@ By default, boundaries will be got from analysis parameters if possible or `FR1B
 For example, `-allAvrgFeaturesQuality FR3Begin FR4End` will export `-avrgFeatureQuality FR3`, `-avrgFeatureQuality CDR3`, `-avrgFeatureQuality FR4`.
 
 By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+
+`-lengthOf <gene_feature>`
+: Export length of specified gene feature.
+
+`-allLengthOf [<from_reference_point> <to_reference_point>]`
+: Export length for all gene features between specified reference points (in separate columns).
+
+For example, `-allLengthOf FR3Begin FR4End` will export `-lengthOf FR3`, `-lengthOf CDR3`, `-lengthOf FR4`.
+
+By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+
+`-nFeature <gene_feature>`
+: Export nucleotide sequence of specified gene feature
+
+`-allNFeatures [<from_reference_point> <to_reference_point>]`
+: Export nucleotide sequences for all gene features between specified reference points (in separate columns).
+
+For example, `-allNFeatures FR3Begin FR4End` will export `-nFeature FR3`, `-nFeature CDR3`, `-nFeature FR4`.
+
+By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+
+`-aaFeature <gene_feature>`
+: Export amino acid sequence of specified gene feature
+
+`-allAAFeatures [<from_reference_point> <to_reference_point>]`
+: Export amino acid sequence for all gene features between specified reference points (in separate columns).
+
+For example, `-allAAFeatures FR3Begin FR4End` will export `-aaFeature FR3`, `-aaFeature CDR3`, `-aaFeature FR4`.
+
+By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+
+`-nMutations <gene_feature>`
+: Extract nucleotide mutations for specific gene feature; relative to germline sequence.
+
+`-allNMutations [<from_reference_point> <to_reference_point>]`
+: Extract nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns).
+
+For example, `-allNMutations FR3Begin FR4End` will export `-nMutations FR3`, `-nMutations CDR3`, `-nMutations FR4`.
+
+By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+
+`-nMutationsRelative <gene_feature> <relative_to_gene_feature>`
+: Extract nucleotide mutations for specific gene feature relative to another feature.
+
+`-aaMutations <gene_feature>`
+: Extract amino acid mutations for specific gene feature
+
+`-allAAMutations [<from_reference_point> <to_reference_point>]`
+: Extract amino acid nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns).
+
+For example, `-allAAMutations FR3Begin FR4End` will export `-aaMutations FR3`, `-aaMutations CDR3`, `-aaMutations FR4`.
+
+By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+
+`-aaMutationsRelative <gene_feature> <relative_to_gene_feature>`
+: Extract amino acid mutations for specific gene feature relative to another feature.
+
+`-mutationsDetailed <gene_feature>`
+: Detailed list of nucleotide and corresponding amino acid mutations. Format `<nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>`, where `<aa_mutation_individual>` is an expected amino acid mutation given no other mutations have occurred, and `<aa_mutation_cumulative>` amino acid mutation is the observed amino acid mutation combining effect from all others.
+
+`-allMutationsDetailed [<from_reference_point> <to_reference_point>]`
+: Detailed list of nucleotide and corresponding amino acid mutations for all gene features between specified reference points (in separate columns).
+
+For example, `-allMutationsDetailed FR3Begin FR4End` will export `-mutationsDetailed FR3`, `-mutationsDetailed CDR3`, `-mutationsDetailed FR4`.
+
+By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+
+`-mutationsDetailedRelative <gene_feature> <relative_to_gene_feature>`
+: Detailed list of nucleotide and corresponding amino acid mutations written, positions relative to specified gene feature. Format <nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>, where <aa_mutation_individual> is an expected amino acid mutation given no other mutations have occurred, and <aa_mutation_cumulative> amino acid mutation is the observed amino acid mutation combining effect from all other. WARNING: format may change in following versions.
 
 `-positionInReferenceOf <reference_point>`
 : Export position of specified reference point inside reference sequences (clonal sequence / read sequence).
@@ -708,94 +613,13 @@ for the full list and formatting)
 `-tagCounts`
 : All tags with counts
 
-`-tag <tag_name>`
-: Tag value (i.e. CELL barcode or UMI sequence)
+`-tags <(Molecule|Cell|Sample)>`
+: All tags values (i.e. CELL barcode or UMI sequence).
 
-`-allTags <(Sample|Cell|Molecule)>`
-: Tag values (i.e. CELL barcode or UMI sequence) for all available tags in separate columns.
-
-Tag type will be used for filtering tags for export.
-
-`-uniqueTagCount <tag_name>`
+`-uniqueTagCount <(Molecule|Cell|Sample)>`
 : Unique tag count
 
-`-allUniqueTagsCount <(Sample|Cell|Molecule)>`
-: Unique tag count for all available tags in separate columns.
-
 Tag type will be used for filtering tags for export.
-
-
-These fields available for both `exportAlignments` and `exportClones`:
-
-`-lengthOf <gene_feature>`
-: Export length of specified gene feature.
-
-`-allLengthOf [<from_reference_point> <to_reference_point>]`
-: Export length for all gene features between specified reference points (in separate columns).
-
-For example, `-allLengthOf FR3Begin FR4End` will export `-lengthOf FR3`, `-lengthOf CDR3`, `-lengthOf FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
-
-`-nFeature <gene_feature>`
-: Export nucleotide sequence of specified gene feature
-
-`-allNFeatures [<from_reference_point> <to_reference_point>]`
-: Export nucleotide sequences for all gene features between specified reference points (in separate columns).
-
-For example, `-allNFeatures FR3Begin FR4End` will export `-nFeature FR3`, `-nFeature CDR3`, `-nFeature FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
-
-`-aaFeature <gene_feature>`
-: Export amino acid sequence of specified gene feature
-
-`-allAaFeatures [<from_reference_point> <to_reference_point>]`
-: Export amino acid sequence for all gene features between specified reference points (in separate columns).
-
-For example, `-allAaFeatures FR3Begin FR4End` will export `-aaFeature FR3`, `-aaFeature CDR3`, `-aaFeature FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
-
-`-nMutations <gene_feature>`
-: Extract nucleotide mutations for specific gene feature; relative to germline sequence.
-
-`-allNMutations [<from_reference_point> <to_reference_point>]`
-: Extract nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns).
-
-For example, `-allNMutations FR3Begin FR4End` will export `-nMutations FR3`, `-nMutations CDR3`, `-nMutations FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
-
-`-nMutationsRelative <gene_feature> <relative_to_gene_feature>`
-: Extract nucleotide mutations for specific gene feature relative to another feature.
-
-`-aaMutations <gene_feature>`
-: Extract amino acid mutations for specific gene feature
-
-`-allAaMutations [<from_reference_point> <to_reference_point>]`
-: Extract amino acid nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns).
-
-For example, `-allAaMutations FR3Begin FR4End` will export `-aaMutations FR3`, `-aaMutations CDR3`, `-aaMutations FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
-
-`-aaMutationsRelative <gene_feature> <relative_to_gene_feature>`
-: Extract amino acid mutations for specific gene feature relative to another feature.
-
-`-mutationsDetailed <gene_feature>`
-: Detailed list of nucleotide and corresponding amino acid mutations. Format `<nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>`, where `<aa_mutation_individual>` is an expected amino acid mutation given no other mutations have occurred, and `<aa_mutation_cumulative>` amino acid mutation is the observed amino acid mutation combining effect from all others.
-
-`-allMutationsDetailed [<from_reference_point> <to_reference_point>]`
-: Detailed list of nucleotide and corresponding amino acid mutations for all gene features between specified reference points (in separate columns).
-
-For example, `-allMutationsDetailed FR3Begin FR4End` will export `-mutationsDetailed FR3`, `-mutationsDetailed CDR3`, `-mutationsDetailed FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
-
-`-mutationsDetailedRelative <gene_feature> <relative_to_gene_feature>`
-: Detailed list of nucleotide and corresponding amino acid mutations written, positions relative to specified gene feature. Format <nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>, where <aa_mutation_individual> is an expected amino acid mutation given no other mutations have occurred, and <aa_mutation_cumulative> amino acid mutation is the observed amino acid mutation combining effect from all other. WARNING: format may change in following versions.
-
 
 ### Alignment-specific fields
 
@@ -821,7 +645,7 @@ The following fields are only available for `exportAlignments`:
 
 ### Clonotype-specific fields
 
-The following fields are available for `exportClones` and `exportShmTreesWithNodes` (for `exportShmTreesWithNodes` only for nodes with clones):
+The following fields are available for `exportClones`:
 
 `-cloneId`
 : Unique clone identifier
@@ -832,108 +656,13 @@ The following fields are available for `exportClones` and `exportShmTreesWithNod
 `-readFraction`
 : Fraction of reads assigned to the clonotype
 
-`-uniqueTagFraction <tag_name>`
+`-uniqueTagFraction <(Molecule|Cell|Sample)>`
 : Fraction of unique tags (UMI, CELL, etc.) the clone or alignment collected.
-
-`-allUniqueTagFractions <(Sample|Cell|Molecule)>`
-: Fractions of unique tags (i.e. CELL barcode or UMI sequence) for all available tags in separate columns.
 
 Tag type will be used for filtering tags for export.
 
 `-cellGroup`
 : Cell group (for single cell analysis)
-
-### SHM tree-specific fields
-
-The following fields are available for both `exportShmTrees` and `exportShmTreesWithNodes`:
-
-`-treeId`
-: SHM tree id
-
-`-uniqClonesCount`
-: Number of uniq clones in the SHM tree
-
-`-totalClonesCount`
-: Total sum of counts of clones in the SHM tree
-
-The following fields are only available for `exportShmTrees`:
-
-`-nFeature <gene_feature> <germline|mrca>`
-: Export nucleotide sequence of specified gene feature of specified node type.
-
-`-allNFeatures <(germline|mrca)>`
-: Export nucleotide sequences for all covered gene features.
-
-`-aaFeature <gene_feature> <germline|mrca>`
-: Export amino acid sequence of specified gene feature of specified node type.
-
-`-allAaFeatures <(germline|mrca)>`
-: Export nucleotide sequences for all covered gene features.
-
-### SHM tree node-specific fields
-
-The following fields are available only for `exportShmTreesWithNodes`:
-
-`-nodeId`
-: Node id in SHM tree
-
-`-isObserved`
-: Is node have clones. All other nodes are reconstructed by algorithm
-
-`-parentId`
-: Parent node id in SHM tree
-
-`-distance <(germline|mrca|parent)>`
-: Distance from another node
-
-`-fileName`
-: Name of clns file with sample
-
-`-nFeature <gene_feature> [<(germline|mrca|parent)>]`
-: Export nucleotide sequence of specified gene feature. If second arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`
-
-`-allNFeatures [<(germline|mrca|parent)>]`
-: Export nucleotide sequences for all covered gene features. If second arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`
-
-`-aaFeature <gene_feature> [<(germline|mrca|parent)>]`
-: Export amino acid sequence of specified gene feature. If second arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`
-
-`-allAaFeatures [<(germline|mrca|parent)>]`
-: Export amino acid sequences for all covered gene features. If second arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`
-
-`-lengthOf <gene_feature> [<(germline|mrca|parent)>]`
-: Export length of specified gene feature. If second arg is omitted, then feature length will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`
-
-`-allLengthOf [<(germline|mrca|parent)>]`
-: Export lengths for all covered gene features. If second arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`
-
-`-nMutations <gene_feature> <(germline|mrca|parent)>`
-: Extract nucleotide mutations from specific node for specific gene feature.
-
-`-allNMutations <(germline|mrca|parent)>`
-: Extract nucleotide mutations from specific node for all covered gene features.
-
-`-nMutationsRelative <gene_feature> <relative_to_gene_feature> <(germline|mrca|parent)>`
-: Extract nucleotide mutations from specific node for specific gene feature relative to another feature.
-
-`-aaMutations <gene_feature> <(germline|mrca|parent)>`
-: Extract amino acid mutations from specific node for specific gene feature.
-
-`-allAaMutations <(germline|mrca|parent)>`
-: Extract amino acid mutations from specific node for all covered gene features.
-
-`-aaMutationsRelative <gene_feature> <relative_to_gene_feature> <(germline|mrca|parent)>`
-: Extract amino acid mutations from specific node for specific gene feature relative to another feature.
-
-`-mutationsDetailed <gene_feature> <(germline|mrca|parent)>`
-: Detailed list of nucleotide and corresponding amino acid mutations from specific node. Format `<nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>`, where `<aa_mutation_individual>` is an expected amino acid mutation given no other mutations have occurred, and `<aa_mutation_cumulative>` amino acid mutation is the observed amino acid mutation combining effect from all others.
-
-`-allMutationsDetailed <(germline|mrca|parent)>`
-: Detailed list of nucleotide and corresponding amino acid mutations from specific node for all covered gene features.
-
-`-mutationsDetailedRelative <gene_feature> <relative_to_gene_feature> <(germline|mrca|parent)>`
-: Detailed list of nucleotide and corresponding amino acid mutations written, positions relative to specified gene feature. Format <nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>, where <aa_mutation_individual> is an expected amino acid mutation given no other mutations have occurred, and <aa_mutation_cumulative> amino acid mutation is the observed amino acid mutation combining effect from all other. WARNING: format may change in following versions.
-
 
 ## Default anchor point positions
 

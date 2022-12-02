@@ -154,7 +154,7 @@ nav:
         - 'exportPretty': mixcr/reference/mixcr-exportPretty.md
         - 'exportAirr': mixcr/reference/mixcr-exportAirr.md
         - 'exportReadsForClones': mixcr/reference/mixcr-exportReadsForClones.md
-        - 'exportShmTreesNewick': mixcr/reference/mixcr-exportShmTreesNewick.md
+        - 'exportShmTrees': mixcr/reference/mixcr-exportShmTrees.md
         - 'exportReports': mixcr/reference/mixcr-exportReports.md
         - 'exportQc': mixcr/reference/mixcr-exportQc.md
         - 'postanalysis': mixcr/reference/mixcr-postanalysis.md

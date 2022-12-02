@@ -5,7 +5,7 @@ Reconstructs somatic hypermutations trees from cloneset(s).
 ![](pics/findShmTrees-light.svg#only-light)
 ![](pics/findShmTrees-dark.svg#only-dark)
 
-Input `.clns` files must be pre-processed by [`findAlleles`](mixcr-findAlleles.md).
+All inputs `.clns` files must be fully covered by the same feature, have the same library produced by [`findAlleles`](mixcr-findAlleles.md), the same scoring of V and J genes and the same features to align.
 
 Briefly, lineage reconstruction algorithm groups clones with same V- and J- genes, applies initial clustering inside those groups to find clusters of clones sharing enough number of common mutations and not too distant NDN regions, refining clusters by attaching individual clones, followed by final trees reconstruction and recombination. All steps of the algorithm heavily rely on the alignments with reference segments, compared to many other algorithms for the task, which don't take into account structure of the underlying sequence, and "wild-type" states of the V and J regions, which are exactly known thanks to the allele reconstruction step.
 
@@ -27,14 +27,16 @@ mixcr findShmTrees
    [--no-warnings] 
    [--verbose] 
    [--help] 
-   input_file.clns... output_file.shmt
+   (input_file.clns|directory)... output_file.shmt
 ```
-The command returns a highly-compressed, memory- and CPU-efficient binary `.shmt` (SHM trees) file that holds exhaustive information about SHM trees. SHM trees can be further extracted in tabular form using [`exportShmTrees`](./mixcr-export.md#shm-trees-tables), [`exportShmTreesWithNodes`](./mixcr-export.md#shm-trees-with-nodes-tables) or newick form using [`exportShmTreesNewick`](./mixcr-exportShmTreesNewick.md). Additionally, MiXCR produces a comprehensive [report](./report-findShmTrees.md) which provides a detailed summary of SHM trees search.
+The command returns a highly-compressed, memory- and CPU-efficient binary `.shmt` (SHM trees) file that holds exhaustive information about SHM trees. SHM trees can be further extracted in tabular form using [`exportShmTrees`](./mixcr-exportShmTrees.md#shm-trees-tables), [`exportShmTreesWithNodes`](./mixcr-exportShmTrees.md#shm-trees-with-nodes-tables) or newick form using [`exportShmTreesNewick`](./mixcr-exportShmTrees.md#newick). Additionally, MiXCR produces a comprehensive [report](./report-findShmTrees.md) which provides a detailed summary of SHM trees search.
 
 Basic command line options are:
 
-`input_file.clns...`
-: Paths to clns files that was processed by 'findAlleles' command
+`(input_file.clns|directory)...`
+: Paths to clns files or to directory with clns files that was processed by 'findAlleles' command.
+
+In case of directory no filter by file type will be applied.
 
 `output_file.shmt`
 : Path where to write output trees

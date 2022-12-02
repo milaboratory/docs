@@ -37,9 +37,9 @@ mixcr downsample
     --chains <chains>
     --downsampling <type> 
     [--only-productive] 
+    [--summary <path>] 
     [--suffix <s>] 
     [--out <path_prefix>] 
-    [--summary <path>] 
     [--force-overwrite] 
     [--no-warnings] 
     [--verbose] 
@@ -57,20 +57,20 @@ Basic command line options are:
 `-c, --chains <chains>`
 : Specify chains
 
+`--downsampling <type>`
+: Choose [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`
+
 `--only-productive`
 : Filter out-of-frame sequences and sequences with stop-codons.
 
-`--downsampling <type>`
-: Choose [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`
+`--summary <path>`
+: Write downsampling summary tsv/csv table.
 
 `--suffix <s>`
 : Suffix to add to output clns file. Default: downsampled
 
 `--out <path_prefix>`
 : Output path prefix.
-
-`--summary <path>`
-: Write downsampling summary tsv/csv table.
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).

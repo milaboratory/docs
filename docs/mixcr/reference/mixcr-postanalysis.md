@@ -135,8 +135,8 @@ mixcr postanalysis individual
   [--only-productive] 
   [--drop-outliers] 
   [--chains <chain>[,<chain>...]]... 
-  [--group <group>]... 
   [--metadata <path>] 
+  [--group <group>]... 
   [--tables <path.(tsv|csv)>] 
   [--preproc-tables <path.(tsv|csv)>] 
   [-O <key=value>]... 
@@ -159,26 +159,26 @@ Calculates
 `result.json[.gz]`
 : Path where to write postanalysis result.
 
-`--only-productive`
-: Filter out-of-frame sequences and sequences with stop-codons.
-
-`--drop-outliers`
-: Drop samples which are below downsampling value as computed according to specified default downsampling option.
-
 `--default-downsampling (<type>|none)`
 : Default [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`, `none`
 
 `--default-weight-function (<read>|<Tag>|none)`
 : Default clonotype [weight function](./mixcr-postanalysis.md#weight-functions)
 
+`--only-productive`
+: Filter out-of-frame sequences and sequences with stop-codons.
+
+`--drop-outliers`
+: Drop samples which are below downsampling value as computed according to specified default downsampling option.
+
 `--chains <chain>[,<chain>...]`
 : Limit analysis to specific chains (e.g. TRA or IGH) (fractions will be recalculated). Possible values (multiple values allowed): `TRA`, `TRD`, `TRAD` (for human), `TRG`, `IGH`, `IGK`, `IGL`
 
-`--group <group>`
-: Metadata column used to group samples into [isolation groups](./mixcr-postanalysis.md#isolation-groups); postanalysis will be performed in each of the groups separately. It is possible to specify several isolation groups.
-
 `--metadata <path>`
 : [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files. Optionally may have `chains` column.
+
+`--group <group>`
+: Metadata column used to group samples into [isolation groups](./mixcr-postanalysis.md#isolation-groups); postanalysis will be performed in each of the groups separately. It is possible to specify several isolation groups.
 
 `--tables <path.(tsv|csv)>`
 : Results output path. By default, will be `{outputDir}/{outputFileName}.tsv`. For each `chain` and `metric` will be generated file with path `{dir}/{fileName}.{metric}.{chain}.(tsv|csv)`
@@ -310,17 +310,17 @@ Variable, Joining segment and Isotype usage vectors, i.e. the frequency of assoc
 
 ```
 mixcr postanalysis overlap 
-  [--only-productive] 
-  [--drop-outliers] 
   --default-downsampling (<type>|none) 
   --default-weight-function (<read>|<Tag>|none) 
-  [--chains <chain>[,<chain>...]]... 
-  [--group <group>]... 
-  [--metadata <path>] 
-  [--tables <path.(tsv|csv)>] 
-  [--preproc-tables <path.(tsv|csv)>] 
   [--criteria <s>] 
   [--factor-by <column>[,<column>...]]... 
+  [--only-productive] 
+  [--drop-outliers] 
+  [--chains <chain>[,<chain>...]]... 
+  [--metadata <path>] 
+  [--group <group>]... 
+  [--tables <path.(tsv|csv)>] 
+  [--preproc-tables <path.(tsv|csv)>] 
   [-O <key=value>]... 
   [-f] [-nw] [--verbose] [-h] 
   (cloneset.(clns|clna)|directory)... result.json[.gz]
@@ -338,38 +338,38 @@ Calculates pairwise
 `result.json[.gz]`
 : Path where to write postanalysis result.
 
-`--only-productive`
-: Filter out-of-frame sequences and sequences with stop-codons.
-
-`--drop-outliers`
-: Drop samples which are below downsampling value as computed according to specified default downsampling option.
-
 `--default-downsampling (<type>|none)`
 : Default [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`, `none`
 
 `--default-weight-function (<read>|<Tag>|none)`
 : Default clonotype [weight function](./mixcr-postanalysis.md#weight-functions)
 
+`--criteria <s>`
+: Overlap criteria. Defines the rules to treat clones as equal. It allows to specify gene feature for overlap (nucleotide or amino acid), and optionally use V and J hits. Examples: `CDR3|AA|V|J` (overlap by a.a. CDR3 and V and J), `VDJRegion|AA` (overlap by a.a. `VDJRegion`), `CDR3|NT|V` (overlap by nt CDR3 and V). Default: CDR3|AA|V|J
+
+`--factor-by <meta>[,<meta>...]`
+: Pools samples with the same values of specified metadata columns and performs overlap between such pooled samples
+
+`--only-productive`
+: Filter out-of-frame sequences and sequences with stop-codons.
+
+`--drop-outliers`
+: Drop samples which are below downsampling value as computed according to specified default downsampling option.
+
 `--chains <chain>[,<chain>...]`
 : Limit analysis to specific chains (e.g. TRA or IGH) (fractions will be recalculated). Possible values (multiple values allowed): `TRA`, `TRD`, `TRAD` (for human), `TRG`, `IGH`, `IGK`, `IGL`
 
-`--group <group>`
-: Metadata column used to group samples into [isolation groups](./mixcr-postanalysis.md#isolation-groups); postanalysis will be performed in each of the groups separately. It is possible to specify several isolation groups.
-
 `--metadata <path>`
 : [Metadata](./mixcr-postanalysis.md#metadata) file in a tab- (`.tsv`) or comma- (`.csv`) separated form. Must contain `sample` column which matches names of input files. Optionally may have `chains` column.
+
+`--group <group>`
+: Metadata column used to group samples into [isolation groups](./mixcr-postanalysis.md#isolation-groups); postanalysis will be performed in each of the groups separately. It is possible to specify several isolation groups.
 
 `--tables <path.(tsv|csv)>`
 : Results output path. By default, will be `{outputDir}/{outputFileName}.tsv`. For each `chain` and `metric` will be generated file with path `{dir}/{fileName}.{metric}.{chain}.(tsv|csv)`
 
 `--preproc-tables <path.(tsv|csv)>`
 : Output path for the [preprocessing summary tables](./mixcr-postanalysis.md#preprocessing-summary-tables) (filtering and downsampling). By default, will be `{outputDir}/{outputFileName}.preproc.tsv`. For each `chain` will be generated file with path `{dir}/{fileName}.{chain}.(tsv|csv)`
-
-`--criteria <s>`
-: Overlap criteria. Defines the rules to treat clones as equal. It allows to specify gene feature for overlap (nucleotide or amino acid), and optionally use V and J hits. Examples: `CDR3|AA|V|J` (overlap by a.a. CDR3 and V and J), `VDJRegion|AA` (overlap by a.a. `VDJRegion`), `CDR3|NT|V` (overlap by nt CDR3 and V). Default: CDR3|AA|V|J
-
-`--factor-by <meta>[,<meta>...]`
-: Pools samples with the same values of specified metadata columns and performs overlap between such pooled samples
 
 `-O  <key=value>`
 : Overrides default postanalysis settings
