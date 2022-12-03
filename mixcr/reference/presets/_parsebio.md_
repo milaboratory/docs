@@ -1,0 +1,25 @@
+### Parse Biosciences
+
+#### Parse Evercode™ single-cell
+
+==`parse-bio-vdj-3gex`==
+·
+[:octicons-link-16: Link](https://www.parsebiosciences.com/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/parsebio.yaml)
+
+Conventional droplet-based single-cell technologies struggle as cell or experiment sizes change. Parse makes it easy to scale your experiments regardless of cell size or sample type. The Evercode™ Whole Transcriptome technology, originally based on the split-pool combinatorial barcoding method published in Science and known widely as SPLiT-Seq, is accessible to any standard biology lab. Please note that as a 3'end RNA-seq based protocol it was not originally optimized for immune repertoire analysis, thus TCR/BCR yield might be low.
+
+![](pics/parse-bio-light.svg#only-light)
+![](pics/parse-bio-dark.svg#only-dark)
+
+The `--species` option is required.
+
+Example:
+```shell
+mixcr analyze parsebio-vdj-3gex \
+     --species hsa \
+     sample_R1.fastq.gz \
+     sample_R2.fastq.gz \
+     sample_result
+```
