@@ -14,10 +14,10 @@ For the demonstration purpose, let's download only the files belonging to one do
 
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "ig-trees-mikelov/scripts/010-download-aria2c.sh"
+    --8<-- "guides/ig-trees-mikelov/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "ig-trees-mikelov/scripts/download-list.txt"
+    --8<-- "guides/ig-trees-mikelov/scripts/download-list.txt"
     ```
 
 ## Upstream analysis
@@ -29,7 +29,7 @@ The first step that we have to do is to obtain `.clns` clonotype files for the s
 Bellow you can see an example command for one sample:
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/020-upstream-preset.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/020-upstream-preset.sh"
 ```
 
 This generic presets requires a few options:
@@ -84,7 +84,7 @@ IM_p01_PBL_1.clns
 In order to run the analysis for all samples in the project on Linux we can use [GNU Parallel](https://www.gnu.org/software/parallel/) in the following way:
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/030-upstream-preset-parallel.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/030-upstream-preset-parallel.sh"
 ```
 ### Under the hood pipeline explained
 
@@ -94,7 +94,7 @@ Under the hood the command above actually executes the following pipeline:
 Alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/040-upstream-align.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/040-upstream-align.sh"
 ```
 `-p bundle-umi-kaligner2-v1-base`
 : this preset describes alignment parameters tuned for maximum performance with BCR data, also it provides a set of parameters for subsequent steps including settings for `mixcr assemble` regarding UMI error-correction and filtering.
@@ -106,7 +106,7 @@ The rest of parameters are explained above.
 [Corrects](../reference/mixcr-refineTagsAndSort.md) sequencing and PCR errors _inside_ barcode sequences. This step does extremely important job by correcting artificial diversity caused by errors in barcodes. In the considered example project it corrects only sequences of UMIs.
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/050-upstream-refine.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/050-upstream-refine.sh"
 ```
 
 #### `assemble`
@@ -119,7 +119,7 @@ Assembles alignments into clonotypes and applies several layers of errors correc
 Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/060-upstream-assemble.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/060-upstream-assemble.sh"
 ```
 
 ## Quality control
@@ -129,7 +129,7 @@ Before we move on to lineage trees reconstruction, we will look at the basic QC 
 First, lets generate and investigate alignment rates QC plot.
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/070-qc-align.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/070-qc-align.sh"
 ```
 
 ![align QC](ig-trees-mikelov/figs/alignQc.svg)
@@ -137,7 +137,7 @@ First, lets generate and investigate alignment rates QC plot.
 Most of the samples have a high successful alignment score of >90% successfully aligner reads. A few samples have a height number of non-target reads. These reads can be extracted and manually investigated using `--not-aligned-R1` and `--not-aligned-R2` options with [`mixcr align`](../reference/mixcr-align.md#command-line-options), but for the purpose of this tutorial we are going to continue and look at the chain usage plot:
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/080-qc-chain-usage.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/080-qc-chain-usage.sh"
 ```
 
 Here, we see, the samples are almost entirely consist of IGH chains, which is what one should expect when using IGH target sequencing.
@@ -156,7 +156,7 @@ The next step, after obtaining clonotypes is to perform allele inference to sepa
 - the newly generated reference is used to realign each clone. New `.clns` files are generated.
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/090-find-alleles.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/090-find-alleles.sh"
 ```
 
 `--export-alleles-mutations`
@@ -176,7 +176,7 @@ Now, when the alleles have been reassigned we can export clonotype tables in a h
 
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/100-export-clones.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/100-export-clones.sh"
 ```
 ??? note "Show top 500 clones in IM_p01_Bmem_1_IGH.txt"
     {{ read_csv('docs/mixcr/guides/ig-trees-mikelov/figs/IM_p01_Bmem_1_IGH.txt', engine='python', sep='\t') }}
@@ -187,7 +187,7 @@ Now, when the alleles have been reassigned we can export clonotype tables in a h
 Now we can reconstruct clonal lineage trees with [`mixcr findShmTrees`](../reference/mixcr-findShmTrees.md)  command:
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/110-find-shm-trees.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/110-find-shm-trees.sh"
 ```
 
 ### Export lineage trees in a tabular format
@@ -195,7 +195,7 @@ Now we can reconstruct clonal lineage trees with [`mixcr findShmTrees`](../refer
 To export information on lineage trees in human-readable format use [`mixcr exportShmTreesWithNodes`](../reference/mixcr-exportShmTrees.md#shm-trees-with-nodes-tables).
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/120-export-shm-trees-with-nodes.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/120-export-shm-trees-with-nodes.sh"
 ```
 
 ??? note "Show top 500 records from in IM_trees.txt"
@@ -204,7 +204,7 @@ To export information on lineage trees in human-readable format use [`mixcr expo
 The trees can also be exported in a standard Newick format with [`mixcr exportShmTreesNewick`](../reference/mixcr-exportShmTrees.md#newick):
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/130-export-trees-newick.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/130-export-trees-newick.sh"
 ```
 
 This command will generate a separate Newick formatted file for every linage tree and put it in a `IM_newick` folder. For this dataset  18916 trees have been generated.
@@ -220,7 +220,7 @@ It is also possible to plot lineage trees and add metadata values for better vis
     {{ read_csv('docs/mixcr/guides/ig-trees-mikelov/scripts/metadata.tsv', engine='python', sep='\t') }}
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/140-plot-shmTrees.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/140-plot-shmTrees.sh"
 ```
 
 `--node-color Timepoint`
@@ -240,7 +240,7 @@ By default node size represents clone fraction.
 One can also add an amino acid or nucleotide alignments for a specified gene feature to the plot:
 
 ```shell
---8<-- "ig-trees-mikelov/scripts/150-plot-shmTrees-cdr3.sh"
+--8<-- "guides/ig-trees-mikelov/scripts/150-plot-shmTrees-cdr3.sh"
 ```
 
 

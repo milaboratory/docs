@@ -1,0 +1,147 @@
+### Takara Bio
+
+#### SMART-Seq Human BCR (with UMIs)
+
+==`takara-human-bcr-cdr3`==
+·
+==`takara-human-bcr-full-length`==
+·
+[:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/smart-seq-human-bcr-(with-umis))
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/takara.yaml)
+
+
+SMART-Seq Human BCR Kit (with UMIs) provides a sensitive and reproducible solution for generating high-quality NGS libraries for profiling the human BCR repertoire. The kit leverages SMART (Switching Mechanism at 5' end of RNA Template) full-length cDNA synthesis technology and pairs NGS with a 5’-RACE approach to capture the complete V(D)J variable regions of all human B-cell receptor (BCR) heavy (IgG/M/D/A/E) and light (IgK/L) chains. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-split-clones-by C` may be used to not separate clones by isotypes.
+
+![](pics/SMARTer-Human-BCR-IgG-IgM-H-K-L-light.svg#only-light)
+![](pics/SMARTer-Human-BCR-IgG-IgM-H-K-L-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze takara-human-bcr-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
+
+#### SMARTer Human BCR IgG IgM H/K/L Profiling Kit
+
+==`takara-human-bcr-cdr3`==
+·
+==`takara-human-bcr-full-length`==
+·
+[:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/human-bcr-profiling-kit-for-illumina-sequencing)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/takara.yaml)
+·
+[:octicons-mortar-board-16: Tutorial](../guides/takara-hsa-bcr.md)
+
+SMARTer Human BCR IgG IgM H/K/L Profiling Kit pairs 5' RACE with NGS technology to provide a sensitive, accurate, and optimized approach to BCR profiling from RNA input samples. The 5' RACE method reduces variability and allows for priming from the constant region of BCR heavy or light chains. This kit combines these benefits with gene-specific amplification to capture complete V(D)J variable regions of BCR transcripts and provide a highly sensitive and reproducible method for profiling B-cell repertoires. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option`--dont-split-clones-by C` mix-in may be used to not separate clones by isotypes.
+
+![](pics/SMARTer-Human-BCR-IgG-IgM-H-K-L-dark.svg#only-dark)
+![](pics/SMARTer-Human-BCR-IgG-IgM-H-K-L-light.svg#only-light)
+
+Example:
+```shell
+mixcr analyze takara-human-bcr-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
+
+#### SMARTer Human TCR a/b Profiling Kit v2
+
+==`takara-human-tcr-V2-cdr3`==
+·
+==`takara-human-tcr-V2-full-length`==
+·
+[:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/human-tcrv2-profiling-kit-for-illumina-sequencing)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/takara.yaml)
+
+
+The SMARTer Human TCR a/b Profiling Kit v2 (TCRv2) is powered by robust chemistry that provides unparalleled sensitivity and reproducibility. The kit leverages SMART (Switching Mechanism at 5' end of RNA Template) full-length cDNA synthesis technology and pairs NGS with a 5'-RACE approach to capture the complete V(D)J variable regions of TRA and TRB genes. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
+
+![](pics/SMARTer-Human-TCRv2-light.svg#only-light)
+![](pics/SMARTer-Human-TCRv2-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze takara-human-tcr-V2-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
+
+#### SMARTer Human TCR a/b Profiling Kit
+
+==`takara-human-tcr-V1-cdr3`==
+·
+==`takara-human-tcr-V1-full-length`==
+·
+[:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/human-tcr-profiling-kit-for-illumina-sequencing)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/takara.yaml)
+
+SMARTer Human TCR a/b Profiling Kit allows to obtain full-length sequences of TCR-alpha and TCR-beta V(D)J variable regions. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
+
+![](pics/SMARTer-Human-TCRv1-light.svg#only-light)
+![](pics/SMARTer-Human-TCRv1-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze takara-human-tcr-V1-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
+
+#### SMARTer Mouse BCR IgG H/K/L Profiling Kit
+
+==`takara-mouse-bcr-cdr3`==
+·
+==`takara-mouse-bcr-full-length`==
+·
+[:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/mouse-repertoire/mouse-bcr-profiling-kit-for-illumina-sequencing)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/takara.yaml)
+
+
+The SMARTer Mouse BCR IgG H/K/L Profiling Kit pairs 5' RACE with NGS technology to provide a sensitive, accurate, and optimized approach to BCR profiling. The 5'-RACE method reduces variability and allows for priming from the constant region of BCR heavy or light chains. This kit combines these benefits with gene-specific amplification to capture complete V(D)J variable regions of BCR transcripts and provide a highly sensitive and reproducible method for profiling B-cell repertoires. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
+
+![](pics/SMARTer-Mouse-BCR-light.svg#only-light)
+![](pics/SMARTer-Mouse-BCR-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze takara-mouse-bcr-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
+
+#### SMARTer Mouse TCR a/b Profiling Kit
+
+==`takara-mouse-tcr-cdr3`==
+·
+==`takara-mouse-tcr-full-length`==
+·
+[:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/mouse-repertoire/mouse-tcr-profiling-kit-for-illumina-sequencing)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/takara.yaml)
+·
+[:octicons-mortar-board-16: Tutorial](../guides/takara-mmu-tcr.md)
+
+
+The SMARTer Mouse TCR a/b Profiling Kit provides a powerful new solution for those seeking to perform T-cell receptor (TCR) repertoire analysis using NGS. The kit employs a 5'-RACE-based approach to capture complete V(D)J variable regions of TCR transcripts, starting from as little as 10 ng to 500 ng of total RNA obtained from mouse spleen, thymus, or PBMCs, or from 1,000 to 10,000 purified T cells. As the name suggests, the kit can be used to generate data for both TCR-alpha and TCR-beta chain diversity, either in the same experiment or separately. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
+
+![](pics/SMARTer-Mouse-TCR-light.svg#only-light)
+![](pics/SMARTer-Mouse-TCR-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze takara-mouse-tcr-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```

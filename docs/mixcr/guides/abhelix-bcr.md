@@ -13,10 +13,10 @@ All data is available from SRA (PRJNA511481) using e.g. [SRA Explorer](https://s
 
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "abhelix-bcr/scripts/010-download-aria2c.sh"
+    --8<-- "guides/abhelix-bcr/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "abhelix-bcr/scripts/download-list.txt"
+    --8<-- "guides/abhelix-bcr/scripts/download-list.txt"
     ```
 
 The project contains 136 FASTQ file pairs. The above script downloads all the data to `raw/` folder. Each file name encodes the data about the donor, its sex and Ig chain. For example for the first file from the above list: 
@@ -42,13 +42,13 @@ Nevertheless, we will process all samples as if the primers are located on the J
 MiXCR has a dedicated preset for this protocol, thus analysing the data ia as easy as:
 
 ```shell
---8<-- "abhelix-bcr/scripts/020-upstream-preset.sh"
+--8<-- "guides/abhelix-bcr/scripts/020-upstream-preset.sh"
 ```
 
 One might also use [GNU Parallel](https://www.gnu.org/software/parallel/) to process all samples at once:
 
 ```shell
---8<-- "abhelix-bcr/scripts/020-upstream-preset-parallel.sh"
+--8<-- "guides/abhelix-bcr/scripts/020-upstream-preset-parallel.sh"
 ```
 
 ### Under the hood pipeline:
@@ -59,7 +59,7 @@ Under the hood the command above actually executes the following pipeline:
 Alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
 
 ```shell
---8<-- "abhelix-bcr/scripts/040-upstream-align.sh"
+--8<-- "guides/abhelix-bcr/scripts/040-upstream-align.sh"
 ```
 
 Option `--report` is specified here explicitly.
@@ -83,7 +83,7 @@ Option `--report` is specified here explicitly.
 Assembles alignments into clonotypes and applies several layers of errors correction(ex. quality-dependent correction for sequencing errors, PCR-error correction by clustering). Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
 
 ```shell
---8<-- "abhelix-bcr/scripts/050-upstream-assemble.sh"
+--8<-- "guides/abhelix-bcr/scripts/050-upstream-assemble.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with assembly report.
@@ -96,7 +96,7 @@ Options `--report` and `--json-report` are specified here explicitly so that the
 Exports clonotypes from .clns file into human-readable tables. 
 
 ```shell
---8<-- "abhelix-bcr/scripts/060-upstream-exportClones.sh"
+--8<-- "guides/abhelix-bcr/scripts/060-upstream-exportClones.sh"
 ```
 
 `-с <chain>`
@@ -130,7 +130,7 @@ Now when we have processed all samples, we can proceed to quality control. First
 alignment quality. This can be easily done with the following command:
 
 ```shell
---8<-- "abhelix-bcr/scripts/080-qc-align.sh"
+--8<-- "guides/abhelix-bcr/scripts/080-qc-align.sh"
 ```
 
 ![alignQc.svg](abhelix-bcr/figs/alignQc.svg)
@@ -150,7 +150,7 @@ have a lower alignment rate.
 Let's look at the same plot, but instead of percentages of reads  we will plot an absolute number of reads.
 
 ```shell
---8<-- "abhelix-bcr/scripts/081-qc-align-absolute.sh"
+--8<-- "guides/abhelix-bcr/scripts/081-qc-align-absolute.sh"
 ```
 
 ![alignQc.svg](abhelix-bcr/figs/alignQcAbsolute.svg)
@@ -161,7 +161,7 @@ Next, lets take a closer look at SRR8365280_HIP1_female_IgG4. This sample has qu
 Bellow is the complete command:
 
 ```shell
---8<-- "abhelix-bcr/scripts/090-qc-debug-align.sh"
+--8<-- "guides/abhelix-bcr/scripts/090-qc-debug-align.sh"
 ```
 
 Resulting `SRR8365280_HIP1_female_IgG4_notAligned_R1.fastq` and `SRR8365280_HIP1_female_IgG4_notAligned_R1.fastq` files can be manually inspected. A brief [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) search revealed that a lot of reads align with PhiX, which is regularly used as a DNA sequencing control in Illumina protocol. Bellow you can see a few reads from  `SRR8365280_HIP1_female_IgG4_notAligned_R2.fastq`.
@@ -187,7 +187,7 @@ That can be easily achieved using [`mixcr exportAlignmentsPretty`](../reference/
 The function bellow will generate a `.txt` human-readable file with alignments. We use parameter `--skip 1000` to skip first 1000 reads, as first reads usually have bad quality, and `--limit 100` will export only 100 alignments.
 
 ```shell
---8<-- "abhelix-bcr/scripts/110-qc-exportAlignmentsPretty.sh"
+--8<-- "guides/abhelix-bcr/scripts/110-qc-exportAlignmentsPretty.sh"
 ```
 
 Bellow you can see one of the alignments. First read aligns with a good score to IGHV1-69D. But its pair consists of low-quality nucleotides and can't be aligned against ahy IGHJ.
@@ -242,7 +242,7 @@ Target1 240 ACTAAGTTTCG 250  Score
 Finally, lets check chain usage among all samples.
 
 ```shell
---8<-- "abhelix-bcr/scripts/120-qc-chainUsage.sh"
+--8<-- "guides/abhelix-bcr/scripts/120-qc-chainUsage.sh"
 ```
 
 ![chainUsage.svg](abhelix-bcr/figs/chainUsage.svg)
@@ -258,13 +258,13 @@ Taking into account what is mentioned above, the longest possible assembling fea
 MiXCR has a specific preset to obtain full-length BCR clones with ABhelix protocol:
 
 ```shell
---8<-- "abhelix-bcr/scripts/130-upstream-preset-full-length.sh"
+--8<-- "guides/abhelix-bcr/scripts/130-upstream-preset-full-length.sh"
 ```
 
 The `mixcr assemble` step in this preset differs from the one above in the following manner:
 
 ```shell
---8<-- "abhelix-bcr/scripts/140-upstream-assemble-full-length.sh
+--8<-- "guides/abhelix-bcr/scripts/140-upstream-assemble-full-length.sh
 ```
 
 `-OassemblingFeatures="{FR1Begin:FR4End}"`
@@ -276,19 +276,19 @@ Notice that we do not use `-OseparateByV=true` and `-OseparateByJ=true` in this 
 Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
 
 ```shell
---8<-- "abhelix-bcr/scripts/125-qc-exportReports.sh"
+--8<-- "guides/abhelix-bcr/scripts/125-qc-exportReports.sh"
 ```
 
 ```shell
---8<-- "abhelix-bcr/scripts/125-qc-exportReports-json.sh"
+--8<-- "guides/abhelix-bcr/scripts/125-qc-exportReports-json.sh"
 ```
 
 ??? "Show report file"
     === "`.txt`"
         ```shell
-        --8<-- "abhelix-bcr/figs/SRR8365277_HIP1_female_IgG1.report.txt"
+        --8<-- "guides/abhelix-bcr/figs/SRR8365277_HIP1_female_IgG1.report.txt"
         ```
     === "`.json`"
         ```js
-        --8<-- "abhelix-bcr/figs/SRR8365277_HIP1_female_IgG1.report.json"
+        --8<-- "guides/abhelix-bcr/figs/SRR8365277_HIP1_female_IgG1.report.json"
         ```
