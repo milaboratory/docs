@@ -106,7 +106,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - 'Home': index.md
+  - 'About': mixcr/about.md
   - 'Getting Started':
       - 'Installation': mixcr/getting-started/installation.md
       - 'Using with Docker': mixcr/getting-started/docker.md
