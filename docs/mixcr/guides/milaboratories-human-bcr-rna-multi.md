@@ -13,10 +13,10 @@ All data may be downloaded using the script bellow.
 
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "milaboratories-human-tcr-dna-multi/scripts/010-download-aria2c.sh"
+    --8<-- "guides/milaboratories-human-tcr-dna-multi/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "milaboratories-human-tcr-dna-multi/scripts/download-list.txt"
+    --8<-- "guides/milaboratories-human-tcr-dna-multi/scripts/download-list.txt"
     ```
 ## Upstream analysis
 
@@ -25,7 +25,7 @@ All data may be downloaded using the script bellow.
 MiXCR has a dedicated preset for this protocol, thus analysing the data is as easy as:
 
 ```shell
---8<-- "milaboratories-human-bcr-rna-multi/scripts/020-upstream-preset.sh"
+--8<-- "guides/milaboratories-human-bcr-rna-multi/scripts/020-upstream-preset.sh"
 ```
 
 Running the command above will generate the following files:
@@ -62,7 +62,7 @@ While `.clns` file holds all data and is used for downstream analysis using [`mi
 In order to run the analysis for all samples in the project on Linux we can use [GNU Parallel](https://www.gnu.org/software/parallel/) in the following way:
 
 ```shell
---8<-- "milaboratories-human-bcr-rna-multi/scripts/021-upstream-preset-parallel.sh"
+--8<-- "guides/milaboratories-human-bcr-rna-multi/scripts/021-upstream-preset-parallel.sh"
 ```
 
 ### Under the hood pipeline
@@ -73,7 +73,7 @@ Under the hood `milab-human-bcr-multiplex-cdr3` preset actually executes the fol
 [Alignment](../reference/mixcr-align.md) of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
 
 ```shell
---8<-- "milaboratories-human-bcr-rna-multi/scripts/030-upstream-align.sh"
+--8<-- "guides/milaboratories-human-bcr-rna-multi/scripts/030-upstream-align.sh"
 ```
 
 Option `--report` and `--json-report` are specified here explicitly.
@@ -108,7 +108,7 @@ Option `--report` and `--json-report` are specified here explicitly.
     The `bundle-umi-kaligner2-v1-base` preset specified at the `mixcr align` step will turn on the automatic filtering of reads during this step. The filtering is based on the Otsu's method and automatically sets the threshold for number of reads per UMI. Only those UMIs that pass the threshold will be used in further analysis.
 
 ```shell
---8<-- "milaboratories-human-bcr-rna-multi/scripts/040-upstream-refineTagsAndSort.sh"
+--8<-- "guides/milaboratories-human-bcr-rna-multi/scripts/040-upstream-refineTagsAndSort.sh"
 ```
 
 #### `assemble`
@@ -122,7 +122,7 @@ Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
 
 
 ```shell
---8<-- "milaboratories-human-bcr-rna-multi/scripts/050-upstream-assemble.sh"
+--8<-- "guides/milaboratories-human-bcr-rna-multi/scripts/050-upstream-assemble.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with assembly report.
@@ -146,7 +146,7 @@ Options `--report` and `--json-report` are specified here explicitly so that the
 Exports clonotypes from .clns file into human-readable tables. The preset used at the alignment step also modifies this command to export UMIs counts and fraction for each clone.
 
 ```shell
---8<-- "milaboratories-human-bcr-rna-multi/scripts/060-upstream-exportClones.sh"
+--8<-- "guides/milaboratories-human-bcr-rna-multi/scripts/060-upstream-exportClones.sh"
 ```
 
 ## Quality control
@@ -157,7 +157,7 @@ function.
 First we will look at the alignment report:
 
 ```shell
---8<-- "milaboratories-human-bcr-rna-multi/scripts/070-qc-align.sh"
+--8<-- "guides/milaboratories-human-bcr-rna-multi/scripts/070-qc-align.sh"
 ```
 
 ![align QC](milaboratories-human-bcr-rna-multi/figs/alignQc.svg)
@@ -166,7 +166,7 @@ From this plot we can tell that all samples have high alignment rate and almost 
 Now we can check chain distribution plot:
 
 ```shell
---8<-- "milaboratories-human-bcr-rna-multi/scripts/080-qc-chainUsage.sh"
+--8<-- "guides/milaboratories-human-bcr-rna-multi/scripts/080-qc-chainUsage.sh"
 ```
 
 ![chain usage QC](milaboratories-human-bcr-rna-multi/figs/chainUsage.svg)
@@ -177,19 +177,19 @@ Every sample consist solely of IGH chain.
 Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
 
 ```shell
---8<-- "milaboratories-human-bcr-rna-multi/scripts/100-qc-exportReports.sh"
+--8<-- "guides/milaboratories-human-bcr-rna-multi/scripts/100-qc-exportReports.sh"
 ```
 
 ```shell
---8<-- "milaboratories-human-bcr-rna-multi/scripts/101-qc-exportReports-json.sh"
+--8<-- "guides/milaboratories-human-bcr-rna-multi/scripts/101-qc-exportReports-json.sh"
 ```
 
 ??? "Show report file"
     === "`.txt`"
         ```shell
-        --8<-- "milaboratories-human-bcr-rna-multi/figs/DChu_p1_1.report.txt"
+        --8<-- "guides/milaboratories-human-bcr-rna-multi/figs/DChu_p1_1.report.txt"
         ```
     === "`.json`"
         ```json
-        --8<-- "milaboratories-human-bcr-rna-multi/figs/DChu_p1_1.report.json"
+        --8<-- "guides/milaboratories-human-bcr-rna-multi/figs/DChu_p1_1.report.json"
         ```

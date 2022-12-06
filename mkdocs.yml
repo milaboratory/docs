@@ -65,9 +65,9 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.snippets:
       # Fails the build if any imports are missing
-      # check_paths: true
+      check_paths: true
       auto_append: [ ]
-      base_path: [ "docs/mixcr/guides/" ]
+      base_path: [ "docs/mixcr/" ]
   - admonition
   - attr_list
   - def_list
@@ -106,7 +106,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - 'Home': index.md
+  - 'About': mixcr/about.md
   - 'Getting Started':
       - 'About': mixcr/getting-started/about.md
       - 'Installation': mixcr/getting-started/installation.md

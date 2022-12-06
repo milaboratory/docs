@@ -20,6 +20,7 @@ MiXCR provides a [comprehensive list](../reference/overview-built-in-presets.md)
 | [Illumina](../reference/overview-built-in-presets.md#illumina) | _Homo Sapience_ | amplicon TCR |
 | [Qiagen](../reference/overview-built-in-presets.md#qiagen) | _Homo Sapience_, _Mus Musculus_ | amplicon TCR |
 | [iRepertoire](../reference/overview-built-in-presets.md#irepertoire) | _Homo Sapience_, _Mus Musculus_ | amplicon BCR, TCR |
+| [Thermo Fisher](../reference/overview-built-in-presets.md#thermo-fisher) | _Homo Sapience_ | amplicon BCR, TCR |
 | [AbHelix](../reference/overview-built-in-presets.md#abhelix) | _Homo Sapience_ | amplicon TCR, BCR |
 | [BD](../reference/overview-built-in-presets.md#bd-rhapsody) | _Homo Sapience_, _Mus Musculus_ | single-cell VDJ |
 | [ParseBio](../reference/overview-built-in-presets.md#parse-biosciences) | _any_ | single-cell 3' GEX |
