@@ -12,10 +12,10 @@ All data is available from SRA (PRJNA511481) using e.g. [SRA Explorer](https://s
 
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "biomed2-bcr/scripts/010-download-aria2c.sh"
+    --8<-- "guides/biomed2-bcr/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "biomed2-bcr/scripts/download-list.txt"
+    --8<-- "guides/biomed2-bcr/scripts/download-list.txt"
     ```
 
 The above script downloads all the data to `raw/` folder. Each file name encodes the data about the donor and its sex. For example for the first file from the above list (`SRR8365468_HIP2_male_R1.fastq.gz`):
@@ -82,13 +82,13 @@ What's important, that in all cases there is enough nucleotides, not covered by 
 MiXCR has a dedicated preset for this protocol, thus analysing the data ia as easy as:
 
 ```shell
---8<-- "biomed2-bcr/scripts/020-upstream-preset.sh"
+--8<-- "guides/biomed2-bcr/scripts/020-upstream-preset.sh"
 ```
 
 One might also use [GNU Parallel](https://www.gnu.org/software/parallel/) to process all samples at once:
 
 ```shell
---8<-- "biomed2-bcr/scripts/020-upstream-preset-parallel.sh"
+--8<-- "guides/biomed2-bcr/scripts/020-upstream-preset-parallel.sh"
 ```
 
 ### Under the hood pipeline:
@@ -99,7 +99,7 @@ Under the hood `mixcr analyze biomed2-human-bcr-cdr3` executes the following pip
 Alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
 
 ```shell
---8<-- "biomed2-bcr/scripts/040-upstream-align.sh"
+--8<-- "guides/biomed2-bcr/scripts/040-upstream-align.sh"
 ```
 
 Option `--report` is specified here explicitly.
@@ -127,7 +127,7 @@ Assembles alignments into clonotypes and applies several layers of errors correc
 
 
 ```shell
---8<-- "biomed2-bcr/scripts/050-upstream-assemble.sh"
+--8<-- "guides/biomed2-bcr/scripts/050-upstream-assemble.sh"
 ```
 
 `-OseparateByV=true`
@@ -140,7 +140,7 @@ Assembles alignments into clonotypes and applies several layers of errors correc
 Exports clonotypes from .clns file into human-readable tables.
 
 ```shell
---8<-- "biomed2-bcr/scripts/060-upstream-exportClones.sh"
+--8<-- "guides/biomed2-bcr/scripts/060-upstream-exportClones.sh"
 ```
 
 Here `-p full` defines the full preset of common export columns. Check [`mixcr export`](../reference/mixcr-export.md) for more information.
@@ -173,7 +173,7 @@ While `.clns` file holds all data and is used for downstream analysis using [`mi
 Now when we have all files processed lets perform Quality Control. The first thing to check is the alignment rate. That can be easily done using [`mixcr exportQc align`](../reference/mixcr-exportQc.md#alignment-reports) function.
 
 ```shell
---8<-- "biomed2-bcr/scripts/080-qc-align.sh"
+--8<-- "guides/biomed2-bcr/scripts/080-qc-align.sh"
 ```
 
 ![alignQc.svg](biomed2-bcr/figs/alignQc.svg)
@@ -186,13 +186,13 @@ Here we can see a percentage of successfully aligned reads for every sample as w
 Let's take one of the bad quality samples (ex. SRR8365459_HIP1_female) and examine it. To look at the reads' alignments for that sample we first will run [`mixcr align`](../reference/mixcr-align.md) command for that sample once again, but this time we will specify additional options (`-OallowPartialAlignments=true -OallowNoCDR3PartAlignments=true`) that will preserve partially aligned reads (ex. reads that may lack J gene) and reads that lack `CDR3` sequence.
 
 ```shell
---8<-- "biomed2-bcr/scripts/090-qc-debug-align.sh"
+--8<-- "guides/biomed2-bcr/scripts/090-qc-debug-align.sh"
 ```
 
 Now, when we have a new `.vdjca` file let's visualize how reads cover FRs and CDRs regions for that sample.
 
 ```shell
---8<-- "biomed2-bcr/scripts/100-qc-coverage.sh"
+--8<-- "guides/biomed2-bcr/scripts/100-qc-coverage.sh"
 ```
 
 This will generate three `.pdf` formatted plots: `R1` alignment, `R2` alignment and alignment of overlapped reads. These plots can tell us the percentage of reads that cover each region at a certain position. Briefly, for this sample, only those reads that overlap show a good coverage pattern.
@@ -209,7 +209,7 @@ Finally, we can look at raw alignments using [`mixcr exportAlignmentsPretty`](..
 The function bellow will generate a `.txt` human-readable file with alignments. We use parameter `--skip 1000` to skip first 1000 reads, as first reads usually have bad quality, and `--limit 100` will export only 100 alignments as we usually don't need to examine every alignment to see the issue. 
 
 ```shell
---8<-- "biomed2-bcr/scripts/110-qc-exportAlignmentsPretty.sh"
+--8<-- "guides/biomed2-bcr/scripts/110-qc-exportAlignmentsPretty.sh"
 ```
 
 Bellow you can see a few alignments from the generated file. The first one is an example of well aligned read.
@@ -302,7 +302,7 @@ Target1 240 CTGCTGACCCG 250  Score
 Another quality report we should investigate is chain abundance plot.
 
 ```shell
---8<-- "biomed2-bcr/scripts/120-qc-chainUsage.sh"
+--8<-- "guides/biomed2-bcr/scripts/120-qc-chainUsage.sh"
 ```
 
 ![chainUsage.svg](biomed2-bcr/figs/chainUsage.svg)
@@ -319,13 +319,13 @@ Taking into account what is mentioned above, the longest possible assembling fea
 MiXCR has a specific preset to obtain full-length BCR clones with Biomed2 protocol:
 
 ```shell
---8<-- "biomed2-bcr/scripts/130-upstream-preset-full-length.sh"
+--8<-- "guides/biomed2-bcr/scripts/130-upstream-preset-full-length.sh"
 ```
 
 The `mixcr assemble` step in this preset differs from the one above in the following manner:
 
 ```shell
---8<-- "biomed2-bcr/scripts/140-upstream-assemble-full-length.sh"
+--8<-- "guides/biomed2-bcr/scripts/140-upstream-assemble-full-length.sh"
 ```
 
 `-OassemblingFeatures="{CDR1Begin:CDR3End}"`
@@ -338,19 +338,19 @@ Notice that we do not use `-OseparateByV=true` in this case because assembling f
 Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
 
 ```shell
---8<-- "biomed2-bcr/scripts/125-qc-exportReports.sh"
+--8<-- "guides/biomed2-bcr/scripts/125-qc-exportReports.sh"
 ```
 
 ```shell
---8<-- "biomed2-bcr/scripts/125-qc-exportReports-json.sh"
+--8<-- "guides/biomed2-bcr/scripts/125-qc-exportReports-json.sh"
 ```
 
 ??? "Show report file"
     === "`.txt`"
         ```shell
-        --8<-- "biomed2-bcr/figs/SRR8365468_HIP2_male.report.txt"
+        --8<-- "guides/biomed2-bcr/figs/SRR8365468_HIP2_male.report.txt"
         ```
     === "`.json`"
         ```json
-        --8<-- "biomed2-bcr/figs/SRR8365468_HIP2_male.report.json"
+        --8<-- "guides/biomed2-bcr/figs/SRR8365468_HIP2_male.report.json"
         ```

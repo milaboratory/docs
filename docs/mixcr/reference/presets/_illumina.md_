@@ -1,0 +1,46 @@
+### Illumina
+
+#### AmpliSeq for Illumina Immune Repertoire Plus, TCR beta Panel
+
+==`ampliseq-tcrb-plus-cdr3`==
+·
+==`ampliseq-tcrb-plus-full-length`==
+·
+[:octicons-link-16: Link](https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/ampliseq-immune-repertoire-panel.html)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/illumina.yaml)
+
+
+AmpliSeq for Illumina Immune Repertoire Plus, TCR beta Panel is a highly multiplexed targeted resequencing panel to measure T cell diversity and clonal expansion by sequencing T cell receptor (TCR) beta chain rearrangements. RNA evaluation of TCRβ chain rearrangements, including CDR1, CDR2, and CDR3 (with up to 400 bp read-length amplicons). The `-cdr3` preset may be used to reduce clonotype assembling feature from `{CDR1:FR4}` region to CDR3 only.
+
+![](pics/ampliseq-oncomine-lr-light.svg#only-light)
+![](pics/ampliseq-oncomine-lr-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze ampliseq-tcrb-plus-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
+
+#### AmpliSeq™ for Illumina® TCR beta-SR Panel
+
+==`ampliseq-tcrb-sr-cdr3`==
+·
+[:octicons-link-16: Link](https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/ampliseq-immune-repertoire-panel.html)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/illumina.yaml)
+
+Sequences TCR beta chain rearrangements, with up to 80 bp read-length amplicons for characterizing CDR3.
+
+![](pics/ampliseq-lr-light.svg#only-light)
+![](pics/ampliseq-lr-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze ampliseq-tcrb-sr-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```

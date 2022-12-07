@@ -13,10 +13,10 @@ All data may be downloaded using the script bellow.
 
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "milaboratories-human-tcr-rna-multi/scripts/010-download-aria2c.sh"
+    --8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "milaboratories-human-tcr-rna-multi/scripts/download-list.txt"
+    --8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/download-list.txt"
     ```
 ## Upstream analysis
 
@@ -25,7 +25,7 @@ All data may be downloaded using the script bellow.
 MiXCR has a dedicated preset for this protocol, thus analysing the data is as easy as:
 
 ```shell
---8<-- "milaboratories-human-tcr-rna-multi/scripts/020-upstream-preset.sh"
+--8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/020-upstream-preset.sh"
 ```
 
 Running the command above will generate the following files:
@@ -54,7 +54,7 @@ While `.clns` file holds all data and is used for downstream analysis using [`mi
 In order to run the analysis for all samples in the project on Linux we can use [GNU Parallel](https://www.gnu.org/software/parallel/) in the following way:
 
 ```shell
---8<-- "milaboratories-human-tcr-rna-multi/scripts/020-upstream-preset-parallel.sh"
+--8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/020-upstream-preset-parallel.sh"
 ```
 
 ### Under the hood pipeline
@@ -65,7 +65,7 @@ Under the hood `milab-human-tcr-rna-multiplex-cdr3` preset actually executes the
 [Alignment](../reference/mixcr-align.md) of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
 
 ```shell
---8<-- "milaboratories-human-tcr-rna-multi/scripts/040-upstream-align.sh"
+--8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/040-upstream-align.sh"
 ```
 
 Option `--report` is specified here explicitly.
@@ -97,7 +97,7 @@ Option `--report` is specified here explicitly.
 [Corrects](../reference/mixcr-refineTagsAndSort.md) sequencing and PCR errors _inside_ barcode sequences. This step does extremely important job by correcting artificial diversity caused by errors in barcodes. In the considered example project it corrects only sequences of UMIs.
 
 ```shell
---8<-- "milaboratories-human-tcr-rna-multi/scripts/045-upstream-refineTagsAndSort.sh"
+--8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/045-upstream-refineTagsAndSort.sh"
 ```
 
 #### `assemble`
@@ -111,7 +111,7 @@ Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
 
 
 ```shell
---8<-- "milaboratories-human-tcr-rna-multi/scripts/050-upstream-assemble.sh"
+--8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/050-upstream-assemble.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with assembly report.
@@ -129,7 +129,7 @@ Options `--report` and `--json-report` are specified here explicitly so that the
 Exports clonotypes from .clns file into human-readable tables.
 
 ```shell
---8<-- "milaboratories-human-tcr-rna-multi/scripts/060-upstream-exportClones.sh"
+--8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/060-upstream-exportClones.sh"
 ```
 
 `-с TRA`
@@ -145,7 +145,7 @@ Now when we have all files processed lets perform Quality Control. That can be e
 function.
 
 ```shell
---8<-- "milaboratories-human-tcr-rna-multi/scripts/080-qc-align.sh"
+--8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/080-qc-align.sh"
 ```
 
 ![align QC](milaboratories-human-tcr-rna-multi/figs/alignQc.svg)
@@ -155,7 +155,7 @@ From this plot we can tell that all samples have high alignment rate, more than 
 Now we can check chain distribution plot:
 
 ```shell
---8<-- "milaboratories-human-tcr-rna-multi/scripts/120-qc-chainUsage.sh"
+--8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/120-qc-chainUsage.sh"
 ```
 
 ![chain usage QC](milaboratories-human-tcr-rna-multi/figs/chainUsage.svg)
@@ -166,19 +166,19 @@ Here we can see that no cross-contamination has occurred. TCR alpha samples cons
 Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
 
 ```shell
---8<-- "milaboratories-human-tcr-rna-multi/scripts/125-qc-exportReports.sh"
+--8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/125-qc-exportReports.sh"
 ```
 
 ```shell
---8<-- "milaboratories-human-tcr-rna-multi/scripts/125-qc-exportReports-json.sh"
+--8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/125-qc-exportReports-json.sh"
 ```
 
 ??? "Show report file"
     === "`.txt`"
         ```shell
-        --8<-- "milaboratories-human-tcr-rna-multi/figs/Multi_TRA_FS115_1.report.txt"
+        --8<-- "guides/milaboratories-human-tcr-rna-multi/figs/Multi_TRA_FS115_1.report.txt"
         ```
     === "`.json`"
         ```js
-        --8<-- "milaboratories-human-tcr-rna-multi/figs/Multi_TRA_FS115_1.report.json"
+        --8<-- "guides/milaboratories-human-tcr-rna-multi/figs/Multi_TRA_FS115_1.report.json"
         ```

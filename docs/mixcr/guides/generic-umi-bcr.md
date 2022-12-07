@@ -14,10 +14,10 @@ The experiment includes 8 mice that express angiotensin-converting enzyme 2 (ACE
 All data may be downloaded directly from SRA (PRJNA780318) using e.g. [SRA Explorer](https://sra-explorer.info).
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "generic-umi-bcr/scripts/010-download-aria2c.sh"
+    --8<-- "guides/generic-umi-bcr/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "generic-umi-bcr/scripts/download-list.txt"
+    --8<-- "guides/generic-umi-bcr/scripts/download-list.txt"
     ```
 
 ## One command Solution
@@ -27,7 +27,7 @@ The data was obtained using NEBNext Immune Sequencing Kit for BCR repertoire. Th
 The exact command for a single sample you can see bellow:
 
 ```shell
---8<-- "generic-umi-bcr/scripts/020-upstream-example.sh"
+--8<-- "guides/generic-umi-bcr/scripts/020-upstream-example.sh"
 ```
 
 The command above will generate the following output files:
@@ -68,7 +68,7 @@ By default, MiXCR exports clonotypes in a tab-delimited format separately for ea
 In order to run the analysis for all samples in the project on Linux we can use [GNU Parallel](https://www.gnu.org/software/parallel/) in the following way:
 
 ```shell
---8<-- "generic-umi-bcr/scripts/030-upstream-parallel.sh"
+--8<-- "guides/generic-umi-bcr/scripts/030-upstream-parallel.sh"
 ```
 
 ## Under the hood of `mixcr analyze` pipeline
@@ -83,7 +83,7 @@ Under the hood, `mixcr analyze nebnext-mouse-bcr-full-length` command that we us
 - pattern matching of tag pattern sequence and extraction of barcodes
 
 ```shell
---8<-- "generic-umi-bcr/scripts/040-upstream-align.sh"
+--8<-- "guides/generic-umi-bcr/scripts/040-upstream-align.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithout5UTRWithP` for the alignment of V segments (see [Gene features and anchor points](../reference/ref-gene-features.md).
@@ -101,7 +101,7 @@ This step utilizes all available CPUs and scales perfectly. When there are a lot
 [Corrects](../reference/mixcr-refineTagsAndSort.md) sequencing and PCR errors _inside_ barcode sequences. This step does extremely important job by correcting artificial diversity caused by errors in barcodes. In the considered example project it corrects only sequences of UMIs.
 
 ```shell
---8<-- "generic-umi-bcr/scripts/050-upstream-refine.sh"
+--8<-- "guides/generic-umi-bcr/scripts/050-upstream-refine.sh"
 ```
 
 #### `assemble`
@@ -113,7 +113,7 @@ This step utilizes all available CPUs and scales perfectly. When there are a lot
 - clustering to correct for PCR errors
 
 ```shell
---8<-- "generic-umi-bcr/scripts/060-upstream-assemble.sh"
+--8<-- "guides/generic-umi-bcr/scripts/060-upstream-assemble.sh"
 ```
 
 `-OassemblingFeatures=VDJRegion`
@@ -129,7 +129,7 @@ Options `--report` and `--json-report` are specified here explicitly so that the
 Finally, to [export](../reference/mixcr-export.md#clonotype-tables) clonotype tables in tabular form `exportClones` is used. By default `mixcr analyze` will export all available chains into separate files which is equivalent to running a set of the following commands :
 
 ```shell
---8<-- "generic-umi-bcr/scripts/070-upstream-exportClones.sh"
+--8<-- "guides/generic-umi-bcr/scripts/070-upstream-exportClones.sh"
 ```
 By default `mixcr export` will create separate files for every receptor chain. To change this behavior and export all chains in a single file use `--dont-split-files` option, or export only a desired set of chains using `--chains` option.
 
@@ -138,7 +138,7 @@ By default `mixcr export` will create separate files for every receptor chain. T
 Now when the upstream analysis is finished we can move on to quality control. First lets look at the alignment report plot.
 
 ```shell
---8<-- "generic-umi-bcr/scripts/080-qc-align.sh"
+--8<-- "guides/generic-umi-bcr/scripts/080-qc-align.sh"
 ```
 
 ![alignQc.svg](generic-umi-bcr/figs/alignQc.svg)
@@ -148,7 +148,7 @@ We see that all samples have a very high score of successfully aligned reads. No
 Next, lets examine chain usage distribution:
 
 ```shell
---8<-- "generic-umi-bcr/scripts/120-qc-chainUsage.sh"
+--8<-- "guides/generic-umi-bcr/scripts/120-qc-chainUsage.sh"
 ```
 
 ![chainUsage.svg](generic-umi-bcr/figs/chainUsage.svg)
@@ -171,7 +171,7 @@ To run postanalysis routines we need to prepare a metadata file in a .tsv or .cs
 To compute a set of individual metrics run the following command:
 
 ```shell
---8<-- "generic-umi-bcr/scripts/130-pa-individual.sh"
+--8<-- "guides/generic-umi-bcr/scripts/130-pa-individual.sh"
 ```
 
 The meaning of specified options is the following:
@@ -315,7 +315,7 @@ For diversity metrics and CDR3 properties MiXCR allows to group data in differen
 We are going to construct a box plot to compare inverse Simpson diversity Index between two groups of mice. That can be easily done with a single command:
 
 ```shell
---8<-- "generic-umi-bcr/scripts/140-pa-diversity.sh"
+--8<-- "guides/generic-umi-bcr/scripts/140-pa-diversity.sh"
 ```
 
 ![](generic-umi-bcr/figs/diversity.IGH.svg)
@@ -343,7 +343,7 @@ Arguments explained:
 Next lets create a V-usage plot.
 
 ```shell
---8<-- "generic-umi-bcr/scripts/160-pa-vUsage.sh"
+--8<-- "guides/generic-umi-bcr/scripts/160-pa-vUsage.sh"
 ```
 
 `--bar-plot`
@@ -359,7 +359,7 @@ Next lets create a V-usage plot.
 MiXCR also allows performing an overall overlap analysis using [`mixcr postanalysis overlap`](../reference/mixcr-postanalysis.md#overlap-postanalysis). But here, since there are a lot of samples we want to actually overlap groups of samples. Running the following command will perform pairwise overlap comparison between groups of samples with different `tissue` and `condition` values.
 
 ```shell
---8<-- "generic-umi-bcr/scripts/180-pa-overlap.sh"
+--8<-- "guides/generic-umi-bcr/scripts/180-pa-overlap.sh"
 ```
 
 This command will generate a set of files:
@@ -388,7 +388,7 @@ The tabular output for example for F2 metric will look like:
 Every overlap metric can be exported in a graphical format:
 
 ```shell
---8<-- "generic-umi-bcr/scripts/180-pa-overlap-export.sh"
+--8<-- "guides/generic-umi-bcr/scripts/180-pa-overlap-export.sh"
 ```
 
 For list of available parameters see [`mixcr exportPlots overlap`](../reference/mixcr-exportPlots.md#overlap)

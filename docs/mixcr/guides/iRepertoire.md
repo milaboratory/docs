@@ -12,10 +12,10 @@ All data is available from SRA (PRJNA754274) using e.g. [SRA Explorer](https://s
 
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "biomed2-bcr/scripts/010-download-aria2c.sh"
+    --8<-- "guides/biomed2-bcr/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "biomed2-bcr/scripts/download-list.txt"
+    --8<-- "guides/biomed2-bcr/scripts/download-list.txt"
     ```
 
 The project contains 103 FASTQ file pairs. For the purpose of this tutorial we assume that all fastq files are stored  in `fastq/` folder. The structure of sequences is shown on the picture bellow. The data was obtained using multiplex primers for V and J genes. Below you can see the structure of cDNA library.
@@ -28,13 +28,13 @@ The project contains 103 FASTQ file pairs. For the purpose of this tutorial we a
 MiXCR has a dedicated preset for this protocol, thus analysing the data ia as easy as:
 
 ```shell
---8<-- "irepertoire-tcr-lr/scripts/020-upstream-preset.sh"
+--8<-- "guides/irepertoire-tcr-lr/scripts/020-upstream-preset.sh"
 ```
 
 One might also use [GNU Parallel](https://www.gnu.org/software/parallel/) to process all samples at once:
 
 ```shell
---8<-- "irepertoire-tcr-lr/scripts/020-upstream-preset-parallel.sh"
+--8<-- "guides/irepertoire-tcr-lr/scripts/020-upstream-preset-parallel.sh"
 ```
 
 ### Under the hood pipeline:
@@ -45,7 +45,7 @@ Under the hood `mixcr analyze irepertoire-human-tcr-cdr3` executes the following
 Alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
 
 ```shell
---8<-- "irepertoire-tcr-lr/scripts/040-upstream-align.sh"
+--8<-- "guides/irepertoire-tcr-lr/scripts/040-upstream-align.sh"
 ```
 
 Option `--report` is specified here explicitly.
@@ -73,14 +73,14 @@ Assembles alignments into clonotypes and applies several layers of errors correc
 : Split clones with the same `CDR3` sequence and different J-genes
 
 ```shell
---8<-- "irepertoire-tcr-lr/scripts/050-upstream-assemble.sh"
+--8<-- "guides/irepertoire-tcr-lr/scripts/050-upstream-assemble.sh"
 ```
 
 #### `export`
 Exports clonotypes from .clns file into human-readable tables.
 
 ```shell
---8<-- "irepertoire-tcr-lr/scripts/060-upstream-exportClones.sh"
+--8<-- "guides/irepertoire-tcr-lr/scripts/060-upstream-exportClones.sh"
 ```
 
 `-с <chain>`
@@ -113,7 +113,7 @@ While `.clns` file holds all data and is used for downstream analysis using [`mi
 Now when we have all files processed lets perform Quality Control. The first thing to check is the alignment rate. That can be easily done using [`mixcr exportQc align`](../reference/mixcr-exportQc.md#alignment-reports) function.
 
 ```shell
---8<-- "irepertoire-tcr-lr/scripts/080-qc-align.sh"
+--8<-- "guides/irepertoire-tcr-lr/scripts/080-qc-align.sh"
 ```
 
 ![alignQc.svg](irepertoire-tcr-lr/figs/alignQc.svg)
@@ -124,7 +124,7 @@ From this plot we can clearly see some issues with the libraries. A lot of the s
 MiXCR is a powerful tool that allows us to investigate further. Let's pick one of the samples where the issue is most obvious. (ex. CRC00308 ). To look at the reads' alignments for that sample we first will run [`mixcr align`](../reference/mixcr-align.md) command for that sample once again, but this time we will specify additional options - `-OallowPartialAlignments=true -OallowNoCDR3PartAlignments=true`, that will preserve partially aligned reads (ex. reads that may lack J gene) and reads that lack `CDR3` sequence.
 
 ```shell
---8<-- "irepertoire-tcr-lr/scripts/090-qc-debug-align.sh"
+--8<-- "guides/irepertoire-tcr-lr/scripts/090-qc-debug-align.sh"
 ```
 
 
@@ -133,7 +133,7 @@ Now we can look at raw alignments itself using [`mixcr exportAlignmentsPretty`](
 The function bellow will generate a `.txt` human-readable file with alignments. We use parameter `--skip 1000` to skip first 1000 reads, as first reads usually have bad quality, and `--limit 100` will export only 100 alignments as we usually don't need to examine every alignment to see the issue.
 
 ```shell
---8<-- "irepertoire-tcr-lr/scripts/110-qc-exportAlignmentsPretty.sh"
+--8<-- "guides/irepertoire-tcr-lr/scripts/110-qc-exportAlignmentsPretty.sh"
 ```
 
 Bellow you can see a few alignments from the generated file. The first one is an example of well aligned reads.
@@ -230,7 +230,7 @@ One can use BLAST and search for the not aligned parts of sequence in order to f
 Another quality report we should investigate is a chain abundance plot.
 
 ```shell
---8<-- "irepertoire-tcr-lr/scripts/120-qc-chainUsage.sh"
+--8<-- "guides/irepertoire-tcr-lr/scripts/120-qc-chainUsage.sh"
 ```
 
 
@@ -245,13 +245,13 @@ Taking into account what is mentioned above, the longest possible assembling fea
 MiXCR has a specific preset to obtain full-length BCR clones with Biomed2 protocol:
 
 ```shell
---8<-- "irepertoire-tcr-lr/scripts/130-upstream-preset-full-length.sh"
+--8<-- "guides/irepertoire-tcr-lr/scripts/130-upstream-preset-full-length.sh"
 ```
 
 The `mixcr assemble` step in this preset differs from the one above in the following manner:
 
 ```shell
---8<-- "irepertoire-tcr-lr/scripts/140-upstream-assemble-full-length.sh"
+--8<-- "guides/irepertoire-tcr-lr/scripts/140-upstream-assemble-full-length.sh"
 ```
 
 `-OassemblingFeatures="{CDR1Begin:CDR3End}"`
@@ -263,19 +263,19 @@ The `mixcr assemble` step in this preset differs from the one above in the follo
 Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
 
 ```shell
---8<-- "irepertoire-tcr-lr/scripts/125-qc-exportReports.sh"
+--8<-- "guides/irepertoire-tcr-lr/scripts/125-qc-exportReports.sh"
 ```
 
 ```shell
---8<-- "irepertoire-tcr-lr/scripts/125-qc-exportReports-json.sh"
+--8<-- "guides/irepertoire-tcr-lr/scripts/125-qc-exportReports-json.sh"
 ```
 
 ??? "Show report file"
     === "`.txt`"
         ```shell
-        --8<-- "irepertoire-tcr-lr/figs/CRC016_preTherapy.report.txt"
+        --8<-- "guides/irepertoire-tcr-lr/figs/CRC016_preTherapy.report.txt"
         ```
     === "`.json`"
         ```json
-        --8<-- "irepertoire-tcr-lr/figs/CRC016_preTherapy.report.json"
+        --8<-- "guides/irepertoire-tcr-lr/figs/CRC016_preTherapy.report.json"
         ```
