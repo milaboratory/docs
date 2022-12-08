@@ -687,7 +687,7 @@ main.md-main {
   white-space: nowrap;
   overflow: hidden;
   position: sticky;
-  top: 0;
+  top: 50px;
   z-index: 1;
   margin: -15px 0 0 0;
   padding: 0;
