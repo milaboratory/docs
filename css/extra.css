@@ -633,7 +633,6 @@ mark code {
     width: 3px;
     height: 3px;
     background-color: #fff;
-    border-radius: 50%;
 }
 
 .star.middle {
@@ -682,7 +681,7 @@ main.md-main {
   --globe-spacing: 40px;
   --globe-spread: 3px;
   --light-off-opacity: 0.4;
-  --b-shadow: 0px 2px 24px 3px;
+  --b-shadow: 0px 2px 18px 3px;
   text-align: center;
   white-space: nowrap;
   overflow: hidden;
