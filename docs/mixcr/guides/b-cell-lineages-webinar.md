@@ -2,7 +2,7 @@
 
 MiXCR allows V- and J-gene allele inference and somatic hypermutation lineage trees reconstruction. This guide covers these two major advances in BCR repertoire analysis and provides examples.
 
-<iframe width="560" height="315" style="margin: 0 auto;" src="https://www.youtube.com/embed/HblPe8NhZL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" style="display: block; margin: 0 auto;" src="https://www.youtube.com/embed/HblPe8NhZL4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## Data and experimental design
 
