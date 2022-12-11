@@ -136,6 +136,7 @@ nav:
       - 'Special guides':
         - 'Assembling custom reference library': mixcr/guides/create-custom-library.md
         - 'Using external libraries': mixcr/guides/external-libraries.md
+        - 'B cell lineage tracing': mixcr/guides/b-cell-lineages-webinar.md
   - 'Docs':
       - 'Overview':
         - 'Analysis overview': mixcr/reference/overview-analysis-overview.md
