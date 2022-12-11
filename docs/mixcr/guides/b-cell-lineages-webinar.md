@@ -16,8 +16,6 @@ PBMC was isolated using ficoll density gradient centrifugation and RNA was isola
 
 ![](b-cell-lineage-tracing/pipeline.svg)
 
-Let's download the full dataset for the donor:
-
 
 ## Upstream analysis
 
