@@ -381,7 +381,7 @@ ggplotly(g1)
 ggplotly(g2)
 ggplotly(g3)
 ```
-
+![](b-cell-lineage-tracing/lineage-1.svg)
 
 
 
@@ -421,6 +421,7 @@ ggplotly(g1)
 ggplotly(g2)
 ggplotly(g3)
 ```
+![](b-cell-lineage-tracing/lineage-2.svg)
 
 In pink we show lineages presumably responding to second COVID19 infection, defined at the previous step. We observe that some of these lineages also increased their abundance at first COVID19 response time point (T4).
 
@@ -469,7 +470,7 @@ In pink we show lineages presumably responding to second COVID19 infection, defi
         geom_vline(xintercept = 7,linetype=2,color="grey76")
     ```
 
-
+![](b-cell-lineage-tracing/lineage-3.svg)
 
 ### Analysis for individual trees
 
@@ -656,6 +657,8 @@ lineageTrajectoryPlot(13628)
 lineageIsotypesPlot(13628)
 ```
 
+![](b-cell-lineage-tracing/lineage-4.svg)
+
 #### Draw all plots for lineage 10511
 
 ```R
@@ -666,6 +669,8 @@ lineageTrajectoryPlot(10511)
 lineageIsotypesPlot(10511)
 ```
 
+![](b-cell-lineage-tracing/lineage-5.svg)
+
 #### Draw all plots for lineage 12796
 
 ```R
@@ -675,6 +680,8 @@ mutationPositionPlot(12796)
 lineageTrajectoryPlot(12796)
 lineageIsotypesPlot(12796)
 ```
+
+![](b-cell-lineage-tracing/lineage-6.svg)
 
 #### Alternative representations for lineage trees
 
@@ -777,3 +784,5 @@ theme(legend.position = 'bottom')+
 
 cowplot::plot_grid(g1,g2,g3,nrow=1)
 ```
+
+![](b-cell-lineage-tracing/lineage-7.svg)
