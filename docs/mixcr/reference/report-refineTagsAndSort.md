@@ -212,7 +212,7 @@ The following set of fields is reported for every processed tag-name. In this ex
 :
 
 `UMI diversity filtered by whitelist`
-: Number of unique UMIs that were dropped by whitelist.
+: Number of unique UMIs left after whitelist filtering.
 
 `UMI recursively corrected`
 : 
