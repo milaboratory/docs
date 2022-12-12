@@ -109,7 +109,7 @@ This plot demonstrates the distribution of how many times unique cDNA molecules 
 
 ## Allele inference
 
-The next step, after obtaining clonotypes is to perform allele inference to separate true allelic variants from hypermutations alterations. This is done using [`mixcr findAlleles`](../reference/mixcr-findAlleles.md) commands which works in two steps:
+The next step, after obtaining clonotypes is to perform allele inference to separate true allelic variants from somatic hypermutations. This is done using [`mixcr findAlleles`](../reference/mixcr-findAlleles.md) command which works in two steps:
 
  - a new personalized reference gene library is generated based on the provided samples;
  - the newly generated reference is used to realign each clone. New .clns files are generated.
@@ -167,6 +167,7 @@ mixcr exportShmTreesWithNodes \
 
 ## Lineage analysis
 
+For further downstream analysis we proceed with R language.
 Load necessary packages, define several handy helper functions, and color pallets:
 
 ??? Quote "Expand"
@@ -379,7 +380,7 @@ ggplotly(g1)
 ggplotly(g2)
 ggplotly(g3)
 ```
-![](b-cell-lineage-tracing/lineage-1.svg)
+![](b-cell-lineage-tracing/scatter_UMIs_isotypes.svg)
 
 
 
@@ -419,7 +420,7 @@ ggplotly(g1)
 ggplotly(g2)
 ggplotly(g3)
 ```
-![](b-cell-lineage-tracing/lineage-2.svg)
+![](b-cell-lineage-tracing/scatter_UMIs_responding.svg)
 
 In pink we show lineages presumably responding to second COVID19 infection, defined at the previous step. We observe that some of these lineages also increased their abundance at first COVID19 response time point (T4).
 
@@ -465,10 +466,13 @@ In pink we show lineages presumably responding to second COVID19 infection, defi
                      arrow = arrow(length = unit(0.2, "cm")))+
         annotate("text", x=5.5, y=0.086, label= "COVID19") +
         geom_vline(xintercept = 4,linetype=2,color="grey76")+
-        geom_vline(xintercept = 7,linetype=2,color="grey76")
+        geom_vline(xintercept = 7,linetype=2,color="grey76")+
+       scale_color_discrete(name = "",
+                          labels = c("COVID19 responding", "Non-responding"))+
+     theme(legend.position = "bottom")
     ```
 
-![](b-cell-lineage-tracing/lineage-3.svg)
+![](b-cell-lineage-tracing/lineage_tracking.png)
 
 ### Analysis for individual trees
 
@@ -655,7 +659,24 @@ lineageTrajectoryPlot(13628)
 lineageIsotypesPlot(13628)
 ```
 
-![](b-cell-lineage-tracing/lineage-4.svg)
+
+=== "Tree with MSA"
+    <figure markdown>
+    ![Tree](b-cell-lineage-tracing/13628_tree_msa.svg)
+    </figure>
+=== "Mutation frequencies"
+    <figure markdown>
+    ![Mutations](b-cell-lineage-tracing/mutation_position_13628.svg)
+    </figure>
+=== "Lineage abundance trajectory"
+    <figure markdown>
+    ![Trajectory](b-cell-lineage-tracing/abundance_trajectory_13628.svg)
+    </figure>
+=== "Isotype fraction"
+    <figure markdown>
+    ![Isotypes](b-cell-lineage-tracing/isotype_fraction_13628.svg)
+    </figure>
+
 
 #### Draw all plots for lineage 10511
 
@@ -667,8 +688,22 @@ lineageTrajectoryPlot(10511)
 lineageIsotypesPlot(10511)
 ```
 
-![](b-cell-lineage-tracing/lineage-5.svg)
-
+=== "Tree with MSA"
+    <figure markdown>
+    ![Tree](b-cell-lineage-tracing/10511_tree_msa.svg)
+    </figure>
+=== "Mutation frequencies"
+    <figure markdown>
+    ![Mutations](b-cell-lineage-tracing/mutation_position_10511.svg)
+    </figure>
+=== "Lineage abundance trajectory"
+    <figure markdown>
+    ![Trajectory](b-cell-lineage-tracing/abundance_trajectory_10511.svg)
+    </figure>
+=== "Isotype fraction"
+    <figure markdown>
+    ![Isotypes](b-cell-lineage-tracing/isotype_fraction_10511.svg)
+    </figure>
 #### Draw all plots for lineage 12796
 
 ```R
@@ -679,7 +714,22 @@ lineageTrajectoryPlot(12796)
 lineageIsotypesPlot(12796)
 ```
 
-![](b-cell-lineage-tracing/lineage-6.svg)
+=== "Tree with MSA"
+    <figure markdown>
+    ![Tree](b-cell-lineage-tracing/12796_tree_msa.svg)
+    </figure>
+=== "Mutation frequencies"
+    <figure markdown>
+    ![Mutations](b-cell-lineage-tracing/mutation_position_12796.svg)
+    </figure>
+=== "Lineage abundance trajectory"
+    <figure markdown>
+    ![Trajectory](b-cell-lineage-tracing/abundance_trajectory_12796.svg)
+    </figure>
+=== "Isotype fraction"
+    <figure markdown>
+    ![Isotypes](b-cell-lineage-tracing/isotype_fraction_12796.svg)
+    </figure>
 
 #### Alternative representations for lineage trees
 
@@ -783,4 +833,4 @@ theme(legend.position = 'bottom')+
 cowplot::plot_grid(g1,g2,g3,nrow=1)
 ```
 
-![](b-cell-lineage-tracing/lineage-7.svg)
+![](b-cell-lineage-tracing/tripleColoringTree_12796.svg)
