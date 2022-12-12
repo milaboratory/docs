@@ -54,8 +54,25 @@ function generateStars($stars) {
   animate();
 }
 
+function lightRope() {
+  let ul = document.createElement('ul');
+  ul.classList.add('lightrope');
+
+  for (let i = 0; i < 50; i++) {
+    ul.append(document.createElement('li'));
+  }
+
+  let main = document.querySelector('.md-main');
+
+  if (main) {
+    main.prepend(ul);
+  }
+}
+
 window.addEventListener('load',  () => {
   if (document.querySelector('.not-found')) {
     generateStars(document.body);
+  } else {
+    lightRope();
   }
 });

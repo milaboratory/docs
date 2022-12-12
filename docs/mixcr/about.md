@@ -4,9 +4,11 @@ hide:
   - navigation
 ---
 <style>
-  .md-typeset h1,
   .md-content__button {
     display: none;
+  }
+  .md-content > .md-content__inner {
+      margin: 0 auto;
   }
 </style>
 
