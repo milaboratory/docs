@@ -228,7 +228,7 @@ Generic BCR amplicon library with (`-umi`) or without UMIs. Required configs tha
 
 The following example runs upstream analysis for some full-length human BCR RNA multiplex library with 3'-end primers located on C-gene and UMIs spanning first 12 letters of 5'-end, followed by 4 letters of a fixed linker sequence:
 ```shell
-mixcr analyze generic-bcr-umi-amplicon \
+mixcr analyze generic-bcr-amplicon-umi \
     --species hsa \
     --rna \
     --tag-pattern "^(R1:*) \ ^(UMI:N{12})GTAC(R2:*)" \
