@@ -56,6 +56,7 @@ function generateStars($stars) {
 
 function lightRope() {
   let ul = document.createElement('ul');
+
   ul.classList.add('lightrope');
 
   for (let i = 0; i < 50; i++) {
@@ -67,12 +68,39 @@ function lightRope() {
   if (main) {
     main.prepend(ul);
   }
+
+  let t = document.querySelector('body > header > nav > div.md-header__title');
+
+  if (t) {
+    let btn = document.createElement('button');
+    btn.classList.add('md-header__button', 'md-icon', 'snowflake');
+    const update = () => {
+      if (btn.hasAttribute('hidden')) {
+        btn.removeAttribute('hidden');
+        ul.style.removeProperty('display');
+        window.localStorage.removeItem('--snowflake-hidden');
+      } else {
+        btn.setAttribute('hidden', '');
+        ul.style.setProperty('display', 'none');
+        window.localStorage.setItem('--snowflake-hidden', 'true');
+      }
+    };
+    if (window.localStorage.getItem('--snowflake-hidden')) {
+      update();
+    }
+    btn.addEventListener('click', update);
+    t.after(btn);
+  }
 }
 
 window.addEventListener('load',  () => {
   if (document.querySelector('.not-found')) {
     generateStars(document.body);
   } else {
-    lightRope();
+    try {
+      lightRope();
+    } catch(e) {
+      // for old browsers
+    }
   }
 });
