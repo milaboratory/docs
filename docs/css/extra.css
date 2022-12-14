@@ -754,6 +754,12 @@ main.md-main {
   margin-left: calc(var(--globe-spacing) * -1);
 }
 
+.lightrope.off li {
+  box-shadow: none !important;
+  animation: none !important;
+  background-color: #66666633;
+}
+
 @keyframes flash-1 {
   0%, 100% {
     background: rgba(0, 247, 165, 1);
