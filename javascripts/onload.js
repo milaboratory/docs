@@ -77,11 +77,11 @@ function lightRope() {
     const update = () => {
       if (btn.hasAttribute('hidden')) {
         btn.removeAttribute('hidden');
-        ul.style.removeProperty('display');
+        ul.classList.remove('off');
         window.localStorage.removeItem('--snowflake-hidden');
       } else {
         btn.setAttribute('hidden', '');
-        ul.style.setProperty('display', 'none');
+        ul.classList.add('off');
         window.localStorage.setItem('--snowflake-hidden', 'true');
       }
     };
