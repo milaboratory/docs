@@ -7,6 +7,7 @@ mixcr exportClonesOverlap
     [--chains <chain>[,<chain>...]]... 
     [--criteria <s>] 
     [--only-productive] 
+    [--not-covered-as-empty]
     [<exportField>]...
     [--force-overwrite]
     [--no-warnings] 
@@ -38,6 +39,9 @@ Other command line options are:
 
 `--only-productive`
 : Filter out-of-frame sequences and clonotypes with stop-codons
+
+`--not-covered-as-empty`
+: Export not covered regions as empty text.
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).

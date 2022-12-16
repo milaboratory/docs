@@ -389,6 +389,7 @@ mixcr exportPlots shmTrees
     [--filter-min-nodes <n>] 
     [--filter-min-height <n>] 
     [--ids <id>[,<id>...]]... 
+    [--chains <chains>]
     [--force-overwrite] 
     [--no-warnings] 
     [--verbose] 
@@ -436,6 +437,9 @@ Visualize SHM tree and save in PDF format
 
 `--ids <id>[,<id>...]`
 : Filter specific trees by id
+
+`--chains <chains>`
+: Export only trees that contains clones with specific chain (e.g. TRA or IGH).
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).

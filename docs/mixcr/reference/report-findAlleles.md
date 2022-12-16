@@ -25,6 +25,7 @@ MiXCR generates a comprehensive summary of search for alleles process. Find alle
         Found alleles: 21
         Zygotes: {1=41, 2=9}
         Not enough information for allele search: [IGHJ2P*00, IGHV1-69D*00, IGHV3-65*00, IGHV4-28*00]
+        Genes with enough information for allele search: 40 (80%)
         The same mutations in almost all clones, but not enough naive clones: {}
         Possible additional allele, but not enough naive clones: {}
         Found alleles that don't fit well to data: {}
@@ -160,14 +161,17 @@ MiXCR generates a comprehensive summary of search for alleles process. Find alle
 `Clones count with negative score change	` / `clonesCountWithNegativeScoreChange`
 : How many clones align better on original library than on built one.
 
-`Found alleles	` / `foundAlleles`
+`Found alleles` / `foundAlleles`
 : Found alleles that weren't exist in original library.
 
-`Zygotes	` / `zygotes`
+`Zygotes` / `zygotes`
 : How many homozygous, heterozygous etc. Some genes are duplicated so 3 and 4 zygotes are not uncommon.
 
 `Not enough information for allele search`
 : Genes that have not enough clones to determinate alleles.
+
+`Genes with enough information for allele search`
+: How much genes had enough information to infer allele or it's absence. 
 
 `The same mutations in almost all clones, but not enough naive clones`
 : Alleles that have the same mutations in almost all clones, but there are not enough naive clones by complimentary gene with that mutation subset.

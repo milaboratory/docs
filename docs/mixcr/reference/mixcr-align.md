@@ -18,12 +18,29 @@ mixcr align --preset <name>
     [--read-id-as-cell-tag]
     [--read-buffer <n>] 
     [--high-compression] 
+    [--not-aligned-I1 <path.fastq[.gz]>] 
+    [--not-aligned-I2 <path.fastq[.gz]>] 
     [--not-aligned-R1 <path.fastq[.gz]>] 
     [--not-aligned-R2 <path.fastq[.gz]>] 
+    [--not-parsed-I1 <path.fastq[.gz]>] 
+    [--not-parsed-I2 <path.fastq[.gz]>] 
     [--not-parsed-R1 <path.fastq[.gz]>] 
     [--not-parsed-R2 <path.fastq[.gz]>] 
+
+    [--repor) <path>] 
+    [--json-report <path>] 
+    [--threads <n>] 
+    [--force-overwrite] 
+    [--no-warnings] 
+    [--verbose] 
+    [--help]
+
+    # mix-ins
+
     [--species <species>] 
     [--library <library>] 
+    [--split-by-sample]
+    [--dont-split-by-sample]
     [--dna] 
     [--rna] 
     [--floating-left-alignment-boundary [<anchor_point>]] 
@@ -46,20 +63,17 @@ mixcr align --preset <name>
     [--append-export-alignments-field <field> [<param>...]]... 
     [-O <key=value>]... 
     [-M <key=value>]... 
-    [--repor) <path>] 
-    [--json-report <path>] 
-    [--threads <n>] 
-    [--force-overwrite] 
-    [--no-warnings] 
-    [--verbose] 
-    [--help]
-	(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam)) alignments.vdjca
+    
+    # inputs and outputs
+
+	([file_I1.fastq[.gz] [file_I2.fastq[.gz]]] file_R1.fastq[.gz] [file_R2.fastq[.gz]]|file_RN.(fasta|bam|sam)) 
+	alignments.vdjca
 ```
 The command returns a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form using [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the alignment performance and quality of the library.
 
 Basic command line options are:
 
-`(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam))`
+`([file_I1.fastq[.gz] [file_I2.fastq[.gz]]] file_R1.fastq[.gz] [file_R2.fastq[.gz]]|file_RN.(fasta|bam|sam))`
 : Paths of input files with sequencing data. File name pattern [expansion](./ref-input-file-name-expansion.md) can be used here to merge sequences from multiple sequences or just for convenience.
 
 `alignments.vdjca`
@@ -109,8 +123,20 @@ Default value determined by the preset.
 `--high-compression`
 : Use higher compression for output file, 10~25% slower, minus 30~50% of file size.
 
+`--not-aligned-I1 <path.fastq[.gz]>`
+: Pipe not aligned I1 reads into separate file.
+
+`--not-aligned-I2 <path.fastq[.gz]>`
+: Pipe not aligned I2 reads into separate file.
+
 `--not-aligned-R1 <path.fastq[.gz]>`
 : Pipe not aligned R1 reads into separate file.
+
+`--not-parsed-I1 <path.fastq[.gz]>`
+: Pipe not parsed I1 reads into separate file.
+
+`--not-parsed-I2 <path.fastq[.gz]>`
+: Pipe not parsed I2 reads into separate file.
 
 `--not-aligned-R2 <path.fastq[.gz]>`
 : Pipe not aligned R2 reads into separate file.

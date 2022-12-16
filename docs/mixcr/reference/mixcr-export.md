@@ -29,7 +29,8 @@ mixcr exportClones
     [--dont-split-files] 
     [--no-header] 
     [--drop-default-fields] 
-    [--prepend-columns] 
+    [--prepend-columns]
+    [--not-covered-as-empty] 
     [<exportField>]...
     [--force-overwrite] 
     [--no-warnings] 
@@ -81,6 +82,9 @@ Command line options:
 `--prepend-columns`
 : Added columns will be inserted before default columns. By default columns will be added after default columns
 
+`--not-covered-as-empty`
+: Export not covered regions as empty text.
+
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
 
@@ -106,6 +110,7 @@ mixcr exportAlignments
     [--no-header] 
     [--drop-default-fields] 
     [--prepend-columns] 
+    [--not-covered-as-empty]
     [<exportField>]...
     [--force-overwrite] 
     [--no-warnings] 
@@ -141,6 +146,9 @@ Command line options:
 
 `--prepend-columns`
 : Added columns will be inserted before default columns. By default columns will be added after default columns
+
+`--not-covered-as-empty`
+: Export not covered regions as empty text.
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).

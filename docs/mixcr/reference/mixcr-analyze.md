@@ -16,8 +16,12 @@ mixcr analyze [--help]
 
     # analyze-specific options
     
+    [--not-aligned-I1 <path.fastq[.gz]>] 
+    [--not-aligned-I2 <path.fastq[.gz]>] 
     [--not-aligned-R1 <path.fastq[.gz]>] 
     [--not-aligned-R2 <path.fastq[.gz]>] 
+    [--not-parsed-I1 <path.fastq[.gz]>] 
+    [--not-parsed-I2 <path.fastq[.gz]>] 
     [--not-parsed-R1 <path.fastq[.gz]>] 
     [--not-parsed-R2 <path.fastq[.gz]>] 
     [--no-reports] 
@@ -33,6 +37,8 @@ mixcr analyze [--help]
     [--limit-input <n>]
     [--species <species>] 
     [--library <library>] 
+    [--split-by-sample]
+    [--dont-split-by-sample]
     [--dna] [--rna] 
     [--floating-left-alignment-boundary [<anchor_point>]]
     [--rigid-left-alignment-boundary [<anchor_point>]]
@@ -54,7 +60,7 @@ mixcr analyze [--help]
     # inputs and outputs
     
     <preset_name> 
-    (file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam)) 
+    ([file_I1.fastq[.gz] [file_I2.fastq[.gz]]] file_R1.fastq[.gz] [file_R2.fastq[.gz]]|file_RN.(fasta|bam|sam)) 
     output_prefix
 ```
 
@@ -63,14 +69,26 @@ mixcr analyze [--help]
 `<preset_name>`
 : Name of the analysis preset (see [complete list of available presets](overview-built-in-presets.md)). This is the only required option to run the analysis.
 
-`(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam))`
+`([file_I1.fastq[.gz] [file_I2.fastq[.gz]]] file_R1.fastq[.gz] [file_R2.fastq[.gz]]|file_RN.(fasta|bam|sam))`
 : Paths of input files with sequencing data. File name pattern [expansion](./ref-input-file-name-expansion.md) can be used here to merge sequences from multiple sequences or just for convenience.
 
 `output_prefix`
 : Path prefix telling mixcr where to put all output files, individual intermediate and resulting files will have suffixes according to the steps they were produced with. If argument ends with file separator, then outputs will be written in specified directory.
 
+`--not-aligned-I1 <path.fastq[.gz]>`
+: Pipe not aligned I1 reads into separate file.
+
+`--not-aligned-I2 <path.fastq[.gz]>`
+: Pipe not aligned I2 reads into separate file.
+
 `--not-aligned-R1 <path.fastq[.gz]>`
 : Pipe not aligned R1 reads into separate file.
+
+`--not-parsed-I1 <path.fastq[.gz]>`
+: Pipe not parsed I1 reads into separate file.
+
+`--not-parsed-I2 <path.fastq[.gz]>`
+: Pipe not parsed I2 reads into separate file.
 
 `--not-aligned-R2 <path.fastq[.gz]>`
 : Pipe not aligned R2 reads into separate file.
