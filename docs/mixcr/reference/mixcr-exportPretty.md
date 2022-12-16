@@ -79,7 +79,7 @@ Exports pretty formatted alignments from `.vdjca` file.
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -349,7 +349,7 @@ Exports pretty formatted clonotypes from `.clnx` files. Especially useful after 
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.

@@ -84,7 +84,7 @@ For `.fasta` library will be written in FASTA format with gene name and reliable
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.

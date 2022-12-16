@@ -79,7 +79,7 @@ Basic command line options are:
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.

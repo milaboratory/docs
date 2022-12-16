@@ -113,7 +113,7 @@ Basic command line options are:
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -235,7 +235,7 @@ Exports [gene segment usage](./mixcr-postanalysis.md#segment-usage-metrics) heat
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -358,7 +358,7 @@ Exports [pairwise distance metrics](./mixcr-postanalysis.md#segment-usage-metric
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -448,7 +448,7 @@ Visualize SHM tree and save in PDF format
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.

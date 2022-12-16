@@ -78,7 +78,7 @@ In case of directory no filter by file type will be applied.
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.

@@ -38,7 +38,7 @@ Exports [alignment reports](report-align.md).
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -78,7 +78,7 @@ Exports [anchor points](ref-gene-features.md) coverage by the library. It separa
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -147,7 +147,7 @@ Command line options are:
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -187,7 +187,7 @@ Tag refinement statistics plots.
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
