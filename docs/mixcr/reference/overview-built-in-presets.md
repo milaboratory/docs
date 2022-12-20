@@ -32,6 +32,7 @@ Bellow you one can find a variety of presets for different types of input data a
 --8<-- "reference/presets/_abhelix.md_"
 --8<-- "reference/presets/_bd.md_"
 --8<-- "reference/presets/_parsebio.md_"
+--8<-- "reference/presets/_singleron.md_"
 --8<-- "reference/presets/_neb.md_"
 
 ## Public protocols
