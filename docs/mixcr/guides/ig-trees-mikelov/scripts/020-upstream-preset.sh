@@ -1,4 +1,4 @@
-mixcr analyze generic-bcr-umi-amplicon \
+mixcr analyze generic-bcr-amplicon-umi \
 	--species human \
 	--tag-pattern "^N{19}(R1:*)\^tggtatcaacgcagagtac(UMI:N{19})tct>{2}(R2:*)" \
     --rna \
