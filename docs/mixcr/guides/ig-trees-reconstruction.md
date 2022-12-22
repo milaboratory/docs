@@ -24,7 +24,7 @@ For the demonstration purpose, let's download only the files belonging to one do
 
 ### Preset
 
-The first step that we have to do is to obtain `.clns` clonotype files for the samples. Since it's a BCR data with UMI barcodes, the easiest way to obtain clonotype files is to use `mixcr analyze` command with `generic-bcr-umi-amplicon` preset which uses [`kAligner2`](../reference/mixcr-align.md#v-j-and-c-aligners-parameters) - a BCR dedicated aligner.
+The first step that we have to do is to obtain `.clns` clonotype files for the samples. Since it's a BCR data with UMI barcodes, the easiest way to obtain clonotype files is to use `mixcr analyze` command with `generic-bcr-amplicon-umi` preset which uses [`kAligner2`](../reference/mixcr-align.md#v-j-and-c-aligners-parameters) - a BCR dedicated aligner.
 
 Bellow you can see an example command for one sample:
 
