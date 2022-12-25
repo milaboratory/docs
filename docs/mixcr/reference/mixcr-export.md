@@ -429,94 +429,94 @@ These fields available for `exportAlignments` and `exportClones`:
 
 `-allNFeaturesImputed [<from_reference_point> <to_reference_point>]`
 : Export nucleotide sequence using letters from germline (marked lowercase) for uncovered regions for all gene features between specified reference points (in separate columns).
-
-For example, `-allNFeaturesImputed FR3Begin FR4End` will export `-nFeatureImputed FR3`, `-nFeatureImputed CDR3`, `-nFeatureImputed FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allNFeaturesImputed FR3Begin FR4End` will export `-nFeatureImputed FR3`, `-nFeatureImputed CDR3`, `-nFeatureImputed FR4`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-aaFeatureImputed <gene_feature>`
 : Export amino acid sequence of specified gene feature using letters from germline (marked lowercase) for uncovered regions
 
 `-allAAFeaturesImputed [<from_reference_point> <to_reference_point>]`
 : Export amino acid sequence using letters from germline (marked lowercase) for uncovered regions for all gene features between specified reference points (in separate columns).
-
-For example, `-allAAFeaturesImputed FR3Begin FR4End` will export `-aaFeatureImputed FR3`, `-aaFeatureImputed CDR3`, `-aaFeatureImputed FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allAAFeaturesImputed FR3Begin FR4End` will export `-aaFeatureImputed FR3`, `-aaFeatureImputed CDR3`, `-aaFeatureImputed FR4`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-minFeatureQuality <gene_feature>`
 : Export minimal quality of specified gene feature
 
 `-allMinFeaturesQuality [<from_reference_point> <to_reference_point>]`
 : Export minimal quality for all gene features between specified reference points (in separate columns).
-
-For example, `-allMinFeaturesQuality FR3Begin FR4End` will export `-minFeatureQuality FR3`, `-minFeatureQuality CDR3`, `-minFeatureQuality FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allMinFeaturesQuality FR3Begin FR4End` will export `-minFeatureQuality FR3`, `-minFeatureQuality CDR3`, `-minFeatureQuality FR4`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-allNFeaturesWithMinQuality [<from_reference_point> <to_reference_point>]`
 : Export nucleotide sequences and minimal quality for all gene features between specified reference points (in separate columns).
-
-For example, `-allNFeaturesWithMinQuality FR3Begin FR4End` will export `-nFeature FR3`, `-minFeatureQuality FR3`, `-nFeature CDR3`, `-minFeatureQuality CDR3`, `-nFeature FR4`, `-minFeatureQuality FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allNFeaturesWithMinQuality FR3Begin FR4End` will export `-nFeature FR3`, `-minFeatureQuality FR3`, `-nFeature CDR3`, `-minFeatureQuality CDR3`, `-nFeature FR4`, `-minFeatureQuality FR4`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-allNFeaturesImputedWithMinQuality [<from_reference_point> <to_reference_point>]`
 : Export nucleotide sequences and minimal quality for all gene features between specified reference points (in separate columns).
-
-For example, `-allNFeaturesImputedWithMinQuality FR3Begin FR4End` will export `-nFeatureImputed FR3`, `-minFeatureQuality FR3`, `-nFeatureImputed CDR3`, `-minFeatureQuality CDR3`, `-nFeatureImputed FR4`, `-minFeatureQuality FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allNFeaturesImputedWithMinQuality FR3Begin FR4End` will export `-nFeatureImputed FR3`, `-minFeatureQuality FR3`, `-nFeatureImputed CDR3`, `-minFeatureQuality CDR3`, `-nFeatureImputed FR4`, `-minFeatureQuality FR4`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-avrgFeatureQuality <gene_feature>`
 : Export average quality of specified gene feature
 
 `-allAvrgFeaturesQuality [<from_reference_point> <to_reference_point>]`
 : Export average quality for all gene features between specified reference points (in separate columns).
-
-For example, `-allAvrgFeaturesQuality FR3Begin FR4End` will export `-avrgFeatureQuality FR3`, `-avrgFeatureQuality CDR3`, `-avrgFeatureQuality FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allAvrgFeaturesQuality FR3Begin FR4End` will export `-avrgFeatureQuality FR3`, `-avrgFeatureQuality CDR3`, `-avrgFeatureQuality FR4`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-lengthOf <gene_feature>`
 : Export length of specified gene feature.
 
 `-allLengthOf [<from_reference_point> <to_reference_point>]`
 : Export length for all gene features between specified reference points (in separate columns).
-
-For example, `-allLengthOf FR3Begin FR4End` will export `-lengthOf FR3`, `-lengthOf CDR3`, `-lengthOf FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allLengthOf FR3Begin FR4End` will export `-lengthOf FR3`, `-lengthOf CDR3`, `-lengthOf FR4`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-nFeature <gene_feature>`
 : Export nucleotide sequence of specified gene feature
 
 `-allNFeatures [<from_reference_point> <to_reference_point>]`
 : Export nucleotide sequences for all gene features between specified reference points (in separate columns).
-
-For example, `-allNFeatures FR3Begin FR4End` will export `-nFeature FR3`, `-nFeature CDR3`, `-nFeature FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allNFeatures FR3Begin FR4End` will export `-nFeature FR3`, `-nFeature CDR3`, `-nFeature FR4`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-aaFeature <gene_feature>`
 : Export amino acid sequence of specified gene feature
 
 `-allAAFeatures [<from_reference_point> <to_reference_point>]`
 : Export amino acid sequence for all gene features between specified reference points (in separate columns).
-
-For example, `-allAAFeatures FR3Begin FR4End` will export `-aaFeature FR3`, `-aaFeature CDR3`, `-aaFeature FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allAAFeatures FR3Begin FR4End` will export `-aaFeature FR3`, `-aaFeature CDR3`, `-aaFeature FR4`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-nMutations <gene_feature>`
 : Extract nucleotide mutations for specific gene feature; relative to germline sequence.
 
 `-allNMutations [<from_reference_point> <to_reference_point>]`
 : Extract nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns).
-
-For example, `-allNMutations FR3Begin FR4End` will export `-nMutations FR3`, `-nMutations CDR3`, `-nMutations FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allNMutations FR3Begin FR4End` will export `-nMutations FR3`, `-nMutations CDR3`, `-nMutations FR4`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-nMutationsRelative <gene_feature> <relative_to_gene_feature>`
 : Extract nucleotide mutations for specific gene feature relative to another feature.
@@ -526,10 +526,10 @@ By default, boundaries will be got from analysis parameters if possible or `FR1B
 
 `-allAAMutations [<from_reference_point> <to_reference_point>]`
 : Extract amino acid nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns).
-
-For example, `-allAAMutations FR3Begin FR4End` will export `-aaMutations FR3`, `-aaMutations CDR3`, `-aaMutations FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allAAMutations FR3Begin FR4End` will export `-aaMutations FR3`, `-aaMutations CDR3`, `-aaMutations FR4`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-aaMutationsRelative <gene_feature> <relative_to_gene_feature>`
 : Extract amino acid mutations for specific gene feature relative to another feature.
@@ -539,10 +539,10 @@ By default, boundaries will be got from analysis parameters if possible or `FR1B
 
 `-allMutationsDetailed [<from_reference_point> <to_reference_point>]`
 : Detailed list of nucleotide and corresponding amino acid mutations for all gene features between specified reference points (in separate columns).
-
-For example, `-allMutationsDetailed FR3Begin FR4End` will export `-mutationsDetailed FR3`, `-mutationsDetailed CDR3`, `-mutationsDetailed FR4`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allMutationsDetailed FR3Begin FR4End` will export `-mutationsDetailed FR3`, `-mutationsDetailed CDR3`, `-mutationsDetailed FR4`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-mutationsDetailedRelative <gene_feature> <relative_to_gene_feature>`
 : Detailed list of nucleotide and corresponding amino acid mutations written, positions relative to specified gene feature. Format <nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>, where <aa_mutation_individual> is an expected amino acid mutation given no other mutations have occurred, and <aa_mutation_cumulative> amino acid mutation is the observed amino acid mutation combining effect from all other. WARNING: format may change in following versions.
@@ -552,24 +552,23 @@ By default, boundaries will be got from analysis parameters if possible or `FR1B
 
 `-allPositionsInReference [<from_reference_point> <to_reference_point>]`
 : Export position inside reference sequences (clonal sequence / read sequence) for all reference points between specified (in separate columns).
-
-For example, `-allPositionsInReference FR3Begin FR4End` will export `-positionInReferenceOf FR3Begin`, -positionInReferenceOf CDR3Begin`, -positionInReferenceOf CDR3End` and `-positionInReferenceOf FR4End`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allPositionsInReference FR3Begin FR4End` will export `-positionInReferenceOf FR3Begin`, -positionInReferenceOf CDR3Begin`, -positionInReferenceOf CDR3End` and `-positionInReferenceOf FR4End`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-positionOf <reference_point>`
 : Export position of specified reference point inside target sequences (clonal sequence / read sequence).
 
 `-allPositions [<from_reference_point> <to_reference_point>]`
 : Export position inside target sequences (clonal sequence / read sequence) for all reference points between specified (in separate columns).
-
-For example, `-allPositions FR3Begin FR4End` will export `-positionOf FR3Begin`, -positionOf CDR3Begin`, -positionOf CDR3End` and `-positionOf FR4End`.
-
-By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+    
+    For example, `-allPositions FR3Begin FR4End` will export `-positionOf FR3Begin`, -positionOf CDR3Begin`, -positionOf CDR3End` and `-positionOf FR4End`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-defaultAnchorPoints`
-: Outputs a list of default reference points (like CDR2Begin, FR4End, etc. see documentation bellow
-for the full list and formatting)
+: Outputs a list of default reference points (like CDR2Begin, FR4End, etc. see documentation bellow for the full list and formatting)
 
 `-targetSequences`
 : Export aligned sequences (targets), separated with comma
@@ -657,25 +656,20 @@ The following fields are available for `exportClones`:
 : Fraction of reads assigned to the clonotype
 
 `-uniqueTagFraction <(Molecule|Cell|Sample)>`
-: Fraction of unique tags (UMI, CELL, etc.) the clone or alignment collected.
-
-Tag type will be used for filtering tags for export.
+: Fraction of unique tags (UMI, CELL, etc.) the clone or alignment collected. Tag type will be used for filtering tags for export.
 
 `-cellGroup`
 : Cell group (for single cell analysis)
 
 ## Default anchor point positions
 
-Positions of anchor points produced by the `-defaultAnchorPoints` option are outputted as a colon separated
-list. If an anchor point is not covered by the target sequence nothing is printed for it, but flanking colon
-symbols are preserved to maintain positions in array. See example:
+Positions of anchor points produced by the `-defaultAnchorPoints` option are outputted as a colon separated list. If an anchor point is not covered by the target sequence nothing is printed for it, but flanking colon symbols are preserved to maintain positions in array. See example:
 
 ```shell
 :::::::::108:117:125:152:186:213:243:244:
 ```
 
-If there are several target sequences (e.g. paired-end reads or multi-part clonal sequnce), an array is
-outputted for each target sequence. In this case arrays are separated by a comma:
+If there are several target sequences (e.g. paired-end reads or multi-part clonal sequnce), an array is outputted for each target sequence. In this case arrays are separated by a comma:
 
 ```shell
 2:61:107:107:118:::::::::::::,:::::::::103:112:120:147:181:208:238:239:
@@ -687,8 +681,7 @@ Even if there are no anchor points in one of the parts:
 :::::::::::::::::,:::::::::108:117:125:152:186:213:243:244:
 ```
 
-The following table shows the correspondence between anchor points and positions in the default anchor
-point array:
+The following table shows the correspondence between anchor points and positions in the default anchor point array:
 
 | Anchors point                                                                           | Zero-based position | One-based position  |
 |-----------------------------------------------------------------------------------------|---------------------|---------------------|
