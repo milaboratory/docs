@@ -207,3 +207,6 @@ nav:
         - 'Translation rules': mixcr/reference/ref-translation-rules.md
         - 'Mutations encoding': mixcr/reference/ref-mutations-encoding.md
         - 'RepSeq.io JSON format': mixcr/reference/ref-repseqio-json-format.md
+  - 'VDJ.online': https://vdj.online/
+  - 'Discussions': https://github.com/milaboratory/mixcr/discussions
+  - 'Github': https://github.com/milaboratory/mixcr

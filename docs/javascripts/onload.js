@@ -93,7 +93,19 @@ function lightRope() {
   }
 }
 
+function externalMenuLinks() {
+  document.querySelectorAll('body > div.md-container > nav .md-tabs__list > li > a').forEach(link => {
+    if (link.getAttribute('href').startsWith('https://')) {
+      link.classList.add('external-link');
+      link.setAttribute('target', '_blank');
+      link.textContent = link.textContent.trim();
+    }
+  });
+}
+
 window.addEventListener('load',  () => {
+  externalMenuLinks();
+
   if (document.querySelector('.not-found')) {
     generateStars(document.body);
   } else {
