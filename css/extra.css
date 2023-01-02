@@ -619,6 +619,23 @@ mark code {
     vertical-align: top;
 }
 
+a.external-link {
+  position: relative;
+  text-decoration: underline;
+  margin-right: 10px;
+}
+
+a.external-link::after {
+  content: '';
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  background: url("/assets/16_link-arrow.svg") no-repeat;
+  position: absolute;
+  right: -19px;
+  bottom: 1px;
+}
+
 /*** Not found ****/
 
 .not-found {
