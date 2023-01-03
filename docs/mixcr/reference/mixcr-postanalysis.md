@@ -160,7 +160,7 @@ Calculates
 : Path where to write postanalysis result.
 
 `--default-downsampling (<type>|none)`
-: Default [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[reads|TAG]-[auto|min|fixed][-<number>]`, `top-[reads|TAG]-[<number>]`, `cumtop-[reads|TAG]-[percent]`, `none`
+: Default [downsampling](./mixcr-postanalysis.md#downsampling) applied to normalize the clonesets. Possible values: `count-[read|TAG]-[auto|min|fixed][-<number>]`, `top-[read|TAG]-[<number>]`, `cumtop-[read|TAG]-[percent]`, `none`
 
 `--default-weight-function (<read>|<Tag>|none)`
 : Default clonotype [weight function](./mixcr-postanalysis.md#weight-functions)
