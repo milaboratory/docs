@@ -110,7 +110,8 @@ window.addEventListener('load',  () => {
     generateStars(document.body);
   } else {
     try {
-      lightRope();
+      // Till next new year, maybe
+      // lightRope();
     } catch(e) {
       // for old browsers
     }
