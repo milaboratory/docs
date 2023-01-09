@@ -17,8 +17,8 @@ mixcr refineTagsAndSort
     [--max-substitutions <n>] 
     [--max-indels <n>] 
     [--max-errors <n>] 
-    [--whitelist <tag=value>]... 
-    [--memory-budget <n>] 
+    [--memory-budget <n>]
+    [--set-whitelist <key=value> | --reset-whitelist tag]... 
     [--report <path>] 
     [--json-report <path>] 
     [--use-local-temp] 
@@ -62,17 +62,18 @@ Basic command line options are:
 `--max-errors <n>`
 : Maximal number of substitutions and indels combined to search for. Default value determined by the preset.
 
-`-w, --whitelist <tag=value>`
-: Use whitelist-driven correction for one of the tags.
-
-Usage: --whitelist CELL=preset:737K-august-2016 or -w UMI=file: my_umi_whitelist.txt.
-
-If not specified mixcr will set correct whitelists if --tag-preset was used on align step.
-
-Default value determined by the preset.
-
 `--memory-budget <n>`
 : Memory budget in bytes. Default: 4Gb
+
+`--set-whitelist <key=value>`
+: Sets the whitelist for a specific tag to guide the tag refinement procedure.
+
+Usage: --set-whitelist CELL=preset:737K-august-2016 or --set-whitelist UMI=file:my_umi_whitelist.txt .
+
+`--reset-whitelist tag`  
+: Resets the whitelist for a specific tag so that unguided refinement procedure will be applied for it
+
+Usage: --whitelist CELL=preset:737K-august-2016 or -w UMI=file: my_umi_whitelist.txt.
 
 `-r, --report <path>`
 : [Report](./report-refineTagsAndSort.md) file (human readable version, see `-j / --json-report` for machine readable report).

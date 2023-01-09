@@ -22,6 +22,9 @@ Possible values: hs, HomoSapiens, musmusculus, mmu, hsa, 9606, 10090 etc.
 `--dont-split-by-sample`
 : Don't split output alignments files by sample.
 
+`--sample-table sample_table.tsv`
+: Loads sample table from a tab separated file.
+
 `--dna`
 : ==:fontawesome-solid-puzzle-piece: Material type== <p>
   For DNA starting material. Setups V [gene feature to align](mixcr-align.md#gene-features-to-align) to [`VGeneWithP`](ref-gene-features.md) (full intron) and also instructs MiXCR to skip C gene alignment since it is too far from CDR3 in DNA data.
@@ -104,6 +107,18 @@ The following mix-in options configure clonotype [`export`](mixcr-export.md) ste
 
 `--append-export-alignments-field <field> [<param>...]`
 : Add clones export column after other columns. First param is field name as it is in `exportAlignments` command, left params are params of the field
+
+`--add-export-clone-table-splitting <(geneLabel|tag):key>`
+: Add key to split output files with clone tables.
+
+`--reset-export-clone-table-splitting`
+: Reset all file splitting for output clone tables.
+
+`--add-export-clone-grouping <(geneLabel|tag):key>`
+: Add key to group clones in the output clone tables.
+
+`--reset-export-clone-grouping`
+: Reset all clone grouping in the output clone tables.
 
 ### Pipeline configuration mix-ins
 

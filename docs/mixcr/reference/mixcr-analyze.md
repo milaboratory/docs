@@ -39,6 +39,7 @@ mixcr analyze [--help]
     [--library <library>] 
     [--split-by-sample]
     [--dont-split-by-sample]
+    [--sample-table sample_table.tsv]
     [--dna] [--rna] 
     [--floating-left-alignment-boundary [<anchor_point>]]
     [--rigid-left-alignment-boundary [<anchor_point>]]
@@ -55,6 +56,10 @@ mixcr analyze [--help]
     [--append-export-clones-field <field> [<param>...]]...
     [--prepend-export-alignments-field <field> [<param>...]]...
     [--append-export-alignments-field <field> [<param>...]]... 
+    [--add-export-clone-table-splitting <(geneLabel|tag):key>]
+    [--reset-export-clone-table-splitting] 
+    [--add-export-clone-grouping <(geneLabel|tag):key>]
+    [--reset-export-clone-grouping]
     [-M <key=value>]...      
     
     # inputs and outputs
