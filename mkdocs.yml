@@ -1,6 +1,6 @@
 site_name: Docs @ MiLaboratories
 site_url: https://docs.milaboratories.com/
-site_description: "MiXCR documentation portal"
+site_description: "MiXCR: ultimate software platform for analysis of Next-Generation Sequencing (NGS) data for immune profiling."
 site_author: MiLaboratories Inc
 copyright: Copyright &copy; MiLaboratories Inc
 
@@ -65,9 +65,9 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.snippets:
       # Fails the build if any imports are missing
-      # check_paths: true
+      check_paths: true
       auto_append: [ ]
-      base_path: [ "docs/mixcr/guides/" ]
+      base_path: [ "docs/mixcr/" ]
   - admonition
   - attr_list
   - def_list
@@ -106,7 +106,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 nav:
-  - 'Home': index.md
+  - 'About': mixcr/about.md
   - 'Getting Started':
       - 'Installation': mixcr/getting-started/installation.md
       - 'Using with Docker': mixcr/getting-started/docker.md
@@ -136,6 +136,7 @@ nav:
       - 'Special guides':
         - 'Assembling custom reference library': mixcr/guides/create-custom-library.md
         - 'Using external libraries': mixcr/guides/external-libraries.md
+        - 'B cell lineage tracing': mixcr/guides/b-cell-lineages-webinar.md
   - 'Docs':
       - 'Overview':
         - 'Analysis overview': mixcr/reference/overview-analysis-overview.md
@@ -154,7 +155,7 @@ nav:
         - 'exportPretty': mixcr/reference/mixcr-exportPretty.md
         - 'exportAirr': mixcr/reference/mixcr-exportAirr.md
         - 'exportReadsForClones': mixcr/reference/mixcr-exportReadsForClones.md
-        - 'exportShmTreesNewick': mixcr/reference/mixcr-exportShmTreesNewick.md
+        - 'exportShmTrees': mixcr/reference/mixcr-exportShmTrees.md
         - 'exportReports': mixcr/reference/mixcr-exportReports.md
         - 'exportReportsTable': mixcr/reference/mixcr-exportReportsTable.md
         - 'exportQc': mixcr/reference/mixcr-exportQc.md
@@ -206,4 +207,8 @@ nav:
         - 'Gene features and reference points': mixcr/reference/ref-gene-features.md
         - 'Translation rules': mixcr/reference/ref-translation-rules.md
         - 'Mutations encoding': mixcr/reference/ref-mutations-encoding.md
+        - 'Sample barcodes table': mixcr/reference/ref-sample-barcodes-table.md
         - 'RepSeq.io JSON format': mixcr/reference/ref-repseqio-json-format.md
+  - 'VDJ.online': https://vdj.online/
+  - 'Discussions': https://github.com/milaboratory/mixcr/discussions
+  - 'Github': https://github.com/milaboratory/mixcr

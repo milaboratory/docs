@@ -68,10 +68,10 @@ All data may be downloaded directly from SRA (PRJNA777934) using e.g. [SRA Explo
 
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "takara-hsa-bcr/scripts/010-download-aria2c.sh"
+    --8<-- "guides/takara-hsa-bcr/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "takara-hsa-bcr/scripts/download-list.txt"
+    --8<-- "guides/takara-hsa-bcr/scripts/download-list.txt"
     ```
 
 The project contains 48 paired FASTQ files. Each file name encodes the information about donor, time-point relative to vaccination, tissue of origin and cell population. For example for the first file from the above listing:
@@ -87,7 +87,7 @@ The project contains 48 paired FASTQ files. Each file name encodes the informati
 MiXCR has a dedicated preset for this protocol, thus analysing the data is as easy as:
 
 ```shell
---8<-- "nebnext-bcr/scripts/020-upstream-preset.sh"
+--8<-- "guides/nebnext-bcr/scripts/020-upstream-preset.sh"
 ```
 
 Running the command above will generate the following files:
@@ -112,7 +112,7 @@ Running the command above will generate the following files:
 In order to run the analysis for all samples in the project on Linux we can use [GNU Parallel](https://www.gnu.org/software/parallel/) in the following way:
 
 ```shell
---8<-- "nebnext-bcr/scripts/020-upstream-preset-parallel.sh"
+--8<-- "guides/nebnext-bcr/scripts/020-upstream-preset-parallel.sh"
 ```
 
 While `.clns` file holds all data and is used for downstream analysis using [`mixcr postanalisis`](../reference/mixcr-postanalysis.md), the output `.txt` clonotype table will contain exhaustive information about each clonotype as well:
@@ -128,7 +128,7 @@ Under the hood the command above actually executes the following pipeline:
 Alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
 
 ```shell
---8<-- "nebnext-bcr/scripts/040-upstream-align.sh"
+--8<-- "guides/nebnext-bcr/scripts/040-upstream-align.sh"
 ```
 
 Option `--report` is specified here explicitly.
@@ -157,7 +157,7 @@ Option `--report` is specified here explicitly.
 [Corrects](../reference/mixcr-refineTagsAndSort.md) sequencing and PCR errors _inside_ barcode sequences. This step does extremely important job by correcting artificial diversity caused by errors in barcodes. In the considered example project it corrects only sequences of UMIs.
 
 ```shell
---8<-- "nebnext-bcr/scripts/045-upstream-refineTagsAndSort.sh"
+--8<-- "guides/nebnext-bcr/scripts/045-upstream-refineTagsAndSort.sh"
 ```
 
 #### `assemble`
@@ -170,7 +170,7 @@ Assembles alignments into clonotypes and applies several layers of errors correc
 Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
 
 ```shell
---8<-- "nebnext-bcr/scripts/050-upstream-assemble.sh"
+--8<-- "guides/nebnext-bcr/scripts/050-upstream-assemble.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with assembly report.
@@ -191,7 +191,7 @@ Options `--report` and `--json-report` are specified here explicitly so that the
 Exports clonotypes from .clns file into human-readable tables.
 
 ```shell
---8<-- "nebnext-bcr/scripts/060-upstream-exportClones.sh"
+--8<-- "guides/nebnext-bcr/scripts/060-upstream-exportClones.sh"
 ```
 
 `-с IGH`
@@ -206,7 +206,7 @@ Now when we have all files processed lets perform Quality Control. That can be e
 function.
 
 ```shell
---8<-- "nebnext-bcr/scripts/080-qc-align.sh"
+--8<-- "guides/nebnext-bcr/scripts/080-qc-align.sh"
 ```
 
 ![align QC](nebnext-bcr/figs/alignQc.svg)
@@ -214,7 +214,7 @@ function.
 Most of the samples have a high successful alignment score. But samples that come from blood memory B cells clearly have a lower percentage of aligned reads, and the major reason for that is the lack of immune receptor sequences. That might be due to some issues during sample preparation. It is recommended to realign one of these samples and save not aligned reads (see  [`mixcr align`](../reference/mixcr-align.md)) into separate file for manual inspection. That can be done with the following command:
 
 ```shell
---8<-- "nebnext-bcr/scripts/090-qc-debug-align.sh"
+--8<-- "guides/nebnext-bcr/scripts/090-qc-debug-align.sh"
 ```
 
 Resulting `13_d60_LN_germCenterB_notAligned_R1.fastq` and `13_d60_LN_germCenterB_notAligned_R2.fastq` files can be manually inspected. A brief [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) search revealed most not aligned sequences come from DNA contamination (they align within sequence between segments) and with immunoglobulin like genes (e.g.IGLL5).
@@ -222,7 +222,7 @@ Resulting `13_d60_LN_germCenterB_notAligned_R1.fastq` and `13_d60_LN_germCenterB
 Now Lets look at the chain distribution in every sample.
 
 ```shell
---8<-- "nebnext-bcr/scripts/120-qc-chainUsage.sh"
+--8<-- "guides/nebnext-bcr/scripts/120-qc-chainUsage.sh"
 ```
 
 If we look at the chain usage plot, we see, as expected, that the samples are almost entirely consist of IGH chains, since only heavy BCR chains we sequenced.
@@ -239,13 +239,13 @@ Taking into account what is mentioned above, the longest possible assembling fea
 MiXCR has a specific preset to obtain full-length BCR clones with NEBNext® Immune Sequencing Kit:
 
 ```shell
---8<-- "nebnext-bcr/scripts/130-upstream-preset-full-length.sh"
+--8<-- "guides/nebnext-bcr/scripts/130-upstream-preset-full-length.sh"
 ```
 
 The `mixcr assemble` step in this preset differs from the one above in the following manner:
 
 ```shell
---8<-- "nebnext-bcr/scripts/140-upstream-assemble-full-length.sh"
+--8<-- "guides/nebnext-bcr/scripts/140-upstream-assemble-full-length.sh"
 ```
 
 `-OassemblingFeatures="VDJRegion"`
@@ -257,19 +257,19 @@ Notice we omit `-OseparateByV=true` and `-OseparateByJ=true` in this case becaus
 Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
 
 ```shell
---8<-- "nebnext-bcr/scripts/125-qc-exportReports.sh"
+--8<-- "guides/nebnext-bcr/scripts/125-qc-exportReports.sh"
 ```
 
 ```shell
---8<-- "nebnext-bcr/scripts/125-qc-exportReports-json.sh"
+--8<-- "guides/nebnext-bcr/scripts/125-qc-exportReports-json.sh"
 ```
 
 ??? "Show report file"
     === "`.txt`"
         ```shell
-        --8<-- "nebnext-bcr/figs/13_d60_LN_germCenterB.report.txt"
+        --8<-- "guides/nebnext-bcr/figs/13_d60_LN_germCenterB.report.txt"
         ```
     === "`.json`"
         ```js
-        --8<-- "nebnext-bcr/figs/13_d60_LN_germCenterB.report.json"
+        --8<-- "guides/nebnext-bcr/figs/13_d60_LN_germCenterB.report.json"
         ```

@@ -1,0 +1,23 @@
+### Biomed2
+==`biomed2-human-bcr-cdr3`==
+·
+==`biomed2-human-bcr-full-length`==
+·
+[:octicons-link-16: Publication](https://www.jmdjournal.org/article/S1525-1578(10)60580-6/fulltext)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/biomed2.yaml)
+·
+[:octicons-mortar-board-16: Tutorial](../guides/biomed2-bcr.md)
+
+Biomed2 FR1-FR4 human multiplex BCR primer set. The `-cdr3` presets used to extract CDR3 clonotypes while `-full-length` full VDJ region, starting from FR1.
+
+![](pics/biomed2-human-bcr-kit-light.svg#only-light)
+![](pics/biomed2-human-bcr-kit-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze biomed2-human-bcr-full-length \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```

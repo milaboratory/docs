@@ -54,8 +54,66 @@ function generateStars($stars) {
   animate();
 }
 
+function lightRope() {
+  let ul = document.createElement('ul');
+
+  ul.classList.add('lightrope');
+
+  for (let i = 0; i < 50; i++) {
+    ul.append(document.createElement('li'));
+  }
+
+  let main = document.querySelector('.md-main');
+
+  if (main) {
+    main.prepend(ul);
+  }
+
+  let t = document.querySelector('body > header > nav > div.md-header__title');
+
+  if (t) {
+    let btn = document.createElement('button');
+    btn.classList.add('md-header__button', 'md-icon', 'snowflake');
+    const update = () => {
+      if (btn.hasAttribute('hidden')) {
+        btn.removeAttribute('hidden');
+        ul.classList.remove('off');
+        window.localStorage.removeItem('--snowflake-hidden');
+      } else {
+        btn.setAttribute('hidden', '');
+        ul.classList.add('off');
+        window.localStorage.setItem('--snowflake-hidden', 'true');
+      }
+    };
+    if (window.localStorage.getItem('--snowflake-hidden')) {
+      update();
+    }
+    btn.addEventListener('click', update);
+    t.after(btn);
+  }
+}
+
+function externalMenuLinks() {
+  document.querySelectorAll('body > div.md-container > nav .md-tabs__list > li > a').forEach(link => {
+    if (link.getAttribute('href').startsWith('https://')) {
+      link.classList.add('external-link');
+      link.setAttribute('target', '_blank');
+      link.textContent = link.textContent.trim();
+    }
+  });
+}
+
 window.addEventListener('load',  () => {
+  externalMenuLinks();
+
   if (document.querySelector('.not-found')) {
     generateStars(document.body);
+  } else {
+    try {
+      // Till next new year, maybe
+      // lightRope();
+    } catch(e) {
+      // for old browsers
+    }
   }
 });

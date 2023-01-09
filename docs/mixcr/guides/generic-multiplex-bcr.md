@@ -58,10 +58,10 @@ All data may be downloaded using the script bellow.
 
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "generic-multiplex-bcr/scripts/010-download-aria2c.sh"
+    --8<-- "guides/generic-multiplex-bcr/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "generic-multiplex-bcr/scripts/download-list.txt"
+    --8<-- "guides/generic-multiplex-bcr/scripts/download-list.txt"
     ```
 
 ## One command Solution
@@ -72,7 +72,7 @@ This is a BCR data, so we will use a preset called `bcr_amplicon`.
 The exact command for a single sample you can see bellow:
 
 ```shell
---8<-- "generic-multiplex-bcr/scripts/020-upstream-example.sh"
+--8<-- "guides/generic-multiplex-bcr/scripts/020-upstream-example.sh"
 ```
 
 The meaning of these options is the following.
@@ -128,7 +128,7 @@ While `.clns` file holds all data and is used for downstream analysis using [`mi
 Now, since we have multiple files ist easier to process them all together instead of running the same command multiple times. One of the ways to achieve it is to use [GNU Parallel](https://www.gnu.org/software/parallel/): 
 
 ```shell
---8<-- "generic-multiplex-bcr/scripts/030-upstream-parallel.sh"
+--8<-- "guides/generic-multiplex-bcr/scripts/030-upstream-parallel.sh"
 ```
 
 ## Under the hood
@@ -144,7 +144,7 @@ Under the hood, the command from above actually executes the following pipeline 
 
 
 ```shell
---8<-- "generic-multiplex-bcr/scripts/040-upstream-align.sh"
+--8<-- "guides/generic-multiplex-bcr/scripts/040-upstream-align.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly. 
@@ -160,7 +160,7 @@ This step utilizes all available CPUs and scales perfectly. When there are a lot
 - clustering to correct for PCR errors
 
 ```shell
---8<-- "generic-multiplex-bcr/scripts/060-upstream-assemble.sh"
+--8<-- "guides/generic-multiplex-bcr/scripts/060-upstream-assemble.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with assembly report.
@@ -170,7 +170,7 @@ Options `--report` and `--json-report` are specified here explicitly so that the
 Finally, to [export](../reference/mixcr-export.md#clonotype-tables) clonotype tables in tabular form `exportClones` is used:
 
 ```shell
---8<-- "generic-multiplex-bcr/scripts/070-upstream-exportClones.sh"
+--8<-- "guides/generic-multiplex-bcr/scripts/070-upstream-exportClones.sh"
 ```
 
 ## Quality control
@@ -178,7 +178,7 @@ Finally, to [export](../reference/mixcr-export.md#clonotype-tables) clonotype ta
 Now when the upstream analysis is finished we can move on to quality control. First lets look at the alignment report plot.
 
 ```shell
---8<-- "generic-multiplex-bcr/scripts/080-qc-align.sh"
+--8<-- "guides/generic-multiplex-bcr/scripts/080-qc-align.sh"
 ```
 
 ![alignQc.svg](generic-multiplex-bcr/figs/alignQc.svg)
@@ -188,7 +188,7 @@ We see that all samples have a very high score of successfully aligned reads. No
 Next, lets look at the chain usage distribution.
 
 ```shell
---8<-- "generic-multiplex-bcr/scripts/120-qc-chainUsage.sh"
+--8<-- "guides/generic-multiplex-bcr/scripts/120-qc-chainUsage.sh"
 ```
 
 ![chainUsage.svg](generic-multiplex-bcr/figs/chainUsage.svg)
@@ -210,7 +210,7 @@ To run postanalysis routines we need to prepare a metadata file in a .tsv or .cs
 To compute a set of individual metrics we run the following command:
 
 ```shell
---8<-- "generic-multiplex-bcr/scripts/130-pa-individual.sh"
+--8<-- "guides/generic-multiplex-bcr/scripts/130-pa-individual.sh"
 ```
 
 The meaning of specified options is the following:
@@ -338,7 +338,7 @@ For diversity metrics and CDR3 properties MiXCR allows to group data in differen
 Let's reconstruct one of the figures from the paper. Let's say we want to look at the Normalized ShannonWiener diversity index. We will group samples by tissues and use separate facets for contol and experiment group. That can be easily done with a single command:
 
 ```shell
---8<-- "generic-multiplex-bcr/scripts/140-pa-diversity.sh"
+--8<-- "guides/generic-multiplex-bcr/scripts/140-pa-diversity.sh"
 ```
 
 ![diversity.IGH.svg](generic-multiplex-bcr/figs/diversity.IGH.svg)
@@ -374,7 +374,7 @@ Arguments explained:
 Now lets look at the J gene distribution among all samples.
 
 ```shell
---8<-- "generic-multiplex-bcr/scripts/160-pa-vUsage.sh"
+--8<-- "guides/generic-multiplex-bcr/scripts/160-pa-vUsage.sh"
 ```
 
 `--palette`
@@ -393,7 +393,7 @@ Now lets look at the J gene distribution among all samples.
 Since our samples were prepared in replicas, it is often usefully to check if clone frequencies correlate between replicas. Let's take two replicas of one biological sample and overlap two repertoires. We will use [`mixcr overlapScatterPlot` function](../reference/mixcr-overlapScatterPlot.md):
 
 ```shell
---8<-- "generic-multiplex-bcr/scripts/170-pa-overlap-scatter.sh"
+--8<-- "guides/generic-multiplex-bcr/scripts/170-pa-overlap-scatter.sh"
 ```
 
 ![overlap.png](generic-multiplex-bcr/figs/overlap.IGH.svg)
@@ -403,7 +403,7 @@ Since our samples were prepared in replicas, it is often usefully to check if cl
 MiXCR also allows performing an overall overlap analysis using [`mixcr postanalysis overlap`](../reference/mixcr-postanalysis.md#overlap-postanalysis). But here, since there are a lot of samples we want to actually overlap groups of samples. Running the following command will perform pairwise overlap comparison between groups of samples with different `tissue` and `condition` values.
 
 ```shell
---8<-- "generic-multiplex-bcr/scripts/180-pa-overlap.sh"
+--8<-- "guides/generic-multiplex-bcr/scripts/180-pa-overlap.sh"
 ```
 
 `--factor-by`
@@ -437,7 +437,7 @@ The tabular output for example for F2 metric will look like:
 Every overlap metric is also possible to present in a graphical format:
 
 ```shell
---8<-- "generic-multiplex-bcr/scripts/190-pa-overlap-plot-f2.sh"
+--8<-- "guides/generic-multiplex-bcr/scripts/190-pa-overlap-plot-f2.sh"
 ```
 For list of available metrics see [`mixcr exportPlots overlap`](../reference/mixcr-exportPlots.md#overlap)
 
