@@ -1,0 +1,51 @@
+### 10xGenomics
+
+#### 10x Genomics single cell VDJ
+
+==`10x-vdj-tcr`==
+·
+==`10x-vdj-bcr`==
+·
+[:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml)
+
+
+Chromium Single Cell Immune Profiling provides a solution to your immunology questions. Analyze full-length V(D)J sequences for paired B-cell or T-cell receptors, all from a single cell. Notice that on the scheme bellow reads' length is shown according to the protocol recommendations, but the presets will work regardless of sequencing reads length.
+
+![](pics/10x-vdj-bcr-light.svg#only-light)
+![](pics/10x-vdj-bcr-dark.svg#only-dark)
+![](pics/10x-vdj-tcr-light.svg#only-light)
+![](pics/10x-vdj-tcr-dark.svg#only-dark)
+
+The `--species` option is required.
+
+Example:
+```shell
+mixcr analyze 10x-vdj-bcr \
+     --species hsa \
+     sample_R1.fastq.gz \
+     sample_R2.fastq.gz \
+     sample_result
+```
+#### 10x Genomics single cell 5' gene expression
+==`10x-5gex-cdr3`==
+·
+==`10x-5gex-full-length`==
+·
+[:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml)
+
+These presets are specifically optimized to extract TCR and BCR repertoires from non-enriched single cell 5' RNA-seq cDNA libraries.
+
+The `--species` option is required.
+
+Example:
+```shell
+mixcr analyze 10x-5gex-full-length \
+     --species hsa \
+     sample_R1.fastq.gz \
+     sample_R2.fastq.gz \
+     sample_result
+```

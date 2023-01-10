@@ -20,10 +20,10 @@ All data may be downloaded directly from SRA (PRJEB44566) using e.g. [SRA Explor
 
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "rnaseq/scripts/010-download-aria2c.sh"
+    --8<-- "guides/rnaseq/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "rnaseq/scripts/download-list.txt"
+    --8<-- "guides/rnaseq/scripts/download-list.txt"
     ```
 
 ## Upstream analysis
@@ -33,7 +33,7 @@ The easiest way to obtain results from this type of data is to use `mixcr analyz
 MiXCR has a dedicated preset for RNA-seq data, thus running the pipeline is as easy as:
 
 ```shell
---8<-- "rnaseq/scripts/020-upstream-preset.sh"
+--8<-- "guides/rnaseq/scripts/020-upstream-preset.sh"
 ```
 
 `+species mmu`
@@ -76,7 +76,7 @@ While `.clns` file holds all data and is used for downstream analysis using [`mi
 In order to run the analysis for all samples in the project on Linux we can use [GNU Parallel](https://www.gnu.org/software/parallel/) in the following way:
 
 ```shell
---8<-- "rnaseq/scripts/020-upstream-preset-parallel.sh"
+--8<-- "guides/rnaseq/scripts/020-upstream-preset-parallel.sh"
 ```
 ### Under the hood pipeline:
 
@@ -88,7 +88,7 @@ Under the hood the command above actually executes the following pipeline:
 Alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
 
 ```shell
---8<-- "rnaseq/scripts/040-upstream-align.sh"
+--8<-- "guides/rnaseq/scripts/040-upstream-align.sh"
 ```
 
 Option `--report` is specified here explicitly. 
@@ -114,7 +114,7 @@ Option `--report` is specified here explicitly.
 Assembles alignments that only partially cover `CDR3` region. This is a mandatory step for RNA-Seq data, as reads randomly cover all TCR / BCR segments. This function works with pairs of alignments (assembles two alignments at a time), thus it is usually recommended to perform two rounds of `assemblePartial` for better yield. For more information check [`mixcr assemblePartial`](../reference/mixcr-assemblePartial.md).
 
 ```shell
---8<-- "rnaseq/scripts/041-upstream-assemblePartial.sh"
+--8<-- "guides/rnaseq/scripts/041-upstream-assemblePartial.sh"
 ```
 
 Note that we specify the same report file on every step, thus reports will be appended to the same file.
@@ -127,7 +127,7 @@ If V- and/or J- segments  are uniquely determined, but `CDR3` edges lack nucleot
     This step is only applicable to T-cells due to the absence of hypermutations! In case of BCR data this step is omitted.
 
 ```shell
---8<-- "rnaseq/scripts/042-upstream-extend.sh"
+--8<-- "guides/rnaseq/scripts/042-upstream-extend.sh"
 ```
 
 #### `assemble`
@@ -135,7 +135,7 @@ If V- and/or J- segments  are uniquely determined, but `CDR3` edges lack nucleot
 Assembles alignments into clonotypes and applies several layers of errors correction(ex. quality-awared correction for sequencing errors, clustering to correct for PCR errors). Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information. 
 
 ```shell
---8<-- "rnaseq/scripts/050-upstream-assemble.sh"
+--8<-- "guides/rnaseq/scripts/050-upstream-assemble.sh"
 ```
 
 `-OassemblingFeatures="CDR3"`
@@ -152,7 +152,7 @@ Assembles alignments into clonotypes and applies several layers of errors correc
 Exports clonotypes from `.clns` file into human-readable tables.
 
 ```shell
---8<-- "rnaseq/scripts/060-upstream-exportClones.sh"
+--8<-- "guides/rnaseq/scripts/060-upstream-exportClones.sh"
 ```
 
 Check [`mixcr export`](../reference/mixcr-export.md) for more additional fields.
@@ -162,7 +162,7 @@ Check [`mixcr export`](../reference/mixcr-export.md) for more additional fields.
 Now, when the analysis is complete, lets visualize quality report data. Looking at the alignment report in this case won't be of much help, because the cDNA library was not enriched with TCR sequences, thus we already know that only a small part of reads has been successfully aligned. What is going to be more descriptive is to look at the chain usage among samples.
 
 ```shell
---8<-- "rnaseq/scripts/120-qc-chainUsage.sh"
+--8<-- "guides/rnaseq/scripts/120-qc-chainUsage.sh"
 ```
 
 ![chainUsage.svg](rnaseq/figs/chainUsage.svg)
@@ -175,7 +175,7 @@ This plot reveals a mild contamination by B-cells, since IGH and IGKL chains pre
 Because RNA-Seq reads randomly cover the whole receptor gene region it is possible to assemble longer clone sequences then just `CDR3`. To do that we can use another RNA-seq preset specifically tuned to assemble the longest clone sequence possible.
 
 ```shell
---8<-- "rnaseq/scripts/130-upstream-preset-full-length.sh"
+--8<-- "guides/rnaseq/scripts/130-upstream-preset-full-length.sh"
 ```
 
 Under the hood this preset differs from the one used previously in the following manner:
@@ -186,31 +186,31 @@ Under the hood this preset differs from the one used previously in the following
     With this option MiXCR will output `.clna` (instead of `.clns`) file that preserves original alignments.
 
 ```shell
---8<-- "rnaseq/scripts/140-upstream-assemble-full-length.sh"
+--8<-- "guides/rnaseq/scripts/140-upstream-assemble-full-length.sh"
 ```
 
 2. An additional [`assembleContigs`](../reference/mixcr-assembleContigs.md) step will be added after `mixcr assemble`. On this step MiXCR will use previously preserved alignments to build the longest possible clonal sequence.
 
 ```shell
---8<-- "rnaseq/scripts/150-upstream-assembleContigs.sh"
+--8<-- "guides/rnaseq/scripts/150-upstream-assembleContigs.sh"
 ```
 ## Reports
 Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
 
 ```shell
---8<-- "rnaseq/scripts/125-qc-exportReports.sh"
+--8<-- "guides/rnaseq/scripts/125-qc-exportReports.sh"
 ```
 
 ```shell
---8<-- "rnaseq/scripts/125-qc-exportReports-json.sh"
+--8<-- "guides/rnaseq/scripts/125-qc-exportReports-json.sh"
 ```
 
 ??? "Show report file"
     === "`.txt`"
         ```shell
-        --8<-- "rnaseq/figs/CD8T_REH_4h_rep1.report.txt"
+        --8<-- "guides/rnaseq/figs/CD8T_REH_4h_rep1.report.txt"
         ```
     === "`.json`"
         ```js
-        --8<-- "rnaseq/figs/CD8T_REH_4h_rep1.report.json"
+        --8<-- "guides/rnaseq/figs/CD8T_REH_4h_rep1.report.json"
         ```

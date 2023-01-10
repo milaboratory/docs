@@ -1,0 +1,24 @@
+### Singleron
+
+#### GEXSCOPE Single Cell D(D)J Kit
+
+==`singleron-2.0.1-vdj-cdr3`==
+·
+[:octicons-link-16: Link](https://singleron.bio/product/detail-5.html)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/singleron.yaml)
+
+
+The GEXSCOPE® Single Cell V(D)J Kit enables simultaneous detection of T-cell or B-cell receptor variable region (CDR3) together with the whole
+transcriptome expression at single-cell level.
+
+![](pics/singleron-2.0.1-vdj-cdr3-light.svg#only-light)
+![](pics/singleron-2.0.1-vdj-cdr3-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze singleron-2.0.1-vdj-cdr3 \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```

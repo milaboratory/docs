@@ -22,10 +22,10 @@ All data may be downloaded directly from SRA (PRJEB44566) using e.g. [SRA Explor
 
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "takara-hsa-bcr/scripts/010-download-aria2c.sh"
+    --8<-- "guides/takara-hsa-bcr/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "takara-hsa-bcr/scripts/download-list.txt"
+    --8<-- "guides/takara-hsa-bcr/scripts/download-list.txt"
     ```
 
 ## Upstream analysis
@@ -33,7 +33,7 @@ All data may be downloaded directly from SRA (PRJEB44566) using e.g. [SRA Explor
 MiXCR has a dedicated preset for this protocol, thus analysing the data is as easy as:
 
 ```shell
---8<-- "takara-hsa-bcr/scripts/020-upstream-preset.sh"
+--8<-- "guides/takara-hsa-bcr/scripts/020-upstream-preset.sh"
 ```
 
 Running the command above will generate the following files:
@@ -63,7 +63,7 @@ While `.clns` file holds all data and is used for downstream analysis using [`mi
 In order to run the analysis for all samples in the project on Linux we can use [GNU Parallel](https://www.gnu.org/software/parallel/) in the following way:
 
 ```shell
---8<-- "takara-hsa-bcr/scripts/020-upstream-preset-parallel.sh"
+--8<-- "guides/takara-hsa-bcr/scripts/020-upstream-preset-parallel.sh"
 ```
 
 ### Under the hood pipeline:
@@ -74,7 +74,7 @@ Under the hood the command above actually executes the following pipeline:
 Alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
 
 ```shell
---8<-- "takara-hsa-bcr/scripts/040-upstream-align.sh"
+--8<-- "guides/takara-hsa-bcr/scripts/040-upstream-align.sh"
 ```
 
 Option `--report` is specified here explicitly.
@@ -106,7 +106,7 @@ Option `--report` is specified here explicitly.
 [Corrects](../reference/mixcr-refineTagsAndSort.md) sequencing and PCR errors _inside_ barcode sequences. This step does extremely important job by correcting artificial diversity caused by errors in barcodes. In the considered example project it corrects only sequences of UMIs.
 
 ```shell
---8<-- "takara-hsa-bcr/scripts/045-upstream-refineTagsAndSort.sh"
+--8<-- "guides/takara-hsa-bcr/scripts/045-upstream-refineTagsAndSort.sh"
 ```
 
 #### `assemble`
@@ -120,7 +120,7 @@ Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
 
 
 ```shell
---8<-- "takara-hsa-bcr/scripts/050-upstream-assemble.sh"
+--8<-- "guides/takara-hsa-bcr/scripts/050-upstream-assemble.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with assembly report.
@@ -141,7 +141,7 @@ Options `--report` and `--json-report` are specified here explicitly so that the
 Exports clonotypes from .clns file into human-readable tables.
 
 ```shell
---8<-- "takara-mmu-tcr/scripts/060-upstream-exportClones.sh"
+--8<-- "guides/takara-mmu-tcr/scripts/060-upstream-exportClones.sh"
 ```
 
 `-с IGH`
@@ -157,7 +157,7 @@ Now when we have all files processed lets perform Quality Control. That can be e
 function.
 
 ```shell
---8<-- "takara-hsa-bcr/scripts/080-qc-align.sh"
+--8<-- "guides/takara-hsa-bcr/scripts/080-qc-align.sh"
 ```
 
 ![align QC](takara-hsa-bcr/figs/alignQc.svg)
@@ -169,7 +169,7 @@ By default, MiXCR removed non target reads during alignment. We will realign rea
 Bellow is the complete command:
 
 ```shell
---8<-- "takara-hsa-bcr/scripts/090-qc-debug-align.sh"
+--8<-- "guides/takara-hsa-bcr/scripts/090-qc-debug-align.sh"
 ```
 
 Resulting `MISC9_notAligned_R1.fastq` and `MISC9_notAligned_R2.fastq` files can be manually inspected. A brief [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi) search revealed most not aligned sequences come from DNA sequence (in between gene segments or from immunoglobulin like genes (e.g.IGLL5) )
@@ -177,7 +177,7 @@ Resulting `MISC9_notAligned_R1.fastq` and `MISC9_notAligned_R2.fastq` files can 
 Now Lets look at the chain distribution in every sample.
 
 ```shell
---8<-- "takara-hsa-bcr/scripts/120-qc-chainUsage.sh"
+--8<-- "guides/takara-hsa-bcr/scripts/120-qc-chainUsage.sh"
 ```
 
 ![chain usage QC](takara-hsa-bcr/figs/chainUsage.svg)
@@ -193,13 +193,13 @@ Taking into account what is mentioned above, the longest possible assembling fea
 MiXCR has a specific preset to obtain full-length BCR clones with SMARTer Human BCR IgG IgM H/K/L Profiling Sequencing Kit:
 
 ```shell
---8<-- "takara-hsa-bcr/scripts/130-upstream-preset-full-length.sh"
+--8<-- "guides/takara-hsa-bcr/scripts/130-upstream-preset-full-length.sh"
 ```
 
 The `mixcr assemble` step in this preset differs from the one above in the following manner:
 
 ```shell
---8<-- "takara-hsa-bcr/scripts/140-upstream-assemble-full-length.sh"
+--8<-- "guides/takara-hsa-bcr/scripts/140-upstream-assemble-full-length.sh"
 ```
 
 `-OassemblingFeatures="VDJRegion"`
@@ -211,19 +211,19 @@ Notice that we do not use `-OseparateByV=true` and `-OseparateByJ=true` in this 
 Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
 
 ```shell
---8<-- "takara-hsa-bcr/scripts/125-qc-exportReports.sh"
+--8<-- "guides/takara-hsa-bcr/scripts/125-qc-exportReports.sh"
 ```
 
 ```shell
---8<-- "takara-hsa-bcr/scripts/125-qc-exportReports-json.sh"
+--8<-- "guides/takara-hsa-bcr/scripts/125-qc-exportReports-json.sh"
 ```
 
 ??? "Show report file"
     === "`.txt`"
         ```shell
-        --8<-- "takara-hsa-bcr/figs/FebControl1.report.txt"
+        --8<-- "guides/takara-hsa-bcr/figs/FebControl1.report.txt"
         ```
     === "`.json`"
         ```js
-        --8<-- "takara-hsa-bcr/figs/FebControl1.report.json"
+        --8<-- "guides/takara-hsa-bcr/figs/FebControl1.report.json"
         ```

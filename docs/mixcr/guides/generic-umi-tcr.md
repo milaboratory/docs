@@ -12,10 +12,10 @@ The data was collected from 12 patients. PBMC samples were obtained at three tim
 All data may be downloaded directly from SRA using e.g. [SRA Explorer](https://sra-explorer.info).
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "generic-umi-tcr/scripts/010-download-aria2c.sh"
+    --8<-- "guides/generic-umi-tcr/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "generic-umi-tcr/scripts/download-list.txt"
+    --8<-- "guides/generic-umi-tcr/scripts/download-list.txt"
     ```
 
 
@@ -52,7 +52,7 @@ universal [`mixcr analyze`](../reference/mixcr-analyze.md) command with `generic
 According to the library preparation protocol, the library has V primers on 5'-end and C primers on 3', so the command for a single sample is the following:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/020-upstream-example.sh"
+--8<-- "guides/generic-umi-tcr/scripts/020-upstream-example.sh"
 ```
 
 The meaning of these options is the following.
@@ -103,7 +103,7 @@ Clonotype tables is the main result of the upstream analysis. They are stored in
 In order to run the analysis for all samples in the project on Linux we can for example use [GNU Parallel](https://www.gnu.org/software/parallel/) in the following way:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/030-upstream-parallel.sh"
+--8<-- "guides/generic-umi-tcr/scripts/030-upstream-parallel.sh"
 ```
 
 Briefly, we list all R1 files in the fastq directory, replace lane specifications with MiXCR `{{n}}` wildcard, pipe the list to parallel, then run `mixcr analyze` for each pair, again using sed to obtain R2 filename from R1 and the name of output.
@@ -126,7 +126,7 @@ Let's go throw each step executed in the considered case.
 - pattern matching of tag pattern sequence and extraction of barcodes
 
 ```shell
---8<-- "generic-umi-tcr/scripts/040-upstream-align.sh"
+--8<-- "guides/generic-umi-tcr/scripts/040-upstream-align.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithP` for the alignment of V segments (see [Gene features and anchor points](../reference/ref-gene-features.md). Because we have primers on V segment, we use local alignment on the left bound of V and since we have primers on C segment, we use global alignment for J and local on the right bound of C.
@@ -141,7 +141,7 @@ This step utilizes all available CPUs and scales perfectly. When there are a lot
 [Corrects](../reference/mixcr-refineTagsAndSort.md) sequencing and PCR errors _inside_ barcode sequences. This step does extremely important job by correcting artificial diversity caused by errors in barcodes. In the considered example project it corrects only sequences of UMIs.
 
 ```shell
---8<-- "generic-umi-tcr/scripts/050-upstream-refineTagsAndSort.sh"
+--8<-- "guides/generic-umi-tcr/scripts/050-upstream-refineTagsAndSort.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with the barcode correction report.
@@ -155,7 +155,7 @@ Options `--report` and `--json-report` are specified here explicitly so that the
 - clustering to correct for PCR errors, which still may present even in the case of UMI data, since a error may be introduced e.g. on the first reverse-transcription cycle
 
 ```shell
---8<-- "generic-umi-tcr/scripts/060-upstream-assemble.sh"
+--8<-- "guides/generic-umi-tcr/scripts/060-upstream-assemble.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with assembly report.
@@ -171,7 +171,7 @@ Assembly step may be quite memory consuming for very big datasets. MiXCR offload
 Finally, to [export](../reference/mixcr-export.md#clonotype-tables) clonotype tables in tabular form `exportClones` is used:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/070-upstream-exportClones.sh"
+--8<-- "guides/generic-umi-tcr/scripts/070-upstream-exportClones.sh"
 ```
 
 The resulting clonotype table will contain exhaustive information about each clonotype:
@@ -189,7 +189,7 @@ MiXCR generates comprehensive reports for each step of the pipeline, containing 
 The very basic overview of the library performance may be generated in a graphical form using `mixcr exportQc align` command:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/080-qc-align.sh"
+--8<-- "guides/generic-umi-tcr/scripts/080-qc-align.sh"
 ```
 ![alignQc.svg](generic-umi-tcr/figs/alignQc.svg)
 
@@ -203,7 +203,7 @@ In most cases when we observe low alignment rate for amplicon library, the reaso
 To dig deeper one can re-align one problematic sample with the options to preserve partial alignments and save not-aligned reads:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/090-qc-debug-align.sh"
+--8<-- "guides/generic-umi-tcr/scripts/090-qc-debug-align.sh"
 ```
 
 Additional options are:
@@ -220,7 +220,7 @@ Additional options are:
 Now one can check how reads cover V-D-J region using `exportQc coverage` command:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/100-qc-coverage.sh"
+--8<-- "guides/generic-umi-tcr/scripts/100-qc-coverage.sh"
 ```
 ![coverage](generic-umi-tcr/figs/P23-T0-DPOS_debug.coverage_R0.svg)
 
@@ -229,7 +229,7 @@ From this plot it is seen that there are nearly 50% of not-spliced reads in the 
 To dig even deeper one can also export raw alignments in a human-readable way for further manual inspection:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/110-qc-exportAlignmentsPretty.sh"
+--8<-- "guides/generic-umi-tcr/scripts/110-qc-exportAlignmentsPretty.sh"
 ```
 
 Some examples from the output illustrating wet lab artefacts:
@@ -295,7 +295,7 @@ Finally, one can use `na.fastq` to blast not aligned sequences and precisely det
 Another useful report is a chain usage report:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/120-qc-chainUsage.sh"
+--8<-- "guides/generic-umi-tcr/scripts/120-qc-chainUsage.sh"
 ```
 ![chainUsage.svg](generic-umi-tcr/figs/chainUsage.svg)
 
@@ -304,7 +304,7 @@ Here we see a small fraction of TRG sequences, which are not supposed to be pres
 Individual reports generated at each step of MiXCR pipeline can be exported either in JSON or text form using [`exportReports`](../reference/mixcr-exportReports.md) command:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/125-qc-exportReports.sh"
+--8<-- "guides/generic-umi-tcr/scripts/125-qc-exportReports.sh"
 ```
 
 Detailed description of each report can be found in [reports section](../reference/report-align.md) of reference.
@@ -326,7 +326,7 @@ To run postanalysis routines we need to prepare a metadata file in a .tsv or .cs
 To compute individual metrics of datasets we run
 
 ```shell
---8<-- "generic-umi-tcr/scripts/130-pa-individual.sh"
+--8<-- "guides/generic-umi-tcr/scripts/130-pa-individual.sh"
 ```
 
 The meaning of specified options is the following:
@@ -424,14 +424,14 @@ For diversity metrics and CDR3 properties MiXCR allows to group data in a differ
 For example, if one interested in how diversity metrics are changed between time points for different markers we can use a combination of primary grouping and faceting:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/140-pa-diversity-facets.sh"
+--8<-- "guides/generic-umi-tcr/scripts/140-pa-diversity-facets.sh"
 ```
 ![diversity facets](generic-umi-tcr/figs/diversity-facets.TRA.svg)
 
 Or using secondary grouping:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/150-pa-diversity-secondary-grouping.sh"
+--8<-- "guides/generic-umi-tcr/scripts/150-pa-diversity-secondary-grouping.sh"
 ```
 ![secondary grouping](generic-umi-tcr/figs/diversity-grouped.TRA.svg)
 
@@ -440,7 +440,7 @@ For further details see [exportPlots reference](../reference/mixcr-exportPlots.m
 Gene usage plots may be exported as heatmaps:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/160-pa-vUsage.sh"
+--8<-- "guides/generic-umi-tcr/scripts/160-pa-vUsage.sh"
 ```
 ![vUsage.TRA.svg](generic-umi-tcr/figs/vUsage.TRA.svg)
 
@@ -451,13 +451,13 @@ For further details see [gene usage plots reference](../reference/mixcr-exportPl
 To compute samples pairwise overlap metrics we run
 
 ```shell
---8<-- "generic-umi-tcr/scripts/170-pa-overlap.sh"
+--8<-- "guides/generic-umi-tcr/scripts/170-pa-overlap.sh"
 ```
 
 Then we can export graphical heatmap using `exportPlots` command: 
 
 ```shell    
---8<-- "generic-umi-tcr/scripts/180-pa-overlap-export.sh"
+--8<-- "guides/generic-umi-tcr/scripts/180-pa-overlap-export.sh"
 ```
 
 ![overlap](generic-umi-tcr/figs/overlap.TRA.svg)
@@ -466,7 +466,7 @@ Then we can export graphical heatmap using `exportPlots` command:
 However, when there are many samples such representation may be not very informative. In this case it may be worth to factor data by specific columns. For example, in the considered project we might be interested in the overlap between different groups of samples (`Time`, `Marker`):
 
 ```shell
---8<-- "generic-umi-tcr/scripts/190-pa-overlap-factor-by.sh"
+--8<-- "guides/generic-umi-tcr/scripts/190-pa-overlap-factor-by.sh"
 ```
 
 This way MiXCR will perform pairwise overlap comparison between groups of samples with different `Time` and `Marker` values. 
@@ -478,7 +478,7 @@ The tabular output for example for F1 metric will look like:
 The graphical output will be more informative as well:
 
 ```shell
---8<-- "generic-umi-tcr/scripts/200-pa-overlap-factor-by-export.sh"
+--8<-- "guides/generic-umi-tcr/scripts/200-pa-overlap-factor-by-export.sh"
 ```
 ![overlap.tm](generic-umi-tcr/figs/overlap.tm.TRA.svg)
 
