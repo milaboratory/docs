@@ -167,6 +167,7 @@ nav:
         - 'overlapScatterPlot': mixcr/reference/mixcr-overlapScatterPlot.md
         - 'findAlleles': mixcr/reference/mixcr-findAlleles.md
         - 'findShmTrees': mixcr/reference/mixcr-findShmTrees.md
+        - 'exportPreset': mixcr/reference/mixcr-exportPreset.md
 
 
       - 'Reports':

@@ -29,11 +29,11 @@ mixcr analyze [--help]
     [--use-local-temp]
     [--threads <n>] 
     [--force-overwrite]
-    [--add-step <step>] 
-    [--remove-step <step>] 
-
+    
     # mix-ins
 
+    [--add-step <step>] 
+    [--remove-step <step>] 
     [--limit-input <n>]
     [--species <species>] 
     [--library <library>] 
@@ -122,14 +122,8 @@ mixcr analyze [--help]
 `-h, --help`
 : Show the help message and exit.
 
-### Params to change pipeline steps:
 
-`--add-step <step>`
-: Add a step to pipeline (i.e. `--add-step assembleContigs`)
-
-`--remove-step <step>`
-: Remove a step from pipeline (i.e. `--add-step assemblePartial`)
-
+In addition to these parameters, any of the [available mix-in options](overview-mixins-list.md) may be additionally specify at `analyze`.
 
 ## Concatenating across multiple files
 
