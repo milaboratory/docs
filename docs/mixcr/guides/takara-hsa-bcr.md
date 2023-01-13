@@ -82,8 +82,8 @@ Option `--report` is specified here explicitly.
 `--species hsa`
 : determines the organism species (hsa for _Homo Sapiens_).
 
-`-p kaligner2_4.0`
-:  a default preset of MiXCR parameters which includes a dedicated BCR aligner.
+`-p  bundle-umi-kaligner2-v1-base`
+:  a default preset of MiXCR parameters which includes a dedicated BCR aligner and parameters for `mixcr refineTagsAndSort` step that is required for umi processing.
 
 `-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP"`
 : Sets a V gene feature to align. Check [gene features](../reference/ref-gene-features.md) for more info.
