@@ -16,6 +16,8 @@ mixcr analyze milab-human-bcr-multiplex-cdr3 \
 ```
 runs upstream analysis for samples obtained using Milaboratories Human BCR kit with additional optional config `--dont-split-clones-by C`.
 
+Command [`exportPreset`](mixcr-exportPreset.md) can help to understand structure of preset.
+
 Bellow you one can find a variety of presets for different types of input data and commercially available kits. Most of these presets do not require any additional arguments.
 
 
