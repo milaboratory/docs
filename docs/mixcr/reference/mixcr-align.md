@@ -1,9 +1,14 @@
 # `mixcr align`
 
-Aligns raw sequencing data against V-, D-, J- and C- gene segment references library database for specified species. If the input sequences have barcodes (UMIs, cell barcodes etc.), MiXCR allows to parse barcodes using powerful [pattern matching syntax](./ref-tag-pattern.md) and assign them to every alignment. Additionally, read trimming may be applied if corresponding options are specified. MiXCR supports paired-end and single-end [`.fastq`](https://en.wikipedia.org/wiki/FASTQ_format), [`.fasta`](https://en.wikipedia.org/wiki/FASTA_format), [`.bam` and `.sam`](https://en.wikipedia.org/wiki/Binary_Alignment_Map) formats.
+Aligns raw sequencing data against V-, D-, J- and C- gene segment library database for selected species. For tagged data (molecular / cell / sample barcodes), MiXCR allows to extract tags using powerful [pattern matching syntax](ref-tag-pattern.md) and assign them to every alignment. Tags may be also extracted and assigned to alignments based on [sample sheets](ref-sample-barcodes-table.md) or directly from the sequencing read headers using regex. Trimming of artificial sequences (primers or adapters) can be done using [tag patterns](ref-tag-pattern.md) before actual alignment happens. Quality-guided read trimming may be applied if corresponding options are used. MiXCR supports paired-end and single-end [`.fastq`](https://en.wikipedia.org/wiki/FASTQ_format), [`.fasta`](https://en.wikipedia.org/wiki/FASTA_format), [`.bam` and `.sam`](https://en.wikipedia.org/wiki/Binary_Alignment_Map) formats.
 
 ![](./pics/align-light.svg#only-light)
 ![](./pics/align-dark.svg#only-dark)
+
+Raw alignments are the most basic pieces of information available in MiXCR. They are used to assemble clones and reconstruct contigs. Alignments are also used to debug sequencing library and identify wet lab issues.    
+
+MiXCR aligners are rigorously optimized to take into account a great variety of peculiarities caused by the complex nature of adaptive immunity, different library preparation protocols and various wet lab issues. In most cases, one just need to pick up a right preset from the [comprehensive list of available ones](overview-built-in-presets.md). The preset contains all the optimized parameters for the corresponding type of data. For custom protocols, MiXCR provides a set of high-level parameters allowing to specify the basic library architecture; aligners will use it to automatically fine tune every aspect of the procedure and produce the most precise alignments. One can also access the low level of the aligners and modify any of the hundreds parameters such as various thresholds, scoring matrices, gene alignment algorithm types and others.
+
 
 ## Command line options
 
@@ -74,7 +79,7 @@ mixcr align --preset <name>
 	([file_I1.fastq[.gz] [file_I2.fastq[.gz]]] file_R1.fastq[.gz] [file_R2.fastq[.gz]]|file.(fasta|bam|sam)) 
 	alignments.vdjca
 ```
-The command returns a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form using [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the alignment performance and quality of the library.
+The command produces a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form using [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the alignment performance and quality of the library.
 
 Basic command line options are:
 

@@ -66,14 +66,24 @@ Basic command line options are:
 : Memory budget in bytes. Default: 4Gb
 
 `--set-whitelist <key=value>`
-: Sets the whitelist for a specific tag to guide the tag refinement procedure.
-
-Usage: --set-whitelist CELL=preset:737K-august-2016 or --set-whitelist UMI=file:my_umi_whitelist.txt .
+: Sets the whitelist for a specific tag to guide the tag refinement procedure. Usage:
+    ```
+    --set-whitelist CELL=preset:737K-august-2016
+    ```
+    or
+    ```
+    --set-whitelist UMI=file:my_umi_whitelist.txt
+    ```
 
 `--reset-whitelist tag`  
-: Resets the whitelist for a specific tag so that unguided refinement procedure will be applied for it
-
-Usage: --whitelist CELL=preset:737K-august-2016 or -w UMI=file: my_umi_whitelist.txt.
+: Resets the whitelist for a specific tag so that unguided refinement procedure will be applied for it. Usage:
+    ```
+    --whitelist CELL=preset:737K-august-2016
+    ```
+    or
+    ```
+    -w UMI=file: my_umi_whitelist.txt
+    ```
 
 `-r, --report <path>`
 : [Report](./report-refineTagsAndSort.md) file (human readable version, see `-j / --json-report` for machine readable report).
