@@ -195,7 +195,7 @@ Tag refinement statistics plots.
 
 For example, for 10x VDJ data:
 ```shell
-> mixcr exportQc plots 10x-data.clns barcodesFiltering.pdf 
+> mixcr exportQc tags 10x-data.clns barcodesFiltering.pdf 
 ```
 ![](pics/exportQc-umi.svg)
 
