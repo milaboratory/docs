@@ -20,17 +20,22 @@ For export of `.shmt` produced by [`findShmTrees`](./mixcr-findShmTrees.md) see 
 ```
 mixcr exportClones
     [--chains <chains>] 
-    [--impute-germline-on-export]
-    [--dont-impute-germline-on-export] 
     [--filter-out-of-frames] 
     [--filter-stops] 
     [--split-by-tags <(Molecule|Cell|Sample)>] 
     [--split-files-by <splitFilesBy>]... 
     [--dont-split-files] 
+    [--impute-germline-on-export] 
+    [--dont-impute-germline-on-export] 
+    [--add-export-clone-table-splitting <(geneLabel|tag):key>] 
+    [--reset-export-clone-table-splitting] 
+    [--add-export-clone-grouping <(geneLabel|tag):key>] 
+    [--reset-export-clone-grouping] 
+    [--export-productive-clones-only] 
     [--no-header] 
     [--drop-default-fields] 
-    [--prepend-columns]
-    [--not-covered-as-empty] 
+    [--prepend-columns] 
+    [--not-covered-as-empty]
     [<exportField>]...
     [--force-overwrite] 
     [--no-warnings] 
@@ -52,12 +57,6 @@ Command line options:
 `-c, --chains <chains>`
 : Limit export to specific chain (e.g. TRA or IGH) (fractions will be recalculated). Default value determined by the preset.
 
-`--impute-germline-on-export`
-: Export nucleotide sequences using letters from germline (marked lowercase) for uncovered regions
-
-`--dont-impute-germline-on-export`
-: Export nucleotide sequences only from covered region
-
 `-o, --filter-out-of-frames`
 : Exclude clones with out-of-frame clone sequences (fractions will be recalculated). Default value determined by the preset.
 
@@ -72,6 +71,27 @@ Command line options:
 
 `--dont-split-files`
 : Don't split files.
+
+`--impute-germline-on-export`
+: Export nucleotide sequences using letters from germline (marked lowercase) for uncovered regions
+
+`--dont-impute-germline-on-export`
+: Export nucleotide sequences only from covered region
+
+`--add-export-clone-table-splitting <(geneLabel|tag):key>`
+: Add key to split output files with clone tables.
+
+`--reset-export-clone-table-splitting`
+: Reset all file splitting for output clone tables.
+
+`--add-export-clone-grouping <(geneLabel|tag):key>`
+: Add key to group clones in the output clone tables.
+
+`--reset-export-clone-grouping`
+: Reset all clone grouping in the output clone tables.
+
+`--export-productive-clones-only`
+: Export only productive clonotypes.
 
 `--no-header`
 : Don't print first header line, print only data Default value determined by the preset.

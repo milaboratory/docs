@@ -120,6 +120,9 @@ The following mix-in options configure clonotype [`export`](mixcr-export.md) ste
 `--reset-export-clone-grouping`
 : Reset all clone grouping in the output clone tables.
 
+`--export-productive-clones-only`
+: Export only productive clonotypes.
+
 ### Pipeline configuration mix-ins
 
 The following mix-in options configure general pipeline execution.
