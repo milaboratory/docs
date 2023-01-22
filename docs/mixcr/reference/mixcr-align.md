@@ -1,13 +1,13 @@
 # `mixcr align`
 
-Aligns raw sequencing data against V-, D-, J- and C- gene segment library database for selected species. For tagged data (molecular / cell / sample barcodes), MiXCR allows to extract tags using powerful [pattern matching syntax](ref-tag-pattern.md) and assign them to every alignment. Tags may be also extracted and assigned to alignments based on [sample sheets](ref-sample-barcodes-table.md) or directly from the sequencing read headers using regex. Trimming of artificial sequences (primers or adapters) can be done using [tag patterns](ref-tag-pattern.md) before actual alignment happens. Quality-guided read trimming may be applied if corresponding options are used. MiXCR supports paired-end and single-end [`.fastq`](https://en.wikipedia.org/wiki/FASTQ_format), [`.fasta`](https://en.wikipedia.org/wiki/FASTA_format), [`.bam` and `.sam`](https://en.wikipedia.org/wiki/Binary_Alignment_Map) formats.
+Aligns raw sequencing data against V-, D-, J- and C- gene segment library database for selected species. For tagged data (molecular / cell / sample barcodes), MiXCR allows to extract tags using powerful [pattern matching syntax](ref-tag-pattern.md) and assign them to every alignment. Tags may be also extracted and assigned to alignments based on [sample sheets](ref-samples-table.md) or directly from the sequencing read headers using regex. Trimming of artificial sequences (primers or adapters) can be done using [tag patterns](ref-tag-pattern.md) before actual alignment happens. Quality-guided read trimming may be applied if corresponding options are used. MiXCR supports paired-end and single-end [`.fastq`](https://en.wikipedia.org/wiki/FASTQ_format), [`.fasta`](https://en.wikipedia.org/wiki/FASTA_format), [`.bam` and `.sam`](https://en.wikipedia.org/wiki/Binary_Alignment_Map) formats.
 
 ![](./pics/align-light.svg#only-light)
 ![](./pics/align-dark.svg#only-dark)
 
-Raw alignments are the most basic pieces of information available in MiXCR. They are used to assemble clones and reconstruct contigs. Alignments are also used to debug sequencing library and identify wet lab issues.    
+Raw alignments are the basic pieces of information in MiXCR. They are used to assemble clones and reconstruct contigs. Alignments are also used to debug sequencing library and identify wet lab issues.
 
-MiXCR aligners are rigorously optimized to take into account a great variety of peculiarities caused by the complex nature of adaptive immunity, different library preparation protocols and various wet lab issues. In most cases, one just need to pick up a right preset from the [comprehensive list of available ones](overview-built-in-presets.md). The preset contains all the optimized parameters for the corresponding type of data. For custom protocols, MiXCR provides a set of high-level parameters allowing to specify the basic library architecture; aligners will use it to automatically fine tune every aspect of the procedure and produce the most precise alignments. One can also access the low level of the aligners and modify any of the hundreds parameters such as various thresholds, scoring matrices, gene alignment algorithm types and others.
+The aligners are rigorously optimized to take into account a great variety of peculiarities caused by the complex nature of adaptive immunity, different library preparation protocols and various wet lab issues. In most cases, to get maximum of your data one just need to pick up a right preset from the [comprehensive list of available ones](overview-built-in-presets.md). Preset contains all the optimized parameters for the corresponding type of data / protocol. For custom protocols, MiXCR provides a set of high-level parameters allowing to specify the basic library architecture; aligners will use it to automatically fine tune every aspect of the procedure and produce the most precise alignments. One can also access the low level of the aligners and modify any of the hundreds parameters such as various thresholds, scoring matrices, gene alignment algorithm types and others.
 
 
 ## Command line options
@@ -76,27 +76,24 @@ mixcr align --preset <name>
     
     # inputs and outputs
 
-	([file_I1.fastq[.gz] [file_I2.fastq[.gz]]] file_R1.fastq[.gz] [file_R2.fastq[.gz]]|file.(fasta|bam|sam)) 
+	([I1.fastq[.gz] [I2.fastq[.gz]]] R1.fastq[.gz] [R2.fastq[.gz]] 
+	 | file.(fasta|bam|sam)) 
 	alignments.vdjca
 ```
-The command produces a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form using [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the alignment performance and quality of the library.
+The command produces a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form using [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the quality of input library.
 
-Basic command line options are:
+For [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format) input MiXCR can process paired-end and single-end data. Optionally, it can take index `.fastq` files, used to extract barcodes in some protocols. It can also process [FASTA](https://en.wikipedia.org/wiki/FASTA_format) and [BAM](https://en.wikipedia.org/wiki/Binary_Alignment_Map) formats. 
 
-`([file_I1.fastq[.gz] [file_I2.fastq[.gz]]] file_R1.fastq[.gz] [file_R2.fastq[.gz]]|file.(fasta|bam|sam))`
-: Paths of input files with sequencing data. File name pattern [expansion](./ref-input-file-name-expansion.md) can be used here to merge sequences from multiple sequences or just for convenience.
-
-`alignments.vdjca`
-: Path where to write output alignments
+Basic command line options:
 
 `-p, --preset <name>`
-: Analysis preset. Sets all important parameters of this and all downstream analysis steps. It is  important to carefully select the most appropriate preset for the data you analyse. See [list of presets](overview-built-in-presets.md). 
+: Analysis preset. Sets key parameters of this and all downstream analysis steps. It is critical to carefully select the most appropriate preset for the data you analyse. See [list of presets](overview-built-in-presets.md). 
 
 `--trimming-quality-threshold <n>`
-: Read pre-processing: trimming quality threshold. Zero value can be used to skip trimming. Default value determined by the preset.
+: Read pre-processing: trimming quality threshold. Zero value can be used to skip trimming. Default value is determined by the preset.
 
 `--trimming-window-size <n>`
-: Read pre-processing: trimming window size. Default value determined by the preset.
+: Read pre-processing: trimming window size. Default value is determined by the preset.
 
 `--write-all`
 : Write alignment results for all input reads (even if alignment failed). Default value determined by the preset.
@@ -108,15 +105,13 @@ Basic command line options are:
 : Specify tag pattern for barcoded data.
 
 `--tag-parse-unstranded`
-: If paired-end input is used, determines whether to try all combinations of mate-pairs or only match reads to the corresponding pattern sections (i.e. first file to first section, etc...). Default value determined by the preset.
+: If paired-end input is used, determines whether to try all combinations of mate-pairs or only match reads to the corresponding pattern sections (i.e. first file to first section etc). Default value is determined by the preset.
 
 `--tag-max-budget <n>`
-: Maximal bit budget, higher values allows more substitutions in small letters. Default value determined by the preset.
+: Maximal bit budget controlling mismatches (substitutions) in tag pattern. Higher values allows more substitutions in small letters. Default value is determined by the preset.
 
 `--read-id-as-cell-tag`
-: Marks reads, coming from different files, but having the same positions in those files, as reads coming from the same cells. Main use-case is protocols with overlapped alpha-beta, gamma-delta or heavy-light cDNA molecules, where each side was sequenced by separate mate pairs in a paired-end sequencer. Use special expansion group CELLSPLIT instead of R index (i.e. "my_file_R{{CELLSPLIT:n}}.fastq.gz").
-
-Default value determined by the preset.
+: Marks reads, coming from different files, but having the same positions in those files, as reads coming from the same cells. Main use-case is protocols with overlapped alpha-beta, gamma-delta or heavy-light cDNA molecules, where each side was sequenced by separate mate pairs in a paired-end sequencer. Use special [expansion group](ref-input-file-name-expansion.md) `CELLSPLIT` instead of R index `(i.e. "my_file_R{{CELLSPLIT:n}}.fastq.gz")`. Default value determined by the preset.
 
 `-s, --species <species>`
 : Species (organism). Possible values: `hsa` (or HomoSapiens), `mmu` (or MusMusculus), `rat`, `spalax`, `alpaca`, `lamaGlama`, `mulatta` (_Macaca Mulatta_), `fascicularis` (_Macaca Fascicularis_) or any species from [IMGT ® library](../guides/external-libraries.md).
@@ -125,7 +120,7 @@ Default value determined by the preset.
 : V/D/J/C gene library. By default, the `default` MiXCR reference library is used. One can also use [external libraries](../guides/external-libraries.md)
 
 `--limit-input <n>`
-: Maximal number of reads to process on [align](./mixcr-align.md).
+: Maximal number of reads to process.
 
 `--read-buffer <n>`
 : Size of buffer for FASTQ readers in bytes. Default: 4Mb
@@ -164,13 +159,13 @@ Default value determined by the preset.
 : Overrides preset parameters
 
 `-r, --report <path>`
-: [Report](./report-align.md) file (human readable version, see `-j / --json-report` for machine readable report).
+: [Report](report-align.md) file (human readable version, see `-j / --json-report` for machine readable report).
 
 `-j, --json-report <path>`
-: JSON formatted [report](./report-align.md) file.
+: JSON formatted [report](report-align.md) file.
 
 `-t, --threads <n>`
-: Processing threads
+: Number of processing threads
 
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
@@ -185,7 +180,7 @@ Default value determined by the preset.
 : Show this help message and exit.
 
 
-In addition to these parameters, any of the [available mix-in options](overview-mixins-list.md) may be additionally specify at `align`. 
+In addition to these parameters, any of the [available mix-in options](overview-mixins-list.md) may be additionally used at `align`. 
 
 ## Concatenating across multiple files
 
@@ -259,7 +254,7 @@ For details see [this section](/mixcr/reference/ref-input-file-name-expansion).
 
 ## Aligner parameters
 
-MiXCR uses a [wide range of parameters](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/parameters/vdjcaligner_parameters.json) that control aligners behaviour. There are global parameters and gene-specific parameters organized in groups: `vParameters`, `dParameters`, `jParameters` and `cParameters`. Each group of parameters may contain further subgroups of parameters. In order to override a parameter value one can use `-O` followed by fully qualified parameter name and parameter value (e.g. `-Ogroup1.group2.parameter=value`).
+MiXCR has a [wide range of parameters](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/parameters/vdjcaligner_parameters.json) that control aligners behaviour. There are global parameters and gene-specific parameters organized in groups: `vParameters`, `dParameters`, `jParameters` and `cParameters`. Each group of parameters may contain further subgroups of parameters. In order to override a parameter value one can use `-O` followed by fully qualified parameter name and parameter value (e.g. `-Ogroup1.group2.parameter=value`).
 
 Global aligner parameters include:
 

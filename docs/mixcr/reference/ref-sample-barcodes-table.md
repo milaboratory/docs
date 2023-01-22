@@ -1,3 +1,0 @@
-# Sample barcodes table
-
-Sample barcodes can be picked up and processed from all possible sources (I1/I2 files, sequence header lines, from inside the tag pattern, etc...). Processing can be done in two principal modes in respect to sample barcodes: (1) data can be split by samples right on the align stage and processed separately, or (2) all samples can be processed as a single set of sequences and separated only on the very last exportClones step, both approaches have their pros and cons allowing to use the best strategy given the experimental setup and study goals.
