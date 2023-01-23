@@ -3,12 +3,12 @@
 The easiest way to run even a sophisticated upstream analysis pipeline is by a single MiXCR [`analyze`](../reference/mixcr-analyze.md) command:
 ```shell
 mixcr analyze \
-      milab-human-bcr-multiplex-full-length \
+      takara-human-bcr-full-length \
       sample_R1_L{{n}}.fastq.gz \
       sample_R2_L{{n}}.fastq.gz \
       result
 ```
-This example runs an optimized analysis pipeline for the full-length human BCR molecular-barcoded data, obtained with MiLaboratories Human BCR Multiplex kit. Option `milab-human-bcr-multiplex-full-length` corresponds to MiXCR [preset](../reference/overview-presets.md) for this particular wet lab protocol and `{{n}}` syntax is used to concatenate samples across multiple lanes. 
+This example runs an optimized analysis pipeline for the full-length human BCR molecular-barcoded data, obtained with SMART-Seq Human BCR kit. Option `takara-human-bcr-full-length` corresponds to MiXCR [preset](../reference/overview-presets.md) for this particular wet lab protocol and `{{n}}` syntax is used to concatenate samples across multiple lanes. 
 
 MiXCR provides a [comprehensive list](../reference/overview-built-in-presets.md) of available presets for plenty of protocols, data types and commercially available kits. One can find optimized analysis workflows for the following suppliers:
 
