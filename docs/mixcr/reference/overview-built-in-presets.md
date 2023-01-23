@@ -33,6 +33,7 @@ Bellow you one can find a variety of presets for different types of input data a
 --8<-- "reference/presets/_thermofisher.md_"
 --8<-- "reference/presets/_abhelix.md_"
 --8<-- "reference/presets/_bd.md_"
+--8<-- "reference/presets/_nanopore.md_"
 --8<-- "reference/presets/_parsebio.md_"
 --8<-- "reference/presets/_singleron.md_"
 --8<-- "reference/presets/_neb.md_"
@@ -40,6 +41,27 @@ Bellow you one can find a variety of presets for different types of input data a
 ## Public protocols
 
 --8<-- "reference/presets/_biomed2.md_"
+--8<-- "reference/presets/_smartseq.md_"
+
+### SPLiT-seq
+==`split-seq-vdj-3gex`==
+·
+[:octicons-link-16: Publication](https://www.science.org/doi/10.1126/science.aam8999)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/parsebio.yaml)
+
+The SPLiT-seq uses the combinatorial indexing to identify single cells without single cell isolation. Multi-level indexing can be performed by ligation. Please note that as a 3'end RNA-seq based protocol it was not originally optimized for immune repertoire analysis, thus tcr/bcr yield might be low.
+
+![](pics/split-seq-light.svg#only-light)
+![](pics/split-seq-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze split-seq-3gex-vdj \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
 
 ### Mikelov et al, 2021
 ==`mikelov-et-al-2021`==
@@ -88,26 +110,6 @@ Example:
 ```shell
 mixcr analyze han-et-al-2014-bcr \
       --species hsa \
-      input_R1.fastq.gz \
-      input_R2.fastq.gz \
-      result
-```
-
-### SPLiT-seq
-==`split-seq-vdj-3gex`==
-·
-[:octicons-link-16: Publication](https://www.science.org/doi/10.1126/science.aam8999)
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/parsebio.yaml)
-
-The SPLiT-seq uses the combinatorial indexing to identify single cells without single cell isolation. Multi-level indexing can be performed by ligation. Please note that as a 3'end RNA-seq based protocol it was not originally optimized for immune repertoire analysis, thus tcr/bcr yield might be low.
-
-![](pics/split-seq-light.svg#only-light)
-![](pics/split-seq-dark.svg#only-dark)
-
-Example:
-```shell
-mixcr analyze split-seq-3gex-vdj \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result

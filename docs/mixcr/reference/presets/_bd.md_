@@ -10,7 +10,7 @@
 ·
 ==`bd-rhapsody-mouse-bcr-v1`==
 ·
-[:octicons-link-16: Link](https://www.bdbiosciences.com/en-us/products/reagents/single-cell-multiomics/vdj#Overview)
+[:octicons-link-16: Link](https://www.bdbiosciences.com/en-eu/products/reagents/single-cell-multiomics/vdj#VDJ%20CDR3%20Assay)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/bd.yaml)
 
@@ -39,7 +39,7 @@ mixcr analyze bd-rhapsody-mouse-tcr-v1 \
 ·
 ==`bd-rhapsody-mouse-bcr-v2`==
 
-[:octicons-link-16: Link](https://www.bdbiosciences.com/en-us/products/reagents/single-cell-multiomics/vdj#Overview)
+[:octicons-link-16: Link](https://www.bdbiosciences.com/en-eu/products/reagents/single-cell-multiomics/vdj#VDJ%20CDR3%20Assay)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/bd.yaml)
 
@@ -51,6 +51,33 @@ In 2022, BD introduced a new version of beads , called Enhanced Beads, which hav
 Example:
 ```shell
 mixcr analyze bd-rhapsody-mouse-bcr-v2 \
+     sample_R1.fastq.gz \
+     sample_R2.fastq.gz \
+     sample_result
+```
+
+#### BD Rhapsody™ VDJ Full Length Protocol
+
+==`bd-rhapsody-human-bcr-full-length`==
+·
+==`bd-rhapsody-mouse-bcr-full-length`==
+·
+==`bd-rhapsody-human-tcr-full-length`==
+·
+==`bd-rhapsody-mouse-tcr-full-length`==
+
+[:octicons-link-16: Link](https://www.bdbiosciences.com/en-eu/products/reagents/single-cell-multiomics/vdj#Overview)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/bd.yaml)
+
+The BD Rhapsody™ TCR/BCR Multiomic Assay helps you assemble the full length VDJ sequence for the T cell and B cell receptor.
+
+![](pics/rhapsody-full-length-light.svg#only-light)
+![](pics/rhapsody-full-length-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze bd-rhapsody-mouse-tcr-full-length \
      sample_R1.fastq.gz \
      sample_R2.fastq.gz \
      sample_result

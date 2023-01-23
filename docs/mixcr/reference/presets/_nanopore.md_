@@ -1,0 +1,26 @@
+### Oxford Nanopore Technologies
+
+#### Full-length RNA-seq
+
+==`ont-rna-seq-vdj-full-length`==
+·
+[:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
+·
+[:octicons-mark-github-16: Code](https://nanoporetech.com/applications/rna-sequencing)
+
+
+The preset is designed to handle long reads RNA-seq data obtained with Oxford Nanopore Technologies sequencer.
+
+![](pics/nanopore-light.svg#only-light)
+![](pics/nanopore-dark.svg#only-dark)
+
+The `--species` option is required.
+
+Example:
+```shell
+mixcr analyze ont-rna-seq-vdj-full-length \
+     --species hsa \
+     sample_R1.fastq.gz \
+     sample_R2.fastq.gz \
+     sample_result
+```

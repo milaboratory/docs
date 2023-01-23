@@ -1,0 +1,30 @@
+#### Smart-Seq2
+
+==`smartseq2-vdj-full-length`==
+·
+[:octicons-link-16: Publication](https://www.nature.com/articles/nprot.2014.006)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/smart-seq.yaml)
+
+For Smart-Seq2, single cells are lysed in a buffer that contains free dNTPs and oligo(dT)-tailed oligonucleotides with a universal 5'-anchor sequence. RT is performed, which adds 2–5 untemplated nucleotides to the cDNA 3′ end. A template-switching oligo (TSO) is added, carrying 2 riboguanosines and a modified guanosine to produce a LNA as the last base at the 3′ end. After the first-strand reaction, the cDNA is amplified using a limited number of cycles. Next, tagmentation is used to construct sequencing libraries quickly and efficiently from the amplified cDNA.
+
+![](pics/smart-seq2-light.svg#only-light)
+![](pics/smart-seq2-dark.svg#only-dark)
+
+Note that Smart-Seq2 protocol implies that sequences are separated by cells in different FASTQ file pairs according to PCR plate row and column. In the example bellow we show how to provide cell id (row and column) information using filename patterns that have illumina indices in it. However, inplace of indices could be any text that is unique for column-row pair.
+
+Example:
+```shell
+> ls
+
+161014_SN163_0729_AH3VW7BCXY_L1_TAAGGCGA-CTCTCTAT_R1.fastq.gz
+161014_SN163_0729_AH3VW7BCXY_L1_TAAGGCGA-CTCTCTAT_R2.fastq.gz
+161014_SN163_0729_AH3VW7BCXY_L1_TAAGCTTA-GTGTTAAG_R1.fastq.gz
+161014_SN163_0729_AH3VW7BCXY_L1_TAAGCTTA-GTGTTAAG_R2.fastq.gz
+
+mixcr analyze smartseq2-vdj-full-length \
+	-s hsa \
+	161014_SN163_0729_AH3VW7BCXY_L1_{{CELL0ROW:a}}-{{CELL0COL:a}}_R1.fastq.gz \
+	161014_SN163_0729_AH3VW7BCXY_L1_{{CELL0ROW:a}}-{{CELL0COL:a}}_R2.fastq.gz \
+	result
+```
