@@ -55,7 +55,7 @@ While preset already determines the whole analysis pipeline, one can add additio
 
 Some presets have required mixins (_flags_) to be specified by the user (like species in the above case). For example, let's consider a universal preset `tcr-amplicon`, used for analysis of generic TCR amplicon library. It requires to specify species, type of starting material (DNA or RNA), 3'- and 5'- library structure (primers/adapters on V, J or C genes):
 ```shell
-mixcr analyze tcr-amplicon \
+mixcr analyze generic-tcr-amplicon \
     --species hsa \
     --rna \
     --floating-left-alignment-boundary \
