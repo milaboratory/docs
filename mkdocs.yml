@@ -205,7 +205,7 @@ nav:
       - 'Specifications':
         - 'Tag pattern': mixcr/reference/ref-tag-pattern.md
         - 'Input file name expansion': mixcr/reference/ref-input-file-name-expansion.md
-#        - 'Samples table': mixcr/reference/ref-samples-table.md
+        - 'Samples table': mixcr/reference/ref-samples-table.md
         - 'Gene features and reference points': mixcr/reference/ref-gene-features.md
         - 'Translation rules': mixcr/reference/ref-translation-rules.md
         - 'Mutations encoding': mixcr/reference/ref-mutations-encoding.md
