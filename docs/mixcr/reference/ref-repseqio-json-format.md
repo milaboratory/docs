@@ -1,8 +1,9 @@
 # Repseq.IO JSON library format
 
 Format supports:
-- references to external sequences (from separate file, HTTP link, NCBI sequence accession, etc.)
-- as well sequence information may be embedded inside library file, for convenient distribution (`repseqio` util has special action to convert library with external sequence links into a single self-contained file, see `repseqio compile`)
+
+ - references to external sequences (from separate file, HTTP link, NCBI sequence accession, etc.)
+ - as well sequence information may be embedded inside library file, for convenient distribution (`repseqio` util has special action to convert library with external sequence links into a single self-contained file, see `repseqio compile`)
 
 library with embedded sequences is not intended for manual editing or submission into version control system like `git`.
 
