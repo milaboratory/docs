@@ -215,7 +215,7 @@ The following [mix-in options](overview-mixins-list.md) are used:
 ·
 ==`generic-bcr-amplicon-umi`==
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/general-amplicon.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/generic-amplicon.yaml)
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/generic-umi-bcr.md)
 ·

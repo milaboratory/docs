@@ -57,10 +57,6 @@ The `sample_table.tsv` may looks like:
 
 Note that `TagPattern` column is empty since the pattern is specified globally for all samples.
 
-### Sample barcodes from cell tags
-
-See [this example](ref-input-file-name-expansion.md#microplates--multiple-patient-samples-multiple-plates).
-
 ### Sample barcodes from file names
 
 Suppose we want to analyze multiple patient samples prepared with Takara Human BCR kit at once. We have the following files:
@@ -81,3 +77,41 @@ mixcr analyze takara-human-bcr-full-length \
       output_prefix
 ```
 Here we assign sample barcode using [file name expansion](ref-input-file-name-expansion.md). The command will match all pairs of FASTQ files in the current directory and automatically generate sample table based on the extracted sample barcodes.
+
+### Sample barcodes from tag patterns
+
+Suppose we have a custom library containing sample barcodes as first 6 letters of R1. We have the following files:
+```shell
+run01_R1.fastq.gz
+run02_R2.fastq.gz
+run03_R1.fastq.gz
+run04_R2.fastq.gz
+run05_R1.fastq.gz
+run06_R2.fastq.gz
+```
+
+We can use the following MiXCR command to process all files at once:
+```shell
+mixcr analyze generic-bcr-amplicon-umi \
+    --species hsa \
+    --rna \
+    --sample-table sample_table.tsv \
+    --tag-pattern "^(SMPL:N{6})(R1:*) \ ^(UMI:N{12})GTAC(R2:*)" \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+      {{a}}_{{R}}.fastq.gz \
+      result
+```
+
+The `sample_table.tsv` may looks like:
+
+| Sample  | TagPattern | SMPL   |
+|---------|------------|--------|
+| Sample1 |            | CAGCCC |
+| Sample2 |            | GGCAAT |
+| ...     |            | ...    |
+
+### Sample barcodes from cell tags
+
+See [this example](ref-input-file-name-expansion.md#microplates--multiple-patient-samples-multiple-plates).
+

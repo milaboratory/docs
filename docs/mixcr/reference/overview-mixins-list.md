@@ -22,8 +22,8 @@ Possible values: hs, HomoSapiens, musmusculus, mmu, hsa, 9606, 10090 etc.
 `--dont-split-by-sample`
 : Don't split output alignments files by sample.
 
-`--sample-table sample_table.tsv`
-: Loads sample table from a tab separated file.
+`--sample-table <sample_table.tsv>`
+: Loads [sample table](ref-samples-table.md) from a tab separated file.
 
 `--dna`
 : ==:fontawesome-solid-puzzle-piece: Material type== <p>

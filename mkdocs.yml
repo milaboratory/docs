@@ -107,8 +107,8 @@ extra_javascript:
 
 nav:
   - 'About': mixcr/about.md
-  - 'Getting Started':
-      - 'Installation': mixcr/getting-started/installation.md
+  - 'Downloads':
+      - 'Binary distributions': mixcr/getting-started/installation.md
       - 'Using with Docker': mixcr/getting-started/docker.md
       - 'Obtaining and using license key': mixcr/getting-started/milm.md
       - 'First run': mixcr/getting-started/first-run.md

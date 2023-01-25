@@ -26,24 +26,23 @@ Out of the box, it provides dedicated analytical pipelines for all kits from pop
 
 === "10x Genomics"
     ```shell
-    mixcr analyze \
-          10x-vdj-bcr \
+    mixcr analyze 10x-vdj-bcr \
+          --species hsa \
           in_R1.fq.gz \
           in_R2.fq.gz \
           output
     ```
 === "Takara Bio"
     ```shell
-    mixcr analyze \
-          takara-human-bcr-full-length \
+    mixcr analyze takara-human-bcr-full-length \
           in_R1.fq.gz \
           in_R2.fq.gz \
           output
     ```
 === "RNA-Seq data"
     ```shell
-    mixcr analyze \
-          rnaseq-cdr3 \
+    mixcr analyze rnaseq-cdr3 \
+          --species hsa \
           in_R1.fq.gz \
           in_R2.fq.gz \
           output

@@ -4,9 +4,9 @@
 
 ==`ont-rna-seq-vdj-full-length`==
 ·
-[:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
+[:octicons-link-16: Link](https://nanoporetech.com/applications/rna-sequencing)
 ·
-[:octicons-mark-github-16: Code](https://nanoporetech.com/applications/rna-sequencing)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/nanopore.yaml)
 
 
 The preset is designed to handle long reads RNA-seq data obtained with Oxford Nanopore Technologies sequencer.

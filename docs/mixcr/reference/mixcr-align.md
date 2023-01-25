@@ -1,6 +1,6 @@
 # `mixcr align`
 
-Aligns raw sequencing data against V-, D-, J- and C- gene segment library database for selected species. For tagged data (molecular / cell / sample barcodes), MiXCR allows to extract tags using powerful [pattern matching syntax](ref-tag-pattern.md) and assign them to every alignment. Tags may be also extracted and assigned to alignments based on [sample sheets](ref-samples-table.md) or directly from the sequencing read headers using regex. Trimming of artificial sequences (primers or adapters) can be done using [tag patterns](ref-tag-pattern.md) before actual alignment happens. Quality-guided read trimming may be applied if corresponding options are used. MiXCR supports paired-end and single-end [`.fastq`](https://en.wikipedia.org/wiki/FASTQ_format), [`.fasta`](https://en.wikipedia.org/wiki/FASTA_format), [`.bam` and `.sam`](https://en.wikipedia.org/wiki/Binary_Alignment_Map) formats.
+Aligns raw sequencing data against V-, D-, J- and C- gene segment library database for selected species. For tagged data (molecular / cell / sample barcodes), MiXCR allows to extract tags using powerful [pattern matching syntax](ref-tag-pattern.md) and assign them to every alignment. Tags may be also extracted and assigned to alignments based on [sample sheets](ref-samples-table.md) or directly from the sequencing read headers using regex. Trimming of artificial sequences (primers or adapters) can be done using [tag patterns](ref-tag-pattern.md) before actual alignment happens. Quality-guided read trimming may be applied if corresponding options are used. A powerful [file name expansion](ref-input-file-name-expansion.md) functionality allows to take and process a batch of raw sequencing files at once on the fly and optionally assign molecular, cell and sample barcodes extracted from the file names. [Sample tables](ref-samples-table.md) allow to analyze several patient samples at once using sample barcodes that may be picked up from all possible sources. MiXCR supports paired-end and single-end [`.fastq`](https://en.wikipedia.org/wiki/FASTQ_format), [`.fasta`](https://en.wikipedia.org/wiki/FASTA_format), [`.bam` and `.sam`](https://en.wikipedia.org/wiki/Binary_Alignment_Map) formats.
 
 ![](./pics/align-light.svg#only-light)
 ![](./pics/align-dark.svg#only-dark)
@@ -81,6 +81,8 @@ mixcr align --preset <name>
 	alignments.vdjca
 ```
 The command produces a highly-compressed, memory- and CPU-efficient binary `.vdjca` file that holds exhaustive information about alignments. Alignments can be further extracted in tabular form using [`exportAlignments`](./mixcr-export.md#alignments) or in human-readable form using [`exportAlignmentsPretty`](./mixcr-exportPretty.md#raw-alignments). Additionally, MiXCR produces a comprehensive [report](./report-align.md) which provides a detailed overview of the quality of input library.
+
+To take and process a batch of input sequencing files at once and optionally assign molecular, cell and sample barcodes extracted from the file names one can use a powerful [file name expansion](ref-input-file-name-expansion.md) functionality. [Sample tables](ref-samples-table.md) allow to analyze several patient samples at once using sample barcodes that may be picked up from all possible sources.
 
 For [FASTQ](https://en.wikipedia.org/wiki/FASTQ_format) input MiXCR can process paired-end and single-end data. Optionally, it can take index `.fastq` files, used to extract barcodes in some protocols. It can also process [FASTA](https://en.wikipedia.org/wiki/FASTA_format) and [BAM](https://en.wikipedia.org/wiki/Binary_Alignment_Map) formats. 
 
@@ -180,77 +182,7 @@ Basic command line options:
 : Show this help message and exit.
 
 
-In addition to these parameters, any of the [available mix-in options](overview-mixins-list.md) may be additionally used at `align`. 
-
-## Concatenating across multiple files
-
-Sometimes it is required to concatenate several fastq files and analyse it as a single sample. This is a common practise when files are separated across sequencing lanes. 
-
-MiXCR uses `{{n}}` syntax as a placeholder for any number. Meaning MiXCR will concatenate all files that match the pattern regardless of digits in the place of  `{{n}}`
-
-Bellow you can see an example of how to pass 8 fastq files (four per each paired read) to `mixcr align`:
-
-Example:
-```shell
-> ls fastq/
-    sample1_L001_S25_R1.fastq.gz    sample1_L001_S25_R2.fastq.gz 
-    sample1_L002_S25_R1.fastq.gz    sample1_L002_S25_R2.fastq.gz
-    sample1_L003_S25_R1.fastq.gz    sample1_L003_S25_R2.fastq.gz
-    sample1_L004_S25_R1.fastq.gz    sample1_L004_S25_R2.fastq.gz
-
-> mixcr align -s hsa \
-    fastq/sample1_L{{n}}_S25_R1.fastq.gz \
-    fastq/sample1_L{{n}}_S25_R2.fastq.gz \
-    results/sample1
-```
-
-MiXCR uses `{{a}}` syntax which works just like {{n}} but works with any pattern, not just numbers.
-
-Example:
-
-```shell
-> ls fastq/
-    sample1_nameA1_S25_R1.fastq.gz    sample1_nameA1_S25_R2.fastq.gz
-    sample1_nameA_S25_R1.fastq.gz     sample1_nameA_S25_R2.fastq.gz
-    sample1_nameC3_S25_R1.fastq.gz    sample1_nameC3_S25_R2.fastq.gz
-    sample1_fileD_S25_R1.fastq.gz     sample1_fileD_S25_R2.fastq.gz
-
-> mixcr align -s hsa \
-    fastq/sample1_{{n}}_S25_R1.fastq.gz \
-    fastq/sample1_{{n}}_S25_R2.fastq.gz \
-    results/sample1
-```
-
-Finally, MiXCR uses `{{R}}` syntax that marks the reads' number, so you don't have to submit the second read filename.
-
-Bellow is the example of how you can combine multiple MiXCR wildcards and concatenate 16 pairs of files using one pattern. 
-
-Example:
-```shell
-> ls fastq/
-    sampleA_primer1_L001_R1.fastq.gz       sampleA_primer1_L001_R2.fastq.gz    
-    sampleA_primer1_L002_R1.fastq.gz       sampleA_primer1_L002_R2.fastq.gz    
-    sampleA_primer1_L003_R1.fastq.gz       sampleA_primer1_L003_R2.fastq.gz    
-    sampleA_primer1_L004_R1.fastq.gz       sampleA_primer1_L004_R2.fastq.gz    
-    sampleA_primer2_L001_R1.fastq.gz       sampleA_primer2_L001_R2.fastq.gz
-    sampleA_primer2_L002_R1.fastq.gz       sampleA_primer2_L002_R2.fastq.gz
-    sampleA_primer2_L003_R1.fastq.gz       sampleA_primer2_L003_R2.fastq.gz
-    sampleA_primer2_L004_R1.fastq.gz       sampleA_primer2_L004_R2.fastq.gz
-    sampleA_primer3_L001_R1.fastq.gz       sampleA_primer3_L001_R2.fastq.gz
-    sampleA_primer3_L002_R1.fastq.gz       sampleA_primer3_L002_R2.fastq.gz
-    sampleA_primer3_L003_R1.fastq.gz       sampleA_primer3_L003_R2.fastq.gz
-    sampleA_primer3_L004_R1.fastq.gz       sampleA_primer3_L004_R2.fastq.gz
-    sampleA_primer4_L001_R1.fastq.gz       sampleA_primer4_L001_R2.fastq.gz
-    sampleA_primer4_L002_R1.fastq.gz       sampleA_primer4_L002_R2.fastq.gz
-    sampleA_primer4_L003_R1.fastq.gz       sampleA_primer4_L003_R2.fastq.gz
-    sampleA_primer4_L004_R1.fastq.gz       sampleA_primer4_L004_R2.fastq.gz
-    
-> mixcr align -s hsa \
-    fastq/sampleA_{{a}}_L{{n}}_{{R}}.fastq.gz
-    results/sampleA
-```
-
-For details see [this section](/mixcr/reference/ref-input-file-name-expansion).
+In addition to these parameters, any of the [available mix-in options](overview-mixins-list.md) may be additionally used at `align`.
 
 ## Aligner parameters
 

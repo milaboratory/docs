@@ -23,6 +23,7 @@ MiXCR provides a [comprehensive list](../reference/overview-built-in-presets.md)
 | [Thermo Fisher](../reference/overview-built-in-presets.md#thermo-fisher) | _Homo Sapience_ | amplicon BCR, TCR |
 | [AbHelix](../reference/overview-built-in-presets.md#abhelix) | _Homo Sapience_ | amplicon TCR, BCR |
 | [BD](../reference/overview-built-in-presets.md#bd-rhapsody) | _Homo Sapience_, _Mus Musculus_ | single-cell VDJ |
+| [Oxford Nanopore](../reference/overview-built-in-presets.md#oxford-nanopore-technologies) | _any_ | long-read VDJ |
 | [ParseBio](../reference/overview-built-in-presets.md#parse-biosciences) | _any_ | single-cell 3' GEX |
 | [NEB](../reference/overview-built-in-presets.md#new-england-biolabs) | _Homo Sapience_, _Mus Musculus_ | amplicon TCR, BCR |
 
