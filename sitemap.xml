@@ -241,6 +241,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://docs.milaboratories.com/mixcr/reference/mixcr-exportPreset/</loc>
+         <lastmod>2023-01-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://docs.milaboratories.com/mixcr/reference/mixcr-exportPretty/</loc>
          <lastmod>2023-01-26</lastmod>
          <changefreq>daily</changefreq>
@@ -257,6 +262,11 @@
     </url>
     <url>
          <loc>https://docs.milaboratories.com/mixcr/reference/mixcr-exportReports/</loc>
+         <lastmod>2023-01-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.milaboratories.com/mixcr/reference/mixcr-exportReportsTable/</loc>
          <lastmod>2023-01-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -337,6 +347,11 @@
     </url>
     <url>
          <loc>https://docs.milaboratories.com/mixcr/reference/ref-repseqio-json-format/</loc>
+         <lastmod>2023-01-26</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://docs.milaboratories.com/mixcr/reference/ref-samples-table/</loc>
          <lastmod>2023-01-26</lastmod>
          <changefreq>daily</changefreq>
     </url>
