@@ -47,7 +47,7 @@ The command takes `.clna` or `.clns` file as input and produces one of the follo
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.

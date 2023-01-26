@@ -84,7 +84,7 @@ For `.fasta` library will be written in FASTA format with gene name and reliable
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -123,6 +123,9 @@ Summary table produced with `--export-alleles-mutations` contain the following c
 
 `type`
 : V or J
+
+`enoughInfo`
+: Is there was enough info to infer an allele or it's absence.
 
 `alleleMutationsReliableGeneFeatures`
 : gene features inside which allele was found (including CDR3 part that was used for search)
