@@ -1,4 +1,4 @@
-# Samples table
+# Sample table
 
 In many cases it may be useful or even required to analyze samples from different patients at once. MiXCR allows to do this with sample barcodes that may be picked up from all possible sources:
 
