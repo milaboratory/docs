@@ -514,7 +514,7 @@ These fields available for `exportAlignments` and `exportClones`:
 `-allNMutations [<from_reference_point> <to_reference_point>]`
 : Extract nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns).
     
-    For example, `-allNMutations FR3Begin FR4End` will export `-nMutations FR3`, `-nMutations CDR3`, `-nMutations FR4`.
+    For example, `-allNMutations FR3Begin FR4End` will export `-nMutations FR3`, `-nMutations FR4`.
     
     By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
@@ -527,7 +527,7 @@ These fields available for `exportAlignments` and `exportClones`:
 `-allAAMutations [<from_reference_point> <to_reference_point>]`
 : Extract amino acid nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns).
     
-    For example, `-allAAMutations FR3Begin FR4End` will export `-aaMutations FR3`, `-aaMutations CDR3`, `-aaMutations FR4`.
+    For example, `-allAAMutations FR3Begin FR4End` will export `-aaMutations FR3`, `-aaMutations FR4`.
     
     By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
@@ -540,7 +540,7 @@ These fields available for `exportAlignments` and `exportClones`:
 `-allMutationsDetailed [<from_reference_point> <to_reference_point>]`
 : Detailed list of nucleotide and corresponding amino acid mutations for all gene features between specified reference points (in separate columns).
     
-    For example, `-allMutationsDetailed FR3Begin FR4End` will export `-mutationsDetailed FR3`, `-mutationsDetailed CDR3`, `-mutationsDetailed FR4`.
+    For example, `-allMutationsDetailed FR3Begin FR4End` will export `-mutationsDetailed FR3`, `-mutationsDetailed FR4`.
     
     By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
