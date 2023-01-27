@@ -145,20 +145,20 @@ mixcr analyze rnaseq-full-length \
 ```
 
 
-### Exom data
-==`exom-cdr3`==
+### Exome data
+==`exome-cdr3`==
 ·
-==`exom-full-length`==
+==`exome-full-length`==
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/exom.yaml)
 
-Non-enriched fragmented (shotgun) Exom-Seq data. Preset `exom-cdr3` is used to assemble CDR3 clonotypes, while `exom-full-length` additionally runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J receptor rearrangement sequence.
+Non-enriched fragmented (shotgun) Exome-Seq data. Preset `exome-cdr3` is used to assemble CDR3 clonotypes, while `exome-full-length` additionally runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J receptor rearrangement sequence.
 
 The `--species` option is required.
 
 Example:
 ```shell
-mixcr analyze exom-full-length \
+mixcr analyze exome-full-length \
     --species hsa \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
