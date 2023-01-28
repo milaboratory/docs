@@ -143,6 +143,7 @@ nav:
         - 'Presets': mixcr/reference/overview-presets.md
         - 'Mix-in options list': mixcr/reference/overview-mixins-list.md
         - 'Built-in presets': mixcr/reference/overview-built-in-presets.md
+        - 'When the analysis results look poor': mixcr/reference/overview-data-qc.md
       - 'MiXCR':
         - 'analyze': mixcr/reference/mixcr-analyze.md
         - 'align': mixcr/reference/mixcr-align.md
