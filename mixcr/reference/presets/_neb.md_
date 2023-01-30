@@ -2,6 +2,10 @@
 
 #### NEBNext® Immune Sequencing Kit (Human) BCR & TCR
 
+==`nebnext-human-tcr-bcr-cdr3`==
+·
+==`nebnext-human-tcr-bcr-full-length`==
+·
 ==`nebnext-human-bcr-cdr3`==
 ·
 ==`nebnext-human-bcr-full-length`==
@@ -16,7 +20,7 @@
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/nebnext-bcr.md)
 
-With the NEBNext® Immune Sequencing Kit (Human), sequence the full-length immune gene repertoires of B cells and T cells. Profile somatic mutations across all relevant contexts (e.g., V, D, and J segments and isotypes IgM, IgD, IgG, IgA, and IgE) with improved sequence accuracy. Characterize BCR light, BCR heavy, TCRα and TCRβ chains. This kit includes UMIs for source-molecule identification. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-split-clones-by C` may be used for BCR data to not separate clones by isotypes
+With the NEBNext® Immune Sequencing Kit (Human), sequence the full-length immune gene repertoires of B cells and T cells. Profile somatic mutations across all relevant contexts (e.g., V, D, and J segments and isotypes IgM, IgD, IgG, IgA, and IgE) with improved sequence accuracy. Characterize BCR light, BCR heavy, TCRα and TCRβ chains. This kit includes UMIs for source-molecule identification. Depending on the repertoire being sequenced (TCR, BCR or both TCR and BCR) you can pick the dedicated preset. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-split-clones-by C` may be used for BCR data to not separate clones by isotypes
 
 
 ![](pics/NEBNext-human-bcr-kit-dark.svg#only-dark)
@@ -36,6 +40,10 @@ mixcr analyze nebnext-human-bcr-cdr3 \
 
 #### NEBNext® Immune Sequencing Kit (Mouse) BCR & TCR
 
+==`nebnext-mouse-tcr-bcr-cdr3`==
+·
+==`nebnext-mouse-tcr-bcr-full-length`==
+·
 ==`nebnext-mouse-bcr-cdr3`==
 ·
 ==`nebnext-mouse-bcr-full-length`==
@@ -49,7 +57,7 @@ mixcr analyze nebnext-human-bcr-cdr3 \
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/neb.yaml)
 
 
-With the NEBNext® Immune Sequencing Kit (Mouse), sequence the full-length immune gene repertoires of B cells and T cells. Profile somatic mutations across all relevant contexts (e.g., V, D, and J segments and isotypes IgM, IgD, IgG, IgA, and IgE) with improved sequence accuracy. Characterize BCR light, BCR heavy, TCRα, TCRβ, TCRγ and TCRδ chains. This kit includes UMIs for source-molecule identification. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-split-clones-by C` may be used for BCR data to not separate clones by isotypes
+With the NEBNext® Immune Sequencing Kit (Mouse), sequence the full-length immune gene repertoires of B cells and T cells. Profile somatic mutations across all relevant contexts (e.g., V, D, and J segments and isotypes IgM, IgD, IgG, IgA, and IgE) with improved sequence accuracy. Characterize BCR light, BCR heavy, TCRα, TCRβ, TCRγ and TCRδ chains. This kit includes UMIs for source-molecule identification. Depending on the repertoire being sequenced (TCR, BCR or both TCR and BCR) you can pick the dedicated preset. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only. Mix-in option `--dont-split-clones-by C` may be used for BCR data to not separate clones by isotypes
 
 ![](pics/NEBNext-mouse-bcr-kit-dark.svg#only-dark)
 ![](pics/NEBNext-mouse-bcr-kit-light.svg#only-light)
