@@ -1,0 +1,578 @@
+<!doctype html><html lang=en class=no-js> <head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="MiXCR: ultimate software platform for analysis of Next-Generation Sequencing (NGS) data for immune profiling."><meta name=author content="MiLaboratories Inc"><link href=https://docs.milaboratories.com/mixcr/reference/qc-repseq/ rel=canonical><link rel=icon href=../../../assets/favicon.png><meta name=generator content="mkdocs-1.4.1, mkdocs-material-8.3.9"><title>Rep-Seq libraries - Docs @ MiLaboratories</title><link rel=stylesheet href=../../../assets/stylesheets/main.1d29e8d0.min.css><link rel=stylesheet href=../../../assets/stylesheets/palette.cbb835fc.min.css><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link rel=stylesheet href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:300,300i,400,400i,700,700i%7CIBM+Plex+Mono:400,400i,700,700i&display=fallback"><style>:root{--md-text-font:"IBM Plex Sans";--md-code-font:"IBM Plex Mono"}</style><link rel=stylesheet href=../../../css/extra.css><script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-2N4Z95ZG08"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&gtag("event","search",{search_term:this.value})}),"undefined"!=typeof location$&&location$.subscribe(function(e){gtag("config","G-2N4Z95ZG08",{page_path:e.pathname})})})</script><script async src="https://www.googletagmanager.com/gtag/js?id=G-2N4Z95ZG08"></script></head> <body dir=ltr data-md-color-scheme=default data-md-color-primary data-md-color-accent> <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script> <input class=md-toggle data-md-toggle=drawer type=checkbox id=__drawer autocomplete=off> <input class=md-toggle data-md-toggle=search type=checkbox id=__search autocomplete=off> <label class=md-overlay for=__drawer></label> <div data-md-component=skip> <a href=#rep-seq-libraries class=md-skip> Skip to content </a> </div> <div data-md-component=announce> </div> <header class=md-header data-md-component=header> <nav class="md-header__inner md-grid" aria-label=Header> <a href=../../.. title="Docs @ MiLaboratories" class="md-header__button md-logo" aria-label="Docs @ MiLaboratories" data-md-component=logo> <img src=../../../assets/logo.svg alt=logo> </a> <label class="md-header__button md-icon" for=__drawer> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg> </label> <div class=md-header__title data-md-component=header-title> <div class=md-header__ellipsis> <div class=md-header__topic> <span class=md-ellipsis> Docs @ MiLaboratories </span> </div> <div class=md-header__topic data-md-component=header-topic> <span class=md-ellipsis> Rep-Seq libraries </span> </div> </div> </div> <form class=md-header__option data-md-component=palette> <input class=md-option data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme=default data-md-color-primary data-md-color-accent aria-label="Switch to dark mode" type=radio name=__palette id=__palette_1> <label class="md-header__button md-icon" title="Switch to dark mode" for=__palette_2 hidden> <svg width=24 height=24 viewbox="0 0 24 24" fill=none xmlns=http://www.w3.org/2000/svg> <path fill-rule=evenodd clip-rule=evenodd fill=white d="M18.3578 4.32112C18.2104 4.39482 18.2104 4.60518 18.3578 4.67889L18.9404 4.97019C18.9791 4.98954 19.0105 5.02092 19.0298 5.05963L19.3211 5.64223C19.3948 5.78964 19.6052 5.78964 19.6789 5.64223L19.9702 5.05963C19.9895 5.02092 20.0209 4.98954 20.0596 4.97019L20.6422 4.67889C20.7896 4.60518 20.7896 4.39482 20.6422 4.32112L20.0596 4.02982C20.0209 4.01046 19.9895 3.97908 19.9702 3.94037L19.6789 3.35777C19.6052 3.21036 19.3948 3.21036 19.3211 3.35777L19.0298 3.94037C19.0105 3.97908 18.9791 4.01046 18.9404 4.02982L18.3578 4.32112ZM18.2083 16.2099C17.5036 16.3991 16.7631 16.5 16 16.5C11.3056 16.5 7.5 12.6944 7.5 8C7.5 7.23686 7.60088 6.4964 7.79006 5.79169C5.80401 7.14138 4.5 9.41947 4.5 12C4.5 16.1421 7.85786 19.5 12 19.5C14.5805 19.5 16.8586 18.196 18.2083 16.2099ZM19.1573 14.2492C18.2087 14.7294 17.136 15 16 15C12.134 15 9 11.866 9 8C9 6.86405 9.27058 5.79129 9.75081 4.84267L9.77821 4.78912C9.83867 4.6722 9.90234 4.55719 9.96908 4.44423C10.0299 4.34128 10.0933 4.24002 10.1592 4.14055C10.4192 3.74773 10.1191 3.18416 9.66405 3.30612C9.48653 3.3537 9.31118 3.40657 9.13817 3.46455C9.01891 3.50452 8.90077 3.54692 8.7838 3.59169C8.76089 3.60045 8.73803 3.60931 8.71521 3.61826C5.3692 4.93057 3 8.18861 3 12C3 16.9706 7.02944 21 12 21C15.8114 21 19.0694 18.6308 20.3817 15.2848C20.3907 15.262 20.3995 15.2391 20.4083 15.2162C20.4531 15.0992 20.4955 14.9811 20.5354 14.8618C20.5934 14.6888 20.6463 14.5135 20.6939 14.3359C20.8158 13.8809 20.2523 13.5808 19.8595 13.8408C19.76 13.9067 19.6587 13.9701 19.5558 14.0309C19.4428 14.0977 19.3278 14.1613 19.2109 14.2218L19.1573 14.2492ZM16.4602 7.40052L15.7321 5.5803C15.6483 5.37076 15.3517 5.37076 15.2679 5.5803L14.5398 7.40052C14.5144 7.46405 14.464 7.51438 14.4005 7.53979L12.5803 8.26788C12.3708 8.3517 12.3708 8.64831 12.5803 8.73212L14.4005 9.46021C14.464 9.48562 14.5144 9.53596 14.5398 9.59948L15.2679 11.4197C15.3517 11.6292 15.6483 11.6292 15.7321 11.4197L16.4602 9.59948C16.4856 9.53596 16.536 9.48562 16.5995 9.46021L18.4197 8.73212C18.6292 8.64831 18.6292 8.3517 18.4197 8.26788L16.5995 7.53979C16.536 7.51438 16.4856 7.46405 16.4602 7.40052Z"/> </svg> </label> <input class=md-option data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme=slate data-md-color-primary data-md-color-accent aria-label="Switch to light mode" type=radio name=__palette id=__palette_2> <label class="md-header__button md-icon" title="Switch to light mode" for=__palette_1 hidden> <svg width=24 height=24 viewbox="0 0 24 24" fill=none xmlns=http://www.w3.org/2000/svg> <path fill-rule=evenodd clip-rule=evenodd fill=white d="M12.75 3V0H11.25V3H12.75ZM12.75 24V21H11.25V24H12.75ZM3 12.75H0V11.25H3V12.75ZM21 12.75H24V11.25H21V12.75ZM12 16.5C14.4853 16.5 16.5 14.4853 16.5 12C16.5 9.51472 14.4853 7.5 12 7.5C9.51472 7.5 7.5 9.51472 7.5 12C7.5 14.4853 9.51472 16.5 12 16.5ZM12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM21.0156 4.04506L18.8943 6.16638L17.8336 5.10572L19.955 2.9844L21.0156 4.04506ZM5.10571 17.8336L6.16637 18.8943L4.04505 21.0156L2.98439 19.955L5.10571 17.8336ZM2.98439 4.04506L5.10571 6.16638L6.16637 5.10572L4.04505 2.9844L2.98439 4.04506ZM21.0156 19.955L19.955 21.0156L17.8336 18.8943L18.8943 17.8336L21.0156 19.955Z"/> </svg> </label> </form> <label class="md-header__button md-icon" for=__search> <svg class=magnify width=24 height=24 viewbox="0 0 24 24" fill=none xmlns=http://www.w3.org/2000/svg> <circle cx=11 cy=11 r=7.25 stroke=white stroke-width=1.5 /> <path stroke=white stroke-width=1.5 d="M16 16L21.5 21.5"/> </svg> </label> <div class=md-search data-md-component=search role=dialog> <label class=md-search__overlay for=__search></label> <div class=md-search__inner role=search> <form class=md-search__form name=search> <input type=text class=md-search__input name=query aria-label="Search by name or category" placeholder="Search by name or category" autocapitalize=off autocorrect=off autocomplete=off spellcheck=false data-md-component=search-query required> <label class="md-search__icon md-icon" for=__search> <svg class=magnify width=24 height=24 viewbox="0 0 24 24" fill=none xmlns=http://www.w3.org/2000/svg> <circle cx=11 cy=11 r=7.25 stroke=white stroke-width=1.5 /> <path stroke=white stroke-width=1.5 d="M16 16L21.5 21.5"/> </svg> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg> </label> <nav class=md-search__options aria-label=Search> <a href=javascript:void(0) class="md-search__icon md-icon" aria-label=Share data-clipboard data-clipboard-text data-md-component=search-share tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg> </a> <button type=reset class="md-search__icon md-icon" aria-label=Clear tabindex=-1> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg> </button> </nav> <div class=md-search__suggest data-md-component=search-suggest></div> </form> <div class=md-search__output> <div class=md-search__scrollwrap data-md-scrollfix> <div class=md-search-result data-md-component=search-result> <div class=md-search-result__meta> Initializing search </div> <ol class=md-search-result__list></ol> </div> </div> </div> </div> </div> <div class=md-header__source> <a href=https://github.com/milaboratory/docs title="Go to repository" class=md-source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> milaboratory/docs </div> </a> </div> </nav> </header> <div class=md-container data-md-component=container> <nav class=md-tabs aria-label=Tabs data-md-component=tabs> <div class="md-tabs__inner md-grid"> <ul class=md-tabs__list> <li class=md-tabs__item> <a href=../../about/ class=md-tabs__link> About </a> </li> <li class=md-tabs__item> <a href=../../getting-started/installation/ class=md-tabs__link> Downloads </a> </li> <li class=md-tabs__item> <a href=../../guides/milaboratories-human-bcr-rna-multi/ class=md-tabs__link> Guides </a> </li> <li class=md-tabs__item> <a href=../overview-analysis-overview/ class="md-tabs__link md-tabs__link--active"> Docs </a> </li> <li class=md-tabs__item> <a href=https://vdj.online/ class=md-tabs__link> VDJ.online </a> </li> <li class=md-tabs__item> <a href=https://github.com/milaboratory/mixcr/discussions class=md-tabs__link> Discussions </a> </li> <li class=md-tabs__item> <a href=https://github.com/milaboratory/mixcr class=md-tabs__link> Github </a> </li> </ul> </div> </nav> <main class=md-main data-md-component=main> <div class="md-main__inner md-grid"> <div class="md-sidebar md-sidebar--primary" data-md-component=sidebar data-md-type=navigation> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <!-- Determine class according to configuration --> <!-- Ugly hack --> <!-- Main navigation --> <nav class="md-nav md-nav--primary md-nav--lifted has-section" aria-label=Navigation data-md-level=0 data-test=1> <!-- Site title --> <label class=md-nav__title for=__drawer> <a href=../../.. title="Docs @ MiLaboratories" class="md-nav__button md-logo" aria-label="Docs @ MiLaboratories" data-md-component=logo> <img src=../../../assets/logo.svg alt=logo> </a> Docs @ MiLaboratories </label> <!-- Repository information --> <div class=md-nav__source> <a href=https://github.com/milaboratory/docs title="Go to repository" class=md-source> <div class="md-source__icon md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 448 512"><!-- Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg> </div> <div class=md-source__repository> milaboratory/docs </div> </a> </div> <!-- Render item list --> <ul class=md-nav__list data-md-scrollfix> <!-- Wrap everything with a macro to reduce file roundtrips (see #2213) --> <!-- Render current and nested navigation items --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../about/ class=md-nav__link> About </a> </li> <!-- Wrap everything with a macro to reduce file roundtrips (see #2213) --> <!-- Render current and nested navigation items --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <!-- Determine whether to render item as a section --> <!-- Render item with nested items --> <li class="md-nav__item md-nav__item--nested red"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_2 type=checkbox id=__nav_2> <!-- Determine all nested items that are index pages --> <!-- Render toggle to expand nested items --> <label class=md-nav__link for=__nav_2 data-level=1> Downloads <span class="md-nav__icon md-icon"></span> </label> <!-- Render link to index page + toggle --> <!-- Render nested navigation --> <nav class=md-nav aria-label=Downloads data-md-level=1> <label class=md-nav__title for=__nav_2> <span class="md-nav__icon md-icon"></span> Downloads </label> <ul class=md-nav__list data-md-scrollfix> <!-- Render nested item list --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../getting-started/installation/ class=md-nav__link> Binary distributions </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../getting-started/docker/ class=md-nav__link> Using with Docker </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../getting-started/milm/ class=md-nav__link> Obtaining and using license key </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../getting-started/first-run/ class=md-nav__link> First run </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../getting-started/license/ class=md-nav__link> License </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../getting-started/support/ class=md-nav__link> Support </a> </li> </ul> </nav> </li> <!-- Currently active page --> <!-- Wrap everything with a macro to reduce file roundtrips (see #2213) --> <!-- Render current and nested navigation items --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <!-- Determine whether to render item as a section --> <!-- Render item with nested items --> <li class="md-nav__item md-nav__item--nested red"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3 type=checkbox id=__nav_3> <!-- Determine all nested items that are index pages --> <!-- Render toggle to expand nested items --> <label class=md-nav__link for=__nav_3 data-level=1> Guides <span class="md-nav__icon md-icon"></span> </label> <!-- Render link to index page + toggle --> <!-- Render nested navigation --> <nav class=md-nav aria-label=Guides data-md-level=1> <label class=md-nav__title for=__nav_3> <span class="md-nav__icon md-icon"></span> Guides </label> <ul class=md-nav__list data-md-scrollfix> <!-- Render nested item list --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <!-- Determine whether to render item as a section --> <!-- Render item with nested items --> <li class="md-nav__item md-nav__item--section md-nav__item--nested red"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3_1 type=checkbox id=__nav_3_1> <!-- Determine all nested items that are index pages --> <!-- Render toggle to expand nested items --> <label class=md-nav__link for=__nav_3_1 data-level=2> Kits & Protocols <span class="md-nav__icon md-icon"></span> </label> <!-- Render link to index page + toggle --> <!-- Render nested navigation --> <nav class=md-nav aria-label="Kits & Protocols" data-md-level=2> <label class=md-nav__title for=__nav_3_1> <span class="md-nav__icon md-icon"></span> Kits & Protocols </label> <ul class=md-nav__list data-md-scrollfix> <!-- Render nested item list --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/milaboratories-human-bcr-rna-multi/ class=md-nav__link> MiLaboratories Human IG RNA Multiplex kit </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/milaboratories-human-tcr-rna-multi/ class=md-nav__link> MiLaboratories Human TCR RNA Multiplex kit </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/milab-dna-multiplex-tcr/ class=md-nav__link> MiLaboratories Human TCR DNA Multiplex kit </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/takara-hsa-bcr/ class=md-nav__link> SMARTer Human BCR IgG IgM H/K/L Profiling Kit </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/takara-mmu-tcr/ class=md-nav__link> SMARTer Mouse TCR a/b Profiling Kit </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/iRepertoire/ class=md-nav__link> Illumina Ampliseq TCR LR / iRepertoire </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/qiaseq-tcr/ class=md-nav__link> QIAseq Immune Repertoire TCR </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/cellecta-air-tcr-bcr/ class=md-nav__link> Cellecta AIR </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/abhelix-bcr/ class=md-nav__link> AbHelix BCR </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/biomed2-bcr/ class=md-nav__link> BioMed2 </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/nebnext-bcr/ class=md-nav__link> NEBNext Immune Sequencing </a> </li> </ul> </nav> </li> <!-- Currently active page --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <!-- Determine whether to render item as a section --> <!-- Render item with nested items --> <li class="md-nav__item md-nav__item--section md-nav__item--nested red"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3_2 type=checkbox id=__nav_3_2> <!-- Determine all nested items that are index pages --> <!-- Render toggle to expand nested items --> <label class=md-nav__link for=__nav_3_2 data-level=2> Analysis cases <span class="md-nav__icon md-icon"></span> </label> <!-- Render link to index page + toggle --> <!-- Render nested navigation --> <nav class=md-nav aria-label="Analysis cases" data-md-level=2> <label class=md-nav__title for=__nav_3_2> <span class="md-nav__icon md-icon"></span> Analysis cases </label> <ul class=md-nav__list data-md-scrollfix> <!-- Render nested item list --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/generic-umi-tcr/ class=md-nav__link> Targeted TCR UMI libraries </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/generic-multiplex-bcr/ class=md-nav__link> Targeted BCR Multiplex libraries </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/generic-umi-bcr/ class=md-nav__link> Targeted BCR UMI libraries </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/rnaseq/ class=md-nav__link> RNA-Seq data </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/ig-trees-reconstruction/ class=md-nav__link> Immunoglobulin lineage trees reconstruction </a> </li> </ul> </nav> </li> <!-- Currently active page --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <!-- Determine whether to render item as a section --> <!-- Render item with nested items --> <li class="md-nav__item md-nav__item--section md-nav__item--nested red"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_3_3 type=checkbox id=__nav_3_3> <!-- Determine all nested items that are index pages --> <!-- Render toggle to expand nested items --> <label class=md-nav__link for=__nav_3_3 data-level=2> Special guides <span class="md-nav__icon md-icon"></span> </label> <!-- Render link to index page + toggle --> <!-- Render nested navigation --> <nav class=md-nav aria-label="Special guides" data-md-level=2> <label class=md-nav__title for=__nav_3_3> <span class="md-nav__icon md-icon"></span> Special guides </label> <ul class=md-nav__list data-md-scrollfix> <!-- Render nested item list --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/create-custom-library/ class=md-nav__link> Assembling custom reference library </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/external-libraries/ class=md-nav__link> Using external libraries </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../../guides/b-cell-lineages-webinar/ class=md-nav__link> B cell lineage tracing </a> </li> </ul> </nav> </li> <!-- Currently active page --> </ul> </nav> </li> <!-- Currently active page --> <!-- Wrap everything with a macro to reduce file roundtrips (see #2213) --> <!-- Render current and nested navigation items --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <!-- Determine whether to render item as a section --> <!-- Render item with nested items --> <li class="md-nav__item md-nav__item--active md-nav__item--nested red"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_4 type=checkbox id=__nav_4 checked> <!-- Determine all nested items that are index pages --> <!-- Render toggle to expand nested items --> <label class=md-nav__link for=__nav_4 data-level=1> Docs <span class="md-nav__icon md-icon"></span> </label> <!-- Render link to index page + toggle --> <!-- Render nested navigation --> <nav class=md-nav aria-label=Docs data-md-level=1> <label class=md-nav__title for=__nav_4> <span class="md-nav__icon md-icon"></span> Docs </label> <ul class=md-nav__list data-md-scrollfix> <!-- Render nested item list --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <!-- Determine whether to render item as a section --> <!-- Render item with nested items --> <li class="md-nav__item md-nav__item--section md-nav__item--nested red"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_4_1 type=checkbox id=__nav_4_1> <!-- Determine all nested items that are index pages --> <!-- Render toggle to expand nested items --> <label class=md-nav__link for=__nav_4_1 data-level=2> Overview <span class="md-nav__icon md-icon"></span> </label> <!-- Render link to index page + toggle --> <!-- Render nested navigation --> <nav class=md-nav aria-label=Overview data-md-level=2> <label class=md-nav__title for=__nav_4_1> <span class="md-nav__icon md-icon"></span> Overview </label> <ul class=md-nav__list data-md-scrollfix> <!-- Render nested item list --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../overview-analysis-overview/ class=md-nav__link> Analysis overview </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../overview-presets/ class=md-nav__link> Presets </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../overview-mixins-list/ class=md-nav__link> Mix-in options list </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../overview-built-in-presets/ class=md-nav__link> Built-in presets </a> </li> </ul> </nav> </li> <!-- Currently active page --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <!-- Determine whether to render item as a section --> <!-- Render item with nested items --> <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested red"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_4_2 type=checkbox id=__nav_4_2 checked> <!-- Determine all nested items that are index pages --> <!-- Render toggle to expand nested items --> <label class=md-nav__link for=__nav_4_2 data-level=2> Data quality <span class="md-nav__icon md-icon"></span> </label> <!-- Render link to index page + toggle --> <!-- Render nested navigation --> <nav class=md-nav aria-label="Data quality" data-md-level=2> <label class=md-nav__title for=__nav_4_2> <span class="md-nav__icon md-icon"></span> Data quality </label> <ul class=md-nav__list data-md-scrollfix> <!-- Render nested item list --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../qc-overview/ class=md-nav__link> When the analysis results look poor </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../qc-sequencing-quality/ class=md-nav__link> Sequencing quality </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item md-nav__item--active"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=toc type=checkbox id=__toc> <!-- Hack: see partials/toc.html for more information --> <!-- Render table of contents, if not empty --> <label class="md-nav__link md-nav__link--active" for=__toc> Rep-Seq libraries <span class="md-nav__icon md-icon"></span> </label> <a href=./ class="md-nav__link md-nav__link--active"> Rep-Seq libraries </a> <!-- Show table of contents --> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Determine title --> <!-- Table of contents --> <!--
+  Hack: check whether the content contains a h1 headline. If it does, the
+  top-level anchor must be skipped, since it would be redundant to the link
+  to the current page that is located just above the anchor. Therefore we
+  directly continue with the children of the anchor.
+--> <!-- Table of contents title and list --> <nav class="md-nav md-nav--secondary hello" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#alignments class=md-nav__link> Alignments </a> <!-- Table of contents list --> <nav class=md-nav aria-label=Alignments> <ul class=md-nav__list> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#alignment-failed-no-hits-not-tcrig class=md-nav__link> Alignment failed, no hits (not TCR/IG?) </a> <!-- Table of contents list --> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#alignment-failed-because-of-absence-of-v-or-j-hits class=md-nav__link> Alignment failed because of absence of V or J hits </a> <!-- Table of contents list --> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#absent-barcode class=md-nav__link> Absent barcode </a> <!-- Table of contents list --> </li> </ul> </nav> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#molecular-barcodes class=md-nav__link> Molecular barcodes </a> <!-- Table of contents list --> <nav class=md-nav aria-label="Molecular barcodes"> <ul class=md-nav__list> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#coverage class=md-nav__link> Coverage </a> <!-- Table of contents list --> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#barcode-error-correction-and-filtering class=md-nav__link> Barcode error correction and filtering </a> <!-- Table of contents list --> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#umi-diversity class=md-nav__link> UMI diversity </a> <!-- Table of contents list --> </li> </ul> </nav> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#clone-assembly class=md-nav__link> Clone assembly </a> <!-- Table of contents list --> <nav class=md-nav aria-label="Clone assembly"> <ul class=md-nav__list> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#reads-dropped-due-to-the-lack-of-a-clone-sequence class=md-nav__link> Reads dropped due to the lack of a clone sequence </a> <!-- Table of contents list --> </li> </ul> </nav> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#advanced-example class=md-nav__link> Advanced example </a> <!-- Table of contents list --> <nav class=md-nav aria-label="Advanced example"> <ul class=md-nav__list> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#troubleshooting class=md-nav__link> Troubleshooting. </a> <!-- Table of contents list --> </li> </ul> </nav> </li> </ul> </nav> </li> <!-- Main navigation item --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../qc-rnaseq/ class=md-nav__link> Non-targeted data </a> </li> </ul> </nav> </li> <!-- Currently active page --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <!-- Determine whether to render item as a section --> <!-- Render item with nested items --> <li class="md-nav__item md-nav__item--section md-nav__item--nested red"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_4_3 type=checkbox id=__nav_4_3> <!-- Determine all nested items that are index pages --> <!-- Render toggle to expand nested items --> <label class=md-nav__link for=__nav_4_3 data-level=2> MiXCR <span class="md-nav__icon md-icon"></span> </label> <!-- Render link to index page + toggle --> <!-- Render nested navigation --> <nav class=md-nav aria-label=MiXCR data-md-level=2> <label class=md-nav__title for=__nav_4_3> <span class="md-nav__icon md-icon"></span> MiXCR </label> <ul class=md-nav__list data-md-scrollfix> <!-- Render nested item list --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-analyze/ class=md-nav__link> analyze </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-align/ class=md-nav__link> align </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-refineTagsAndSort/ class=md-nav__link> refineTagsAndSort </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-assemblePartial/ class=md-nav__link> assemblePartial </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-extend/ class=md-nav__link> extend </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-assemble/ class=md-nav__link> assemble </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-assembleContigs/ class=md-nav__link> assembleContigs </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-export/ class=md-nav__link> export </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-exportPretty/ class=md-nav__link> exportPretty </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-exportAirr/ class=md-nav__link> exportAirr </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-exportReadsForClones/ class=md-nav__link> exportReadsForClones </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-exportShmTrees/ class=md-nav__link> exportShmTrees </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-exportReports/ class=md-nav__link> exportReports </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-exportReportsTable/ class=md-nav__link> exportReportsTable </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-exportQc/ class=md-nav__link> exportQc </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-postanalysis/ class=md-nav__link> postanalysis </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-downsample/ class=md-nav__link> downsample </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-exportPlots/ class=md-nav__link> exportPlots </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-exportTables/ class=md-nav__link> exportTables </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-exportPreprocTables/ class=md-nav__link> exportPreprocTables </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-exportClonesOverlap/ class=md-nav__link> exportClonesOverlap </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-overlapScatterPlot/ class=md-nav__link> overlapScatterPlot </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-findAlleles/ class=md-nav__link> findAlleles </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-findShmTrees/ class=md-nav__link> findShmTrees </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mixcr-exportPreset/ class=md-nav__link> exportPreset </a> </li> </ul> </nav> </li> <!-- Currently active page --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <!-- Determine whether to render item as a section --> <!-- Render item with nested items --> <li class="md-nav__item md-nav__item--section md-nav__item--nested red"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_4_4 type=checkbox id=__nav_4_4> <!-- Determine all nested items that are index pages --> <!-- Render toggle to expand nested items --> <label class=md-nav__link for=__nav_4_4 data-level=2> Reports <span class="md-nav__icon md-icon"></span> </label> <!-- Render link to index page + toggle --> <!-- Render nested navigation --> <nav class=md-nav aria-label=Reports data-md-level=2> <label class=md-nav__title for=__nav_4_4> <span class="md-nav__icon md-icon"></span> Reports </label> <ul class=md-nav__list data-md-scrollfix> <!-- Render nested item list --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../report-align/ class=md-nav__link> mixcr align </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../report-refineTagsAndSort/ class=md-nav__link> mixcr refineTagsAndSort </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../report-assemblePartial/ class=md-nav__link> mixcr assemblePartial </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../report-extend/ class=md-nav__link> mixcr extend </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../report-assemble/ class=md-nav__link> mixcr assemble </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../report-assembleContigs/ class=md-nav__link> mixcr assembleContigs </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../report-findAlleles/ class=md-nav__link> mixcr findAlleles </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../report-findShmTrees/ class=md-nav__link> mixcr findShmTrees </a> </li> </ul> </nav> </li> <!-- Currently active page --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <!-- Determine whether to render item as a section --> <!-- Render item with nested items --> <li class="md-nav__item md-nav__item--section md-nav__item--nested red"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_4_5 type=checkbox id=__nav_4_5> <!-- Determine all nested items that are index pages --> <!-- Render toggle to expand nested items --> <label class=md-nav__link for=__nav_4_5 data-level=2> RepSeq.io <span class="md-nav__icon md-icon"></span> </label> <!-- Render link to index page + toggle --> <!-- Render nested navigation --> <nav class=md-nav aria-label=RepSeq.io data-md-level=2> <label class=md-nav__title for=__nav_4_5> <span class="md-nav__icon md-icon"></span> RepSeq.io </label> <ul class=md-nav__list data-md-scrollfix> <!-- Render nested item list --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../repseqio-fasta/ class=md-nav__link> fasta </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../repseqio-compile/ class=md-nav__link> compile </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../repseqio-debug/ class=md-nav__link> debug </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../repseqio-filter/ class=md-nav__link> filter </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../repseqio-format/ class=md-nav__link> format </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../repseqio-fromFasta/ class=md-nav__link> fromFasta </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../repseqio-fromPaddedFasta/ class=md-nav__link> fromPaddedFasta </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../repseqio-inferPoints/ class=md-nav__link> inferPoints </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../repseqio-merge/ class=md-nav__link> merge </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../repseqio-stat/ class=md-nav__link> stat </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../repseqio-tsv/ class=md-nav__link> tsv </a> </li> </ul> </nav> </li> <!-- Currently active page --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <!-- Determine whether to render item as a section --> <!-- Render item with nested items --> <li class="md-nav__item md-nav__item--section md-nav__item--nested red"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_4_6 type=checkbox id=__nav_4_6> <!-- Determine all nested items that are index pages --> <!-- Render toggle to expand nested items --> <label class=md-nav__link for=__nav_4_6 data-level=2> MiTool <span class="md-nav__icon md-icon"></span> </label> <!-- Render link to index page + toggle --> <!-- Render nested navigation --> <nav class=md-nav aria-label=MiTool data-md-level=2> <label class=md-nav__title for=__nav_4_6> <span class="md-nav__icon md-icon"></span> MiTool </label> <ul class=md-nav__list data-md-scrollfix> <!-- Render nested item list --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mitool-parse/ class=md-nav__link> parse </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mitool-filter/ class=md-nav__link> filter </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mitool-tag-stat/ class=md-nav__link> tag-stat </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mitool-export-fastq/ class=md-nav__link> export-fastq </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mitool-correct/ class=md-nav__link> correct </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mitool-consensus/ class=md-nav__link> consensus </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mitool-process-fastq/ class=md-nav__link> process-fastq </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mitool-format-fastq/ class=md-nav__link> format-fastq </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../mitool-compress-sequence-set/ class=md-nav__link> compress-sequence-set </a> </li> </ul> </nav> </li> <!-- Currently active page --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <!-- Determine whether to render item as a section --> <!-- Render item with nested items --> <li class="md-nav__item md-nav__item--section md-nav__item--nested red"> <!-- Active checkbox expands items contained within nested section --> <input class="md-nav__toggle md-toggle" data-md-toggle=__nav_4_7 type=checkbox id=__nav_4_7> <!-- Determine all nested items that are index pages --> <!-- Render toggle to expand nested items --> <label class=md-nav__link for=__nav_4_7 data-level=2> Specifications <span class="md-nav__icon md-icon"></span> </label> <!-- Render link to index page + toggle --> <!-- Render nested navigation --> <nav class=md-nav aria-label=Specifications data-md-level=2> <label class=md-nav__title for=__nav_4_7> <span class="md-nav__icon md-icon"></span> Specifications </label> <ul class=md-nav__list data-md-scrollfix> <!-- Render nested item list --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../ref-tag-pattern/ class=md-nav__link> Tag pattern </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../ref-input-file-name-expansion/ class=md-nav__link> Input file name expansion </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../ref-samples-table/ class=md-nav__link> Samples table </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../ref-gene-features/ class=md-nav__link> Gene features and reference points </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../ref-translation-rules/ class=md-nav__link> Translation rules </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../ref-mutations-encoding/ class=md-nav__link> Mutations encoding </a> </li> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=../ref-repseqio-json-format/ class=md-nav__link> RepSeq.io JSON format </a> </li> </ul> </nav> </li> <!-- Currently active page --> </ul> </nav> </li> <!-- Currently active page --> <!-- Wrap everything with a macro to reduce file roundtrips (see #2213) --> <!-- Render current and nested navigation items --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=https://vdj.online/ class=md-nav__link> VDJ.online </a> </li> <!-- Wrap everything with a macro to reduce file roundtrips (see #2213) --> <!-- Render current and nested navigation items --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=https://github.com/milaboratory/mixcr/discussions class=md-nav__link> Discussions </a> </li> <!-- Wrap everything with a macro to reduce file roundtrips (see #2213) --> <!-- Render current and nested navigation items --> <!-- Determine class according to state --> <!-- Main navigation item with nested items --> <li class="md-nav__item green"> <a href=https://github.com/milaboratory/mixcr class=md-nav__link> Github </a> </li> </ul> </nav> </div> </div> </div> <div class="md-sidebar md-sidebar--secondary" data-md-component=sidebar data-md-type=toc> <div class=md-sidebar__scrollwrap> <div class=md-sidebar__inner> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Determine title --> <!-- Table of contents --> <!--
+  Hack: check whether the content contains a h1 headline. If it does, the
+  top-level anchor must be skipped, since it would be redundant to the link
+  to the current page that is located just above the anchor. Therefore we
+  directly continue with the children of the anchor.
+--> <!-- Table of contents title and list --> <nav class="md-nav md-nav--secondary hello" aria-label="Table of contents"> <label class=md-nav__title for=__toc> <span class="md-nav__icon md-icon"></span> Table of contents </label> <ul class=md-nav__list data-md-component=toc data-md-scrollfix> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#alignments class=md-nav__link> Alignments </a> <!-- Table of contents list --> <nav class=md-nav aria-label=Alignments> <ul class=md-nav__list> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#alignment-failed-no-hits-not-tcrig class=md-nav__link> Alignment failed, no hits (not TCR/IG?) </a> <!-- Table of contents list --> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#alignment-failed-because-of-absence-of-v-or-j-hits class=md-nav__link> Alignment failed because of absence of V or J hits </a> <!-- Table of contents list --> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#absent-barcode class=md-nav__link> Absent barcode </a> <!-- Table of contents list --> </li> </ul> </nav> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#molecular-barcodes class=md-nav__link> Molecular barcodes </a> <!-- Table of contents list --> <nav class=md-nav aria-label="Molecular barcodes"> <ul class=md-nav__list> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#coverage class=md-nav__link> Coverage </a> <!-- Table of contents list --> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#barcode-error-correction-and-filtering class=md-nav__link> Barcode error correction and filtering </a> <!-- Table of contents list --> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#umi-diversity class=md-nav__link> UMI diversity </a> <!-- Table of contents list --> </li> </ul> </nav> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#clone-assembly class=md-nav__link> Clone assembly </a> <!-- Table of contents list --> <nav class=md-nav aria-label="Clone assembly"> <ul class=md-nav__list> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#reads-dropped-due-to-the-lack-of-a-clone-sequence class=md-nav__link> Reads dropped due to the lack of a clone sequence </a> <!-- Table of contents list --> </li> </ul> </nav> </li> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#advanced-example class=md-nav__link> Advanced example </a> <!-- Table of contents list --> <nav class=md-nav aria-label="Advanced example"> <ul class=md-nav__list> <!--
+  Copyright (c) 2016-2022 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+--> <!-- Table of contents item --> <li class="md-nav__item  item"> <a href=#troubleshooting class=md-nav__link> Troubleshooting. </a> <!-- Table of contents list --> </li> </ul> </nav> </li> </ul> </nav> </div> </div> </div> <div class=md-content data-md-component=content> <article class="md-content__inner md-typeset"> <a href=https://github.com/milaboratory/docs/edit/main/docs/mixcr/reference/qc-repseq.md title="Edit this page" class="md-content__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg> </a> <h1 id=rep-seq-libraries>Rep-Seq libraries</h1> <p>The key feature of targeted amplicon repertoire sequencing (Rep-Seq) libraries is a dedicated enrichment with VDJ sequences. Such libraries are expected to have nearly all reads covering CDR3 region or, depending on the location of the primers and sequencing length, even a full-length of the VDJ receptor. </p> <h2 id=alignments>Alignments</h2> <p>MiXCR <a href=../report-align/ >alignment report</a> is key to assess the quality of the repertoire library and correctness of the used analysis settings. One can export reports in <a href=../mixcr-exportReports/ >textual</a>, <a href=../mixcr-exportReports/ >json</a>, <a href=../mixcr-exportReportsTable/ >tabular</a> and <a href=../mixcr-exportQc/ >graphical</a> forms. For example, to export textual report run:</p> <div class=highlight><pre><span></span><code>mixcr<span class=w> </span>exportReports<span class=w> </span>alignments.vdjca
+</code></pre></div> <p>To get a brief overview of the overall performance across multiple samples it's useful to export a basic alignment report in a graphical form:</p> <div class=highlight><pre><span></span><code>mixcr<span class=w> </span>exportQc<span class=w> </span>align<span class=w> </span>*.clns<span class=w> </span>alignQc.pdf
+</code></pre></div> <p>Normally, the result looks like this:</p> <p><img alt src=../pics/data-qc/normal_alignment.png></p> <p>Here more than 90% of the reads are successfully aligned and the CDR3 region was identified. A significantly lower rate of successfully aligned reads is a clear signal of some issues with the libraries.</p> <p>Before considering different reasons in more details, the general advice is to check that</p> <ul> <li>you specify correct species (e.g. you don't use human reference for monkey data);</li> <li>you use appropriate <a href=../overview-built-in-presets/ >analysis preset</a> for your library (e.g. you don't use amplicon presets for RNA-Seq data).</li> </ul> <p>Alignment report shows the reasons why your reads are not aligned. Let's consider them in more detail.</p> <p><img alt src=../pics/data-qc/alignment_not_TCR_IG.png></p> <h3 id=alignment-failed-no-hits-not-tcrig>Alignment failed, no hits (not TCR/IG?)</h3> <p>The most common reason for failed alignments. It simply means that reads do not cover neither V nor J regions, i.e. are not from TCR/IG molecules. There may be several of reasons for this, the most common ones include:</p> <ul> <li>wet lab contamination from a foreign material;</li> <li>primers mis-annealing to a non-target loci;</li> <li>DNA contamination in RNA material;</li> <li>other protocol and/or wet lab issues;</li> <li>wrong choice of species in analysis settings (e.g. you have a cat library while used a human reference library).</li> </ul> <p>Note that if you analyze non-targeted libraries (e.g. bulk RNA-Seq or Exome-Seq) it is normal to have a high percentage (&gt;90-95%) of non TRC/IG reads.</p> <p>In order to troubleshoot, rerun alignment and save not aligned reads into separate files: <div class=highlight><pre><span></span><code>mixcr<span class=w> </span>align<span class=w> </span>--preset<span class=w> </span>&lt;preset-name&gt;<span class=w> </span><span class=se>\</span>
+<span class=w>      </span>--not-aligned-R1<span class=w> </span>na_R1.fastq.gz<span class=w> </span><span class=se>\</span>
+<span class=w>      </span>--not-aligned-R2<span class=w> </span>na_R2.fastq.gz<span class=w> </span><span class=se>\</span>
+<span class=w>      </span>in_R1.fastq.gz<span class=w> </span><span class=se>\</span>
+<span class=w>      </span>in_R2.fastq.gz<span class=w> </span><span class=se>\</span>
+<span class=w>      </span>alignments.vdjca
+</code></pre></div> Pick a few random sequences from na files and <a href=https://blast.ncbi.nlm.nih.gov>BLAST</a> them to identify whether they are coming from contamination / non-target loci or aligned to different species. If there are no BLAST hits, check whether the sequences are artificial (e.g. adapters).</p> <h3 id=alignment-failed-because-of-absence-of-v-or-j-hits>Alignment failed because of absence of V or J hits</h3> <p>This means that sequencing reads cover either V or J region but not both of them simultaneously. There might be several reasons for that.</p> <p>One common reason is incorrect orientation of reads, typically caused by some pre-processing of the input data performed before MiXCR. A common example is pre-processing with external tools like MiGEC, which is a legacy tool for handling UMIs and demultiplexing. MiGEC reverse complements one of the reads, thus requiring running MiXCR with <code>-OreadsLayout=Collinear</code> option. Without this option, the fraction of no V- or no J-hits (depending on your library structure) will be extremely high.</p> <details class=warning> <summary>We strongly advice against using any pre-processing tools; MiXCR has absolutely everything to handle any type of sequencing data and protocol.</summary> </details> <p>Another typical reason is a very low sequencing quality in one of the reads when sequencing has completely failed.</p> <p>Finally, it might be a wrong use of the analysis preset: if the input data is randomly fragmented (RNA-, Exome-Seq, 10x etc.) and the used preset is designed for amplicon libraries, you would see a high percentage here (since with amplicon settings MiXCR drops all reads that do not full cover CDR3 region). So check and use an <a href=../overview-built-in-presets/ >appropriate preset</a> for fragmented data.</p> <h3 id=absent-barcode>Absent barcode</h3> <p><img alt src=../pics/data-qc/alignment_absent_barcode.png></p> <p>For barcoded data means that barcodes can't be extracted using the specified <a href=../ref-tag-pattern/ >tag pattern</a>. The first thing to check is that a correct tag pattern and/or a correct <a href=../overview-built-in-presets/ >analysis preset</a> are used. If the library is unstranded, one should use either <code>--tag-parse-unstranded</code> option or change the preset accordingly. Finally, the quality of data may be low, so that tags can't be parsed because of too many sequencing errors.</p> <p>To troubleshoot, rerun alignment and save not aligned reads into separate files: <div class=highlight><pre><span></span><code>mixcr<span class=w> </span>align<span class=w> </span>--preset<span class=w> </span>preset_name<span class=w> </span><span class=se>\</span>
+<span class=w>      </span>--not-aligned-R1<span class=w> </span>na_R1.fastq.gz<span class=w> </span><span class=se>\</span>
+<span class=w>      </span>--not-aligned-R2<span class=w> </span>na_R2.fastq.gz<span class=w> </span><span class=se>\</span>
+<span class=w>      </span>in_R1.fastq.gz<span class=w> </span><span class=se>\</span>
+<span class=w>      </span>in_R2.fastq.gz<span class=w> </span><span class=se>\</span>
+<span class=w>      </span>alignments.vdjca
+</code></pre></div> Take a few random raw reads from not aligned files and check that the reads indeed contain the expected barcodes. Adjust the tag pattern accordingly.</p> <h2 id=molecular-barcodes>Molecular barcodes</h2> <p>Here we cover some issues specific to UMI barcoded data. MiXCR provides different characteristics allowing to assess the quality of UMI barcoded libraries. One of the report characteristics - absent barcode sequence - is already covered <a href=#absent-barcode>above</a>. Other useful characteristics are available in <a href=../mixcr-exportQc/#barcodes>coverage</a>, <a href=../report-refineTagsAndSort/ >tag refinement</a> and <a href=../report-assemble/ ><code>assemble</code></a> reports.</p> <h3 id=coverage>Coverage</h3> <p>To export UMI coverage report in a graphical form one can do: <div class=highlight><pre><span></span><code>mixcr<span class=w> </span>exportQc<span class=w> </span>tags<span class=w> </span>*.clns<span class=w> </span>coverage.pdf
+</code></pre></div></p> <div class="tabbed-set tabbed-alternate" data-tabs=1:3><input checked=checked id=__tabbed_1_1 name=__tabbed_1 type=radio><input id=__tabbed_1_2 name=__tabbed_1 type=radio><input id=__tabbed_1_3 name=__tabbed_1 type=radio><div class=tabbed-labels><label for=__tabbed_1_1>Normal coverage</label><label for=__tabbed_1_2>Under-sequencing</label><label for=__tabbed_1_3>Over-sequencing</label></div> <div class=tabbed-content> <div class=tabbed-block> <p><img alt src=../pics/data-qc/normal_UMI_groups.svg></p> </div> <div class=tabbed-block> <p><img alt src=../pics/data-qc/low_UMI_groups.svg></p> </div> <div class=tabbed-block> <p><img alt src=../pics/data-qc/high_UMI_groups.svg></p> </div> </div> </div> <p>Normally, a good coverage shows bimodal distribution. The first peak corresponds to a single read per UMI group, which represents erroneous reads (noise). The second peak - good quality UMI groups. The red line corresponds to the threshold that MiXCR automatically calculated to discard spurious barcodes.</p> <p>For a poor library, featuring significant under-sequencing, we don't observe bimodal distribution so sequencing is not exhaustive, and you won't be able to utilize UMIs for the error correction and truly assess the diversity within the sample. This typically happens when the library lacks reads due to low total sequencing output or mistakes at library pooling. The best solution here is of course to re-sequence the data. Otherwise, one can just ignore UMIs and exclude them from the analysis.</p> <p>In an opposite case of an over-sequenced library, we have bimodal distribution, but the second peak is around 100 reads per UMI and even higher. It indicates that the library was over-sequenced. This is absolutely normal for the libraries with a low amount of input material (e.g. low cell count or low amount of RNA). However, if this is not expected, it might reflect that something happened during the library preparation (e.g. RNA degradation).</p> <h3 id=barcode-error-correction-and-filtering>Barcode error correction and filtering</h3> <p>MiXCR corrects PCR and sequencing errors inside barcode sequences at the <a href=../mixcr-refineTagsAndSort/ ><code>refineTagsAndSort</code></a> step. It also applies filtering based on the automatically calculated thresholds and whitelists. The <a href=../report-refineTagsAndSort/ >report</a> generated at this step allows us to check whether everything is good.</p> <p>Basically there are four key lines in the report which shows the key indicators. The following example is for a good library: <div class=highlight><pre><span></span><code>UMI input diversity: 11117
+UMI output diversity: 1253 (11.27%)
+UMI input reads: 872582
+UMI output reads: 827111 (94.79%)
+</code></pre></div> Here we see that almost 90% of UMIs were either corrected or dropped by the filters. It seems that the number is high, but at the same the rest 10% of UMIs contain almost 95% of reads. Thise is a typical situation for even a high quality date. When the number of output reads is significantly low it indicates that something went wrong and you will typically see issues in other reports. </p> <h3 id=umi-diversity>UMI diversity</h3> <p>There are few characteristics in the <a href=../report-assemble/ >assemble report</a> specific to UMI data which are worth paying attention to.</p> <p>The first one is a histogram of the number of clonotypes per UMI. Typically, for a good data it looks like:</p> <div class=highlight><pre><span></span><code>Number of clonotypes per group:
+  0: + 1209 (0.04%) = 1209 (0.04%)
+  1: + 2891630 (98.45%) = 2892839 (98.5%)
+  2~3: + 44182 (1.5%) = 2937021 (100%)
+</code></pre></div> <p>Here 0.04% of UMIs do not contain clone sequence and were just dropped, 98.45% of UMIs groups contain exactly one consensus and 1.5% result in 2-3 consensus per UMI group. This 1.5% is normal, because of the birth paradox.</p> <p>In a bad situation, one will see a large percent of UMI groups with more than one consensus per group. Typically, this happens when UMIs have low diversity. If this is not expected, then a possible reason is either a wrong tag pattern used (if this is a custom protocol) or some wet lab issues (the lack of N letters in the barcodes).</p> <h2 id=clone-assembly>Clone assembly</h2> <p>Most of the issues with Rep-Seq libraries already express themselves at the alignment step. However there are some reported characteristics of clonotype assembly allowing to better understand the origin of problems. All of them are available in <a href=../report-assemble/ >assemble report</a>.</p> <p>Let's consider the most important lines in the report. Here is the example for a good library: <div class=highlight><pre><span></span><code>Final clonotype count: 12419
+Reads used in clonotypes, percent of total: 1368667 (83.95%)
+Reads dropped due to the lack of a clone sequence, percent of total: 1221 (0.01%)
+Reads clustered in PCR error correction, percent of used: 137359 (10.03%)
+</code></pre></div></p> <p>Final clonotype count shows how many clonotypes were found in the sample. This number strongly depends on the biology of your sample. The typical problem is that the final clonotype count is lower than you expected to see. You need to take a profound look at other reported characteristics to clarify why it is so.</p> <p>Reads used in clonotypes tells how many reads were used in clonotypes after all the steps of the pipeline and this is the most important number for the quality check. The fraction of reads used in clonotypes is lower than around 80% indicates that there were issues requiring investigation. If alignment quality checks are passed, the assemble report can provide further insights for this investigation.</p> <p>Reads clustered in PCR error correction shows how many reads were dropped during the PCR error correction performed by MiXCR. If your data doesn't utilize UMIs this percentage might be relatively high (up to 30-40%), which is fine.</p> <h3 id=reads-dropped-due-to-the-lack-of-a-clone-sequence>Reads dropped due to the lack of a clone sequence</h3> <p>How many alignments are dropped because they don't cover the full sequence of the <a href=../mixcr-assemble/#core-assembler-parameters>assembling feature</a> chosen for clonal assembly. The high number (&gt;10%) here is the most common problem that you might face, and the most common reason is that you are trying to extract full-length clonal sequences of the receptors, but the library is prepared in such a way that it does not cover the full length of the receptor.</p> <p>For amplicon protocols all alignments that are used in clone assembly already cover the CDR3 region. The high rate here may be seen only when the used assembling feature is longer than just CDR3. For example, if the assembling feature is full-length VDJRegion, the high rate of dropped reads simply means that the library actually does not cover VDJRegion. There are three reasons for that:</p> <ul> <li>short sequencing used (to cover the full length one at least need 250+250 bp technology);</li> <li>something happened in the wet lab (check other reports);</li> <li>the protocol is not a full-length and the used preset is inappropriate.</li> </ul> <p>For example. You sequenced the BCR library using 150+150 bp technology, so the full length of the receptor is not covered. If the preset used is e.g. <code>takara-human-bcr-full-length</code>, then you will get an extremely high percentage of reads dropped due to the lack of clonal sequence. Change the preset to <code>takara-human-bcr-cdr3</code> or use <code>--assemble-clonotypes-by [{CDR1Begin:FR3Begin(+50)},{FR3End(-20):FR4End}]</code> (check what is covered with <a href=../mixcr-exportPretty/ ><code>exportAlignmentsPretty</code></a>) to utilize the maximum available information.</p> <h2 id=advanced-example>Advanced example</h2> <p>Let's take a look at a more complicated case demonstrating possible data quality problems. The libraries were prepared using MiLaboratories Human IG RNA Multiplex kit and sequenced using 300+300 b.p. Illumina MiSeq platform so the full length of BCRs should be covered.</p> <p><img alt src=../pics/milab-multiplex-bcr-light.svg#only-light> <img alt src=../pics/milab-multiplex-bcr-dark.svg#only-dark></p> <p>We ran the pipeline using <a href=../overview-built-in-presets/#milaboratories><code>milab-human-bcr-multiplex-full-length</code></a> preset for multiple files using parallel:</p> <div class=highlight><pre><span></span><code>realpath dir/with/files/*R1*.fastq.gz |
+parallel --line-buffer -j 2 \
+    &#39;mixcr analyze milab-human-bcr-multiplex-full-length -f \
+    {} {=s:R1:R2:=} \                        
+    {=s:.*/:/path/to/result/dir/:;s:_R.*::=} &#39;
+</code></pre></div> <p>Let's look at the basic report characteristics with the <a href=../mixcr-exportReportsTable/ ><code>exportReportsTable</code></a> command, which allows exporting key points from the reports across multiple files:</p> <div class=highlight><pre><span></span><code>mixcr<span class=w> </span>exportReportsTable<span class=w>     </span><span class=se>\</span>
+<span class=w>      </span>-fileName<span class=w>              </span><span class=se>\</span>
+<span class=w>      </span>-totalReads<span class=w>            </span><span class=se>\</span>
+<span class=w>      </span>-successAligned<span class=w>        </span><span class=se>\</span>
+<span class=w>      </span>-patternMatchedReads<span class=w>   </span><span class=se>\</span>
+<span class=w>      </span>-overlapped<span class=w>            </span><span class=se>\</span>
+<span class=w>      </span>-droppedNoClonalSeq<span class=w>    </span><span class=se>\</span>
+<span class=w>      </span>-totalClonotypes<span class=w>       </span><span class=se>\</span>
+<span class=w>      </span>-readsUsedInClonotypes<span class=w> </span><span class=se>\</span>
+<span class=w>      </span>/path/to/clns/file
+</code></pre></div> <table> <thead> <tr> <th>fileName</th> <th>totalReads</th> <th>successAligned</th> <th>patternMatchedReads</th> <th>overlapped</th> <th>droppedNoClonalSeq</th> <th>totalClonotypes</th> <th>readsUsedInClonotypes</th> </tr> </thead> <tbody> <tr> <td>1609-memory_S5_L001.clns</td> <td>1,134,924</td> <td><strong>89.5%</strong></td> <td>98.11%</td> <td><strong>50.83%</strong></td> <td><strong>46.87%</strong></td> <td>2,723</td> <td>757,718</td> </tr> <tr> <td>1609-PBMC_S4_L001.clns</td> <td>1,178,081</td> <td><strong>91.76%</strong></td> <td>99.6%</td> <td><strong>54.85%</strong></td> <td><strong>44%</strong></td> <td>17,820</td> <td>611,795</td> </tr> <tr> <td>1609-plasma_S6_L001.clns</td> <td>777,108</td> <td><strong>85.76%</strong></td> <td>98.06%</td> <td><strong>54.1%</strong></td> <td><strong>35.83%</strong></td> <td>514</td> <td>499,988</td> </tr> <tr> <td>2409_S3_L001.clns</td> <td>8,804,767</td> <td><strong>93.49%</strong></td> <td>99.7%</td> <td><strong>51.88%</strong></td> <td><strong>44.63%</strong></td> <td>75,693</td> <td>2,580,918</td> </tr> <tr> <td>2807-1_S1_L001.clns</td> <td>4,498,501</td> <td><strong>96.11%</strong></td> <td>99.68%</td> <td><strong>57.34%</strong></td> <td><strong>45.78%</strong></td> <td>71,028</td> <td>2,745,475</td> </tr> <tr> <td>2807-2_S2_L001.clns</td> <td>2,702,030</td> <td><strong>96.54%</strong></td> <td>99.67%</td> <td><strong>58.74%</strong></td> <td><strong>47.45%</strong></td> <td>55,602</td> <td>1,471,083</td> </tr> </tbody> </table> <p>Here we highlighted the values that represent potential problems. First, we can notice that despite the high number of successfully aligned reads in all files (from 86% to 97%), only around 54%-58% of reads were overlapped. This might indicate that there is a conflict on the end of the reads and this mismatch hinders the reads overlapping. Also, we see that around 1/3 of reads were dropped because of no clonal sequence. The <code>milab-human-bcr-multiplex-full-length</code> preset uses full receptor sequence (<a href=../ref-gene-features/ ><code>VDJRegion</code></a>) as <a href=../mixcr-assemble/ >clonal sequence</a>, so <code>FR1</code>, <code>CDR1</code>, <code>FR2</code>, <code>CDR2</code>, <code>FR3</code>, <code>CDR3</code> and <code>FR4</code> parts must be fully covered. If the ends of the reads are conflicting, MiXCR will not be able to overlap them and therefore identify the clonal sequence. We can take one of the files from this example and use alignments pretty export to have a glimpse of alignments and reads overlapping: <div class=highlight><pre><span></span><code>mixcr exportAlignmentsPretty -n 10 path/to/vdjca/file
+</code></pre></div> Here <code>-n 10</code> option limits the number of alignments in the output.</p> <p>We see that sequences labeled <code>Tag0</code> and <code>Tag1</code> were not overlapped, while records with successful overlaps contain <code>Tag0</code> labels only. We can manually overlap several of the non-overlapped reads to estimate the scale of the problem and identify the root of the problem. Here is one example, the numbers represent the scaled quality score (highest -7, lowest - 1):</p> <p>So, we see that the ends of the reads have overall poor sequencing quality and what is more important they conflict with each other in a lot of positions. The possible reason why the ends are poorly aligned is low sequencing quality, so the best solution is to run FastQC to check the per base sequence quality module:</p> <div class="tabbed-set tabbed-alternate" data-tabs=2:2><input checked=checked id=__tabbed_2_1 name=__tabbed_2 type=radio><input id=__tabbed_2_2 name=__tabbed_2 type=radio><div class=tabbed-labels><label for=__tabbed_2_1>R1</label><label for=__tabbed_2_2>R2</label></div> <div class=tabbed-content> <div class=tabbed-block> <p><img alt src=../pics/data-qc/FASTQc_Advanced_example_R1.png></p> </div> <div class=tabbed-block> <p><img alt src=../pics/data-qc/FASTQc_Advanced_example_R2.png></p> </div> </div> </div> <p>This picture represents one of the files from the example, the R1 and R2 sequence quality respectively. Actually, we see that the sequence quality is lower on the ends as we expected.</p> <h3 id=troubleshooting>Troubleshooting.</h3> <p>If we want to utilize maximum information from this data we can tweak parameters and use more relaxed requirements for read overlapping <div class=highlight><pre><span></span><code>mixcr analyze milab-human-bcr-multiplex-full-length \
+      -Malign.parameters.mergerParameters.minimalIdentity=0.7 \
+      path/to/input/files/ \
+      path/to/output/files
+</code></pre></div> After running the pipeline with this option we see dramatic improvements in both fraction of overlapped reads and reads dropped because of no clonal sequence:</p> <table> <thead> <tr> <th>fileName</th> <th>totalReads</th> <th>successAligned</th> <th>patternMatchedReads</th> <th>overlapped</th> <th>droppedNoClonalSeq</th> <th>totalClonotypes</th> <th>readsUsedInClonotypes</th> </tr> </thead> <tbody> <tr> <td>1609-memory_S5_L001.clns</td> <td>1134924</td> <td><strong>89.95%</strong></td> <td>98.11%</td> <td><strong>85.05%</strong></td> <td><strong>21.72%</strong></td> <td>2845</td> <td>775436</td> </tr> <tr> <td>1609-PBMC_S4_L001.clns</td> <td>1178081</td> <td><strong>92.53%</strong></td> <td>99.6%</td> <td><strong>88.69%</strong></td> <td><strong>21.34%</strong></td> <td>21242</td> <td>743483</td> </tr> <tr> <td>1609-plasma_S6_L001.clns</td> <td>777108</td> <td><strong>87.72%</strong></td> <td>98.06%</td> <td><strong>84.64%</strong></td> <td><strong>14.66%</strong></td> <td>550</td> <td>524066</td> </tr> <tr> <td>2409_S3_L001.clns</td> <td>8804767</td> <td><strong>94.22%</strong></td> <td>99.7%</td> <td><strong>88.21%</strong></td> <td><strong>20.37%</strong></td> <td>115184</td> <td>4237104</td> </tr> <tr> <td>2807-1_S1_L001.clns</td> <td>4498501</td> <td><strong>96.62%</strong></td> <td>99.68%</td> <td><strong>90.99%</strong></td> <td><strong>22.38%</strong></td> <td>78884</td> <td>3023190</td> </tr> <tr> <td>2807-2_S2_L001.clns</td> <td>2702030</td> <td><strong>96.95%</strong></td> <td>99.67%</td> <td><strong>91.76%</strong></td> <td><strong>25.46%</strong></td> <td>66988</td> <td>1734316</td> </tr> </tbody> </table> <p>Decreasing the threshold may lead to potential spurious clonotypes being identified. However one of the reads still had higher quality in the overlapping part, so the risk appears to be not essential. On the other hand, using additional ways to corroborate the findings, e.g. analysis of extra replicates is still a good idea in such cases.</p> </article> <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script> </div> </div> <a href=# class="md-top md-icon" data-md-component=top hidden> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg> Back to top </a> </main> <footer class=md-footer> <nav class="md-footer__inner md-grid" aria-label=Footer> <a href=../qc-sequencing-quality/ class="md-footer__link md-footer__link--prev" aria-label="Previous: Sequencing quality" rel=prev> <div class="md-footer__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg> </div> <div class=md-footer__title> <div class=md-ellipsis> <span class=md-footer__direction> Previous </span> Sequencing quality </div> </div> </a> <a href=../qc-rnaseq/ class="md-footer__link md-footer__link--next" aria-label="Next: Non-targeted data" rel=next> <div class=md-footer__title> <div class=md-ellipsis> <span class=md-footer__direction> Next </span> Non-targeted data </div> </div> <div class="md-footer__button md-icon"> <svg xmlns=http://www.w3.org/2000/svg viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg> </div> </a> </nav> <div class="md-footer-meta md-typeset"> <div class="md-footer-meta__inner md-grid"> <div class=md-copyright> <div class=md-copyright__highlight> Copyright &copy; MiLaboratories Inc </div> </div> </div> </div> </footer> </div> <div class=md-dialog data-md-component=dialog> <div class="md-dialog__inner md-typeset"></div> </div> <script id=__config type=application/json>{"base": "../../..", "features": ["navigation.tabs", "navigation.top", "navigation.sections", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "content.tabs.link"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search by name or category", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script> <script src=../../../assets/javascripts/bundle.6c7ad80a.min.js></script> <script src=../../../javascripts/svg.js></script> <script src=../../../javascripts/onload.js></script> <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script> <script src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script> </body> </html>
