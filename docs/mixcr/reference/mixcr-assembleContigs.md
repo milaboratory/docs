@@ -8,10 +8,15 @@ Assembles longest possible TCR/Ig receptor contig sequences.
 This step may be used in the following cases:
 
 - for non-enriched RNA-Seq (shotgun) data in order to reconstruct the longest possible VDJ contigs
-- for single-cell fragmented libraries (like 10x Genomics) to assemble full V-D-J consensus sequences in each cell
+- for single cell fragmented libraries (like 10x Genomics) to assemble full V-D-J consensus sequences in each cell
 - for poor quality targeted amplicon data with no UMI barcodes and with a high rates of sequencing and PCR errors in order to build full-length (or as long as possible) V-D-J contigs using consensus algorithms
 
 In the first two cases the data is fragmented, reads do not have a fixed position on the reference, so it's not possible to specify a fixed [`assemblingFeature`](./mixcr-assemble.md#core-assembler-parameters). MiXCR uses alignment-guided assembly algorithms to build the full-length consensus V-D-J sequence.
+
+For single cell data MiXCR utilizes all alignments with the corresponding cell barcodes, even if they do not cover CDR3 region:
+
+![img.png](pics/assembleContigs-sc-light.svg#only-light)
+![img.png](pics/assembleContigs-sc-dark.svg#only-dark)
 
 In the last case of poor quality targeted libraries, though the exact assembling feature may be known in advance, high mutation rate may lead to the situation when there aren't any true (error-free) full-length V-D-J sequences in the data. Error correction algorithms used in [clonotype assembly](./mixcr-assemble.md) will not have any "anchor" sequence to determine the original clone. In this case we might benefit from assembling clonotypes by CDR3 region at first and then use a consensus algorithm to determine true clones and distinguish errors from hypermutations.
 
