@@ -143,6 +143,11 @@ nav:
         - 'Presets': mixcr/reference/overview-presets.md
         - 'Mix-in options list': mixcr/reference/overview-mixins-list.md
         - 'Built-in presets': mixcr/reference/overview-built-in-presets.md
+      - 'Data quality':
+        - 'When the analysis results look poor': mixcr/reference/qc-overview.md
+        - 'Sequencing quality': mixcr/reference/qc-sequencing-quality.md
+        - 'Rep-Seq libraries': mixcr/reference/qc-repseq.md
+        - 'Non-targeted data': mixcr/reference/qc-rnaseq.md
       - 'MiXCR':
         - 'analyze': mixcr/reference/mixcr-analyze.md
         - 'align': mixcr/reference/mixcr-align.md
