@@ -16,6 +16,8 @@ mixcr analyze milab-human-bcr-multiplex-cdr3 \
 ```
 runs upstream analysis for samples obtained using Milaboratories Human BCR kit with additional optional config `--dont-split-clones-by C`.
 
+Command [`exportPreset`](mixcr-exportPreset.md) can help to understand structure of preset.
+
 Bellow you one can find a variety of presets for different types of input data and commercially available kits. Most of these presets do not require any additional arguments.
 
 
@@ -31,6 +33,7 @@ Bellow you one can find a variety of presets for different types of input data a
 --8<-- "reference/presets/_thermofisher.md_"
 --8<-- "reference/presets/_abhelix.md_"
 --8<-- "reference/presets/_bd.md_"
+--8<-- "reference/presets/_nanopore.md_"
 --8<-- "reference/presets/_parsebio.md_"
 --8<-- "reference/presets/_singleron.md_"
 --8<-- "reference/presets/_neb.md_"
@@ -38,6 +41,27 @@ Bellow you one can find a variety of presets for different types of input data a
 ## Public protocols
 
 --8<-- "reference/presets/_biomed2.md_"
+--8<-- "reference/presets/_smartseq.md_"
+
+### SPLiT-seq
+==`split-seq-vdj-3gex`==
+·
+[:octicons-link-16: Publication](https://www.science.org/doi/10.1126/science.aam8999)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/parsebio.yaml)
+
+The SPLiT-seq uses the combinatorial indexing to identify single cells without single cell isolation. Multi-level indexing can be performed by ligation. Please note that as a 3'end RNA-seq based protocol it was not originally optimized for immune repertoire analysis, thus tcr/bcr yield might be low.
+
+![](pics/split-seq-light.svg#only-light)
+![](pics/split-seq-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze split-seq-3gex-vdj \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
 
 ### Mikelov et al, 2021
 ==`mikelov-et-al-2021`==
@@ -91,26 +115,6 @@ mixcr analyze han-et-al-2014-bcr \
       result
 ```
 
-### SPLiT-seq
-==`split-seq-vdj-3gex`==
-·
-[:octicons-link-16: Publication](https://www.science.org/doi/10.1126/science.aam8999)
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/parsebio.yaml)
-
-The SPLiT-seq uses the combinatorial indexing to identify single cells without single cell isolation. Multi-level indexing can be performed by ligation. Please note that as a 3'end RNA-seq based protocol it was not originally optimized for immune repertoire analysis, thus tcr/bcr yield might be low.
-
-![](pics/split-seq-light.svg#only-light)
-![](pics/split-seq-dark.svg#only-dark)
-
-Example:
-```shell
-mixcr analyze split-seq-3gex-vdj \
-      input_R1.fastq.gz \
-      input_R2.fastq.gz \
-      result
-```
-
 
 ## Generic data
 
@@ -141,20 +145,20 @@ mixcr analyze rnaseq-full-length \
 ```
 
 
-### Exom data
-==`exom-cdr3`==
+### Exome data
+==`exome-cdr3`==
 ·
-==`exom-full-length`==
+==`exome-full-length`==
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/exom.yaml)
 
-Non-enriched fragmented (shotgun) Exom-Seq data. Preset `exom-cdr3` is used to assemble CDR3 clonotypes, while `exom-full-length` additionally runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J receptor rearrangement sequence.
+Non-enriched fragmented (shotgun) Exome-Seq data. Preset `exome-cdr3` is used to assemble CDR3 clonotypes, while `exome-full-length` additionally runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J receptor rearrangement sequence.
 
 The `--species` option is required.
 
 Example:
 ```shell
-mixcr analyze exom-full-length \
+mixcr analyze exome-full-length \
     --species hsa \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
@@ -211,7 +215,7 @@ The following [mix-in options](overview-mixins-list.md) are used:
 ·
 ==`generic-bcr-amplicon-umi`==
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/general-amplicon.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/generic-amplicon.yaml)
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/generic-umi-bcr.md)
 ·

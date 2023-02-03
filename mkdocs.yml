@@ -107,8 +107,8 @@ extra_javascript:
 
 nav:
   - 'About': mixcr/about.md
-  - 'Getting Started':
-      - 'Installation': mixcr/getting-started/installation.md
+  - 'Downloads':
+      - 'Binary distributions': mixcr/getting-started/installation.md
       - 'Using with Docker': mixcr/getting-started/docker.md
       - 'Obtaining and using license key': mixcr/getting-started/milm.md
       - 'First run': mixcr/getting-started/first-run.md
@@ -143,6 +143,11 @@ nav:
         - 'Presets': mixcr/reference/overview-presets.md
         - 'Mix-in options list': mixcr/reference/overview-mixins-list.md
         - 'Built-in presets': mixcr/reference/overview-built-in-presets.md
+      - 'Data quality':
+        - 'When the analysis results look poor': mixcr/reference/qc-overview.md
+        - 'Sequencing quality': mixcr/reference/qc-sequencing-quality.md
+        - 'Rep-Seq libraries': mixcr/reference/qc-repseq.md
+        - 'Non-targeted data': mixcr/reference/qc-rnaseq.md
       - 'MiXCR':
         - 'analyze': mixcr/reference/mixcr-analyze.md
         - 'align': mixcr/reference/mixcr-align.md
@@ -157,6 +162,7 @@ nav:
         - 'exportReadsForClones': mixcr/reference/mixcr-exportReadsForClones.md
         - 'exportShmTrees': mixcr/reference/mixcr-exportShmTrees.md
         - 'exportReports': mixcr/reference/mixcr-exportReports.md
+        - 'exportReportsTable': mixcr/reference/mixcr-exportReportsTable.md
         - 'exportQc': mixcr/reference/mixcr-exportQc.md
         - 'postanalysis': mixcr/reference/mixcr-postanalysis.md
         - 'downsample': mixcr/reference/mixcr-downsample.md
@@ -167,6 +173,7 @@ nav:
         - 'overlapScatterPlot': mixcr/reference/mixcr-overlapScatterPlot.md
         - 'findAlleles': mixcr/reference/mixcr-findAlleles.md
         - 'findShmTrees': mixcr/reference/mixcr-findShmTrees.md
+        - 'exportPreset': mixcr/reference/mixcr-exportPreset.md
 
 
       - 'Reports':
@@ -203,6 +210,7 @@ nav:
       - 'Specifications':
         - 'Tag pattern': mixcr/reference/ref-tag-pattern.md
         - 'Input file name expansion': mixcr/reference/ref-input-file-name-expansion.md
+        - 'Samples table': mixcr/reference/ref-samples-table.md
         - 'Gene features and reference points': mixcr/reference/ref-gene-features.md
         - 'Translation rules': mixcr/reference/ref-translation-rules.md
         - 'Mutations encoding': mixcr/reference/ref-mutations-encoding.md

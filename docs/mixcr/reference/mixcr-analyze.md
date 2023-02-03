@@ -5,7 +5,7 @@ A single command to execute a complete upstream analysis pipeline from the raw f
 ![](pics/analyze-light.svg#only-light)
 ![](pics/analyze-dark.svg#only-dark)
 
-The `analyze` command takes a [preset name](overview-presets.md) as a required argument and runs a sequence of analysis steps defined by the preset. It sets meaningful names for the intermediate and resulting files and saves all the reports along the pipeline in both `txt` and `json` formats (if not set otherwise by command line options). Preset defines specifically optimized parameters for the particular data type for each of the execution analysis steps.
+The `analyze` command takes a [preset name](overview-presets.md) as a required argument and runs a sequence of analysis steps defined by the preset. It sets meaningful names for the intermediate and resulting files and saves all the reports along the pipeline in both `txt` and `json` formats (if not set otherwise by command line options). Preset defines specifically optimized parameters for the particular data type for each of the execution analysis steps. A powerful [file name expansion](ref-input-file-name-expansion.md) functionality allows to take and process a batch of raw sequencing files at once on the fly and optionally assign molecular, cell and sample barcodes extracted from the file names. [Sample tables](ref-samples-table.md) allow to analyze several patient samples at once using sample barcodes that may be picked up from all possible sources. MiXCR supports paired-end and single-end [`.fastq`](https://en.wikipedia.org/wiki/FASTQ_format), [`.fasta`](https://en.wikipedia.org/wiki/FASTA_format), [`.bam` and `.sam`](https://en.wikipedia.org/wiki/Binary_Alignment_Map) formats.
 
 MiXCR provides a [comprehensive list](overview-built-in-presets.md) of built-in preset for many of commercially available kits and public protocols.
 
@@ -16,8 +16,12 @@ mixcr analyze [--help]
 
     # analyze-specific options
     
+    [--not-aligned-I1 <path.fastq[.gz]>] 
+    [--not-aligned-I2 <path.fastq[.gz]>] 
     [--not-aligned-R1 <path.fastq[.gz]>] 
     [--not-aligned-R2 <path.fastq[.gz]>] 
+    [--not-parsed-I1 <path.fastq[.gz]>] 
+    [--not-parsed-I2 <path.fastq[.gz]>] 
     [--not-parsed-R1 <path.fastq[.gz]>] 
     [--not-parsed-R2 <path.fastq[.gz]>] 
     [--no-reports] 
@@ -25,14 +29,17 @@ mixcr analyze [--help]
     [--use-local-temp]
     [--threads <n>] 
     [--force-overwrite]
-    [--add-step <step>] 
-    [--remove-step <step>] 
-
+    
     # mix-ins
 
+    [--add-step <step>] 
+    [--remove-step <step>] 
     [--limit-input <n>]
     [--species <species>] 
     [--library <library>] 
+    [--split-by-sample]
+    [--dont-split-by-sample]
+    [--sample-table sample_table.tsv]
     [--dna] [--rna] 
     [--floating-left-alignment-boundary [<anchor_point>]]
     [--rigid-left-alignment-boundary [<anchor_point>]]
@@ -49,28 +56,44 @@ mixcr analyze [--help]
     [--append-export-clones-field <field> [<param>...]]...
     [--prepend-export-alignments-field <field> [<param>...]]...
     [--append-export-alignments-field <field> [<param>...]]... 
+    [--add-export-clone-table-splitting <(geneLabel|tag):key>]
+    [--reset-export-clone-table-splitting] 
+    [--add-export-clone-grouping <(geneLabel|tag):key>]
+    [--reset-export-clone-grouping]
     [-M <key=value>]...      
     
     # inputs and outputs
     
     <preset_name> 
-    (file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam)) 
+	([I1.fastq[.gz] [I2.fastq[.gz]]] R1.fastq[.gz] [R2.fastq[.gz]] 
+	 | file.(fasta|bam|sam))  
     output_prefix
 ```
+
+To take and process a batch of input sequencing files at once and optionally assign molecular, cell and sample barcodes extracted from the file names one can use a powerful [file name expansion](ref-input-file-name-expansion.md) functionality. [Sample tables](ref-samples-table.md) allow to analyze several patient samples at once using sample barcodes that may be picked up from all possible sources.
 
 ### Analyze-specific command line options:
 
 `<preset_name>`
 : Name of the analysis preset (see [complete list of available presets](overview-built-in-presets.md)). This is the only required option to run the analysis.
 
-`(file_R1.fastq[.gz] file_R2.fastq[.gz]|file_RN.(fastq[.gz]|fasta|bam|sam))`
-: Paths of input files with sequencing data. File name pattern [expansion](./ref-input-file-name-expansion.md) can be used here to merge sequences from multiple sequences or just for convenience.
-
 `output_prefix`
 : Path prefix telling mixcr where to put all output files, individual intermediate and resulting files will have suffixes according to the steps they were produced with. If argument ends with file separator, then outputs will be written in specified directory.
 
+`--not-aligned-I1 <path.fastq[.gz]>`
+: Pipe not aligned I1 reads into separate file.
+
+`--not-aligned-I2 <path.fastq[.gz]>`
+: Pipe not aligned I2 reads into separate file.
+
 `--not-aligned-R1 <path.fastq[.gz]>`
 : Pipe not aligned R1 reads into separate file.
+
+`--not-parsed-I1 <path.fastq[.gz]>`
+: Pipe not parsed I1 reads into separate file.
+
+`--not-parsed-I2 <path.fastq[.gz]>`
+: Pipe not parsed I2 reads into separate file.
 
 `--not-aligned-R2 <path.fastq[.gz]>`
 : Pipe not aligned R2 reads into separate file.
@@ -99,81 +122,5 @@ mixcr analyze [--help]
 `-h, --help`
 : Show the help message and exit.
 
-### Params to change pipeline steps:
 
-`--add-step <step>`
-: Add a step to pipeline (i.e. `--add-step assembleContigs`)
-
-`--remove-step <step>`
-: Remove a step from pipeline (i.e. `--add-step assemblePartial`)
-
-
-## Concatenating across multiple files
-
-Sometimes it is required to concatenate several fastq files and analyse it as a single sample. This is a common practise when files are separated across sequencing lanes.
-
-MiXCR uses `{{n}}` syntax as a placeholder for any number. Meaning MiXCR will concatenate all files that match the pattern regardless of digits in the place of  `{{n}}`
-
-Bellow you can see an example of how to pass 8 fastq files (four per each paired read) to `mixcr align`:
-
-Example:
-```shell
-> ls fastq/
-    sample1_L001_S25_R1.fastq.gz    sample1_L001_S25_R2.fastq.gz 
-    sample1_L002_S25_R1.fastq.gz    sample1_L002_S25_R2.fastq.gz
-    sample1_L003_S25_R1.fastq.gz    sample1_L003_S25_R2.fastq.gz
-    sample1_L004_S25_R1.fastq.gz    sample1_L004_S25_R2.fastq.gz
-
-> mixcr align -s hsa \
-    fastq/sample1_L{{n}}_S25_R1.fastq.gz \
-    fastq/sample1_L{{n}}_S25_R2.fastq.gz \
-    results/sample1
-```
-
-MiXCR uses `{{a}}` syntax which works just like {{n}} but works with any pattern, not just numbers.
-
-Example:
-
-```shell
-> ls fastq/
-    sample1_nameA1_S25_R1.fastq.gz    sample1_nameA1_S25_R2.fastq.gz
-    sample1_nameA_S25_R1.fastq.gz     sample1_nameA_S25_R2.fastq.gz
-    sample1_nameC3_S25_R1.fastq.gz    sample1_nameC3_S25_R2.fastq.gz
-    sample1_fileD_S25_R1.fastq.gz     sample1_fileD_S25_R2.fastq.gz
-
-> mixcr align -s hsa \
-    fastq/sample1_{{n}}_S25_R1.fastq.gz \
-    fastq/sample1_{{n}}_S25_R2.fastq.gz \
-    results/sample1
-```
-
-Finally, MiXCR uses `{{R}}` syntax that marks the reads' number, so you don't have to submit the second read filename.
-
-Bellow is the example of how you can combine multiple MiXCR wildcards and concatenate 16 pairs of files using one pattern.
-
-Example:
-```shell
-> ls fastq/
-    sampleA_primer1_L001_R1.fastq.gz       sampleA_primer1_L001_R2.fastq.gz    
-    sampleA_primer1_L002_R1.fastq.gz       sampleA_primer1_L002_R2.fastq.gz    
-    sampleA_primer1_L003_R1.fastq.gz       sampleA_primer1_L003_R2.fastq.gz    
-    sampleA_primer1_L004_R1.fastq.gz       sampleA_primer1_L004_R2.fastq.gz    
-    sampleA_primer2_L001_R1.fastq.gz       sampleA_primer2_L001_R2.fastq.gz
-    sampleA_primer2_L002_R1.fastq.gz       sampleA_primer2_L002_R2.fastq.gz
-    sampleA_primer2_L003_R1.fastq.gz       sampleA_primer2_L003_R2.fastq.gz
-    sampleA_primer2_L004_R1.fastq.gz       sampleA_primer2_L004_R2.fastq.gz
-    sampleA_primer3_L001_R1.fastq.gz       sampleA_primer3_L001_R2.fastq.gz
-    sampleA_primer3_L002_R1.fastq.gz       sampleA_primer3_L002_R2.fastq.gz
-    sampleA_primer3_L003_R1.fastq.gz       sampleA_primer3_L003_R2.fastq.gz
-    sampleA_primer3_L004_R1.fastq.gz       sampleA_primer3_L004_R2.fastq.gz
-    sampleA_primer4_L001_R1.fastq.gz       sampleA_primer4_L001_R2.fastq.gz
-    sampleA_primer4_L002_R1.fastq.gz       sampleA_primer4_L002_R2.fastq.gz
-    sampleA_primer4_L003_R1.fastq.gz       sampleA_primer4_L003_R2.fastq.gz
-    sampleA_primer4_L004_R1.fastq.gz       sampleA_primer4_L004_R2.fastq.gz
-    
-> mixcr align -s hsa \
-    fastq/sampleA_{{a}}_L{{n}}_{{R}}.fastq.gz
-    results/sampleA
-```
-
-For details see [this section](/mixcr/reference/ref-input-file-name-expansion).
+In addition to these parameters, any of the [available mix-in options](overview-mixins-list.md) may be additionally specify at `analyze`.

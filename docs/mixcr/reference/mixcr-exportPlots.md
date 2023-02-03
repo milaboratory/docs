@@ -113,7 +113,7 @@ Basic command line options are:
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -235,7 +235,7 @@ Exports [gene segment usage](./mixcr-postanalysis.md#segment-usage-metrics) heat
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -358,7 +358,7 @@ Exports [pairwise distance metrics](./mixcr-postanalysis.md#segment-usage-metric
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -389,6 +389,7 @@ mixcr exportPlots shmTrees
     [--filter-min-nodes <n>] 
     [--filter-min-height <n>] 
     [--ids <id>[,<id>...]]... 
+    [--chains <chains>]
     [--force-overwrite] 
     [--no-warnings] 
     [--verbose] 
@@ -437,6 +438,9 @@ Visualize SHM tree and save in PDF format
 `--ids <id>[,<id>...]`
 : Filter specific trees by id
 
+`--chains <chains>`
+: Export only trees that contains clones with specific chain (e.g. TRA or IGH).
+
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
 
@@ -444,7 +448,7 @@ Visualize SHM tree and save in PDF format
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.

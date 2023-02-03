@@ -10,10 +10,12 @@ MiXCR provides functions for export [SHM Trees](#shm-trees-tables), [SHM Trees w
 mixcr exportShmTrees [-f]
     [--filter-min-nodes <n>] 
     [--filter-min-height <n>] 
-    [--ids <id>[,<id>...]]... 
+    [--ids <id>[,<id>...]]...
+    [--chains <chains>] 
     [--preset <preset>]
     [--preset-file <file>]
-    [--no-header] 
+    [--no-header]
+    [--not-covered-as-empty] 
     [<exportField>]...
     [--force-overwrite] 
     [--no-warnings] 
@@ -42,6 +44,9 @@ Command line options:
 `--ids <id>[,<id>...]`
 : Filter specific trees by id
 
+`--chains <chains>`
+: Export only trees that contains clones with specific chain (e.g. TRA or IGH).
+
 `-p, --preset <preset>`
 : Specify preset of export fields (possible values: 'full', 'min'; 'full' by default)
 
@@ -51,6 +56,9 @@ Command line options:
 `--no-header`
 : Don't print column names
 
+`--not-covered-as-empty`
+: Export not covered regions as empty text.
+
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
 
@@ -58,7 +66,7 @@ Command line options:
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -88,9 +96,11 @@ mixcr exportShmTreesWithNodes [-f]
     [--filter-min-nodes <n>] 
     [--filter-min-height <n>] 
     [--ids <id>[,<id>...]]... 
+    [--chains <chains>] 
     [--preset <preset>] 
     [--preset-file <presetFile>] 
     [--no-header]
+    [--not-covered-as-empty]
     [<exportField>]...
     [--force-overwrite] 
     [--no-warnings] 
@@ -122,6 +132,9 @@ Command line options:
 `--ids <id>[,<id>...]`
 : Filter specific trees by id
 
+`--chains <chains>`
+: Export only trees that contains clones with specific chain (e.g. TRA or IGH).
+
 `-p, --preset <preset>`
 : Specify preset of export fields (possible values: 'min', 'full'; 'full' by default)
 
@@ -131,6 +144,9 @@ Command line options:
 `--no-header`
 : Don't print column names
 
+`--not-covered-as-empty`
+: Export not covered regions as empty text.
+
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
 
@@ -138,7 +154,7 @@ Command line options:
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -167,6 +183,7 @@ mixcr exportShmTreesNewick
     [--filter-min-nodes <n>] 
     [--filter-min-height <n>] 
     [--ids <id>[,<id>...]]... 
+    [--chains <chains>]
     [--force-overwrite] 
     [--no-warnings] 
     [--verbose] 
@@ -196,6 +213,9 @@ Command line options:
 `--ids <id>[,<id>...]`   
 : Filter specific trees by id
 
+`--chains <chains>`
+: Export only trees that contains clones with specific chain (e.g. TRA or IGH).
+
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
 
@@ -203,7 +223,7 @@ Command line options:
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.

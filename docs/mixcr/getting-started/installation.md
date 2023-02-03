@@ -25,17 +25,17 @@ Download and extract `mixcr`:
 2. Go to [MiXCR GitHub page](https://github.com/milaboratory/mixcr) and copy the link for latest build. The command bellow downloads MiXCR v4.1.2. For other builds replace the link with the one you obtained from GitHub.
 
     ```shell
-    wget https://github.com/milaboratory/mixcr/releases/download/v4.1.2/mixcr-4.1.2.zip
+    wget https://github.com/milaboratory/mixcr/releases/download/v4.2.0/mixcr-4.2.0.zip
     ```
 
 3. Unpack the zip archive using the `unzip` command
 
     ```shell
-    > unzip mixcr-4.1.2.zip
+    > unzip mixcr-4.2.0.zip
     ```
     The output looks similar to this:
     ```shell
-    Archive:  mixcr-4.1.2.zip
+    Archive:  mixcr-4.2.0.zip
       inflating: mixcr
       inflating: LICENSE
       inflating: mixcr.jar
@@ -50,10 +50,14 @@ Download and extract `mixcr`:
     The output should look similar to:
 
     ```shell
-    MiXCR v (built Fri Jul 15 01:51:38 CEST 2022; rev=aa769be87b; branch=tag-rework-2; host=Dmitrys-MacBook-Pro-2.local)
-    RepSeq.IO v1.4.1-1-master (rev=474ebe0f6e)
-    MiLib v2.0.0-11-master (rev=ca59a3ad71)
-    Built-in V/D/J/C library: repseqio.v2.0
+    MiXCR v4.2.0 (built Thu Jan 26 20:40:26 CET 2023; rev=b0f194e0c6; branch=no_branch; host=fv-az477-60)
+    RepSeq.IO v1.7.0 (rev=36f4e4453f)
+    MiLib v2.3.0 (rev=0226f1da59)
+    Built-in V/D/J/C library: repseqio.v2.1
+
+    Library search path:
+    - built-in libraries
+    - /Users/user/dir/.
     ```
 
 Add MiXCR to your `$PATH`:

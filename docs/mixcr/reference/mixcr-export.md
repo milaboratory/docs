@@ -20,16 +20,22 @@ For export of `.shmt` produced by [`findShmTrees`](./mixcr-findShmTrees.md) see 
 ```
 mixcr exportClones
     [--chains <chains>] 
-    [--impute-germline-on-export]
-    [--dont-impute-germline-on-export] 
     [--filter-out-of-frames] 
     [--filter-stops] 
     [--split-by-tags <(Molecule|Cell|Sample)>] 
     [--split-files-by <splitFilesBy>]... 
     [--dont-split-files] 
+    [--impute-germline-on-export] 
+    [--dont-impute-germline-on-export] 
+    [--add-export-clone-table-splitting <(geneLabel|tag):key>] 
+    [--reset-export-clone-table-splitting] 
+    [--add-export-clone-grouping <(geneLabel|tag):key>] 
+    [--reset-export-clone-grouping] 
+    [--export-productive-clones-only] 
     [--no-header] 
     [--drop-default-fields] 
     [--prepend-columns] 
+    [--not-covered-as-empty]
     [<exportField>]...
     [--force-overwrite] 
     [--no-warnings] 
@@ -51,12 +57,6 @@ Command line options:
 `-c, --chains <chains>`
 : Limit export to specific chain (e.g. TRA or IGH) (fractions will be recalculated). Default value determined by the preset.
 
-`--impute-germline-on-export`
-: Export nucleotide sequences using letters from germline (marked lowercase) for uncovered regions
-
-`--dont-impute-germline-on-export`
-: Export nucleotide sequences only from covered region
-
 `-o, --filter-out-of-frames`
 : Exclude clones with out-of-frame clone sequences (fractions will be recalculated). Default value determined by the preset.
 
@@ -72,6 +72,27 @@ Command line options:
 `--dont-split-files`
 : Don't split files.
 
+`--impute-germline-on-export`
+: Export nucleotide sequences using letters from germline (marked lowercase) for uncovered regions
+
+`--dont-impute-germline-on-export`
+: Export nucleotide sequences only from covered region
+
+`--add-export-clone-table-splitting <(geneLabel|tag):key>`
+: Add key to split output files with clone tables.
+
+`--reset-export-clone-table-splitting`
+: Reset all file splitting for output clone tables.
+
+`--add-export-clone-grouping <(geneLabel|tag):key>`
+: Add key to group clones in the output clone tables.
+
+`--reset-export-clone-grouping`
+: Reset all clone grouping in the output clone tables.
+
+`--export-productive-clones-only`
+: Export only productive clonotypes.
+
 `--no-header`
 : Don't print first header line, print only data Default value determined by the preset.
 
@@ -81,6 +102,9 @@ Command line options:
 `--prepend-columns`
 : Added columns will be inserted before default columns. By default columns will be added after default columns
 
+`--not-covered-as-empty`
+: Export not covered regions as empty text.
+
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
 
@@ -88,7 +112,7 @@ Command line options:
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -106,6 +130,7 @@ mixcr exportAlignments
     [--no-header] 
     [--drop-default-fields] 
     [--prepend-columns] 
+    [--not-covered-as-empty]
     [<exportField>]...
     [--force-overwrite] 
     [--no-warnings] 
@@ -142,6 +167,9 @@ Command line options:
 `--prepend-columns`
 : Added columns will be inserted before default columns. By default columns will be added after default columns
 
+`--not-covered-as-empty`
+: Export not covered regions as empty text.
+
 `-f, --force-overwrite`
 : Force overwrite of output file(s).
 
@@ -149,7 +177,7 @@ Command line options:
 : Suppress all warning messages.
 
 `--verbose`
-: Verbose warning messages.
+: Verbose messages.
 
 `-h, --help`
 : Show this help message and exit.
@@ -514,7 +542,7 @@ These fields available for `exportAlignments` and `exportClones`:
 `-allNMutations [<from_reference_point> <to_reference_point>]`
 : Extract nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns).
     
-    For example, `-allNMutations FR3Begin FR4End` will export `-nMutations FR3`, `-nMutations CDR3`, `-nMutations FR4`.
+    For example, `-allNMutations FR3Begin FR4End` will export `-nMutations FR3`, `-nMutations FR4`.
     
     By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
@@ -527,7 +555,7 @@ These fields available for `exportAlignments` and `exportClones`:
 `-allAAMutations [<from_reference_point> <to_reference_point>]`
 : Extract amino acid nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns).
     
-    For example, `-allAAMutations FR3Begin FR4End` will export `-aaMutations FR3`, `-aaMutations CDR3`, `-aaMutations FR4`.
+    For example, `-allAAMutations FR3Begin FR4End` will export `-aaMutations FR3`, `-aaMutations FR4`.
     
     By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
@@ -540,7 +568,7 @@ These fields available for `exportAlignments` and `exportClones`:
 `-allMutationsDetailed [<from_reference_point> <to_reference_point>]`
 : Detailed list of nucleotide and corresponding amino acid mutations for all gene features between specified reference points (in separate columns).
     
-    For example, `-allMutationsDetailed FR3Begin FR4End` will export `-mutationsDetailed FR3`, `-mutationsDetailed CDR3`, `-mutationsDetailed FR4`.
+    For example, `-allMutationsDetailed FR3Begin FR4End` will export `-mutationsDetailed FR3`, `-mutationsDetailed FR4`.
     
     By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 

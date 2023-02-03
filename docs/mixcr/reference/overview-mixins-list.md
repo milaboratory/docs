@@ -7,18 +7,23 @@ MiXCR provides a set of mix-in options allowing to configure analysis pipeline u
 
 The following mix-in options configure [`align`](mixcr-align.md) step. 
 
+`--species`
+: ==:fontawesome-solid-puzzle-piece: Species== <p>
+Species (organism), as specified in library file or taxon id.
+
+Possible values: hs, HomoSapiens, musmusculus, mmu, hsa, 9606, 10090 etc.
+
 `--library`
 : Specify reference V-, D-, J-, C- gene segment library. 
 
-`--species`
-: ==:fontawesome-solid-puzzle-piece: Species== <p>
-  Species (organism), as specified in library file or taxon id. 
-  
-  Possible values: hs, HomoSapiens, musmusculus, mmu, hsa, 9606, 10090 etc.
+`--split-by-sample`
+: Split output alignments files by sample.
 
-`--tag-pattern`
-: ==:fontawesome-solid-puzzle-piece: Tag pattern== <p>
-  Specify [tag pattern](ref-tag-pattern.md) for barcoded data.
+`--dont-split-by-sample`
+: Don't split output alignments files by sample.
+
+`--sample-table <sample_table.tsv>`
+: Loads [sample table](ref-samples-table.md) from a tab separated file.
 
 `--dna`
 : ==:fontawesome-solid-puzzle-piece: Material type== <p>
@@ -40,10 +45,13 @@ The following mix-in options configure [`align`](mixcr-align.md) step.
 : ==:fontawesome-solid-puzzle-piece: Right alignment boundary== <p>
   Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use semi-local alignment at reads 3'-end. Typically used with J or C gene single primer / multiplex protocols, or if there are non-trimmed adapter sequences at 3'-end. Requires either gene type (`J` for J primers / `C` for C primers) or [anchor point](ref-gene-features.md) to be specified. In latter case MiXCR will additionally strip [feature to align](mixcr-align.md#gene-features-to-align) accordingly.
 
-
 `--rigid-right-alignment-boundary [(<gene_type>|<anchor_point>)]`
 : ==:fontawesome-solid-puzzle-piece: Right alignment boundary== <p> 
   Configures [aligners](mixcr-align.md#v-j-and-c-aligners-parameters) to use global alignment at reads 3'-end. Typically used for J-C intron single primer / multiplex protocols. Optional gene type (`J` for J primers / `C` for C primers) or [anchor point](ref-gene-features.md) may be specified to instruct MiXCR where how to strip J or C [feature to align](mixcr-align.md#gene-features-to-align).
+
+`--tag-pattern`
+: ==:fontawesome-solid-puzzle-piece: Tag pattern== <p>
+Specify [tag pattern](ref-tag-pattern.md) for barcoded data.
 
 `--keep-non-CDR3-alignments`
 : ==:fontawesome-solid-puzzle-piece: Debug== <p>
@@ -99,6 +107,21 @@ The following mix-in options configure clonotype [`export`](mixcr-export.md) ste
 
 `--append-export-alignments-field <field> [<param>...]`
 : Add clones export column after other columns. First param is field name as it is in `exportAlignments` command, left params are params of the field
+
+`--add-export-clone-table-splitting <(geneLabel|tag):key>`
+: Add key to split output files with clone tables.
+
+`--reset-export-clone-table-splitting`
+: Reset all file splitting for output clone tables.
+
+`--add-export-clone-grouping <(geneLabel|tag):key>`
+: Add key to group clones in the output clone tables.
+
+`--reset-export-clone-grouping`
+: Reset all clone grouping in the output clone tables.
+
+`--export-productive-clones-only`
+: Export only productive clonotypes.
 
 ### Pipeline configuration mix-ins
 
