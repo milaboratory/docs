@@ -29,7 +29,7 @@ Before considering different reasons in more details, the general advice is to c
 
 Alignment report shows the reasons why your reads are not aligned. Let's consider them in more detail.
 
-![](pics/data-qc/alignment_not_TCR_IG.png)
+![](pics/data-qc/alignment_not_TCR_Ig.svg)
 
 ### Alignment failed, no hits (not TCR/IG?)
 
@@ -69,7 +69,7 @@ Finally, it might be a wrong use of the analysis preset: if the input data is ra
 
 ### Absent barcode
 
-![](pics/data-qc/alignment_absent_barcode.png)
+![](pics/data-qc/alignment_absent_barcode.svg)
 
 For barcoded data means that barcodes can't be extracted using the specified [tag pattern](ref-tag-pattern.md). The first thing to check is that a correct tag pattern and/or a correct [analysis preset](overview-built-in-presets.md) are used. If the library is unstranded, one should use either `--tag-parse-unstranded` option or change the preset accordingly. Finally, the quality of data may be low, so that tags can't be parsed because of too many sequencing errors.
 
@@ -222,8 +222,72 @@ mixcr exportAlignmentsPretty -n 10 path/to/vdjca/file
 ```
 Here `-n 10` option limits the number of alignments in the output.
 
+```
+>>> Read ids: 8
+
+>>> Tags:
+>>> UMI: TTTGATTACGGTTT FGGGGGGGGGGGGC
+
+
+                     FR1><CDR1              CDR1><FR2                                               
+                 E  V  S  G  I  T  F  S  S  F  A  M  H  W  V  R  Q  A  P  G  K  G  L  D  W  V  A    
+    Quality     77777777777777777776777777777767777777777777777777777777677777777777777777776777    
+    Target0   0 GAAGTCTCTGGAATCACCTTTAGTAGTTTTGCTATGCACTGGGTCCGCCAGGCTCCAGGCAAGGGGCTGGACTGGGTGGC 79   Score
+IGHV3-30*00 223 gCagCctctggaTtcaccttCagtagCtAtgGCatgcactgggtccgccaggctccaggcaaggggctggaGtgggtggc 302  914
+
+                FR2><CDR2              CDR2><FR3                                                    
+                  S  V  S  F  D  G  N  T  E  H  Y  A  D  S  V  K  G  R  V  T  I  A  R  D  N  S      
+    Quality     67777772577267777777777775674577777775777777777777472522467776761144626556744577    
+    Target0  80 GTCTGTATCCTTCGATGGAAACACTGAACACTACGCAGACTCCGTGAAGGGCCGTGTCACCATCGCCAGAGACAATTCCA 159  Score
+IGHV3-30*00 303 AGTtAtatcAtATgatggaaGTaAtAaaTactaTgcagactccgtgaagggccgATtcaccatcTccagagacaattcca 382  914
+
+                                                                       FR3><CDR3    V><VP           
+                K  K  T  L  Y  M  Q  M  N  S  L  T  L  E  D  Q  A  V  E  Y  L  S    R  T  F   D     
+    Quality     625664645576323226672647777315613115676515111253644461114367333411  355241221 12    
+    Target0 160 AGAAGACGCTGTACATGCAGATGAACAGCCTGACCCTTGAGGACCAGGCTGTGGAGTACTTGTCGA--GAACCTTCG-AC 236  Score
+IGHV3-30*00 383 agaaCacgctgtaTCtgcaAatgaacagcctgaGAGCtgaggacACggctgtgTaTtactGTGcgaAAgaTcTttcgCac 462  914
+
+                       VP>                                    
+                 L  L  I  L  *  F  Y  Y  L  G  L  G  T  L     
+    Quality     132322122335622352225466764461312315413411    
+    Target0 237 CTTTTGATCCTTTAGTTTTATTATTTGGGCCTGGGAACCCTG 278  Score
+IGHV3-30*00 463 AGtAATaCAc                                 472  914
+
+                                                                                                    
+                _ Q  C  R  F  T  I  Y  R  D  T  S  Q  K  T  L  Y  L  Q  M  N  S  L  T  L  E  D      
+    Quality     11211335463422145142162115143134441651667764543155445566653445533155757663324776    
+    Target1   0 GCAGTGCCGATTCACCATCTACAGAGACACTTCCCAGAAGACGCTGTATCTGCAGATGAACAGCCTGACACTTGAGGACA 79   Score
+IGHV3-30*00 348 gAagGgccgattcaccatctCcagagacaAttccAagaaCacgctgtatctgcaAatgaacagcctgaGaGCtgaggaca 427  720
+
+                          FR3><CDR3V>       <D         D>   <J        CDR3><FR4                     
+                T  A  V  Y  Y  C  A  R  T  F  D  L  L  T  L  Y  F  D  Y  W  G  Q  G  T  L  V  T     
+    Quality     55514764555235347652354677776647764652477776774777777777777777777765367777767777    
+    Target1  80 CGGCTGTGTATTACTGTGCGAGAACCTTCGATCTTTTGACTCTTTATTTTGATTATTGGGGCCAGGGAACCCTGGTCACC 159  Score
+IGHV3-30*00 428 cggctgtgtattactgtgcga                                                            448  720
+ IGHD3-9*00  37                             cgatAttttgact                                        49   51
+   IGHJ4*00  22                                             taCtttgaCtaCtggggccagggaaccctggtcacc 57   373
+
+                   FR4><C                                                                        
+              V  S  S  A  S  P  T  S  P  K  V  F  P  L  S  L  D  S  T  P  Q  D  G  N  V  V  V    
+ Quality     77777646245477677657777777777777777777767575752426777777777777777777777777777777    
+ Target1 160 GTCTCCTCAGCATCCCCGACCAGCCCCAAGGTCTTCCCGCTGAGCCTCGACAGCACCCCCCAAGATGGGAACGTGGTCGT 239  Score
+IGHJ4*00  58 gtctcctcag                                                                       67   373
+IGHA2*00   0           catccccgaccagccccaaggtcttcccgctgagcctcgacagcaccccccaagatgggaacgtggtcgt 69   400
+
+                           
+               A  C  L     
+ Quality     6277777777    
+ Target1 240 CGCATGCCTG 249  Score
+IGHA2*00  70 cgcatgcctg 79   400
+```
 
 We see that sequences labeled `Tag0` and `Tag1` were not overlapped, while records with successful overlaps contain `Tag0` labels only. We can manually overlap several of the non-overlapped reads to estimate the scale of the problem and identify the root of the problem. Here is one example, the numbers represent the scaled quality score (highest -7, lowest - 1):
+```
+7777777777777777777677777777776777777777777777777777777767777777777777777777677767777772577267777777777775674577777775777777777777472522467776761144626556744577625664645576323226672647777315613115676515111253644461114367333411
+GAAGTCTCTGGAATCACCTTTAGTAGTTTTGCTATGCACTGGGTCCGCCAGGCTCCAGGCAAGGGGCTGGACTGGGTGGCGTCTGTATCCTTCGATGGAAACACTGAACACTACGCAGACTCCGTGAAGGGCCGTGTCACCATCGCCAGAGACAATTCCAAGAAGACGCTGTACATGCAGATGAACAGCCTGACCCTTGAGGACCAGGCTGTGGAGTACTTGTCGAGAACCTTCGACCTTTTGATCCTTTAGTTTTATTATTTGGGCCTGGGAACCCTG
+                                                                                                                             GCAGTGCCGATTCACCATCTACAGAGACACTTCCCAGAAGACGCTGTATCTGCAGATGAACAGCCTGACACTTGAGGACACGGCTGTGTATTACTGTGCGAGAACCTTCGATCTTTTGACTCTTTATTTTGATTATTGGGGCCAGGGAACCCTGGTCACC
+                                                                                                                             1121133546342214514216211514313444165166776454315544556665344553315575766332477655514764555235347652354677776647764652477776774777777777777777777765367777767777
+```
 
 So, we see that the ends of the reads have overall poor sequencing quality and what is more important they conflict with each other in a lot of positions. The possible reason why the ends are poorly aligned is low sequencing quality, so the best solution is to run FastQC to check the per base sequence quality module:
 
@@ -234,7 +298,6 @@ So, we see that the ends of the reads have overall poor sequencing quality and w
 
 This picture represents one of the files from the example, the R1 and R2 sequence quality respectively. Actually, we see that the sequence quality is lower on the ends as we expected.
 
-### Troubleshooting.
 
 If we want to utilize maximum information from this data we can tweak parameters and use more relaxed requirements for read overlapping
 ```

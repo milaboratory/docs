@@ -31,7 +31,7 @@ Shows the average quality and distribution of qualities in the sample. Left figu
 Reasons for lower quality bases especially in the end of the sequence:
 
  - challenges of SBS technology ([https://www.nature.com/articles/nbt.1585](https://www.nature.com/articles/nbt.1585))
- - low clusterization during the sequencing process
+ - flowcell overloading
  - low diversity in the library
 
 
