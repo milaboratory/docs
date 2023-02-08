@@ -22,7 +22,7 @@ Download and extract `mixcr`:
     > cd ~/mixcr
     ```
 
-2. Go to [MiXCR GitHub page](https://github.com/milaboratory/mixcr) and copy the link for latest build. The command bellow downloads MiXCR v4.1.2. For other builds replace the link with the one you obtained from GitHub.
+2. Go to [MiXCR GitHub page](https://github.com/milaboratory/mixcr) and copy the link for latest build. The command bellow downloads MiXCR v4.2.0. For other builds replace the link with the one you obtained from GitHub.
 
     ```shell
     wget https://github.com/milaboratory/mixcr/releases/download/v4.2.0/mixcr-4.2.0.zip
