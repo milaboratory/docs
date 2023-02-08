@@ -646,6 +646,9 @@ These fields available for `exportAlignments` and `exportClones`:
 `-uniqueTagCount <(Molecule|Cell|Sample)>`
 : Unique tag count
 
+`-cellId`
+: All cell barcodes concatenated with `-` symbol 
+
 Tag type will be used for filtering tags for export.
 
 ### Alignment-specific fields
