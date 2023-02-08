@@ -1,5 +1,9 @@
 name: Build and Deploy Documentation (AWS Cloudfront)
 on:
+  push:
+    branches:
+      - main
+  pull_request:
   workflow_dispatch: {}
 jobs:
   init:
@@ -8,8 +12,6 @@ jobs:
       - uses: milaboratory/github-ci/actions/context/init@v2
         with:
           version-canonize: false
-      - id: context
-        uses: milaboratory/github-ci/actions/context@v2
   run:
     needs:
       - init
@@ -17,12 +19,11 @@ jobs:
     with:
       app-name: MiXCR Docs
       app-name-slug: 'mixcr-com'
-      aws-iam-role-to-assume: 'arn:aws:iam::511903394050:role/milab-euce1-prod-github-oidc-role-mixcr-com"'
+      aws-iam-role-to-assume: 'arn:aws:iam::511903394050:role/milab-euce1-prod-github-oidc-role-mixcr-com'
       aws-region: 'us-east-1'
       aws-cloudfront-distribution-id: 'E2N6ZMKDJERTOE'
       aws-cloudfront-s3-bucket-name: 'milab-euce1-prod-eks-s3-mixcr-com'
       notify-telegram: true
-      env: |
     secrets:
       env: |
       TELEGRAM_NOTIFICATION_TARGET: ${{ secrets.TG_CHANNEL_MIBUILDS }}
