@@ -646,10 +646,14 @@ These fields available for `exportAlignments` and `exportClones`:
 `-uniqueTagCount <(Molecule|Cell|Sample)>`
 : Unique tag count
 
-`-cellId`
-: All cell barcodes concatenated with `-` symbol 
-
 Tag type will be used for filtering tags for export.
+
+`-cellId [<(none|space|dash)>]`
+: Concatenated all cell tags with specified delimiter, default delimiter is `none`. 
+
+Example output for `-cellId`: GGATTACTCATTGCCC 
+
+Example output for `-cellId dash`: GGATTACT-CATTGCCC 
 
 ### Alignment-specific fields
 
