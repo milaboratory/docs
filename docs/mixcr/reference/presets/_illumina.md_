@@ -28,7 +28,7 @@ mixcr analyze ampliseq-tcrb-plus-cdr3 \
 
 ==`ampliseq-tcrb-sr-cdr3`==
 ·
-[:octicons-link-16: Link](https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/ampliseq-immune-repertoire-panel.html)
+[:octicons-link-16: Link](https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/ampliseq-tcr-beta-sr-panel.html)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/illumina.yaml)
 
