@@ -5,7 +5,7 @@ Finds V- and J-gene allelic variants in a given sample(s). As result MiXCR creat
 ![](pics/findAlleles-light.svg#only-light)
 ![](pics/findAlleles-dark.svg#only-dark)
 
-Note that clontypes passed as input must be cut by and fully covered by the same [gene feature](mixcr-assemble.md#core-assembler-parameters). So, for example `.clns` files with [contigs](overview-analysis-overview.md#contig-assemblymixcr-assemblecontigsmd), must be assembled using [`assembleContigs`](mixcr-assembleContigs.md) with `--cut-by` option.
+Note that clontypes passed as input must be cut by and fully covered by the same [gene feature](mixcr-assemble.md#core-assembler-parameters). So, for example `.clns` files with [contigs](overview-analysis-overview.md#contig-assemblymixcr-assemblecontigsmd), must be assembled using [`assembleContigs`](mixcr-assembleContigs.md) with `--assemble-contigs-by` option.
 
 Also, all inputs must have the same align library, the same scoring of V and J genes and the same features to align.
 
