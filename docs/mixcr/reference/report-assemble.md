@@ -139,18 +139,17 @@ The first part of the report is dedicated to [UMI and cell barcodes based consen
 
 `Number of clonotypes per group`
 : number consensus assembled per number of groups.
-??? note "How to read this value"
-    ```
-    Number of clonotypes per group
-    0: + 1209 (0.04%) = 1209 (0.04%)
-    1: + 2891630 (98.45%) = 2892839 (98.5%)
-    2~3: + 44182 (1.5%) = 2937021 (100%)
-    ```
-
-    - For 1209 groups 0 consensuses were assembled due to various reasons such as bad quality, low number
-    of reads or other conflicts. 
-    - For 2891630 groups 1 consensus was assembled. 
-    - For 44182 groups 2 or 3 consensuses were assembled.
+    ??? note "How to read this value"
+        ```
+        Number of clonotypes per group
+        0: + 1209 (0.04%) = 1209 (0.04%)
+        1: + 2891630 (98.45%) = 2892839 (98.5%)
+        2~3: + 44182 (1.5%) = 2937021 (100%)
+        ```
+    
+        - For 1209 groups 0 consensuses were assembled due to various reasons such as bad quality, low number of reads or other conflicts. 
+        - For 2891630 groups 1 consensus was assembled. 
+        - For 44182 groups 2 or 3 consensuses were assembled.
 
 `Number of core alignments`
 : number of alignments that cover `assemblingFeature` which were used to assemble consensuses
