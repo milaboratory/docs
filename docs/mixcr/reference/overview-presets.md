@@ -3,7 +3,7 @@
 To run a qualified upstream analysis one need to understand the wet lab protocol used and the architecture of the cDNA/DNA libraries. The list of steps in the analysis pipeline may also differ depending on the data type. MiXCR is like a "swiss knife" that provides full flexibility to optimize a workflow for every particular type of data and achieve the highest possible analysis performance. MiXCR _presets_ is a convenient and intuitive interface allowing users to run complicated pipelines easily.
 
 
-A _preset_ is a list of pre-configured MiXCR steps needed to run an analysis for a particular data type, bundled under a certain name and defined in a [YAML](ref-presets-yaml.md) format. Preset determines the list of MiXCR analysis steps, their parameter values and additional required parameters needed to be specified by the user. There is a [comprehensive list](overview-built-in-presets.md) of built-in presets for many of commercialy available kits, known library preparation protocols and sequencing data types.
+A _preset_ is a list of pre-configured MiXCR steps needed to run an analysis for a particular data type, bundled under a certain name and defined in a YAML format. Preset determines the list of MiXCR analysis steps, their parameter values and additional required parameters needed to be specified by the user. There is a [comprehensive list](overview-built-in-presets.md) of built-in presets for many of commercialy available kits, known library preparation protocols and sequencing data types.
 
 Presets can be used with [`mixcr analyze`](mixcr-analyze.md) command. For example, to run the analysis of 10x Genomics single cell human VDJ data for B-cells we can use `10x-vdj-bcr` preset:
 ```shell
