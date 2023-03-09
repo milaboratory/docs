@@ -20,7 +20,6 @@ Example:
 ```shell
 mixcr analyze ont-rna-seq-vdj-full-length \
      --species hsa \
-     sample_R1.fastq.gz \
-     sample_R2.fastq.gz \
+     sample.fastq.gz \
      sample_result
 ```
