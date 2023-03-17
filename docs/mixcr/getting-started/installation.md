@@ -25,17 +25,17 @@ Download and extract `mixcr`:
 2. Go to [MiXCR GitHub page](https://github.com/milaboratory/mixcr) and copy the link for latest build. The command bellow downloads MiXCR v4.2.0. For other builds replace the link with the one you obtained from GitHub.
 
     ```shell
-    wget https://github.com/milaboratory/mixcr/releases/download/v4.2.0/mixcr-4.2.0.zip
+    wget https://github.com/milaboratory/mixcr/releases/download/v4.3.0/mixcr-4.3.0.zip
     ```
 
 3. Unpack the zip archive using the `unzip` command
 
     ```shell
-    > unzip mixcr-4.2.0.zip
+    > unzip mixcr-4.3.0.zip
     ```
     The output looks similar to this:
     ```shell
-    Archive:  mixcr-4.2.0.zip
+    Archive:  mixcr-4.3.0.zip
       inflating: mixcr
       inflating: LICENSE
       inflating: mixcr.jar
@@ -50,10 +50,10 @@ Download and extract `mixcr`:
     The output should look similar to:
 
     ```shell
-    MiXCR v4.2.0 (built Thu Jan 26 20:40:26 CET 2023; rev=b0f194e0c6; branch=no_branch; host=fv-az477-60)
-    RepSeq.IO v1.7.0 (rev=36f4e4453f)
-    MiLib v2.3.0 (rev=0226f1da59)
-    Built-in V/D/J/C library: repseqio.v2.1
+    MiXCR v4.3.0 (built Fri Mar 17 17:26:47 CET 2023; rev=96be4ef48c; branch=no_branch; host=fv-az262-972)
+    RepSeq.IO v1.8.0 (rev=ce36405897)
+    MiLib v2.4.0 (rev=95ac7c4c41)
+    Built-in V/D/J/C library: repseqio.v2.2
 
     Library search path:
     - built-in libraries
@@ -137,8 +137,11 @@ MiXCR has a [Homerew formula](https://github.com/milaboratory/homebrew-all) to s
 4. If everything is fine you will see an output similar to:
 
     ```shell
-    MiXCR v (built Fri Jul 15 01:51:38 CEST 2022; rev=aa769be87b; branch=tag-rework-2; host=Dmitrys-MacBook-Pro-2.local)
-    RepSeq.IO v1.4.1-1-master (rev=474ebe0f6e)
+    MiXCR v4.3.0 (built Fri Mar 17 17:26:47 CET 2023; rev=96be4ef48c; branch=no_branch; host=fv-az262-972)
+    RepSeq.IO v1.8.0 (rev=ce36405897)
+    MiLib v2.4.0 (rev=95ac7c4c41)
+    Built-in V/D/J/C library: repseqio.v2.2
+    ```
     MiLib v2.0.0-11-master (rev=ca59a3ad71)
     Built-in V/D/J/C library: repseqio.v2.0
     ```
