@@ -16,16 +16,9 @@ mixcr analyze [--help]
 
     # analyze-specific options
     
-    [--not-aligned-I1 <path.fastq[.gz]>] 
-    [--not-aligned-I2 <path.fastq[.gz]>] 
-    [--not-aligned-R1 <path.fastq[.gz]>] 
-    [--not-aligned-R2 <path.fastq[.gz]>] 
-    [--not-parsed-I1 <path.fastq[.gz]>] 
-    [--not-parsed-I2 <path.fastq[.gz]>] 
-    [--not-parsed-R1 <path.fastq[.gz]>] 
-    [--not-parsed-R2 <path.fastq[.gz]>] 
     [--no-reports] 
-    [--no-json-reports]  
+    [--no-json-reports]
+    [--output-not-used-reads]  
     [--use-local-temp]
     [--threads <n>] 
     [--force-overwrite]
@@ -80,35 +73,14 @@ To take and process a batch of input sequencing files at once and optionally ass
 `output_prefix`
 : Path prefix telling mixcr where to put all output files, individual intermediate and resulting files will have suffixes according to the steps they were produced with. If argument ends with file separator, then outputs will be written in specified directory.
 
-`--not-aligned-I1 <path.fastq[.gz]>`
-: Pipe not aligned I1 reads into separate file.
-
-`--not-aligned-I2 <path.fastq[.gz]>`
-: Pipe not aligned I2 reads into separate file.
-
-`--not-aligned-R1 <path.fastq[.gz]>`
-: Pipe not aligned R1 reads into separate file.
-
-`--not-parsed-I1 <path.fastq[.gz]>`
-: Pipe not parsed I1 reads into separate file.
-
-`--not-parsed-I2 <path.fastq[.gz]>`
-: Pipe not parsed I2 reads into separate file.
-
-`--not-aligned-R2 <path.fastq[.gz]>`
-: Pipe not aligned R2 reads into separate file.
-
-`--not-parsed-R1 <path.fastq[.gz]>`
-: Pipe not parsed R1 reads into separate file.
-
-`--not-parsed-R2 <path.fastq[.gz]>`
-: Pipe not parsed R2 reads into separate file.
-
 `--no-reports`
 : Don't output `txt` report files for each of the steps
 
 `--no-json-reports`
 : Don't output `json` report files for each of the steps
+
+`--output-not-used-reads`
+: If specified, not aligned reads will be written in `{output_prefix}.not_aligned.{(I1|I2|R1|R2)}.fastq.gz`, not parsed reads will be written in `{output_prefix}.not_parsed.{(I1|I2|R1|R2)}.fastq.gz`
 
 `--use-local-temp`
 : Put temporary files in the same folder as the output files.

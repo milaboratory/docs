@@ -18,7 +18,8 @@ mixcr refineTagsAndSort
     [--max-indels <n>] 
     [--max-errors <n>] 
     [--memory-budget <n>]
-    [--set-whitelist <key=value> | --reset-whitelist tag]... 
+    [--set-whitelist <key=value>] 
+    [--reset-whitelist tag]
     [--report <path>] 
     [--json-report <path>] 
     [--use-local-temp] 
@@ -77,13 +78,6 @@ Basic command line options are:
 
 `--reset-whitelist tag`  
 : Resets the whitelist for a specific tag so that unguided refinement procedure will be applied for it. Usage:
-    ```
-    --whitelist CELL=preset:737K-august-2016
-    ```
-    or
-    ```
-    -w UMI=file: my_umi_whitelist.txt
-    ```
 
 `-r, --report <path>`
 : [Report](./report-refineTagsAndSort.md) file (human readable version, see `-j / --json-report` for machine readable report).

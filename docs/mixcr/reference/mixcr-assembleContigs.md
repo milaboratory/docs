@@ -173,3 +173,6 @@ Full sequence assembler parameters that may be tuned:
 
 `-OpostFiltering.type=NoFiltering`
 : Used only if `assemblingRegions` is not null. Sets filtering criteria to apply before outputting the resulting clonotypes. `NoFiltering` - don't filter output clonotypes. `OnlyFullyAssembled` - only clonotypes completely covering `assemblingRegions` will be retained. `OnlyFullyDefined` - only clonotypes completely covering `assemblingRegions` and having no "N" letters will be retained. Default - `NoFiltering`
+
+`-OdiscardAmbiguousNucleotideCalls`
+: Discard ambiguous calls (no use of 'N's).

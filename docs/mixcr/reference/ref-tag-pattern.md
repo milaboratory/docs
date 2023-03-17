@@ -21,7 +21,7 @@ Capital letters imply perfect match. Lowercase letters allow fuzzy match, where 
 - one mismatch with normal nucleotide (a,t,g,c) costs 2 bits, 
 - one mismatch with IUPAC wildcards ((N, w, s, m, etc)) costs 1 bit.
 
-Each pattern has to start with `^` which defines the read beginning.
+Each pattern has to start with `^` which defines the read beginning. Additionally, one can use `$` to specify the end of the read.
 
 Examples:
 ```
@@ -31,6 +31,14 @@ matches:
 ATGCCTAGGCTTCGA....
 ATGCGTAGGCTTCGA....
 ATGCCAACGCTTCGA....
+```
+```
+"^ATGCсtaggcTTCGA$"
+
+matches:
+ATGCCTAGGCTTCGA
+ATGCGTAGGCTTCGA
+ATGCCAACGCTTCGA
 ```
 
 ### Backslash `\` 

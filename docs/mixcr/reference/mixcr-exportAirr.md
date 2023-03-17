@@ -24,7 +24,7 @@ Command line options:
 : Path where to write export. Will write to output if omitted.
 
 `-t, --target <n>`
-: Target id (use -1 to export from the target containing CDR3).
+: Index of source sequence that was used to build clone/alignment (use -1 to export from the target containing CDR3).
 
 `-g, --imgt-gaps`
 : If this option is specified, alignment fields will be padded with IMGT-style gaps.

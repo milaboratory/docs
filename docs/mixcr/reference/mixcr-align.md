@@ -101,7 +101,7 @@ Basic command line options:
 : Write alignment results for all input reads (even if alignment failed). Default value determined by the preset.
 
 `--tag-pattern-file <path>`
-: Read tag pattern from a file. Default tag pattern determined by the preset.
+: Read tag pattern from a file. Default value determined by the preset.
 
 `--tag-pattern <pattern>`
 : Specify tag pattern for barcoded data.

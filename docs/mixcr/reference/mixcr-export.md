@@ -648,6 +648,13 @@ These fields available for `exportAlignments` and `exportClones`:
 
 Tag type will be used for filtering tags for export.
 
+`-cellId [<(none|space|dash)>]`
+: Concatenated all cell tags with specified delimiter, default delimiter is `none`. 
+
+Example output for `-cellId`: GGATTACTCATTGCCC 
+
+Example output for `-cellId dash`: GGATTACT-CATTGCCC 
+
 ### Alignment-specific fields
 
 The following fields are only available for `exportAlignments`:
