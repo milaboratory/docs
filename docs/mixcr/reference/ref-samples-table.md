@@ -35,7 +35,7 @@ Below we illustrate usage of sample sheets by various examples.
 
 Suppose index barcodes from I1/I2 `.fastq` files are used to identify different samples from the same run. We can use the following MiXCR command to infer sample barcodes from index files:
 ```shell
-mixcr analuze <preset-name> \
+mixcr analyze <preset-name> \
       --sample-table sample_table.tsv \
       --tag-pattern "(R1:*)\(R2:*)\(SAMPLE0I1:*)\(SAMPLE1I2:*)" \
       input_R1.fastq.gz \
