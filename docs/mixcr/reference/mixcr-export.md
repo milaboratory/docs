@@ -644,16 +644,19 @@ These fields available for `exportAlignments` and `exportClones`:
 : All tags values (i.e. CELL barcode or UMI sequence).
 
 `-uniqueTagCount <(Molecule|Cell|Sample)>`
-: Unique tag count
-
-Tag type will be used for filtering tags for export.
+: Unique tag count. Tag type will be used for filtering tags for export.
 
 `-cellId [<(none|space|dash)>]`
-: Concatenated all cell tags with specified delimiter, default delimiter is `none`. 
+: Concatenated all cell tags with specified delimiter, default delimiter is `none`. Example output for `-cellId`: `GGATTACTCATTGCCC`, for `-cellId dash`: `GGATTACT-CATTGCCC`. 
 
-Example output for `-cellId`: GGATTACTCATTGCCC 
+`-isOOF <geneFeature>`
+: Whether specified gene feature is out of frame.
 
-Example output for `-cellId dash`: GGATTACT-CATTGCCC 
+`-hasStops <geneFeature>`
+: Whether specified gene contains stop codons.
+
+`-isProductive <geneFeature>`
+: Whether specified gene feature will be productive (no stops and is in frame).
 
 ### Alignment-specific fields
 
