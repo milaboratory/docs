@@ -14,12 +14,13 @@ The easiest way to activate the license is to run `activate-license` command and
   Please enter the license: ...
 ```
 
-Another way to activate the license is to put `mi.license` file in the one of the following directories:
+Another way to activate the license is to create a file `mi.license` file in the one of the following directories:
 
-- ~/.mi.license 
-- ~/mi.license 
+- ~/ (home directory)
 - directory with `mixcr.jar` file 
 - directory with MiXCR executable
+
+One also can use `.mi.license` name if placing this file into the home directory.
   
 Finally, one can use environment variables:
 
