@@ -8,13 +8,13 @@ jobs:
   init:
     runs-on: ubuntu-latest
     steps:
-      - uses: milaboratory/github-ci/actions/context/init@v2
+      - uses: milaboratory/github-ci/actions/context/init@v4
         with:
           version-canonize: false
   run:
     needs:
       - init
-    uses: milaboratory/github-ci/.github/workflows/deploy-docs.yaml@v3-beta
+    uses: milaboratory/github-ci/.github/workflows/deploy-docs.yaml@v4
     with:
       app-name: MiXCR Docs
       app-name-slug: 'mixcr-com'
