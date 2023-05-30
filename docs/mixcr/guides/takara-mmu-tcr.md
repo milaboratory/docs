@@ -12,10 +12,10 @@ All data is available from SRA (PRJNA658348) using e.g. [SRA Explorer](https://s
 
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "guides/abhelix-bcr/scripts/010-download-aria2c.sh"
+    --8<-- "guides/takara-mmu-tcr/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "guides/abhelix-bcr/scripts/download-list.txt"
+    --8<-- "guides/takara-mmu-tcr/scripts/download-list.txt"
     ```
 
 The project contains 100 FASTQ file pairs. For the purpose of this tutorial we assume that all fastq files are stored in `fastq/` folder. Each file name encodes the information about mouse id and PMBC sample time-point (0,7,14,21 days) or tissue (s - spleen, t -tumor)
@@ -77,7 +77,7 @@ Option `--report` is specified here explicitly.
 Assembles alignments into clonotypes and applies several layers of errors correction(ex. quality-dependent correction for sequencing errors, PCR-error correction by clustering). Check [`mixcr assemble`](../reference/mixcr-assemble.md) for more information.
 
 ```shell
---8<-- "guides/abhelix-bcr/scripts/050-upstream-assemble.sh"
+--8<-- "guides/takara-mmu-tcr/scripts/050-upstream-assemble.sh"
 ```
 
 Options `--report` and `--json-report` are specified here explicitly so that the report files will be appended with assembly report.
