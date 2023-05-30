@@ -1,0 +1,16 @@
+https://cdn.milaboratory.com/data/milab-bcr-kit/DChu_p1_1_R1.fastq.gz
+  out=raw/DChu_p1_1_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-bcr-kit/DChu_p1_1_R2.fastq.gz
+  out=raw/DChu_p1_1_R2.fastq.gz
+https://cdn.milaboratory.com/data/milab-bcr-kit/DChu_p1_2_R1.fastq.gz
+  out=raw/DChu_p1_2_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-bcr-kit/DChu_p1_2_R2.fastq.gz
+  out=raw/DChu_p1_2_R2.fastq.gz
+https://cdn.milaboratory.com/data/milab-bcr-kit/DChu_p2_1_R1.fastq.gz
+  out=raw/DChu_p2_1_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-bcr-kit/DChu_p2_1_R2.fastq.gz
+  out=raw/DChu_p2_1_R2.fastq.gz
+https://cdn.milaboratory.com/data/milab-bcr-kit/DChu_p2_2_R1.fastq.gz
+  out=raw/DChu_p2_2_R1.fastq.gz
+https://cdn.milaboratory.com/data/milab-bcr-kit/DChu_p2_2_R2.fastq.gz
+  out=raw/DChu_p2_2_R2.fastq.gz

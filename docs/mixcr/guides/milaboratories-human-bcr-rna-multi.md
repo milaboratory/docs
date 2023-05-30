@@ -13,10 +13,10 @@ All data may be downloaded using the script bellow.
 
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "guides/milaboratories-human-tcr-dna-multi/scripts/010-download-aria2c.sh"
+    --8<-- "guides/milaboratories-human-bcr-rna-multi/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "guides/milaboratories-human-tcr-dna-multi/scripts/download-list.txt"
+    --8<-- "guides/milaboratories-human-bcr-rna-multi/scripts/download-list.txt"
     ```
 ## Upstream analysis
 
