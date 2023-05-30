@@ -68,10 +68,10 @@ All data may be downloaded directly from SRA (PRJNA777934) using e.g. [SRA Explo
 
 ??? tip "Use [aria2c](https://aria2.github.io) for efficient download of the full dataset with the proper filenames:"
     ```shell title="download.sh"
-    --8<-- "guides/takara-hsa-bcr/scripts/010-download-aria2c.sh"
+    --8<-- "guides/nebnext-bcr/scripts/010-download-aria2c.sh"
     ```
     ```shell title="download-list.txt"
-    --8<-- "guides/takara-hsa-bcr/scripts/download-list.txt"
+    --8<-- "guides/nebnext-bcr/scripts/download-list.txt"
     ```
 
 The project contains 48 paired FASTQ files. Each file name encodes the information about donor, time-point relative to vaccination, tissue of origin and cell population. For example for the first file from the above listing:
