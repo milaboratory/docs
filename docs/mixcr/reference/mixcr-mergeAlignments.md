@@ -1,4 +1,4 @@
-# `mixcr exportAlignments`
+# `mixcr mergeAlignments`
 
 Merge several *.vdjca files with alignments into a single alignments file.
 
