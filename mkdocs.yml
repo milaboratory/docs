@@ -152,10 +152,13 @@ nav:
         - 'analyze': mixcr/reference/mixcr-analyze.md
         - 'align': mixcr/reference/mixcr-align.md
         - 'refineTagsAndSort': mixcr/reference/mixcr-refineTagsAndSort.md
-        - 'assemblePartial': mixcr/reference/mixcr-assemblePartial.md
-        - 'extend': mixcr/reference/mixcr-extend.md
         - 'assemble': mixcr/reference/mixcr-assemble.md
+        - 'assemblePartial': mixcr/reference/mixcr-assemblePartial.md
         - 'assembleContigs': mixcr/reference/mixcr-assembleContigs.md
+        - 'findAlleles': mixcr/reference/mixcr-findAlleles.md
+        - 'findShmTrees': mixcr/reference/mixcr-findShmTrees.md
+        - 'downsample': mixcr/reference/mixcr-downsample.md
+        - 'extend': mixcr/reference/mixcr-extend.md
         - 'export': mixcr/reference/mixcr-export.md
         - 'exportPretty': mixcr/reference/mixcr-exportPretty.md
         - 'exportAirr': mixcr/reference/mixcr-exportAirr.md
@@ -164,16 +167,14 @@ nav:
         - 'exportReports': mixcr/reference/mixcr-exportReports.md
         - 'exportReportsTable': mixcr/reference/mixcr-exportReportsTable.md
         - 'exportQc': mixcr/reference/mixcr-exportQc.md
-        - 'postanalysis': mixcr/reference/mixcr-postanalysis.md
-        - 'downsample': mixcr/reference/mixcr-downsample.md
         - 'exportPlots': mixcr/reference/mixcr-exportPlots.md
+        - 'exportPreset': mixcr/reference/mixcr-exportPreset.md
         - 'exportTables': mixcr/reference/mixcr-exportTables.md
         - 'exportPreprocTables': mixcr/reference/mixcr-exportPreprocTables.md
         - 'exportClonesOverlap': mixcr/reference/mixcr-exportClonesOverlap.md
+        - 'mergeAlignments': mixcr/reference/mixcr-mergeAlignments.md
         - 'overlapScatterPlot': mixcr/reference/mixcr-overlapScatterPlot.md
-        - 'findAlleles': mixcr/reference/mixcr-findAlleles.md
-        - 'findShmTrees': mixcr/reference/mixcr-findShmTrees.md
-        - 'exportPreset': mixcr/reference/mixcr-exportPreset.md
+        - 'postanalysis': mixcr/reference/mixcr-postanalysis.md
 
 
       - 'Reports':
