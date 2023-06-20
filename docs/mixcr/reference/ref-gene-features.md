@@ -28,7 +28,8 @@ regions is not limited by this list:
 -   offsets can be added or subtracted from original positions of
     **anchor points** to define even more custom gene regions (for more
     detailed description see [gene feature syntax](#gene-feature-syntax))
--   clones can be [assembled](./mixcr-assemble.md) by a list of disjointed features (e.g. `[{FR1Begin:CDR1End},{FR3Begin:FR4End}]`).
+-   clones can be [assembled](./mixcr-assemble.md) by a list of disjointed features (e.g. 
+    `[{FR1Begin:CDR1End},{FR3Begin:FR4End}]`).
 
 Naming of gene features is based on IMGT convention described in
 *Lefranc et al. (2003), Developmental & Comparative Immunology 27.1
@@ -44,7 +45,7 @@ Features defined for germline genes are mainly used in
 ![](./pics/gene-features-v-gene-structure-light.svg#only-light)
 ![](./pics/gene-features-v-gene-structure-dark.svg#only-dark)
 
-Additionally to core gene features in V region (like `FR3`) we introduce
+Additionally, to core gene features in V region (like `FR3`) we introduce
 `VGene`, `VTranscript` and `VRegion` for convenience.
 
 ### D Gene structure
