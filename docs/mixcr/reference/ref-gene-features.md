@@ -28,6 +28,7 @@ regions is not limited by this list:
 -   offsets can be added or subtracted from original positions of
     **anchor points** to define even more custom gene regions (for more
     detailed description see [gene feature syntax](#gene-feature-syntax))
+-   clones can be [assembled](./mixcr-assemble.md) by a list of disjointed features (e.g. `[{FR1Begin:CDR1End},{FR3Begin:FR4End}]`).
 
 Naming of gene features is based on IMGT convention described in
 *Lefranc et al. (2003), Developmental & Comparative Immunology 27.1
@@ -109,6 +110,7 @@ nucleotides upstream its right bound.
 - one can specify offsets for predefined gene feature boundaries using GeneFeatureName(leftOffset, rightOffset) syntax:
 `CDR3(3,0)`, `CDR3(-6,6)` - equivalents of two examples from previous item
 - all syntax constructs can be combined: `{L1Begin(-12):L1End}+L2+VRegion(0,+10)}`.
+- disjointed set of features can be provided for clone assembly: `[{FR1Begin:CDR1End},{FR3Begin:FR4End}]`.
 
 
 `V5UTRGermline` (*equals to*  `{UTR5Begin:V5UTREnd}`) 
@@ -157,7 +159,7 @@ nucleotides upstream its right bound.
 :  Intron in V region.                                                                                                                                                      
 
  `L2` (*equals to*  `{L2Begin:L2End}`) 
-:  Part of lider sequence in second exon.                                                                                                                                   
+:  Part of leader sequence in second exon.                                                                                                                                   
 
  `Exon2` (*equals to*  `{L2Begin:FR4End}`) 
 :  Full second exon of IG/TCR gene.                                                                                                                                         
