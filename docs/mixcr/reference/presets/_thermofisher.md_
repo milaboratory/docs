@@ -1,40 +1,36 @@
 ### Thermo Fisher
 #### Oncomine™ TCR Beta‑LR Assay
-==`oncomine-human-tcrb-lr-cdr3`==
-·
-==`oncomine-human-tcrb-lr-full-length`==
+==`oncomine-human-tcrb-lr`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A35386)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
 
 The Oncomine™ TCR Beta‑LR Assay is a highly sensitive, RNA-based NGS assay that enables the
-characterization of the T-cell receptor β (TCRβ) sequences, including all complementarity-determining
-regions (CDR1, 2, and 3) of the variable gene. The assay accurately measures T‑cell repertoire diversity,
-clonal expansion, and allows for identification of allele-specific polymorphisms, in a wide array of
+characterization of the T-cell receptor β (TCRβ) sequences, including all complementarity-determining regions (CDR1, 2, and 3) of the variable gene. The assay accurately measures T‑cell repertoire diversity, clonal expansion, and allows for identification of allele-specific polymorphisms, in a wide array of
 sample types.
+By default the clones are assembled by `{CDR1Begin:FR4End}`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
+
 
 ![](pics/oncomine-human-tcrb-lr-light.svg#only-light)
 ![](pics/oncomine-human-tcrb-lr-dark.svg#only-dark)
 
 Example:
 ```shell
-mixcr analyze oncomine-human-tcrb-lr-cdr3 \
+mixcr analyze oncomine-human-tcrb-lr \
       input.fastq.gz \
       result 
 ```
 
 #### Oncomine™ TCR Beta‑SR Assay
-==`oncomine-human-tcrb-sr-cdr3`==
+==`oncomine-human-tcrb-sr`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A39072)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
 
 The Oncomine™ TCR Beta‑SR Assay is a highly sensitive RNA- or DNA-based NGS assay that enables
-the characterization of the T-cell receptor β (TCRβ) complementarity-determining region 3 (CDR3)
-sequences of the TCRβ chain. The assay accurately measures T‑cell repertoire diversity and clonal
-expansion in a wide array of sample types, including those derived from FFPE-preserved or degraded
+the characterization of the T-cell receptor β (TCRβ) complementarity-determining region 3 (CDR3) sequences of the TCRβ chain. The assay accurately measures T‑cell repertoire diversity and clonal expansion in a wide array of sample types, including those derived from FFPE-preserved or degraded
 material.
 
 ![](pics/oncomine-human-tcrb-sr-light.svg#only-light)
@@ -42,47 +38,42 @@ material.
 
 Example:
 ```shell
-mixcr analyze oncomine-human-tcrb-sr-cdr3 \
+mixcr analyze oncomine-human-tcrb-sr \
       input.fastq.gz \
       result 
 ```
 
 #### Oncomine™ BCR IGH‑LR Assay Kit
-==`oncomine-human-bcr-ihg-lr-cdr3`==
-·
-==`oncomine-human-bcr-igh-lr-full-length`==
+==`oncomine-human-igh-lr`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A45485)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
 
 The Oncomine™ BCR IGH‑LR Assay is a highly sensitive, RNA-based NGS assay that enables the
-characterization of immunoglobulin heavy-chain sequences, including all complementarity-determining
-regions (CDR1, 2, and 3) and the CH1 domain of the constant gene. The assay accurately measures
-repertoire diversity, clonal expansion, allows for determination of B cell isotype (and subtype), and
-reports the level of somatic hypermutation, in a wide array of sample types
+characterization of immunoglobulin heavy-chain sequences, including all complementarity-determining regions (CDR1, 2, and 3) and the CH1 domain of the constant gene. The assay accurately measures repertoire diversity, clonal expansion, allows for determination of B cell isotype (and subtype), and reports the level of somatic hypermutation, in a wide array of sample types.
+By default the clones are assembled by `{CDR1Begin:FR4End}`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
+
 
 ![](pics/oncomine-human-bcr-ihg-lr-light.svg#only-light)
 ![](pics/oncomine-human-bcr-ihg-lr-dark.svg#only-dark)
 
 Example:
 ```shell
-mixcr analyze oncomine-human-bcr-igh-lr-full-length \
+mixcr analyze oncomine-human-igh-lr \
       input.fastq.gz \
       result 
 ```
 
 #### Oncomine™ BCR IGH‑SR Assay
-==`oncomine-human-bcr-igh-sr-cdr3`==
+==`oncomine-human-igh-sr`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A45483)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
 
 The Oncomine™ BCR IGH‑SR Assay is a highly sensitive RNA- or DNA-based NGS assay that enables
-the characterization of the immunoglobulin heavy chain complementarity-determining region 3 (CDR3)
-sequences. The assay accurately measures B cell repertoire diversity and clonal expansion in a wide
-array of sample types, including samples derived from FFPE-preserved or degraded material
+the characterization of the immunoglobulin heavy chain complementarity-determining region 3 (CDR3) sequences. The assay accurately measures B cell repertoire diversity and clonal expansion in a wide array of sample types, including samples derived from FFPE-preserved or degraded material.
 
 
 ![](pics/oncomine-human-bcr-ihg-sr-light.svg#only-light)
@@ -90,30 +81,26 @@ array of sample types, including samples derived from FFPE-preserved or degraded
 
 Example:
 ```shell
-mixcr analyze oncomine-human-bcr-igh-sr-cdr3 \
+mixcr analyze oncomine-human-igh-sr \
       input.fastq.gz \
       result 
 ```
 
 #### Oncomine™ BCR Pan-Clonality Assay
-==`oncomine-human-bcr-pan-clonality-cdr3`==
+==`oncomine-human-bcr-pan-clonality`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51559)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
 
-The Oncomine™ BCR Pan-Clonality Assay is a highly sensitive, single reaction, DNA-based NGS assay
-that enables the characterization of B cell heavy chain (IGH) and light chain (IgK and IgL) receptor
-sequences, including each complementarity-determining region 3 (CDR3). The assay accurately
-measures B cell repertoire metrics such as repertoire diversity and clonality in multiple receptors in
-a single reaction.
+The Oncomine™ BCR Pan-Clonality Assay is a highly sensitive, single reaction, DNA-based NGS assay that enables the characterization of B cell heavy chain (IGH) and light chain (IgK and IgL) receptor sequences, including each complementarity-determining region 3 (CDR3). The assay accurately measures B cell repertoire metrics such as repertoire diversity and clonality in multiple receptors in a single reaction.
 
 ![](pics/oncomine-human-bcr-pan-clonality-light.svg#only-light)
 ![](pics/oncomine-human-bcr-pan-clonality-dark.svg#only-dark)
 
 Example:
 ```shell
-mixcr analyze oncomine-human-bcr-pan-clonality-cdr3 \
+mixcr analyze oncomine-human-bcr-pan-clonality \
       input.fastq.gz \
       result 
 ```
@@ -202,7 +189,7 @@ mixcr analyze oncomine-human-igh-leader-j \
 ```
 
 #### Oncomine™ TCR Pan-Clonality Assay
-==`oncomine-human-tcr-pan-clonality-cdr3`==
+==`oncomine-human-tcr-pan-clonality`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51562)
 ·
@@ -215,7 +202,7 @@ The Oncomine TCR Pan-Clonality Assay is a targeted next-generation sequencing (N
 
 Example:
 ```shell
-mixcr analyze oncomine-human-tcr-pan-clonality-cdr3 \
+mixcr analyze oncomine-human-tcr-pan-clonality \
       input.fastq.gz \
       result 
 ```

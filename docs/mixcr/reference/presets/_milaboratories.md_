@@ -1,15 +1,14 @@
 ### MiLaboratories
 
 #### Human Ig RNA Multiplex
-==`milab-human-bcr-multiplex-full-length`==
-·
-==`milab-human-bcr-multiplex-cdr3`==
+==`milab-human-ig-rna-multiplex`==
 ·
 [:octicons-link-16: Link](https://milaboratories.com/human-ig-rna-multiplex-kit)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/milab.yaml)
 
-Allows to obtain full length IG heavy and light chain repertoires with UMI-based accuracy. Discriminates all IGH isotypes including IgM, IgD, IgG3, IgG1, IgA1, IgG2, IgG4, IgE, and IgA2. `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
+Allows to obtain full length IG heavy and light chain repertoires with UMI-based accuracy. Discriminates all IGH isotypes including IgM, IgD, IgG3, IgG1, IgA1, IgG2, IgG4, IgE, and IgA2.
+By default the clones are assembled by `{CDR1Begin:FR4End}`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
 
 ![](pics/milab-multiplex-bcr-light.svg#only-light)
 ![](pics/milab-multiplex-bcr-dark.svg#only-dark)
@@ -18,7 +17,7 @@ By default, separates clonotypes by isotype which may be changed using `--dont-s
 
 Example:
 ```shell
-mixcr analyze milab-human-bcr-multiplex-full-length \
+mixcr analyze milab-human-ig-rna-multiplex \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -26,7 +25,7 @@ mixcr analyze milab-human-bcr-multiplex-full-length \
 
 #### Human TCR RNA Multiplex
 
-==`milab-human-tcr-rna-multiplex-cdr3`==
+==`milab-human-tcr-rna-multiplex`==
 ·
 [:octicons-link-16: Link](https://milaboratories.com/human-tcr-rna-multiplex-kit)
 ·
@@ -41,7 +40,7 @@ Allows to obtain human TCR alpha and beta CDR3 repertoires for different types o
 
 Example:
 ```shell
-mixcr analyze milab-human-tcr-rna-multiplex-cdr3 \
+mixcr analyze milab-human-tcr-rna-multiplex \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -50,15 +49,14 @@ mixcr analyze milab-human-tcr-rna-multiplex-cdr3 \
 
 #### Human TCR RNA
 
-==`milab-human-tcr-rna-race-cdr3`==
-·
-==`milab-human-tcr-rna-race-full-length`==
+==`milab-human-tcr-rna-race`==
 ·
 [:octicons-link-16: Link](https://milaboratories.com/human-tcr-rna-kit)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/milab.yaml)
 
-Allows to obtain unbiased TCR alpha and beta repertoires with UMI-based accuracy. `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
+Allows to obtain unbiased TCR alpha and beta repertoires with UMI-based accuracy.
+By default the clones are assembled by `VDJRegion`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
 
 ![](pics/milab-race-tcr-light.svg#only-light)
 ![](pics/milab-race-tcr-dark.svg#only-dark)
@@ -66,7 +64,7 @@ Allows to obtain unbiased TCR alpha and beta repertoires with UMI-based accuracy
 
 Example:
 ```shell
-mixcr analyze milab-human-tcr-rna-race-cdr3 \
+mixcr analyze milab-human-tcr-rna-race \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -74,7 +72,7 @@ mixcr analyze milab-human-tcr-rna-race-cdr3 \
 
 
 #### Human TCR DNA Multiplex
-==`milab-human-tcr-dna-multiplex-cdr3`==
+==`milab-human-tcr-dna-multiplex`==
 ·
 [:octicons-link-16: Link](https://milaboratories.com/human-tcr-dna-multiplex-kit)
 ·
@@ -88,7 +86,7 @@ Allows to obtain TCR alpha and beta repertoires for different types of available
 
 Example:
 ```shell
-mixcr analyze milab-human-tcr-dna-multiplex-cdr3 \
+mixcr analyze milab-human-tcr-dna-multiplex \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -96,16 +94,14 @@ mixcr analyze milab-human-tcr-dna-multiplex-cdr3 \
 
 #### Mouse TCR RNA
 
-==`milab-mouse-tcr-rna-race-cdr3`==
-·
-==`milab-mouse-tcr-rna-race-full-length`==
+==`milab-mouse-tcr-rna-race`==
 ·
 [:octicons-link-16: Link](https://milaboratories.com/mouse-tcr-rna-kit)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/milab.yaml)
 
 
-The kit allows to obtain unbiased TCR alpha and beta repertoires with UMI-based accuracy. `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
+The kit allows to obtain unbiased TCR alpha and beta repertoires with UMI-based accuracy. By default the clones are assembled by `VDJRegion`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
 
 ![](pics/milab-race-tcr-light.svg#only-light)
 ![](pics/milab-race-tcr-dark.svg#only-dark)
@@ -113,7 +109,7 @@ The kit allows to obtain unbiased TCR alpha and beta repertoires with UMI-based 
 
 Example:
 ```shell
-mixcr analyze milab-mouse-tcr-rna-race-cdr3 \
+mixcr analyze milab-mouse-tcr-rna-race \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 

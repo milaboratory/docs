@@ -1,6 +1,6 @@
 ### Smart-Seq2
 
-==`smartseq2-vdj-full-length`==
+==`smartseq2-vdj`==
 ·
 [:octicons-link-16: Publication](https://www.nature.com/articles/nprot.2014.006)
 ·
@@ -22,7 +22,7 @@ Example:
 161014_SN163_0729_AH3VW7BCXY_L1_TAAGCTTA-GTGTTAAG_R1.fastq.gz
 161014_SN163_0729_AH3VW7BCXY_L1_TAAGCTTA-GTGTTAAG_R2.fastq.gz
 
-mixcr analyze smartseq2-vdj-full-length \
+mixcr analyze smartseq2-vdj \
 	--species hsa \
 	161014_SN163_0729_AH3VW7BCXY_L1_{{CELL0ROW:a}}-{{CELL0COL:a}}_R1.fastq.gz \
 	161014_SN163_0729_AH3VW7BCXY_L1_{{CELL0ROW:a}}-{{CELL0COL:a}}_R2.fastq.gz \

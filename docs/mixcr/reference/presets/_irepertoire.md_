@@ -5,13 +5,9 @@ iRepertoire has multiple different primer systems that vary by the regions targe
 Repertoire’s RepSeq service (formerly AMP2Seq) utilizes arm-PCR technology, which uses hundreds of VDJ-specific primers in one reaction to semi-quantitatively and inclusively amplify all the expressed V(D)Js in B or T cells from a single sample.
 
 #### Human RepSeq RNA Reagent System
-==`irepertoire-human-rna-tcr-sr`==
+==`irepertoire-repseq-human-sr`==
 ·
-==`irepertoire-human-rna-tcr-lr`==
-·
-==`irepertoire-human-rna-bcr-sr`==
-·
-==`irepertoire-human-rna-bcr-lr`==
+==`irepertoire-repseq-human-lr`==
 ·
 [:octicons-link-16: Link](https://irepertoire.com/repseq/)
 ·
@@ -26,20 +22,16 @@ Short-read (SR) RNA-compatible human primers (presets that end with `sr`) cover 
 
 Example:
 ```shell
-mixcr analyze irepertoire-human-rna-tcr-sr \
+mixcr analyze irepertoire-repseq-human-sr \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
 ```
 
 #### Mouse RepSeq RNA Reagent System
-==`irepertoire-mouse-rna-tcr-sr`==
+==`irepertoire-repseq-mouse-sr`==
 ·
-==`irepertoire-mouse-rna-tcr-lr`==
-·
-==`irepertoire-mouse-rna-bcr-sr`==
-·
-==`irepertoire-mouse-rna-bcr-lr`==
+==`irepertoire-repseq-mouse-lr`==
 ·
 [:octicons-link-16: Link](https://irepertoire.com/repseq/)
 ·
@@ -55,29 +47,31 @@ Short-read (SR) RNA-compatible human primers (presets that end with `sr`) cover 
 
 Example:
 ```shell
-mixcr analyze irepertoire-mouse-rna-tcr-sr \
+mixcr analyze irepertoire-repseq-mouse-sr \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
 ```
 
 
-#### Human RepSeq+ Reagent System
+#### RepSeq+ Reagent System
 
-==`irepertoire-human-rna-repseq-plus`==
+==`irepertoire-repseq-plus-human`==
+·
+==`irepertoire-repseq-plus-mouse`==
 ·
 [:octicons-link-16: Link](https://irepertoire.com/repseq-2/)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/irepertoire.yaml)
 
-iRepertoire’s RepSeq+ service utilizes dam-PCR technology, which allows for any combination of TCR and BCR chains (TCR-alpha, TCR-beta, TCR-delta, TCR-gamma, BCR-IgHeavy, and BCR-kappa/lambda) to be amplified within a single reaction.
+iRepertoire’s RepSeq+ service utilizes dam-PCR technology, which allows for any combination of TCR and BCR chains (TCR-alpha, TCR-beta, TCR-delta, TCR-gamma, BCR-IgHeavy, and BCR-kappa/lambda) to be amplified within a single reaction. The RepSeq+ service is available for human (BCR and TCR) and mouse (TCR only).
 
 ![](pics/irepertoire-repseq-plus-light.svg#only-light)
 ![](pics/irepertoire-repseq-plus-dark.svg#only-dark)
 
 Example:
 ```shell
-mixcr analyze irepertoire-human-rna-repseq-plus \
+mixcr analyze irepertoire-repseq-plus-human \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -85,19 +79,16 @@ mixcr analyze irepertoire-human-rna-repseq-plus \
 
 #### Human gDNA based RepSeq Reagent System
 
-==`irepertoire-human-dna-trb-sr`==
+==`irepertoire-human-dna-sr`==
 ·
-==`irepertoire-human-dna-trb-lr`==
-·
-==`irepertoire-human-dna-igh-sr`==
-·
-==`irepertoire-human-dna-igh-lr`==
+==`irepertoire-human-dna-lr`==
 ·
 [:octicons-link-16: Link](https://irepertoire.com/repseq-2/)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/irepertoire.yaml)
 
 SR gDNA compatible primers (SR-VJ) cover from within FR3 to the end of the J-gene. These have been LR gDNA compatible primers cover from within FR1 to the end of the J-gene. LR versions are available for both human TCR beta and human IgH. These can be sequenced as single end read on 300-cycle kits or for full amplicon coverage as 250 PER sequencing.
+By default the clones are assembled by `{CDR1Begin:CDR3End}`, if the library has been sequenced as single end read one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
 
 ![](pics/irepertoire-human-dna-trb-light.svg#only-light)
 ![](pics/irepertoire-human-dna-trb-dark.svg#only-dark)
@@ -106,7 +97,7 @@ SR gDNA compatible primers (SR-VJ) cover from within FR3 to the end of the J-gen
 
 Example:
 ```shell
-mixcr analyze irepertoire-human-dna-igh-lr \
+mixcr analyze irepertoire-human-dna-lr \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
