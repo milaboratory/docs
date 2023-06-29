@@ -1,0 +1,81 @@
+### Generic low throughput amplicon single-cell protocols
+
+==`generic-lt-single-cell-amplicon`==
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/general-single-cell.yaml)
+·
+
+The preset is suitable for targeted low throughput amplicon single-cell protocols (e.g. plate-based single-cell workflows). Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):
+
+
+: :fontawesome-solid-puzzle-piece: Species;
+: :fontawesome-solid-puzzle-piece: Material type;
+: :fontawesome-solid-puzzle-piece: Left alignment boundary (5'-end);
+: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end).
+
+For this preset `CELL` barcode has to be set either through `--tag-pattern` if CELL barcode is present in the sequence or sample name if for each cell (well) one has a separate pair of FASTQ files. See examples below:
+
+```shell
+mixcr analyze generic-lt-single-cell-amplicon \
+    --species mmu \
+    --rna \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+    --tag-pattern "^(R1:*) \ ^(CELL:N{8})GTAC(R2:*)"\
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+
+mixcr analyze generic-lt-single-cell-amplicon \
+    --species mmu \
+    --rna \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+    --tag-pattern "^NN(CELL3PLATE:N{5})ga(CELL1ROW:N{5})(R1:*) \ ^NN(CELL2COLUMN:N{5})(R2:*)"\
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+Note that the barcodes have to start with `CELL`(e.g. CELL1, CELL2, CELL, CELL3PLATE, CELL2COLUMN etc.)
+
+
+```shell
+# If each pair of fastq files represents a different cell.
+
+> ls
+	input_sample1_A1_R1.fastq.gz
+	input_sample1_A1_R2.fastq.gz
+	input_sample1_A2_R1.fastq.gz
+    input_sample1_A2_R2.fastq.gz
+    input_sample1_A3_R1.fastq.gz
+    input_sample1_A3_R2.fastq.gz
+    input_sample1_A4_R1.fastq.gz
+    input_sample1_A4_R2.fastq.gz
+  	...
+
+mixcr analyze generic-lt-single-cell-amplicon \
+    --species mmu \
+    --rna \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+      input_sample1_{CELL:a}_R1.fastq.gz \
+      input_sample1_{CELL:a}_R2.fastq.gz \
+      result
+```
+
+The following [mix-in options](overview-mixins-list.md) are used:
+
+`--species mmu`
+: specify _Mus Musculus_ species
+
+`--rna`
+: set RNA as starting material (exon regions only will be used for alignments)
+
+`--floating-left-alignment-boundary`
+: use local _left alignment boundary_ on V-segment as V-primers are used
+
+`--floating-right-alignment-boundary C`
+: use local _right alignment boundary_ on C-segment as C-primers are used
+
+By default the clones are assembled by `CDR3`, if needed one can change this behavior by adding `--assemble-clonotypes-by VDJRegion`, if the longer receptor part is covered by the reads.

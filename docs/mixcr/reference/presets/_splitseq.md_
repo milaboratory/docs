@@ -1,0 +1,19 @@
+### SPLiT-seq
+==`split-seq-3gex`==
+·
+[:octicons-link-16: Publication](https://www.science.org/doi/10.1126/science.aam8999)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/parsebio.yaml)
+
+The SPLiT-seq uses the combinatorial indexing to identify single cells without single cell isolation. Multi-level indexing can be performed by ligation. Please note that as a 3'end RNA-seq based protocol it was not originally optimized for immune repertoire analysis, thus tcr/bcr yield might be low.
+
+![](pics/split-seq-light.svg#only-light)
+![](pics/split-seq-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze split-seq-3gex \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
