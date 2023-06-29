@@ -15,7 +15,7 @@ mixcr analyze 10x-vdj-bcr \
 ```
 The only required option we had to specify here is species. Under the hood MiXCR will run pre-configured steps for this 10x preset, including [alignment](mixcr-align.md), [barcode correction](mixcr-refineTagsAndSort.md), [partial assembly](mixcr-assemblePartial.md), [clonotype assembly](mixcr-assemble.md), [full-length contig assembly](mixcr-assembleContigs.md) and [export](mixcr-export.md).
 
-For every step, a preset [contains](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml) many pre-configured parameters optimized specifically for this protocol e.g. the type of alignment algorithms, scoring matrices and other aligner parameters, barcode filters, different threshold values, etc.  
+For every step, a preset [contains](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/10x.yaml) many pre-configured parameters optimized specifically for this protocol e.g. the type of alignment algorithms, scoring matrices and other aligner parameters, barcode filters, different threshold values, etc.  
 
 The same pipeline can be also executed step by step. In this case the preset must be specified for the first step only (`mixcr align`) and it will be automatically used by all subsequent steps :
 ```shell

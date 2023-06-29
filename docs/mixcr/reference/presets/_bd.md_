@@ -12,7 +12,7 @@
 ·
 [:octicons-link-16: Link](https://www.bdbiosciences.com/en-eu/products/reagents/single-cell-multiomics/vdj#VDJ%20CDR3%20Assay)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/bd.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/bd.yaml)
 
 
 The BD Rhapsody™ VDJ CDR3 Protocol utilizes the existing BD Rhapsody™ Targeted Kits and the human/mouse immune response primer panel and is designed to work alongside the BD® AbSeq Assay and BD® Single-Cell Multiplexing Kit (SMK). Details about the individual reagents needed to run the assay are included in the respective protocols. A dedicated bioinformatics pipeline is also available for you to analyze sequencing data generated using the CDR3 protocol.
@@ -41,7 +41,7 @@ mixcr analyze bd-rhapsody-mouse-tcr-v1 \
 
 [:octicons-link-16: Link](https://www.bdbiosciences.com/en-eu/products/reagents/single-cell-multiomics/vdj#VDJ%20CDR3%20Assay)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/bd.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/bd.yaml)
 
 In 2022, BD introduced a new version of beads , called Enhanced Beads, which have slightly different oilgo design. Use these presets for the new updated protocol.
 
@@ -68,7 +68,7 @@ mixcr analyze bd-rhapsody-mouse-bcr-v2 \
 
 [:octicons-link-16: Link](https://www.bdbiosciences.com/en-eu/products/reagents/single-cell-multiomics/vdj#Overview)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/bd.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/bd.yaml)
 
 The BD Rhapsody™ TCR/BCR Multiomic Assay helps you assemble the full length VDJ sequence for the T cell and B cell receptor.
 

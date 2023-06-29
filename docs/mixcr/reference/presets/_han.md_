@@ -6,7 +6,7 @@
 ·
 [:octicons-link-16: Publication](https://www.nature.com/articles/nbt.2938)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/custom.yaml#L46)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/custom.yaml#L46)
 
 These presets are optimized for a single-cell use of the protocol when each plate well contains a single cell.
 

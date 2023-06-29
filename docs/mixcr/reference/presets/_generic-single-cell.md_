@@ -4,7 +4,7 @@
 ·
 ==`generic-lt-single-cell-amplicon-with-umi`==
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/general-single-cell.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/general-single-cell.yaml)
 ·
 
 The preset is suitable for targeted low throughput amplicon single-cell protocols (e.g. plate-based single-cell workflows) with or without molecular identifiers (UMI). Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):

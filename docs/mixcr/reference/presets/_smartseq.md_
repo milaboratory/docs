@@ -4,7 +4,7 @@
 ·
 [:octicons-link-16: Publication](https://www.nature.com/articles/nprot.2014.006)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/smartseq.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/smartseq.yaml)
 
 For Smart-Seq2, single cells are lysed in a buffer that contains free dNTPs and oligo(dT)-tailed oligonucleotides with a universal 5'-anchor sequence. RT is performed, which adds 2–5 untemplated nucleotides to the cDNA 3′ end. A template-switching oligo (TSO) is added, carrying 2 riboguanosines and a modified guanosine to produce a LNA as the last base at the 3′ end. After the first-strand reaction, the cDNA is amplified using a limited number of cycles. Next, tagmentation is used to construct sequencing libraries quickly and efficiently from the amplified cDNA.
 

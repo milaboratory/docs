@@ -10,7 +10,7 @@
 ·
 [:octicons-link-16: Link](https://www.parsebiosciences.com/)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/parsebio.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/parsebio.yaml)
 
 Conventional droplet-based single-cell technologies struggle as cell or experiment sizes change. Parse makes it easy to scale your experiments regardless of cell size or sample type. The Evercode™ Whole Transcriptome technology, originally based on the split-pool combinatorial barcoding method published in Science and known widely as SPLiT-Seq, is accessible to any standard biology lab. Please note that as a 3'end RNA-seq based protocol it was not originally optimized for immune repertoire analysis, thus TCR/BCR yield might be low.
 Select the preset according to the kit used: Evercode WT, Evercode WT Mini or Evercode WT Mega.

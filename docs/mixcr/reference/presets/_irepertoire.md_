@@ -11,7 +11,7 @@ Repertoire’s RepSeq service (formerly AMP2Seq) utilizes arm-PCR technology, wh
 ·
 [:octicons-link-16: Link](https://irepertoire.com/repseq/)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/irepertoire.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/irepertoire.yaml)
 
 Short-read (SR) RNA-compatible human primers (presets that end with `sr`) cover from within Framework-3 (FR3) into the Constant Region (C). These SR primers are compatible with 100/150 paired end read (PER) sequencing. Long-read (LR) primer systems (presets that end with `ls`) cover from within FR1 and continue through to the C region. iRepertoire’s LR primers are compatible with 250 PER sequencing. Note that by default the clones are assembled by the regions not covered by the primers (`CDR3` for `sr` and `{CDR1Begin:FR4End}` for `lr`).
 
@@ -35,7 +35,7 @@ mixcr analyze irepertoire-repseq-human-sr \
 ·
 [:octicons-link-16: Link](https://irepertoire.com/repseq/)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/irepertoire.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/irepertoire.yaml)
 
 Short-read (SR) RNA-compatible human primers (presets that end with `sr`) cover from within Framework-3 (FR3) into the Constant Region (C). These SR primers are compatible with 100/150 paired end read (PER) sequencing. Long-read (LR) primer systems (presets that end with `ls`) cover from within FR2 and continue through to the C region. iRepertoire’s LR primers are compatible with 250 PER sequencing. Note that by default the clones are assembled by the regions not covered by the primers (`CDR3` for `sr` and `{CDR2Begin:FR4End}` for `lr`).
 
@@ -62,7 +62,7 @@ mixcr analyze irepertoire-repseq-mouse-sr \
 ·
 [:octicons-link-16: Link](https://irepertoire.com/repseq-2/)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/irepertoire.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/irepertoire.yaml)
 
 iRepertoire’s RepSeq+ service utilizes dam-PCR technology, which allows for any combination of TCR and BCR chains (TCR-alpha, TCR-beta, TCR-delta, TCR-gamma, BCR-IgHeavy, and BCR-kappa/lambda) to be amplified within a single reaction. The RepSeq+ service is available for human (BCR and TCR) and mouse (TCR only).
 
@@ -85,7 +85,7 @@ mixcr analyze irepertoire-repseq-plus-human \
 ·
 [:octicons-link-16: Link](https://irepertoire.com/repseq-2/)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/irepertoire.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/irepertoire.yaml)
 
 SR gDNA compatible primers (SR-VJ) cover from within FR3 to the end of the J-gene. These have been LR gDNA compatible primers cover from within FR1 to the end of the J-gene. LR versions are available for both human TCR beta and human IgH. These can be sequenced as single end read on 300-cycle kits or for full amplicon coverage as 250 PER sequencing.
 By default the clones are assembled by `{CDR1Begin:CDR3End}`, if the library has been sequenced as single end read one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.

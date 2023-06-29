@@ -4,7 +4,7 @@
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A35386)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/thermofisher.yaml)
 
 The Oncomine™ TCR Beta‑LR Assay is a highly sensitive, RNA-based NGS assay that enables the
 characterization of the T-cell receptor β (TCRβ) sequences, including all complementarity-determining regions (CDR1, 2, and 3) of the variable gene. The assay accurately measures T‑cell repertoire diversity, clonal expansion, and allows for identification of allele-specific polymorphisms, in a wide array of
@@ -27,7 +27,7 @@ mixcr analyze oncomine-human-tcrb-lr \
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A39072)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/thermofisher.yaml)
 
 The Oncomine™ TCR Beta‑SR Assay is a highly sensitive RNA- or DNA-based NGS assay that enables
 the characterization of the T-cell receptor β (TCRβ) complementarity-determining region 3 (CDR3) sequences of the TCRβ chain. The assay accurately measures T‑cell repertoire diversity and clonal expansion in a wide array of sample types, including those derived from FFPE-preserved or degraded
@@ -48,7 +48,7 @@ mixcr analyze oncomine-human-tcrb-sr \
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A45485)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/thermofisher.yaml)
 
 The Oncomine™ BCR IGH‑LR Assay is a highly sensitive, RNA-based NGS assay that enables the
 characterization of immunoglobulin heavy-chain sequences, including all complementarity-determining regions (CDR1, 2, and 3) and the CH1 domain of the constant gene. The assay accurately measures repertoire diversity, clonal expansion, allows for determination of B cell isotype (and subtype), and reports the level of somatic hypermutation, in a wide array of sample types.
@@ -70,7 +70,7 @@ mixcr analyze oncomine-human-igh-lr \
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A45483)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/thermofisher.yaml)
 
 The Oncomine™ BCR IGH‑SR Assay is a highly sensitive RNA- or DNA-based NGS assay that enables
 the characterization of the immunoglobulin heavy chain complementarity-determining region 3 (CDR3) sequences. The assay accurately measures B cell repertoire diversity and clonal expansion in a wide array of sample types, including samples derived from FFPE-preserved or degraded material.
@@ -91,7 +91,7 @@ mixcr analyze oncomine-human-igh-sr \
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51559)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/thermofisher.yaml)
 
 The Oncomine™ BCR Pan-Clonality Assay is a highly sensitive, single reaction, DNA-based NGS assay that enables the characterization of B cell heavy chain (IGH) and light chain (IgK and IgL) receptor sequences, including each complementarity-determining region 3 (CDR3). The assay accurately measures B cell repertoire metrics such as repertoire diversity and clonality in multiple receptors in a single reaction.
 
@@ -110,7 +110,7 @@ mixcr analyze oncomine-human-bcr-pan-clonality \
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51560)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/thermofisher.yaml)
 
 The Oncomine™ IGH FR3(d)-J Assay is a highly sensitive, DNA-based NGS assays that enable the characterization of B cell heavy chain (IGH) sequences, including complementarity-determining region 3 (CDR3). The assays accurately measure B cell repertoire metrics such as repertoire diversity and clonality.
 
@@ -129,7 +129,7 @@ mixcr analyze oncomine-human-igh-fr3-j \
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51561)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/thermofisher.yaml)
 
 Oncomine™ IGH FR2-J Assay is a highly sensitive, DNA-based NGS assays that enable the characterization of B cell heavy chain (IGH) sequences, including complementarity-determining region 3 (CDR3). The assays accurately measure B cell repertoire metrics such as repertoire diversity and clonality. The Oncomine™ IGH FR2-J Assay uses multiplex Ion AmpliSeq™ primers to target the FR2 region of the variable gene and
 the joining gene segment of IGH rearrangements in genomic DNA producing 200–250 bp amplicons.
@@ -150,7 +150,7 @@ mixcr analyze oncomine-human-igh-fr2-j \
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51564)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/thermofisher.yaml)
 
 The Oncomine IGH FR1-J Assay is a targeted next-generation sequencing (NGS) assay for detection of somatic hypermutation (SHM) in the variable region of the immunoglobulin heavy chain of B-cell receptors. SHM increases the affinity of the B-cell receptor for antigen, post-VDJ recombination, and is frequently a region of interest in CLL research. Primers have been specifically designed to target framework 1 and joining gene regions of the immunoglobulin heavy chain, resulting in an amplicon ∼300 bp in length.
 Note, that clonotypes in this preset are assembled by `{CDR1Begin:CDR3End}` feature, because primers are located in FR1 and FR4.
@@ -171,7 +171,7 @@ mixcr analyze oncomine-human-igh-fr1-j \
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51563)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/thermofisher.yaml)
 
 The Oncomine BCR IGHV Leader-J Assay is a targeted next-generation sequencing (NGS) assay for detection of somatic hypermutation (SHM) in the variable region of the immunoglobulin heavy chain of B-cell receptors. SHM increases the affinity of the B-cell receptor for antigen, post-VDJ recombination, and is used as a biomarker in chronic lymphocytic leukemia (CLL). Primers have been specifically designed to target the leader and joining regions of the immunoglobulin heavy chain, resulting in an amplicon ∼480 bp in length.
 Note, that clonotypes in this preset are assembled by `{FR1Begin:CDR3End}` feature, because primers are located in the leader sequence and FR4.
@@ -193,7 +193,7 @@ mixcr analyze oncomine-human-igh-leader-j \
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51562)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/thermofisher.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/thermofisher.yaml)
 
 The Oncomine TCR Pan-Clonality Assay is a targeted next-generation sequencing (NGS) assay for detection of T-cell diversity to measure clonal expansion/contraction with accuracy and for detection of rare clones with high sensitivity. Primers have been specifically designed to sequence the FR3-J regions of the TCR beta chain and TCR gamma chain. Through the use of Ion AmpliSeq technology, sequencing of the CDR3 region of the beta and gamma T-cell receptor chains occurs in a single reaction. When combined with Ion Reporter Software, data can be easily analyzed and reports created within a short period of time.
 

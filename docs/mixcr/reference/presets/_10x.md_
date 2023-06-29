@@ -6,7 +6,7 @@
 ·
 [:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/10x.yaml)
 
 
 Chromium Single Cell Immune Profiling provides a solution to your immunology questions. Analyze full-length V(D)J sequences for paired B-cell or T-cell receptors, all from a single cell. Notice that on the scheme bellow reads' length is shown according to the protocol recommendations, but the presets will work regardless of sequencing reads length.
@@ -31,7 +31,7 @@ mixcr analyze 10x-vdj \
 ·
 [:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/10x.yaml)
 
 These presets are specifically optimized to extract TCR and BCR repertoires from non-enriched single cell 5' RNA-seq cDNA libraries. By default the longest possible contig is assembled for every clone.
 

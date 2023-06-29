@@ -1,7 +1,7 @@
 ### Generic amplicon
 ==`generic-amplicon`==
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/general-amplicon.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/general-amplicon.yaml)
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/generic-umi-tcr.md)
 
@@ -45,7 +45,7 @@ By default the clones are assembled by `CDR3`, if needed one can change this beh
 ### Generic amplicon with UMI barcodes
 ==`generic-amplicon-with-umi`==
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/general-amplicon.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/general-amplicon.yaml)
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/generic-umi-tcr.md)
 

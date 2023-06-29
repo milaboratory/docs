@@ -6,7 +6,7 @@
 ·
 [:octicons-link-16: Publication](https://www.nature.com/articles/2403202)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/biomed2.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/biomed2.yaml)
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/biomed2-bcr.md)
 
@@ -29,7 +29,7 @@ mixcr analyze biomed2-human-igh \
 ·
 [:octicons-link-16: Publication](https://www.nature.com/articles/2403202)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/biomed2.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/biomed2.yaml)
 
 
 Biomed2 IGK/IGL human multiplex primer set. Clones are assembled by `CDR3`.
@@ -48,7 +48,7 @@ mixcr analyze biomed2-human-igl-igk \
 ·
 [:octicons-link-16: Publication](https://www.nature.com/articles/2403202)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/biomed2.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/biomed2.yaml)
 
 Biomed2 TRB/TRd/TRG human multiplex primer set. Clones are assembled by `CDR3`.
 

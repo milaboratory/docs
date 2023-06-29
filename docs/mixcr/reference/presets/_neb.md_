@@ -6,7 +6,7 @@
 ·
 [:octicons-link-16: Link](https://www.neb.com/products/e6320-nebnext-immune-sequencing-kit-human#Product%20Information)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/neb.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/neb.yaml)
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/nebnext-bcr.md)
 
@@ -35,7 +35,7 @@ mixcr analyze nebnext-human-immune-sequencing \
 ·
 [:octicons-link-16: Link](https://www.neb.com/products/e6330-nebnext-immune-sequencing-kit-mouse#Product%20Information)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/neb.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/neb.yaml)
 
 
 With the NEBNext® Immune Sequencing Kit (Mouse), sequence the full-length immune gene repertoires of B cells and T cells. Profile somatic mutations across all relevant contexts (e.g., V, D, and J segments and isotypes IgM, IgD, IgG, IgA, and IgE) with improved sequence accuracy. Characterize BCR light, BCR heavy, TCRα, TCRβ, TCRγ and TCRδ chains. This kit includes UMIs for source-molecule identification. Depending on the repertoire being sequenced (TCR, BCR or both TCR and BCR) you can pick the dedicated preset.

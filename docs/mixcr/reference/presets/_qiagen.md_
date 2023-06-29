@@ -5,7 +5,7 @@
 ·
 [:octicons-link-16: Link](https://geneglobe.qiagen.com/us/product-groups/qiaseq-immune-repertoire-rna-library-kits)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/qiaseq.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/qiaseq.yaml)
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/qiaseq-tcr.md)
 
@@ -29,7 +29,7 @@ mixcr analyze qiaseq-human-tcr-panel \
 ·
 [:octicons-link-16: Link](https://geneglobe.qiagen.com/us/product-groups/qiaseq-immune-repertoire-rna-library-kits)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/qiaseq.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/qiaseq.yaml)
 
 
 The QIAseq Mouse TCR Panel Immune Repertoire RNA Library Kit uses unique Molecular Indices (UMI) with gene-specific primers to target specific RNAs for NGS sequencing. The Mouse T-cell Receptors Panel is used for sequencing the V(D)J region of the alpha, beta, delta and gamma genes, including the CDR3 regions.

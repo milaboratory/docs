@@ -3,7 +3,7 @@
 ·
 [:octicons-link-16: Publication](https://www.nature.com/articles/nbt.3979)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/rnaseq.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/rnaseq.yaml)
 
 Non-enriched fragmented (shotgun) RNA-Seq data. By default MiXCR runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J-C receptor rearrangement sequence.
 
