@@ -91,6 +91,27 @@ mixcr analyze milab-human-tcr-dna-multiplex \
       input_R2.fastq.gz \
       result 
 ```
+#### Human 7GENES DNA Multiplex
+==`milab-human-7genes-dna-multiplex`==
+·
+[:octicons-link-16: Link](https://milaboratories.com/7genes-dna-multiplex-kit)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/milab.yaml)
+
+Allows to obtain a comprehensive set of complete and incomplete IG/TCR rearrangements in one tube. From 0.1 ng to 150 ng of template DNA. Applicable for lymphoid malignancy clonality detection and MRD monitoring.
+Note, that, for now MiXCR will report only complete rearrangements, support for incomplete rearrangements will be added soon.
+
+
+![](pics/milab-dna-light.svg#only-light)
+![](pics/milab-dna-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze milab-human-7genes-dna-multiplex \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
 
 #### Mouse TCR RNA
 
