@@ -2,10 +2,12 @@
 
 ==`generic-lt-single-cell-amplicon`==
 ·
+==`generic-lt-single-cell-amplicon-with-umi`==
+·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/general-single-cell.yaml)
 ·
 
-The preset is suitable for targeted low throughput amplicon single-cell protocols (e.g. plate-based single-cell workflows). Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):
+The preset is suitable for targeted low throughput amplicon single-cell protocols (e.g. plate-based single-cell workflows) with or without molecular identifiers (UMI). Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):
 
 
 : :fontawesome-solid-puzzle-piece: Species;
@@ -26,22 +28,17 @@ mixcr analyze generic-lt-single-cell-amplicon \
       input_R2.fastq.gz \
       result
 
-mixcr analyze generic-lt-single-cell-amplicon \
+mixcr analyze generic-lt-single-cell-amplicon-with-umi \
     --species mmu \
     --rna \
     --rigid-left-alignment-boundary \
     --floating-right-alignment-boundary C \
-    --tag-pattern "^NN(CELL3PLATE:N{5})ga(CELL1ROW:N{5})(R1:*) \ ^NN(CELL2COLUMN:N{5})(R2:*)"\
+    --tag-pattern "^NN(CELL3PLATE:N{5})ga(CELL1ROW:N{5})(R1:*) \ ^NN(CELL2COLUMN:N{5})(UMI:N{14})(R2:*)"\
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
-```
 
-Note that the barcodes have to start with `CELL`(e.g. CELL1, CELL2, CELL, CELL3PLATE, CELL2COLUMN etc.)
-
-
-```shell
-# If each pair of fastq files represents a different cell.
+# If each pair of fastq files represents a different cell (e.g. A1,A2,A3 ... H12).
 
 > ls
 	input_sample1_A1_R1.fastq.gz
@@ -63,6 +60,9 @@ mixcr analyze generic-lt-single-cell-amplicon \
       input_sample1_{CELL:a}_R2.fastq.gz \
       result
 ```
+
+Note that cell barcodes have to start with `CELL` (e.g. CELL1, CELL2, CELL, CELL3PLATE, CELL2COLUMN etc.).
+For `generic-lt-single-cell-amplicon-with-umi` `--tag-pattern` is required and must contain `UMI` (`CELL` barcodes can be still passed through filenames)
 
 The following [mix-in options](overview-mixins-list.md) are used:
 
