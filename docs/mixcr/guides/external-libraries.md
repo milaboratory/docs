@@ -1,6 +1,6 @@
 # Using external library
 
-MiXCR has a built-in set of reference libraries that were carefully created by our team. However, one can use other external libraries, such as IMGT or any other. These libraries have toi be property compiled to use with MiXCR.
+MiXCR has a built-in set of reference libraries that were carefully created by our team. However, one can use other external libraries, such as IMGT or any other. These libraries have to be property compiled to use with MiXCR.
 
 ## Using IMGT library
 

@@ -134,8 +134,8 @@ nav:
         - 'RNA-Seq data' : mixcr/guides/rnaseq.md
         - 'Immunoglobulin lineage trees reconstruction': mixcr/guides/ig-trees-reconstruction.md
       - 'Special guides':
-        - 'Assembling custom reference library': mixcr/guides/create-custom-library.md
-        - 'Using external libraries': mixcr/guides/external-libraries.md
+        - 'Custom reference library': mixcr/guides/create-custom-library.md
+        - 'Using IMGT library': mixcr/guides/external-libraries.md
         - 'B cell lineage tracing': mixcr/guides/b-cell-lineages-webinar.md
   - 'Docs':
       - 'Overview':
@@ -143,6 +143,7 @@ nav:
         - 'Presets': mixcr/reference/overview-presets.md
         - 'Mix-in options list': mixcr/reference/overview-mixins-list.md
         - 'Built-in presets': mixcr/reference/overview-built-in-presets.md
+        - 'Custom reference library': mixcr/guides/create-custom-library.md
       - 'Data quality':
         - 'When the analysis results look poor': mixcr/reference/qc-overview.md
         - 'Sequencing quality': mixcr/reference/qc-sequencing-quality.md
@@ -175,6 +176,10 @@ nav:
         - 'mergeAlignments': mixcr/reference/mixcr-mergeAlignments.md
         - 'overlapScatterPlot': mixcr/reference/mixcr-overlapScatterPlot.md
         - 'postanalysis': mixcr/reference/mixcr-postanalysis.md
+        - 'buildLibrary': mixcr/reference/mixcr-buildLibrary.md
+        - 'mergeLibrary': mixcr/reference/mixcr-mergeLibrary.md
+        - 'debugLibrary': mixcr/reference/mixcr-debugLibrary.md
+
 
 
       - 'Reports':
