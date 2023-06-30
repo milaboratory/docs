@@ -145,10 +145,11 @@ nav:
         - 'Built-in presets': mixcr/reference/overview-built-in-presets.md
         - 'Custom reference library': mixcr/guides/create-custom-library.md
       - 'Data quality':
-        - 'When the analysis results look poor': mixcr/reference/qc-overview.md
-        - 'Sequencing quality': mixcr/reference/qc-sequencing-quality.md
-        - 'Rep-Seq libraries': mixcr/reference/qc-repseq.md
-        - 'Non-targeted data': mixcr/reference/qc-rnaseq.md
+        - 'MiXCR quality controls': mixcr/reference/qc-overview.md
+        - 'List of quality checks': mixcr/reference/qc-list-of-checks.md
+        - 'Sequencing quality issues': mixcr/reference/qc-sequencing-quality.md
+        - 'Rep-Seq libraries quality issues': mixcr/reference/qc-repseq.md
+        - 'Non-targeted data quality issues': mixcr/reference/qc-rnaseq.md
       - 'MiXCR':
         - 'analyze': mixcr/reference/mixcr-analyze.md
         - 'align': mixcr/reference/mixcr-align.md
@@ -179,8 +180,7 @@ nav:
         - 'buildLibrary': mixcr/reference/mixcr-buildLibrary.md
         - 'mergeLibrary': mixcr/reference/mixcr-mergeLibrary.md
         - 'debugLibrary': mixcr/reference/mixcr-debugLibrary.md
-
-
+        - 'qc': mixcr/reference/mixcr-qc.md
 
       - 'Reports':
         - 'mixcr align': mixcr/reference/report-align.md
@@ -220,7 +220,7 @@ nav:
         - 'Gene features and reference points': mixcr/reference/ref-gene-features.md
         - 'Translation rules': mixcr/reference/ref-translation-rules.md
         - 'Mutations encoding': mixcr/reference/ref-mutations-encoding.md
-        - 'RepSeq.io JSON format': mixcr/reference/ref-repseqio-json-format.md
+#        - 'RepSeq.io JSON format': mixcr/reference/ref-repseqio-json-format.md
   - 'VDJ.online': https://vdj.online/
   - 'Discussions': https://github.com/milaboratory/mixcr/discussions
   - 'Github': https://github.com/milaboratory/mixcr
