@@ -23,6 +23,29 @@ mixcr analyze takara-smartseq-human-bcr \
       result 
 ```
 
+#### SMART-Seq Human TCR (with UMIs)
+
+==`takara-smartseq-human-tcr`==
+·
+[:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/smart-seq-human-tcr-with-umis)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/takara.yaml)
+
+
+SMART-Seq Human TCR (with UMIs) is powered by robust chemistry that provides unparalleled sensitivity and reproducibility. The kit leverages SMART (Switching Mechanism at 5' end of RNA Template) full-length cDNA synthesis technology and pairs NGS with a 5'-RACE approach to capture the complete V(D)J variable regions of TRA and TRB genes.
+By default the clones are assembled by `VDJRegion`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
+
+![](pics/SMARTer-Human-TCRv2-light.svg#only-light)
+![](pics/SMARTer-Human-TCRv2-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze takara-smartseq-human-tcr \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
 #### SMARTer Human BCR IgG IgM H/K/L Profiling Kit
 
 ==`takara-human-bcr-profiling`==
@@ -48,28 +71,6 @@ mixcr analyze takara-human-bcr-profiling \
       result 
 ```
 
-#### SMART-Seq Human TCR (with UMIs)
-
-==`takara-smartseq-human-tcr`==
-·
-[:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/smart-seq-human-tcr-with-umis)
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/takara.yaml)
-
-
-SMART-Seq Human TCR (with UMIs) is powered by robust chemistry that provides unparalleled sensitivity and reproducibility. The kit leverages SMART (Switching Mechanism at 5' end of RNA Template) full-length cDNA synthesis technology and pairs NGS with a 5'-RACE approach to capture the complete V(D)J variable regions of TRA and TRB genes.
-By default the clones are assembled by `VDJRegion`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
-
-![](pics/SMARTer-Human-TCRv2-light.svg#only-light)
-![](pics/SMARTer-Human-TCRv2-dark.svg#only-dark)
-
-Example:
-```shell
-mixcr analyze takara-smartseq-human-tcr \
-      input_R1.fastq.gz \
-      input_R2.fastq.gz \
-      result 
-```
 #### SMARTer Human TCR a/b Profiling Kit v2
 
 ==`takara-human-tcr-v2-profiling`==
