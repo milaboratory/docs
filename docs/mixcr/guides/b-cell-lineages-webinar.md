@@ -21,7 +21,7 @@ PBMC was isolated using ficoll density gradient centrifugation and RNA was isola
 
 ![](b-cell-lineage-tracing/upstream.svg)
 
-Running upstream analysis is easy with the [`mixcr analyze`](../reference/mixcr-analyze.md`) command, which requires only a few arguments:
+Running upstream analysis is easy with the [`mixcr analyze`](../reference/mixcr-analyze.md) command, which requires only a few arguments:
 ```shell
 mixcr analyze milab-human-bcr-multiplex-full-length \
       file_R1.fastq.gz \

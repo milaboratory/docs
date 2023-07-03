@@ -318,7 +318,7 @@ We are going to construct a box plot to compare inverse Simpson diversity Index 
 --8<-- "guides/generic-umi-bcr/scripts/140-pa-diversity.sh"
 ```
 
-![](generic-umi-bcr/figs/diversity.IGH.svg)
+![](generic-multiplex-bcr/figs/diversity.IGH.svg)
 
 Arguments explained:
 

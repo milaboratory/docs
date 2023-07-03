@@ -55,9 +55,8 @@ characterization of immunoglobulin heavy-chain sequences, including all compleme
 By default the clones are assembled by `{CDR1Begin:FR4End}`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
 
 
-![](pics/oncomine-human-bcr-ihg-lr-light.svg#only-light)
-![](pics/oncomine-human-bcr-ihg-lr-dark.svg#only-dark)
-
+![](pics/oncomine-human-bcr-igh-lr-light.svg#only-light)
+![](pics/oncomine-human-bcr-igh-lr-dark.svg#only-dark)
 Example:
 ```shell
 mixcr analyze oncomine-human-igh-lr \
@@ -76,8 +75,8 @@ The Oncomine™ BCR IGH‑SR Assay is a highly sensitive RNA- or DNA-based NGS a
 the characterization of the immunoglobulin heavy chain complementarity-determining region 3 (CDR3) sequences. The assay accurately measures B cell repertoire diversity and clonal expansion in a wide array of sample types, including samples derived from FFPE-preserved or degraded material.
 
 
-![](pics/oncomine-human-bcr-ihg-sr-light.svg#only-light)
-![](pics/oncomine-human-bcr-ihg-sr-dark.svg#only-dark)
+![](pics/oncomine-human-bcr-igh-sr-light.svg#only-light)
+![](pics/oncomine-human-bcr-igh-sr-dark.svg#only-dark)
 
 Example:
 ```shell

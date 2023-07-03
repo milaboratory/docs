@@ -2,7 +2,7 @@
 
 #### AmpliSeq for Illumina Immune Repertoire Plus, TCR beta Panel
 
-==`ampliseq-tcrb-plus
+==`ampliseq-tcrb-plus`==
 ·
 [:octicons-link-16: Link](https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/ampliseq-immune-repertoire-panel.html)
 ·
@@ -24,7 +24,7 @@ mixcr analyze ampliseq-tcrb-plus \
 
 #### AmpliSeq™ for Illumina® TCR beta-SR Panel
 
-==`ampliseq-tcrb-sr
+==`ampliseq-tcrb-sr`==
 ·
 [:octicons-link-16: Link](https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/ampliseq-tcr-beta-sr-panel.html)
 ·
