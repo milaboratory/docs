@@ -1,5 +1,5 @@
 mixcr align \
-	-p kAligner2_4.0
+	-p generic-amplicon-with-umi
     --species mmu \
     --report result/Multi_TRA_10ng_3.align.report.txt \
     --json-report result/Multi_TRA_10ng_3.align.report.json \

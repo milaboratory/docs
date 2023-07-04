@@ -67,7 +67,7 @@ In order to run the analysis for all samples in the project on Linux we can use 
 
 ### Under the hood pipeline
 
-Under the hood `milab-human-bcr-multiplex-cdr3` preset actually executes the following pipeline:
+Under the hood `milab-human-rna-ig-umi-multiplex` preset actually executes the following pipeline:
 
 #### `align`
 [Alignment](../reference/mixcr-align.md) of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
@@ -81,8 +81,8 @@ Option `--report` and `--json-report` are specified here explicitly.
 `--species hsa`
 : determines the organism species (hsa for _Homo Sapiens_).
 
-`-p bundle-umi-kaligner2-v1-base`
-:  a preset of MiXCR parameters which includes a dedicated BCR aligner and defines required parameters for UMI correction.
+`-p generic-amplicon-with-umi`
+:  a preset of MiXCR parameters for amplicon data and defines required parameters for UMI correction.
 
 `-tag-pattern '^N{0:2}tggtatcaacgcagagt(UMI:N{14})N{20}(R1:*) \ ^N{22}(R2:*)'`
 : this pattern marks the UMI region and ensures primer sequences trimming. 

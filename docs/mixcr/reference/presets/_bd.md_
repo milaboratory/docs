@@ -1,14 +1,10 @@
 ### BD Rhapsody
 
-#### BD Rhapsody™ VDJ CDR3 Protocol with V1 beads
+#### BD Rhapsody™ VDJ CDR3 Protocol
 
-==`bd-rhapsody-human-tcr-v1`==
+==`bd-human-sc-xcr-rhapsody-cdr3`==
 ·
-==`bd-rhapsody-human-bcr-v1`==
-·
-==`bd-rhapsody-mouse-tcr-v1`==
-·
-==`bd-rhapsody-mouse-bcr-v1`==
+==`bd-mouse-sc-xcr-rhapsody-cdr3`==
 ·
 [:octicons-link-16: Link](https://www.bdbiosciences.com/en-eu/products/reagents/single-cell-multiomics/vdj#VDJ%20CDR3%20Assay)
 ·
@@ -22,35 +18,7 @@ The BD Rhapsody™ VDJ CDR3 Protocol utilizes the existing BD Rhapsody™ Target
 
 Example:
 ```shell
-mixcr analyze bd-rhapsody-mouse-tcr-v1 \
-     sample_R1.fastq.gz \
-     sample_R2.fastq.gz \
-     sample_result
-```
-
-
-#### BD Rhapsody™ VDJ CDR3 Protocol with Enhanced Bead (introduced in 2022)
-
-==`bd-rhapsody-human-tcr-v2`==
-·
-==`bd-rhapsody-human-bcr-v2`==
-·
-==`bd-rhapsody-mouse-tcr-v2`==
-·
-==`bd-rhapsody-mouse-bcr-v2`==
-
-[:octicons-link-16: Link](https://www.bdbiosciences.com/en-eu/products/reagents/single-cell-multiomics/vdj#VDJ%20CDR3%20Assay)
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/bd.yaml)
-
-In 2022, BD introduced a new version of beads , called Enhanced Beads, which have slightly different oilgo design. Use these presets for the new updated protocol.
-
-![](pics/rhapsody-v2-light.svg#only-light)
-![](pics/rhapsody-v2-dark.svg#only-dark)
-
-Example:
-```shell
-mixcr analyze bd-rhapsody-mouse-bcr-v2 \
+mixcr analyze bd-human-sc-xcr-rhapsody-cdr3 \
      sample_R1.fastq.gz \
      sample_R2.fastq.gz \
      sample_result
@@ -58,27 +26,24 @@ mixcr analyze bd-rhapsody-mouse-bcr-v2 \
 
 #### BD Rhapsody™ VDJ Full Length Protocol
 
-==`bd-rhapsody-human-bcr-full-length`==
+==`bd-sc-xcr-rhapsody-full-length`==
 ·
-==`bd-rhapsody-mouse-bcr-full-length`==
-·
-==`bd-rhapsody-human-tcr-full-length`==
-·
-==`bd-rhapsody-mouse-tcr-full-length`==
-
 [:octicons-link-16: Link](https://www.bdbiosciences.com/en-eu/products/reagents/single-cell-multiomics/vdj#Overview)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/bd.yaml)
 
 The BD Rhapsody™ TCR/BCR Multiomic Assay helps you assemble the full length VDJ sequence for the T cell and B cell receptor.
+The `--species` option is required.
+
 
 ![](pics/rhapsody-full-length-light.svg#only-light)
 ![](pics/rhapsody-full-length-dark.svg#only-dark)
 
 Example:
 ```shell
-mixcr analyze bd-rhapsody-mouse-tcr-full-length \
-     sample_R1.fastq.gz \
-     sample_R2.fastq.gz \
-     sample_result
+mixcr analyze bd-sc-xcr-rhapsody-full-length \
+	--species human \
+	sample_R1.fastq.gz \
+	sample_R2.fastq.gz \
+	sample_result
 ```

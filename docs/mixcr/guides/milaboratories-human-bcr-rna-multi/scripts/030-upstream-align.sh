@@ -1,6 +1,6 @@
 mixcr align \
     --species hsa \
-    -p bundle-umi-kaligner2-v1-base \
+    -p generic-amplicon-with-umi \
     -tag-pattern '^N{0:2}tggtatcaacgcagagt(UMI:N{14})N{20}(R1:*) \ ^N{22}(R2:*)' \
 	-OvParameters.geneFeatureToAlign="VTranscriptWithP" \
 	-OvParameters.parameters.floatingLeftBound=false \

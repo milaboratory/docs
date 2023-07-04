@@ -1,7 +1,7 @@
 mkdir -p debug
 mixcr align \
     -s hsa \
-    -p default_4.0 \
+    -p generic-amplicon \
     -OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
     -OvParameters.parameters.floatingLeftBound=true \
     -OjParameters.parameters.floatingRightBound=false \

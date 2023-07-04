@@ -1,6 +1,6 @@
 mixcr align \
     --species hsa \
-    -p default_4.0 \
+    -p generic-amplicon-with-umi \
 	-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
 	-OvParameters.parameters.floatingLeftBound=false \
 	-OjParameters.parameters.floatingRightBound=false \

@@ -77,8 +77,8 @@ Option `--report` is specified here explicitly.
 `--species hsa`
 : determines the organism species (hsa for _Homo Sapiens_). Note we choose Human because mice were humanized.
 
-`-p default_4.0`
-:  a default preset of MiXCR parameters which includes a dedicated TCR aligner.
+`-p generic-amplicon-with-umi`
+:  a preset of MiXCR parameters for amplicon data with UMIs.
 
 `-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP"`
 : Sets a V gene feature to align. Check [gene features](../reference/ref-gene-features.md) for more info.

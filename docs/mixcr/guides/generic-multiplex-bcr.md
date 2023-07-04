@@ -67,7 +67,7 @@ All data may be downloaded using the script bellow.
 ## One command Solution
 
 The easiest way to obtain clonotype tables for this type of data is to use a universal [`mixcr analyze`](../reference/mixcr-analyze.md) command.
-This is a BCR data, so we will use a preset called `bcr_amplicon`.
+This is a BCR data, so we will use a preset called `generic-amplicon`.
 
 The exact command for a single sample you can see bellow:
 

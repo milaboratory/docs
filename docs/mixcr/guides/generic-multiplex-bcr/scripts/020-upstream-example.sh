@@ -1,4 +1,4 @@
-mixcr analyze bcr_amplicon \
+mixcr analyze generic-amplicon \
     --species mmu \
     --rna \
     --rigid-left-alignment-boundary \

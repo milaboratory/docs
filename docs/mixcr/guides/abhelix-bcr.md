@@ -6,7 +6,7 @@ Here we will discuss how to process BCR cDNA libraries obtained with ABHelix kit
 This tutorial uses the data from the following publication: *High frequency of shared clonotypes in human B cell receptor repertoires.* Soto C et al., , Nature, 2019 Feb;566(7744):398-402
 [doi: 10.1038/s41586-019-0934-8](https://doi.org/10.1038/s41586-019-0934-8)
 
-Peripheral blood samples were collected from three donors : HIP1 (female, 47 y.o.), HIP2 (male, 22 y.o.) and HIP3(male, 29 y.o.). Samples were collected in multiple replicas. Total RNA was extracted from PBMCs and multiple reactions of reverse transcription were combined and purified using magnetic beads. The purified RT products were divided evenly for the first round of PCR amplification specific to human IgG, IgL IgK, IgM, or IgA. The 5' multiplex PCR primers were designed within the leader sequences of each productive V gene and the 3' primers within the constant regions, but in close approximation to the J gene/constant region junctions. The resulting first-round PCR products were purified with magnetic beads and subjected to the second round of PCR
+Peripheral blood samples were collected from three donors : HIP1 (female, 47 y.o.), HIP2 (male, 22 y.o.) and HIP3(male, 29 y.o.). Samples were collected in multiple replicas. Total RNA was extracted from PBMCs and multiple reactions of reverse transcription were combined and purified using magnetic beads. The purified RT products were divided evenly for the first round of PCR amplification specific to human IgG, IgL IgK, IgM, or IgA. The 5' multiplex PCR primers anneal within the leader sequences of each productive V gene and the 3' primers within the constant regions, but in close approximation to the J gene/constant region junctions. The resulting first-round PCR products were purified with magnetic beads and subjected to the second round of PCR
 amplification to add Illumina index and adapter sequences. Subsequent amplicon libraries were sequenced using next-generation sequencing. Paired end sequencing was performed on Illumina HiSeq 2500, R1 and R2 are 250bp long.
 
 All data is available from SRA (PRJNA511481) using e.g. [SRA Explorer](https://sra-explorer.info).
@@ -68,7 +68,7 @@ Option `--report` is specified here explicitly.
 : determines the organism species.
 
 `-p`
-: `kAligner2_4.0` a preset of MiXCr parameters which includes kAligner2 (a specialized aligner for BCR data).
+: `generic-amplicon` a preset of MiXCR parameters for amplicon data.
 
 `-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP"`
 : Sets a V gene feature to align. Check [gene features](../reference/ref-gene-features.md) for more info.

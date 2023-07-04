@@ -1,5 +1,5 @@
 mixcr align \
-	    -p default_4.0 \
+	-p generic-amplicon \
     --species mmu \
     --tag-pattern '^(R1:*)\^(UMI:N{12})' \
     --report result/M1_4T1_replica1_Blood.align.report.txt \

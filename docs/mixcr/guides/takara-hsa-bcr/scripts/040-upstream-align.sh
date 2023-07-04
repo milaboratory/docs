@@ -1,6 +1,6 @@
 mixcr align \
     --species hsa \
-    -p bundle-umi-kaligner2-v1-base \
+    -p generic-amplicon-with-umi \
 	-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
 	-OvParameters.parameters.floatingLeftBound=false \
 	-OjParameters.parameters.floatingRightBound=false \

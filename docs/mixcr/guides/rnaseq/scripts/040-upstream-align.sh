@@ -1,6 +1,6 @@
 mixcr align \
     --species mmu \
-    -p align_rna-seq_4.0 \
+    -p shotgun-base \
 	-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
 	-OvParameters.parameters.floatingLeftBound=false \
 	-OjParameters.parameters.floatingRightBound=false \
