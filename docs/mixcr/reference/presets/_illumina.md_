@@ -2,7 +2,7 @@
 
 #### AmpliSeq for Illumina Immune Repertoire Plus, TCR beta Panel
 
-==`ampliseq-tcrb-plus`==
+==`illumina-human-rna-trb-ampliseq-plus`==
 ·
 [:octicons-link-16: Link](https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/ampliseq-immune-repertoire-panel.html)
 ·
@@ -16,7 +16,7 @@ By default the clones are assembled by `{CDR1Begin:FR4End}`, if needed (e.g. if 
 
 Example:
 ```shell
-mixcr analyze ampliseq-tcrb-plus \
+mixcr analyze illumina-human-rna-trb-ampliseq-plus \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -24,7 +24,7 @@ mixcr analyze ampliseq-tcrb-plus \
 
 #### AmpliSeq™ for Illumina® TCR beta-SR Panel
 
-==`ampliseq-tcrb-sr`==
+==`illumina-human-rna-trb-ampliseq-sr`==
 ·
 [:octicons-link-16: Link](https://www.illumina.com/products/by-type/sequencing-kits/library-prep-kits/ampliseq-tcr-beta-sr-panel.html)
 ·
@@ -37,7 +37,7 @@ Sequences TCR beta chain rearrangements, with up to 80 bp read-length amplicons 
 
 Example:
 ```shell
-mixcr analyze ampliseq-tcrb-sr \
+mixcr analyze illumina-human-rna-trb-ampliseq-sr \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 

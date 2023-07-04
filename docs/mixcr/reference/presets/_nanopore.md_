@@ -2,7 +2,7 @@
 
 #### Full-length RNA-seq
 
-==`ont-rna-seq-vdj`==
+==`ont-rna-seq`==
 ·
 [:octicons-link-16: Link](https://nanoporetech.com/applications/rna-sequencing)
 ·
@@ -18,7 +18,7 @@ The `--species` option is required.
 
 Example:
 ```shell
-mixcr analyze ont-rna-seq-vdj \
+mixcr analyze ont-rna-seq \
      --species hsa \
      sample.fastq.gz \
      sample_result

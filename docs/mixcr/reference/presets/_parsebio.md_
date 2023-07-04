@@ -2,11 +2,11 @@
 
 #### Parse Evercode™ single-cell
 
-==`parse-bio-3gex-wt-mini`==
+==`parsebio-sc-3gex-evercode-wt-mini`==
 ·
-==`parse-bio-3gex-wt`==
+==`parsebio-sc-3gex-evercode-wt`==
 ·
-==`parse-bio-3gex-wt-mega`==
+==`parsebio-sc-3gex-evercode-wt-mega`==
 ·
 [:octicons-link-16: Link](https://www.parsebiosciences.com/)
 ·
@@ -22,7 +22,7 @@ The `--species` option is required.
 
 Example:
 ```shell
-mixcr analyze parse-bio-3gex-wt-mini \
+mixcr analyze parsebio-sc-3gex-evercode-wt-mega \
      --species hsa \
      sample_R1.fastq.gz \
      sample_R2.fastq.gz \

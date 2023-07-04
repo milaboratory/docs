@@ -2,7 +2,7 @@
 
 #### 10x Genomics single cell VDJ
 
-==`10x-vdj`==
+==`10x-sc-xcr-vdj`==
 ·
 [:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
 ·
@@ -20,14 +20,14 @@ The `--species` option is required.
 
 Example:
 ```shell
-mixcr analyze 10x-vdj \
+mixcr analyze 10x-sc-xcr-vdj \
      --species hsa \
      sample_R1.fastq.gz \
      sample_R2.fastq.gz \
      sample_result
 ```
 #### 10x Genomics single cell 5' gene expression
-==`10x-5gex
+==`10x-sc-5gex
 ·
 [:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
 ·
@@ -39,7 +39,7 @@ The `--species` option is required.
 
 Example:
 ```shell
-mixcr analyze 10x-5gex \
+mixcr analyze 10x-sc-5gex \
      --species hsa \
      sample_R1.fastq.gz \
      sample_R2.fastq.gz \

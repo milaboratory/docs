@@ -2,7 +2,7 @@
 
 #### NEBNext® Immune Sequencing Kit (Human) BCR & TCR
 
-==`nebnext-human-immune-sequencing`==
+==`neb-human-rna-xcr-umi-nebnext`==
 ·
 [:octicons-link-16: Link](https://www.neb.com/products/e6320-nebnext-immune-sequencing-kit-human#Product%20Information)
 ·
@@ -23,7 +23,7 @@ Mix-in option `--dont-split-clones-by C` may be used for BCR data to not separat
 
 Example:
 ```shell
-mixcr analyze nebnext-human-immune-sequencing \
+mixcr analyze neb-human-rna-xcr-umi-nebnext \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -31,7 +31,7 @@ mixcr analyze nebnext-human-immune-sequencing \
 
 #### NEBNext® Immune Sequencing Kit (Mouse) BCR & TCR
 
-==`nebnext-mouse-immune-sequencing`==
+==`neb-mouse-rna-xcr-umi-nebnext`==
 ·
 [:octicons-link-16: Link](https://www.neb.com/products/e6330-nebnext-immune-sequencing-kit-mouse#Product%20Information)
 ·
@@ -50,7 +50,7 @@ Mix-in option `--dont-split-clones-by C` may be used for BCR data to not separat
 
 Example:
 ```shell
-mixcr analyze nebnext-mouse-immune-sequencing \
+mixcr analyze neb-mouse-rna-xcr-umi-nebnext \
       --dont-split-clones-by C \
       input_R1.fastq.gz \
       input_R2.fastq.gz \

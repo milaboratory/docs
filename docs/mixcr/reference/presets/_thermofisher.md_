@@ -1,6 +1,6 @@
 ### Thermo Fisher
 #### Oncomine™ TCR Beta‑LR Assay
-==`oncomine-human-tcrb-lr`==
+==`thermofisher-human-rna-trb-oncomine-lr`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A35386)
 ·
@@ -17,20 +17,21 @@ By default the clones are assembled by `{CDR1Begin:FR4End}`, if needed (e.g. if 
 
 Example:
 ```shell
-mixcr analyze oncomine-human-tcrb-lr \
+mixcr analyze thermofisher-human-rna-trb-oncomine-lr \
       input.fastq.gz \
       result 
 ```
 
-#### Oncomine™ TCR Beta‑SR Assay
-==`oncomine-human-tcrb-sr`==
+#### Oncomine™ TCR Beta‑SR Assay (RNA or DNA based)
+==`thermofisher-human-rna-trb-oncomine-sr`==
+·
+==`thermofisher-human-dna-trb-oncomine-sr`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A39072)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/thermofisher.yaml)
 
-The Oncomine™ TCR Beta‑SR Assay is a highly sensitive RNA- or DNA-based NGS assay that enables
-the characterization of the T-cell receptor β (TCRβ) complementarity-determining region 3 (CDR3) sequences of the TCRβ chain. The assay accurately measures T‑cell repertoire diversity and clonal expansion in a wide array of sample types, including those derived from FFPE-preserved or degraded
+The Oncomine™ TCR Beta‑SR Assay is a highly sensitive RNA- or DNA-based NGS assay that enables the characterization of the T-cell receptor β (TCRβ) complementarity-determining region 3 (CDR3) sequences of the TCRβ chain. The assay accurately measures T‑cell repertoire diversity and clonal expansion in a wide array of sample types, including those derived from FFPE-preserved or degraded
 material.
 
 ![](pics/oncomine-human-tcrb-sr-light.svg#only-light)
@@ -38,13 +39,13 @@ material.
 
 Example:
 ```shell
-mixcr analyze oncomine-human-tcrb-sr \
+mixcr analyze thermofisher-human-rna-trb-oncomine-sr \
       input.fastq.gz \
       result 
 ```
 
 #### Oncomine™ BCR IGH‑LR Assay Kit
-==`oncomine-human-igh-lr`==
+==`thermofisher-human-rna-igh-oncomine-lr`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A45485)
 ·
@@ -59,13 +60,15 @@ By default the clones are assembled by `{CDR1Begin:FR4End}`, if needed (e.g. if 
 ![](pics/oncomine-human-bcr-igh-lr-dark.svg#only-dark)
 Example:
 ```shell
-mixcr analyze oncomine-human-igh-lr \
+mixcr analyze thermofisher-human-rna-igh-oncomine-lr \
       input.fastq.gz \
       result 
 ```
 
-#### Oncomine™ BCR IGH‑SR Assay
-==`oncomine-human-igh-sr`==
+#### Oncomine™ BCR IGH‑SR Assay (RNA or DNA based)
+==`thermofisher-human-rna-igh-oncomine-sr`==
+·
+==`thermofisher-human-dna-igh-oncomine-sr`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A45483)
 ·
@@ -80,13 +83,13 @@ the characterization of the immunoglobulin heavy chain complementarity-determini
 
 Example:
 ```shell
-mixcr analyze oncomine-human-igh-sr \
+mixcr analyze thermofisher-human-dna-igh-oncomine-sr \
       input.fastq.gz \
       result 
 ```
 
 #### Oncomine™ BCR Pan-Clonality Assay
-==`oncomine-human-bcr-pan-clonality`==
+==`thermofisher-human-dna-bcr-oncomine-pan-clonality`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51559)
 ·
@@ -99,13 +102,13 @@ The Oncomine™ BCR Pan-Clonality Assay is a highly sensitive, single reaction, 
 
 Example:
 ```shell
-mixcr analyze oncomine-human-bcr-pan-clonality \
+mixcr analyze thermofisher-human-dna-bcr-oncomine-pan-clonality \
       input.fastq.gz \
       result 
 ```
 
 #### Oncomine™ IGH FR3(d)-J Assay
-==`oncomine-human-igh-fr3-j`==
+==`thermofisher-human-dna-igh-oncomine-fr3-j`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51560)
 ·
@@ -118,13 +121,13 @@ The Oncomine™ IGH FR3(d)-J Assay is a highly sensitive, DNA-based NGS assays t
 
 Example:
 ```shell
-mixcr analyze oncomine-human-igh-fr3-j \
+mixcr analyze thermofisher-human-dna-igh-oncomine-fr3-j \
       input.fastq.gz \
       result 
 ```
 
 #### Oncomine™ IGH FR2-J Assay
-==`oncomine-human-igh-fr2-j`==
+==`thermofisher-human-dna-igh-oncomine-fr2-j`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51561)
 ·
@@ -139,13 +142,13 @@ Note, that clonotypes in this preset are assembled by `{CDR2Begin:CDR3End}` feat
 
 Example:
 ```shell
-mixcr analyze oncomine-human-igh-fr2-j \
+mixcr analyze thermofisher-human-dna-igh-oncomine-fr2-j \
       input.fastq.gz \
       result 
 ```
 
 #### Oncomine™ IGH FR1-J Assay
-==`oncomine-human-igh-fr1-j`==
+==`thermofisher-human-dna-igh-oncomine-fr1-j`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51564)
 ·
@@ -160,13 +163,13 @@ Note, that clonotypes in this preset are assembled by `{CDR1Begin:CDR3End}` feat
 
 Example:
 ```shell
-mixcr analyze oncomine-human-igh-fr1-j \
+mixcr analyze thermofisher-human-dna-igh-oncomine-fr1-j \
       input.fastq.gz \
       result 
 ```
 
 #### Oncomine™ IGHV Leader-J Assay
-==`oncomine-human-igh-leader-j`==
+==`thermofisher-human-dna-igh-oncomine-v-leader-j`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51563)
 ·
@@ -182,13 +185,13 @@ Note, that clonotypes in this preset are assembled by `{FR1Begin:CDR3End}` featu
 
 Example:
 ```shell
-mixcr analyze oncomine-human-igh-leader-j \
+mixcr analyze thermofisher-human-dna-igh-oncomine-v-leader-j \
       input.fastq.gz \
       result 
 ```
 
 #### Oncomine™ TCR Pan-Clonality Assay
-==`oncomine-human-tcr-pan-clonality`==
+==`thermofisher-human-dna-tcr-oncomine-pan-clonality`==
 ·
 [:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A51562)
 ·
@@ -201,7 +204,7 @@ The Oncomine TCR Pan-Clonality Assay is a targeted next-generation sequencing (N
 
 Example:
 ```shell
-mixcr analyze oncomine-human-tcr-pan-clonality \
+mixcr analyze thermofisher-human-dna-tcr-oncomine-pan-clonality \
       input.fastq.gz \
       result 
 ```

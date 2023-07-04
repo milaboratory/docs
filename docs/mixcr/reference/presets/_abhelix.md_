@@ -1,6 +1,6 @@
 ### AbHelix
 
-==`abhelix-human`==
+==`abhelix-human-rna-xcr`==
 ·
 [:octicons-link-16: Link](https://abhelix.com/)
 ·
@@ -20,7 +20,7 @@ The kit also allows to obtain full-length sequences of TCR-alpha and TCR-beta V(
 
 Example:
 ```shell
-mixcr analyze abhelix-human \
+mixcr analyze abhelix-human-rna-xcr \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 

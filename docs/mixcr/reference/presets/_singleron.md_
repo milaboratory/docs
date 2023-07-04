@@ -2,7 +2,7 @@
 
 #### GEXSCOPE Single Cell V(D)J Kit
 
-==`singleron-gexscope-single-cell-vdj`==
+==`singleron-human-sc-xcr-gexscope-vdj`==
 ·
 [:octicons-link-16: Link](https://singleron.bio/product/detail-5.html)
 ·
@@ -16,7 +16,7 @@ The GEXSCOPE® Single Cell V(D)J Kit enables simultaneous detection of T-cell or
 
 Example:
 ```shell
-mixcr analyze singleron-gexscope-single-cell-vdj \
+mixcr analyze singleron-human-sc-xcr-gexscope-vdj \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result

@@ -5,9 +5,9 @@ iRepertoire has multiple different primer systems that vary by the regions targe
 Repertoire’s RepSeq service (formerly AMP2Seq) utilizes arm-PCR technology, which uses hundreds of VDJ-specific primers in one reaction to semi-quantitatively and inclusively amplify all the expressed V(D)Js in B or T cells from a single sample.
 
 #### Human RepSeq RNA Reagent System
-==`irepertoire-repseq-human-sr`==
+==`irepertoire-human-rna-xcr-repseq-sr`==
 ·
-==`irepertoire-repseq-human-lr`==
+==`irepertoire-human-rna-xcr-repseq-lr`==
 ·
 [:octicons-link-16: Link](https://irepertoire.com/repseq/)
 ·
@@ -22,16 +22,16 @@ Short-read (SR) RNA-compatible human primers (presets that end with `sr`) cover 
 
 Example:
 ```shell
-mixcr analyze irepertoire-repseq-human-sr \
+mixcr analyze irepertoire-human-rna-xcr-repseq-sr \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
 ```
 
 #### Mouse RepSeq RNA Reagent System
-==`irepertoire-repseq-mouse-sr`==
+==`irepertoire-mouse-rna-xcr-repseq-sr`==
 ·
-==`irepertoire-repseq-mouse-lr`==
+==`irepertoire-mouse-rna-xcr-repseq-lr`==
 ·
 [:octicons-link-16: Link](https://irepertoire.com/repseq/)
 ·
@@ -47,7 +47,7 @@ Short-read (SR) RNA-compatible human primers (presets that end with `sr`) cover 
 
 Example:
 ```shell
-mixcr analyze irepertoire-repseq-mouse-sr \
+mixcr analyze irepertoire-mouse-rna-xcr-repseq-lr \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -56,9 +56,9 @@ mixcr analyze irepertoire-repseq-mouse-sr \
 
 #### RepSeq+ Reagent System
 
-==`irepertoire-repseq-plus-human`==
+==`irepertoire-human-rna-xcr-repseq-lr`==
 ·
-==`irepertoire-repseq-plus-mouse`==
+==`irepertoire-mouse-rna-xcr-repseq-lr`==
 ·
 [:octicons-link-16: Link](https://irepertoire.com/repseq-2/)
 ·
@@ -71,7 +71,7 @@ iRepertoire’s RepSeq+ service utilizes dam-PCR technology, which allows for an
 
 Example:
 ```shell
-mixcr analyze irepertoire-repseq-plus-human \
+mixcr analyze irepertoire-mouse-rna-xcr-repseq-lr \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -79,9 +79,9 @@ mixcr analyze irepertoire-repseq-plus-human \
 
 #### Human gDNA based RepSeq Reagent System
 
-==`irepertoire-human-dna-sr`==
+==`irepertoire-human-dna-xcr-repseq-sr`==
 ·
-==`irepertoire-human-dna-lr`==
+==`irepertoire-human-dna-xcr-repseq-lr`==
 ·
 [:octicons-link-16: Link](https://irepertoire.com/repseq-2/)
 ·
@@ -97,7 +97,7 @@ By default the clones are assembled by `{CDR1Begin:CDR3End}`, if the library has
 
 Example:
 ```shell
-mixcr analyze irepertoire-human-dna-lr \
+mixcr analyze irepertoire-human-dna-xcr-repseq-sr \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 

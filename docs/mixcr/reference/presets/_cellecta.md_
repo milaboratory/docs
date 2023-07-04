@@ -1,7 +1,7 @@
 ### Cellecta
 #### DriverMap Adaptive Immune Receptor (AIR) TCR-BCR Profiling
 
-==`cellecta-air-human`==
+==`cellecta-human-rna-xcr-umi-drivermap-air`==
 ·
 [:octicons-link-16: Link](https://cellecta.com/products/drivermap-immune-receptor-profiling-service)
 ·
@@ -14,7 +14,7 @@ Cellecta’s DriverMap™ AIR TCR-BCR assay is designed to specifically amplify 
 
 Example:
 ```shell
-mixcr analyze cellecta-air-human \
+mixcr analyze cellecta-human-rna-xcr-umi-drivermap-air \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 

@@ -1,7 +1,7 @@
 ### Qiagen
 #### QIAseq™ Human TCR Panel Immune Repertoire RNA Library Kit
 
-==`qiaseq-human-tcr-panel`==
+==`qiagen-human-rna-tcr-umi-qiaseq`==
 ·
 [:octicons-link-16: Link](https://geneglobe.qiagen.com/us/product-groups/qiaseq-immune-repertoire-rna-library-kits)
 ·
@@ -17,7 +17,7 @@ By default the clones are assembled by `{CDR2Begin:FR4End}`, if needed (e.g. if 
 
 Example:
 ```shell
-mixcr analyze qiaseq-human-tcr-panel \
+mixcr analyze qiagen-human-rna-tcr-umi-qiaseq \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -25,7 +25,7 @@ mixcr analyze qiaseq-human-tcr-panel \
 
 #### QIAseq™ Mouse TCR Panel Immune Repertoire RNA Library Kit
 
-==`qiaseq-mouse-tcr-panel`==
+==`qiagen-mouse-rna-tcr-umi-qiaseq`==
 ·
 [:octicons-link-16: Link](https://geneglobe.qiagen.com/us/product-groups/qiaseq-immune-repertoire-rna-library-kits)
 ·
@@ -41,7 +41,7 @@ By default the clones are assembled by `{CDR2Begin:FR4End}`, if needed (e.g. if 
 
 Example:
 ```shell
-mixcr analyze qiaseq-mouse-tcr-panel \
+mixcr analyze qiagen-mouse-rna-tcr-umi-qiaseq \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 

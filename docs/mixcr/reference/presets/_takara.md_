@@ -2,7 +2,7 @@
 
 #### SMART-Seq Human BCR (with UMIs)
 
-==`takara-smartseq-human-bcr`==
+==`takara-human-rna-bcr-umi-smartseq`==
 ·
 [:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/smart-seq-human-bcr-(with-umis))
 ·
@@ -17,7 +17,7 @@ SMART-Seq Human BCR Kit (with UMIs) provides a sensitive and reproducible soluti
 
 Example:
 ```shell
-mixcr analyze takara-smartseq-human-bcr \
+mixcr analyze takara-human-rna-bcr-umi-smartseq \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -25,7 +25,7 @@ mixcr analyze takara-smartseq-human-bcr \
 
 #### SMART-Seq Human TCR (with UMIs)
 
-==`takara-smartseq-human-tcr`==
+==`takara-human-rna-tcr-umi-smartseq`==
 ·
 [:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/smart-seq-human-tcr-with-umis)
 ·
@@ -40,7 +40,7 @@ By default the clones are assembled by `VDJRegion`, if needed (e.g. if the libra
 
 Example:
 ```shell
-mixcr analyze takara-smartseq-human-tcr \
+mixcr analyze takara-human-rna-tcr-umi-smartseq \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
@@ -48,7 +48,7 @@ mixcr analyze takara-smartseq-human-tcr \
 
 #### SMARTer Human BCR IgG IgM H/K/L Profiling Kit
 
-==`takara-human-bcr-profiling`==
+==`takara-human-rna-bcr-umi-smarter`==
 ·
 [:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/human-bcr-profiling-kit-for-illumina-sequencing)
 ·
@@ -65,7 +65,7 @@ SMARTer Human BCR IgG IgM H/K/L Profiling Kit pairs 5' RACE with NGS technology 
 
 Example:
 ```shell
-mixcr analyze takara-human-bcr-profiling \
+mixcr analyze takara-human-rna-bcr-umi-smarter \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -73,7 +73,7 @@ mixcr analyze takara-human-bcr-profiling \
 
 #### SMARTer Human TCR a/b Profiling Kit v2
 
-==`takara-human-tcr-v2-profiling`==
+==`takara-human-rna-tcr-umi-smarter-v2`==
 ·
 [:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/human-tcrv2-profiling-kit-for-illumina-sequencing)
 ·
@@ -88,7 +88,7 @@ By default the clones are assembled by `VDJRegion`, if needed (e.g. if the libra
 
 Example:
 ```shell
-mixcr analyze takara-human-tcr-v2-profiling \
+mixcr analyze takara-human-rna-tcr-umi-smarter-v2 \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
@@ -96,7 +96,7 @@ mixcr analyze takara-human-tcr-v2-profiling \
 
 #### SMARTer Human TCR a/b Profiling Kit
 
-==`takara-human-tcr-profiling`==
+==`takara-human-rna-tcr-smarter`==
 ·
 [:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/human-tcr-profiling-kit-for-illumina-sequencing)
 ·
@@ -109,7 +109,7 @@ SMARTer Human TCR a/b Profiling Kit allows to obtain full-length sequences of TC
 
 Example:
 ```shell
-mixcr analyze takara-human-tcr-profiling \
+mixcr analyze takara-human-rna-tcr-smarter \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -117,7 +117,7 @@ mixcr analyze takara-human-tcr-profiling \
 
 #### SMARTer Mouse BCR IgG H/K/L Profiling Kit
 
-==`takara-mouse-bcr-profiling`==
+==`takara-mouse-rna-bcr-smarter`==
 ·
 [:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/mouse-repertoire/mouse-bcr-profiling-kit-for-illumina-sequencing)
 ·
@@ -132,7 +132,7 @@ By default the clones are assembled by `VDJRegion`, if needed (e.g. if the libra
 
 Example:
 ```shell
-mixcr analyze takara-mouse-bcr-profiling \
+mixcr analyze takara-mouse-rna-bcr-smarter \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -140,7 +140,7 @@ mixcr analyze takara-mouse-bcr-profiling \
 
 #### SMARTer Mouse TCR a/b Profiling Kit
 
-==`takara-mouse-tcr-profiling`==
+==`takara-mouse-rna-tcr-smarter`==
 ·
 [:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/mouse-repertoire/mouse-tcr-profiling-kit-for-illumina-sequencing)
 ·
@@ -157,7 +157,7 @@ By default the clones are assembled by `VDJRegion`, if needed (e.g. if the libra
 
 Example:
 ```shell
-mixcr analyze takara-mouse-tcr-profiling \
+mixcr analyze takara-mouse-rna-tcr-smarter \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 

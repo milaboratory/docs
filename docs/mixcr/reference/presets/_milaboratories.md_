@@ -1,7 +1,7 @@
 ### MiLaboratories
 
 #### Human Ig RNA Multiplex
-==`milab-human-ig-rna-multiplex`==
+==`milab-human-rna-ig-umi-multiplex`==
 ·
 [:octicons-link-16: Link](https://milaboratories.com/human-ig-rna-multiplex-kit)
 ·
@@ -17,7 +17,7 @@ By default, separates clonotypes by isotype which may be changed using `--dont-s
 
 Example:
 ```shell
-mixcr analyze milab-human-ig-rna-multiplex \
+mixcr analyze milab-human-rna-ig-umi-multiplex \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -25,7 +25,7 @@ mixcr analyze milab-human-ig-rna-multiplex \
 
 #### Human TCR RNA Multiplex
 
-==`milab-human-tcr-rna-multiplex`==
+==`milab-human-rna-tcr-umi-multiplex`==
 ·
 [:octicons-link-16: Link](https://milaboratories.com/human-tcr-rna-multiplex-kit)
 ·
@@ -40,7 +40,7 @@ Allows to obtain human TCR alpha and beta CDR3 repertoires for different types o
 
 Example:
 ```shell
-mixcr analyze milab-human-tcr-rna-multiplex \
+mixcr analyze milab-human-rna-tcr-umi-multiplex \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -49,7 +49,7 @@ mixcr analyze milab-human-tcr-rna-multiplex \
 
 #### Human TCR RNA
 
-==`milab-human-tcr-rna-race`==
+==`milab-human-rna-tcr-umi-race`==
 ·
 [:octicons-link-16: Link](https://milaboratories.com/human-tcr-rna-kit)
 ·
@@ -64,7 +64,7 @@ By default the clones are assembled by `VDJRegion`, if needed (e.g. if the libra
 
 Example:
 ```shell
-mixcr analyze milab-human-tcr-rna-race \
+mixcr analyze milab-human-rna-tcr-umi-race \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -72,7 +72,7 @@ mixcr analyze milab-human-tcr-rna-race \
 
 
 #### Human TCR DNA Multiplex
-==`milab-human-tcr-dna-multiplex`==
+==`milab-human-dna-tcr-multiplex`==
 ·
 [:octicons-link-16: Link](https://milaboratories.com/human-tcr-dna-multiplex-kit)
 ·
@@ -86,13 +86,13 @@ Allows to obtain TCR alpha and beta repertoires for different types of available
 
 Example:
 ```shell
-mixcr analyze milab-human-tcr-dna-multiplex \
+mixcr analyze milab-human-dna-tcr-multiplex \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
 ```
 #### Human 7GENES DNA Multiplex
-==`milab-human-7genes-dna-multiplex`==
+==`milab-human-dna-xcr-7genes-multiplex`==
 ·
 [:octicons-link-16: Link](https://milaboratories.com/7genes-dna-multiplex-kit)
 ·
@@ -107,7 +107,7 @@ Note, that, for now MiXCR will report only complete rearrangements, support for 
 
 Example:
 ```shell
-mixcr analyze milab-human-7genes-dna-multiplex \
+mixcr analyze milab-human-dna-xcr-7genes-multiplex \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
@@ -115,7 +115,7 @@ mixcr analyze milab-human-7genes-dna-multiplex \
 
 #### Mouse TCR RNA
 
-==`milab-mouse-tcr-rna-race`==
+==`milab-mouse-rna-tcr-umi-race`==
 ·
 [:octicons-link-16: Link](https://milaboratories.com/mouse-tcr-rna-kit)
 ·
@@ -130,7 +130,7 @@ The kit allows to obtain unbiased TCR alpha and beta repertoires with UMI-based 
 
 Example:
 ```shell
-mixcr analyze milab-mouse-tcr-rna-race \
+mixcr analyze milab-mouse-rna-tcr-umi-race \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
