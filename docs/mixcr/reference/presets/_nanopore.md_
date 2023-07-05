@@ -2,11 +2,11 @@
 
 #### Full-length RNA-seq
 
-==`ont-rna-seq-vdj-full-length`==
+==`ont-rna-seq`==
 ·
 [:octicons-link-16: Link](https://nanoporetech.com/applications/rna-sequencing)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/nanopore.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/nanopore.yaml)
 
 
 The preset is designed to handle long reads RNA-seq data obtained with Oxford Nanopore Technologies sequencer.
@@ -18,7 +18,7 @@ The `--species` option is required.
 
 Example:
 ```shell
-mixcr analyze ont-rna-seq-vdj-full-length \
+mixcr analyze ont-rna-seq \
      --species hsa \
      sample.fastq.gz \
      sample_result

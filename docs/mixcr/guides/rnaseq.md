@@ -28,7 +28,7 @@ All data may be downloaded directly from SRA (PRJEB44566) using e.g. [SRA Explor
 
 ## Upstream analysis
 
-The easiest way to obtain results from this type of data is to use `mixcr analyze shotgun` command:
+The easiest way to obtain results from this type of data is to use `mixcr analyze rna-seq` command:
 
 MiXCR has a dedicated preset for RNA-seq data, thus running the pipeline is as easy as:
 
@@ -36,7 +36,7 @@ MiXCR has a dedicated preset for RNA-seq data, thus running the pipeline is as e
 --8<-- "guides/rnaseq/scripts/020-upstream-preset.sh"
 ```
 
-`+species mmu`
+`--species mmu`
 : is a mix-in that specifies the name of the species. mmu for _Mus Musculus_ in this case.
 
 Running the command above will generate the following files:
@@ -96,7 +96,7 @@ Option `--report` is specified here explicitly.
 `--species mmu`
 : mmu for _Mus Musculus_
 
-`-p align_rna-seq_4.0`
+`-p rna-seq`
 : defines a set of aligner parameters specifically for RNASeq data. 
 
 `-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP"`

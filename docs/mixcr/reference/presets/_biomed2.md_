@@ -1,22 +1,60 @@
 ### Biomed2
-==`biomed2-human-bcr-cdr3`==
+
+#### IGH primer set
+
+==`biomed2-human-rna-igh`==
 ·
-==`biomed2-human-bcr-full-length`==
+[:octicons-link-16: Publication](https://www.nature.com/articles/2403202)
 ·
-[:octicons-link-16: Publication](https://www.jmdjournal.org/article/S1525-1578(10)60580-6/fulltext)
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/biomed2.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/biomed2.yaml)
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/biomed2-bcr.md)
 
-Biomed2 FR1-FR4 human multiplex BCR primer set. The `-cdr3` presets used to extract CDR3 clonotypes while `-full-length` full VDJ region, starting from FR1.
+Biomed2 FR1-FR4 human multiplex BCR primer set. By default the clones are assembled by `{CDR1Begin:CDR3End}`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
 
 ![](pics/biomed2-human-bcr-kit-light.svg#only-light)
 ![](pics/biomed2-human-bcr-kit-dark.svg#only-dark)
 
 Example:
 ```shell
-mixcr analyze biomed2-human-bcr-full-length \
+mixcr analyze biomed2-human-rna-igh \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+#### IGK/IGL primer set
+
+==`biomed2-human-rna-igkl`==
+·
+[:octicons-link-16: Publication](https://www.nature.com/articles/2403202)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/biomed2.yaml)
+
+
+Biomed2 IGK/IGL human multiplex primer set. Clones are assembled by `CDR3`.
+
+Example:
+```shell
+mixcr analyze biomed2-human-igl-igk \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+#### TRB/TRD/TRG primer set
+
+==`biomed2-human-rna-trbdg`==
+·
+[:octicons-link-16: Publication](https://www.nature.com/articles/2403202)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/biomed2.yaml)
+
+Biomed2 TRB/TRD/TRG human multiplex primer set. Clones are assembled by `CDR3`.
+
+Example:
+```shell
+mixcr analyze biomed2-human-rna-trbdg \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result

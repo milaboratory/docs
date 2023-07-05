@@ -1,4 +1,4 @@
-mixcr analyze generic-tcr-amplicon-umi \
+mixcr analyze generic-amplicon-with-umi \
     --species hsa \
     --rna \
     --rigid-left-alignment-boundary \

@@ -4,7 +4,7 @@ mkdir -p results
 
 ls raw/*R1* |
 	parallel -j 2 --line-buffer \
-	"mixcr analyze milab-human-bcr-multiplex-cdr3 \
+	"mixcr analyze milab-human-rna-ig-umi-multiplex \
 	{} \
 	{=s:R1:R2:=} \
 	{=s:.*/:results/:;s:_R.*::=}"

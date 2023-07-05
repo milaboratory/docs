@@ -60,7 +60,7 @@ In order to run the analysis for all samples in the project on Linux we can use 
 
 ### Under the hood pipeline
 
-Under the hood `milab-human-tcr-dna-multiplex-cdr3` preset actually executes the following pipeline:
+Under the hood `milab-human-dna-tcr-multiplex` preset actually executes the following pipeline:
 
 #### `align`
 [Alignment](../reference/mixcr-align.md) of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
@@ -74,8 +74,8 @@ Option `--report` is specified here explicitly.
 `--species hsa`
 : determines the organism species (hsa for _Homo Sapiens_).
 
-`-p align-legacy-4.0-default`
-:  a default preset of MiXCR parameters which includes a dedicated TCR aligner.
+`-p generic-amplicon`
+:  a default preset of MiXCR parameters for amplicon data.
 
 `-OvParameters.geneFeatureToAlign="VGeneWithP"`
 : Sets a V gene feature to align. Check [gene features](../reference/ref-gene-features.md) for more info.

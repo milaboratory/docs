@@ -6,7 +6,7 @@ ls raw/*_1* | \
   sed 's:SRR[0-9]*_:SRR\{\{n\}\}_:g' | \
   uniq | \
   parallel -j2 --line-buffer \
-  'mixcr analyze generic-tcr-amplicon-umi -f \
+  'mixcr analyze generic-amplicon-with-umi -f \
     --species hsa \
     --rna \
     --rigid-left-alignment-boundary \

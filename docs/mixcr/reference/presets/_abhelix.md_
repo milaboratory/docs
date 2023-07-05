@@ -1,50 +1,29 @@
 ### AbHelix
 
-#### BCR data
-
-==`abhelix-human-bcr-cdr3`==
-·
-==`abhelix-human-bcr-full-length`==
+==`abhelix-human-rna-xcr`==
 ·
 [:octicons-link-16: Link](https://abhelix.com/)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/abhelix.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/abhelix.yaml)
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/abhelix-bcr.md)
 
-This kit allows identification of IgG1,IgG1,IgG1,IgG1,IgGM,IgA isotypes. Isotypes are separated prior to the final PCR reaction, in a way that resulting sequences don't cover C region enough. Thus, this preset does not separate clones by C-gene, implying that different isotypes have been already separated into different samples. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
+This kit allows identification of IgG1,IgG1,IgG1,IgG1,IgGM,IgA isotypes. Isotypes are separated prior to the final PCR reaction, in a way that resulting sequences don't cover C region enough. Thus, this preset does not separate clones by C-gene, implying that different isotypes have been already separated into different samples.
+The kit also allows to obtain full-length sequences of TCR-alpha and TCR-beta V(D)J variable regions.
+
 
 ![](pics/ABHelix-bcr-kit-dark.svg#only-dark)
 ![](pics/ABHelix-bcr-kit-light.svg#only-light)
-
-Example:
-```shell
-mixcr analyze abhelix-human-bcr-cdr3 \
-      input_R1.fastq.gz \
-      input_R2.fastq.gz \
-      result 
-```
-
-
-#### TCR data
-==`abhelix-human-tcr-cdr3`==
-·
-==`abhelix-human-tcr-full-length`==
-·
-[:octicons-link-16: Link](https://abhelix.com/)
-·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/abhelix.yaml)
-
-
-The kit allows to obtain full-length sequences of TCR-alpha and TCR-beta V(D)J variable regions. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
-
 ![](pics/ABHelix-tcr-kit-light.svg#only-light)
 ![](pics/ABHelix-tcr-kit-dark.svg#only-dark)
 
+
 Example:
 ```shell
-mixcr analyze abhelix-human-tcr-cdr3 \
+mixcr analyze abhelix-human-rna-xcr \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
 ```
+
+By default the clones are assembled by `{FR1Begin:FR4End}`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.

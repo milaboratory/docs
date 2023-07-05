@@ -1,6 +1,6 @@
 mixcr align \
     --species hsa \
-    -p kAligner2_4.0 \
+    -p generic-amplicon \
     --tag-pattern "^N{32}(R1:*)\^N{26}(R2:*)" \
 	-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
 	-OvParameters.parameters.floatingLeftBound=false \

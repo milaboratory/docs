@@ -1,0 +1,22 @@
+### RNA-Seq data
+==`rna-seq`==
+·
+[:octicons-link-16: Publication](https://www.nature.com/articles/nbt.3979)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/rnaseq.yaml)
+
+Non-enriched fragmented (shotgun) RNA-Seq data. By default MiXCR runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J-C receptor rearrangement sequence.
+
+![](pics/rnaseq-structure-light.svg#only-light)
+![](pics/rnaseq-structure-dark.svg#only-dark)
+
+The `--species` option is required.
+
+Example:
+```shell
+mixcr analyze rna-seq \
+    --species hsa \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```

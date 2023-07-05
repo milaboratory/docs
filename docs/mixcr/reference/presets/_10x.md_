@@ -2,13 +2,11 @@
 
 #### 10x Genomics single cell VDJ
 
-==`10x-vdj-tcr`==
-·
-==`10x-vdj-bcr`==
+==`10x-sc-xcr-vdj`==
 ·
 [:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/10x.yaml)
 
 
 Chromium Single Cell Immune Profiling provides a solution to your immunology questions. Analyze full-length V(D)J sequences for paired B-cell or T-cell receptors, all from a single cell. Notice that on the scheme bellow reads' length is shown according to the protocol recommendations, but the presets will work regardless of sequencing reads length.
@@ -22,28 +20,26 @@ The `--species` option is required.
 
 Example:
 ```shell
-mixcr analyze 10x-vdj-bcr \
+mixcr analyze 10x-sc-xcr-vdj \
      --species hsa \
      sample_R1.fastq.gz \
      sample_R2.fastq.gz \
      sample_result
 ```
 #### 10x Genomics single cell 5' gene expression
-==`10x-5gex-cdr3`==
-·
-==`10x-5gex-full-length`==
+==`10x-sc-5gex
 ·
 [:octicons-link-16: Link](https://www.10xgenomics.com/products/single-cell-immune-profiling)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/10x.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/10x.yaml)
 
-These presets are specifically optimized to extract TCR and BCR repertoires from non-enriched single cell 5' RNA-seq cDNA libraries.
+These presets are specifically optimized to extract TCR and BCR repertoires from non-enriched single cell 5' RNA-seq cDNA libraries. By default the longest possible contig is assembled for every clone.
 
 The `--species` option is required.
 
 Example:
 ```shell
-mixcr analyze 10x-5gex-full-length \
+mixcr analyze 10x-sc-5gex \
      --species hsa \
      sample_R1.fastq.gz \
      sample_R2.fastq.gz \

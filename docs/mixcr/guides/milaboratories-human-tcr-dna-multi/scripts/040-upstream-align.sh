@@ -1,6 +1,6 @@
 mixcr align \
     --species hsa \
-    -p align-legacy-4.0-default \
+    -p generic-amplicon \
 	-OvParameters.geneFeatureToAlign="VGeneWithP" \
 	-OvParameters.parameters.floatingLeftBound=false \
 	-OjParameters.parameters.floatingRightBound=false \

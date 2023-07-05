@@ -22,7 +22,7 @@ All data may be downloaded directly from SRA (PRJNA780318) using e.g. [SRA Explo
 
 ## One command Solution
 
-The data was obtained using NEBNext Immune Sequencing Kit for BCR repertoire. The easiest way to perform upstream analysis for this data would be to use a dedicated [mixcr preset](../reference/overview-built-in-presets.md#nebnext-immune-sequencing-kit-mouse-bcr--tcrhttpswwwnebcomproductse6330-nebnext-immune-sequencing-kit-mouseproduct20information) `nebnext-mouse-bcr-full-length` with [`mixcr analyze`](../reference/mixcr-analyze.md) command. This preset was spesifically designed for this kit and includes UMI correction, primer sequences trimming and assembles clonotypes by [`VDJRegion`](../reference/ref-gene-features.md).
+The data was obtained using NEBNext Immune Sequencing Kit for BCR repertoire. The easiest way to perform upstream analysis for this data would be to use a dedicated [mixcr preset](../reference/overview-built-in-presets.md#nebnext-immune-sequencing-kit-mouse-bcr--tcrhttpswwwnebcomproductse6330-nebnext-immune-sequencing-kit-mouseproduct20information) `neb-mouse-rna-xcr-umi-nebnext` with [`mixcr analyze`](../reference/mixcr-analyze.md) command. This preset was spesifically designed for this kit and includes UMI correction, primer sequences trimming and assembles clonotypes by [`VDJRegion`](../reference/ref-gene-features.md).
 
 The exact command for a single sample you can see bellow:
 
@@ -318,7 +318,7 @@ We are going to construct a box plot to compare inverse Simpson diversity Index 
 --8<-- "guides/generic-umi-bcr/scripts/140-pa-diversity.sh"
 ```
 
-![](generic-umi-bcr/figs/diversity.IGH.svg)
+![](generic-multiplex-bcr/figs/diversity.IGH.svg)
 
 Arguments explained:
 

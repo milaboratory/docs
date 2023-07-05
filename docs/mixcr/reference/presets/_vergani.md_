@@ -1,0 +1,17 @@
+### Vergani et al, 2017
+==`vergani-et-al-2017-cdr3`==
+·
+==`vergani-et-al-2017-full-length`==
+·
+[:octicons-link-16: Publication](https://www.frontiersin.org/articles/10.3389/fimmu.2017.01157/full)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/custom.yaml)
+
+
+Example:
+```shell
+mixcr analyze vergani-et-al-2017-full-length \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```

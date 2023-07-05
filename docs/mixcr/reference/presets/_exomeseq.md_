@@ -1,0 +1,17 @@
+### Exome data
+==`exome-seq`==
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/exom.yaml)
+
+Non-enriched fragmented (shotgun) Exome-Seq data. By default MiXCR runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J receptor rearrangement sequence.
+
+The `--species` option is required.
+
+Example:
+```shell
+mixcr analyze exome-seq \
+    --species hsa \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```

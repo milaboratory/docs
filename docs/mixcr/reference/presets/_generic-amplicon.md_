@@ -1,0 +1,96 @@
+### Generic amplicon
+==`generic-amplicon`==
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/general-amplicon.yaml)
+·
+[:octicons-mortar-board-16: Tutorial](../guides/generic-umi-tcr.md)
+
+
+Generic TCR/BCR amplicon library. Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):
+
+
+: :fontawesome-solid-puzzle-piece: Species;
+: :fontawesome-solid-puzzle-piece: Material type;
+: :fontawesome-solid-puzzle-piece: Left alignment boundary (5'-end);
+: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end).
+
+The following example runs upstream analysis for some bulk mouse 5'RACE RNA library with 3'-end primers located on C-gene:
+```shell
+mixcr analyze generic-amplicon \
+    --species mmu \
+    --rna \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+The following [mix-in options](overview-mixins-list.md) are used:
+
+`--species mmu`
+: specify _Mus Musculus_ species
+
+`--rna`
+: set RNA as starting material (exon regions only will be used for alignments)
+
+`--rigid-left-alignment-boundary`
+: use global _left alignment boundary_ (5'RACE)
+
+`--floating-right-alignment-boundary C`
+: use local _right alignment boundary_ on C-segment as C-primers are used
+
+By default the clones are assembled by `CDR3`, if needed one can change this behavior by adding `--assemble-clonotypes-by VDJRegion`, if the longer receptor part is covered by the reads.
+
+
+### Generic amplicon with UMI barcodes
+==`generic-amplicon-with-umi`==
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/general-amplicon.yaml)
+·
+[:octicons-mortar-board-16: Tutorial](../guides/generic-umi-tcr.md)
+
+
+Generic TCR/BCR amplicon library with UMI barcodes. Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):
+
+
+: :fontawesome-solid-puzzle-piece: Species;
+: :fontawesome-solid-puzzle-piece: Material type;
+: :fontawesome-solid-puzzle-piece: Tag pattern;
+: :fontawesome-solid-puzzle-piece: Left alignment boundary (5'-end);
+: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end).
+
+The following example runs upstream analysis for some bulk mouse 5'RACE RNA library with 3'-end primers located on C-gene:
+```shell
+mixcr analyze generic-amplicon-with-umi \
+    --species hsa \
+    --rna \
+    --tag-pattern "^(R1:*) \ ^(UMI:N{12})GTAC(R2:*)" \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```esult
+```
+The following [mix-in options](overview-mixins-list.md) are used:
+
+`--species mmu`
+: specify _Mus Musculus_ species
+
+`--rna`
+: set RNA as starting material (exon regions only will be used for alignments)
+
+`--tag-pattern "^(R1:*) \ ^(UMI:N{12})GTAC(R2:*)"`
+: UMI [barcode pattern](ref-tag-pattern.md)
+
+`--rigid-left-alignment-boundary`
+: use global _left alignment boundary_ (5'RACE)
+
+`--floating-right-alignment-boundary C`
+: use local _right alignment boundary_ on C-segment as C-primers are used
+
+By default the clones are assembled by `CDR3`, if needed one can change this behavior by adding `--assemble-clonotypes-by VDJRegion`, if the longer receptor part is covered by the reads.
+
+
+
+

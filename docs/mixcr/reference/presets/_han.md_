@@ -1,0 +1,23 @@
+### Han et al, 2014
+
+==`han-et-al-2014-tcr`==
+·
+==`han-et-al-2014-bcr`==
+·
+[:octicons-link-16: Publication](https://www.nature.com/articles/nbt.2938)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/custom.yaml#L46)
+
+These presets are optimized for a single-cell use of the protocol when each plate well contains a single cell.
+
+![](pics/han-et-al-2014-light.svg#only-light)
+![](pics/han-et-al-2014-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze han-et-al-2014-bcr \
+      --species hsa \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```

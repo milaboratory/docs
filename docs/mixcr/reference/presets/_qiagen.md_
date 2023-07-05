@@ -1,24 +1,23 @@
 ### Qiagen
 #### QIAseq™ Human TCR Panel Immune Repertoire RNA Library Kit
 
-==`qiaseq-human-tcr-cdr3`==
-·
-==`qiaseq-human-tcr-full-length`==
+==`qiagen-human-rna-tcr-umi-qiaseq`==
 ·
 [:octicons-link-16: Link](https://geneglobe.qiagen.com/us/product-groups/qiaseq-immune-repertoire-rna-library-kits)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/qiaseq.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/qiaseq.yaml)
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/qiaseq-tcr.md)
 
-The QIAseq Human TCR Panel Immune Repertoire RNA Library Kit uses unique Molecular Indices (UMI) with gene-specific primers to target specific RNAs for NGS sequencing. The Human T-cell Receptors Panel is used for sequencing the V(D)J region of the alpha, beta, delta and gamma genes, including the CDR3 regions. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
+The QIAseq Human TCR Panel Immune Repertoire RNA Library Kit uses unique Molecular Indices (UMI) with gene-specific primers to target specific RNAs for NGS sequencing. The Human T-cell Receptors Panel is used for sequencing the V(D)J region of the alpha, beta, delta and gamma genes, including the CDR3 regions.
+By default the clones are assembled by `{CDR2Begin:FR4End}`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`. On contrary if the library was sequenced with longer reads and the full-length receptor sequence is expected to be covered, one can adjust assembling feature accordingly: `--assemble-clonotypes-by VDJRegion`
 
 ![](pics/QIAseq-immune-tcr-kit-light.svg#only-light)
 ![](pics/QIAseq-immune-tcr-kit-dark.svg#only-dark)
 
 Example:
 ```shell
-mixcr analyze qiaseq-human-tcr-cdr3 \
+mixcr analyze qiagen-human-rna-tcr-umi-qiaseq \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 
@@ -26,23 +25,23 @@ mixcr analyze qiaseq-human-tcr-cdr3 \
 
 #### QIAseq™ Mouse TCR Panel Immune Repertoire RNA Library Kit
 
-==`qiaseq-mouse-tcr-cdr3`==
-·
-==`qiaseq-mouse-tcr-full-length`==
+==`qiagen-mouse-rna-tcr-umi-qiaseq`==
 ·
 [:octicons-link-16: Link](https://geneglobe.qiagen.com/us/product-groups/qiaseq-immune-repertoire-rna-library-kits)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/mixcr_presets/protocols/qiaseq.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/qiaseq.yaml)
 
 
-The QIAseq Mouse TCR Panel Immune Repertoire RNA Library Kit uses unique Molecular Indices (UMI) with gene-specific primers to target specific RNAs for NGS sequencing. The Mouse T-cell Receptors Panel is used for sequencing the V(D)J region of the alpha, beta, delta and gamma genes, including the CDR3 regions. The `-cdr3` preset may be used to reduce clonotype assembling feature from full V-D-J region to CDR3 only.
+The QIAseq Mouse TCR Panel Immune Repertoire RNA Library Kit uses unique Molecular Indices (UMI) with gene-specific primers to target specific RNAs for NGS sequencing. The Mouse T-cell Receptors Panel is used for sequencing the V(D)J region of the alpha, beta, delta and gamma genes, including the CDR3 regions.
+
+By default the clones are assembled by `{CDR2Begin:FR4End}`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`. On contrary if the library was sequenced with longer reads and the full-length receptor sequence is expected to be covered, one can adjust assembling feature accordingly: `--assemble-clonotypes-by VDJRegion`
 
 ![](pics/QIAseq-immune-tcr-kit-light.svg#only-light)
 ![](pics/QIAseq-immune-tcr-kit-dark.svg#only-dark)
 
 Example:
 ```shell
-mixcr analyze qiaseq-mouse-tcr-cdr3 \
+mixcr analyze qiagen-mouse-rna-tcr-umi-qiaseq \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result 

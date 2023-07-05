@@ -85,8 +85,8 @@ Option `--report` and `--json-report` are specified here explicitly.
 `--species hsa`
 : determines the organism species (hsa for _Homo Sapiens_).
 
-`-p bundle-umi-kaligner2-v1-base`
-:  a preset of MiXCR parameters which includes a dedicated BCR aligner and defines required parameters for UMI correction.
+`-p generic-amplicon-with-umi`
+:  a preset of MiXCR parameters for amplicon data and defines required parameters for UMI correction.
 
 `-tag-pattern '^(R1:*) \ ^(UMI:N{14})'`
 : this pattern marks the UMI region and ensures primer sequences trimming. 

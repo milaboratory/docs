@@ -1,6 +1,6 @@
 mixcr align \
     --species hsa \
-    -p bundle-umi-kaligner2-v1-base \
+    -p generic-amplicon-with-umi \
     -tag-pattern '^(R1:*) \ ^(UMI:N{14})' \
     --rna
 	-OvParameters.parameters.floatingLeftBound=true \

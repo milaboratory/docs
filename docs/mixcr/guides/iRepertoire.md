@@ -39,7 +39,7 @@ One might also use [GNU Parallel](https://www.gnu.org/software/parallel/) to pro
 
 ### Under the hood pipeline:
 
-Under the hood `mixcr analyze irepertoire-human-tcr-cdr3` executes the following pipeline:
+Under the hood `irepertoire-human-rna-xcr-repseq-sr` executes the following pipeline:
 
 #### `align`
 Alignment of raw sequencing reads against reference database of V-, D-, J- and C- gene segments.
@@ -54,7 +54,7 @@ Option `--report` is specified here explicitly.
 : determines the organism species.
 
 `-p`
-: `default_4.0` a preset of MiXCR parameters which includes a specialized aligner for TCR data.
+: `generic-amplicon` a preset of MiXCR parameters for amplicon data .
 
 
 `-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP"`

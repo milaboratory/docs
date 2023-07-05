@@ -136,8 +136,8 @@ Option `--report` is specified here explicitly.
 `--species hsa`
 : determines the organism species (hsa for _Homo Sapiens_).
 
-`-p kaligner2_4.0`
-:  a default preset of MiXCR parameters which includes a dedicated BCR aligner.
+`-p eneric-amplicon-with-umi`
+:  generic preset of MiXCR parameters for amplicon data with UMIs.
 
 `-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP"`
 : Sets a V gene feature to align. Check [gene features](../reference/ref-gene-features.md) for more info.

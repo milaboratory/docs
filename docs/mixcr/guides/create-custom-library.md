@@ -1,131 +1,175 @@
-# Creating RepSeq.io formatted JSON library
+# Custom library
 
-Suppose we have a bunch of de-novo discovered V/D/J/C sequences in fasta files with the following content:
+MiXCR uses a special JSON structured format to store reference library of V/D/J/C gene segment sequences and markup. It provides a convenient [`buildLibrary`](../reference/mixcr-buildLibrary.md) command allowing to assemble custom libraries for new species or chimeric model animals.
 
-`my_genes.v.fasta` (contain VRegion, i.e. from the FR1 begin to the last nucleotide right before RSS, normally somewhere after conserved cysteine)
+
+## De-novo libraries
+
+!!! Note "This method can be used to build library for homologous species. To create a library based on completely artificial or non homologous gene sequences, one need to manually create [library JSON](#library-structure)." 
+
+Suppose we have a bunch of de-novo discovered V,D, J and C gene sequences for _Phocoena sinus_. To build a custom library one need to place those sequences in [fasta](https://en.wikipedia.org/wiki/FASTA_format) files with sequence headers corresponding to gene name. 
+
+For example, assume file `v-genes.IGH.fasta` contains [`VRegion`](../reference/ref-gene-features.md) IGH sequences, i.e. from the FR1 begin to the last nucleotide right before RSS, normally somewhere after conserved cysteine:
 ```fasta
->TRBV12-348*00|F
+>IGHV12-348
 GATGCTGGAGTTATCCAGTCACCCCGCCATGAGGTGACAGAGATGGGACAAGAAGTGACTCTGAGATGTAAACCA
 ATTTCAGGCCACAACTCCCTTTTCTGGTACAGACAGACCATGATGCGGGGACTGGAGTTGCTCATTTACTTTAAC
 AACAACGTTCCGATAGATGATTCAGGGATGCCCGAGGATCGATTCTCAGCTAAGATGCCTAATGCATCATTCTCC
 ACTCTGAAGATCCAGCCCTCAGAACCCAGGGACTCAGCTGTGTACTTCTGTGCCAGCAGTTTAGC
 ```
 
-`my_genes.j.fasta` (contains JRegion, i.e. from first J gene nucleotide, right after RSS, until FR4 end)
+And file `j-genes.IGH.fasta` contains [`JRegion`](../reference/ref-gene-features.md) IGH sequences, i.e. from first J gene nucleotide, right after RSS, until FR4 end:
 ```fasta
->TRBJ1-528*00|F
+>IGHJJ1-528
 TAACAACCAGGCCCAGTATTTTGGAGAAGGGACTCGGCTCTCTGTTCTAG
 ```
 
-To use these sequences in MiXCR or any other `repseqio`-based software, we have to create JSON library file for them (see format description [here](../reference/ref-repseqio-json-format.md)).
-
-There are two main options of creating library file:
-- create repseqio-JSON formatted library using two automated steps and then, if required, fill in information that was not automatically detected
-- from scratch, manually provide JSON file with meta information and positions of `CDR`s (complementarity determining regions) and `FR`s (framework regions) along with positions of other important gene features required for downstream software (see list of available anchor points [here](../reference/ref-gene-features.md)).
-
-Here we will cover automatic import procedure. Please see [library format description](../reference/ref-repseqio-json-format.md) for more details.
-
-## Automatically create boilerplate library
-
-We can do this using [`fromFasta`](../reference/repseqio-fromFasta.md) action:
-
-```shell
-> repseqio fromFasta --taxon-id 9606 \
-    --species-name hs --species-name homsap \
-    --chain TRB --name-index 0 \
-    --gene-type V --gene-feature VRegion \
-    my_genes.v.fasta my_library.v.json
-
-> repseqio fromFasta --taxon-id 9606 \
-    --species-name hs --species-name homsap \
-    --chain TRB --name-index 0 \
-    --gene-type D --gene-feature DRegion \
-    my_genes.d.fasta my_library.d.json
-
-> repseqio fromFasta --taxon-id 9606 \
-    --species-name hs --species-name homsap \
-    --chain TRB --name-index 0 \
-    --gene-type J --gene-feature JRegion \
-    my_genes.j.fasta my_library.j.json
-
-repseqio merge my_library.v.json my_library.d.json my_library.j.json my_library.json
-
-rm my_library.v.json my_library.d.json my_library.j.json
+To assemble a custom IGH library one can run:
+```
+mixcr buildLibrary --debug \
+  --v-genes-from-fasta v-genes.IGH.fasta \
+  --v-gene-feature VRegion \
+  --j-genes-from-fasta j-genes.IGH.fasta \
+  --d-genes-from-fasta d-genes.IGH.fasta \ # optional
+  --c-genes-from-fasta c-genes.IGH.fasta \ # optional
+  --chain IGH \
+  --species phocoena \
+  phocoena-IGH.json.gz
 ```
 
-To check the library file, we have so far, we can run [`debug`](../reference/repseqio-debug.md) command:
+Here we precisely specified mandatory option `--v-gene-feature` to specify the exact [feature](../reference/ref-gene-features.md) for V genes (for other gene types MiXCR by default will use `JRegion`, `DRegion` and `CExon1` respectively). Here we also specified `--debug` option to check whether there are any problems with the resulting library (see [debugging section](#debugging)). 
 
-```shell
-> repseqio debug my_library.json
+To use this library with MiXCR one can just put it in the same directory from which you run MiXCR or under the library search path which can be found by running `mixcr -v`. Example usage:
+```
+mixcr analyze generic-amplicon \
+    --library phocoena-IGH \
+    --species phocoena \
+    --rna \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+    input_R1.fastq.gz \
+    input_R2.fastq.gz \
+    output
 ```
 
-this will print the following (supposing we used files mentioned above):
-
+For multiple immunological chains, one need to repeat above for each chain and then merge resulting libraries into one library file using [`mergeLibrary`](../reference/mixcr-mergeLibrary.md) command:
 ```
-TRBV12-38*00 (F) TRB
+mixcr mergeLibrary \
+    phocoena-IGH.json.gz \
+    phocoena-IGK.json.gz \
+    phocoena-IGL.json.gz \
+    phocoena-TRA.json.gz \
+    phocoena-TRB.json.gz \
+    phocoena.json.gz \
+```
+
+### Debugging
+
+Under the hood of this procedure, MiXCR infers genes markup, i.e. positions of [reference points](../reference/ref-gene-features.md) in gene sequence, based on the alignments with homologous genes from the internal built-in library. If genes sequences are not sufficiently homologous, MiXCR may not be able to infer / or infer with inaccuracy positions of some reference points.
+
+To check whether there are some problems one can use the `debugLibrary` command. For example:
+```
+mixcr debugLibrary phocoena-IGH.json.gz
+```
+
+May output something like:
+```
+=========
+
+IGHV1-5*00 (F) IGH : 0
 
 WARNINGS:
-Unable to find CDR3 start
-
-
-V5UTRGermline
-N:   Not Available
-AA:  Not Available
+Expected VIntron sequence to end with AG, was: TC
+FR3 contains a stop codon
+VRegion contains a stop codon
+VTranscriptWithout5UTR contains a stop codon
 
 ...
+=========
 
-GermlineVCDR3Part
-N:   Not Available
-AA:  Not Available
+IGHV4-3*00 (F) IGH : 0
 
-VRegion
-N:   GATGCTGGAGTTATCCAGTCACCCCGCCATGAGGTGACAGAGATGGGACAAGAAGTGACTCTGAGATGTAAACCAATTTCAGGCCACAACTCCCTTTTCTGGTACAGACAGACCATGATGCGGGGACTGGAGTTGCTCATTTACTTTAACAACAACGTTCCGATAGATGATTCAGGGATGCCCGAGGATCGATTCTCAGCTAAGATGCCTAATGCATCATTCTCCACTCTGAAGATCCAGCCCTCAGAACCCAGGGACTCAGCTGTGTACTTCTGTGCCAGCAGTTTAGC
-AA:  DAGVIQSPRHEVTEMGQEVTLRCKPISGHNSLFWYRQTMMRGLELLIYFNNNVPIDDSGMPEDRFSAKMPNASFSTLKIQPSEPRDSAVYFCASSL_
-
-...
+WARNINGS:
+L1 contains a stop codon
+L contains a stop codon
+VTranscriptWithout5UTR contains a stop codon
 
 =========
 
-TRBJ1-528*00 (F) TRB
+IGHV4-99*00 (F) IGH : 0
 
 WARNINGS:
 Unable to find CDR3 end
 
-
-JRegion
-N:   TAACAACCAGGCCCAGTATTTTGGAGAAGGGACTCGGCTCTCTGTTCTAG
-AA:  Not Available
-
 ...
-
-FR4
-N:   Not Available
-AA:  Not Available
-=========
 ```
 
-basically this shows us how `repseqio` see the library content. After [`fromFasta`](../reference/repseqio-fromFasta.md) action library contains information only on begin and end positions of genes (strictly speaking begin and end positions of gene feature we specified using `--gene-feature` option), so the only regions it can extract are `VRegion` for `V` gene and `JRegion` for `J` (see illustration [here](../reference/ref-gene-features.md)). For normal repertoire extraction we, at least, must specify positions of `CDR3Begin` (in V gene) and `CDR3End` (in J gene), and probably also need `FR`s, if we plan to extract corresponding regions from repertoire data. Here we again have two options:
+To resolve those problems one need to manually [modify the JSON library](#library-structure) file and fix the markup.
 
-* manually specify corresponding positions by adding new items to the `anchorPoints` field (see [library format description](../reference/ref-repseqio-json-format.md))
-* let repseqio find sequence with known anchor points homologous to our sequences from other library (built-in library in this case) and infer missing anchor point from them.
 
-The first option may be the only way if target 'V'/'J' segments are not homologous to any sequences from available library.
+## Chimeric model animals
 
-For the second approach we can use `inferPoint` action from `repseqio` utility and `built-in` repseqio library as a reference (used by default) (see library repo [here](https://github.com/repseqio/library)):
+One can also easily build a library for chimeric model animals. For example, to build IGH library with human V,D,J and mouse C genes one can run:
 ```
-repseqio inferPoints -g VRegion -g JRegion -f my_library.json my_library.json
+mixcr buildLibrary \
+  --chain IGH \
+  --v-genes-from-species human \
+  --d-genes-from-species human \
+  --j-genes-from-species human \
+  --c-genes-from-species mouse \
+  --species humouse \
+  humouse-IGH.json
 ```
 
-here we inferred points for `V` genes based on alignment of `VRegion` with `V` genes from built-in repseqio library, and for `J` genes base on alignment of `JRegion`. `my_library.json` specified both as input and output file, with `-f` option, so it will be in-place overwritten with the result (*!!* don't use such execution pattern for libraries containing any manual edits or other hands-on time investments, this command may delete or corrupt the file). **!!** The output (alignments) of this commands should be carefully analysed to detect possible inconsistencies this automated procedure may introduce, or to spot genes for that repseqio failed to find homologous genes.
+Also, we can take some genes from fasta in the same way as for [de-novo libraries](#de-novo-libraries). For example, the following command will take V and J genes from human, D genes from a custom fasta file, and C genes from mouse:
+```
+mixcr buildLibrary \
+  --chain IGH \
+  --v-genes-from-species human \
+  --d-genes-from-fasta d-genes.fasta \
+  --j-genes-from-species human \
+  --c-genes-from-species mouse \
+  --species humouse \
+  humouse-IGH.json
+```
 
-The output file (`my_library2.json`) will contain library with inferred points:
+To use this library with MiXCR one can just put it in the same directory from which you run MiXCR or under the library search path which can be found by running `mixcr -v`. Example usage:
+```
+mixcr analyze generic-amplicon \
+    --library humouse-IGH \
+    --species humouse \
+    --rna \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+    input_R1.fastq.gz \
+    input_R2.fastq.gz \
+    output
+```
 
+For multiple immunological chains, one need to repeat above for each chain and then merge resulting libraries into one library file using [`mergeLibrary`](../reference/mixcr-mergeLibrary.md) command:
+```
+mixcr mergeLibrary \
+    humouse-IGH.json.gz \
+    humouse-IGK.json.gz \
+    humouse-IGL.json.gz \
+    humouse-TRA.json.gz \
+    humouse-TRB.json.gz \
+    humouse.json.gz \
+```
+
+## Artificial libraries / non homologous genes
+
+Currently, to build a custom reference library from completely artificial genes, one need to manually create corresponding library JSON-structured file (see [library structure](#library-structure)).
+
+## Library structure
+
+The output JSON file with the library will contain library with inferred [reference points](../reference/ref-gene-features.md):
 ```json
 [ {
-  "taxonId": 9606,
-  "speciesNames": [ "homosapiens", "homsap", "hs", "hsa", "human" ],
+  "taxonId": 0,
+  "speciesNames": [ "phocoena" ],
   "genes": [ {
-    "baseSequence": "file://my_genes.fasta#TRBV12-348*00",
+    "baseSequence": "file://v-genes.TRB.fasta#TRBV12-348*00",
     "name": "TRBV12-38*00",
     "geneType": "V",
     "isFunctional": true,
@@ -140,7 +184,7 @@ The output file (`my_library2.json`) will contain library with inferred points:
       "VEnd": 290
     }
   }, {
-    "baseSequence": "file://my_genes.fasta#TRBJ1-528*00",
+    "baseSequence": "file://j-genes.TRB.fasta#TRBJ1-528*00",
     "name": "TRBJ1-528*00",
     "geneType": "J",
     "isFunctional": true,
@@ -150,91 +194,43 @@ The output file (`my_library2.json`) will contain library with inferred points:
       "FR4Begin": 22,
       "FR4End": 50
     }
-  } ]
+  } ],
+  "sequenceFragments" : [ {
+    "uri" : "file://v-genes.TRB.fasta#TRBV12-348*00",
+    "range" : {
+      "from" : 0,
+      "to" : 290
+    },
+    "sequence" : "CTGGGCTCACAGTGACTTCCCCTCACTGTGTCTGTTGCACAGTAATAAACGGCCGTGTCCTCAGGTTTCAGGCTGTTCATTTGCAGATACAGCGTGTTCTTGGCGTTGTCTCTGGAGATGGTGAACCGGCCCTACACGGAGTCTGCATAGTATGTGCTACCACCACCACTATTAATATCTGAGACCCACTCGAGCCCCTTTCCTGGAGCCTGGCGGACCCAGCTCATGGCATAGCTACTGAAGGTGAATCCAGAGGCTGCACAGGAGAGTCTCAGAGACCCCCCAGGCTG"
+    }, {
+    "uri" : "file://j-genes.TRB.fasta#TRBJ1-528*00",
+    "range" : {
+      "from" : 0,
+      "to" : 50
+    },
+    "sequence" : "AAGCCACCCGGCCCTGGCCCTGCAGCTCTGGGAGAGGAGCCCCAGTCCGG"
+  }]
 } ]
 ```
 
-After final library is built, consider running `repseqio debug -p my_library.json`. This will check the library and print information on the problems it detected in the library.
+Each gene is defined by:
 
-To simplify further distribution of the library one may want to compile library into a single file, containing all required sequence information, see `repseqio compile` docs.
+`name`
+: the name of the gene
 
-## Creating library from `IMGT`-style padded `fasta` file
+`geneType`
+: gene type (V, D, J or C)
 
-**(please notice)** You can download already converted IMGT library [here](https://github.com/repseqio/library-imgt/releases).
+`isFunctional`
+: whether it is functional or not
 
-`repseqio` util contain special action [`fromPaddedFasta`](../reference/repseqio-fromPaddedFasta.md) to convert `IMGT`-style libraries to `json` format.
+`chains`
+: immunological receptor chains it can form (there may be multiple values, e.g. some V genes from TRA/TRD can form alpha or delta T-cell receptor chain depending on the cell lineage)
 
-Example input file with `V` genes (say `imgt_lib_v.fasta`):
+`baseSequence`
+: URL-like address of the original sequence for this gene (in the above example, address points to the specific record embedded in the library file)
 
-```fasta
->AE000659|TRAV12-3*01|Homo sapiens|F|V-REGION|221187..221463|277 nt|1| | | | |277+45=322| | |
-cagaaggaggtggagcaggatcctggaccactcagtgttccagagggagccattgtttct
-ctcaactgcacttacagcaacagtgct..................tttcaatacttcatg
-tggtacagacagtattccagaaaaggccctgagttgctgatgtacacatactcc......
-......agtggtaacaaagaagat...............ggaaggtttacagcacaggtc
-gataaatccagcaagtatatctccttgttcatcagagactcacagcccagtgattcagcc
-acctacctctgtgcaatgagcg
->M17656|TRAV12-3*02|Homo sapiens|(F)|V-REGION|67..343|277 nt|1| | | | |277+45=322| | |
-cagaaggaggtggagcaggatcctggaccactcagtgttccagagggagccattgtttct
-ctcaactgcacttacagcaacagtgct..................tttcaatacttcatg
-tggtacagacagtattccagaataggccctgagttgctgatgtacacatactcc......
-......agtggtaacaaagaagat...............ggaaggtttacagcacaggtc
-gataaatccagcaagtatatctccttgttcatcagagactcacagcccagtgattcagcc
-acctacctctgtgcaatgagcg
-```
+`anchorPoints`
+: zero-based positions of [anchor points](../reference/ref-gene-features.md) relative to the `baseSequence`
 
-Example input file with `J` genes (say `imgt_lib_j.fasta`):
-```fasta
->X02885|TRAJ12*01|Homo sapiens|F|J-REGION|53..112|60 nt|3| | | | |60+0=60| | |
-ggatggatagcagctataaattgatcttcgggagtgggaccagactgctggtcaggcctg
->M94081|TRAJ13*01|Homo sapiens|F|J-REGION|71280..71342|63 nt|3| | | | |63+0=63| | |
-tgaattctgggggttaccagaaagttacctttggaattggaacaaagctccaagtcatcc
-caa
->AC023226|TRAJ13*02|Homo sapiens|F|J-REGION|51292..51354|63 nt|3| | | | |63+0=63| |rev-compl|
-tgaattctgggggttaccagaaagttacctttggaactggaacaaagctccaagtcatcc
-caa
-```
-
-To use [`fromPaddedFasta`](../reference/repseqio-fromPaddedFasta.md) action, you should specify positions of anchor points (see [here](../reference/ref-gene-features.md)) in padded file. Here is the most common options for `V` genes in `IMGT`:
-```
--PFR1Begin=0 -PCDR1Begin=78 -PFR2Begin=114 -PCDR2Begin=165 -PFR3Begin=195 -PCDR3Begin=309 -PVEnd=-1
-```
-and `J` genes
-```
--PJBegin=0 -PFR4Begin=-31 -LFR4Begin='[WF](G.G)' -PFR4End=-1
-```
-
-Here are example commands for input files provided above:
-```shell
-> repseqio fromPaddedFasta -t 9606 -c TRA -j 3 -n 1 -g V -PFR1Begin=0 -PCDR1Begin=78 -PFR2Begin=114 -PCDR2Begin=165 -PFR3Begin=195 -PCDR3Begin=309 -PVEnd=-1 imgt_lib_v.fasta imgt_lib_v.json.fasta imgt_lib_v.json
-
-> repseqio fromPaddedFasta -t 9606 -c TRA -j 3 -n 1 -g J -PJBegin=0 -PFR4Begin=-31 -LFR4Begin='[WF](G.G)' -PFR4End=-1 imgt_lib_j.fasta imgt_lib_j.json.fasta imgt_lib_j.json
-```
-this will create library files `imgt_lib_j.json` and `imgt_lib_v.json`, along with un-padded `imgt_lib_j.json.fasta` and `imgt_lib_v.json.fasta` that libraries refers to (see section above for more information on json library format).
-
-## Using the library
-
-To use your library with MiXCR, just copy `json` file and all referenced `fasta` files to `~/.mixcr/libraries` folder (example for files form "Creating library from scratch, based on `fasta` file"):
-
-```shell
-> mkdir -p ~/.mixcr/libraries
-> cp my_library2.json ~/.mixcr/libraries/my_library.json
-```
-
-run `mixcr` as follows:
-```shell
-> mixcr align --library my_library -s homsap ...
-```
-
-To simplify library distribution, library can be packed into a single file along with all sequence information (notice, this procedure will incorporate only regions of the sequences that are used inside the library, so it will not pack the whole chromosome sequence, but only parts referenced in the library):
-
-```shell
-> repseqio compile my_library2.json my_library.compiled.json.gz
-```
-(repseqio also supports direct reading from gzipped files)
-
-Now just single file must be copied to the library folder
-
-```shell
-> cp my_library2.json ~/.mixcr/libraries/my_library.compiled.json.gz
-```
+For normal repertoire extraction we, at least, must specify positions of CDR3Begin (in V gene) and CDR3End (in J gene). 

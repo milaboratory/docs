@@ -108,7 +108,7 @@ Option `--report` is specified here explicitly.
 : determines the organism species.
 
 `-p`
-: `kAligner2_4.0` a preset of MiXCr parameters which includes kAligner2 (a specialized aligner for BCR data).
+: `generic-amplicon` a preset of MiXCR parameters for amplicon data.
 
 `--tag-pattern "^N{32}(R1:*)\^N{26}(R2:*)"`
 : With this pattern we trim 32 nucleotides (the length of the longest forward primer) from the beginning of R1 file and 26 nucleotide (the length of the longest reverse primer from the beginning of R2 file.

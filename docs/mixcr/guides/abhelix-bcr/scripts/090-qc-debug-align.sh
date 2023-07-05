@@ -1,7 +1,7 @@
 mkdir -p debug
 mixcr align -f \
     --species hsa \
-    -p kAligner2_4.0 \
+    -p generic-amplicon \
     -OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP" \
     -OvParameters.parameters.floatingLeftBound=true \
     -OjParameters.parameters.floatingRightBound=false \

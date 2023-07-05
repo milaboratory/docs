@@ -61,8 +61,8 @@ Option `--report` is specified here explicitly.
 `--species mmu`
 : determines the organism species (mmu for _Mus Musculus_).
 
-`-p default_4.0`
-:  a default preset of MiXCR parameters which includes a dedicated TCR aligner.
+`-p generic-amplicon`
+:  a default preset of MiXCR parameters for amplicon data.
 
 `-OvParameters.geneFeatureToAlign="VTranscriptWithout5UTRWithP"`
 : Sets a V gene feature to align. Check [gene features](../reference/ref-gene-features.md) for more info.

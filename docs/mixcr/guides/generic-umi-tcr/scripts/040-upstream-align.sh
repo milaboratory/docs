@@ -1,5 +1,5 @@
 mixcr align \
-	-p bundle-umi-kaligner1-v1-base \
+	-p generic-amplicon-with-umi \
     --species hsa \
     --tag-pattern '^(R1:*)\^(UMI:N{12})' \
     --report result/P15-T0-TIGIT.align.report.txt \

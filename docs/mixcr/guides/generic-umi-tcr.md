@@ -47,7 +47,7 @@ Each file name encodes the information about lane, biosample id, metadata, R1 or
 ## Upstream analysis
 
 The most straightforward way to get clonotype tables is to use a
-universal [`mixcr analyze`](../reference/mixcr-analyze.md) command with `generic-tcr-amplicon-umi` preset.
+universal [`mixcr analyze`](../reference/mixcr-analyze.md) command with `generic-amplicon-with-umi` preset.
 
 According to the library preparation protocol, the library has V primers on 5'-end and C primers on 3', so the command for a single sample is the following:
 
@@ -131,7 +131,7 @@ Let's go throw each step executed in the considered case.
 
 Options `--report` and `--json-report` are specified here explicitly. Since we start from RNA data we use `VTranscriptWithP` for the alignment of V segments (see [Gene features and anchor points](../reference/ref-gene-features.md). Because we have primers on V segment, we use local alignment on the left bound of V and since we have primers on C segment, we use global alignment for J and local on the right bound of C.
 
-`-p bundle-umi-kaligner1-v1-base`
+`-p generic-amplicon-with-umi`
 : this preset defines parameters for aligner and for subsequent steps also including UMI related options.
 
 This step utilizes all available CPUs and scales perfectly. When there are a lot of CPUs, the only limiting factor is the speed of disk I/O. To limit the number of used CPUs one can pass `--threads N` option.
