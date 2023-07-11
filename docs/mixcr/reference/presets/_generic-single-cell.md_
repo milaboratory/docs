@@ -4,10 +4,10 @@
 ·
 ==`generic-lt-single-cell-amplicon-with-umi`==
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/general-single-cell.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/generic-single-cell.yaml)
 ·
 
-The preset is suitable for targeted low throughput amplicon single-cell protocols (e.g. plate-based single-cell workflows) with or without molecular identifiers (UMI). Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):
+These presets are appropriate for targeted low throughput amplicon single-cell protocols (for instance, plate-based amplicon single-cell workflows) with or without Unique Molecular Identifiers (UMIs). The required configuration parameters are:
 
 
 : :fontawesome-solid-puzzle-piece: Species;
@@ -15,7 +15,7 @@ The preset is suitable for targeted low throughput amplicon single-cell protocol
 : :fontawesome-solid-puzzle-piece: Left alignment boundary (5'-end);
 : :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end).
 
-For this preset `CELL` barcode has to be set either through `--tag-pattern` if CELL barcode is present in the sequence or sample name if for each cell (well) one has a separate pair of FASTQ files. See examples below:
+For these presets, the CELL barcode must be defined either through --tag-pattern (if the CELL barcode is embedded within the sequence) or using the sample name if each cell (well) corresponds to a separate pair of FASTQ files.
 
 ```shell
 mixcr analyze generic-lt-single-cell-amplicon \
@@ -61,8 +61,159 @@ mixcr analyze generic-lt-single-cell-amplicon \
       result
 ```
 
+Note: Cell barcodes should begin with CELL (e.g., CELL1, CELL2, CELL, CELL3PLATE, CELL2COLUMN, etc.). For the generic-lt-single-cell-amplicon-with-umi preset, a tag-pattern containing UMI (CELL barcodes can still be passed through filenames) is required and can be provided either through the --tag-pattern parameter or a sample table.
+
+The following [mix-in options](overview-mixins-list.md) are used:
+
+`--species mmu`
+: specify _Mus Musculus_ species
+
+`--rna`
+: set RNA as starting material (exon regions only will be used for alignments)
+
+`--floating-left-alignment-boundary`
+: use local _left alignment boundary_ on V-segment as V-primers are used
+
+`--floating-right-alignment-boundary C`
+: use local _right alignment boundary_ on C-segment as C-primers are used
+
+By default, clones are assembled by CDR3. However, if necessary, this behavior can be changed by adding --assemble-clonotypes-by VDJRegion if the longer receptor part is covered by the reads.
+
+#### Filters
+By default, each single-cell preset includes a series of filters that are consecutively applied to the data.
+
+`generic-lt-single-cell-amplicon`:
+	In the `assemble` phase:
+	- For every cell, and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of reads (containing 'CDR3').
+
+`generic-lt-single-cell-amplicon-with-umi`:
+	in the `refineTagsAndSort` phase:
+	- Filters out UMIs covered by fewer than the threshold number of reads. This threshold is automatically determined using Otsu's method. If an automatically determined threshold eliminates more than 85% of reads, an adjusted threshold is applied to preserve at least 85% of the reads.
+
+	in the `assemble` phase:
+	- For each cell and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of UMIs.
+
+
+
+### Generic low throughput shotgun single-cell protocols
+
+==`generic-lt-single-cell-fragmented`==
+·
+==`generic-lt-single-cell-fragmented-with-umi`==
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/generic-single-cell.yaml)
+·
+
+The preset is suitable for low throughput shotgun (fragmented) single-cell protocols (e.g. plate-based single-cell rna-seq workflows) with or without molecular identifiers (UMI).
+
+The `--species` option is required.
+
+For this preset `CELL` barcode has to be set either through `--tag-pattern` if CELL barcode is present in the sequence or with the sample name if for each cell (well) one has a separate pair of FASTQ files. See examples below:
+
+```shell
+mixcr analyze generic-lt-single-cell-fragmented \
+    --species mmu \
+    --tag-pattern "^(R1:*) \ ^(CELL:N{8})GTAC(R2:*)"\
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+
+mixcr analyze generic-lt-single-cell-fragmented-with-umi \
+    --species mmu \
+    --tag-pattern "^NN(CELL3PLATE:N{5})ga(CELL1ROW:N{5})(R1:*) \ ^NN(CELL2COLUMN:N{5})(UMI:N{14})(R2:*)" \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+
+# If each pair of fastq files represents a different cell (e.g. A1,A2,A3 ... H12).
+
+> ls
+	input_sample1_A1_R1.fastq.gz
+	input_sample1_A1_R2.fastq.gz
+	input_sample1_A2_R1.fastq.gz
+    input_sample1_A2_R2.fastq.gz
+    input_sample1_A3_R1.fastq.gz
+    input_sample1_A3_R2.fastq.gz
+    input_sample1_A4_R1.fastq.gz
+    input_sample1_A4_R2.fastq.gz
+  	...
+
+mixcr analyze generic-lt-single-cell-fragmented \
+    --species mmu \
+      input_sample1_{CELL:a}_R1.fastq.gz \
+      input_sample1_{CELL:a}_R2.fastq.gz \
+      result
+```
+
 Note that cell barcodes have to start with `CELL` (e.g. CELL1, CELL2, CELL, CELL3PLATE, CELL2COLUMN etc.).
-For `generic-lt-single-cell-amplicon-with-umi` `--tag-pattern` is required and must contain `UMI` (`CELL` barcodes can be still passed through filenames)
+For `generic-lt-single-cell-fragmented-with-umi` a tag-pattern containing `UMI` (`CELL` barcodes can be still passed through filenames) is required and can be provided either through `--tag-pattern` parameter or a sample table.
+
+The following [mix-in options](overview-mixins-list.md) are used:
+
+`--species mmu`
+: specify _Mus Musculus_ species
+
+By default the clones are first assembled by `CDR3` and then extended to the longest possible contig with [mixcr assembleContigs](mixcr-assembleContigs.md).
+
+#### Filters
+By default each single-cell preset includes a set of filters that are applied to the data.
+
+`generic-lt-single-cell-fragmented`:
+	in the `assemble` phase:
+		- For every cell, for every chain (TRAD/TRB/TRG/IGH/IGL) only those clones are left which cumulative frequency is >= 95% by the number of reads (containing 'CDR3').
+
+`generic-lt-single-cell-fragmented-with-umi`:
+	in the `refineTagsAndSort` phase:
+		- Filters out UMIs covered by fewer than the threshold number of reads. This threshold is automatically determined using Otsu's method. If an automatically determined threshold eliminates more than 85% of reads, an adjusted threshold is applied to preserve at least 85% of the reads.
+
+	in the `assemble` phase:
+		- For each cell and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of UMIs.
+
+### Generic high throughput amplicon single-cell protocols
+
+==`generic-ht-single-cell-amplicon`==
+·
+==`generic-ht-single-cell-amplicon-with-umi`==
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/generic-single-cell.yaml)
+·
+
+The preset is suitable for targeted high throughput amplicon single-cell protocols (thousands of cells and more, not plate based) with or without molecular identifiers (UMI). Required configs that must be specified with corresponding [mix-in options](overview-mixins-list.md):
+
+
+: :fontawesome-solid-puzzle-piece: Species;
+: :fontawesome-solid-puzzle-piece: Material type;
+: :fontawesome-solid-puzzle-piece: Left alignment boundary (5'-end);
+: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end).
+
+For this preset `CELL` barcode has to be set through `--tag-pattern`.
+
+See examples below:
+
+```shell
+mixcr analyze generic-ht-single-cell-amplicon \
+    --species mmu \
+    --rna \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+    --tag-pattern "^(R1:*) \ ^(CELL:N{8})GTAC(R2:*)"\
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+
+mixcr analyze generic-ht-single-cell-amplicon-with-umi \
+    --species mmu \
+    --rna \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+    --tag-pattern "^NN(CELL3PLATE:N{5})ga(CELL1ROW:N{5})(R1:*) \ ^NN(CELL2COLUMN:N{5})(UMI:N{14})(R2:*)"\
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+Note that cell barcodes have to start with `CELL` (e.g. CELL1, CELL2, CELL, etc.).
+For `generic-ht-single-cell-amplicon-with-umi` a tag-pattern containing both `CELL` and `UMI` is required and can be provided either through `--tag-pattern` parameter or a sample table.
 
 The following [mix-in options](overview-mixins-list.md) are used:
 
@@ -79,3 +230,82 @@ The following [mix-in options](overview-mixins-list.md) are used:
 : use local _right alignment boundary_ on C-segment as C-primers are used
 
 By default the clones are assembled by `CDR3`, if needed one can change this behavior by adding `--assemble-clonotypes-by VDJRegion`, if the longer receptor part is covered by the reads.
+
+#### Filters
+By default each single-cell preset includes a set of filters that are applied to the data.
+
+`generic-ht-single-cell-amplicon`:
+	in the `refineTagsAndSort` phase:
+    	- Filter out the cells, where `CELL` barcode is covered by less then threshold number of reads. The threshold is determined automatically using Otsu's algorithm.
+    	
+	in the `assemble` phase:
+		- For every cell, for every chain (TRAD/TRB/TRG/IGH/IGL) only those clones are left which cumulative frequency is 95% by the number of reads (containing 'CDR3').
+
+`generic-ht-single-cell-amplicon-with-umi`:
+	in the `refineTagsAndSort` phase:
+		- Filters out UMIs covered by fewer than the threshold number of reads. This threshold is automatically determined using Otsu's method. If an automatically determined threshold eliminates more than 85% of reads, an adjusted threshold is applied to preserve at least 85% of the reads.
+
+		- Filter out the cells, where `CELL` barcode is covered by less then threshold number of UMIs. The threshold is determined automatically using Otsu's algorithm.
+
+	in the `assemble` phase:
+		- For each cell and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of UMIs.
+
+### Generic high throughput shotgun single-cell protocols
+
+==`generic-ht-single-cell-fragmented`==
+·
+==`generic-ht-single-cell-fragmented-with-umi`==
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/generic-single-cell.yaml)
+·
+
+The preset is suitable for high throughput (thousands of cells and more, not plate based) shotgun (fragmented) single-cell protocols (e.g. 10x like protocols which include fragmentation, random primer etc.) with or without molecular identifiers (UMI).
+
+The `--species` option is required.
+
+For this preset `CELL` barcode has to be set either through `--tag-pattern` if CELL barcode is present in the sequence or with the sample name if for each cell (well) one has a separate pair of FASTQ files. See examples below:
+
+```shell
+mixcr analyze generic-ht-single-cell-fragmented \
+    --species mmu \
+    --tag-pattern "^(R1:*) \ ^(CELL:N{8})(R2:*)"\
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+
+mixcr analyze generic-ht-single-cell-fragmented-with-umi \
+    --species mmu \
+    --tag-pattern "^(CELL:N{16})(UMI:N{10})\^(R2:*)"\
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+Note that cell barcodes have to start with `CELL` (e.g. CELL1, CELL2, CELL, CELL3PLATE, CELL2COLUMN etc.).
+For `generic-ht-single-cell-fragmented-with-umi` a tag-pattern containing `UMI` is required and can be provided either through `--tag-pattern` parameter or a sample table.
+
+The following [mix-in options](overview-mixins-list.md) are used:
+
+`--species mmu`
+: specify _Mus Musculus_ species
+
+By default the clones are first assembled by `CDR3` and then extended to the longest possible contig with [mixcr assembleContigs](mixcr-assembleContigs.md).
+
+#### Filters
+By default each single-cell preset includes a set of filters that are applied to the data.
+
+`generic-ht-single-cell-fragmented`:
+	in the `refineTagsAndSort` phase:
+    	- Filter out the cells, where `CELL` barcode is covered by less then threshold number of reads. The threshold is determined automatically using Otsu's algorithm.
+    	
+	in the `assemble` phase:
+		- For every cell, for every chain (TRAD/TRB/TRG/IGH/IGL) only those clones are left which cumulative frequency is 95% by the number of reads (containing 'CDR3').
+
+`generic-ht-single-cell-fragmented-with-umi`:
+	in the `refineTagsAndSort` phase:
+		- Filters out UMIs covered by fewer than the threshold number of reads. This threshold is automatically determined using Otsu's method. If an automatically determined threshold eliminates more than 85% of reads, an adjusted threshold is applied to preserve at least 85% of the reads.
+
+		- Filter out the cells, where `CELL` barcode is covered by less then threshold number of UMIs. The threshold is determined automatically using Otsu's algorithm.
+
+	in the `assemble` phase:
+		- For each cell and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of UMIs.
