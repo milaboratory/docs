@@ -5,7 +5,8 @@
 ·
 [:octicons-link-16: Link](https://milaboratories.com/human-ig-rna-multiplex-kit)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/milab.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/milaboratories.yaml)
+
 
 Allows to obtain full length IG heavy and light chain repertoires with UMI-based accuracy. Discriminates all IGH isotypes including IgM, IgD, IgG3, IgG1, IgA1, IgG2, IgG4, IgE, and IgA2.
 By default the clones are assembled by `{CDR1Begin:FR4End}`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
@@ -29,7 +30,7 @@ mixcr analyze milab-human-rna-ig-umi-multiplex \
 ·
 [:octicons-link-16: Link](https://milaboratories.com/human-tcr-rna-multiplex-kit)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/milab.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/milaboratories.yaml)
 ·
 [:octicons-mortar-board-16: Tutorial](../guides/milaboratories-human-tcr-rna-multi.md)
 
@@ -53,7 +54,8 @@ mixcr analyze milab-human-rna-tcr-umi-multiplex \
 ·
 [:octicons-link-16: Link](https://milaboratories.com/human-tcr-rna-kit)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/milab.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/milaboratories.yaml)
+
 
 Allows to obtain unbiased TCR alpha and beta repertoires with UMI-based accuracy.
 By default the clones are assembled by `VDJRegion`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
@@ -76,7 +78,7 @@ mixcr analyze milab-human-rna-tcr-umi-race \
 ·
 [:octicons-link-16: Link](https://milaboratories.com/human-tcr-dna-multiplex-kit)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/milab.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/milaboratories.yaml)
 
 Allows to obtain TCR alpha and beta repertoires for different types of available DNA material, with the highest possible sensitivity. Clones are assembled by `CDR3` sequence.
 
@@ -96,7 +98,8 @@ mixcr analyze milab-human-dna-tcr-multiplex \
 ·
 [:octicons-link-16: Link](https://milaboratories.com/7genes-dna-multiplex-kit)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/milab.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/milaboratories.yaml)
+
 
 Allows to obtain a comprehensive set of complete and incomplete IG/TCR rearrangements in one tube. From 0.1 ng to 150 ng of template DNA. Applicable for lymphoid malignancy clonality detection and MRD monitoring.
 Note, that, for now MiXCR will report only complete rearrangements, support for incomplete rearrangements will be added soon.
@@ -119,7 +122,7 @@ mixcr analyze milab-human-dna-xcr-7genes-multiplex \
 ·
 [:octicons-link-16: Link](https://milaboratories.com/mouse-tcr-rna-kit)
 ·
-[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/milab.yaml)
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/milaboratories.yaml)
 
 
 The kit allows to obtain unbiased TCR alpha and beta repertoires with UMI-based accuracy. By default the clones are assembled by `VDJRegion`, if needed (e.g. if the library has been sequenced with shorter read length) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
