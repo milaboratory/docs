@@ -206,7 +206,7 @@ mixcr analyze generic-ht-single-cell-amplicon-with-umi \
     --rna \
     --rigid-left-alignment-boundary \
     --floating-right-alignment-boundary C \
-    --tag-pattern "^NN(CELL3PLATE:N{5})ga(CELL1ROW:N{5})(R1:*) \ ^NN(CELL2COLUMN:N{5})(UMI:N{14})(R2:*)"\
+    --tag-pattern "^(R1:*) \ ^(CELL:N{8})(UMI:N{14})(R2:*)"\
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
@@ -263,7 +263,9 @@ The preset is suitable for high throughput (thousands of cells and more, not pla
 
 The `--species` option is required.
 
-For this preset `CELL` barcode has to be set either through `--tag-pattern` if CELL barcode is present in the sequence or with the sample name if for each cell (well) one has a separate pair of FASTQ files. See examples below:
+For this preset `CELL` barcode has to be with `--tag-pattern`
+
+See examples below:
 
 ```shell
 mixcr analyze generic-ht-single-cell-fragmented \
