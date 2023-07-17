@@ -143,6 +143,9 @@ The following mix-in options configure clonotype [`export`](mixcr-export.md) ste
 `--export-productive-clones-only`
 : Export only productive clonotypes.
 
+`--drop-default-fields`
+: Clear default export fields.
+
 ### Pipeline configuration mix-ins
 
 The following mix-in options configure general pipeline execution.
