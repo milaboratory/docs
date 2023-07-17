@@ -83,18 +83,15 @@ By default, clones are assembled by CDR3. However, if necessary, this behavior c
 #### Filters
 By default, each single-cell preset includes a series of filters that are consecutively applied to the data.
 
-`generic-lt-single-cell-amplicon`:
-	In the `assemble` phase:
-	- For every cell, and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of reads (containing 'CDR3').
+`generic-lt-single-cell-amplicon`
+:   1. In the `assemble` phase:
+        - For every cell, and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of reads (containing 'CDR3').
 
-`generic-lt-single-cell-amplicon-with-umi`:
-	in the `refineTagsAndSort` phase:
-	- Filters out UMIs covered by fewer than the threshold number of reads. This threshold is automatically determined using Otsu's method. If an automatically determined threshold eliminates more than 85% of reads, an adjusted threshold is applied to preserve at least 85% of the reads.
-
-	in the `assemble` phase:
-	- For each cell and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of UMIs.
-
-
+`generic-lt-single-cell-amplicon-with-umi`
+:   1. In the `refineTagsAndSort` phase:
+        - Filters out UMIs covered by fewer than the threshold number of reads. This threshold is automatically determined using Otsu's method. If an automatically determined threshold eliminates more than 85% of reads, an adjusted threshold is applied to preserve at least 85% of the reads.
+    2. In the `assemble` phase:
+        - For each cell and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of UMIs.
 
 ### Generic low throughput shotgun single-cell protocols
 
@@ -159,16 +156,16 @@ By default the clones are first assembled by `CDR3` and then extended to the lon
 #### Filters
 By default each single-cell preset includes a set of filters that are applied to the data.
 
-`generic-lt-single-cell-fragmented`:
-	in the `assemble` phase:
-		- For every cell, for every chain (TRAD/TRB/TRG/IGH/IGL) only those clones are left which cumulative frequency is >= 95% by the number of reads (containing 'CDR3').
+`generic-lt-single-cell-fragmented`
+:   1. In the `assemble` phase:
+        - For every cell, for every chain (TRAD/TRB/TRG/IGH/IGL) only those clones are left which cumulative frequency is >= 95% by the number of reads (containing 'CDR3').
 
-`generic-lt-single-cell-fragmented-with-umi`:
-	in the `refineTagsAndSort` phase:
-		- Filters out UMIs covered by fewer than the threshold number of reads. This threshold is automatically determined using Otsu's method. If an automatically determined threshold eliminates more than 85% of reads, an adjusted threshold is applied to preserve at least 85% of the reads.
+`generic-lt-single-cell-fragmented-with-umi`
+:   1. In the `refineTagsAndSort` phase:
+	    - Filters out UMIs covered by fewer than the threshold number of reads. This threshold is automatically determined using Otsu's method. If an automatically determined threshold eliminates more than 85% of reads, an adjusted threshold is applied to preserve at least 85% of the reads.
 
-	in the `assemble` phase:
-		- For each cell and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of UMIs.
+	2. In the `assemble` phase:
+	    - For each cell and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of UMIs.
 
 ### Generic high throughput amplicon single-cell protocols
 
@@ -235,21 +232,21 @@ By default the clones are assembled by `CDR3`, if needed one can change this beh
 #### Filters
 By default each single-cell preset includes a set of filters that are applied to the data.
 
-`generic-ht-single-cell-amplicon`:
-	in the `refineTagsAndSort` phase:
-    	- Filter out the cells, where `CELL` barcode is covered by less then threshold number of reads. The threshold is determined automatically using Otsu's algorithm.
+`generic-ht-single-cell-amplicon`
+:   1. In the `refineTagsAndSort` phase:
+        - Filter out the cells, where `CELL` barcode is covered by less then threshold number of reads. The threshold is determined automatically using Otsu's algorithm.
     	
-	in the `assemble` phase:
-		- For every cell, for every chain (TRAD/TRB/TRG/IGH/IGL) only those clones are left which cumulative frequency is 95% by the number of reads (containing 'CDR3').
+    2. In the `assemble` phase:
+	    - For every cell, for every chain (TRAD/TRB/TRG/IGH/IGL) only those clones are left which cumulative frequency is 95% by the number of reads (containing 'CDR3').
 
-`generic-ht-single-cell-amplicon-with-umi`:
-	in the `refineTagsAndSort` phase:
-		- Filters out UMIs covered by fewer than the threshold number of reads. This threshold is automatically determined using Otsu's method. If an automatically determined threshold eliminates more than 85% of reads, an adjusted threshold is applied to preserve at least 85% of the reads.
+`generic-ht-single-cell-amplicon-with-umi`
+:   1. In the `refineTagsAndSort` phase:
+	    - Filters out UMIs covered by fewer than the threshold number of reads. This threshold is automatically determined using Otsu's method. If an automatically determined threshold eliminates more than 85% of reads, an adjusted threshold is applied to preserve at least 85% of the reads.
 
-		- Filter out the cells, where `CELL` barcode is covered by less then threshold number of UMIs. The threshold is determined automatically using Otsu's algorithm.
+	    - Filter out the cells, where `CELL` barcode is covered by less then threshold number of UMIs. The threshold is determined automatically using Otsu's algorithm.
 
-	in the `assemble` phase:
-		- For each cell and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of UMIs.
+    2. In the `assemble` phase:
+	    - For each cell and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of UMIs.
 
 ### Generic high throughput shotgun single-cell protocols
 
@@ -297,18 +294,18 @@ By default the clones are first assembled by `CDR3` and then extended to the lon
 #### Filters
 By default each single-cell preset includes a set of filters that are applied to the data.
 
-`generic-ht-single-cell-fragmented`:
-	in the `refineTagsAndSort` phase:
-    	- Filter out the cells, where `CELL` barcode is covered by less then threshold number of reads. The threshold is determined automatically using Otsu's algorithm.
+`generic-ht-single-cell-fragmented`
+:   1. In the `refineTagsAndSort` phase:
+        - Filter out the cells, where `CELL` barcode is covered by less then threshold number of reads. The threshold is determined automatically using Otsu's algorithm.
     	
-	in the `assemble` phase:
-		- For every cell, for every chain (TRAD/TRB/TRG/IGH/IGL) only those clones are left which cumulative frequency is 95% by the number of reads (containing 'CDR3').
+    2. In the `assemble` phase:
+	    - For every cell, for every chain (TRAD/TRB/TRG/IGH/IGL) only those clones are left which cumulative frequency is 95% by the number of reads (containing 'CDR3').
 
-`generic-ht-single-cell-fragmented-with-umi`:
-	in the `refineTagsAndSort` phase:
-		- Filters out UMIs covered by fewer than the threshold number of reads. This threshold is automatically determined using Otsu's method. If an automatically determined threshold eliminates more than 85% of reads, an adjusted threshold is applied to preserve at least 85% of the reads.
+`generic-ht-single-cell-fragmented-with-umi`
+:   1. In the `refineTagsAndSort` phase:
+	    - Filters out UMIs covered by fewer than the threshold number of reads. This threshold is automatically determined using Otsu's method. If an automatically determined threshold eliminates more than 85% of reads, an adjusted threshold is applied to preserve at least 85% of the reads.
 
 		- Filter out the cells, where `CELL` barcode is covered by less then threshold number of UMIs. The threshold is determined automatically using Otsu's algorithm.
 
-	in the `assemble` phase:
+	2. In the `assemble` phase:
 		- For each cell and for each chain (TRAD/TRB/TRG/IGH/IGL), only those clones are retained whose cumulative frequency is 95% or more, as measured by the number of UMIs.
