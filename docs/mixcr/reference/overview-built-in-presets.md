@@ -8,13 +8,11 @@ MiXCR provides a comprehensive list of built-in presets for many of available co
 
 Preset can be used to run the whole upstream analysis pipeline with [`analyze`](mixcr-analyze.md) command. For example:
 ```shell
-mixcr analyze milab-human-bcr-multiplex-cdr3 \
-    --dont-split-clones-by C \
+mixcr analyze <preset-name> \
       sample_R1.fastq.gz \
       sample_R2.fastq.gz \
       sample_result
 ```
-runs upstream analysis for samples obtained using Milaboratories Human BCR kit with additional optional config `--dont-split-clones-by C`.
 
 Command [`exportPreset`](mixcr-exportPreset.md) can help to understand structure of preset.
 
