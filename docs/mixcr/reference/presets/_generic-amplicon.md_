@@ -70,7 +70,6 @@ mixcr analyze generic-amplicon-with-umi \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
-```esult
 ```
 The following [mix-in options](overview-mixins-list.md) are used:
 
