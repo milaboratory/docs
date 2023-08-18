@@ -33,11 +33,12 @@ mixcr buildLibrary --debug \
   --d-genes-from-fasta d-genes.IGH.fasta \ # optional
   --c-genes-from-fasta c-genes.IGH.fasta \ # optional
   --chain IGH \
+  --taxon-id 9741 \
   --species phocoena \
   phocoena-IGH.json.gz
 ```
 
-Here we precisely specified mandatory option `--v-gene-feature` to specify the exact [feature](../reference/ref-gene-features.md) for V genes (for other gene types MiXCR by default will use `JRegion`, `DRegion` and `CExon1` respectively). Here we also specified `--debug` option to check whether there are any problems with the resulting library (see [debugging section](#debugging)). 
+Here we precisely specified mandatory option `--v-gene-feature` to specify the exact [feature](../reference/ref-gene-features.md) for V genes (for other gene types MiXCR by default will use `JRegion`, `DRegion` and `CExon1` respectively). Here we also specified `--debug` option to check whether there are any problems with the resulting library (see [debugging section](#debugging)). Notice, that a correct NCBI species taxon-id is a mandatory parameter.
 
 To use this library with MiXCR one can just put it in the same directory from which you run MiXCR or under the library search path which can be found by running `mixcr -v`. Example usage:
 ```
@@ -118,6 +119,7 @@ mixcr buildLibrary \
   --j-genes-from-species human \
   --c-genes-from-species mouse \
   --species humouse \
+  --taxon-id 9606 \
   humouse-IGH.json
 ```
 
@@ -130,8 +132,11 @@ mixcr buildLibrary \
   --j-genes-from-species human \
   --c-genes-from-species mouse \
   --species humouse \
+  --taxon-id 9606 \
   humouse-IGH.json
 ```
+
+Notice that for these cases taxon-id can be either human, mouse or any custom number, because the species is set to a non-canonical `humouse`.
 
 To use this library with MiXCR one can just put it in the same directory from which you run MiXCR or under the library search path which can be found by running `mixcr -v`. Example usage:
 ```
