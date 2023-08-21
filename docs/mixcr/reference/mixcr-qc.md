@@ -16,7 +16,6 @@ mixcr qc
     input.(vdjca|clns|clna)
     [output.(txt|json)]
 ```
-Builds a custom reference gene segment library.
 
 `--json`
 : Output result in json format

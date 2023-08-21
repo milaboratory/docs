@@ -22,7 +22,6 @@ mixcr buildLibrary
     [--help]
     library.json[.gz]
 ```
-Builds a custom reference gene segment library.
 
 `--species <species_name>`
 : Species name
