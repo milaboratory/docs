@@ -208,7 +208,7 @@ nav:
         - 'filter': mixcr/reference/mitool-filter.md
         - 'tag-stat': mixcr/reference/mitool-tag-stat.md
         - 'export-fastq': mixcr/reference/mitool-export-fastq.md
-        - 'correct': mixcr/reference/mitool-correct.md
+        - 'correct': mixcr/reference/mitool-refine-tags.md
         - 'consensus': mixcr/reference/mitool-consensus.md
         - 'process-fastq': mixcr/reference/mitool-process-fastq.md
         - 'format-fastq': mixcr/reference/mitool-format-fastq.md

@@ -1,11 +1,11 @@
-# `mitool correct`
+# `mitool refine-tags`
 
 Correct tag sequences
 
 Usage: 
 
 ```shell
-mitool correct [OPTIONS] SOURCE DESTINATION
+mitool refine-tags [OPTIONS] SOURCE DESTINATION
 ```
 
 Arguments:
