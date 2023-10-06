@@ -114,6 +114,29 @@ mixcr analyze takara-human-rna-tcr-smarter \
       input_R2.fastq.gz \
       result 
 ```
+#### SMART-Seq Mouse TCR (with UMIs)
+
+==`takara-mouse-rna-tcr-umi-smarseq`==
+·
+[:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/mouse-repertoire/smart-seq-mouse-tcr-(with-umis))
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/takara.yaml)
+
+
+SMART-Seq Mouse TCR (with UMIs), powered by SMART (Switching Mechanism at 5’ end of RNA Template) technology, enables detection of mouse TCR sequences with sensitivity and no bias. The kit combines NGS with a 5’-RACE approach to capture the full-length V(D)J variable regions of mouse TRA and TRB genes.
+
+By default the clones are assembled by `VDJRegion`, if needed (e.g. if the library has been sequenced with shorter read length e.g. 150+150) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
+
+![](pics/takara-mouse-rna-tcr-umi-smarseq-light.svg#only-light)
+![](pics/takara-mouse-rna-tcr-umi-smarseq-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze takara-mouse-rna-tcr-umi-smarseq \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
 
 #### SMARTer Mouse BCR IgG H/K/L Profiling Kit
 

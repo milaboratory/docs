@@ -1,0 +1,154 @@
+### Invivoscribe
+
+#### LymphoTrack Dx TRG Assay Panel
+==`invivoscribe-human-dna-trg-lymphotrack`==
+·
+[:octicons-link-16: Link](https://catalog.invivoscribe.com/product/lymphotrack-dx-trg-assay-panel-miseq/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/invivoscribe.yaml)
+
+The LymphoTrack Dx TRG Assay is an in vitro diagnostic product intended for next-generation sequencing (NGS) based determination of the frequency distribution of TRG gene rearrangements in patients suspected with having lymphoproliferative disease. This assay aids in the identification of lymphoproliferative disorders. Our single multiplex master mixes target all conserved regions within the variable (V) and the joining (J) region genes described in lymphoid malignancies. The preset works for both Illumina and Ion S5/PGM versions.
+
+
+![](pics/invivoscribe-human-dna-trg-lymphotrack-light.svg#only-light)
+![](pics/invivoscribe-human-dna-trg-lymphotrack-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze invivoscribe-human-dna-trg-lymphotrack \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+#### LymphoTrack Dx TRB Assay Panel
+==`invivoscribe-human-dna-trb-lymphotrack`==
+·
+[:octicons-link-16: Link](https://catalog.invivoscribe.com/product/lymphotrack-dx-trb-assay-panel-miseq/ )
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/invivoscribe.yaml)
+
+The LymphoTrack Dx TRB Assay is an in vitro diagnostic product intended for next-generation sequencing (NGS) based determination of the frequency distribution of TRB gene rearrangements in patients suspected with having lymphoproliferative disease. This assay aids in the identification of lymphoproliferative disorders. Each single multiplex master mix for TRB targets the conserved regions within the Vβ and the Jβ regions described in lymphoid malignancies. The preset works for both Illumina and Ion S5/PGM versions.
+
+![](pics/invivoscribe-human-dna-trb-lymphotrack-light.svg#only-light)
+![](pics/invivoscribe-human-dna-trb-lymphotrack-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze invivoscribe-human-dna-trb-lymphotrack \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+#### LymphoTrack Dx IGK Assay Panel
+==`invivoscribe-human-dna-igk-lymphotrack`==
+·
+[:octicons-link-16: Link](https://catalog.invivoscribe.com/product/lymphotrack-dx-igk-assay-panel-miseq/ )
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/invivoscribe.yaml)
+
+The LymphoTrack Dx IGK Assay is an in vitro diagnostic product intended for next-generation sequencing (NGS) based determination of the frequency distribution of IGK gene rearrangements in patients suspected with having lymphoproliferative disease.  This assay aids in the identification of lymphoproliferative disorders. Our single multiplex master mix for IGK targets the Vк-Jк, the Vк-Kde, and the INTR-Kde gene rearrangements described in lymphoid malignancies.
+
+The preset works for both Illumina and Ion S5/PGM versions.
+
+![](pics/invivoscribe-human-dna-igk-lymphotrack-light.svg#only-light)
+![](pics/invivoscribe-human-dna-igk-lymphotrack-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze invivoscribe-human-dna-igk-lymphotrack \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+#### LymphoTrack Dx IGHV Leader Somatic Hypermutation Assay Panel
+==`invivoscribe-human-dna-ighv-leader-lymphotrack`==
+·
+[:octicons-link-16: Link](https://catalog.invivoscribe.com/product/lymphotrack-dx-ighv-leader-somatic-hypermutation-assay-panel-miseq/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/invivoscribe.yaml)
+
+The LymphoTrack Dx IGHV Leader Somatic Hypermutation Assay for the Illumina MiSeq is an in vitro diagnostic product intended for next-generation sequencing (NGS) based determination of the frequency distribution of IGH gene rearrangements as well as the degree of somatic hypermutation of rearranged genes in patients suspected with having lymphoproliferative disease.  This assay aids in the identification of lymphoproliferative disorders as well as providing an aid in determining disease prognosis. Our single multiplex master mix targets the Leader (VHL) and the joining (J) gene regions of IGH.
+
+
+![](pics/invivoscribe-human-dna-ighv-leader-lymphotrack-light.svg#only-light)
+![](pics/invivoscribe-human-dna-ighv-leader-lymphotrack-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze invivoscribe-human-dna-ighv-leader-lymphotrack \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+#### LymphoTrack Dx IGH FR1 Assay Kit Panel
+==`invivoscribe-human-dna-igh-fr1-lymphotrack`==
+·
+[:octicons-link-16: Link](https://catalog.invivoscribe.com/product/lymphotrack-dx-igh-fr1-assay-kit-a-miseq/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/invivoscribe.yaml)
+
+The LymphoTrack Dx IGH FR1 Assay is an in vitro diagnostic product intended for next-generation sequencing (NGS) based determination of the frequency distribution of IGH gene rearrangements as well as the degree of somatic hypermutation of rearranged genes in patients suspected with having lymphoproliferative disease.  This assay aids in the identification of lymphoproliferative disorders as well as providing an aid in determining disease prognosis. Our single multiplex master mix for IGH targets the conserved framework region 1 (FR1) within the VH and the JH regions described in lymphoid malignancies.
+
+The preset works for both Illumina and Ion S5/PGM versions.
+
+
+![](pics/invivoscribe-human-dna-igh-fr1-lymphotrack-light.svg#only-light)
+![](pics/invivoscribe-human-dna-igh-fr1-lymphotrack-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze invivoscribe-human-dna-igh-fr1-lymphotrack \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+#### LymphoTrack Dx IGH FR2 Assay Kit Panel
+==`invivoscribe-human-dna-igh-fr1-lymphotrack`==
+·
+[:octicons-link-16: Link](https://catalog.invivoscribe.com/product/lymphotrack-dx-igh-fr2-assay-kit-a-miseq/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/invivoscribe.yaml)
+
+The LymphoTrack Dx IGH FR2 Assay is an in vitro diagnostic product intended for next-generation sequencing (NGS).  The assay will determine the frequency distribution of IGH VH-JH gene rearrangements in patients suspected with having lymphoproliferative disease.  This assay aids in the identification of lymphoproliferative disorders. Our single multiplex master mix for IGH targets the conserved framework region 2 (FR2) within the VH and the JH regions described in lymphoid malignancies.
+The preset works for both Illumina and Ion S5/PGM versions.
+
+
+![](pics/invivoscribe-human-dna-igh-fr2-lymphotrack-light.svg#only-light)
+![](pics/invivoscribe-human-dna-igh-fr2-lymphotrack-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze invivoscribe-human-dna-igh-fr2-lymphotrack \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+#### LymphoTrack Dx IGH FR3 Assay Kit Panel
+==`invivoscribe-human-dna-igh-fr3-lymphotrack`==
+·
+[:octicons-link-16: Link](https://catalog.invivoscribe.com/product/lymphotrack-dx-igh-fr3-assay-kit-a-miseq/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/invivoscribe.yaml)
+
+The LymphoTrack Dx IGH FR3 Assay is an in vitro diagnostic product intended for next-generation sequencing (NGS) for the Illumina MiSeq instrument.  The assay will determine the frequency distribution of IGH VH-JH gene rearrangements in patients suspected with having lymphoproliferative disease.  This assay aids in the identification of lymphoproliferative disorders.
+ Our single multiplex master mix for IGH targets the conserved framework region 3 (FR3) within the VH and the JH regions described in lymphoid malignancies.
+
+The preset works for both Illumina and Ion S5/PGM versions.
+
+
+![](pics/invivoscribe-human-dna-igh-fr3-lymphotrack-light.svg#only-light)
+![](pics/invivoscribe-human-dna-igh-fr3-lymphotrack-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze invivoscribe-human-dna-igh-fr3-lymphotrack \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```

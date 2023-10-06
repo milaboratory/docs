@@ -54,7 +54,7 @@ mixcr analyze irepertoire-mouse-rna-xcr-repseq-lr \
 ```
 
 
-#### RepSeq+ Reagent System
+#### RepSeq+ Reagent System for Human and Mouse
 
 ==`irepertoire-human-rna-xcr-repseq-lr`==
 ·
@@ -76,6 +76,61 @@ mixcr analyze irepertoire-mouse-rna-xcr-repseq-lr \
       input_R2.fastq.gz \
       result 
 ```
+
+#### RepSeq+ Human Reagent System with UMIs
+==`irepertoire-human-rna-xcr-repseq-plus-umi-pe`==
+·
+==`irepertoire-human-rna-xcr-repseq-plus-umi-se`==
+·
+[:octicons-link-16: Link](https://irepertoire.com/repseq-2/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/irepertoire.yaml)
+
+iRepertoire's RepSeq+ service integrates dam-PCR technology. This allows for the amplification of any combination of TCR and BCR chains (including TCR-alpha, TCR-beta, TCR-delta, TCR-gamma, BCR-IgHeavy, and BCR-kappa/lambda) within a single reaction, complemented by UMI-based error correction. For IGH the kit allows identification of the following isotypes: IGHM, IGHD, IGHA, IGHE, IGHG1-2, IGHG3-4.
+
+The recommended protocol outlines two sequencing strategies:
+
+Paired End sequencing, which spans all regions from CDR1 to FR4.
+
+![](pics/irepertoire-human-rna-xcr-repseq-plus-umi-pe-light.svg#only-light)
+![](pics/irepertoire-human-rna-xcr-repseq-plus-umi-pe-dark.svg#only-dark)
+
+Single End sequencing, covering the CDR2 to FR4 regions.
+
+![](pics/irepertoire-human-rna-xcr-repseq-plus-umi-se-light.svg#only-light)
+![](pics/irepertoire-human-rna-xcr-repseq-plus-umi-se-dark.svg#only-dark)
+
+!!! note "TRG Coverage"
+	For Single End sequencing, the TRG clones might only encompass the CDR3 and FR4 regions due to the extended length of the V-region. It may be beneficial to include the `--assemble-clonotypes-by CDR3` for this chain analysis.
+
+Example:
+```shell
+mixcr analyze irepertoire-human-rna-xcr-repseq-plus-umi-pe \
+    input_R1.fastq.gz \
+    input_R2.fastq.gz \
+    result
+```
+
+Original raw RepSeq+ sequences contain sample barcodes. If your data is non-demultiplexed and you want to use the barcode information to split the samples you can do so using the command bellow:
+
+```shell
+mixcr analyze irepertoire-human-rna-xcr-repseq-plus-umi-pe \
+	--tag-pattern "^(UMI:N{10})(SMPL:N{8})(R1:*)\^N{3}(R2:*)" \
+	--sample-table sample_table.tsv \
+    input_R1.fastq.gz \
+    input_R2.fastq.gz \
+    result
+
+For single end sequencing: "^(UMI:N{10})(SMPL:N{8})(R1:*)".
+```
+Where the sample_table.tsv looks like the example bellow:
+
+| Sample  | TagPattern | SMPL     |
+|---------|------------|----------|
+| Sample1 |            | CAGCCCTA |
+| Sample2 |            | GGCAATGT |
+| ...     |            | ...      |
+
 
 #### Human gDNA based RepSeq Reagent System
 
@@ -102,3 +157,46 @@ mixcr analyze irepertoire-human-dna-xcr-repseq-sr \
       input_R2.fastq.gz \
       result 
 ```
+
+#### RepSeq+ Mouse Reagent System with UMIs
+==`irepertoire-mouse-rna-xcr-repseq-plus-umi-pe`==
+·
+[:octicons-link-16: Link](https://irepertoire.com/repseq-2/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/irepertoire.yaml)
+
+iRepertoire's RepSeq+ service integrates dam-PCR technology. This allows for the amplification of any combination of TCR and BCR chains (including TCR-alpha, TCR-beta, TCR-delta, TCR-gamma, BCR-IgHeavy, and BCR-kappa/lambda) within a single reaction, complemented by UMI-based error correction. For IGH the kit allows identification of the following isotypes: IGHM, IGHD, IGHA, IGHE, IGHG1, IGHG2, IGHG3. The sequences should cover all regions from CDR2 to FR4.
+
+
+![](pics/irepertoire-mouse-rna-xcr-repseq-plus-umi-pe-light.svg#only-light)
+![](pics/irepertoire-mouse-rna-xcr-repseq-plus-umi-pe-dark.svg#only-dark)
+
+
+Example:
+```shell
+mixcr analyze irepertoire-mouse-rna-xcr-repseq-plus-umi-pe \
+    input_R1.fastq.gz \
+    input_R2.fastq.gz \
+    result
+```
+
+Original raw RepSeq+ sequences contain sample barcodes. If your data is non-demultiplexed and you want to use the barcode information to split the samples you can do so using the command bellow:
+
+```shell
+mixcr analyze irepertoire-mouse-rna-xcr-repseq-plus-umi-pe \
+	--tag-pattern "^(UMI:N{10})(SMPL:N{8})(R1:*)\^N{3}(R2:*)" \
+	--sample-table sample_table.tsv \
+    input_R1.fastq.gz \
+    input_R2.fastq.gz \
+    result
+
+```
+
+Where the sample_table.tsv looks like the example bellow:
+
+| Sample  | TagPattern | SMPL     |
+|---------|------------|----------|
+| Sample1 |            | CAGCCCTA |
+| Sample2 |            | GGCAATGT |
+| ...     |            | ...      |
+

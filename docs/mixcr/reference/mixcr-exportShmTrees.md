@@ -293,17 +293,17 @@ The following fields are only available for `exportShmTrees`:
 `-jHit`
 : Export best J hit
 
-`-nFeature <gene_feature> <germline|mrca>`
-: Export nucleotide sequence of specified gene feature of specified node type.
+`-nFeature <gene_feature> [(germline|mrca|parent)]`
+: Export nucleotide sequence of specified gene feature of specified node type. If second arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`.
 
-`-allNFeatures <(germline|mrca)>`
-: Export nucleotide sequences for all covered gene features.
+`-allNFeatures [(germline|mrca|parent)]`
+: Export nucleotide sequences for all covered gene features. If first arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`.
 
-`-aaFeature <gene_feature> <germline|mrca>`
-: Export amino acid sequence of specified gene feature of specified node type.
+`-aaFeature <gene_feature> [(germline|mrca|parent)]`
+: Export amino acid sequence of specified gene feature of specified node type. If second arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`.
 
-`-allAAFeatures <(germline|mrca)>`
-: Export nucleotide sequences for all covered gene features.
+`-allAAFeatures [(germline|mrca|parent)]`
+: Export nucleotide sequences for all covered gene features. If first arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`.
 
 ### SHM tree node-specific fields
 
@@ -324,50 +324,82 @@ The following fields are available only for `exportShmTreesWithNodes`:
 `-fileName`
 : Name of clns file with sample
 
-`-nFeature <gene_feature> [<(germline|mrca|parent)>]`
-: Export nucleotide sequence of specified gene feature. If second arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`
+`-nFeature <gene_feature> [(germline|mrca|parent)]`
+: Export nucleotide sequence of specified gene feature. If second arg is omitted, then feature will be printed for a current node. Otherwise - for corresponding `parent`, `germline` or `mrca`.
 
-`-allNFeatures [<(germline|mrca|parent)>]`
-: Export nucleotide sequences for all covered gene features. If second arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`
+`-allNFeatures [(germline|mrca|parent)]`
+: Export nucleotide sequences for all covered gene features. If first arg is omitted, then feature will be printed for a current node. Otherwise - for corresponding `parent`, `germline` or `mrca`.
 
-`-aaFeature <gene_feature> [<(germline|mrca|parent)>]`
-: Export amino acid sequence of specified gene feature. If second arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`
+`-aaFeature <gene_feature> [(germline|mrca|parent)]`
+: Export amino acid sequence of specified gene feature. If second arg is omitted, then feature will be printed for a current node. Otherwise - for corresponding `parent`, `germline` or `mrca`.
 
-`-allAAFeatures [<(germline|mrca|parent)>]`
-: Export amino acid sequences for all covered gene features. If second arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`
+`-allAAFeatures [(germline|mrca|parent)]`
+: Export amino acid sequences for all covered gene features. If first arg is omitted, then feature will be printed for a current node. Otherwise - for corresponding `parent`, `germline` or `mrca`.
 
-`-lengthOf <gene_feature> [<(germline|mrca|parent)>]`
-: Export length of specified gene feature. If second arg is omitted, then feature length will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`
+`-nLength <gene_feature> [(germline|mrca|parent)]`
+: Export length of specified gene feature in nucleotides. If second arg is omitted, then feature length will be printed for a current node. Otherwise - for corresponding `parent`, `germline` or `mrca`.
 
-`-allLengthOf [<(germline|mrca|parent)>]`
-: Export lengths for all covered gene features. If second arg is omitted, then feature will be printed for current node. Otherwise - for corresponding `parent`, `germline` or `mrca`
+`-allNLength [(germline|mrca|parent)]`
+: Export lengths for all covered gene features in nucleotides. If first arg is omitted, then feature will be printed for a current node. Otherwise - for corresponding `parent`, `germline` or `mrca`.
 
-`-nMutations <gene_feature> <(germline|mrca|parent)>`
-: Extract nucleotide mutations from specific node for specific gene feature.
+`-aaLength <gene_feature> [(germline|mrca|parent)]`
+: Export length of specified gene feature in amino acids. If second arg is omitted, then feature length will be printed for a current node. Otherwise - for corresponding `parent`, `germline` or `mrca`. If second  option is `germline` then corresponding top genes will be counted excluding CDR3 (VJJunction germline is unknown). It's recommended to run `findAlleles` before exporting `-aaLength <gene_feature> germline` because otherwise germline sequence will not incorporate allelic mutations. (only for nodes
+with clones)
 
-`-allNMutations <(germline|mrca|parent)>`
-: Extract nucleotide mutations from specific node for all covered gene features.
+`-allAALength [<(germline|mrca|parent)>]`
+: Export lengths for all covered gene features in amino acids. If  the first arg is omitted, then feature will be printed for a current node. Otherwise - for corresponding `parent`, `germline` or `mrca`.
 
-`-nMutationsRelative <gene_feature> <relative_to_gene_feature> <(germline|mrca|parent)>`
-: Extract nucleotide mutations from specific node for specific gene feature relative to another feature.
+`-nMutations <gene_feature> [(germline|mrca|parent)] [(substitutions|indels|inserts|deletions)]`
+: Extract nucleotide mutations from specific node for specific gene feature. If the second arg is omitted, then mutations will be calculated from germline. Otherwise - for corresponding `parent`, `germline` or `mrca`. By default, exports all types of mutations. One can specify a mutation type using the third arg.
 
-`-aaMutations <gene_feature> <(germline|mrca|parent)>`
-: Extract amino acid mutations from specific node for specific gene feature.
+`-allNMutations [(germline|mrca|parent)] [(substitutions|indels|inserts|deletions)]`
+: Extract nucleotide mutations from specific node for all covered gene features. If the first arg is omitted, then mutations will be calculated from germline. Otherwise - for corresponding `parent`, `germline` or `mrca`. By default, exports all types of mutations. One can specify a mutation type using the third arg.
 
-`-allAAMutations <(germline|mrca|parent)>`
-: Extract amino acid mutations from specific node for all covered gene features.
+`-nMutationsRelative <gene_feature> <relative_to_gene_feature> [(germline|mrca|parent)] [(substitutions|indels|inserts|deletions)]`
+: Extract nucleotide mutations from specific node for specific gene feature relative to another feature. If the third arg is omitted, mutations will be calculated from the germline. Otherwise - for corresponding `parent`, `germline` or `mrca`. By default, exports all types of mutations. One can specify a mutation type using the fourth arg.
 
-`-aaMutationsRelative <gene_feature> <relative_to_gene_feature> <(germline|mrca|parent)>`
-: Extract amino acid mutations from specific node for specific gene feature relative to another feature.
+`-aaMutations <gene_feature> [(germline|mrca|parent)] [(substitutions|indels|inserts|deletions)]`
+: Extract amino acid mutations from specific node for specific gene feature. If the second arg is omitted, mutations will be calculated from the germline. Otherwise - for corresponding `parent`, `germline` or `mrca`. By default, exports all types of mutations. One can specify a mutation type using the third arg.
 
-`-mutationsDetailed <gene_feature> <(germline|mrca|parent)>`
-: Detailed list of nucleotide and corresponding amino acid mutations from specific node. Format `<nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>`, where `<aa_mutation_individual>` is an expected amino acid mutation given no other mutations have occurred, and `<aa_mutation_cumulative>` amino acid mutation is the observed amino acid mutation combining effect from all others.
+`-allAAMutations [(germline|mrca|parent)] [(substitutions|indels|inserts|deletions)]`
+: Extract amino acid mutations from specific node for all covered gene features. If the first arg is omitted, then mutations will be calculated from germline. Otherwise - for corresponding `parent`, `germline` or `mrca`. By default, exports all types of mutations. One can specify a mutation type using the third arg.
 
-`-allMutationsDetailed <(germline|mrca|parent)>`
-: Detailed list of nucleotide and corresponding amino acid mutations from specific node for all covered gene features.
+`-aaMutationsRelative <gene_feature> <relative_to_gene_feature> [(germline|mrca|parent)] [(substitutions|indels|inserts|deletions)]`
+: Extract amino acid mutations from specific node for specific gene feature relative to another feature. If the third arg is omitted, mutations will be calculated from the germline. Otherwise - for corresponding `parent`, `germline` or `mrca`. By default, exports all types of mutations. One can specify a mutation type using the fourth arg.
 
-`-mutationsDetailedRelative <gene_feature> <relative_to_gene_feature> <(germline|mrca|parent)>`
-: Detailed list of nucleotide and corresponding amino acid mutations written, positions relative to specified gene feature. Format <nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>, where <aa_mutation_individual> is an expected amino acid mutation given no other mutations have occurred, and <aa_mutation_cumulative> amino acid mutation is the observed amino acid mutation combining effect from all other. WARNING: format may change in following versions.
+`-mutationsDetailed <gene_feature> [(germline|mrca|parent)]`
+: Detailed list of nucleotide and corresponding amino acid mutations from specific node. Format `<nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>`, where `<aa_mutation_individual>` is an expected amino acid mutation given no other mutations have occurred, and `<aa_mutation_cumulative>` amino acid mutation is the observed amino acid mutation combining effect from all others. If the second arg is omitted, mutations will be calculated from the germline. Otherwise - for corresponding `parent`, `germline` or `mrca`.
+
+`-allMutationsDetailed [(germline|mrca|parent)]`
+: Detailed list of nucleotide and corresponding amino acid mutations from specific node for all covered gene features. If the first arg is omitted, then mutations will be calculated from germline. Otherwise - for corresponding `parent`, `germline` or `mrca`.
+
+`-mutationsDetailedRelative <gene_feature> <relative_to_gene_feature> [(germline|mrca|parent)]`
+: Detailed list of nucleotide and corresponding amino acid mutations written, positions relative to specified gene feature. Format <nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>, where <aa_mutation_individual> is an expected amino acid mutation given no other mutations have occurred, and <aa_mutation_cumulative> amino acid mutation is the observed amino acid mutation combining effect from all others. WARNING: format may change in following versions.
+
+`-nMutationsCount [<gene_feature>] [(germline|mrca|parent)] [(substitutions|indels|inserts|deletions)]`
+: Number of nucleotide mutations. By default, will be used all covered features. Resolutions of wildcards in VJJunction are excluded from calculation. If second arg is omitted, then mutations will be calculated from
+germline. Otherwise - for corresponding `parent`, `germline` or `mrca`.
+
+`-allNMutationsCount [(germline|mrca|parent)] [(substitutions|indels|inserts|deletions)]`
+: Number of nucleotide mutations for all covered gene features. Resolutions of wildcards in VJJunction are excluded from calculation. If first arg is omitted, then mutations will be calculated from germline. Otherwise - for corresponding `parent`, `germline` or `mrca`.
+
+`-aaMutationsCount [<gene_feature>] [(germline|mrca|parent)] [(substitutions|indels|inserts|deletions)]`
+: Number of amino acid mutations. By default, will be used all covered features. Resolutions of wildcards in CDR3 are excluded from calculation. If second arg is omitted, then mutations will be calculated from the germline. Otherwise - for corresponding `parent`, `germline` or `mrca`.
+
+`-allAAMutationsCount [(germline|mrca|parent)] [(substitutions|indels|inserts|deletions)]`
+: Number of amino acid mutations for all covered gene features. Resolutions of wildcards in CDR3 are excluded from calculation. If first arg is omitted, then mutations will be calculated from germline. Otherwise - for corresponding `parent`, `germline` or `mrca`.
+
+`-nMutationRate [<gene_feature>] [(substitutions|indels|inserts|deletions)]`
+: Number of nucleotide mutations from germline divided by target sequence size. By default, will be used all covered features. Resolutions of wildcards in VJJunction are excluded from calculation.
+
+`-aaMutationRate [<gene_feature>] [(substitutions|indels|inserts|deletions)]`
+: Number of amino acid mutations from germline divided by target sequence size. By default, will be used all covered features. Resolutions of wildcards in CDR3 are excluded from calculation.
+
+`-biochemicalProperty <gene_feature> <property> [(germline|mrca|parent)]`
+: Biochemical property of specified gene feature normalized by AA sequence size. Possible values: Hydropathy, Charge, Polarity, Volume, Strength, MjEnergy, Kf1, Kf2, Kf3, Kf4, Kf5, Kf6, Kf7, Kf8, Kf9, Kf10, Rim, Surface, Turn, Alpha, Beta, Core, Disorder, N2Strength, N2Hydrophobicity, N2Volume, N2Surface
+
+`-baseBiochemicalProperties <gene_feature> [(germline|mrca|parent)]`
+: Base biochemical properties of specified gene feature normalized by AA sequence size: N2Strength, N2Hydrophobicity, N2Surface, N2Volume, Charge
 
 The following fields are available only for `exportShmTreesWithNodes` on nodes with clones:
 
@@ -610,6 +642,9 @@ for the full list and formatting)
 
 `-chains`
 : Chains
+
+`-isotype [(primary|subclass|auto)]`
+: Export isotype for IGH chains if it's distinguishable. `primary` will resolve 'IgA', 'IgD', 'IgG', 'IgE', 'IgM'. `subtype` will try resolve isotypes like 'IgA1' or 'IgA2'. Default `auto` will automatically decide whether to resolve the primary or subtype isotype based on the level of detail distinguishable for each clone.
 
 `-topChains`
 : Top chains

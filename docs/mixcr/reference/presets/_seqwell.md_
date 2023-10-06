@@ -1,0 +1,19 @@
+### Seq-Well VDJ
+==`seq-well-vdj`==
+·
+[:octicons-link-16: Publication](https://www.nature.com/articles/s41590-019-0544-5)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/seqwell.yaml)
+
+The `seq-well-vdj` preset is tailored to for Seq-Well data adapted for targeted TCR immune profiling, as outlined in the [original publication](https://www.nature.com/articles/s41590-019-0544-5). In this protocol, both the CELL and UMI barcodes are situated in the Illumina index read, while R1 serves as the payload, specifically covering the CDR3 region.
+
+![](pics/seq-well-light.svg#only-light)
+![](pics/seq-well-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze seq-well-vdj \
+      input_R1.fastq.gz \
+      input_I1.fastq.gz \
+      result
+```

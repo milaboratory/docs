@@ -22,25 +22,28 @@ Bellow you one can find a variety of presets for different types of input data a
 ## Kits
 
 --8<-- "reference/presets/_milaboratories.md_"
---8<-- "reference/presets/_takara.md_"
 --8<-- "reference/presets/_10x.md_"
+--8<-- "reference/presets/_neb.md_"
+--8<-- "reference/presets/_cellecta.md_"
 --8<-- "reference/presets/_illumina.md_"
 --8<-- "reference/presets/_qiagen.md_"
---8<-- "reference/presets/_cellecta.md_"
+--8<-- "reference/presets/_abhelix.md_"
 --8<-- "reference/presets/_irepertoire.md_"
 --8<-- "reference/presets/_thermofisher.md_"
---8<-- "reference/presets/_abhelix.md_"
+--8<-- "reference/presets/_invivoscribe.md_"
+--8<-- "reference/presets/_takara.md_"
 --8<-- "reference/presets/_bd.md_"
 --8<-- "reference/presets/_nanopore.md_"
 --8<-- "reference/presets/_parsebio.md_"
 --8<-- "reference/presets/_singleron.md_"
---8<-- "reference/presets/_neb.md_"
 
 ## Public protocols
 
 --8<-- "reference/presets/_biomed2.md_"
 --8<-- "reference/presets/_smartseq.md_"
 --8<-- "reference/presets/_splitseq.md_"
+--8<-- "reference/presets/_flairrseq.md_"
+--8<-- "reference/presets/_seqwell.md_"
 --8<-- "reference/presets/_mikelov.md_"
 --8<-- "reference/presets/_vergani.md_"
 --8<-- "reference/presets/_han.md_"

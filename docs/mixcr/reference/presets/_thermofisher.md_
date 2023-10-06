@@ -208,3 +208,49 @@ mixcr analyze thermofisher-human-dna-tcr-oncomine-pan-clonality \
       input.fastq.gz \
       result 
 ```
+
+#### Ion AmpliSeq Mouse TCR Beta SR Assay
+==`thermofisher-mouse-rna-tcb-ampliseq-sr`==
+·
+==`thermofisher-mouse-dna-tcb-ampliseq-sr`==
+·
+[:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A45489)
+·
+[:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A45488)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/thermofisher.yaml)
+
+The Ion AmpliSeq Mouse TCR Beta SR Assay is a robust, targeted next-generation sequencing (NGS) assay designed to accurately identify and measure the clonal expansion of T lymphocytes by targeting the complementarity-determining region 3 (CDR3) of the T-cell receptor (TCR) gene locus from gDNA input. The assay can be used for basic and translational research to identify T-cell clones since the nucleotide sequence of the CDR3 region is unique to each T cell and codes for the part of the TCR beta chain that is involved in antigen recognition. The kit comes in two options: for RNA and DNA starting material.
+
+![](pics/thermofisher-mouse-rna-tcb-ampliseq-sr-light.svg#only-light)
+![](pics/thermofisher-mouse-rna-tcb-ampliseq-sr-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze thermofisher-mouse-rna-tcb-ampliseq-sr \
+      input.fastq.gz \
+      result
+```
+
+#### Ion AmpliSeq Mouse BCR IGH SR Assay, RNA
+==`thermofisher-mouse-rna-igh-ampliseq-sr`==
+·
+==`thermofisher-mouse-dna-igh-ampliseq-sr`==
+·
+[:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A45487)
+·
+[:octicons-link-16: Link](https://www.thermofisher.com/order/catalog/product/A45486)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/thermofisher.yaml)
+
+The Ion AmpliSeq Mouse BCR IGH SR Assay, RNA/DNA, is a robust, targeted next-generation sequencing (NGS) assay for use in basic and translational immunology, immuno-oncology, hemato–oncology, and vaccine research. It is designed to accurately identify and measure the clonal expansion of B lymphocytes in blood, peripheral blood leukocytes (PBLs), peripheral blood mononuclear cells (PBMCs), and fresh-frozen (FF) and formalin-fixed paraffin-embedded (FFPE) samples. The assay identifies unique B-cell clones through targeting of the highly diverse complementarity-determining region 3 (CDR3) of the B-cell receptor (BCR) immunoglobulin heavy (IGH) chain from genomic DNA template . The nucleotide sequence of the IGH CDR3 region serves as a natural barcode to enable clone tracking and measurements of B-cell clonal expansion and diversity. Analysis of IGH CDR3-region amino acid motifs may reveal signatures of B-cell responses to defined antigens.
+
+![](pics/thermofisher-mouse-rna-igh-ampliseq-sr-light.svg#only-light)
+![](pics/thermofisher-mouse-rna-igh-ampliseq-sr-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze thermofisher-mouse-dna-igh-ampliseq-sr \
+      input.fastq.gz \
+      result
+```

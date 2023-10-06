@@ -1,0 +1,31 @@
+### FLAIRR-seq
+==`flairr-seq-bcr`==
+·
+[:octicons-link-16: Publication](https://journals.aai.org/jimmunol/article/210/10/1607/263586/FLAIRR-Seq-A-Method-for-Single-Molecule-Resolution)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/FLAIRRseq.yaml)
+
+The FLAIRR-seq method employs 5′ RACE for targeted amplification, and when combined with single-molecule, real-time sequencing, it achieves a remarkable accuracy (99.99%) in generating human Ab H chain transcripts. This technique offers a full-length approach to immunoglobulin repertoire profiling. The preset processes raw data in line with the methodology outlined in the original publication and includes the identification of Human IgM and IgG isotypes. The initial protocol incorporates 16bp-long sample barcodes intended for multiplexing. Below, we provide an example of a sample_table.tsv file suitable for demultiplexing.
+
+!!! note "Other chains or species"
+	If you employ primers different from those specified in the original publication to capture other chains (e.g., TRA, TRB, IGK, or IGL) or if your data originates from a species other than humans, you'll need to adjust the --tag-pattern in the preset accordingly.
+
+![](pics/flairr-seq-bcr-light.svg#only-light)
+![](pics/flairr-seq-bcr-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze flairr-seq-bcr \
+	--sample-table sample_table.tsv \
+      input.fastq.gz \
+      result
+```
+
+Where the sample_table.tsv looks like the example bellow:
+
+| Sample  | TagPattern | SMPL             |
+|---------|------------|------------------|
+| Sample1 |            | CAGCCCTACAGCCCTA |
+| Sample2 |            | GGCAATGTGGCAATGT |
+| ...     |            | ...              |
+

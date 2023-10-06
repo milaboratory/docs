@@ -72,7 +72,6 @@ plate3_R2.fastq.gz
 We can use the following MiXCR command to process all samples at once:
 ```shell
 mixcr analyze takara-human-bcr-full-length \
-      --infer-sample-table \
       {{SAMPLE:a}}_{{R}}.fastq.gz \
       output_prefix
 ```
@@ -103,7 +102,7 @@ mixcr analyze generic-bcr-amplicon-umi \
       result
 ```
 
-The `sample_table.tsv` may looks like:
+The `sample_table.tsv` may look like:
 
 | Sample  | TagPattern | SMPL   |
 |---------|------------|--------|

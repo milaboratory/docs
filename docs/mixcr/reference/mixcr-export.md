@@ -120,6 +120,101 @@ Command line options:
 `<exportField>`
 : A list of [export fields](#export-fields)
 
+## Clone groups by cell
+
+```
+mixcr exportCloneGroups
+    [--filter-out-of-frames]
+    [--filter-stops]
+    [--filter-groups-with-one-chain]
+    [--impute-germline-on-export]
+    [--dont-impute-germline-on-export]
+    [--export-productive-clones-only]            
+    [--export-clone-groups-for-cell-type <cell_type>...]...
+    [--export-clone-groups-for-all-cell-types]
+    [--show-secondary-chain-on-export-cell-groups <type> ]
+    [--dont-show-secondary-chain-on-export-cell-groups] 
+    [--no-header]
+    [--drop-default-fields]
+    [<exportField>]...
+    [--prepend-columns]
+    [--not-covered-as-empty]
+    [--force-overwrite]
+    [--no-warnings]
+    [--verbose]
+    [--help] 
+    data.(clns|clna)
+    [table.tsv]
+```
+
+Exports information about clonotypes combined by Cell tag. Input .clns/.clna files have to be grouped with [`mixcr groupClones`](./mixcr-groupClones.md).
+
+Command line options:
+
+`data.(clns|clna)`
+: Path to input file with clones
+
+`[table.tsv]`
+: Path where to write export table. Will write to output if omitted.
+
+`--filter-out-of-frames`
+: Exclude clones with out-of-frame clone sequences (fractions will be recalculated). Default value determined by the preset.
+
+`--filter-stops`
+: Exclude sequences containing stop codons (fractions will be recalculated). Default value determined by the preset.
+
+`--filter-groups-with-one-chain`
+: Exclude groups containing only one clone (fractions will be recalculated). Default value determined by the preset.`
+
+`--impute-germline-on-export`
+: Export nucleotide sequences using letters from germline (marked lowercase) for uncovered regions
+
+`--dont-impute-germline-on-export`
+: Export nucleotide sequences only from covered region
+
+`--export-productive-clones-only`
+: Export only productive clonotypes.
+
+`--export-clone-groups-for-cell-type <cell_type>...`
+: Export clone groups for given cell type. Possible values: IGH-IGK, IGH-IGL, TRB-TRA, TRD-TRG
+
+`--export-clone-groups-for-all-cell-types`
+: Export clone groups for all cell types.
+
+`--show-secondary-chain-on-export-cell-groups <type>`
+: Show columns for secondary chains in export for cell groups. Possible values to decide the weight: read, molecule, auto.
+
+`--dont-show-secondary-chain-on-export-cell-groups`
+: Don't show columns for secondary chains in export for cell groups.
+
+`--no-header`
+: Don't print first header line, print only data Default value determined by the preset.
+
+`--drop-default-fields`
+: Don't export fields from preset.
+
+`--prepend-columns`
+: Added columns will be inserted before default columns. By default columns will be added after default columns
+
+`--not-covered-as-empty`
+: Export not covered regions as empty text.
+
+`-f, --force-overwrite`
+: Force overwrite of output file(s).
+
+`-nw, --no-warnings`
+: Suppress all warning messages.
+
+`--verbose`
+: Verbose messages.
+
+`-h, --help`
+: Show this help message and exit.
+
+`<exportField>`
+: A list of [export fields](#export-fields)
+
+
 ## Alignments
 
 ```
@@ -506,18 +601,28 @@ These fields available for `exportAlignments` and `exportClones`:
     
     By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
-`-lengthOf <gene_feature>`
-: Export length of specified gene feature.
+`-nLength <gene_feature> [germline]`
+: Export length of specified gene feature in nucleotides. If second option is `germline` than will be count corresponding top genes, VJJunction will be excluded from calculation (germline is unknown). It's recommended to run `findAlleles` before exporting `-nLength<gene_feature> germline` because otherwise germline sequence will not incorporate allelic mutations. For clones from all chains.
 
-`-allLengthOf [<from_reference_point> <to_reference_point>]`
-: Export length for all gene features between specified reference points (in separate columns).
+`-allNLength [<from_reference_point> <to_reference_point>]`
+: Export length for all gene features between specified reference points (in separate columns) in nucleotides.
     
-    For example, `-allLengthOf FR3Begin FR4End` will export `-lengthOf FR3`, `-lengthOf CDR3`, `-lengthOf FR4`.
+    For example, `-allNLength FR3Begin FR4End` will export `-nLength FR3`, `-nLength CDR3`, `-nLength FR4`.
     
     By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
-`-nFeature <gene_feature>`
-: Export nucleotide sequence of specified gene feature
+`-aaLength <gene_feature> [germline]`
+: Export length of specified gene feature in amino acids. If second option is `germline` than will be count corresponding top genes, CDR3 will be excluded from calculation (VJJunction germline is unknown). It's recommended to run `findAlleles` before exporting`-aaLength <gene_feature> germline` because otherwise germline sequence will not incorporate allelic mutations.
+
+`-allAALength [<from_reference_point> <to_reference_point>]`
+: Export length for all gene features between specified reference points (in separate columns) in amino acids.
+
+    For example, `-allAALength FR3Begin FR4End` will export `-aaLength FR3`, `-aaLength CDR3`, `-aaLength FR4`.
+    
+    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
+
+`-nFeature <gene_feature> [germline]`
+: Export nucleotide sequence of specified gene feature. If second option is `germline` than will be exported corresponded sequence of the top gene. It's recommended to run `findAlleles` before exporting `-nFeature <gene_feature> germline` because otherwise germline sequence will not incorporate allelic mutations. For clones from all chains.
 
 `-allNFeatures [<from_reference_point> <to_reference_point>]`
 : Export nucleotide sequences for all gene features between specified reference points (in separate columns).
@@ -526,8 +631,8 @@ These fields available for `exportAlignments` and `exportClones`:
     
     By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
-`-aaFeature <gene_feature>`
-: Export amino acid sequence of specified gene feature
+`-aaFeature <gene_feature> [germline]`
+: Export amino acid sequence of specified gene feature. If second option is `germline` than will be exported corresponded sequence of the top gene. It's recommended to run `findAlleles` before exporting `-aaFeature <gene_feature> germline` because otherwise germline sequence will not incorporate allelic mutations. For clones from all chains.
 
 `-allAAFeatures [<from_reference_point> <to_reference_point>]`
 : Export amino acid sequence for all gene features between specified reference points (in separate columns).
@@ -536,31 +641,30 @@ These fields available for `exportAlignments` and `exportClones`:
     
     By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
-`-nMutations <gene_feature>`
-: Extract nucleotide mutations for specific gene feature; relative to germline sequence.
+`-nMutations <gene_feature> [(substitutions|indels|inserts|deletions)]`
+: Extract nucleotide mutations for specific gene feature; relative to germline sequence. By default, will export all mutations. Can specify the mutation type using the following parameters: substitutions,indels,inserts,deletions.
 
-`-allNMutations [<from_reference_point> <to_reference_point>]`
-: Extract nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns).
+`-allNMutations [<from_reference_point> <to_reference_point>] [(substitutions|indels|inserts|deletions)]`
+: Extract nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns). By default, boundaries will be got from analysis parameters if
+possible or `FR1Begin FR4End` otherwise. By default, will export all mutations. Can specify the mutation type using the following second parameter: substitutions,indels,inserts,deletions.
     
-    For example, `-allNMutations FR3Begin FR4End` will export `-nMutations FR3`, `-nMutations FR4`.
+    For example, `-allNMutations FR3Begin FR4End substitutions` will export `-nMutations FR3 substitutions`, `-nMutations FR4 substitutions`.
+
+`-nMutationsRelative <gene_feature> <relative_to_gene_feature> [(substitutions|indels|inserts|deletions)]`
+: Extract nucleotide mutations for specific gene feature relative to another feature. By default, will export all mutations. Can specify the mutation type using the following parameters: substitutions,indels,inserts,deletions.
+
+`-aaMutations <gene_feature> [(substitutions|indels|inserts|deletions)]`
+: Extract amino acid mutations for specific gene feature. By default, will export all mutations. Can specify the mutation type using the second parameters: substitutions,indels,inserts,deletions.
+
+`-allAAMutations [<from_reference_point> <to_reference_point>] [(substitutions|indels|inserts|deletions)]`
+: Extract amino acid nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns). Can specify the mutation type using the second parameters: substitutions,indels,inserts,deletions.
+    
+    For example, `-allAAMutations FR3Begin FR4End indels` will export `-aaMutations FR3 indels`, `-aaMutations FR4 indels`.
     
     By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
-`-nMutationsRelative <gene_feature> <relative_to_gene_feature>`
-: Extract nucleotide mutations for specific gene feature relative to another feature.
-
-`-aaMutations <gene_feature>`
-: Extract amino acid mutations for specific gene feature
-
-`-allAAMutations [<from_reference_point> <to_reference_point>]`
-: Extract amino acid nucleotide mutations relative to germline sequence for all gene features between specified reference points (in separate columns).
-    
-    For example, `-allAAMutations FR3Begin FR4End` will export `-aaMutations FR3`, `-aaMutations FR4`.
-    
-    By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
-
-`-aaMutationsRelative <gene_feature> <relative_to_gene_feature>`
-: Extract amino acid mutations for specific gene feature relative to another feature.
+`-aaMutationsRelative <gene_feature> <relative_to_gene_feature> [(substitutions|indels|inserts|deletions)]`
+: Extract amino acid mutations for specific gene feature relative to another feature. If no second parameter specified will export all types of mutation. Can specify the mutation type using the second parameters: substitutions,indels,inserts,deletions.
 
 `-mutationsDetailed <gene_feature>`
 : Detailed list of nucleotide and corresponding amino acid mutations. Format `<nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>`, where `<aa_mutation_individual>` is an expected amino acid mutation given no other mutations have occurred, and `<aa_mutation_cumulative>` amino acid mutation is the observed amino acid mutation combining effect from all others.
@@ -573,7 +677,25 @@ These fields available for `exportAlignments` and `exportClones`:
     By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise.
 
 `-mutationsDetailedRelative <gene_feature> <relative_to_gene_feature>`
-: Detailed list of nucleotide and corresponding amino acid mutations written, positions relative to specified gene feature. Format <nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>, where <aa_mutation_individual> is an expected amino acid mutation given no other mutations have occurred, and <aa_mutation_cumulative> amino acid mutation is the observed amino acid mutation combining effect from all other. WARNING: format may change in following versions.
+: Detailed list of nucleotide and corresponding amino acid mutations written, positions relative to specified gene feature. Format <nt_mutation>:<aa_mutation_individual>:<aa_mutation_cumulative>, where <aa_mutation_individual> is an expected amino acid mutation given no other mutations have occurred, and <aa_mutation_cumulative> amino acid mutation is the observed amino acid mutation combining effect from all others. WARNING: format may change in following versions.
+
+`-nMutationsCount <gene_feature> [(substitutions|indels|inserts|deletions)]`
+: Export the number of mutations in specified gene feature. If no second parameter specified will export all types of mutation. Can specify the mutation type using the second parameters: substitutions,indels,inserts,deletions.
+
+`-allNMutationsCount [<from_reference_point> <to_reference_point>] [(substitutions|indels|inserts|deletions)]`
+: Count nucleotide mutations for all gene features between specified reference points (in separate columns). For example, `-allNMutationsCount FR3Begin FR4End` will export`-nMutationsCount FR3`, `-nMutationsCount CDR3`, `-nMutationsCount FR4`. By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise. If no second parameter specified will export all types of mutation. Can specify the mutation type using the second parameters: substitutions,indels,inserts,deletions.
+
+`-aaMutationsCount <gene_feature> [(substitutions|indels|inserts|deletions)]`
+: Count amino acid mutations for specific gene feature. If no second parameter specified will export all types of mutation. Can specify the mutation type using the second parameters: substitutions,indels,inserts,deletions.
+
+`-allAAMutationsCount [<from_reference_point> <to_reference_point>] [(substitutions|indels|inserts|deletions)]`
+: Count amino acid mutations for all gene features between specified reference points (in separate columns). For example, `-allAAMutationsCount FR3Begin FR4End` will export`-aaMutationsCount FR3`, `-aaMutationsCount CDR3`,`-aaMutationsCount FR4`. By default, boundaries will be got from analysis parameters if possible or `FR1Begin FR4End` otherwise. If no second parameter specified will export all types of mutation. Can specify the mutation type using the second parameters: substitutions,indels,inserts,deletions.
+
+`-nMutationRate <gene_feature> [(substitutions|indels|inserts|deletions)]`
+: Number of mutations from germline divided by target sequence size. VJJunction is excluded from calculation (as germline is undefined). It's recommended to run `findAlleles` before exporting `-mutationRate` because otherwise mutations count will include allelic mutations. If no second parameter specified will export all types of mutation. Can specify the mutation type using the second parameters: substitutions,indels,inserts,deletions.
+
+`-aaMutationRate <gene_feature> [(substitutions|indels|inserts|deletions)]`
+: Number of amino acid mutations from germline divided by amino acid sequence size. CDR3 is excluded from calculation (as VJJunction germline is undefined). It's recommended to run `findAlleles` before exporting `-aaMutationRate` because otherwise mutations count will include allelic mutations. If no second parameter specified will export all types of mutation. Can specify the mutation type using the second parameters: substitutions,indels,inserts,deletions.
 
 `-positionInReferenceOf <reference_point>`
 : Export position of specified reference point inside reference sequences (clonal sequence / read sequence).
@@ -631,6 +753,9 @@ These fields available for `exportAlignments` and `exportClones`:
 `-chains`
 : Chains
 
+`-isotype [(primary|subclass|auto)]`
+: Export isotype for IGH chains if it's distinguishable. `primary` will resolve 'IgA', 'IgD', 'IgG', 'IgE', 'IgM'. `subtype` will try resolve isotypes like 'IgA1' or 'IgA2'. Default `auto` will automatically decide whether to resolve the primary or subtype isotype based on the level of detail distinguishable for each clone.
+
 `-topChains`
 : Top chains
 
@@ -657,6 +782,12 @@ These fields available for `exportAlignments` and `exportClones`:
 
 `-isProductive <geneFeature>`
 : Whether specified gene feature will be productive (no stops and is in frame).
+
+`-biochemicalProperty <gene_feature> <property>`
+: Biochemical property of specified gene feature normalized by AA sequence size. Possible values: Hydropathy, Charge, Polarity, Volume, Strength, MjEnergy, Kf1, Kf2, Kf3, Kf4, Kf5, Kf6, Kf7, Kf8, Kf9, Kf10, Rim, Surface, Turn, Alpha, Beta, Core, Disorder, N2Strength, N2Hydrophobicity, N2Volume, N2Surface
+
+`-baseBiochemicalProperties <gene_feature>`
+: Base biochemical properties of specified gene feature normalized by AA sequence size: N2Strength, N2Hydrophobicity, N2Surface, N2Volume, Charge
 
 ### Alignment-specific fields
 
