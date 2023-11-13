@@ -1,0 +1,474 @@
+{
+  "align": {
+    "type": "alignerReport",
+    "commandLine": "align -f --report result/Sample1.align.report.txt --json-report result/Sample1.align.report.json --preset cellecta-mouse-rna-xcr-umi-drivermap-air --save-output-file-names result/Sample1.align.list raw/Sample1_{{R}}.fastq.gz result/Sample1.vdjca",
+    "inputFiles": [
+      "raw/Sample1_R1.fastq.gz",
+      "raw/Sample1_R2.fastq.gz"
+    ],
+    "outputFiles": [
+      "result/Sample1.vdjca"
+    ],
+    "version": "4.5.0-47-develop; built=Mon Oct 09 14:49:52 UTC 2023; rev=57293fb76d; lib=repseqio.v3.0.1",
+    "totalReadsProcessed": 6677594,
+    "aligned": 6550627,
+    "notAligned": 126967,
+    "notAlignedReasons": {
+      "NoHits": 800,
+      "NoCDR3Parts": 0,
+      "NoVHits": 743,
+      "NoJHits": 14595,
+      "VAndJOnDifferentTargets": 110829,
+      "LowTotalScore": 0,
+      "NoBarcode": 0,
+      "SampleNotMatched": 0
+    },
+    "overlapped": 6288100,
+    "overlappedAligned": 6278285,
+    "overlappedNotAligned": 9815,
+    "alignmentAidedOverlaps": 3839,
+    "noCDR3PartsAlignments": 10,
+    "partialAlignments": 82728,
+    "chimeras": 0,
+    "vChimeras": 1554,
+    "jChimeras": 1034,
+    "pairedEndAlignmentConflicts": 134121,
+    "realignedWithForcedNonFloatingBound": 393333,
+    "realignedWithForcedNonFloatingRightBoundInLeftRead": 173,
+    "realignedWithForcedNonFloatingLeftBoundInRightRead": 173,
+    "chainUsage": {
+      "type": "chainUsage",
+      "chimeras": 0,
+      "total": 6550627,
+      "chains": {
+        "IGH": {
+          "total": 2061214,
+          "nonFunctional": 56786,
+          "isOOF": 32217,
+          "hasStops": 24569
+        },
+        "IGK": {
+          "total": 3567369,
+          "nonFunctional": 213503,
+          "isOOF": 196611,
+          "hasStops": 16892
+        },
+        "IGL": {
+          "total": 358837,
+          "nonFunctional": 83804,
+          "isOOF": 81907,
+          "hasStops": 1897
+        },
+        "TRA": {
+          "total": 245641,
+          "nonFunctional": 25530,
+          "isOOF": 24048,
+          "hasStops": 1482
+        },
+        "TRB": {
+          "total": 262569,
+          "nonFunctional": 14198,
+          "isOOF": 11727,
+          "hasStops": 2471
+        },
+        "TRD": {
+          "total": 21346,
+          "nonFunctional": 2366,
+          "isOOF": 2267,
+          "hasStops": 99
+        },
+        "TRG": {
+          "total": 33651,
+          "nonFunctional": 6826,
+          "isOOF": 6464,
+          "hasStops": 362
+        }
+      }
+    },
+    "trimmingReport": {
+      "total": 6677594,
+      "r1LeftTrimmedEvents": 117,
+      "r1RightTrimmedEvents": 31,
+      "r2LeftTrimmedEvents": 899,
+      "r2RightTrimmedEvents": 18253,
+      "r1LeftTrimmedNucleotides": 687,
+      "r1RightTrimmedNucleotides": 1068,
+      "r2LeftTrimmedNucleotides": 22935,
+      "r2RightTrimmedNucleotides": 891171
+    },
+    "tagParsingReport": {
+      "total": 6677594,
+      "matched": 6677594,
+      "totalBitCost": 0,
+      "projections": {
+        "1,2": 6677594
+      },
+      "detailedReport": [
+        {
+          "nested": {
+            "1,2": {
+              "variantId": 0,
+              "nested": [
+                [
+                  {
+                    "positionDistributions": {
+                      "R1:Left": {
+                        "0": 6677594
+                      },
+                      "R1:Right": {
+                        "148": 6677594
+                      }
+                    },
+                    "lengthDistributions": {
+                      "R1": {
+                        "148": 6677594
+                      }
+                    },
+                    "costDistributions": {
+                      "0": 6677594
+                    },
+                    "variantDistribution": {
+                      "0": 6677594
+                    }
+                  }
+                ],
+                [
+                  {
+                    "positionDistributions": {
+                      "R2:Left": {
+                        "18": 6677594
+                      },
+                      "R2:Right": {
+                        "148": 6677594
+                      },
+                      "UMI:Left": {
+                        "0": 6677594
+                      },
+                      "UMI:Right": {
+                        "18": 6677594
+                      }
+                    },
+                    "lengthDistributions": {
+                      "R2": {
+                        "130": 6677594
+                      },
+                      "UMI": {
+                        "18": 6677594
+                      }
+                    },
+                    "costDistributions": {
+                      "0": 6677594
+                    },
+                    "variantDistribution": {
+                      "0": 6677594
+                    }
+                  }
+                ]
+              ],
+              "costDistributions": {
+                "0": 6677594
+              }
+            }
+          }
+        }
+      ]
+    },
+    "notMatchedByHeader": 0,
+    "transformerReports": [],
+    "coverage": {
+      "VDJRegion": 0,
+      "CDR1_TO_FR4": 0,
+      "FR2_TO_FR4": 0,
+      "CDR2_TO_FR4": 0,
+      "FR3_TO_FR4": 0,
+      "CDR3": 6467889
+    }
+  },
+  "assemble": {
+    "type": "assemblerReport",
+    "commandLine": "assemble -f --report result/Sample1.assemble.report.txt --json-report result/Sample1.assemble.report.json result/Sample1.refined.vdjca result/Sample1.clns",
+    "inputFiles": [
+      "result/Sample1.refined.vdjca"
+    ],
+    "outputFiles": [
+      "result/Sample1.clns"
+    ],
+    "version": "4.5.0-47-develop; built=Mon Oct 09 14:49:52 UTC 2023; rev=57293fb76d; lib=repseqio.v3.0.1",
+    "preCloneAssemblerReport": {
+      "type": "preCloneAssemblerReport",
+      "inputGroups": 33682,
+      "groupsWithNoAssemblingFeature": 267,
+      "inputAlignments": 6482298,
+      "inputAlignmentsWithAssemblingFeature": 6299235,
+      "corePreClonesDroppedByTagSuffix": 0,
+      "coreAlignmentsDroppedByTagSuffix": 0,
+      "preClones": 34274,
+      "preClonesPerGroup": {
+        "0": 76,
+        "1": 32439,
+        "2": 865,
+        "3": 35
+      },
+      "assemblingFeatureSequencesInZeroPreClones": 56227,
+      "coreAlignments": 6189989,
+      "tagConflicts": 900,
+      "geneAndTagConflicts": 318,
+      "geneConflicts": {
+        "Variable": 8,
+        "Joining": 310
+      },
+      "discardedCoreAlignments": 109246,
+      "empiricallyAssignedAlignments": 99876,
+      "vjEmpiricallyAssignedAlignments": 0,
+      "tagEmpiricallyAssignedAlignments": 0,
+      "geneAndTagEmpiricallyAssignedAlignments": 99877,
+      "empiricalAssignmentConflicts": 1,
+      "ignoredAlignments": 0,
+      "unassignedAlignments": 136529
+    },
+    "totalReadsProcessed": 6677594,
+    "totalAlignmentsProcessed": 34274,
+    "totalAlignedReadsProcessed": 6289865,
+    "initialClonesCreated": 8322,
+    "readsDroppedNoTargetSequence": 183063,
+    "readsDroppedTooShortClonalSequence": 0,
+    "readsDroppedLowQuality": 0,
+    "coreReads": 6287170,
+    "readsDroppedFailedMapping": 712,
+    "lowQualityRescued": 1983,
+    "clonesClustered": 48,
+    "readsClustered": 9347,
+    "clones": 8266,
+    "clonesDroppedAsLowQuality": 0,
+    "clonesPreClustered": 8,
+    "readsPreClustered": 1750,
+    "readsInClones": 6279806,
+    "readsInClonesBeforeClustering": 6289153,
+    "readsDroppedWithLowQualityClones": 0,
+    "clonalChainUsage": {
+      "type": "chainUsage",
+      "chimeras": 0,
+      "total": 8266,
+      "chains": {
+        "IGH": {
+          "total": 4470,
+          "nonFunctional": 204,
+          "isOOF": 173,
+          "hasStops": 31
+        },
+        "IGK": {
+          "total": 1142,
+          "nonFunctional": 228,
+          "isOOF": 224,
+          "hasStops": 4
+        },
+        "IGL": {
+          "total": 120,
+          "nonFunctional": 82,
+          "isOOF": 81,
+          "hasStops": 1
+        },
+        "TRA": {
+          "total": 1113,
+          "nonFunctional": 112,
+          "isOOF": 111,
+          "hasStops": 1
+        },
+        "TRB": {
+          "total": 1286,
+          "nonFunctional": 63,
+          "isOOF": 59,
+          "hasStops": 4
+        },
+        "TRD": {
+          "total": 58,
+          "nonFunctional": 5,
+          "isOOF": 5,
+          "hasStops": 0
+        },
+        "TRG": {
+          "total": 77,
+          "nonFunctional": 31,
+          "isOOF": 29,
+          "hasStops": 2
+        }
+      }
+    },
+    "clonesFilteredInPostFiltering": 0,
+    "readsFilteredInPostFiltering": 0,
+    "postFilteringReports": null,
+    "alignmentsFilteredByTagPrefix": 0
+  },
+  "refineTagsAndSort": {
+    "type": "refineTagsAndSort",
+    "commandLine": "refineTagsAndSort -f --report result/Sample1.refine.report.txt --json-report result/Sample1.refine.report.json result/Sample1.vdjca result/Sample1.refined.vdjca",
+    "inputFiles": [
+      "result/Sample1.vdjca"
+    ],
+    "outputFiles": [
+      "result/Sample1.refined.vdjca"
+    ],
+    "version": "4.5.0-47-develop; built=Mon Oct 09 14:49:52 UTC 2023; rev=57293fb76d; lib=repseqio.v3.0.1",
+    "correctionReport": {
+      "inputRecords": 6550585,
+      "outputRecords": 6482298,
+      "steps": [
+        {
+          "tagName": "UMI",
+          "inputGroups": 1,
+          "inputDiversity": 210435,
+          "inputCount": 6550585,
+          "coreDiversity": 203576,
+          "coreCount": 6543697,
+          "directlyCorrectedDiversity": 119739,
+          "directlyCorrectedCount": 136057,
+          "filteredDiversity": 1204,
+          "filteredCount": 1204,
+          "recursivelyCorrected": 1183,
+          "diversityFilteredByWhitelist": 0,
+          "outputDiversity": 89492,
+          "outputCount": 6549381
+        }
+      ],
+      "filterReport": {
+        "type": "filter_groups_report",
+        "groupingKeys": [
+          "allTags:Molecule"
+        ],
+        "numberOfGroups": 89492,
+        "numberOfGroupsAccepted": 33682,
+        "totalWeight": 6549381,
+        "totalWeightAccepted": 6482298,
+        "operatorReports": [
+          {
+            "operatorReport": {
+              "type": "multi_operator_hist_report",
+              "threshold": 13,
+              "nestedThresholds": [
+                13,
+                139
+              ]
+            },
+            "metricHists": [
+              {
+                "bins": [
+                  {
+                    "from": 1,
+                    "to": 1.5848931924611136,
+                    "weight": 51834
+                  },
+                  {
+                    "from": 1.5848931924611136,
+                    "to": 2.51188643150958,
+                    "weight": 1426
+                  },
+                  {
+                    "from": 2.51188643150958,
+                    "to": 3.981071705534973,
+                    "weight": 900
+                  },
+                  {
+                    "from": 3.981071705534973,
+                    "to": 6.309573444801933,
+                    "weight": 1169
+                  },
+                  {
+                    "from": 6.309573444801933,
+                    "to": 10,
+                    "weight": 303
+                  },
+                  {
+                    "from": 10,
+                    "to": 15.848931924611142,
+                    "weight": 297
+                  },
+                  {
+                    "from": 15.848931924611142,
+                    "to": 25.11886431509581,
+                    "weight": 250
+                  },
+                  {
+                    "from": 25.11886431509581,
+                    "to": 39.810717055349734,
+                    "weight": 349
+                  },
+                  {
+                    "from": 39.810717055349734,
+                    "to": 63.09573444801933,
+                    "weight": 1464
+                  },
+                  {
+                    "from": 63.09573444801933,
+                    "to": 100,
+                    "weight": 2863
+                  },
+                  {
+                    "from": 100,
+                    "to": 158.48931924611142,
+                    "weight": 7669
+                  },
+                  {
+                    "from": 158.48931924611142,
+                    "to": 251.18864315095823,
+                    "weight": 13305
+                  },
+                  {
+                    "from": 251.18864315095823,
+                    "to": 398.1071705534973,
+                    "weight": 7050
+                  },
+                  {
+                    "from": 398.1071705534973,
+                    "to": 630.9573444801937,
+                    "weight": 496
+                  },
+                  {
+                    "from": 630.9573444801937,
+                    "to": 1000,
+                    "weight": 91
+                  },
+                  {
+                    "from": 1000,
+                    "to": 1584.893192461114,
+                    "weight": 19
+                  },
+                  {
+                    "from": 1584.893192461114,
+                    "to": 2511.886431509582,
+                    "weight": 4
+                  },
+                  {
+                    "from": 2511.886431509582,
+                    "to": 3981.0717055349733,
+                    "weight": 1
+                  },
+                  {
+                    "from": 3981.0717055349733,
+                    "to": 6309.573444801937,
+                    "weight": 1
+                  },
+                  {
+                    "from": 6309.573444801937,
+                    "to": 10000,
+                    "weight": 0
+                  },
+                  {
+                    "from": 10000,
+                    "to": 15848.93192461114,
+                    "weight": 1
+                  }
+                ],
+                "collectionSpec": {
+                  "log": true,
+                  "binNumber": 0,
+                  "minBinWidth": 0.2,
+                  "multiplyWeightByKey": false
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

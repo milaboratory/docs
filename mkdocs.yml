@@ -123,7 +123,10 @@ nav:
         - 'SMARTer Mouse TCR a/b Profiling Kit': mixcr/guides/takara-mmu-tcr.md
         - 'Illumina Ampliseq TCR LR / iRepertoire' : mixcr/guides/iRepertoire.md
         - 'QIAseq Immune Repertoire TCR' : mixcr/guides/qiaseq-tcr.md
-        - 'Cellecta AIR':  mixcr/guides/cellecta-air-tcr-bcr.md
+        - 'Cellecta AIR RNA Human':  mixcr/guides/cellecta-air-tcr-bcr.md
+        - 'Cellecta AIR DNA Human':  mixcr/guides/cellecta-human-dna-xcr-umi-drivermap-air.md
+        - 'Cellecta AIR RNA Human Full-length':  mixcr/guides/cellecta-human-rna-xcr-full-length-umi-drivermap-air.md
+        - 'Cellecta AIR RNA Mouse':  mixcr/guides/cellecta-mouse-rna-xcr-umi-drivermap-air.md
         - 'AbHelix BCR': mixcr/guides/abhelix-bcr.md
         - 'BioMed2':  mixcr/guides/biomed2-bcr.md
         - 'NEBNext Immune Sequencing': mixcr/guides/nebnext-bcr.md

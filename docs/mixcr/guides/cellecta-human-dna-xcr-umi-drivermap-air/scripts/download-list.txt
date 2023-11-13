@@ -1,0 +1,4 @@
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR264/031/SRR26446931/SRR26446931_1.fastq.gz
+  out=raw/Sample1_R1.fastq.gz
+ftp://ftp.sra.ebi.ac.uk/vol1/fastq/SRR264/031/SRR26446931/SRR26446931_2.fastq.gz
+  out=raw/Sample1_R2.fastq.gz

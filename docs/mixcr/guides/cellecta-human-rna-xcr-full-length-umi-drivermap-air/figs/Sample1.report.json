@@ -1,0 +1,441 @@
+{
+  "align": {
+    "type": "alignerReport",
+    "commandLine": "align --report result/Sample1.align.report.txt --json-report result/Sample1.align.report.json --preset cellecta-human-rna-xcr-full-length-umi-drivermap-air --save-output-file-names result/Sample1.align.list raw/Sample1_{{R}}.fastq.gz result/Sample1.vdjca",
+    "inputFiles": [
+      "raw/Sample1_R1.fastq.gz",
+      "raw/Sample1_R2.fastq.gz"
+    ],
+    "outputFiles": [
+      "result/Sample1.vdjca"
+    ],
+    "version": "4.5.0-47-develop; built=Mon Oct 09 14:49:52 UTC 2023; rev=57293fb76d; lib=repseqio.v3.0.1",
+    "totalReadsProcessed": 10245134,
+    "aligned": 10060649,
+    "notAligned": 184485,
+    "notAlignedReasons": {
+      "NoHits": 10119,
+      "NoCDR3Parts": 0,
+      "NoVHits": 103,
+      "NoJHits": 168057,
+      "VAndJOnDifferentTargets": 6206,
+      "LowTotalScore": 0,
+      "NoBarcode": 0,
+      "SampleNotMatched": 0
+    },
+    "overlapped": 10164333,
+    "overlappedAligned": 10006900,
+    "overlappedNotAligned": 157433,
+    "alignmentAidedOverlaps": 12402,
+    "noCDR3PartsAlignments": 1409,
+    "partialAlignments": 46151,
+    "chimeras": 0,
+    "vChimeras": 6134,
+    "jChimeras": 402,
+    "pairedEndAlignmentConflicts": 7100,
+    "realignedWithForcedNonFloatingBound": 93203,
+    "realignedWithForcedNonFloatingRightBoundInLeftRead": 7473,
+    "realignedWithForcedNonFloatingLeftBoundInRightRead": 7473,
+    "chainUsage": {
+      "type": "chainUsage",
+      "chimeras": 0,
+      "total": 10060649,
+      "chains": {
+        "IGH": {
+          "total": 3024461,
+          "nonFunctional": 81025,
+          "isOOF": 19388,
+          "hasStops": 61637
+        },
+        "IGK": {
+          "total": 4136810,
+          "nonFunctional": 88684,
+          "isOOF": 69966,
+          "hasStops": 18718
+        },
+        "IGL": {
+          "total": 2899372,
+          "nonFunctional": 93710,
+          "isOOF": 73855,
+          "hasStops": 19855
+        },
+        "TRA": {
+          "total": 6,
+          "nonFunctional": 0,
+          "isOOF": 0,
+          "hasStops": 0
+        }
+      }
+    },
+    "trimmingReport": {
+      "total": 10245134,
+      "r1LeftTrimmedEvents": 1352,
+      "r1RightTrimmedEvents": 65,
+      "r2LeftTrimmedEvents": 26,
+      "r2RightTrimmedEvents": 37,
+      "r1LeftTrimmedNucleotides": 4202,
+      "r1RightTrimmedNucleotides": 2698,
+      "r2LeftTrimmedNucleotides": 88,
+      "r2RightTrimmedNucleotides": 37
+    },
+    "tagParsingReport": {
+      "total": 10245134,
+      "matched": 10245134,
+      "totalBitCost": 0,
+      "projections": {
+        "1,2": 10245134
+      },
+      "detailedReport": [
+        {
+          "nested": {
+            "1,2": {
+              "variantId": 0,
+              "nested": [
+                [
+                  {
+                    "positionDistributions": {
+                      "R1:Left": {
+                        "0": 10245134
+                      },
+                      "R1:Right": {
+                        "300": 5630386,
+                        "301": 4614748
+                      }
+                    },
+                    "lengthDistributions": {
+                      "R1": {
+                        "300": 5630386,
+                        "301": 4614748
+                      }
+                    },
+                    "costDistributions": {
+                      "0": 10245134
+                    },
+                    "variantDistribution": {
+                      "0": 10245134
+                    }
+                  }
+                ],
+                [
+                  {
+                    "positionDistributions": {
+                      "R2:Left": {
+                        "18": 10245134
+                      },
+                      "R2:Right": {
+                        "300": 5630386,
+                        "301": 4614748
+                      },
+                      "UMI:Left": {
+                        "0": 10245134
+                      },
+                      "UMI:Right": {
+                        "18": 10245134
+                      }
+                    },
+                    "lengthDistributions": {
+                      "R2": {
+                        "282": 5630386,
+                        "283": 4614748
+                      },
+                      "UMI": {
+                        "18": 10245134
+                      }
+                    },
+                    "costDistributions": {
+                      "0": 10245134
+                    },
+                    "variantDistribution": {
+                      "0": 10245134
+                    }
+                  }
+                ]
+              ],
+              "costDistributions": {
+                "0": 10245134
+              }
+            }
+          }
+        }
+      ]
+    },
+    "notMatchedByHeader": 0,
+    "transformerReports": [],
+    "coverage": {
+      "VDJRegion": 232913,
+      "CDR1_TO_FR4": 10016067,
+      "FR2_TO_FR4": 10020409,
+      "CDR2_TO_FR4": 10024215,
+      "FR3_TO_FR4": 10025041,
+      "CDR3": 10013089
+    }
+  },
+  "assemble": {
+    "type": "assemblerReport",
+    "commandLine": "assemble --report result/Sample1.assemble.report.txt --json-report result/Sample1.assemble.report.json result/Sample1.refined.vdjca result/Sample1.clns",
+    "inputFiles": [
+      "result/Sample1.refined.vdjca"
+    ],
+    "outputFiles": [
+      "result/Sample1.clns"
+    ],
+    "version": "4.5.0-47-develop; built=Mon Oct 09 14:49:52 UTC 2023; rev=57293fb76d; lib=repseqio.v3.0.1",
+    "preCloneAssemblerReport": {
+      "type": "preCloneAssemblerReport",
+      "inputGroups": 1054496,
+      "groupsWithNoAssemblingFeature": 389,
+      "inputAlignments": 9104180,
+      "inputAlignmentsWithAssemblingFeature": 9076982,
+      "corePreClonesDroppedByTagSuffix": 0,
+      "coreAlignmentsDroppedByTagSuffix": 0,
+      "preClones": 1067292,
+      "preClonesPerGroup": {
+        "0": 1261,
+        "1": 1038479,
+        "2": 14288,
+        "3": 79
+      },
+      "assemblingFeatureSequencesInZeroPreClones": 25617,
+      "coreAlignments": 8981075,
+      "tagConflicts": 14367,
+      "geneAndTagConflicts": 5156,
+      "geneConflicts": {
+        "Variable": 217,
+        "Joining": 4939
+      },
+      "discardedCoreAlignments": 95907,
+      "empiricallyAssignedAlignments": 15380,
+      "vjEmpiricallyAssignedAlignments": 0,
+      "tagEmpiricallyAssignedAlignments": 0,
+      "geneAndTagEmpiricallyAssignedAlignments": 15381,
+      "empiricalAssignmentConflicts": 1,
+      "ignoredAlignments": 0,
+      "unassignedAlignments": 104815
+    },
+    "totalReadsProcessed": 10245134,
+    "totalAlignmentsProcessed": 1067292,
+    "totalAlignedReadsProcessed": 8996455,
+    "initialClonesCreated": 371703,
+    "readsDroppedNoTargetSequence": 27198,
+    "readsDroppedTooShortClonalSequence": 0,
+    "readsDroppedLowQuality": 0,
+    "coreReads": 8758593,
+    "readsDroppedFailedMapping": 162760,
+    "lowQualityRescued": 26136,
+    "clonesClustered": 2714,
+    "readsClustered": 27851,
+    "clones": 358713,
+    "clonesDroppedAsLowQuality": 6858,
+    "clonesPreClustered": 3418,
+    "readsPreClustered": 47639,
+    "readsInClones": 8756878,
+    "readsInClonesBeforeClustering": 8784729,
+    "readsDroppedWithLowQualityClones": 48966,
+    "clonalChainUsage": {
+      "type": "chainUsage",
+      "chimeras": 0,
+      "total": 358713,
+      "chains": {
+        "IGH": {
+          "total": 175393,
+          "nonFunctional": 1709,
+          "isOOF": 1382,
+          "hasStops": 327
+        },
+        "IGK": {
+          "total": 101838,
+          "nonFunctional": 5746,
+          "isOOF": 5579,
+          "hasStops": 167
+        },
+        "IGL": {
+          "total": 81482,
+          "nonFunctional": 5906,
+          "isOOF": 5625,
+          "hasStops": 281
+        }
+      }
+    },
+    "clonesFilteredInPostFiltering": 0,
+    "readsFilteredInPostFiltering": 0,
+    "postFilteringReports": null,
+    "alignmentsFilteredByTagPrefix": 0
+  },
+  "refineTagsAndSort": {
+    "type": "refineTagsAndSort",
+    "commandLine": "refineTagsAndSort --report result/Sample1.refine.report.txt --json-report result/Sample1.refine.report.json result/Sample1.vdjca result/Sample1.refined.vdjca",
+    "inputFiles": [
+      "result/Sample1.vdjca"
+    ],
+    "outputFiles": [
+      "result/Sample1.refined.vdjca"
+    ],
+    "version": "4.5.0-47-develop; built=Mon Oct 09 14:49:52 UTC 2023; rev=57293fb76d; lib=repseqio.v3.0.1",
+    "correctionReport": {
+      "inputRecords": 10060190,
+      "outputRecords": 9104180,
+      "steps": [
+        {
+          "tagName": "UMI",
+          "inputGroups": 1,
+          "inputDiversity": 1911506,
+          "inputCount": 10060190,
+          "coreDiversity": 1911433,
+          "coreCount": 10060117,
+          "directlyCorrectedDiversity": 23288,
+          "directlyCorrectedCount": 23769,
+          "filteredDiversity": 63,
+          "filteredCount": 63,
+          "recursivelyCorrected": 43,
+          "diversityFilteredByWhitelist": 0,
+          "outputDiversity": 1888155,
+          "outputCount": 10060127
+        }
+      ],
+      "filterReport": {
+        "type": "filter_groups_report",
+        "groupingKeys": [
+          "allTags:Molecule"
+        ],
+        "numberOfGroups": 1888155,
+        "numberOfGroupsAccepted": 1054496,
+        "totalWeight": 10060127,
+        "totalWeightAccepted": 9104180,
+        "operatorReports": [
+          {
+            "operatorReport": {
+              "type": "multi_operator_hist_report",
+              "threshold": 3,
+              "nestedThresholds": [
+                3,
+                4
+              ]
+            },
+            "metricHists": [
+              {
+                "bins": [
+                  {
+                    "from": 1,
+                    "to": 1.5848931924611136,
+                    "weight": 711371
+                  },
+                  {
+                    "from": 1.5848931924611136,
+                    "to": 2.51188643150958,
+                    "weight": 122288
+                  },
+                  {
+                    "from": 2.51188643150958,
+                    "to": 3.981071705534973,
+                    "weight": 106156
+                  },
+                  {
+                    "from": 3.981071705534973,
+                    "to": 6.309573444801933,
+                    "weight": 323755
+                  },
+                  {
+                    "from": 6.309573444801933,
+                    "to": 10,
+                    "weight": 260392
+                  },
+                  {
+                    "from": 10,
+                    "to": 15.848931924611142,
+                    "weight": 270590
+                  },
+                  {
+                    "from": 15.848931924611142,
+                    "to": 25.11886431509581,
+                    "weight": 82683
+                  },
+                  {
+                    "from": 25.11886431509581,
+                    "to": 39.810717055349734,
+                    "weight": 10570
+                  },
+                  {
+                    "from": 39.810717055349734,
+                    "to": 63.09573444801933,
+                    "weight": 322
+                  },
+                  {
+                    "from": 63.09573444801933,
+                    "to": 100,
+                    "weight": 8
+                  },
+                  {
+                    "from": 100,
+                    "to": 158.48931924611142,
+                    "weight": 7
+                  },
+                  {
+                    "from": 158.48931924611142,
+                    "to": 251.18864315095823,
+                    "weight": 5
+                  },
+                  {
+                    "from": 251.18864315095823,
+                    "to": 398.1071705534973,
+                    "weight": 4
+                  },
+                  {
+                    "from": 398.1071705534973,
+                    "to": 630.9573444801937,
+                    "weight": 2
+                  },
+                  {
+                    "from": 630.9573444801937,
+                    "to": 1000,
+                    "weight": 0
+                  },
+                  {
+                    "from": 1000,
+                    "to": 1584.893192461114,
+                    "weight": 1
+                  },
+                  {
+                    "from": 1584.893192461114,
+                    "to": 2511.886431509582,
+                    "weight": 0
+                  },
+                  {
+                    "from": 2511.886431509582,
+                    "to": 3981.0717055349733,
+                    "weight": 0
+                  },
+                  {
+                    "from": 3981.0717055349733,
+                    "to": 6309.573444801937,
+                    "weight": 0
+                  },
+                  {
+                    "from": 6309.573444801937,
+                    "to": 10000,
+                    "weight": 0
+                  },
+                  {
+                    "from": 10000,
+                    "to": 15848.93192461114,
+                    "weight": 0
+                  },
+                  {
+                    "from": 15848.93192461114,
+                    "to": 25118.864315095823,
+                    "weight": 1
+                  }
+                ],
+                "collectionSpec": {
+                  "log": true,
+                  "binNumber": 0,
+                  "minBinWidth": 0.2,
+                  "multiplyWeightByKey": false
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

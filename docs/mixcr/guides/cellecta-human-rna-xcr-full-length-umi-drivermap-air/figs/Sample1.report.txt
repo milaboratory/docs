@@ -1,0 +1,152 @@
+====================== report: align ======================
+====================== report: align ======================
+Total sequencing reads: 10245134
+Successfully aligned reads: 10060649 (98.2%)
+Coverage (percent of successfully aligned):
+  VDJRegion: 2.32%
+  CDR1_TO_FR4: 99.56%
+  FR2_TO_FR4: 99.6%
+  CDR2_TO_FR4: 99.64%
+  FR3_TO_FR4: 99.65%
+  CDR3: 99.53%
+Alignment failed: no hits (not TCR/IG?): 10119 (0.1%)
+Alignment failed: absence of V hits: 103 (0%)
+Alignment failed: absence of J hits: 168057 (1.64%)
+Alignment failed: no target with both V and J alignments: 6206 (0.06%)
+Overlapped: 10164333 (99.21%)
+Overlapped and aligned: 10006900 (97.67%)
+Overlapped and not aligned: 157433 (1.54%)
+Alignment-aided overlaps, percent of overlapped and aligned: 12402 (0.12%)
+No CDR3 parts alignments, percent of successfully aligned: 1409 (0.01%)
+Partial aligned reads, percent of successfully aligned: 46151 (0.46%)
+V gene chimeras: 6134 (0.06%)
+J gene chimeras: 402 (0%)
+Paired-end alignment conflicts eliminated: 7100 (0.07%)
+Realigned with forced non-floating bound: 93203 (0.91%)
+Realigned with forced non-floating right bound in left read: 7473 (0.07%)
+Realigned with forced non-floating left bound in right read: 7473 (0.07%)
+IGH chains: 3024461 (30.06%)
+IGH non-functional: 81025 (2.68%)
+IGK chains: 4136810 (41.12%)
+IGK non-functional: 88684 (2.14%)
+IGL chains: 2899372 (28.82%)
+IGL non-functional: 93710 (3.23%)
+TRA chains: 6 (0%)
+TRA non-functional: 0 (0%)
+Trimming report:
+  R1 reads trimmed left: 1352 (0.01%)
+  R1 reads trimmed right: 65 (0%)
+  Average R1 nucleotides trimmed left: 4.101459287892184E-4
+  Average R1 nucleotides trimmed right: 2.6334453019355333E-4
+  R2 reads trimmed left: 26 (0%)
+  R2 reads trimmed right: 37 (0%)
+  Average R2 nucleotides trimmed left: 8.589443534852741E-6
+  Average R2 nucleotides trimmed right: 3.6114705771539935E-6
+Tag parsing report:
+  Total reads: 10245134
+  Matched reads: 10245134 (100%)
+  Projection +R1 +R2: 10245134 (100%)
+  For variant 0:
+    For projection +R1 +R2:
+      R1:Left position: 0
+      R1:Right position:
+        300: + 5630386 (54.96%) = 5630386 (54.96%)
+        301: + 4614748 (45.04%) = 10245134 (100%)
+      R2:Left position: 18
+      R2:Right position:
+        300: + 5630386 (54.96%) = 5630386 (54.96%)
+        301: + 4614748 (45.04%) = 10245134 (100%)
+      UMI:Left position: 0
+      Variants: 0
+      Cost: 0
+      R1 length:
+        300: + 5630386 (54.96%) = 5630386 (54.96%)
+        301: + 4614748 (45.04%) = 10245134 (100%)
+      R2 length:
+        282: + 5630386 (54.96%) = 5630386 (54.96%)
+        283: + 4614748 (45.04%) = 10245134 (100%)
+      UMI length: 18
+================ report: refineTagsAndSort ================
+================ report: refineTagsAndSort ================
+Time spent in correction: 0ns
+Number of input records: 10060190
+Number of output records: 9104180 (90.5%)
+UMI correction report:
+  UMI input diversity: 1911506
+  UMI output diversity: 1888155 (98.78%)
+  UMI input reads: 10060190
+  UMI output reads: 10060127 (100%)
+  UMI mean reads per tag: 5.26
+  UMI input core diversity: 1911433 (100%)
+  UMI input core reads: 10060117 (100%)
+  UMI directly corrected diversity: 23288 (1.22%)
+  UMI directly corrected reads: 23769 (0.24%)
+  UMI diversity filtered by tag quality: 63 (0%)
+  UMI reads filtered by tag quality: 63 (0%)
+  UMI diversity filtered by whitelist: 0 (0%)
+  UMI recursively corrected: 43
+Filter report:
+  Number of groups: 1888155
+  Number of groups accepted: 1054496 (55.85%)
+  Total records weight: 10060127
+  Records weight accepted: 9104180 (90.5%)
+  Operator #0:
+    Effective threshold: 3.0
+    Nested thresholds:
+      #0: 3
+      #1: 4
+===================== report: assemble =====================
+===================== report: assemble =====================
+Final clonotype count: 358713
+Reads used in clonotypes, percent of total: 8756878 (85.47%)
+Average number of reads per clonotype: 24.41
+Reads dropped due to the lack of a clone sequence, percent of total: 27198 (0.27%)
+Reads dropped due to a too short clonal sequence, percent of total: 0 (0%)
+Reads dropped due to low quality, percent of total: 0 (0%)
+Reads dropped due to failed mapping, percent of total: 162760 (1.59%)
+Reads dropped with low quality clones, percent of total: 48966 (0.48%)
+Aligned reads processed: 8996455
+Reads used in clonotypes before clustering, percent of total: 8784729 (85.75%)
+Number of reads used as a core, percent of used: 8758593 (99.7%)
+Mapped low quality reads, percent of used: 26136 (0.3%)
+Reads clustered in PCR error correction, percent of used: 27851 (0.32%)
+Reads pre-clustered due to the similar VJC-lists, percent of used: 47639 (0.54%)
+Clonotypes dropped as low quality: 6858
+Clonotypes eliminated by PCR error correction: 2714
+Clonotypes pre-clustered due to the similar VJC-lists: 3418
+Clones dropped in post filtering: 0 (0%)
+Reads dropped in post filtering: 0.0 (0%)
+Alignments filtered by tag prefix: 0 (0%)
+IGH chains: 175393 (48.9%)
+IGH non-functional: 1709 (0.97%)
+IGK chains: 101838 (28.39%)
+IGK non-functional: 5746 (5.64%)
+IGL chains: 81482 (22.72%)
+IGL non-functional: 5906 (7.25%)
+Pre-clone assembler report:
+  Number of input groups: 1054496
+  Number of input groups with no assembling feature: 389
+  Number of input alignments: 9104180
+  Number of alignments with assembling feature: 9076982 (99.7%)
+  Number of output pre-clones: 1067292
+  Number of pre-clonotypes per group:  
+    0: + 1261 (0.12%) = 1261 (0.12%)
+    1: + 1038479 (98.52%) = 1039740 (98.64%)
+    2: + 14288 (1.36%) = 1054028 (99.99%)
+    3: + 79 (0.01%) = 1054107 (100%)
+  Number of assembling feature sequences in groups with zero pre-clonotypes: 25617
+  Number of dropped pre-clones by tag suffix conflict: 0
+  Number of dropped alignments by tag suffix conflict: 0
+  Number of core alignments: 8981075 (98.65%)
+  Discarded core alignments: 95907 (1.07%)
+  Empirically assigned alignments: 15380 (0.17%)
+  Empirical assignment conflicts: 1 (0%)
+  Tag+VJ-gene empirically assigned alignments: 15381 (0.17%)
+  VJ-gene empirically assigned alignments: 0 (0%)
+  Tag empirically assigned alignments: 0 (0%)
+  Number of ambiguous groups: 14367
+  Number of ambiguous V-genes: 217
+  Number of ambiguous J-genes: 4939
+  Number of ambiguous tag+V/J-gene combinations: 5156
+  Ignored non-productive alignments: 0 (0%)
+  Unassigned alignments: 104815 (1.15%)
