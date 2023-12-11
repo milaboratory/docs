@@ -1,11 +1,11 @@
 # `mixcr findShmTrees`
 
-Reconstructs somatic hypermutations trees from cloneset(s).
+Reconstructs somatic hypermutations trees from cloneset(s). Reconstructs trees from bulk, single cell and combined bulk + single cell data.
 
 ![](pics/findShmTrees-light.svg#only-light)
 ![](pics/findShmTrees-dark.svg#only-dark)
 
-All inputs `.clns` files must be fully covered by the same feature, have the same library produced by [`findAlleles`](mixcr-findAlleles.md), the same scoring of V and J genes and the same features to align.
+All inputs `.clns` files must be fully covered by the same feature, have the same library produced by [`findAlleles`](mixcr-findAlleles.md).
 
 Briefly, lineage reconstruction algorithm groups clones with same V- and J- genes, applies initial clustering inside those groups to find clusters of clones sharing enough number of common mutations and not too distant NDN regions, refining clusters by attaching individual clones, followed by final trees reconstruction and recombination. All steps of the algorithm heavily rely on the alignments with reference segments, compared to many other algorithms for the task, which don't take into account structure of the underlying sequence, and "wild-type" states of the V and J regions, which are exactly known thanks to the allele reconstruction step.
 
