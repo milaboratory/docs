@@ -340,8 +340,11 @@ Parameters that control clustering procedure and determines the rules for the fr
 `-OcloneClusteringParameters.searchParameters=twoMismatchesOrIndels`
 : Parameters that control fuzzy match criteria between clones in adjacent layers. Available predefined values: `oneMismatch`, `oneIndel`, `oneMismatchOrIndel`, `twoMismatches`, `twoIndels`, `twoMismatchesOrIndels`,  ..., `fourMismatchesOrIndels`. By default, `twoMismatchesOrIndels` allows two mismatches or indels (not more than two errors of both types) between two adjacent clones (parent and direct child).
 
-`-OcloneClusteringParameters.clusteringFilter.specificMutationProbability=1E-3`
-: Probability of a single nucleotide mutation in clonal sequence which has non-hypermutation origin (i.e. PCR or sequencing error). This parameter controls relative counts between two clones in adjacent  layers: a smaller clone can be attached to a larger one if its count smaller than count of parent multiplied by `(clonalSequenceLength * specificMutationProbability) ^ numberOfMutations`
+`-OcloneClusteringParameters.clusteringFilter.backgroundSubstitutionRate=0.002` and `-OcloneClusteringParameters.clusteringFilter.backgroundIndelRate=0.0002`
+: These parameters set the error probability in case Phred quality is high. For example, if a `backgroundSubstitutionRate` is set to `0.001` and a Phred quality of a certain nucleotide is 20, which indicates the error probability of `0.01`, MiXCR will use `0.01`. If the Phred quality is 40 (error probability is `0.0001`, which is lower than the `backgroundSubstitutionRate`), MiXCR will use the `backgroundSubstitutionRate` and set the error probability to `0.002`. The higher the `backgroundSubstitutionRate` the more aggressive the correction will be.
+
+`-OcloneClusteringParameters.clusteringFilter.correctionPower=0.001`
+: Indicates the False Discovery Rate for the correction process, approximating the percentage of actual sequences that might be compromised during correction. The default value is 0.001.
 
 Usage example: change maximum allowed number of mutations:
 ```shell
@@ -355,4 +358,4 @@ Turn clustering off:
 
 ## Hardware recommendations
 
-Assembly step is memory consuming. Reading and decompression of `.vdjca` file is handled in parallel and highly efficient way. MiXCR needs amount of RAM sufficient to store clonotype table in memory. In an exterme case of one million of full-length UMI-assembled clonotypes, it is recommended to supply at least 32GB of RAM. Speed almost does not scale with the increase of CPU.
+Assembly step is memory consuming. Reading and decompression of `.vdjca` file is handled in parallel and highly efficient way. MiXCR needs amount of RAM sufficient to store clonotype table in memory. In an extreme case of one million of full-length UMI-assembled clonotypes, it is recommended to supply at least 32GB of RAM. Speed almost does not scale with the increase of CPU.

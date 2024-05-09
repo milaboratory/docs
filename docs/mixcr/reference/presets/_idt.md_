@@ -1,0 +1,52 @@
+### Integrated DNA Technologies
+
+#### Archer IMMUNOVerse™ TCR panel
+
+==`idt-human-rna-tcr-umi-archer`==
+·
+[:octicons-link-16: Link](https://www.idtdna.com/pages/products/next-generation-sequencing/archer-ngs-assay-solutions/immune-profiling-research/archer-immunoverse-tcr-panel)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/idt.yaml)
+
+The Archer Immunoverse-HS TCR protocol is intended for research applications in conjunction with Archer reagent kits and corresponding target-enrichment panels to produce high-complexity libraries for use with Illumina next- generation sequencing (NGS) platforms.
+
+By default the clones are assembled by `CDR3` region, if needed (and if the library covers a longer region) one can assemble clones by other arbitrary features by adding for example `--assemble-clonotypes-by VDJRegion`.
+
+
+![](pics/idt-human-rna-tcr-umi-archer-light.svg#only-light)
+![](pics/idt-human-rna-tcr-umi-archer-dark.svg#only-dark)
+
+
+Example:
+```shell
+mixcr analyze idt-human-rna-tcr-umi-archer \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```
+
+#### Archer IMMUNOVerse BCR panel
+
+==`idt-human-rna-bcr-umi-archer`==
+·
+[:octicons-link-16: Link](https://www.idtdna.com/pages/products/next-generation-sequencing/archer-ngs-assay-solutions/immune-profiling-research/archer-immunoverse-bcr-panel)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/idt.yaml)
+
+
+The Archer Immunoverse-HS BCR protocol is intended for research applications in conjunction with Archer reagent kits and corresponding target-enrichment panels to produce high-complexity libraries for use with Illumina next- generation sequencing (NGS) platforms.
+
+By default the clones are assembled by `VDJRegion` region. If a shorter sequencing was used (ex.150+150) or the input had a low quality (e.g., FFPE tissue) one can assemble clones by `CDR3` by adding the following parameter: `--assemble-clonotypes-by CDR3`.
+
+Mix-in option `--dont-split-clones-by C` may be used to not separate clones by isotypes.
+
+![](pics/idt-human-rna-bcr-umi-archer-light.svg#only-light)
+![](pics/idt-human-rna-bcr-umi-archer-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze idt-human-rna-bcr-umi-archer \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result 
+```

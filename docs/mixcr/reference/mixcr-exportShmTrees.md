@@ -646,9 +646,6 @@ for the full list and formatting)
 `-isotype [(primary|subclass|auto)]`
 : Export isotype for IGH chains if it's distinguishable. `primary` will resolve 'IgA', 'IgD', 'IgG', 'IgE', 'IgM'. `subtype` will try resolve isotypes like 'IgA1' or 'IgA2'. Default `auto` will automatically decide whether to resolve the primary or subtype isotype based on the level of detail distinguishable for each clone.
 
-`-topChains`
-: Top chains
-
 `-geneLabel <label>`
 : Export gene label (i.e. ReliableChain)
 

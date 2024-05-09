@@ -1,16 +1,14 @@
 # `mixcr findAlleles`
 
-Finds V- and J-gene allelic variants in a given sample(s). As result MiXCR creates a new [repseq.io](ref-repseqio-json-format.md) reference library and re-aligns clonotypes against it.
+By default, all build-it MiXCR reference libraries have a single *00 allele for each gene (e.g. IGHV7-4-1*00,  IGHV3-47*00
+etc.). Because it is quite complicated to distinguish a true allelic variant from sample preparation errors or hypermutations (for B cells),including those in hot spot positions, MiXCR uses a dedicated algorithm that looks at the presence of certain gene sequence across multiple different clones from the same organism to validate allelic variants with sufficient statistical significance. `mixcr findAlleles` finds V- and J-gene allelic variants in a given sample(s), creates a new [repseq.io](ref-repseqio-json-format.md) reference library and re-aligns clonotypes against it, inferring alleles in place of original *00. 
 
 ![](pics/findAlleles-light.svg#only-light)
 ![](pics/findAlleles-dark.svg#only-dark)
 
-Note that clontypes passed as input must be cut by and fully covered by the same [gene feature](mixcr-assemble.md#core-assembler-parameters). So, for example `.clns` files with [contigs](overview-analysis-overview.md#contig-assemblymixcr-assemblecontigsmd), must be assembled using [`assembleContigs`](mixcr-assembleContigs.md) with `--assemble-contigs-by` option.
+Clonotypes passed as input must be assembled by the same [gene feature](mixcr-assemble.md#core-assembler-parameters). So, for example `.clns` files with [contigs](overview-analysis-overview.md#contig-assemblymixcr-assemblecontigsmd), must be assembled using [`assembleContigs`](mixcr-assembleContigs.md) with `--assemble-contigs-by` option. All input '.clns' files must have been generated using the same initial reference library, with the same scoring of V and J genes and the same features to align.
 
-Also, all inputs must have the same align library, the same scoring of V and J genes and the same features to align.
-
-Allele inference algorithms applies different strategies to identify allelic variants with sufficient statistical significance. The algorithm for B-cells reliably discriminate between somatic hypermutations (including those in hot spot positions) and real allelic variants.
-
+Note, that allelic inference requires presence of a substantial amount of clones for a given V/J gene to return a statistically significant result. If the information from the data was not enough to determine an allele for a certain gene, this gene will retain original *00 allele number.
 
 ## Command line options
 
@@ -66,7 +64,7 @@ For `.fasta` library will be written in FASTA format with gene name and reliable
 : Overrides default build SHM parameter values
 
 `-r, --report <path>`
-: [Report](./report-findAlleles.md) file (human readable version, see `-j / --json-report` for machine readable report).
+: [Report](./report-findAlleles.md) file (human-readable version, see `-j / --json-report` for machine-readable report).
 
 `-j, --json-report <path>`
 : JSON formatted [report](./report-findAlleles.md) file.
@@ -82,6 +80,9 @@ For `.fasta` library will be written in FASTA format with gene name and reliable
 
 `-nw, --no-warnings`
 : Suppress all warning messages.
+
+`--dont-remove-unused-genes`
+: do not remove genes that were not found in the sample(s) from the new library.
 
 `--verbose`
 : Verbose messages.
@@ -116,43 +117,53 @@ mixcr findAlleles \
 Summary table produced with `--export-alleles-mutations` contain the following columns:
 
 `alleleName`
-: allele name in a resulting library; for novel allelic variants will contain count of mutations from known allele and number of mutations in CDR3
+: allele name in a resulting library; for novel allelic variants will contain count of mutations from known allele and number of mutations in CDR3. Some alleles will still have *00 due to the lack of data for statistical significant identification.
 
 `geneName`
 : gene name; the same for heterozygous
 
 `type`
-: V or J
+: `Variable` or `Joining` gene segment.
+
+`status`
+: `DE_NOVO` - new allelic variant aligned to the known one with mismatches
+  `FOUND_KNOWN_VARIANT` - known allele from the database
+  `ALIGNED_ON_KNOWN_VARIANT` - not enough info to search all present alleles. But the one found is a known variant from the library
+  `NOT_CHANGED_AFTER_SEARCH` - the allele was originally identified correctly
+  `COULD_NOT_BE_ALIGNED_ON_KNOWN_VARIANT` - the search was done, but there was not enough info to identify the allele correctly
+  `NO_CLONES_TO_SEARCH` - not enough clones to perform the search
+  `REMOVED_BECAUSE_NO_TOP_HITS_IN_RESULT_FILES` - there is no clone where this gene is the top hit
+  `REMOVED_BECAUSE_NOT_REPRESENTED_IN_SOURCE_FILES` - this gene was not present in the original data
 
 `enoughInfo`
-: Is there was enough info to infer an allele or it's absence.
+: `true` or `false` value states if there was enough info to infer an allele.
 
-`alleleMutationsReliableGeneFeatures`
+`reliableRegion`
 : gene features inside which allele was found (including CDR3 part that was used for search)
 
-`alleleMutationsReliableRanges`
-: ranges in genome of `alleleMutationsReliableGeneFeatures`
-
 `mutations`
-: allele mutations from germline
+: allele mutations from known other allelic variant
+
+`varianceOf`
+: refers to the identifier of a known allelic variant from which the current variant has mutated.
+
+`naivesCount`
+: count of clones with no hypermutations in V and J
+
+`lowerDiversityBound`
+: lower bound of diversity of clones. The number of combinations of a J for V gene( and V for gene) with different CDR3 length.
 
 `clonesCount`
 : clones count that was aligned to this allele
 
-`naivesCount`
-: count of clones with no mutations in V and J
-
-`lowerDiversityBound`
-: lower bound of diversity of clones
-
 `totalClonesCountForGene`
-: total clones count of this allele and its zygotes (the same `geneName`)
+: total clones count of this allele and its zygotes (the same `geneName`). Before realignment.
 
 `clonesCountWithNegativeScoreChange`
 : count of clones that align better on original library than on build one
 
 `filteredForAlleleSearchNaivesCount`
-: counts of clones with no mutations in V and J after `useClonesWithCountGreaterThen` filter
+: counts of clones with no mutations in V and J after `useClonesWithCountGreaterThen` filter.
 
 `filteredForAlleleSearchClonesCount`
 : counts of clones after `useClonesWithCountGreaterThen` filter
@@ -161,7 +172,7 @@ Summary table produced with `--export-alleles-mutations` contain the following c
 : count of clones that align better on original library than on build one after `useClonesWithCountGreaterThen` filter
 
 `scoreDelta`
-: stats of score change of clones (size, sum, min, max, avg, quadraticMean, stdDeviation)
+: stats of score change of clones after realignment (size, sum, min, max, avg, quadraticMean, stdDeviation)
 
 
 ## Allele inference algorithm parameters
@@ -206,3 +217,4 @@ Below one can find parameters of inference algorithms that may be tuned.
 
 `-OsearchMutationsInCDR3=null`
 : If searchMutationsInCDR3 set to null there will be no search for mutations in CDR3
+

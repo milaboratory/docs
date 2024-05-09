@@ -114,6 +114,43 @@ mixcr analyze takara-human-rna-tcr-smarter \
       input_R2.fastq.gz \
       result 
 ```
+
+#### SMARTer Human scTCR a/b Profiling Kit
+
+==`takara-sc-human-rna-tcr-smarter`==
+·
+[:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/human-repertoire/human-sctcr-profiling-kit-for-illumina-sequencing)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/takara.yaml)
+
+The SMARTer Human scTCR a/b Profiling Kit enables users to analyze T-cell receptor (TCR) diversity from single T cells that have been sorted into a 96-well plate. As the name suggests, the kit can be used to generate data for both alpha- and beta-chain diversity. The kit leverages SMART technology and employs a 5' RACE-like approach to capture complete V(D)J variable regions of TCR transcripts. Included in the kit are primers that incorporate Illumina-specific adaptor sequences during cDNA amplification. The protocol generates indexed libraries that are ready for sequencing on Illumina platforms.
+
+The preset is designed to work with raw non-demultiplexed data (do not run the Takara demultiplexing app). Each pair of FASTQ files holds sequences for up to 8 wells (A - H) and the `{{CELLPOOL:a}}` should be put in place of the part of your input filename that defines one of the 12 cell pools. See the example bellow.
+
+![](pics/takara-sc-human-rna-tcr-smarter-light.svg#only-light)
+![](pics/takara-sc-human-rna-tcr-smarter-dark.svg#only-dark)
+
+If we have files:
+
+```shell
+Sample-pool1_S1_L001_R1_001.fastq.gz.fastq
+Sample-pool1_S1_L001_R2_001.fastq.gz.fastq
+.
+.
+.
+Sample-pool12_S1_L001_R1_001.fastq.gz.fastq
+Sample-pool12_S1_L001_R2_001.fastq.gz.fastq
+```
+
+The command would be:
+
+```shell
+mixcr analyze takara-sc-human-rna-tcr-smarter \
+      Sample-{{CELLPOOL:a}}_S1_L001_R1_001.fastq.gz \
+      Sample-{{CELLPOOL:a}}_S1_L001_R2_001.fastq.gz \
+      result
+```
+
 #### SMART-Seq Mouse TCR (with UMIs)
 
 ==`takara-mouse-rna-tcr-umi-smarseq`==
@@ -133,6 +170,30 @@ By default the clones are assembled by `VDJRegion`, if needed (e.g. if the libra
 Example:
 ```shell
 mixcr analyze takara-mouse-rna-tcr-umi-smarseq \
+      input_R1.fastq.gz \
+      input_R2.fastq.gz \
+      result
+```
+
+#### SMART-Seq Mouse BCR (with UMIs)
+
+==`takara-mouse-rna-bcr-umi-smarseq`==
+·
+[:octicons-link-16: Link](https://www.takarabio.com/products/next-generation-sequencing/immune-profiling/mouse-repertoire/smart-seq-mouse-bcr-(with-umis))
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/takara.yaml)
+
+
+SMART-Seq Mouse BCR (with UMIs) enables detection of mouse BCR sequences from all BCR isotypes (IgA/D/E/G/M on heavy chain; IgK/L on light chain). Powered by SMART (Switching Mechanism at 5' end of RNA Template) technology, the kit combines NGS with a 5’-RACE like approach to capture the full-length V(D)J sequences of mouse B-cell receptors.
+
+By default the clones are assembled by `VDJRegion`, if needed (e.g. if the library has been sequenced with shorter read length e.g. 150+150) one can assemble clones by `CDR3` by adding `--assemble-clonotypes-by CDR3`.
+
+![](pics/takara-mouse-rna-bcr-umi-smarseq-light.svg#only-light)
+![](pics/takara-mouse-rna-bcr-umi-smarseq-dark.svg#only-dark)
+
+Example:
+```shell
+mixcr analyze takara-mouse-rna-bcr-umi-smarseq \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result

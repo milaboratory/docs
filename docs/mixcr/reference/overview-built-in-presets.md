@@ -32,8 +32,10 @@ Bellow you one can find a variety of presets for different types of input data a
 --8<-- "reference/presets/_thermofisher.md_"
 --8<-- "reference/presets/_invivoscribe.md_"
 --8<-- "reference/presets/_takara.md_"
+--8<-- "reference/presets/_idt.md_"
 --8<-- "reference/presets/_bd.md_"
 --8<-- "reference/presets/_nanopore.md_"
+--8<-- "reference/presets/_pacbio.md_"
 --8<-- "reference/presets/_parsebio.md_"
 --8<-- "reference/presets/_singleron.md_"
 

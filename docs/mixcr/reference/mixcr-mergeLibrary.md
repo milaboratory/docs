@@ -1,11 +1,11 @@
 # `mixcr mergeLibrary`
 
-Merge list of custom V/D/J/C gene segment libraries into one library. See [how to create custom library](../guides/create-custom-library.md).
+Merge a list of custom V/D/J/C gene segment libraries into one library. See [how to create custom library](../guides/create-custom-library.md).
 
 ## Command line options
 
 ```
-mixcr buildLibrary 
+mixcr mergeLibrary 
     [--force-overwrite]
     [--no-warnings]
     [--verbose]

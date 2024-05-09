@@ -69,6 +69,27 @@ For those who rely on other tools inside the image, beware, new build relies on 
 
 `mixcr` startup script is added to `PATH` environment variable, so even if you specify custom entrypoint, there is no need in using of full path to run `mixcr`.
 
+## Using external libraries with docker
+
+To use an external library, place the `.json(.gz)` file in the same directory that you mount to `/work` inside Docker. Then use the `--library` parameter with the MiXCR command. In the example below, `/path/to/put/results` contains the `phocoena-IGH.json.gz` library file.
+
+```shell
+docker run --rm \
+ -e MI_LICENSE="...license-token..." \
+ -v /path/to/raw/data:/raw:ro \
+ -v /path/to/put/results:/work \
+ghcr.io/milaboratory/mixcr/mixcr:latest \
+mixcr analyze generic-amplicon \
+    --library phocoena-IGH \
+    --species phocoena \
+    --rna \
+    --rigid-left-alignment-boundary \
+    --floating-right-alignment-boundary C \
+    /raw/input_R1.fastq.gz \
+    /raw/input_R2.fastq.gz \
+    output
+```
+
 ## License notice for IMGT images
 
 Images with IMGT reference library contain data imported from IMGT and is subject to terms of use listed on http://www.imgt.org site.

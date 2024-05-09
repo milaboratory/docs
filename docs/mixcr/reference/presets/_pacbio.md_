@@ -1,0 +1,32 @@
+### PacBio
+
+#### Full-length RNA-seq
+
+==`generic-pacbio`==
+·
+==`generic-pacbio-with-umi`==
+·
+[:octicons-link-16: Link](https://www.pacb.com/technology/hifi-sequencing/)
+·
+[:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/pacbio.yaml)
+
+These presets designed to handle long reads RNA-seq data obtained with PacBio sequencer.
+
+![](pics/pacbio-light.svg#only-light)
+![](pics/pacbio-dark.svg#only-dark)
+
+The `--species` option is required. `generic-pacbio-with-umi` preset requires `--tag-pattern` with UMI.
+
+Example:
+```shell
+mixcr analyze generic-pacbio \
+     --species hsa \
+     sample.fastq.gz \
+     sample_result
+
+mixcr analyze generic-pacbio-with-umi \
+     --species hsa \
+     --tag-pattern "^(UMI:N{12})(R1:*)" \
+     sample.fastq.gz \
+     sample_result
+```
