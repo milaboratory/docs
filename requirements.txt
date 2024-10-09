@@ -1,5 +1,5 @@
 mkdocs == 1.4.1
-markdown-katex == 202406.1035
+markdown-katex == 202112.1034
 mkdocs-material == 8.3.9
 mkdocs-git-revision-date-plugin == 0.3.2
 mkdocs-minify-plugin == 0.5.0
