@@ -10,3 +10,4 @@ plantuml-markdown == 3.7.3
 mkdocs-glightbox == 0.3.0
 mkdocs-table-reader-plugin == 1.1.0
 pandas == 1.5.0
+numpy == 1.25.2
