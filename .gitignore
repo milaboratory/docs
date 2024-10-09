@@ -2,4 +2,4 @@ site/
 *.iml
 .idea
 /.idea/
-
+venv
