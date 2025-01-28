@@ -137,6 +137,7 @@ nav:
         - 'RNA-Seq data' : mixcr/guides/rnaseq.md
         - 'Immunoglobulin lineage trees reconstruction': mixcr/guides/ig-trees-reconstruction.md
       - 'Special guides':
+        - 'Comparative Benchmarking of MiXCR and other VDJ analysis tools': mixcr/guides/mixcr-benchmarking.md
         - 'Custom reference library': mixcr/guides/create-custom-library.md
         - 'Using IMGT library': mixcr/guides/external-libraries.md
         - 'B cell lineage tracing': mixcr/guides/b-cell-lineages-webinar.md
