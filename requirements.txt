@@ -1,4 +1,4 @@
-mkdocs == 1.4.3
+mkdocs == 1.5.3
 markdown-katex == 202112.1034
 mkdocs-material == 9.4
 mkdocs-git-revision-date-plugin == 0.3.2
