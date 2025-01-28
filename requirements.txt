@@ -5,7 +5,7 @@ mkdocs-git-revision-date-plugin == 0.3.2
 mkdocs-minify-plugin == 0.5.0
 mkdocs-git-revision-date-localized-plugin == 1.1.0
 mkdocs-git-authors-plugin == 0.6.4
-pymdown-extensions == 9.9
+pymdown-extensions == 10.2
 plantuml-markdown == 3.7.3
 mkdocs-glightbox == 0.3.0
 mkdocs-table-reader-plugin == 1.1.0
