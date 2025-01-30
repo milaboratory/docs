@@ -402,6 +402,12 @@ svg.magnify {
         transition-delay: 0s;
         width: 17.1rem;
     }
+
+    /* Temporary fix for mkdocs 1.5.3, remove once fixed */
+    .md-nav--secondary .md-nav__title {
+        background: transparent;
+        box-shadow: none;
+    }
 }
 
 .md-typeset summary:after {
