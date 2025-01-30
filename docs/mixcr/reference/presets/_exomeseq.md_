@@ -3,15 +3,18 @@
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/exom.yaml)
 
-Non-enriched fragmented (shotgun) Exome-Seq data. By default MiXCR runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J receptor rearrangement sequence.
+Non-enriched fragmented (shotgun) Exome-Seq data.
 
-The `--species` option is required.
+The `--species` and `--assemble-contigs-by` [gene feature](ref-gene-features.md) (or `--assemble-longest-contigs`) parameters are required.
 
 Example:
 ```shell
 mixcr analyze exome-seq \
     --species hsa \
+    --assemble-longest-contigs \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
 ```
+
+With `--assemble-longest-contigs` MiXCR will assemble the longest possible sequence for each clone. To only return the clones that cover a specific feature (ex. `VDJRegion`) instead of `--assemble-longest-contigs` use `--assemble-contigs-by VDJRegion`.

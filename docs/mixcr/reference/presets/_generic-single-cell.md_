@@ -14,7 +14,8 @@ These presets are appropriate for targeted low throughput amplicon single-cell p
 : :fontawesome-solid-puzzle-piece: Species;
 : :fontawesome-solid-puzzle-piece: Material type;
 : :fontawesome-solid-puzzle-piece: Left alignment boundary (5'-end);
-: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end).
+: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end);
+: :fontawesome-solid-puzzle-piece: Assembling feature.
 
 For these presets, the CELL barcode must be defined either through --tag-pattern (if the CELL barcode is embedded within the sequence) or using the sample name if each cell (well) corresponds to a separate pair of FASTQ files.
 
@@ -25,6 +26,7 @@ mixcr analyze generic-lt-single-cell-amplicon \
     --rigid-left-alignment-boundary \
     --floating-right-alignment-boundary C \
     --tag-pattern "^(R1:*) \ ^(CELL:N{8})GTAC(R2:*)"\
+    --assemble-clonotypes-by CDR3 \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
@@ -35,6 +37,7 @@ mixcr analyze generic-lt-single-cell-amplicon-with-umi \
     --rigid-left-alignment-boundary \
     --floating-right-alignment-boundary C \
     --tag-pattern "^NN(CELL3PLATE:N{5})ga(CELL1ROW:N{5})(R1:*) \ ^NN(CELL2COLUMN:N{5})(UMI:N{14})(R2:*)"\
+    --assemble-clonotypes-by CDR3 \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
@@ -57,6 +60,7 @@ mixcr analyze generic-lt-single-cell-amplicon \
     --rna \
     --rigid-left-alignment-boundary \
     --floating-right-alignment-boundary C \
+    --assemble-clonotypes-by CDR3 \
       input_sample1_{CELL:a}_R1.fastq.gz \
       input_sample1_{CELL:a}_R2.fastq.gz \
       result
@@ -78,7 +82,8 @@ The following [mix-in options](overview-mixins-list.md) are used:
 `--floating-right-alignment-boundary C`
 : use local _right alignment boundary_ on C-segment as C-primers are used
 
-By default, clones are assembled by CDR3. However, if necessary, this behavior can be changed by adding --assemble-clonotypes-by VDJRegion if the longer receptor part is covered by the reads.
+`--assemble-clonotypes-by CDR3`
+: assemble clones by the CDR3 sequence. For full length clonotypes use `VDJRegion`. [Other features](ref-gene-features.md) are also possible.
 
 #### Filters
 By default, each single-cell preset includes a series of filters that are consecutively applied to the data.
@@ -104,7 +109,7 @@ By default, each single-cell preset includes a series of filters that are consec
 
 The preset is suitable for low throughput shotgun (fragmented) single-cell protocols (e.g. plate-based single-cell rna-seq workflows) with or without molecular identifiers (UMI).
 
-The `--species` option is required.
+The `--species` and `--assemble-contigs-by` [gene feature](ref-gene-features.md) (or `--assemble-longest-contigs`) parameters are required.
 
 For this preset `CELL` barcode has to be set either through `--tag-pattern` if CELL barcode is present in the sequence or with the sample name if for each cell (well) one has a separate pair of FASTQ files. See examples below:
 
@@ -112,6 +117,7 @@ For this preset `CELL` barcode has to be set either through `--tag-pattern` if C
 mixcr analyze generic-lt-single-cell-fragmented \
     --species mmu \
     --tag-pattern "^(R1:*) \ ^(CELL:N{8})GTAC(R2:*)"\
+    --assemble-longest-contigs \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
@@ -119,6 +125,7 @@ mixcr analyze generic-lt-single-cell-fragmented \
 mixcr analyze generic-lt-single-cell-fragmented-with-umi \
     --species mmu \
     --tag-pattern "^NN(CELL3PLATE:N{5})ga(CELL1ROW:N{5})(R1:*) \ ^NN(CELL2COLUMN:N{5})(UMI:N{14})(R2:*)" \
+    --assemble-longest-contigs \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
@@ -151,7 +158,7 @@ The following [mix-in options](overview-mixins-list.md) are used:
 `--species mmu`
 : specify _Mus Musculus_ species
 
-By default the clones are first assembled by `CDR3` and then extended to the longest possible contig with [mixcr assembleContigs](mixcr-assembleContigs.md).
+With `--assemble-longest-contigs` MiXCR will assemble the longest possible sequence for each clone. To only return the clones that cover a specific feature (ex. `VDJRegion`) instead of `--assemble-longest-contigs` use `--assemble-contigs-by VDJRegion`.
 
 #### Filters
 By default each single-cell preset includes a set of filters that are applied to the data.
@@ -182,7 +189,8 @@ The preset is suitable for targeted high throughput amplicon single-cell protoco
 : :fontawesome-solid-puzzle-piece: Species;
 : :fontawesome-solid-puzzle-piece: Material type;
 : :fontawesome-solid-puzzle-piece: Left alignment boundary (5'-end);
-: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end).
+: :fontawesome-solid-puzzle-piece: Right alignment boundary (3'-end);
+: :fontawesome-solid-puzzle-piece: Assembling feature.
 
 For this preset `CELL` barcode has to be set through `--tag-pattern`.
 
@@ -194,7 +202,8 @@ mixcr analyze generic-ht-single-cell-amplicon \
     --rna \
     --rigid-left-alignment-boundary \
     --floating-right-alignment-boundary C \
-    --tag-pattern "^(R1:*) \ ^(CELL:N{8})GTAC(R2:*)"\
+    --tag-pattern "^(R1:*) \ ^(CELL:N{8})GTAC(R2:*)" \
+    --assemble-clonotypes-by CDR3 \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
@@ -204,7 +213,8 @@ mixcr analyze generic-ht-single-cell-amplicon-with-umi \
     --rna \
     --rigid-left-alignment-boundary \
     --floating-right-alignment-boundary C \
-    --tag-pattern "^(R1:*) \ ^(CELL:N{8})(UMI:N{14})(R2:*)"\
+    --tag-pattern "^(R1:*) \ ^(CELL:N{8})(UMI:N{14})(R2:*)" \
+    --assemble-clonotypes-by CDR3 \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
@@ -227,7 +237,8 @@ The following [mix-in options](overview-mixins-list.md) are used:
 `--floating-right-alignment-boundary C`
 : use local _right alignment boundary_ on C-segment as C-primers are used
 
-By default the clones are assembled by `CDR3`, if needed one can change this behavior by adding `--assemble-clonotypes-by VDJRegion`, if the longer receptor part is covered by the reads.
+`--assemble-clonotypes-by CDR3`
+: assemble clones by the CDR3 sequence. For full length clonotypes use `VDJRegion`. [Other features](ref-gene-features.md) are also possible.
 
 #### Filters
 By default each single-cell preset includes a set of filters that are applied to the data.
@@ -259,7 +270,7 @@ By default each single-cell preset includes a set of filters that are applied to
 
 The preset is suitable for high throughput (thousands of cells and more, not plate based) shotgun (fragmented) single-cell protocols (e.g. 10x like protocols which include fragmentation, random primer etc.) with or without molecular identifiers (UMI).
 
-The `--species` option is required.
+The `--species` and `--assemble-contigs-by` [gene feature](ref-gene-features.md) (or `--assemble-longest-contigs`) parameters are required.
 
 For this preset `CELL` barcode has to be with `--tag-pattern`
 
@@ -268,14 +279,16 @@ See examples below:
 ```shell
 mixcr analyze generic-ht-single-cell-fragmented \
     --species mmu \
-    --tag-pattern "^(R1:*) \ ^(CELL:N{8})(R2:*)"\
+    --tag-pattern "^(R1:*) \ ^(CELL:N{8})(R2:*)" \
+    --assemble-longest-contigs \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
 
 mixcr analyze generic-ht-single-cell-fragmented-with-umi \
     --species mmu \
-    --tag-pattern "^(CELL:N{16})(UMI:N{10})\^(R2:*)"\
+    --tag-pattern "^(CELL:N{16})(UMI:N{10})\^(R2:*)" \
+    --assemble-longest-contigs \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
@@ -289,7 +302,7 @@ The following [mix-in options](overview-mixins-list.md) are used:
 `--species mmu`
 : specify _Mus Musculus_ species
 
-By default the clones are first assembled by `CDR3` and then extended to the longest possible contig with [mixcr assembleContigs](mixcr-assembleContigs.md).
+With `--assemble-longest-contigs` MiXCR will assemble the longest possible sequence for each clone. To only return the clones that cover a specific feature (ex. `VDJRegion`) instead of `--assemble-longest-contigs` use `--assemble-contigs-by VDJRegion`.
 
 #### Filters
 By default each single-cell preset includes a set of filters that are applied to the data.

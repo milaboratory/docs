@@ -7,7 +7,8 @@ This document benchmarks MiXCR, Immcantation and TRUST4, well known tools for pr
 ## Functionalities comparison
 In this section, we explore the specific features and capabilities of each software in our benchmarking study. The table below offers a snapshot of how MiXCR compares to other VDJ data processing tools.
 
-![](../guides/benchmarking/figs/comparison-table-light.svg)
+![](../guides/benchmarking/figs/comparison-table-light.svg#only-light)
+![](../guides/benchmarking/figs/comparison-table-dark.svg#only-dark)
 
 MiXCR offers the most comprehensive set of functionalities in a convenient single tool, including single cell and RNA-seq analysis capabilities. MiXCR also supports a broad range of species with its unique built-in reference, which is continuously updated. Additionally, MiXCR is compatible with a wide range of technologies. It includes optimized presets for numerous public protocols and commercially available bulk TCR/BCR-seq kits. Regarding single-cell sequencing, it can be used with broadly used technologies such as 10x Genomics, Parse Biosciences, BD Rhapsody.
 
@@ -17,8 +18,10 @@ Preprocessing and downstream analysis of raw VDJ data can be time consuming, esp
 
 In all tested datasets, MiXCR was the fastests performer by far, even up to six times faster in some cases (Figure 1).
 
-![](../guides/benchmarking/figs/fig1A-light.svg)
-![](../guides/benchmarking/figs/fig1A-light.svg)
+![](../guides/benchmarking/figs/fig1A-light.svg#only-light)
+![](../guides/benchmarking/figs/fig1A-dark.svg#only-dark)
+![](../guides/benchmarking/figs/fig1B-light.svg#only-light)
+![](../guides/benchmarking/figs/fig1B-dark.svg#only-dark)
 <br>**Figure 1:** The barplots illustrate A) the execution times and B) the processing speed of MiXCR, Immcantation (implemented with Airrflow), and TRUST4 when analyzing standard bulk TCR sequencing data with UMIs. The tools were tested on datasets of varying sizes, containing 1 million, 10 million, and 20 million reads. Data obtained from computations were performed on a server with 24 CPU cores and 128 GB of RAM.
 
 Importantly, the speed difference between the compared tools is considerable, especially in the largest dataset containing 20 million reads. This highlights the amount of time that can be saved using MiXCR.
@@ -29,14 +32,16 @@ To assess the accuracy of the benchmarked tools, we evaluated the VDJ sequences 
 
 Results of this comparison are shown in Figure 2. From the initial data point in all three plots, where the dataset contains no errors, MiXCR demonstrates greater sensitivity than Immcantation and TRUST4 under baseline conditions. Importantly, this trend persists as errors are introduced into the data, with MiXCR consistently outperforming the other two tools.
 
-![](../guides/benchmarking/figs/fig2-light.svg)
+![](../guides/benchmarking/figs/fig2-light.svg#only-light)
+![](../guides/benchmarking/figs/fig2-dark.svg#only-dark)
 <br>**Figure 2:** The boxplots illustrate the sensitivity of MiXCR, Immcantation, and TRUST4 on simulated data with UMIs. Sensitivity was determined by calculating exact VDJ sequence matches to the true repertoires.
 
 The ability of MiXCR to effectively handle sequencing errors is crucial when working with biological data, where errors are commonly encountered. The ability to manage these errors can significantly influence the outcomes of a study, affecting both the identification of crucial clones and the accurate assessment of clonal diversity.
 
 To further explore performance differences, we conducted an analysis of hybridoma datasets. In this analysis, we expect to detect only a small number of clones, indicative of the monoclonal nature of hybridoma cell lines, with each line originating from a single B cell clone. While generally stable, these original clones may undergo limited somatic hypermutations, potentially introducing slight increases in diversity.
 
-![](../guides/benchmarking/figs/fig3-light.svg)
+![](../guides/benchmarking/figs/fig3-light.svg#only-light)
+![](../guides/benchmarking/figs/fig3-dark.svg#only-dark)
 <br>**Figure 3:** The bar plot illustrates the number of clones identified from sequencing data across seven different cell lines using MiXCR, TRUST4, and Immcantation tools. Please note the scale of the y-axis is in square root to ensure visibility of the MiXCR bar. 
 
 As expected given the monoclonal nature of the datasets, MiXCR detected a small number of clones (Figure 3). In contrast, TRUST4 identified approximately 20 times more clones than MiXCR, while Immcantation detected between 100 and 200 times more clones. This disparity illustrates how reduced accuracy can result in a significant number of false positives, thereby affecting the biological conclusions drawn from the data.

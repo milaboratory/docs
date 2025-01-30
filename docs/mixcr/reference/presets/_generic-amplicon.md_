@@ -21,6 +21,7 @@ mixcr analyze generic-amplicon \
     --rna \
     --rigid-left-alignment-boundary \
     --floating-right-alignment-boundary C \
+    --assemble-clonotypes-by CDR3 \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
@@ -39,7 +40,8 @@ The following [mix-in options](overview-mixins-list.md) are used:
 `--floating-right-alignment-boundary C`
 : use local _right alignment boundary_ on C-segment as C-primers are used
 
-By default the clones are assembled by `CDR3`, if needed one can change this behavior by adding `--assemble-clonotypes-by VDJRegion`, if the longer receptor part is covered by the reads.
+`--assemble-clonotypes-by CDR3`
+: assemble clones by the CDR3 sequence. For full length clonotypes use `VDJRegion`. [Other features](ref-gene-features.md) are also possible.
 
 
 ### Generic amplicon with UMI barcodes
@@ -67,6 +69,7 @@ mixcr analyze generic-amplicon-with-umi \
     --tag-pattern "^(R1:*) \ ^(UMI:N{12})GTAC(R2:*)" \
     --rigid-left-alignment-boundary \
     --floating-right-alignment-boundary C \
+    --assemble-clonotypes-by CDR3 \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
@@ -88,7 +91,8 @@ The following [mix-in options](overview-mixins-list.md) are used:
 `--floating-right-alignment-boundary C`
 : use local _right alignment boundary_ on C-segment as C-primers are used
 
-By default the clones are assembled by `CDR3`, if needed one can change this behavior by adding `--assemble-clonotypes-by VDJRegion`, if the longer receptor part is covered by the reads.
+`--assemble-clonotypes-by CDR3`
+: assemble clones by the CDR3 sequence. For full length clonotypes use `VDJRegion`. [Other features](ref-gene-features.md) are also possible.
 
 
 

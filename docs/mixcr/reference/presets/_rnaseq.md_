@@ -5,18 +5,21 @@
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/rnaseq.yaml)
 
-Non-enriched fragmented (shotgun) RNA-Seq data. By default MiXCR runs [consensus contig assembly](mixcr-assembleContigs.md) to reconstruct all available parts of V-D-J-C receptor rearrangement sequence.
+Non-enriched fragmented (shotgun) RNA-Seq data.
 
 ![](pics/rnaseq-structure-light.svg#only-light)
 ![](pics/rnaseq-structure-dark.svg#only-dark)
 
-The `--species` option is required.
+The `--species` and `--assemble-contigs-by` [gene feature](ref-gene-features.md) (or `--assemble-longest-contigs`) parameters are required.
 
 Example:
 ```shell
 mixcr analyze rna-seq \
     --species hsa \
+    --assemble-longest-contigs \
       input_R1.fastq.gz \
       input_R2.fastq.gz \
       result
 ```
+
+With `--assemble-longest-contigs` MiXCR will assemble the longest possible sequence for each clone. To only return the clones that cover a specific feature (ex. `VDJRegion`) instead of `--assemble-longest-contigs` use `--assemble-contigs-by VDJRegion`.
