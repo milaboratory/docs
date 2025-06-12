@@ -2,6 +2,9 @@
 #### DriverMap Adaptive Immune Receptor (AIR) TCR-BCR Human RNA Profiling
 
 ==`cellecta-human-rna-xcr-umi-drivermap-air`==
+
+For V2 of the kit use:
+==`cellecta-human-rna-xcr-mivbc-drivermap-air-v2`==
 ·
 [:octicons-link-16: Link](https://cellecta.com/collections/drivermap-adaptive-immune-receptor-air-profiling/products/drivermap%E2%84%A2-air-tcr-bcr-profiling-kit-human-rna-24-and-96-rxn)
 ·
@@ -23,6 +26,9 @@ mixcr analyze cellecta-human-rna-xcr-umi-drivermap-air \
 #### DriverMap Adaptive Immune Receptor (AIR) TCR-BCR Human DNA Profiling
 
 ==`cellecta-human-dna-xcr-umi-drivermap-air`==
+
+For V2 of the kit use:
+==`cellecta-human-dna-xcr-mivbc-drivermap-air-v2`==
 ·
 [:octicons-link-16: Link](https://cellecta.com/collections/drivermap-adaptive-immune-receptor-air-profiling/products/drivermap%E2%84%A2-air-tcr-bcr-profiling-kit-human-dna?variant=43646578950402)
 ·
@@ -44,6 +50,9 @@ mixcr analyze cellecta-human-dna-xcr-umi-drivermap-air \
 #### DriverMap Adaptive Immune Receptor (AIR) TCR-BCR Full Length Human RNA Profiling
 
 ==`cellecta-human-rna-xcr-full-length-umi-drivermap-air`==
+
+For V2 of the kit use:
+==`cellecta-human-rna-xcr-full-length-mivbc-drivermap-air-v2`==
 ·
 [:octicons-link-16: Link](https://cellecta.com/collections/drivermap-adaptive-immune-receptor-air-profiling)
 ·
