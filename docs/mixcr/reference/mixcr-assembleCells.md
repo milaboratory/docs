@@ -1,10 +1,10 @@
-# `mixcr groupClones`
+# `mixcr assembleCells`
 
 Groups clones in .clna/.clns files by Cell tags. Grouped clones can be exported using [`mixcr exportCloneGroups`](./mixcr-export.md#clone-groups-by-cell). Each group represents a reliable set of clones (chains) present in all cells within the group. Some clones cannot be assigned to any group and will be labeled as `undefined`. Additionally, some clones may be labeled as `contamination` if they are evenly spread across multiple different cell groups. See the detailed explanation below.
 
 
 ```
-mixcr groupClones 
+mixcr assembleCells 
     [-O <key=value>]
     [--report <path>] 
     [--json-report <path>] 

@@ -147,7 +147,7 @@ mixcr exportCloneGroups
     [table.tsv]
 ```
 
-Exports information about clonotypes combined by Cell tag. Input .clns/.clna files have to be grouped with [`mixcr groupClones`](./mixcr-groupClones.md).
+Exports information about clonotypes combined by Cell tag. Input .clns/.clna files have to be grouped with [`mixcr assembleCells`](./mixcr-assembleCells.md).
 
 Command line options:
 
