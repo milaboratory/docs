@@ -90,7 +90,7 @@ extra:
   generator: false
   analytics:
     provider: google
-    property: G-2N4Z95ZG08
+    property: G-7K1RPNHREB
 
 extra_css:
   - css/extra.css
