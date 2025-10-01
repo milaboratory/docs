@@ -9,6 +9,10 @@ The latest development pre-builds can be downloaded from:
 : [https://link.milaboratory.com/software/mixcr/mixcr-develop.zip](https://link.milaboratory.com/software/mixcr/mixcr-develop.zip)
 
 
+If you’re interested in MiXCR’s capabilities without coding, check out [Platforma](https://platforma.bio?utm_source=MiXCR&utm_medium=website&utm_campaign=referral_MiXCR_installation&utm_id=MiXCR), our no-code bioinformatics platform for NGS data.
+
+
+
 ## Linux / MacOS
 
 ### Manual installation
