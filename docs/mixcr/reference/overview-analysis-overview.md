@@ -35,6 +35,10 @@ To systematize the approach of running workflows for a wide diversity of protoco
 
 A full list of available presets [can be found here](overview-built-in-presets.md). A powerful [file name expansion](ref-input-file-name-expansion.md) functionality allows to take and process a batch of raw sequencing files at once on the fly and optionally assign molecular, cell and sample barcodes extracted from the file names. [Sample tables](ref-samples-table.md) allow to analyze several patient samples at once using sample barcodes that may be picked up from all possible sources.
 
+## Platforma - run MiXCR without coding
+
+If you’re interested in MiXCR’s capabilities without coding, check out [Platforma](https://platforma.bio?utm_source=MiXCR&utm_medium=website&utm_campaign=referral_MiXCR_analysis&utm_id=MiXCR), our no-code bioinformatics platform for NGS data. On Platforma, you can directly import pre-processed data from MiXCR, and run powerful downstream functionalities like clonotyping, sequence liability prediction, differential expression, and more.
+
 Below we give a high-level overview of MiXCR actions which constitute most of the data analysis pipelines.
 
 ## Upstream analysis steps
