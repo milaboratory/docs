@@ -60,6 +60,5 @@ The downstream analysis provided by MiXCR includes:
  
 Check out more in our [reference documentation](reference/overview-analysis-overview.md) and tutorial guides. 
 
-
-
+We also launched [Platforma, a no-code bioinformatics platform](https://platforma.bio?utm_source=MiXCR&utm_medium=website&utm_campaign=referral_MiXCR_website&utm_id=MiXCR) for powerful data analysis and visualization. You can directly run MiXCR on Platforma plus brand new downstream functionalities like clonotype clustering and repertoire diversity without the command line. 
 
