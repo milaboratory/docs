@@ -2,9 +2,9 @@
 
 To run MiXCR one need a license file. MiXCR is free for academic users with no commercial funding. We are committed to support academic community and provide our software free of charge for scientists doing non-profit research.
 
-Academic users can quickly get a license at [https://licensing.milaboratories.com](https://licensing.milaboratories.com).
+Academic users can quickly get a license at [https://platforma.bio/getlicense](https://platforma.bio/getlicense).
 
-Commercial trial license may be requested at [https://licensing.milaboratories.com](https://licensing.milaboratories.com) or by email to [licensing@milaboratories.com](mailto:licensing@milaboratories.com).
+Commercial trial license may be requested at [https://platforma.bio/getlicense](https://platforma.bio/getlicense) or by email to [licensing@milaboratories.com](mailto:licensing@milaboratories.com).
 
 
 The easiest way to activate the license is to run `activate-license` command and paste the content of the license key therein:
