@@ -134,7 +134,7 @@ MiTool allows to extract multiple number of groups and assigns them to the read 
 Group is defined inside round brackets `()` in the following manner:
 
 ```
-(GROUM_NAME:pattern)
+(GROUP_NAME:pattern)
 
 examples:
 (UMI:NNNNANNNNNANNNN)
