@@ -216,11 +216,11 @@ Bellow you can see the diversity metrics tables for both chains:
 Finally, MiXCR provides a very convenient way to look at the reports generated at ech step. Every `.vdjca`, `.clns` and `.clna` file holds all the reports for every MiXCR function that has been applied to this sample. E.g. in our case `.clns` file contains reports for `mixcr align` and `mixcr assemble`. To output this report use [`mixcr exportReports`](../reference/mixcr-exportReports.md) as shown bellow. Note `--json` parameter will output a JSON-formatted report.
 
 ```shell
---8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/125-qc-exportReports.sh"
+--8<-- "guides/milaboratories-human-tcr-dna-multi/scripts/125-qc-exportReports.sh"
 ```
 
 ```shell
---8<-- "guides/milaboratories-human-tcr-rna-multi/scripts/125-qc-exportReports-json.sh"
+--8<-- "guides/milaboratories-human-tcr-dna-multi/scripts/125-qc-exportReports-json.sh"
 ```
 
 ??? "Show report file"

@@ -22,6 +22,7 @@ Bellow you one can find a variety of presets for different types of input data a
 ## Kits
 
 --8<-- "reference/presets/_milaboratories.md_"
+--8<-- "reference/presets/_Miltenyi.md_"
 --8<-- "reference/presets/_10x.md_"
 --8<-- "reference/presets/_neb.md_"
 --8<-- "reference/presets/_cellecta.md_"
