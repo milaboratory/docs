@@ -8,7 +8,7 @@
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/miltenyi.yaml)
 ·
-[:octicons-mortar-board-16: Tutorial](../guides/milaboratories-human-tcr-rna-multi.md)
+[:octicons-mortar-board-16: Tutorial](../guides/miltenyi-human-rna-tcr-profiling.md)
 
 Allows to obtain human TCR alpha and beta CDR3 repertoires for different types of available RNA material, with high sensitivity and UMI-based accuracy. 
 
