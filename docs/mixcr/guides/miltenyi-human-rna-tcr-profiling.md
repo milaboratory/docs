@@ -1,4 +1,4 @@
-# Miltenyi TCR α/β RNA Profiling Kit, human
+# Miltenyi Biotec TCR α/β RNA Profiling Kit, human
 
 This kit allows to obtain TCR alpha and beta repertoires for different types of available RNA material, with high sensitivity and UMI-based accuracy.
 
@@ -7,7 +7,7 @@ Bellow you can see the structure of cDNA library.
 ![](../reference/pics/miltenyi-multiplex-tcr-light.svg#only-light)
 ![](../reference/pics/miltenyi-multiplex-tcr-dark.svg#only-dark)
 
-The data for this tutorial consists of two samples that represent two replicas of the same biological sample. Total RNA was isolated from PBMC and 25ng were used for each cDNA synthesis. Two cDNA libraries were prepared for each sample (one for TCR alpha and one for TCR betta) according to Miltenyi TCR α/β RNA Profiling Kit, human kit protocol. TCR sequencing was performed on an Illumina Miseq sequencer using the 300-cycle Miseq reagent kit(Illumina) with pair-end, 2x150 base pair reads.
+The data for this tutorial consists of two samples that represent two replicas of the same biological sample. Total RNA was isolated from PBMC and 25ng were used for each cDNA synthesis. Two cDNA libraries were prepared for each sample (one for TCR alpha and one for TCR betta) according to Miltenyi Biotec TCR α/β RNA Profiling Kit, human kit protocol. TCR sequencing was performed on an Illumina Miseq sequencer using the 300-cycle Miseq reagent kit(Illumina) with pair-end, 2x150 base pair reads.
 
 All data may be downloaded using the script bellow.
 
