@@ -31,8 +31,6 @@ mixcr analyze milab-human-rna-ig-umi-multiplex \
 [:octicons-link-16: Link](https://milaboratories.com/human-tcr-rna-multiplex-kit)
 ·
 [:octicons-mark-github-16: Code](https://github.com/milaboratory/mixcr/blob/develop/src/main/resources/presets/protocols/milaboratories.yaml)
-·
-[:octicons-mortar-board-16: Tutorial](../guides/milaboratories-human-tcr-rna-multi.md)
 
 Allows to obtain human TCR alpha and beta CDR3 repertoires for different types of available RNA material, with high sensitivity and UMI-based accuracy. 
 
