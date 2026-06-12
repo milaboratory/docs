@@ -326,7 +326,7 @@ mixcr postanalysis overlap
   (cloneset.(clns|clna)|directory)... result.json[.gz]
 ```
 Calculates pairwise 
-[Distance metrics](./mixcr-postanalysis.md#overlap-metrics).
+[Distance metrics](./mixcr-postanalysis.md#pairwise-distance-metrics).
 
 
 

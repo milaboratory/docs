@@ -1,6 +1,6 @@
 # List of quality checks
 
-Each [preset](overview-built-in-presets.md) contains a list of its specific recommended quality checks. When running MiXCR using [`analyze`](#mixcr-analyze.md) command, it will automatically generate the summary and print it to the standard output. One can also use [`mixcr qc`](mixcr-qc.md) command to export report from .clns file:
+Each [preset](overview-built-in-presets.md) contains a list of its specific recommended quality checks. When running MiXCR using [`analyze`](mixcr-analyze.md) command, it will automatically generate the summary and print it to the standard output. One can also use [`mixcr qc`](mixcr-qc.md) command to export report from .clns file:
 ```
 mixcr qc clonotypes.clns
 ```

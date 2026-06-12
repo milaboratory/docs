@@ -112,5 +112,5 @@ The `sample_table.tsv` may look like:
 
 ### Sample barcodes from cell tags
 
-See [this example](ref-input-file-name-expansion.md#microplates--multiple-patient-samples-multiple-plates).
+See [this example](ref-input-file-name-expansion.md#microplates-multiple-patient-samples-multiple-plates).
 

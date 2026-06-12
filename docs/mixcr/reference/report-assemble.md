@@ -207,10 +207,10 @@ The rest of the report is describes assembly regardless of barcodes:
 : number of core alignments with no low quality nucleotides (defined by `badQualityThreshold`). These alignments form core clonotypes. (percent of reads used in clonotypes)
 
 `Mapped low quality reads, percent of used`
-: Number of rescued low quality reads that were aggregated by the corresponding clonotype. See [mapping](mixcr-assemble.md#assemble-algorithm)
+: Number of rescued low quality reads that were aggregated by the corresponding clonotype. See [mapping](mixcr-assemble.md#core-assembler-parameters)
 
 `Reads clustered in PCR error correction, percent of used`
-: Number of reads clustered in PCR error correction, percent of used. See [clustering](mixcr-assemble.md#assemble-algorithm)
+: Number of reads clustered in PCR error correction, percent of used. See [clustering](mixcr-assemble.md#clustering-parameters)
 
 `Reads pre-clustered due to the similar VJC-lists, percent of used`
 : Reads pre-clustered due to the similar VJC-lists, percent of used
@@ -222,7 +222,7 @@ The rest of the report is describes assembly regardless of barcodes:
 : Reads dropped due to too many positions with low quality, percent of total
 
 `Reads dropped due to failed mapping, percent of total`
-: Reads dropped due to failed mapping, percent of total. See [mapping](mixcr-assemble.md#assemble-algorithm)
+: Reads dropped due to failed mapping, percent of total. See [mapping](mixcr-assemble.md#core-assembler-parameters)
 
 `Reads dropped with low quality clones, percent of total`
 : Reads dropped with low quality clones, percent of total

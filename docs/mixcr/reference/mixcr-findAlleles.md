@@ -6,7 +6,7 @@ etc.). Because it is quite complicated to distinguish a true allelic variant fro
 ![](pics/findAlleles-light.svg#only-light)
 ![](pics/findAlleles-dark.svg#only-dark)
 
-Clonotypes passed as input must be assembled by the same [gene feature](mixcr-assemble.md#core-assembler-parameters). So, for example `.clns` files with [contigs](overview-analysis-overview.md#contig-assemblymixcr-assemblecontigsmd), must be assembled using [`assembleContigs`](mixcr-assembleContigs.md) with `--assemble-contigs-by` option. All input '.clns' files must have been generated using the same initial reference library, with the same scoring of V and J genes and the same features to align.
+Clonotypes passed as input must be assembled by the same [gene feature](mixcr-assemble.md#core-assembler-parameters). So, for example `.clns` files with [contigs](overview-analysis-overview.md#contig-assembly), must be assembled using [`assembleContigs`](mixcr-assembleContigs.md) with `--assemble-contigs-by` option. All input '.clns' files must have been generated using the same initial reference library, with the same scoring of V and J genes and the same features to align.
 
 Note, that allelic inference requires presence of a substantial amount of clones for a given V/J gene to return a statistically significant result. If the information from the data was not enough to determine an allele for a certain gene, this gene will retain original *00 allele number.
 
