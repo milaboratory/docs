@@ -146,6 +146,7 @@ examples:
 
 Some rules apply to group names:
 - Everything that starts with `CELL` is treated as a cell barcode
+- Everything that starts with `FEATURE` or `FB` is treated as a feature (antigen) barcode
 - Everything that starts with `UMI` or `MI` (ex. `MIG`) is used as a molecular barcode
 - Everything that starts with `S` is a sample barcode.
 - `R1`, `R2` etc. groups define the payload read sequence.
